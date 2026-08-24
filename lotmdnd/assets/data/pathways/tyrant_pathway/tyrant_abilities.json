@@ -1,0 +1,149 @@
+{
+  "pathway": "Tyrant Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Sailor (Keeper of the Seas)",
+      "abilities": [
+        "Aquatic Affinity: Can remain underwater for at least ten minutes, swim like fish, and dive 15 meters without protection.",
+        "Illusory Scales: Hidden scales beneath skin that make them slippery and resistant to damage.",
+        "Balance: Exceptional sense of balance, can walk freely on a boat during rainstorms.",
+        "Physical Enhancement: Outstanding strength."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Folk of Rage (Guardian of the Storm)",
+      "abilities": [
+        "Physical Enhancement: Greatly enhanced strength, speed, and resistance.",
+        "Wrath: When enraged, can release strikes that surpass ordinary limits.",
+        "Raging Blow: A terrifying blow delivered through accumulated anger."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Seafarer (Storm Priest)",
+      "abilities": [
+        "Aquatic Affinity: Enhanced at sea; can act freely underwater for more than half an hour.",
+        "Enhanced Mental Attributes: Improved calculation skills.",
+        "Enhanced Memory: Possess enhanced memory.",
+        "Navigation: Intuitive grasp of magnetic fields, ocean currents, wind direction, and clouds.",
+        "Water-related Spells: Can cast limited Water spells including suffocating water film, azure lights, and restorative spells."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Wind-blessed",
+      "description": "They are irascible at times, matching the characteristics of a gale. They possess great Beyonder powers in domains related to Water, Wind, and the Weather.",
+      "abilities": [
+        "Wind Control: Can unleash gales and surround themselves with Hurricanes.",
+        "Glide: Can use Winds to glide through the air.",
+        "Windblades: Can create sharp, invisible Windblades to slice targets.",
+        "Flight (Short-distance Flight): Can fly for short durations.",
+        "Water Control: Can manipulate and use Water to a certain degree.",
+        "Dive: Can dive to a depth of 100 meters.",
+        "Float: Can float on Water without sinking.",
+        "Night Vision: Can see in the dark."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Ocean Songster",
+      "abilities": [
+        "Aquatic Affinity: Enhanced underwater talents, can communicate with aquatic animals, extract oxygen from water.",
+        "Illusory Scales: Higher defense capability compared to other Sequence 5 Beyonders.",
+        "Physical Enhancement: Heart contracts and expands like the source of a Storm.",
+        "Lightning Manipulation: Superficial control over Lightning.",
+        "Lightning Bolt Arrow: Can condense a solid arrow from Lightning with a bow.",
+        "Lightning Strike: Can produce silver-white electric light capable of paralysis and Purification.",
+        "Singing: Can influence targets with voice, interfere with Spirit Body, or enhance explosive power.",
+        "Pressure Resistance: Not fearful of deep sea pressure.",
+        "Water Control: Enhanced water manipulation including Water Curtain, water spheres, and corrosive rainwater.",
+        "Wind Control: Enhanced Wind manipulation including Wind Binding and improved Flight."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Cataclysmic Interrer",
+      "abilities": [
+        "Underwater Vision: Can see clearly in the dark deep sea.",
+        "Scale Armor: Illusory Scales have strong defensive ability.",
+        "Spiritual Intuition: Sensitive to the level of a high-ranking person.",
+        "Hurricane: Can create terrifying Hurricanes visible to the naked eye.",
+        "Tsunami: Can call forth huge Water waves approaching 10 meters high.",
+        "Earthquake: Can create Earthquakes and cause lava eruptions.",
+        "Torrential Downpour: Can quickly form Torrential Downpour across an extremely large area.",
+        "Water Manipulation: Enhanced Water control including Water Wall.",
+        "Lightning Manipulation: Stronger control over Lightning including Thunder Strike and Chain Lightning.",
+        "Singing: Enhanced singing; can create a melody of death.",
+        "Roar: Vocal cords strong enough to produce a Roar that can topple a ship.",
+        "Windblade Legion: Can manifest hundreds to thousands of Windblades.",
+        "Flight: Real Flight capability at speeds up to 500 kilometers per hour."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Sea King",
+      "description": "Even with range limitations, within the waters they control, Sea Kings are undoubtedly powerful rulers, able to walk freely on the seabed, wantonly stir up Tsunamis, cause Sea levels to rise, and dominate marine life. In their home turf, they are absolutely capable of overwhelming all Demigods of the same level.",
+      "abilities": [
+        "Enhanced Mental Attributes: Potent psyche that is terrifying.",
+        "Aquatic Affinity: Able to freely walk on the Ocean seafloor.",
+        "Physical Enhancement: Sea-monster like strength.",
+        "Balance: Unimaginable levels of Balance.",
+        "Wrath of the Sea: Can cause the entire sea area to repel targets.",
+        "Sea Master: Can command Sea creatures and transform into any Sea creature.",
+        "Hurricane: Can shatter Hurricanes into Lightning Storms.",
+        "Torrential Downpour: Can spread Spirituality through dark clouds and raindrops.",
+        "Tsunamis: Can set off 40 to 50 meter high Tsunamis.",
+        "Water Manipulation: Can create Destructive Droplets with terrifying destructive power.",
+        "Lightning Manipulation: Can create Lightning Storms covering hundreds of meters.",
+        "Wind Manipulation: Winds can break the sound barrier.",
+        "Flight: Flight at speeds faster than sound.",
+        "Sonic Boom: Can create Sonic Booms at a distance.",
+        "Navigation: Can never get lost."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Calamity",
+      "abilities": [
+        "Sound of Horror: Can instill extreme Horror in living beings and Sealed Artifacts.",
+        "Calamity: Partial authority over Calamities including Thunder Storms, Snow Storms, and Tsunamis.",
+        "Storm Incarnation: Can unleash Hurricanes and Storms capable of destroying a large city.",
+        "Source of Wrath: Can temporarily enhance power to the next Sequence.",
+        "Lightning Manipulation: Enhanced Lightning abilities including Magnetic Pole Pull and Electromagnetic Disruption.",
+        "Wind Manipulation: Flight at ballistic missile speeds.",
+        "Singing: Enhanced Singing; can cause targets to involuntarily recall their past."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Thunder God",
+      "abilities": [
+        "Incarnation of Light: Can transform into an energy body capable of flying or attacking at speeds approaching light.",
+        "Thunder, Wind, & Calamity: Authority over Thunder, Wind, and Calamities.",
+        "Heavenly Punishment: Can manifest a massive bolt of Lightning with Disintegration, Purification, and Destruction powers.",
+        "Storm Hell: Can designate an area to be engulfed in a destructive Storm Hell.",
+        "Dance of Thunder: Can use invisible Thunder that disrupts and destroys Information structures.",
+        "Ocean of Lightning: Can make a Sea composed of terrifying Lightning.",
+        "Source of Wrath: Can reach close to a True Deity's power through anger.",
+        "Roar of the Thunder God: Sonic attack that spreads at the speed of Lightning, inducing Horror and Intimidation."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Tyrant",
+      "abilities": [
+        "Matter: Authority partially derived from Maker symbolism; can convert Matter into Energy and vice versa.",
+        "Thunder (Electricity & Magnetism): Commands forces of Electricity and Magnetism.",
+        "Tyrant: Authority encompassing Intimidation, Wrath, and Horror.",
+        "Water: Authority over Seas and a portion of Aquatic Life.",
+        "Seas: Can cause the Seas to surge upward toward the clouds.",
+        "Aquatic Life: Can alter forms of Aquatic Life.",
+        "Divine Kingdom: Formed from Tyrant, Thunder, and Calamity authorities.",
+        "Calamity: Partial authority over Calamity; can banish others into never-ending Storms.",
+        "Wind: Wind authority intersects with Calamities authority."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "pathway_name": "Death Pathway",
+  "aliases": [
+    "Corpse Collector Pathway",
+    "Pathway of Phoenixes"
+  ],
+  "overview": {
+    "description": "The Death Pathway is notable for its powers related to the dead and spirits. They can create zombies, summon spirits to fight for them, resist cold and decay, travel through the Spirit World, communicate with the dead, and have enhanced abilities to fight the undead, wraiths, and other Evil Spirits.",
+    "high_sequence_characteristics": "At High Sequences, they can resurrect and instantly kill their enemies. They also have a deeper connection with the Underworld. In the Death Pathway, high-level Beyonders have extremely suppressive powers over low-level Beyonders.",
+    "authority": "Their authority represents Death, and Eternal Rest.",
+    "derrick_description": "It's the Beyonder pathway that governs death and partly controls the spirit world.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Corpse Collector",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Gravedigger",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Spirit Medium",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Spirit Guide",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Gatekeeper",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Undying",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Ferryman",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Death Consul",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Pale Emperor",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Death",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Death Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "Death",
+    "card_number": "XIII",
+    "description": "Death (XIII) is the number thirteenth of 22 Major Arcana. The card typically depicts the Grim Reaper, and when used for divination is often interpreted as signifying major changes in a person's life. Aside from the ethics, the Death Tarot Card usually signifies spiritual transformation, a time of change and new beginnings, and an ending of a cycle."
+  },
+  "god": [
+    {
+      "name": "Evernight Goddess",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "Haoli Sect Master",
+      "status": "Dao Integrator ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Underworld Daoist",
+      "status": "Dao Integrator †",
+      "type": "Former God"
+    },
+    {
+      "name": "Artificial Death",
+      "status": "UQ (Activated Uniqueness) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Death",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Phoenix Ancestor Gregrace",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "Feathered Serpent: 'They' have huge scales that are dark green and black, from which grow feathers stained with pale yellow oil. From each feather, there are illusory black tubes extending out. It is referred as Quetzalcoatl in the Southern Continent. This giant serpent is both illusory and real, as though it was formed by something incomprehensible to humans. Its entire body is covered with huge dark-green scales with white feathers growing out from the gaps. Each scale and feather has strange symbols comprised of different shapes. Just the mere sight of them would make one's flesh decompose, turning one into a zombie.",
+    "note": "The previous mystical creature form was a Black-Pale Phoenix until Gregrace was succeeded by Salinger."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A feathered serpent representing Death. Its entire body is covered in large, dark green scales, with pure white feathers growing between the gaps. In some areas not covered by scales, stark white bones are exposed. Its skeletal head has pale flames burning in its eyes. The serpentine body possesses a pair of thick, feathered wings, symbolizing absolute dominion over souls."
+  },
+  "high_sequence_group": {
+    "name": "Darkness Death Twilight Giant",
+    "pathways": [
+      "Darkness",
+      "Death",
+      "Twilight Giant"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Eternal Darkness",
+    "pathways": [
+      "Darkness",
+      "Death",
+      "Twilight Giant"
+    ]
+  },
+  "sefirah": {
+    "name": "River of Eternal Darkness"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Eternal Darkness",
+        "pathways": ["Darkness", "Twilight Giant"]
+      },
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness", "Red Priest"],
+        "note": "Because of the existence of the Fourth Pillar."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Monarch of Decay",
+        "pathways": ["Second Law"],
+        "note": "Because the Monarch of Decay specifically targets the River of Eternal Darkness."
+      },
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"],
+        "note": "Because the Circle of Inevitability specifically targets the City of Calamity and the River of Eternal Darkness, as these Pathways symbolize Destined Conclusions and various Calamities."
+      },
+      {
+        "group": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor"],
+        "note": "Because there is an inherent connection between life and spirit/soul."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Eternal Darkness"
+    },
+    {
+      "name": "Church of the Evernight Goddess"
+    },
+    {
+      "name": "Church of Death"
+    },
+    {
+      "name": "Eggers Family"
+    },
+    {
+      "name": "Haoli Lineage (Western Continent)"
+    }
+  ],
+  "trivia": {
+    "feathered_serpent_mythology": "In real-life, the Feathered Serpent is widely spread in South American ancient culture. The Quetzalcoatl is a deity in Mesoamerican culture and literature of the Aztecs whose name comes from the Nahuatl language and means 'feathered serpent'. It is the Kukulkan of the Yucatec Mayans.",
+    "sun_restraint": "Even at the True God level, a Sequence 0 Death would be heavily restrained by a Sequence 0 Sun."
+  }
+}

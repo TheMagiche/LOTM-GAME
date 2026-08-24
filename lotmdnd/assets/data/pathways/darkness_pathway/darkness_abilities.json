@@ -1,0 +1,118 @@
+{
+  "pathway": "Darkness Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Sleepless",
+      "abilities": [
+        "High Spirituality: High spiritual perception and sensitivity.",
+        "Spirit Vision: Can use Spirit Vision to see spiritual things.",
+        "Divination Arts & Ritualistic Magic: Can do limited Divination and Ritualistic Magic using potent Spirituality.",
+        "Nocturnality: The deeper into the night, the more powerful they become. Can see through darkness, sense dangers hidden in the dark, and only need 3-4 hours of rest per day."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Midnight Poet",
+      "abilities": [
+        "Midnight Poem: Can cast effects through recital of a poem related to the night or Evernight Goddess.",
+        "Tranquilize: Can make people's bodies, hearts, and souls feel purified and Tranquil.",
+        "Lullaby: Can put multiple people to sleep via a Lullaby.",
+        "Pacify: Can tranquilize opponents and make them lose their desire to live.",
+        "Nocturnality: Enhanced degree of enhancement."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Nightmare",
+      "abilities": [
+        "High Spirituality: Significantly enhanced Spirituality.",
+        "Nightmare State: Can separate Soul from physical body while sleeping to move freely and infiltrate Dreams.",
+        "Dream Shaping: Can cause different changes within a target's Dreams to guide their behavior.",
+        "Dream Invasion: Can forcefully drag targets into Dreams without alerting them.",
+        "Nightmare Limbs: Can generate tentacle-like Nightmare Limbs from their back for close combat."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Soul Assurer",
+      "abilities": [
+        "High Spirituality: Slightly enhanced Spirituality.",
+        "Ritualistic Magic & Divination Arts: Improvements in spiritual abilities.",
+        "Requiem: Can cause the Spirit Body to sleep, suppressing desires, moods, and thoughts.",
+        "Dream Invasion: Can force targets in Dreams within a 150 meter range.",
+        "Midnight Poem: Can use signing to manifest effects.",
+        "Agitate: Can agitate the Spirit Body, heightening frustrations and destructive urges.",
+        "Nocturnality: Only need two hours of rest per day."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Spirit Warlock",
+      "abilities": [
+        "Spirit Commanding: Can Seal various Spirits within teeth and release them.",
+        "Dream Invasion: Range increased to 200 meters."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Nightwatcher",
+      "abilities": [
+        "Bloodline Abilities: Bloodline traits of True Deities' descendants grant new abilities.",
+        "Night Domain: Can make pure Darkness surge to form a domain that boosts capabilities and weakens enemies.",
+        "Hair Entanglement: Can create and manipulate countless hairs to bind enemies.",
+        "Concealment: Possesses powers over Concealment.",
+        "Curse of Misfortune: Can give a certain amount of Misfortune to others.",
+        "Luck Sensation: Can sense when Luck has been altered.",
+        "Spirit Commanding: Enhanced ability to control Spirits.",
+        "Requiem: Undergone qualitative change; can induce sleep and Pacify deceased Spirits.",
+        "Nocturnality: The darker the environment, the stronger their strength.",
+        "Dream Invasion: Expanded to 1000 meters."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Horror Bishop",
+      "abilities": [
+        "Sword of Darkness: A bone sword combining Repose and Horror; creates a tide of Darkness.",
+        "Nightmare World: Can create a Dream world and pull everyone in range into it.",
+        "Horror Aura: Causes target's body and mind to tremble involuntarily.",
+        "Midnight Poem: Greatly enhanced; can put an entire city to sleep.",
+        "Spirit Commanding: Enhanced abilities with spirit."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Servant of Concealment",
+      "abilities": [
+        "Concealment: Can make targets enter a Concealed state that cannot be sensed.",
+        "Reverse Concealment: Can remove the Concealed state from a target.",
+        "Concealed World: Can create an entire area that is Concealed by itself.",
+        "Nightmare World: Range can affect a large city.",
+        "Requiem: Mere presence can bring extreme peace."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Knight of Misfortune",
+      "abilities": [
+        "Physical Enhancement: Strength, agility, physique, and speed are true to the title of Knight.",
+        "Misfortune: Can give Misfortune to enemies, including national-scale Misfortune.",
+        "Servant of Darkness: In the Dark Night, almost impossible to be truly killed.",
+        "Sword of Darkness: Brings Eternal Rest, Despair, and Destruction.",
+        "Commander of Spirits: Can put Natural and Undead Spirits to sleep and command them."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Darkness",
+      "abilities": [
+        "Concealment: Can Conceal traces, mislead prying and Divination, and grasp many secrets.",
+        "Darkness: Can induce Dreams, bring peace or Eternal Rest, and dissolve targets into Darkness.",
+        "Spirit Body & Spirituality: Master of Spirits; destination of Spirits.",
+        "Misfortune & Catastrophe: Can bring Catastrophes via Misfortune.",
+        "Horror: Embodiment of Horror; can make others feel tremendous fear."
+      ]
+    }
+  ]
+}

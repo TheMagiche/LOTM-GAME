@@ -1,0 +1,206 @@
+{
+  "pathway_name": "Red Priest Pathway",
+  "aliases": [
+    "Hunter Pathway",
+    "War Pathway",
+    "Calamity Pathway"
+  ],
+  "overview": {
+    "description": "The Red Priest Pathway contains war-related abilities. The Red represents War and Priest represents the 'ritualist of strength.' They are experts with fire, traps, have enhanced strength and agility, can find and attack weaknesses, they are good at plotting conspiracies, and can provoke others into losing control.",
+    "high_sequence_characteristics": "At High-Sequences, they can transform into a blazing meteor to travel quickly, control the weather and turn fire into steel to manipulate it by will. They also have various crowd control skills and can unleash the true strength of an army, and conquering everything creating their own army from countless soldiers, and they become bishops and priests of the Essence of War.",
+    "authority": "Their authority represents War and Destruction and this pathway also symbolises the masculine side of the Original Creator.",
+    "madam_magician_description": "Therefore, Hunters must rely more on their personal growth amidst blood, fire, chaos, and conflict. Many Hunters meet their end, using their bones to forge the Red Priest who conquers all.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Hunter",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Provoker",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Pyromaniac",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Conspirer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Reaper",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Iron-blooded Knight",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "War Bishop",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Weather Warlock",
+        "advancement_method": "Abi/Adv",
+        "mythical_form": "A giant, a representation of calamity, crafted from flames and various symbolic elements."
+      },
+      {
+        "sequence": 1,
+        "name": "Conqueror",
+        "advancement_method": "Abi/Adv",
+        "mythical_form": "A horrifying charred giant, engulfed in blazing purple flames, continuously emanating illusory symbols—lightning, hail, fog—the majestic purple flames and the iron-black metal body held inscrutable knowledge, representing countless real phenomena."
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Red Priest",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Red Priest Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Chariot",
+    "card_number": "VII",
+    "description": "The Chariot (VII) is number seventh of 22 Major Arcana. The Chariot is a card about overcoming conflicts and moving forward in a positive direction. One needs to keep going on, and through sheer hard work and commitment, he will be victorious.",
+    "card_of_blasphemy_appearance": "Inside the picture, there was a normal-looking tarot card. The image on it was completely different from the others. Sitting inside a chariot wasn't a king, but rather a male priest wearing a dark red robe. The priest looked like Roselle Gustav! The starlight in the upper left corner had condensed into a line of text: 'Sequence 0: Red Priest!'"
+  },
+  "god": [
+    {
+      "name": "Ruler of Calamity",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "Malevolent Dragon",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Death",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Blood Emperor",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Giant King Aurmir",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "Flaming Calamity Giant"
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A horrifying charred giant, engulfed in blazing purple flames, continuously emanating illusory symbols—lightning, hail, fog—the majestic purple flames and the iron-black metal body held inscrutable knowledge, representing countless real phenomena."
+  },
+  "high_sequence_group": {
+    "name": "Demoness Red Priest",
+    "pathways": [
+      "Demoness",
+      "Red Priest"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Calamity of Destruction",
+    "pathways": [
+      "Demoness",
+      "Red Priest"
+    ]
+  },
+  "sefirah": {
+    "name": "City of Calamity"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness"]
+      },
+      {
+        "group": "Eternal Darkness",
+        "pathways": ["Darkness", "Death", "Twilight Giant"],
+        "note": "Because of the existence of the Fourth Pillar."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"],
+        "note": "Because the Circle of Inevitability specifically targets the City of Calamity."
+      },
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "Because the Supernova Dominator specifically targets the City of Calamity."
+      },
+      {
+        "group": "Monarch of Decay",
+        "pathways": ["Second Law"],
+        "note": "Because the Monarch of Decay specifically targets the City of Calamity, and because the Monarch of Decay and the Calamity of Destruction can accommodate each other."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The City of Calamity is a Sefirah that the Primordial Hunger specifically targets and can accommodate, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Ruler of Calamity"
+    },
+    {
+      "name": "Iron and Blood Cross Order"
+    },
+    {
+      "name": "Einhorn Family"
+    },
+    {
+      "name": "Sauron Family"
+    },
+    {
+      "name": "Medici Family"
+    },
+    {
+      "name": "Tudor Family"
+    },
+    {
+      "name": "Church of the God of Knowledge and Wisdom"
+    }
+  ],
+  "trivia": {
+    "masculinity_in_cosmos": "In the Cosmos, besides the Red Priest Pathway, there are other Outer Deities' Pathways representing male/masculinity.",
+    "injury_rate": "Throughout history, the Hunter Pathway Beyonders have always been the group with the highest injury rate, most of the damage they receive comes from their fellow Beyonders of the same sequence.",
+    "true_god_titles": "The True God of this pathway are titled 'God of War' and 'War Overlord'."
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "pathway": "Twilight Giant Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Warrior",
+      "potion_overview": "A blood-red liquid that has a strong, fishy smell.",
+      "formula": {
+        "main_ingredients": [
+          "One Giant Warrior's Muscle Core OR A Mutant Black Bear's eyes",
+          "A Bloodthirsty Rhinoceros's horn"
+        ],
+        "alternative": "A Warrior Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 100 milliliters of a Giant Warrior's blood OR 100 milliliters of Mutated black bears's blood",
+          "Choose one of: A Giant Warrior's Heart OR The Heart of a Bloodthirsty Rhinoceros",
+          "10 drops of Sweet Basil Essential Oil",
+          "1 piece of Onyx"
+        ]
+      },
+      "acting_method": "Your physical abilities are above the common creature. A Warrior is proficient with many weapons and armors. Yourself are a natural combatant in various situations.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Pugilist (Gladiator)",
+      "potion_overview": "Pure white pus stained with streaks of blood.",
+      "formula": {
+        "main_ingredients": [
+          "The metacarpal bone of a Giant Squire OR The heart of a Giant Black Bear",
+          "The middle finger of a Forest Wanderer (It's a golden-brown Ape with a strong hunting instinct)"
+        ],
+        "alternative": "A Pugilist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 100 milliliters of a Giant Squire's Blood OR 100 milliliters of a Forest Wanderer's Blood",
+          "Choose one of: A Giant Squire's Gallbladder OR A Giant Black Bear's Gallbladder",
+          "One Amethyst",
+          "An enemy's Eyeball"
+        ]
+      },
+      "acting_method": "Enter people's sights and fight with the extraordinary. Become an expert in combat, mainly through the physique.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Weapon Master",
+      "potion_overview": "A black liquid with rust floating on it. It tastes like swallowing a handful of fine needles.",
+      "formula": {
+        "main_ingredients": [
+          "One Spine of a Blue Giant OR The left Paw of an Iron Bear",
+          "The ear of the Six-Armed Gray Ape"
+        ],
+        "alternative": "A Weapon Master Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 100 milliliters of Blue Giant's Blood OR 100 milliliters of an Iron Bear's Blood",
+          "Choose one of: 10 Strands of Hair from a Blue Giant's OR 20 Strands of Hair from a Six-Armed Gray Ape",
+          "10 arrows dug up from a battlefield",
+          "A tuft of hair from the person they have defeated"
+        ]
+      },
+      "acting_method": "Master weapons with your superhuman physical attributes. Use, control and master dangerous weapons to exhibit one's specialty, the riskier, the higher the mastery, notably the Sealed Artifact.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Dawn Paladin",
+      "potion_overview": "A transparent liquid, as if illuminated by the morning Sun.",
+      "formula": {
+        "main_ingredients": [
+          "The Blood Crystal of a Dawn Giant OR The Breastbone of a Dawn Bird",
+          "The Right Paw of a Silver Bear"
+        ],
+        "alternative": "A Dawn Paladin Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 100 milliliters of a Dawn Giant's Brain Fluid OR 100 milliliters of Silver Bear's Bile",
+          "Choose one of: 3 pieces of Dawn Giant's Nail OR One Dawn Bird's Claw",
+          "One Opal",
+          "One Purified Item"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Guardian",
+      "potion_overview": "Pale Blood enveloped in a substantial Ray of Dawn.",
+      "formula": {
+        "main_ingredients": [
+          "The Heart of a Gray Giant OR The Core of the Stone Giant",
+          "The Ears of a Forest Guardian"
+        ],
+        "alternative": "A Guardian Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 200 milliliters of a Gray Giant's blood OR 200 grams of Stone Giant's Dust mixed with pure water",
+          "Choose one of: 1 Gray Giant's Eye OR 1 Forest Guardian's Eye",
+          "1 weapon that the Potion Consumer has used for a long time",
+          "9 drops of an Essential Oil with a pungent odor"
+        ]
+      },
+      "advancement_ritual": "Find a Person or Group you want to protect and dedicate yourself to, protecting them for at least a year.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Demon Hunter",
+      "potion_overview": "A dark green liquid.",
+      "formula": {
+        "main_ingredients": [
+          "The Eye of a Divine Giant OR The Heart of a Dragon-Eater",
+          "The vertical Eye of an Evil Spirit Hunter"
+        ],
+        "alternative": "A Demon Hunter Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 200 milliliters of blood from a Divine Giant OR 200 milliliters of blood from a Dragon Eater",
+          "Choose one of: 1 Skull of a Divine Giant OR 1 Skull of an Evil Spirit Hunter",
+          "49 different types of materials (different parts of Monsters or Herbs)",
+          "10 grams of Holy Ointment with purifying properties"
+        ]
+      },
+      "advancement_ritual": "Resolve a problem or disaster caused by a powerful Demon or Evil Creature. Note: Powerful is defined as possessing godhood.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Silver Knight",
+      "potion_overview": "It looks like as if chunks of Mercury were scattered throughout the pale white liquid.",
+      "formula": {
+        "main_ingredients": [
+          "The essence of Aurmir's blood OR The Heart of a 'King's Court Chaser' (a type of giant) OR The heart of a 'King's Court Watchman' (another type of giant)"
+        ],
+        "alternative": "A Silver Knight Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "300 milliliters of Water contaminated by the power of Death",
+          "One item worn or carried by a Sequence 3 or above from the Twilight Giant Pathway (for armor-type items, only one armor plate is required)",
+          "One piece of Amber with a trapped ancient insect inside",
+          "One piece of paper recording 100 or more kills of the oneself"
+        ]
+      },
+      "advancement_ritual": "Arrange a complex altar and place the remains of six powerful creatures that were hunted by oneself in the correct order and receive the blessing of a God (Angel-level at minimum). The six creatures shouldn't necessarily be monsters, six Demigod-level Beyonders would also suffice.",
+      "ritual_essence": "As a Sequence 4 Demon Hunter, the hunting of every powerful creature was a battle of intense mental catharsis. It would leave a deep impression in their life. With these powerful mental imprints, they are able to locate themself after consuming the potion, and not be lost in pain and madness. This too is a type of Anchor. As this wasn't the level of an Angel, an Anchor didn't necessarily need to be a believer. It could be replaced by other things, such as the clear marks in one's life that had meaning in mysticism.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "Without a sound, the Demon Hunter's body swells up, turning into a grayish-blue giant with bluish-black veins covering them. They stand several meters tall, with black cracks on their forehead. Every inch of this giant contained the indescribable power of mystery and terror. Apart from their head which still retained the appearance of a human (if they were human), the rest of their body was akin to a Mythical Creature that exerted a strange mental influence. In the next second, the skull underlying their head seems to soften as it sinks inwards. With the black crack as its core, their head slowly squirms, as though it is forming a nebulous vortex. Such pain would make them, who likely had killed many powerful creatures, unable to restrain themself. They would let out a series of howling cries that could make the minds of ordinary creatures split apart. The remains of the six powerful living creatures that were situated in different spots floats up under the invisible power of the ritual, circling the mutated them, using some sort of mysterious connection to awaken some of the memories of this peerless Demon Hunter. These manifestations appeared like painting on an altar. Sometimes, they would be integrated into them, and sometimes they would be extracted from them, helping them define themself. They would maintain a certain level of clarity during the extreme pain and changes. In the memories that had been awakened, they can slowly regain their self-awareness. They would feel their body again and grasp its changes. Right on the heels of that, a layer of wings formed from illusory light extended out from behind them. They fuse with the surrounding 'paintings' as they constantly shrink inwards. The surface of their body collapses into a silver armor that are firm and beautiful, but doesn't possess any weight to it."
+    },
+    {
+      "sequence": 2,
+      "name": "Glory",
+      "potion_overview": "A liquid formed from pure, holy, and profound light.",
+      "formula": {
+        "main_ingredients": [
+          "The Crystallization of a Glorious Giant (e.g: The One Eye of Bladel) OR The Crown of Aurmir"
+        ],
+        "alternative": "A Glory Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "300 milliliters of blood from the Glorious Giant",
+          "One item eroded by the power of Darkness",
+          "One corpse buried for over a thousand years",
+          "One poem praising oneself (recited and passed down for at least 10 years)"
+        ]
+      },
+      "advancement_ritual": "Fight an Angel or a Creature of equal power on your own (using Beyonder items is allowed). Or Kill enough Enemies or Blasphemers on behalf of the God who blessed you.",
+      "ritual_essence": "No data available.",
+      "acting_method": "There are two directions to act as a Sequence 2: Glory similar to the ritual, although the acting method is not bound to the ritual done, but the direction one wishes to take. The Glorious: Gain glory for yourself. The Glorifier: One who glorifies others.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Hand of God",
+      "potion_overview": "A bluish-black liquid tinged with the colors of Dusk/Twilight, containing numerous transparent faces.",
+      "formula": {
+        "main_ingredients": [
+          "One of the Hands of Aurmir (content on the First Blasphemy Slate) OR One of the Hands of Badheil (content on the Second Blasphemy Slate)"
+        ],
+        "alternative": "A Hand of God Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of a True God's Blood (the type that doesn't have Beyonder Characteristics)",
+          "9 drops of Water from the River Styx (or something similar)",
+          "A religious text recording one's own legend and deeds of loyalty",
+          "A Flower blooming in a True God's Divine Kingdom"
+        ]
+      },
+      "advancement_ritual": "Swear allegiance to a certain god or become a Servant of the River Styx. Any tributary of the River of Eternal Darkness suffices to become a Servant.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Twilight Giant",
+      "potion_overview": "A huge, orange-red phantom, as if dragging a Shadow of Twilight.",
+      "formula": {
+        "main_ingredients": [
+          "The Twilight Giant Uniqueness",
+          "Three Hand of God Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "The Remains of a True God"
+        ]
+      },
+      "advancement_ritual": "Witness and participate in the entire process of a race or continent from its rise to its decline and eventual extinction.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

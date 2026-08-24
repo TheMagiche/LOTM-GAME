@@ -1,0 +1,199 @@
+{
+  "pathway_name": "Error Pathway",
+  "aliases": [
+    "Marauder Pathway",
+    "Mysteries Pathway"
+  ],
+  "overview": {
+    "description": "The Error Pathway can deceive and steal all sorts of things. They can trick others with their eloquence, sleight-of-hand, steal their targets' Beyonder or mundane abilities, decrypt, steal thoughts and intentions.",
+    "theft_progression": {
+      "sequence_9_to_7": "At Sequence 7, 'Theft' targets physical items.",
+      "sequence_6": "At Sequence 6, 'Theft' applies to Beyonder abilities.",
+      "sequence_5": "At Sequence 5, 'Theft' is able to affect thoughts and ideas.",
+      "sequence_4": "At Sequence 4, 'Theft' applies to life, including parasitic theft at the physical level.",
+      "sequence_2": "At Sequence 2, the range of 'Theft' is broadened to fate, identity, self-awareness, and Beyonder characteristics.",
+      "sequence_1": "At Sequence 1, 'Theft' could temporarily affect things such as time, anchors, and authorities."
+    },
+    "high_sequence_characteristics": "At High Sequences, They are known for being cunning, bizarre, and dangerous. Even if one is willing to sacrifice themselves and use a Grade 0 Sealed Artifact, it's difficult to capture them. They can turn into a parasite to attach in a host, create avatars, deceive and misdirect the minds of others and the world's rules, tamper with fate, manipulate time, and also become experts in exploiting the loopholes in rules, becoming a loophole within rules, an Error, a 'BUG' like existence.",
+    "known_for": "A Marauder is known as an Error, a loophole, a bug. Their powers are very strange, making it impossible to guard against. Furthermore, the Marauder pathway was always known for their deceit and concealment.",
+    "ancient_sun_god_description": "It's a trojan horse of destiny, the worm that erodes time, the loopholes in rules, the manifestation of all errors.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Marauder",
+        "advancement_method": "Abi/Adv",
+        "translation_note": "The original Chinese name is '偷盗者' which means 'Thief'. The translator chose 'Marauder' because neither Bandit nor Thief would suit the Sequence 9 translation. If given the chance to redo the translation from scratch, the translator would currently choose 'Thief'."
+      },
+      {
+        "sequence": 8,
+        "name": "Swindler",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Cryptologist",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Prometheus",
+        "advancement_method": "Abi/Adv",
+        "translation_note": "The original Chinese name is '盗火人' which literally translates to 'Firestealer' or 'The One Who Steals Fire'. This is a reference to the Mythology of Prometheus, hence the translation choice."
+      },
+      {
+        "sequence": 5,
+        "name": "Dream Stealer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Parasite",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Mentor of Deceit",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Trojan Horse of Destiny",
+        "advancement_method": "Abi/Adv",
+        "translation_note": "The original Chinese name is '命运木马' which literally means 'Wooden Horse of Destiny', omitting the word 'Trojan' from 'Trojan Horse' (特洛伊木马), while keeping 'Wooden Horse' which is an abbreviation that gives the same meaning and reference to Trojan Horse."
+      },
+      {
+        "sequence": 1,
+        "name": "Worm of Time",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Error",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Error Pathway corresponds to Parasitism, Time, and Fate."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Lovers",
+    "card_number": "VI",
+    "description": "The Lovers (VI) is number six of the 22 Major Arcana. In some traditions, the Lovers represent relationships and choices. Its appearance in a spread indicates some decision about an existing relationship, a temptation of the heart, or a choice of potential partners. The Lovers also represent harmony, balance, and the union of two seemingly disparate parts: the worldly and spiritual, masculine and feminine, and light and dark.",
+    "author_interpretation": "On the one hand, 'parasitic' can mean two people, representing The Lover card. On the other hand, the reversed interpretation: hope to avoid danger and avoid responsibility forever."
+  },
+  "god": [
+    {
+      "name": "The Fool",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "The Error",
+      "status": "Sequence 0",
+      "type": "Current God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "The Mythical Creature Form of the Error Pathway is called Worms of Time."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "Worms of Time twist and coil into the phantom of an ancient clock in an unreasonable manner. The clock face is divided into 12 sections, and the hands growing from the void can be easily manipulated by a certain unmentionable being, causing the intangible vortex of Time to be rewritten accordingly. As the embodiment of all Errors, the Worms of Time entangle with and tear at the rules of Time, Stealing everything from Loopholes and altering reality's logic through Bugs. This is why their bodies display Roman numeral patterns representing time, in a form understandable to an observer."
+  },
+  "high_sequence_group": {
+    "name": "Fool Error Door",
+    "pathways": [
+      "Fool",
+      "Error",
+      "Door"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Lord of Mysteries",
+    "pathways": [
+      "Fool",
+      "Error",
+      "Door"
+    ]
+  },
+  "sefirah": {
+    "name": "Sefirah Castle"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Lord of Mysteries",
+        "pathways": ["Fool", "Door"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"]
+      },
+      {
+        "group": "Goddess of Fate",
+        "pathways": ["Eternal Edict"]
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer desires Sefirot related to Rules, Order, and Space-Time. 'He' seeks to control Sefirah Castle and accommodate the Door Uniqueness and Error Uniqueness."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Eternal Darkness",
+        "pathways": ["Twilight Giant"],
+        "note": "Overlap between Time authorities causes high fusion and convergence of Beyonder Characteristics. This was why the Worm of Time characteristic couldn't be separated out of the Giant King Aurmir through giving birth to children."
+      },
+      {
+        "group": "The Anarchy",
+        "pathways": ["Justiciar"],
+        "note": "Some of the Justiciar's authorities overlap with the three Mysteries-group pathways. Because inherent authority overlap itself brings convergence attraction, this enables the Celestial Worthy to swallow the Nation of Disorder."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Fool"
+    },
+    {
+      "name": "Amon Family"
+    },
+    {
+      "name": "Jacob Family"
+    },
+    {
+      "name": "Zoroast Family"
+    },
+    {
+      "name": "Hermits of Fate"
+    }
+  ],
+  "trivia": {
+    "time_authority_manifestation": "Worms of Time's Time authority manifests in different ways based on the beyonder if 'They' want. For example, when Amon manipulates time, it sometimes manifests by striking the clock's bell, while Klein's authority manifests by pressing down the clock's hands.",
+    "separating_characteristics": "Separating Error Pathway High Sequence Beyonder Characteristics is always much harder than separating other Pathways' Beyonder Characteristics."
+  }
+}

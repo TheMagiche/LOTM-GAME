@@ -1,0 +1,212 @@
+{
+  "pathway_name": "Demoness Pathway",
+  "aliases": [
+    "Assassin Pathway",
+    "Witch Pathway",
+    "Calamity Pathway",
+    "Catastrophe Pathway"
+  ],
+  "overview": {
+    "description": "The Demoness Pathway is centered around causing disaster and catastrophe. They are skilled in assassination, seduction, possess powerful ritual and curse magic, can manipulate invisible threads, incite the masses to commit crimes, and inflict disease. One of the core abilities of the Demoness Pathway revolves around mirrors and manipulating the worlds within them.",
+    "high_sequence_characteristics": "At High Sequences, they can petrify things, spread plagues, perform resurrection, and control natural disasters, bring about the apocalypse for all sorts of things, and return everything to chaos.",
+    "authority": "Their authorities include Return of All Things to Chaos (an elevated concept encompassing Catastrophe and Apocalypse), Femininity, Charm, Mirror World, and Dark Magic.",
+    "primordial_demoness_description": "Do you know what the Demoness Pathway symbolizes? It symbolizes catastrophe and apocalypse, and also symbolizes the feminine side of that initial Creator.",
+    "symbolism": "This Pathway also symbolizes the feminine side of the Original Creator.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Assassin",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Instigator",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Witch",
+        "advancement_method": "Abi/Adv",
+        "note": "The most unique node in the Demoness Pathway. This isn't just because it changes gender but also because it leaves a strong, distinct imprint in the Mirror World. This imprint is what allows them to use mirror magic."
+      },
+      {
+        "sequence": 6,
+        "name": "Pleasure",
+        "advancement_method": "Abi/Adv",
+        "note": "Similarly to the Black Emperor Pathway, original names changed to follow the nomenclature of the Demoness by attaching 'Demoness of' every Sequence on and after Sequence 6."
+      },
+      {
+        "sequence": 5,
+        "name": "Affliction",
+        "advancement_method": "Abi/Adv",
+        "note": "Similarly to the Black Emperor Pathway, original names changed to follow the nomenclature of the Demoness by attaching 'Demoness of' every Sequence on and after Sequence 6."
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Despair",
+        "advancement_method": "Abi/Adv",
+        "note": "Similarly to the Black Emperor Pathway, original names changed to follow the nomenclature of the Demoness by attaching 'Demoness of' every Sequence on and after Sequence 6."
+      },
+      {
+        "sequence": 3,
+        "name": "Unaging",
+        "advancement_method": "Abi/Adv",
+        "note": "Similarly to the Black Emperor Pathway, original names changed to follow the nomenclature of the Demoness by attaching 'Demoness of' every Sequence on and after Sequence 6."
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Catastrophe",
+        "advancement_method": "Abi/Adv",
+        "note": "Similarly to the Black Emperor Pathway, original names changed to follow the nomenclature of the Demoness by attaching 'Demoness of' every Sequence on and after Sequence 6."
+      },
+      {
+        "sequence": 1,
+        "name": "Apocalypse",
+        "advancement_method": "Abi/Adv",
+        "note": "Similarly to the Black Emperor Pathway, original names changed to follow the nomenclature of the Demoness by attaching 'Demoness of' every Sequence on and after Sequence 6."
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Demoness",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Demoness Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Empress",
+    "card_number": "III",
+    "description": "The Empress (III) is the number third of 22 Major Arcana. The Empress is representative of the productivity of the subconscious, seeded by ideas. She is meant to be the embodiment of the growth of the natural world, fertility, and what one knows or believes from the heart.",
+    "author_interpretation": "'Empress', the beauty, harvest and happiness of the right position, and the enjoyment and dangerous environment of the opposite position, as well as the destruction and desolation of the rich harvest.",
+    "card_of_blasphemy_appearance": "The card lay quietly on top of a stack of documents, its surface depicting the image of the mirrored Emperor Roselle from earlier. The voluptuous figure, wearing a black dress, adorned with a golden crown inlaid with jewels, alluring features, a mature aura, and outstanding charm. In the upper left corner of this card, a line of text was condensed from brilliant starlight: 'Sequence 0: Primordial Demoness'"
+  },
+  "god": [
+    {
+      "name": "Ruler of Calamity",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "Malevolent Dragon",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial Demoness",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "Gorgon: A female humanoid, her black hair like venomous giant serpents—long, thick, and slick, their tips either embedded with rolling black and white eyes or bearing venomous snake heads, mouths slightly open, tongues protruding.",
+    "inspiration": "The Mythical Creature Form of the Demoness Pathway is inspired by Medusa from Greek mythology."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "Gorgon: A female humanoid, her black hair like venomous giant serpents—long, thick, and slick, their tips either embedded with rolling black and white eyes or bearing venomous snake heads, mouths slightly open, tongues protruding. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Demoness Red Priest",
+    "pathways": [
+      "Demoness",
+      "Red Priest"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Calamity of Destruction",
+    "pathways": [
+      "Demoness",
+      "Red Priest"
+    ]
+  },
+  "sefirah": {
+    "name": "City of Calamity"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Red Priest"]
+      },
+      {
+        "group": "Eternal Darkness",
+        "pathways": ["Darkness", "Death", "Twilight Giant"],
+        "note": "Because of the existence of the Fourth Pillar."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"],
+        "note": "Because the Circle of Inevitability specifically targets the City of Calamity and the River of Eternal Darkness, as these pathways symbolize Destined Conclusions and various Calamities."
+      },
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "Because the Supernova Dominator specifically targets the City of Calamity to embody the symbolism of Universal Catastrophe."
+      },
+      {
+        "group": "Monarch of Decay",
+        "pathways": ["Second Law"],
+        "note": "Because the Monarch of Decay specifically targets the City of Calamity, and because the Monarch of Decay and the Calamity of Destruction can accommodate each other."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The City of Calamity is a Sefirah that the Primordial Hunger specifically targets and can accommodate, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Hanged Man"],
+        "note": "Based on the Demoness' authorities over the Return of All Things to Chaos and the Primordial State. The reason why the City of Calamity was the first Sefirah to be accommodated by the Primordial God Almighty must have been due to a mystical connection, an instinctive tendency that had long existed. Which of the five God Almighty's Pathways have a connection with the Demoness' Chaos Authority is never explicitly stated. However, the Hanged Man is singled out as a God Almighty's Pathway that the Primordial Hunger specifically targets because of its Chaos and Primordial qualities. Furthermore, among the five Pathways, only the Hanged Man has an Authority related to Chaos—the Authority of Filth that signifies 'Them' being tainted by the Chaos Sea and are capable of projecting traces of the Chaos Sea's influence."
+      },
+      {
+        "group": "Goddess of Origin",
+        "pathways": ["Mother", "Moon"],
+        "note": "Because the Original Creator's feminine aspect and the universe's feminine aspect are, to some extent, equivalent, leading to convergence without causing excessive madness. This is one of the reason why Lilith is relatively more sane than the other Ancient Gods."
+      }
+    ],
+    "additional_connections": [
+      {
+        "group": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor"],
+        "note": "The Original Creator's feminine aspect and the universe's feminine aspect are, to some extent, equivalent, leading to convergence without causing excessive madness. If the Mother Goddess of Depravity obtains the Demoness Uniqueness, it will lead to the Buddhist's concept of the cycle of four kalpas: Formation, Continuance, Decline, Disintegration."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Ruler of Calamity"
+    },
+    {
+      "name": "Demoness Sect"
+    },
+    {
+      "name": "Theosophy Order"
+    }
+  ],
+  "trivia": {
+    "gender_safety": "According to the author, if a female chooses this pathway, it would be hard to lose control since she only needs to remember her 'female self-identity', unlike a male who needs to remember their 'male self-identity' despite them transforming into females. So it's safer for females to become a Demoness.",
+    "mirror_world": "According to Clarice, compared to the Red Priest Pathway, the Mirror World is the most unique feature of the Demonesses.",
+    "impotence_joke": "If a Great Old One symbolising Impotence existed, the Demoness would be able to make 'Them' stand up again."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "pathway_name": "Fool Pathway",
+  "aliases": [
+    "Seer Pathway",
+    "Mysteries Pathway"
+  ],
+  "overview": {
+    "description": "The Fool Pathway seems to be about fooling perceptions and reality. They specialize in divination, illusions, changing appearances, and controlling strong muscles and facial expressions. They also turn others into marionettes after taking control of their Spirit Body Threads.",
+    "high_sequence_characteristics": "At High Sequences, they are known for being cunning, bizarre, and dangerous. Even if one is willing to sacrifice themselves and use a Grade 0 Sealed Artifact, it's difficult to capture them. They can turn their marionettes into another duplicate of themselves, bring things (including themselves) from the past to the present, create countless miracles, create a mysterious environment full of tampering and concealment, and fool all sorts of things.",
+    "authority": "Their authority represents Secrets and Changes.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Seer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Clown",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Magician",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Faceless",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Marionettist",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Bizarro Sorcerer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Scholar of Yore",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Miracle Invoker",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Attendant of Mysteries",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Fool",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Fool Pathway is a Pupil-less Eye and the Contorted Lines; representing secrecy and change."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Fool",
+    "card_number": "0 or XXII",
+    "description": "The Fool is a card of a start, a fresh beginning with all kinds of possibilities. In many esoteric systems of tarot card interpretation, the Fool is interpreted as the protagonist of a story, and the Major Arcana is the path the Fool takes through the great mysteries of life. This path is traditionally known in cartomancy as the 'Fool's Journey' and is frequently used to introduce the meaning of Major Arcana cards to beginners.",
+    "card_of_blasphemy_appearance": "Its surface was also that of Roselle. The emperor was wearing a gorgeous head accessory and colorful clothes. It held a stick with luggage hanging from it as though he was on a long trip. He had a visionary look, and beside him was a puppy. At the corner were shiny words: 'Sequence 0: The Fool!'"
+  },
+  "god": [
+    {
+      "name": "The Fool",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "Annihilation Demonic Wolf Flegrea",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "The Mythical Creature Form of the Fool Pathway is a created from Worms of Spirits. Each Worm of Spirit holds a fragment of the owner's Spirit Body, and the death of any Worm inflicts damage upon the owner's Spirit Body."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "Gray fog and dark liquid merge, intertwining to form a translucent, dark cloak. The ends of the cloak transform into slick, transparent tentacles that burrow into the unknown, manipulating Time, Fate, and Secrecy. Beneath the cloak, no body exists—only a bizarre, cold, illusory mask with blank facial features, and a vortex of tentacles formed from the twisted aggregation of countless Worms of Spirit. This symbolizes The Fool's ultimate act of Fooling the world and oneself."
+  },
+  "high_sequence_group": {
+    "name": "Fool Error Door",
+    "pathways": [
+      "Fool",
+      "Error",
+      "Door"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Lord of Mysteries",
+    "pathways": [
+      "Fool",
+      "Error",
+      "Door"
+    ]
+  },
+  "sefirah": {
+    "name": "Sefirah Castle"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Lord of Mysteries",
+        "pathways": ["Error", "Door"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"]
+      },
+      {
+        "group": "Goddess of Fate",
+        "pathways": ["Eternal Edict"]
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      },
+      {
+        "group": "The Anarchy",
+        "pathways": ["Justiciar"],
+        "note": "Some of the Justiciar's authorities overlap with the three Mysteries-group pathways. Because inherent authority overlap itself brings convergence attraction, this enables the Celestial Worthy to swallow the Nation of Disorder."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Tarot Club"
+    },
+    {
+      "name": "Church of the Fool"
+    },
+    {
+      "name": "Church of the Evernight Goddess"
+    },
+    {
+      "name": "Antigonus Family"
+    },
+    {
+      "name": "Zaratul Family"
+    },
+    {
+      "name": "Secret Order"
+    },
+    {
+      "name": "Bureau 8"
+    }
+  ],
+  "trivia": {
+    "blind_stupidity_authority": "The Fool's Blind Stupidity (盲目痴愚) authority shares the same name as Azathoth's 'Blind Idiot God' (盲目痴愚之神) title in Chinese. In a certain sense, as a sequence 0 holding the corresponding authorities, The Fool is also the 'The God of Blind Stupidity/Blind Idiot God'."
+  }
+}

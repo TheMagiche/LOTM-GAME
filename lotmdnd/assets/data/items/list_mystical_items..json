@@ -1,0 +1,298 @@
+{
+    "items": [
+      {
+        "name": "Ancient Silver Mirror",
+        "appearance": "A classic silver mirror with mysterious patterns on the sides.",
+        "function": "Unknown",
+        "downside": "",
+        "status": "Lost"
+      },
+      {
+        "name": "Artificial Death Product's White Feathers",
+        "appearance": "White feather stained with yellow oil.",
+        "function": "They can be sacrificed to Artificial Death or wielder of Death Uniqueness to receive a response.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Aura of Blatherer",
+        "appearance": "A thin blood crystal",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Authority Holder's Under-the-table Transaction",
+        "appearance": "Wooden box",
+        "function": "It simplifies complex deals by inserting items into a box and stating clear requirements.",
+        "downside": "It has limited uses. Each use increases the risk of encountering evil creatures in future transactions.",
+        "status": ""
+      },
+      {
+        "name": "Azik's Copper Whistle",
+        "appearance": "A copper whistle.",
+        "function": "It can summon one of Azik's messengers.",
+        "downside": "It attracts undeads.",
+        "status": ""
+      },
+      {
+        "name": "Beatrice's Necklace",
+        "appearance": "A diamond necklace",
+        "function": "Corresponds to a total of five desires: lust, appetite, acting, and fulfillment.",
+        "downside": "The wearer will become more excited than usual, and their various desires will significantly increase.",
+        "status": ""
+      },
+      {
+        "name": "Black Primordial Demoness Figurine",
+        "appearance": "A pitch-black, palm-sized figurine of a beautiful woman with snake-like hair.",
+        "function": "It is able to suppress non-conscious diseases, shielding the user from them.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Botis' Traveler's Bag",
+        "appearance": "A black pocket the size of a grown man's palm.",
+        "function": "A hidden space that can store items.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Bottomless Wine",
+        "appearance": "A bottle of dark-red wine.",
+        "function": "Restores stamina and spirituality after drinking it.",
+        "downside": "If it is consumed more than once a day, the user will become a drunkard.",
+        "status": ""
+      },
+      {
+        "name": "Cheek's Rings",
+        "appearance": "A sapphire ring",
+        "function": "It can make the bearer a vessel for the Primordial Demoness' descent.",
+        "downside": "The descent puts a strain on the vessel.",
+        "status": ""
+      },
+      {
+        "name": "Circle of Binding",
+        "appearance": "A cheap silver bracelet.",
+        "function": "1. It can use the Circle Inhabitant effect nine times, each Circle Inhabitant lasting no fewer than three times and no more than nine times.\n2. Whether or not the Circle Inhabitant uses are exhausted, this bracelet contaminated by Inevitability powers will enhance the abilities of Fate Appropriation, Fate Exchange, Magnified Fate, and Compelling Fate to the Circle Inhabitant level.",
+        "downside": "1. Even just carrying this silver bracelet will unknowingly attract Inevitability boon recipients and be viewed with hostility by them.\n2. Each use of Circle Inhabitant will result in a period of bad luck, the specifics varying depending on the user's status.",
+        "status": ""
+      },
+      {
+        "name": "Corpse Wax Candle",
+        "appearance": "A wax candle encased in a small glass vial with a light yellow and red hue.",
+        "function": "Allows user to form a pact with the City of Calamity.",
+        "downside": "Without the required level or protection, the user will get corrupted and lose control.",
+        "status": ""
+      },
+      {
+        "name": "Death Masks",
+        "appearance": "Golden masks streaked with black and white paint.",
+        "function": "1. Protects the wearer from the corrosion of the aura of death.\n2. Transforms the wearer into an undead creature.",
+        "downside": "1. The purification of sunlight and lightning will be fatal to transformed undead.\n2. If a living person wears it for too long, they will truly become deceased.",
+        "status": ""
+      },
+      {
+        "name": "Demon Mask",
+        "appearance": "A dark-gold mask",
+        "function": "Seals the thoughts and abilities of the person wearing it",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Endless Cosmos",
+        "appearance": "An oil painting depicting a strange cosmos",
+        "function": "Allows the Inextinguishable Ravings and the Circle of Inevitability to transmit a bit of Their power into the barrier.",
+        "downside": "",
+        "status": "Destroyed"
+      },
+      {
+        "name": "Fallen Mercury",
+        "appearance": "A slivery-black dirk, twice the size of a normal one, covered with strange patterns.",
+        "function": "When it draws blood from a target, it can exchange one of the target's fate with one it had stored. It cannot injure the target during the process.\nIf there is no fate stored in it to be exchanged, it has to completely kill the target to take one of his fate.",
+        "downside": "It has the ability to turn most living beings that come into contact with it into its slaves.",
+        "status": "Destroyed"
+      },
+      {
+        "name": "Featureless Doll",
+        "appearance": "A featureless white cloth doll",
+        "function": "Appearance Morphing, Paper Figurine Subtitutes, Flaming Jump, and Danger Intuition.",
+        "downside": "Weak bad luck and risk of losing identity.",
+        "status": ""
+      },
+      {
+        "name": "Fortune Accessory",
+        "appearance": "",
+        "function": "Increases the owner's luck.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Groselle's Travels",
+        "appearance": "Ordinary-looking book with a brown goatskin cover.",
+        "function": "Collecting information from the recreated subconscious of those who had died under the influences of the book.",
+        "downside": "Those who had a long contact, or had their blood dropped into this book, would inevitably be transported into the minor world inside the book.",
+        "status": ""
+      },
+      {
+        "name": "Harvest Sacrifice",
+        "appearance": "A pitch-black scythe.",
+        "function": "Inflicts wounds that drain the target's life force when tainted with corresponding blood.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Hermits of Fate's Badge",
+        "appearance": "",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Ice Amulet",
+        "appearance": "An ice-like transparent rectangular amulet.",
+        "function": "Allows seven traversals through the Mirror World or fourteen transmissions of information.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Klein's Gold Coins",
+        "appearance": "Five gold coins.",
+        "function": "1. They are mediums which allow the user to participate in The Fool's Dream.\n2. They can enhance one's divination accuracy and the ability to resist outside interference.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Klein's Iron Cigar Case",
+        "appearance": "An iron cigar case with signs of corrosion.",
+        "function": "*Carries the aura of The Fool.\n*Resistant to corrosion.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Lilith's Ring",
+        "appearance": "A red ring with a blood-colored gem.",
+        "function": "1. Make the wearer more charming.\n2. Simulates a \"silver\" full moon.\n3. Summons spirit world creatures as strong as the user for around 5 minutes.",
+        "downside": "The user must drink a bottle of human blood every hour or else his blood will boil and death will occur in 15 minutes.",
+        "status": ""
+      },
+      {
+        "name": "Mechanical Music Box",
+        "appearance": "A mechanical music box",
+        "function": "The potential to either kill or drive anyone who hears its music into madness.",
+        "downside": "The owner must hear it for at least ten seconds.",
+        "status": ""
+      },
+      {
+        "name": "Mirror Cufflink",
+        "appearance": "A glass-like cufflink",
+        "function": "",
+        "downside": "",
+        "status": "Used"
+      },
+      {
+        "name": "Mirror World Fragments",
+        "appearance": "A mirror fragment with a black, nearly lightless surface.",
+        "function": "Ability to create Mirror People.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Moon Paper Figurine",
+        "appearance": "A human look-alike papercut",
+        "function": "Can replace user against fatal injury or direct attack against the Soul Body.",
+        "downside": "Make's the user feel slightly cold",
+        "status": "used"
+      },
+      {
+        "name": "Moon Puppet",
+        "appearance": "A slender puppet embedded with dried grass and flowers.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Mutated Paper Figurine",
+        "appearance": "A pitch-black paper figurine.",
+        "function": "It has the remnant aura of the Artificial Death.",
+        "downside": "",
+        "status": "used"
+      },
+      {
+        "name": "Painting Album",
+        "appearance": "A blank painting album",
+        "function": "The objects drawn on it might become alive and stay so for a short period of time.",
+        "downside": "Never to respond to the knocks coming from the painting paper.",
+        "status": ""
+      },
+      {
+        "name": "Paper Crane",
+        "appearance": "White Folded Paper Crane",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "Persona Masks",
+        "appearance": "Seven grayish-white, cold, illusory masks.",
+        "function": "1. Each mask can amplify the knowledge and emotions corresponding to its sin to help the wearer realize their own problems.\n2. Allows the wearer to enter the Garden of Eden.",
+        "downside": "They will also bring some negative effects, and unknowingly change the wearer's personality.",
+        "status": ""
+      },
+      {
+        "name": "Proliferation Necklace",
+        "appearance": "A necklace with black miniature rhinoceros horn",
+        "function": "Charms a person",
+        "downside": "It would corrupt both the user and the one it was used on",
+        "status": "Destroyed"
+      },
+      {
+        "name": "Ring of the Sea Queen",
+        "appearance": "A simple silver ring",
+        "function": "A high-level Steal ability usable only once.",
+        "downside": "The ancient Angel Amon will take notice of you.",
+        "status": ""
+      },
+      {
+        "name": "Sanguine Anesthesia Gas",
+        "appearance": "Gas inside the metal tube.",
+        "function": "Cause deep slumber that lasts for more than three hours.",
+        "downside": "",
+        "status": "Used"
+      },
+      {
+        "name": "Seven-Stone Bracelet",
+        "appearance": "A bracelet with three diamonds flanked by four different-coloured gems.",
+        "function": "Allows user to travel through the spirit world.",
+        "downside": "The user will hear random sounds when wearing it.",
+        "status": ""
+      },
+      {
+        "name": "Shadow Cloak",
+        "appearance": "A black cloak.",
+        "function": "Allows user to blend into shadows.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "name": "The Magician's Traveler's Bag",
+        "appearance": "A deep-black cloth bag.",
+        "function": "1. It conceals another dimension within and can accommodate a vast array of items.\n2. While within the bag, Beyonder characteristics do not require regular relocation, and the negative effects of mystical items will significantly diminish.",
+        "downside": "It needs resealing and reinforcement every six months; otherwise, it will lose its mystical abilities and become ordinary.",
+        "status": ""
+      },
+      {
+        "name": "Traveler Bracelet",
+        "appearance": "A silver bracelet.",
+        "function": "Allows user to travel through the spirit world",
+        "downside": "The user will hear strange, faint murmurings during the full moon or blood moon",
+        "status": "Used"
+      },
+      {
+        "name": "White Primordial Demoness Figurine",
+        "appearance": "A pure white, palm-sized bone figurine of a beautiful woman with snake-like hair.",
+        "function": "1. Possessing anti-divination and early warning abilities, it can also assist in performing rituals.\n2. It is able to suppress non-conscious diseases, shielding the user from them.",
+        "downside": "",
+        "status": ""
+      }
+    ]
+  }

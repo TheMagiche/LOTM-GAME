@@ -1,0 +1,125 @@
+{
+  "pathway": "Mother Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Planter",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Doctor (Healing Pastor)",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Harvest Priest",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Biologist",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Druid",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Ancient Alchemist",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Pallbearer",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Desolate Matriarch",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Naturewalker",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Mother",
+      "potion_overview": "No data available.",
+      "formula": {
+        "main_ingredients": [],
+        "alternative": "",
+        "supplementary_ingredients": []
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

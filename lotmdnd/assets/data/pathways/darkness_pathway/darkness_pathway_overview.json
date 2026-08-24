@@ -1,0 +1,197 @@
+{
+  "pathway_name": "Darkness Pathway",
+  "aliases": [
+    "Sleepless Pathway"
+  ],
+  "overview": {
+    "description": "The Darkness Pathway has powers related to the night and sleep. They gain strength during nighttime, can pacify and host souls, enter others' dreams, cast area-of-effect sleep spells, see in the dark, and suppress their enemies' moods and desires.",
+    "high_sequence_characteristics": "At High-Sequences, they can create domains from darkness, bring death to others by the horror and repose, create realistic dreams, shift a certain area under the state of secrecy, erase or hide things, bestow misfortune upon others, be an immortal within darkness, and become an embodiment of their corresponding authorities.",
+    "authority": "Their authority embodies Silence, and Darkness.",
+    "franca_description": "The power of Concealment, command over spirits, and the ability to create realistic dreams…",
+    "maxim": "The Maxim of The Sleepless is 'There are way too many things worth staying up through the night for!'",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Sleepless",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Midnight Poet",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Nightmare",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Soul Assurer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Spirit Warlock",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Nightwatcher",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Horror Bishop",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Servant of Concealment",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Knight of Misfortune",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Darkness",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Darkness Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Star",
+    "card_number": "XVII",
+    "description": "The Star (XVII) is the number seventeenth of 22 Major Arcana. The Star can represent a beginning or a spark of creativity and self-gratification. Far from being superficial, The Star is all about the power of simple and unadorned happiness. In a general context, The Star is a card of spiritual connection, indicating hope for the future, inspiration, and contentment. The Star can also indicate creativity and artistic flair."
+  },
+  "god": [
+    {
+      "name": "Evernight Goddess",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "Haoli Sect Master",
+      "status": "Dao Integrator ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Underworld Daoist",
+      "status": "Dao Integrator †",
+      "type": "Former God"
+    },
+    {
+      "name": "Annihilation Demonic Wolf Flegrea",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A Demonic Wolf, with four limbs covered in short black fur growing from its ribs and waist."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A Demonic Wolf, with four limbs covered in short black fur growing from its ribs and waist. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Darkness Death Twilight Giant",
+    "pathways": [
+      "Darkness",
+      "Death",
+      "Twilight Giant"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Eternal Darkness",
+    "pathways": [
+      "Darkness",
+      "Death",
+      "Twilight Giant"
+    ]
+  },
+  "sefirah": {
+    "name": "River of Eternal Darkness"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Eternal Darkness",
+        "pathways": ["Death", "Twilight Giant"]
+      },
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness", "Red Priest"],
+        "note": "Because of the existence of the Fourth Pillar."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Monarch of Decay",
+        "pathways": ["Second Law"],
+        "note": "Because the Monarch of Decay specifically targets the River of Eternal Darkness."
+      },
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"],
+        "note": "Because the Circle of Inevitability specifically targets the City of Calamity and the River of Eternal Darkness, as these Pathways symbolize Destined Conclusions and various Calamities."
+      },
+      {
+        "group": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor"],
+        "note": "Because there is an inherent connection between life and spirit/soul."
+      },
+      {
+        "group": "Goddess of Fate",
+        "pathways": ["Eternal Edict"],
+        "note": "Due to the trait of the Dreamless, these two Pathways have very poor compatibility, and dream-related abilities of the Darkness Pathway would become unusable. For example, the author referred to the state of a Nightmare with the Dreamless boon as being quite miserable."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "additional_connections": [
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "The Supernova Dominator requires the Moon and Darkness Pathways to complete the Mystical Cosmos."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Eternal Darkness"
+    },
+    {
+      "name": "Church of the Evernight Goddess"
+    },
+    {
+      "name": "Haoli Lineage (Western Continent)"
+    }
+  ],
+  "ingredients": {
+    "associated_ingredients": "Night vanilla, moon flowers, and slumber flowers are ingredients associated to the Darkness Domain. White chestnut flowers and wild rose represent 'Concealment.'"
+  }
+}

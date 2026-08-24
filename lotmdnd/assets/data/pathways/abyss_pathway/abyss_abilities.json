@@ -1,0 +1,303 @@
+{
+  "pathway": "Abyss",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Criminal",
+      "description": "Criminals do not suppress themselves. They do not feel constrained, and their body and heart are ruled by evil desires, but their conscience has not been completely annihilated, and their heart is not dead.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "They possess a strong body with keen instincts."
+        },
+        {
+          "name": "Criminal Proficiency (Weapon, Criminal)",
+          "description": "Upon advancement, Criminals will gain knowledge of a variety of abilities that designate one a convict in addition to having great combat ability. Regardless of the weapon, be it a knightly sword, a dagger, a longbow, a pistol, a rifle, a six-barrel machine gun, or a spoon; they can utilize all of them to kill a target effectively."
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Unwinged Angel (Coldblooded)",
+      "description": "Becoming an Unwinged Angel means that from that moment forth, they lose their conscience and indulge in their evil desires, possessing bodies that look even more inhuman. They don't have the concept of good and evil anymore.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "Their bodies are further strengthened and more inhuman."
+        },
+        {
+          "name": "Enhanced Mental Attributes",
+          "description": "An Unwinged Angel can remain extremely calm and almost emotionless, even during a fierce battle."
+        },
+        {
+          "name": "Demonic Attribute",
+          "description": "Upon entering this Sequence, they will undergo inhuman changes, acquiring two or three Devil Spell-like abilities in the process that vary from person to person. Some could wield and create poisonous flames, cast weak Curses with Language of Foulness, or create a toxic black smoke. The most common of these Spell-like abilities is Slowness. By raising their arms then abruptly pressing both of their palms down, they can make their target sink, slowing their movements, as though the wings they used for flying had been snapped."
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Serial Killer",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancements",
+          "description": "After undergoing the initial stages of dehumanization, they possess a robust physique. Even after having his chest caved, ribs cracked, face swelled, his left shoulder crumpled entirely, and a skull fractured, with charred marks covered his upper body after the brutal assault, Bram Andariel was far from unconsciousness. His mind still functioned, and thoughts raced before settling on Lumian's smile."
+        },
+        {
+          "name": "Enhanced Mental Attributes",
+          "description": "Their intelligence and mental capabilities will be enhanced."
+        },
+        {
+          "name": "Knowledge (Devil Worship)",
+          "description": "Upon advancement, a Serial Killer will gain a wealth of and master all kinds of knowledge related to Devil worship and its Ritualistic Magic. By creating special or unique killing sprees, they would please and gain favors from Devils. Serial Killers often tend to choose those who exhibit degraded behaviors, often linked to their personal traumas- as victims of their serial killing sprees. Such Serial Killers enjoy creating unique serial killings but also commit their crimes not merely as a role, but also to please the Devils of the Abyss. Once the serial killing cases are closed they would be able to perform the final step of this Ritual, letting them summon the corresponding Devil projection from the Abyss and obtain it's assistance to achieve their desired outcome. By saying foul words in the Devil Language, a mystical connection seemed to form with the Serial Killer, linking them based on their location, creating sinister symbols and patterns, marking the initiation of a ritual to summon the projection of an Abyssal Devil. Even if one's string of murders aren't entirely complete and fell short by a few targets, so long as they meet the minimum threshold, they can expedite the ritual and still summon the Devil; however, this shortcut wouldn’t yield the same effectiveness as the standard procedure. Serial Killers can summon these projections because the Devils respond to the Abyss Pathway's unique abilities, not because those Devils themselves have attained the corresponding status. Theoretically, the summoned Devil projection will obey the Ritual performer; however, if it's rank is too high or it finds a loophole to bypass the ritual's protection, it will obey the corresponding true Devil in the Abyss."
+        },
+        {
+          "name": "Interference",
+          "description": "They can effectively interfere with Divination and Spirit Channeling."
+        },
+        {
+          "name": "Strengthened Abilities - Demonic Attribute",
+          "description": "Their ability has been enhanced. Releasing a dense black smoke, Bram Andariel morphed, adopting the color of a chameleon, seamlessly blending with the spreading smoke. Swift and silent, he approached the door, opened it with precision, and lunged outside."
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Devil",
+      "description": "The first major qualitative transformation of the Abyss Pathway. A Devil's greatest weakness is that they tend to lose control. Even if they don’t, they will often display a cold-blooded and cruel madness, being easily controlled by Desires such as bloodlust and murderous intent.",
+      "abilities": [
+        {
+          "name": "Individual Differences - Deviancy",
+          "description": "The Abyss Pathway is highly individualistic. Devils from various races each possess their distinct abilities. Even among Devils originating from the same race, differences arise due to their individual nature. The reason behind this lies in the requirement of ostentatious malice, which varies from person to creature. Unique wills, distinct hearts, and a penchant for desires all amalgamate to form the diverse nature of Devils. Specific individual differences include: There is a very particular type of special Devil that is able to freely switch between body and spirit like a Wraith but they’re rather rare. Certain Devils can skin humans and perform complicated processes to form Beyonder items with usage or time limitations. No matter who it is, as long as they wear the human skin this Devil made as clothes, they can transform into the other person and disguise themselves."
+        },
+        {
+          "name": "Criminal Proficiency (Weapon)",
+          "description": "They have a strong ability when it comes to physical combat and are also adept at using various items to inflict damage."
+        },
+        {
+          "name": "Physical Enhancement",
+          "description": "They receive a comprehensive enhancement in strength, speed, and defense. Their defense manifests as a mutation of the skin, equivalent to wearing a layer of hard armor; their blood and flesh can act as a retardant and reduce damage. They are immune to most toxins and do not fear Curses or Flames to a certain degree. A Devil is fast enough to create afterimages."
+        },
+        {
+          "name": "Enhanced Mental Attributes",
+          "description": "Devils are cold-blooded, don’t panic, and don’t feel Fear."
+        },
+        {
+          "name": "Danger Premonition (Malice Perception)",
+          "description": "They can sense and grasp the place of origin of danger, as well as who this danger is from. In this way, the Devil can precisely devise countermeasures, take revenge, or nip the threat in the bud. Different Devils have different degrees of this intuition. Unlike a Monster's Danger Premonition, theirs doesn’t stem from Fate but from the Abyss. Their Danger Premonition requires 3 conditions to be met before it can activate: If an existence is a fatal threat to the Devil and can cause life-threatening harm to them; Said existence is intending on doing such harm within a certain period and range; Said existence proceeds to actually act upon their intentions to harm the Devil. Different variations of Devils would possess different degrees of Danger Premonition. The 'certain period' of sensing danger via Danger Premonition for some Devils can range from just a measly few minutes, to a whole entire 24 hours. The range of a Devil’s Danger Premonition may only span from a few miles- or in other cases- span the range of an entire metropolitan area. Apart from this, they aren’t good at Divination or other methods of sensing danger."
+        },
+        {
+          "name": "Devil Transformation",
+          "description": "They can temporarily transform into a Devil, increasing their size, strength and speed. This lets them break free from their bindings. Creatures of different races will have different appearances after becoming Devils, but all of them possess certain characteristics. A pair of goat horns filled with countless mysterious patterns grow from their head. A pair of colossal bat wings unfolds from their back, swirling with light blue flames that emit the strong smell of sulfur. They grow to nearly 3 meters tall and their skin undergoes profound mutations. Although it appears dull, it is actually a sinister, deep black. Their entire body seems to be cloaked with thick and hard armor. Their blood and flesh has extreme elasticity and defensive strength. In this state, they can launch 10-20 Sulfur Fireballs simultaneously. They also possess a wide range of Spells, encompassing the fields of Flames, Poison, and Filth which include: Sulfur Fireball: This launches light blue Fireballs that create powerful explosions and poisons anyone or anything that comes into contact with the Flames. Outside Devil Transformation, they can only launch 3 Sulfur Fireballs at at time. Sword of Lava: This creates a massive blade shaped Flaming sword that looks like a scimitar in design and holds extremely high attack power. Its damage against non-undead and non-corrupted creatures is significantly higher than a Priest of Light's Light of Holiness. One strike could directly cleave through a thick stone column, leaving the sliced off end to appear to be melted off. Flame Cage: This ignites a light blue flame at the palm of their hand, which can solidify into a Cage. This can be used to catch and trap bullets. Other spells include Poisonous Flame Manipulation, Volcanic Eruption, Highly Toxic Vapor, etc."
+        },
+        {
+          "name": "Language of Foulness",
+          "description": "Devils can speak demonic words originating from the Abyss, filled with Filth and Corruption, and unleash their corresponding abilities. At this stage, they can use the following: Slow: This causes all targets within a 7-8 meter radius to instantly turn numb or even come to a halt, however, it can only be maintained for 2 seconds. Death: This can directly kill or bring a target to the brink of death. The target will feel as though their heart is being tightly clenched by an invisible hand as they die covered in mottled red rust and cough out rusted clumps of blood. Corruption: An area of effect attack that causes the target and the surrounding area to develop a tendency towards abyssalization. This will cover the enemy's body with a slightly viscous black liquid, which then explodes into corrupted black fog."
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Desire Apostle",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Individual Differences - Deviancy",
+          "description": "Different Devils will develop different special abilities after advancing into a Desire Apostle, such as Shadow-Shifting and Desire Symbiosis. Shadow-Shifting: This allows them to suddenly liquefy and turn into countless black shadows, jumping up and down on the ground, then materialize in another direction. Under a life-threatening situation, this can be used to escape by abandoning their body, only leaving a shadow behind. Desire Symbiosis: Links the Desire Apostle to a certain Desire of the target. Once this is done, as long as the corresponding Desire or goal is not destroyed, the Desire Apostle who possesses this ability cannot be completely killed."
+        },
+        {
+          "name": "Desire Control",
+          "description": "They can use and control everyone's emotions and Desires, enticing them to Degenerate. Once a target manifests an apparent emotional fluctuation or exhibits overt Desire, they can immediately be remotely controlled, have a Seed of Depravity planted within them or be directly catalyzed. This will make people exhibit many problems, which can lead them to: Gradually Degenerate; Lose control of their emotions at a critical moment and be unable to put up any resistance; If the target's vigilance, tension, wariness are amplified, it can disrupt their sense of time. Suffer an eruption of Desire that exceeds the body's ability to withstand, resulting in severe injury or even death."
+        },
+        {
+          "name": "Mental Shock",
+          "description": "They can forcefully attack an enemy’s psyche, inducing emotions to a certain degree in an unavoidable manner. It is used by igniting the 2 curved horns on their head, rendering it unusable once the Devil horns have burned out. This is a branch of Desire Control."
+        },
+        {
+          "name": "Desire Incarnation",
+          "description": "They can transform their body into a shadowy black liquid composed of various emotions and desires. This liquid appears to be the coalescence of the darkest and evilest desires of a person’s heart, spreading across the surroundings, as though it would corrupt everything. This state is highly effective at avoiding damage, concealing their movements, and affecting their enemies."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "They have gained improvement of abilities in the previous Sequence."
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Demon",
+      "description": "A true Demon is both Demon in Body and Mind. While Demons possess physical strength and spell-like abilities that rank among the best at their level, they excel at and prefer mental battles.",
+      "abilities": [
+        {
+          "name": "Mental Influence",
+          "description": "They can effectively influence targets within a certain range, imperceptibly deteriorating their mental facilities, making them careless and prone to mistakes."
+        },
+        {
+          "name": "Spells",
+          "description": "They gain new Spells such as Acid Swamp, Hellfire, Corrosive Fog, Filthy Illusion, and Projection that does not rely on the Abyss. Their Spell-like abilities rank among the best at their level."
+        },
+        {
+          "name": "Strengthened Abilities - Danger Premonition (Malice Perception)",
+          "description": "Their ability to sense danger has been enhanced. Demons are exceptionally sensitive to danger, sometimes, they can even predict the possibility of a threat to their lives 1 to 2 days early."
+        },
+        {
+          "name": "Strengthened Abilities - Language of Foulness",
+          "description": "They possess a more complete set of Language of Foulness, with additional words such as Confusion, Sloth and Blasphemy. The Montsouris Ghost said 'Human nature is evil!', causing all Saints, but the three Unshadowed, to suddenly feel an intense malice. It was resentment from being assigned to dangerous missions."
+        },
+        {
+          "name": "Strengthened Abilities - Desire Control",
+          "description": "Demons no longer need to wait for their targets to experience emotional fluctuations or a surge of desire. They can use sound, eye contact, gestures, and various other means to directly influence a target or all targets in a certain radius. Targets will inevitably fall into a state of delusion, causing their emotions and desires (sorrow, anger, pain, greed, vanity, arrogance, etc.) to rapidly swell. This causes them to either: Have their mind explode; Lose their sanity; or Experience losing control. Their delusion manifests as different versions of themselves that each express unique emotions and desires."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As Demigods at Sequence 4 who have obtained partial Godhood, they are able to manifest their incomplete Mythical Creature Form if they disregard any of the consequences. Their Mythical Creature Form is mainly determined by race, individual personality, Desires, and will."
+        },
+        {
+          "name": "Demon Transformation",
+          "description": "Although manifesting the incomplete Mythical Creature Form can easily lead to losing control, Demons can cause a certain part of their bodies to exhibit the appearance and characteristics of a Mythical Creature Form, maintaining it for extended periods, thereby gaining unique and peculiar effects."
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Blatherer",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Corruption Authority",
+          "description": "A Blatherer has gained a certain degree of the Corruption authority, which is primarily concentrated in the realms of the Mind and Spirit. Their voice and each and every word they utter can cause Beyonders to either lose control, suffer severe damage, experience mental confusion, or be hexed with all sorts of Curses. Once a connection has been made, they can project their voice from an extremely distant location into a target’s ears, causing the target to inexplicably die suddenly in a safe location. Similarly, if the Blatherer foresees the source of danger (for example via Danger Premonition (Malice Perception)), they have the opportunity to exert a countering influence on the spot."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As a Sequence 3 Beyonder, 'They' can respond to prayers within a certain range."
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Bloody Archduke",
+      "description": "'They' wield portions of the authorities of 'Malice' and 'Body'. 'Their' core abilities revolve around Blood, Bodily Fluids, Fear, and Malice.",
+      "abilities": [
+        {
+          "name": "Malice Authority",
+          "description": "They have authority over the domain of Malice."
+        },
+        {
+          "name": "Malice Incarnation",
+          "description": "Malice never dies, neither do Demons. 'They' can plant a Seed of Malice deep within a target's psyche. When 'Their' main body is destroyed, 'They' can Resurrect within the target's Mind, igniting the target's Desires and Blood and killing the target. If 'Their' target's main body has a connected psyche to other bodies (e.g. an Unaging's Mirror Self), those psyches will also be eroded as well. Using the Robe of Divine Blood, Emlyn White revived within Katarina Pelle's Mirror Self after she herself resurrected, killing her in the process. A Bloody Archduke's Seed of Malice is also able to catalyze the Malice of the target, making the affected target temporarily Cold-Blooded. If the target commits a truly Malicious act during this period, they will fall further into Depravity until they fall into an Abyss. This can both cause a target to fall into Depravity as well as be transported to the actual Abyss because of the fact that the Abyss is in everyone's heart. Affected by this, indescribable ravings echoed in Katarina Pelle's ears, as if her innermost Malicious emotions and desires were singing in unison, causing her to show signs of losing control. As an Angel-level Devil, 'Their' intense Malice and Desires can overpower other entities' mental control abilities over 'Them', be it from active influence or passive effect. Rather than succumbing to a Demoness of Catastrophe's Charm, 'They' would develop an intense possessiveness, enabling 'Them' to act decisively instead of being frozen in place. Malice brings forth Fear to the target. This is a pure and instinctive Fear that can cause the Mind to go blank, making difficult for those affected to think and act."
+        },
+        {
+          "name": "Body Authority",
+          "description": "They also have authority over the domain of Body."
+        },
+        {
+          "name": "Blood Sovereign",
+          "description": "They command the Blood and Bodily Fluids of 'Themselves' and others. As long as a single drop of Blood or Bodily Fluid has not been destroyed, a Bloody Archduke can quickly return and regenerate 'Their' body. A Bloody Archduke can use 'Their' own Blood and Bodily Fluids in order to Corrode and Pollute the external world and targets. Being corroded under 'Their' influence or touch would make 'Their' opponents bleed from all orifices of their body as both their Blood and Desires get ignited until death."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "All abilities from 'Their' previous Sequences have been further enhanced."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "'They' have become a full Mythical Creature, with 'Their' main characteristic being that they seem to be made of congealed Blood, capable of liquefying and coalescing."
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Filthy Monarch",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Filth, Corruption, Corrosion, & Flames Authority",
+          "description": "A Filthy Monarch wields portions of the authorities of Filth, Corruption, Corrosion, and Flames."
+        },
+        {
+          "name": "King of Filth",
+          "description": "'They' are the ruler of all that is Dirty, Sinful, and Unclean. 'They' are able to summon those things at any time to provide assistance, and can also directly affect targets that possess those characteristics. Even Angels of the same Sequence level will suffer a degree of contamination when 'They' witness or approach the King of Filth. The only exception is if those Angels belong to domains such as the Sun or similarly Purifying authorities."
+        },
+        {
+          "name": "The Corroder",
+          "description": "Even the strongest barrier will be penetrated by continuous Corrosion over a certain period of time. The Flames, Fog and the environment that is created by The Corroder all reflect this characteristic."
+        },
+        {
+          "name": "Flames of the Abyss",
+          "description": "This is a Flame that combines Burning, Corrosion, Toxins, and Corruption properties. Most Beyonders’ defenses against Flames only address Burning, leaving them dangerously vulnerable to the Flames of the Abyss' other aspects."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "All Beyonder abilities from 'Their' previous Sequences have been further enhanced."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "The Mythical Creature Form of a Filthy Monarch presents a terrifying image like that of a nightmare in a Filthy and deep black expanse."
+        }
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Abyss",
+      "description": "The Abyss wields partial authorities of Degeneration, Filth, Corruption, Desire, Curses, and Deviants, which are further divided into subordinate authorities such as Corrosion, Malice, Toxins, Flames, and Body and is characterized by 'The Abyss is me, and I am the Abyss.'",
+      "abilities": [
+        {
+          "name": "Symbolism - Abyss of the Heart",
+          "description": "The authorities of Degeneration, Filth, Corruption, Desire, Curse all involve the Mind authority, or rather, only when the Mind authority is combined with them, or with parts of them, can they be considered truly complete. This also reflects that the Abyss is a symbol of the Abyss of the Heart/Mind. Because the Abyss exists both materially and emotionally, with previous Corruption from the Tenebrous World in 'His' early days as a relatively low-Sequence Devil, even though the Seal that separated the Western Continent appeared before 'He' became the Abyss, the Devil Monarch Farbauti by relying on the Abyss of the Heart paired with that slight bit of previous Corruption from the Tenebrous World, 'He' was able to bypass the Celestial Worthy’s seal to a certain extent and engage in interactions akin to spiritual communion with the Master of the Shadow Cottage."
+        },
+        {
+          "name": "Degeneration (Depravity) Authority",
+          "description": "They have partial authority over Degeneration. If the Hanged Man embodies the Degenerate Nature of every living being, then the Abyss is the environment that inevitably leads all those within it to Degenerate, not only inducing Degeneration but also creating it. Violating one's three outlooks, values, and morals is Degeneration. Violating the Rules established by the Trunsoest Brass Book is also Degeneration."
+        },
+        {
+          "name": "Corruption Authority",
+          "description": "They have partial authority over Corruption. It is both an outward extension of Depravity and Corruption, and an inevitable outcome of the explosion of Desire and the loss of rational control."
+        },
+        {
+          "name": "Filth Authority",
+          "description": "The Abyss possesses partial authority over Filth. Filth is a component of the Abyss, a manifestation of all unclean things, which brings multiple impacts and influences on the Body, Mind, and Soul."
+        },
+        {
+          "name": "Toxins Authority",
+          "description": "The Abyss possesses a partial authority over Toxins, a subordinate authority under Filth. Demons and Toxins coexist; and 'They' master most types of Toxins and those Toxins possessing the characteristics of the Demon Pathway."
+        },
+        {
+          "name": "Desires Authority",
+          "description": "They have partial authority over Desires. The Abyss’s authority over Desire lies more in inducing, catalyzing, and igniting Desires, rather than embodying Desire itself like the remnants within the Mother Tree of Desire."
+        },
+        {
+          "name": "Curses Authority",
+          "description": "They have partial authority over Curses. Compared to the Chained, 'Their' Curses are primarily in the domains of Spirit and Mind."
+        },
+        {
+          "name": "Deviants Authority",
+          "description": "They have partial authority over Deviants. The impact on lower levels of this authority manifests as Demons exhibiting different Mutations based on personal traits and environmental factors. At the higher levels, it's benefit is that the Abyss possesses and encompasses all such different Mutations, embracing everything."
+        },
+        {
+          "name": "Body Authority",
+          "description": "They have partial authority over Body, focused on controlling and transforming the Body which is a subordinate authority under Deviants."
+        },
+        {
+          "name": "Malice Authority",
+          "description": "They are the wielder of Malice, the embodiment of Malice—a subordinate authority born from Degeneration and Desires. 'They' can turn into a pool of black liquid which manifests Malice, Desire, and evil intent that is real and illusory and that can enter an entity's body, mind, and soul as a Seed of Malice. Not only can this be used to travel with the target across various places (including following a target during a Secret Deed Ritual), this form can also be used to travel across other living beings due to the concept that there is a mental Abyss in everyone's heart."
+        },
+        {
+          "name": "Flame Authority",
+          "description": "They have partial authority over Flames, which is subordinate to Deviants and Curses. 'They' control the Flame of Degeneration, Corruption, Toxins, and Corrosion."
+        },
+        {
+          "name": "Corrosion Authority",
+          "description": "All things can be Corroded, this is a subordinate authority derived from Filth and Corruption."
+        },
+        {
+          "name": "Abyssal Sea of the Mind/Heart",
+          "description": "Essentially, the Divine Kingdom of this Pathway is the Abyss. This Divine Kingdom exhibits different characteristics and has different names depending on the tendency of its Sequence 0."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "The Mythical Creature Form of the Abyss is not fixed as one will see what they fear most or what they yearn for the most, which is similar to the adjacent Chained Pathway, reflecting the fact that there is an Abyss at the bottom of the human heart. Everyone's Abyss is different, and the Abyss presents a different image in their eyes."
+        }
+      ]
+    }
+  ]
+}

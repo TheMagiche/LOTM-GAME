@@ -1,0 +1,110 @@
+{
+  "pathway": "Wheel of Fortune Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Monster",
+      "description": "Beyonders of this Sequence often fall into a kind of trance, sometimes whispering things others cannot understand, making others consider them some kind of real Monster.",
+      "abilities": [
+        "Perception: Super high spiritual Perception; often hear sounds others couldn't hear and see things others couldn't see, occasionally seeing the future with acute intuition for danger."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Robot",
+      "abilities": [
+        "Physical Enhancement: All aspects of physical abilities significantly improved.",
+        "Mental Enhancement: Powerful calculation skills and precise control; proficiency in Divination and Anti-Divination.",
+        "Perception: Stronger Perceptive ability to detect danger and ominous auras."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Lucky One",
+      "abilities": [
+        "Passive Luck: Often encounter Lucky events; Luck fluctuates and is unpredictable."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Calamity Priest",
+      "abilities": [
+        "High Spirituality: Spirituality surpasses that of other Pathways.",
+        "Calamity Attraction: Passively suffer Calamities but can see them in advance; can actively attract Calamities to affect enemies.",
+        "Psyche Storm: Can directly affect opponent's Spirit Body, causing dizziness and lostness."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Winner",
+      "abilities": [
+        "Foresight: Very keen sense of Foresight; experts in Divination and Anti-Divination.",
+        "Curse of Misfortune: Can Curse enemies with limited Misfortune.",
+        "Passive Luck: Can begin to control their own Luck and accumulate Luck.",
+        "Psyche Storm: Can create pure Psyche Storm that sweeps Spirit Bodies with drowsiness and Calamity."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Misfortune Mage",
+      "abilities": [
+        "Physical Enhancement: Body transformed into Mercury Body with passive Anti-Divination and Anti-Prophecy.",
+        "Misfortune Field: All beings within range are Cursed with Bad Luck.",
+        "Group Blessing: Can give Luck to creatures within 50-meter radius by consuming Luck reserves.",
+        "Blessing: Can Bless a chosen target with Luck using own or pulled future Luck.",
+        "Absolute Perception: Absolute Perception over changes in Fate and existence of Beacons.",
+        "Curse of Misfortune: Can Curse target with life-threatening Bad Luck.",
+        "Psyche Storm: Qualitative change; causes confusion and madness in addition to dizziness.",
+        "Mythical Creature Form: Incomplete Mythical Creature Form."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Chaoswalker",
+      "abilities": [
+        "Fate Keeper: Can discern Disordered elements of Fate and evade or Seal them.",
+        "Spiritual Baptism: Makes target's spirit clean, stable, and no longer Disordered.",
+        "Disorder: Partial authority over Disorder; can make Predestined Fate Disordered.",
+        "Mythical Creature Form: Can respond to prayers."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Soothsayer",
+      "abilities": [
+        "High Spirituality: Can utilize Spirit World to influence Dreams and Mirrors.",
+        "Fate: Partial control over Fate authority; encompasses Good Luck, Bad Luck, and Foresight.",
+        "Prophecy: Can Prophesy how different results will occur; spoken Prophecies have high probability of becoming reality.",
+        "Revelation of Fate: Can gaze upon the long River of Fate to receive Revelations.",
+        "Words of Fortune & Misfortune: Can bring Good or Bad Luck upon living beings within 30 kilometer radius.",
+        "Mythical Creature Form: Complete Snake of Mercury.",
+        "Body of Mercury: Body has passive ability to not be hit and not be influenced within ten seconds."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Snake of Mercury (Giant Serpent, Snake of Fate, Tail-Devouring Serpent of Fate)",
+      "abilities": [
+        "Cycle: Partial authority over Cycle and Save/Select authorities.",
+        "Cycle of Fate: Can make people fall into a strange state where Time is fixed within a certain range, circulating repeatedly.",
+        "Reboot (Reboot of Fate/Reboot of all things): Can Reboot the state or events within a certain area.",
+        "Words of Fortune & Misfortune: Enhanced ability to grant Luck and Misfortune.",
+        "Mythical Creature Form: Full Snake of Mercury; giant scaleless snake with dense patterns and symbols."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Wheel of Fortune",
+      "description": "To an extent, 'They' are equivalent to the embodiment of Fate, capable of roaming freely in the River of Fate.",
+      "abilities": [
+        "Fate: Core authority derived from Fate symbolism; embodiment of both Good Luck and Bad Luck.",
+        "Foresight: Partial authority of Foresight; can grasp the River of Fate to obtain visions of the future.",
+        "Good Luck: Authority of Good Luck subordinate to Fate authority.",
+        "Probability: Core authority; can manipulate the Probability of events and behaviors.",
+        "Cycle: Derived from Return symbolism; includes Reincarnation domain shared with the Mother.",
+        "Disorder: Authority manifesting the Disorder symbolism; essence of Fate is Disorder.",
+        "Light Cone World: Divine Kingdom; completely Probabilistic realm."
+      ]
+    }
+  ]
+}

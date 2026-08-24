@@ -1,0 +1,209 @@
+{
+  "pathway": "Death Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Corpse Collector",
+      "potion_overview": "Blackish corpse fluid reeking of decay.",
+      "formula": {
+        "main_ingredients": [
+          "A desiccated mature Black-spotted Frog",
+          "Cloth-wrapped Person's Crystal"
+        ],
+        "alternative": "A Corpse Collector Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of repeatedly distilled liquor",
+          "10 drops of Black-spotted Frog mucus",
+          "10 drops of Black Lily hydrosol",
+          "1 used burial shroud"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Gravedigger",
+      "potion_overview": "Dark green liquid streaked with blood.",
+      "formula": {
+        "main_ingredients": [
+          "Death-Calling Crow's eyeball",
+          "1 Cemetery Blood Rose"
+        ],
+        "alternative": "A Gravedigger Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of pure alcohol",
+          "3 Death-Calling Crow feathers",
+          "5 Cemetery Blood Rose leaves",
+          "9 drops of Corpse-scented essential oil"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Spirit Medium",
+      "potion_overview": "Transparent liquid with psychedelic hues.",
+      "formula": {
+        "main_ingredients": [
+          "Phantom Cat's forepaw",
+          "1 piece of Spirit World Crystal"
+        ],
+        "alternative": "A Spirit Medium Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of a Phantom Cat blood",
+          "10 grams of Spirit World Crystal-contaminated soil",
+          "5 milliliters of brain matter from an evil spirit possession victim",
+          "1 leaf blessed by a natural spirit"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Spirit Guide",
+      "potion_overview": "Yellowish-green liquid with intense corpse stench.",
+      "formula": {
+        "main_ingredients": [
+          "Shadow of Death",
+          "Soul of a Pale Lich"
+        ],
+        "alternative": "A Spirit Guide Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of decomposing fluid from the dead",
+          "Fragmented bones of Pale Lich",
+          "Object inhabited by Shadow of Death",
+          "1 lingering Wraith"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Gatekeeper",
+      "potion_overview": "Illusory liquid with dark vortices extending to the bottle's bottom.",
+      "formula": {
+        "main_ingredients": [
+          "Skull of an Underworld Wanderer",
+          "Crystal core left by a Thousand-Armed Wraith"
+        ],
+        "alternative": "A Gatekeeper Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of water tainted by aura of death",
+          "1 piece of rotten flesh from Underworld Wanderer",
+          "10 grams of residual powder of a Thousand-Armed Wraith",
+          "10 drops of deep crimson Red Spider Lily essential oil"
+        ]
+      },
+      "advancement_ritual": "Find a place where the aura of the Underworld leaks through, make contact, and survive.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Undying",
+      "potion_overview": "A pale potion that remains perfectly still—no ripples, even when exposed to wind or shaken.",
+      "formula": {
+        "main_ingredients": [
+          "Gallbladder of a Decaying Feathered Serpent",
+          "Molt of the Immortal Cicada"
+        ],
+        "alternative": "An Undying Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90 milliliters of bodily fluid from the Decaying Feathered Serpent",
+          "9 pieces of bark from the tree where the Immortal Cicada once resided",
+          "One Eternal Darkness Stone",
+          "One Pale Red Spider Lily"
+        ]
+      },
+      "advancement_ritual": "Locate an underground river tainted by death. Hold a genuine funeral by its banks, then bury yourself and the potion there for sixty days. If you fail to survive or retain sufficient sanity after sixty days, the ritual fails. Note 1: Failure invariably results in the birth of a dangerous Corpse King. Note 2: Many Western Continent cultivators misunderstand this ritual's true purpose. Lacking Beyonder characteristics, they instead focus on the 'failure' outcome, believing it to be the true success—a chance to refine terrifying Jiangshi. Note 3: Some cultivators have modified this ritual, creating Xian Ascension Techniques akin to Supreme Yin Body Refinement. The 'Supreme Yin' essence represents the moon's purity, the water's brilliance, the far north's intent, winter's zenith, and the duality of yin and yang. The flaws and root causes of this method's issues… well, I don't need to elaborate further, do I?",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Ferryman",
+      "potion_overview": "Dark and deep; even falling dust sinks swiftly into the liquid and vanishes.",
+      "formula": {
+        "main_ingredients": [
+          "Pus Core of a Styx Servant OR The brain of an adult Feathered Serpent"
+        ],
+        "alternative": "A Ferryman Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90 milliliters of one's own blood",
+          "Choose one of: 9 drops of pus from a Styx Servant OR 9 feathers from an adult Feathered Serpent",
+          "One Undead from the depths of the Underworld (both Styx Servants and Undead from the depths of the Underworld can be summoned via a personal Door to the Underworld)",
+          "A flower blooming from one's own decayed flesh"
+        ]
+      },
+      "advancement_ritual": "Step through a self-summoned Door to the Underworld, ingest the potion, and die within. Note 1: From then on, the Ferryman becomes part of the Underworld and death itself. Note 2: Before the Phoenix Ancestor established the Underworld and before the First Blasphemy Slate appeared, this ritual didn't exist. Note 3: In the Western Continent, whether it's the Haoli Land, the Yellow Springs, or the Netherworld, each serves the same effect as the Underworld.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Death Consul",
+      "potion_overview": "A deep black liquid formed from the condensed aura of death, radiating an overwhelming presence, with countless numb faces protruding from it.",
+      "formula": {
+        "main_ingredients": [
+          "Skull of an Ancient Feathered Serpent"
+        ],
+        "alternative": "A Death Consul Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90 milliliters of fluid from an Ancient Feathered Serpent",
+          "A coffin that once held one's own body",
+          "A crown that once symbolized royal authority",
+          "A pale object from the depths of the Underworld"
+        ]
+      },
+      "advancement_ritual": "Become the ruler of one layer of the Underworld or transform an entire nation into a land of the dead, then anchor the Door to the Underworld within it. Note 1: For descendants acknowledged by the God of Death, the first method is straightforward. Note 2: Death Consuls hold authority to judge the dead. In the Western Continent, figures like the Ten Yama Kings and Five Ghost Emperors share similar duties. Note 3: The Western Continent's Netherworld also holds authority over reincarnation. Note 4: Before the Underworld was created by the Phoenix Ancestor, one can only advance to Sequence 2 by luck.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Pale Emperor",
+      "potion_overview": "Absolute paleness, absolute silence—no other color, no other trace.",
+      "formula": {
+        "main_ingredients": [
+          "The left claw of Gregrace OR The right eye of Salinger"
+        ],
+        "alternative": "A Pale Emperor Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "9 drops of River Styx water (River Styx is a branch of the River of Eternal Darkness that emerged in the Underworld)",
+          "1 Angel corpse (without Beyonder Characteristics)",
+          "1 Inverted Mausoleum"
+        ]
+      },
+      "advancement_ritual": "Ensure your name becomes synonymous with death and the afterlife, remembered and recited by most sentient beings in your domain. Note 1: Due to the Barrier, the Northern and Southern Continents are isolated from the outside world, and are therefore treated as a separate domain in mysticism—otherwise, completing this ritual would be far harder. Without the Barrier, the range required for this ritual is a Star System. Note 2: The same applies to the Western Continent. Note 3: The same applies to the Forsaken Land of the Gods. Note 4: In the Western Continent, figures like the Great Emperor of Fengdu and the Buddhist Ksitigarbha possess comparable authority and status. Note 5: Since the God of Death is still widely regarded as the embodiment of death in the Northern and Southern Continents, 'His' descendants can borrow 'His' name to shape themselves and complete the ritual. The drawback? They grow increasingly similar to the God of Death—until they become 'Him'.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Death (Eternal Sleeper)",
+      "potion_overview": "Illusory scepter woven from grease-stained feathers and entwined serpents.",
+      "formula": {
+        "main_ingredients": [
+          "The Death Uniqueness",
+          "Three Pale Emperor Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "An area polluted and influenced by a tributary of the River of Eternal Darkness"
+        ]
+      },
+      "advancement_ritual": "Create or merge with a true final destination for the dead, ensuring all deaths in the domain lead there.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

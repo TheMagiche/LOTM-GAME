@@ -1,0 +1,201 @@
+{
+  "pathway_name": "Black Emperor Pathway",
+  "aliases": [
+    "Lawyer Pathway"
+  ],
+  "overview": {
+    "description": "The Black Emperor Pathway manipulates existing rules to suit their interests. They are proficient at loophole exploitation, possess extreme physicality, use bribery to achieve various effects, distort words, actions, and intent, disorder all sorts of things, and dominate others.",
+    "high_sequence_characteristics": "At High-Sequences, they could exploit abstract laws, manipulate the environment to their advantage, magnify the effect of their actions, isolate the location from the outside world, and infinitely resurrect if 'Their' order was still in place. The Sequence 0 can endlessly resurrect and cheat death if 'Their' order still remains.",
+    "authority": "'Their' authority represents the Shadow of Order, a Distortion of Order.",
+    "origin": "The Beyonder Characteristics of this pathway originated from the Outer Deity Son of Chaos.",
+    "klein_thoughts": "As expected of the Black Emperor pathway. It finds loopholes in 'order' while it appears domineering.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Lawyer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Barbarian",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Briber",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Baron of Corruption",
+        "advancement_method": "Abi/Adv",
+        "note": "Most Sequence original titles are noted to have no suffixes (i.e only Corruption, Disorder, Fallen, Abolition, etc.), but the Beyonders added their own suffixes on Sequence 6 and after to match the pathway's Sequence 0: Black Emperor, similar to the Demoness Pathway."
+      },
+      {
+        "sequence": 5,
+        "name": "Mentor of Disorder",
+        "advancement_method": "Abi/Adv",
+        "note": "Previous translation: Confusion."
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Earl of the Fallen",
+        "advancement_method": "Abi/Adv",
+        "note": "Previous translation: Count of the Fallen. The 'Fallen' in the 'Earl of the Fallen' has the Chinese text '堕落', which is the same as the 'Depravity' in Mother Goddess of Depravity '堕落母神' and the Hanged Man's 'Degeneration' authority. Which means that it can also be translated as Depravity or Degeneration."
+      },
+      {
+        "sequence": 3,
+        "name": "Frenzied Mage",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Duke of Entropy",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Prince of Abolition",
+        "advancement_method": "Abi/Adv",
+        "note": "Previous translation: Disorder."
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Black Emperor",
+        "advancement_method": "Abi/Adv",
+        "note": "Previous translation: Dark Emperor."
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Black Emperor Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Emperor",
+    "card_number": "IV",
+    "description": "The Emperor (IV) is the fourth card of Major Arcana. The Emperor sits on a ram-adorned throne. He holds an Ankh scepter in his right hand, and a globe, symbol of domination, in his left. The Emperor sits atop a stark, barren mountain, a sign of 'sterility of regulation, and unyielding power.' He symbolizes the top of the secular hierarchy, the ultimate male ego. The Emperor is the absolute ruler of the world.",
+    "card_of_blasphemy_appearance": "A bright light emitted, bit by bit, from the bookmark, and the image of Emperor Roselle on the outside was being replaced by an entirely new image. He was sitting on an ancient stone throne as he wore a black crown embedded with various precious stones on his head. He wore pitch-black armor, and a cape of the same color was draped over his body. He held a scepter, and he looked forward with cold, aloof eyes. On the upper-left corner of the bookmark, there was a line of text condensed from the bright radiance of stars: 'Sequence 0: Black Emperor!'"
+  },
+  "god": [
+    {
+      "name": "Celestial Thearch",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Roselle Gustav",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Night Emperor",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Black Emperor",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Mutated King Kvastir",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Son of Chaos",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A giant black baboon with nine arms and a dark crown on its head.",
+    "trivia": "Initially, the author set the Mythical Creature Form of this Pathway to be a human-like/humanoid form. However, Chinese fans started self-proclaiming as Curly Haired Baboon. So the author changed it to Curly Haired Baboon."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A giant black baboon with nine arms and a dark crown on its head. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Black Emperor Justiciar Chaos Mist",
+    "pathways": [
+      "Black Emperor",
+      "Justiciar",
+      "Chaos Mist"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "The Anarchy",
+    "alternative_name": "Son of Chaos",
+    "pathways": [
+      "Black Emperor",
+      "Justiciar",
+      "Chaos Mist"
+    ]
+  },
+  "sefirah": {
+    "name": "Nation of Disorder"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "The Anarchy",
+        "pathways": ["Justiciar"]
+      },
+      {
+        "group": "Uncertain Mist",
+        "pathways": ["Chaos Mist"],
+        "note": "Because The Anarchy was originally a part of the Son of Chaos."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "Because the Supernova Dominator specifically targets the Nation of Disorder."
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer specifically targets the Nation of Disorder. 'He' desires the Black Emperor Pathway and the Justiciar Pathway that could give the world within paintings a real Order."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Augustus Family"
+    },
+    {
+      "name": "Solomon Family"
+    },
+    {
+      "name": "Tudor Family"
+    },
+    {
+      "name": "Trunsoest Family"
+    },
+    {
+      "name": "Shadow of Order"
+    }
+  ]
+}

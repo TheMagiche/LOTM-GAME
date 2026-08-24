@@ -1,0 +1,262 @@
+{
+  "guide": {
+    "title": "Lord of Mysteries Food and Beverage Guide",
+    "source": "Lord of Mysteries Wiki - Foods and Beverages",
+    "last_updated": "2026-08-18",
+    "foods": {
+      "Loen_Kingdom": {
+        "Tingen_City": {
+          "Rye_Bread": {
+            "description": "A staple among locals. It tends to be dry, dense, and occasionally sour. Best consumed soaked in water or alongside soups."
+          },
+          "Lemon_Cake": {
+            "description": "Made with processed lemon peel crumbs. Has a delicate lemon scent and lingering, pleasant aftertaste. No bitter undertones."
+          },
+          "Oyster_Soup": {
+            "description": "A beloved street snack. Premium quality and affordable. Served hot and freshly prepared."
+          },
+          "Pan_Fried_Meat_and_Fish": {
+            "description": "A roadside stall delight. Freshly fried fish with distinctive flavor. Offal prepared onsite."
+          },
+          "Timbale": {
+            "description": "A renowned Tingen specialty (pancake). Traditional production methods. Rich aroma and luxuriously dense cream. Best paired with sweet ice tea."
+          },
+          "Meat_Pie": {
+            "description": "Soft, fluffy pudding-like body with rich custard aroma. Topped with roast beef. Unique blend of savory and sweet."
+          }
+        },
+        "Backlund": {
+          "White_Bread": {
+            "description": "A luxury for affluent households. Soft, fluffy texture with buttery and milky flavor. Versatile – pairs with jam, used for sandwiches, or transformed into croutons."
+          },
+          "Bean_and_Turnip_Bisque": {
+            "description": "A masterful blend of flavors. Turnips fried in butter, combined with beans and chicken stock. Seasoned with bay leaf, brandy, salt, white pepper, and chervil."
+          },
+          "Beef_Stew_with_Potatoes": {
+            "description": "A quintessential Backlund dish. Upscale establishments use secret spices for enhanced flavor."
+          },
+          "Deep_fried_Sailfish": {
+            "description": "A fish with a single spine, easy to eat. Traditionally paired with French fries. Modern twist: topped with sweet and sour or slightly spicy pepper sauce."
+          }
+        }
+      },
+      "South_(Lenburg_Masin_Segar)": {
+        "Potato_Pie": {
+          "description": "A dish from the southern regions."
+        },
+        "Pork_filled_Pastries": {
+          "description": "A dish from the southern regions."
+        }
+      },
+      "Feysac_Empire": {
+        "Caviar": {
+          "description": "Salted-cured roe. Luxurious quality and price. Appropriate mainly for formal dining."
+        },
+        "Canned_Wolf_Fish": {
+          "description": "Popular on the east coast of Feysac Empire and the Gargas Archipelago. Pickled in salt, retains the blood. Smell is quite disgusting."
+        }
+      },
+      "Desi_Bay": {
+        "Desi_Pie": {
+          "description": "A baked wheat dough pie with a tiny bit of meat. Klein's favorite. Rich, meaty juice seeps into the crust. Contains crushed apples for a slightly sour and sweet taste."
+        },
+        "Desi_Grilled_Fish": {
+          "description": "Roasted fish seasoned with basil, fennel, sea salt, pepper, and lemon juice."
+        },
+        "Desi_Roasted_Meat": {
+          "description": "A large piece of golden-brown meat, glistening with oil. Seasoned with fennel, basil, and other spices."
+        },
+        "Paella": {
+          "description": "Seafood paella. Very famous across Loen."
+        }
+      },
+      "Feynapotter_Kingdom": {
+        "Feynapotter_Noodle": {
+          "description": "A famous dish sold all over Loen. Eaten with meat sauce. Resembles spaghetti bolognese."
+        },
+        "Feynapotter_Pies": {
+          "description": "A common pie dish. A hand pie stuffed with fruits and ham."
+        },
+        "Roasted_Corn_Pastries": {
+          "description": "A dish from Feynapotter."
+        }
+      },
+      "Utopia": {
+        "Pork_Chops_with_Apple_Sauce": {
+          "description": "Fresh and juicy pork chops with a strong aroma. Apple sauce has a slightly acid taste, eliminating most of the greasiness."
+        }
+      },
+      "Intis_Republic": {
+        "Dariège_Region": {
+          "Eggs_Benedict": {
+            "description": "A fatty fried egg with high caloric value. White fat transforms into a glistening, transparent grease. Sizzled to perfection in fresh meat oil. Crispy texture with tender egg liquid and crispy fried pork."
+          },
+          "Cream_Soufflé": {
+            "description": "Freshly baked cakes resembling dense, fluffy clouds. Topped with cold cream. Ephemeral; loses its airy texture if left out too long."
+          },
+          "Cat_Tongue_Cookies": {
+            "description": "Simple in appearance: flour, egg whites, butter, and powdered sugar. A masterful pastry chef creates a crispy, melt-in-your-mouth cookie with a delicate sweetness and milky aroma."
+          },
+          "Mayonnaise_Bread": {
+            "description": "Soft, moist bread with a generous filling of creamy mayonnaise. The mayonnaise is crafted from cooked egg yolks, vegetable oil, lemon juice, and spices."
+          },
+          "Smoked_Meat": {
+            "description": "Dariège bacon. Soft, chewy texture and distinctive smoky flavor. Smoked with special fruit woods and unique local spices."
+          },
+          "Trout_Roll": {
+            "description": "A roll with freshly caught trout, cheese, and vegetables. Enhanced with lemon juice and herbs."
+          }
+        }
+      },
+      "Sonia_Sea": {
+        "Teativa": {
+          "description": "Meat within fruit. A local food in Bayam. Teana fruit hollowed out and stuffed with mashed mutton and fish, sea salt, and spices. Roasted repeatedly."
+        },
+        "Murloc_Meat": {
+          "description": "A Beyonder creature of the lowest grade. The most delicious part is its cheek. Suitable for eating raw."
+        },
+        "Bansi_Harbors_Blood_Stew": {
+          "description": "Salted Blood Pudding with spicy sauce. Locals learned this dish from the elves."
+        },
+        "Beluga_Meat": {
+          "description": "A sought-after delicacy. High fiber content and tough texture. Raw slices taste like medium-rare steak. Fried steak, roasted meat, and roasted whale skin (oily, burnt aroma) are popular."
+        },
+        "Franks_Specialty_Foods": {
+          "description": "Extraordinary creations by Frank Lee. Includes an apple that looks, feels, and smells like an ordinary apple but cures illnesses. Also beef-flavored potatoes."
+        },
+        "Grilled_Stickleback": {
+          "description": "Grilled fish enveloped in a special blend of straw-like spices from the Rorsted Archipelago. Eaten with chopsticks, inspired by elves."
+        },
+        "Thick_Vegetable_Soup": {
+          "description": "Thick soup brewed with sweet vegetables, onions, cabbage, carrots, fish, and butter."
+        }
+      },
+      "Southern_Continent": {
+        "Damir_Special_Cured_Meat": {
+          "description": "A local delight in Damir Harbor. Dried in the gaps of a dead volcano, where the Spirit World interferes with reality. Ordinary people who eat it temporarily gain Spirit Vision."
+        },
+        "Beef_Offal_Broth": {
+          "description": "A culinary delight in the Pas Valley. Tomatoes and onions with offal. Pepper counteracts the fishy scent. Includes crispy tripe, flexible beef intestines, and springy beef lungs."
+        },
+        "Croissant_with_Cheese": {
+          "description": "Utilizes cassava flour. Soft, pliable consistency with a delightful springiness. Cheese filling mingles with the sweet aroma of baked grains and the rich essence of milk."
+        },
+        "Grilled_Squid": {
+          "description": "Common in West Balam. Enormous deep-sea squid. Filling and affordable, but lacks flavor and has a tough texture."
+        },
+        "Seafood_Bisque": {
+          "description": "At Star Plateau. A subtle fruity aroma with a hint of sweetness from palm oil. Chopped potatoes, mushrooms, and onions with clams, shrimp, and fish. Coconut milk and palm oil add richness."
+        },
+        "Seared_Roasted_Meat": {
+          "description": "At the Haageti Plateau. Skewers of Haagenti's seared roasted meat. Diners eat directly from the iron rod. Hot juices cascade into their mouths."
+        }
+      },
+      "City_of_Silver": {
+        "Black_Faced_Grass_Bread": {
+          "description": "A bread made from Black Faced Grass. The staple food of the City of Silver. Resembles human hair. Said to be the final intervention of their god. Later revealed to be a product of a Grade 0 Sealed Artifact, Gift of the Land."
+        },
+        "Exotic_Creature_Meat": {
+          "description": "Meat from mutant monsters. Strange colors like metallic green, purple, and red. Foul odor resembling rotting fish."
+        },
+        "Beef_Mushrooms": {
+          "description": "A mushroom believed to be bestowed by a great entity. Marbled exterior with a taste and texture akin to prime beef. Must be fully cooked."
+        },
+        "Flour_Mushrooms": {
+          "description": "A golden mushroom with charming bright yellow star-shaped spots. Cannot be consumed raw. Baked whole or sliced until skin caramelizes. Crispy exterior with a firm yet soft and sweet texture reminiscent of real bread."
+        },
+        "Milk_Mushrooms": {
+          "description": "A plump white mushroom from which milk can be extracted. Rich and creamy texture, surpassing traditional cow's milk."
+        },
+        "Fish_Mushrooms": {
+          "description": "Fine-scaled mushroom. Offers a fragrant essence when grilled. Tender texture with a slight crispiness. No thorns found."
+        }
+      }
+    },
+    "beverages": {
+      "Sweet_Iced_Tea": {
+        "description": "A local beverage of Southern Loen. Stronger tea taste and more refreshing than iced black tea from Earth. Klein loves it but finds it too sweet for a gentleman."
+      },
+      "Fermo_Coffee": {
+        "description": "A high-quality coffee bean from the Paz Valley on the Star Highlands of the Southern Continent. Highly bitter but rich in aroma with a splendid aftertaste."
+      },
+      "Half_and_Half": {
+        "description": "One of the most popular alcoholic beverages in East Borough, Backlund. Made from equal proportions of malt beer and fortified grape wine."
+      },
+      "Gurney_Sap": {
+        "description": "A locally-produced beverage of Symeem Island. Resembles lemonade with sugar and milk."
+      },
+      "Golas_Beer": {
+        "description": "Popular along the eastern seaboard of the Feysac Empire. Black in color with plenty of foam. Pleasant charred taste with slight stimulation."
+      },
+      "Zarhar": {
+        "description": "A locally-produced malt beer of Bayam. Cheap with a unique taste. Loved by adventurers."
+      },
+      "Southville_Beer": {
+        "description": "The best beer produced in the Loen Kingdom from Southville county. White, smooth, and frothy. First bitter and fragrant, then the flavor of malt bursts out with a slightly sweet aftertaste."
+      },
+      "Teana_Fruit_Juice": {
+        "description": "Slightly sweet milky fruit juice squeezed from the gigantic Teana fruit. A complementary drink in Teana Inn."
+      },
+      "Lanti_Proof": {
+        "description": "The sailors' favorite alcohol. Strong distilled spirits made from pure malt. Cheap and has no other strengths besides its alcohol content."
+      },
+      "Black_Rand": {
+        "description": "A locally-produced beverage of Bayam. Strong distilled wines mixed with other fermented grains. Unique to Loen."
+      },
+      "Misty_Champagne": {
+        "description": "Golden champagne with minute bubbles like mist."
+      },
+      "Aurmir_Grape_Wine": {
+        "description": "A red wine like blood. The most famous and most expensive grape wine in the Intis Republic. Made in Aurmir, the provincial capital of Champagne Province."
+      },
+      "Sonia_Blood_Wine": {
+        "description": "Brewed from sugar-wood juice found in areas around Golden Spring, Sonia Island. Tastes like thin honey mixed with blood. Sweet and smooth, but very easy to get drunk on."
+      },
+      "Nepos": {
+        "description": "A brownish-green distilled liquor, a specialty of the Feysac Empire. Brewed with potatoes or grain. High alcohol purity. Low price and well-liked by ordinary Feysacians."
+      },
+      "Gwadar": {
+        "description": "A beverage made from a fruit native to West Balam. Orange-yellow in color. Sweet with a sourness. Good at quenching thirst and relieving heat. Contains some caffeine."
+      },
+      "Fizzling_Ice_Tea": {
+        "description": "A signature non-alcoholic beverage of Utopia. Has a refreshing feeling. Especially delicious."
+      },
+      "La_Fée_Verte_(Green_Fairy)": {
+        "description": "Absinthe. Flavored distilled liquor, yellowish green in color. An alcohol trend in Trier. Main ingredients: wormwood, fennel, and anise."
+      },
+      "Cœur_Épicé_(Spiced_Heart)": {
+        "description": "A renowned fruit-based spirit distilled to perfection."
+      },
+      "Kirsch": {
+        "description": "A distilled spirit made from sugar and fermented cherries. Has a color and texture that appeals to ladies. Other fruits can be substituted."
+      },
+      "Venus_Sacred_Oil": {
+        "description": "Made from sugar and cinnamon water soaked in vanilla and mixed with poppies. Invented by a bar in Trier."
+      },
+      "Whiskey_Sour": {
+        "description": "Low-quality alcohol brewed from apples. Only more expensive than some beer in taverns. Often hawked on the streets of the city."
+      },
+      "Fennel_Absinthe": {
+        "description": "Another kind of absinthe. Flavors rich and invigorating with a subtle bitter note. Popular in Trier. Authors, painters, and poets are particularly fond of it."
+      },
+      "Black_Poca": {
+        "description": "A pale-gold liquid aperitif from Trier. Brewed from ginger, cinnamon, nutmeg, and cloves soaked in sweet wine. Tastes pretty good."
+      },
+      "Lover": {
+        "description": "An amber-hued, sweet alcohol. Made from a sugar alcohol brewed from sugarcane syrup. Served with ice and water. Common slang in Intis bars."
+      },
+      "Ranger": {
+        "description": "A tangy blend of orange and pomegranate beer. Costs two licks more than the rye."
+      }
+    },
+    "drink_slang": {
+      "Little_Mummy": "A small shot of fennel absinthe.",
+      "Somersault": "A double shot of fennel absinthe.",
+      "Red_Tomato": "A drink with pomegranate juice.",
+      "Parrot": "A Red Tomato mixed with mint."
+    },
+    "mystic_travelers_gourmet_notes": {
+      "description": "Food-related information shared by the Lord of Mysteries Official Account on Weibo. No official English translation available yet."
+    }
+  }
+}

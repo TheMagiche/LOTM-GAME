@@ -1,0 +1,317 @@
+{
+  "pricing_data": {
+    "beyonder_goods": {
+      "lord_of_mysteries": {
+        "currency": "pounds",
+        "sequence_9": {
+          "formula": "200-230",
+          "characteristic": "300-400",
+          "main_ingredients": "150-200 each",
+          "mystical_item": "500"
+        },
+        "sequence_8": {
+          "formula": "400-450",
+          "characteristic": "600-700",
+          "main_ingredients": "280-400 each",
+          "mystical_item": "1000"
+        },
+        "sequence_7": {
+          "formula": "800-900",
+          "characteristic": "1200-1500",
+          "main_ingredients": "500-700 each",
+          "mystical_item": "1500-3500"
+        },
+        "sequence_6": {
+          "formula": "<2000-3000",
+          "characteristic": "3000-5000",
+          "main_ingredients": "1500-2500 each",
+          "mystical_item": "3500-7000"
+        },
+        "sequence_5": {
+          "formula": "4500-7000",
+          "characteristic": "7000-8000",
+          "main_ingredients": "9000-20000",
+          "mystical_item": "varies"
+        },
+        "sequence_4": {
+          "formula": "10000 (partial)",
+          "characteristic": "priceless",
+          "main_ingredients": "priceless",
+          "mystical_item": "varies wildly"
+        }
+      },
+      "circle_of_inevitability": {
+        "currency": "verl d'or",
+        "sequence_9": {
+          "formula": "unknown",
+          "characteristic": "unknown",
+          "main_ingredients": "5000",
+          "mystical_item": "unknown"
+        },
+        "sequence_8": {
+          "formula": "unknown",
+          "characteristic": "15000",
+          "main_ingredients": "unknown",
+          "mystical_item": "20000"
+        },
+        "sequence_7": {
+          "formula": "30000-40000",
+          "characteristic": "~35000",
+          "main_ingredients": "18000-20000+",
+          "mystical_item": "unknown"
+        },
+        "sequence_6": {
+          "formula": "65000",
+          "characteristic": "unknown",
+          "main_ingredients": "30000",
+          "mystical_item": "unknown"
+        }
+      }
+    },
+    "loen_kingdom": {
+      "currency": {
+        "pound": 1,
+        "soli": 20,
+        "penny": 240
+      },
+      "transportation": {
+        "public_horse_carriage": "1 penny/km",
+        "metro_ticket_third_class": "3 pence",
+        "metro_ticket_second_class": "4 pence",
+        "metro_ticket_first_class": "6 pence",
+        "metro_return_third_class": "5 pence",
+        "metro_return_second_class": "6 pence",
+        "metro_return_first_class": "9 pence",
+        "metro_annual_second_class": "5 pounds 10 soli",
+        "metro_annual_first_class": "8 pounds",
+        "train_tingen_backlund_third": "5 soli",
+        "train_tingen_backlund_second": "10 soli",
+        "train_tingen_backlund_first": "15 soli",
+        "train_conant_backlund_second": "18 soli",
+        "ship_bayam_galagos": "3 pounds (scalped)",
+        "ship_pritz_rorsted_third": "4 pounds",
+        "ship_pritz_rorsted_second": "10 pounds",
+        "ship_pritz_rorsted_first": "35 pounds",
+        "bicycle": "3-5 pounds",
+        "rent_two_wheel_carriage": "42 pounds/year",
+        "rent_four_wheel_carriage": "88 pounds/year",
+        "buy_two_wheel_carriage": "100 pounds",
+        "buy_four_wheel_carriage": "300 pounds"
+      },
+      "housing": {
+        "cheap_motel_basement": "1.5 pence/night",
+        "cheap_motel_compartment": "5 pence/night",
+        "cheap_motel_single": "12 pence/night",
+        "hotel_lamud_town": "1 soli",
+        "inn_symeem_island": "1 soli 5 pence/night",
+        "clean_room_teana_inn": "2 soli 2 pence/day",
+        "single_room_hat_trick_inn": "2 soli 8 pence/day",
+        "apartment_lower_iron_cross": "3 soli 10 pence/week",
+        "single_room_east_borough": "4 soli 3 pence/week",
+        "luxurious_suite_wind_azure": "5 soli/night",
+        "rent_terrace_house": "12-16 soli/week + 5p furniture",
+        "rent_detached_house_suburb": "19s-1p18s/week",
+        "rent_middle_class_backlund": "50 pounds/year",
+        "rent_best_gardened_villa": "~2 pounds/week",
+        "rent_high_end_house": "3+ pounds/week (156+ yearly)",
+        "rent_hotel_hillston": "10 soli/night",
+        "rent_upper_class_house": "220-315 pounds/year",
+        "rent_luxurious_manor": "1260 pounds/year",
+        "buy_terrace_house_limited": "300 pounds",
+        "buy_terrace_house_owned": "850 pounds",
+        "buy_manor": "thousands of pounds",
+        "buy_fancy_manor": "20000 pounds"
+      },
+      "clothing": {
+        "bow_tie": "3 soli",
+        "shirt": "3 soli",
+        "workers_jacket": "4 soli",
+        "silver_amulet": "4s9p-6s",
+        "silk_top_hat": "5-6 soli",
+        "silver_cane": "7-8 soli",
+        "ebony_cane": "7s6p",
+        "white_boli_cane": "7s10p",
+        "walnut_cane": "10s3p",
+        "ironheart_cane": "11s7p",
+        "full_outfit": "7 pounds",
+        "golden_chain": "1p5s",
+        "golden_pocket_watch": "4p10s",
+        "earring_ms_sammers": "8 soli"
+      },
+      "food_and_beverages": {
+        "rye_beer_tingen": "1p/cup",
+        "ginger_beer_tingen": "1p/cup",
+        "rye_beer_oravi": "1.5p/cup",
+        "sweet_iced_tea": "1.5p/cup",
+        "enmat_beer": "2p/cup",
+        "zarhar_beer_bayam": "3p/cup",
+        "malt_beer_toscarter": "4p/cup",
+        "southville_beer_tingen": "4p/cup",
+        "southville_beer_backlund": "5p/cup",
+        "southville_beer_damir": "6p/cup",
+        "southville_red_wine": "10p/cup",
+        "black_bread": "1.125p/lbs",
+        "butter_bottle": "4p/quarter lbs",
+        "butter": "1s3p/lbs",
+        "black_peppered_beef": "5p/slice",
+        "beef": "6p/lbs",
+        "fresh_fish": "5p",
+        "beef_pudding": "6p",
+        "lard_backlund": "6p/lbs",
+        "flour_backlund": "7p/liter",
+        "pan_fried_fish": "6-8p",
+        "pork_ribs_with_bread": "8p",
+        "black_pepper_steak_backlund": "8p",
+        "oat_bread_with_sausage": "10p",
+        "cafe_meal_east_borough": "17.5p",
+        "ice_cream_tingen": "1s",
+        "black_pepper_steak_tingen": "1s2p",
+        "cream_backlund": "1s3p/lbs",
+        "grilled_sickleback": "2s5p",
+        "marquis_black_tea": "8s/lbs",
+        "desi_champagne": "12s3p",
+        "weekly_expense_cherwood": "2p5s",
+        "ordinary_wine": "~2 pounds",
+        "ten_person_party": "4p8s",
+        "scam_meat": "5 pounds",
+        "fine_dining_tingen": "8-15 pounds",
+        "aurmir_wine_1330": "126 pounds"
+      },
+      "education": {
+        "sunday_school": "1p/week",
+        "public_primary": "3p/week",
+        "tingen_technical": "9p/week",
+        "female_boarding_school": "500p/year"
+      },
+      "wages": {
+        "harbor_worker_backlund": "1s/day",
+        "matchbox_maker": "≤1s4p/day",
+        "dock_worker_east_balam": "1s6p/day",
+        "maidservant": "3s6p-6s/week",
+        "laundress": "10p/year",
+        "stewards_boy": "10p/year",
+        "parlormaid": "11p/year",
+        "chambermaid": "12p/year",
+        "handyman": "12p/year",
+        "scullery_maid": "13p/year",
+        "assistant_cook": "15p/year",
+        "lead_factory_worker": "6-8s/week",
+        "ladys_maid": "18p/year",
+        "gardener": "20p/year",
+        "coachman": "25p/year",
+        "nursery_governess": "25p/year",
+        "female_lead_factory": "10s/week",
+        "footman": "30p/year",
+        "male_steward": "30p/year",
+        "cook": "30p/year",
+        "ordinary_chef": "12-15s/week",
+        "valet": "35p/year",
+        "female_housekeeper": "42p/year",
+        "average_factory": "~1p/week",
+        "senior_clerk": "1p10s/week",
+        "butler": "15s-1p10s/week",
+        "experienced_butler": "2p/week (100p+ yearly)",
+        "lecturer_probation_tingen": "2p/week",
+        "teacher_backlund": ">2p/week",
+        "women_child_care": "2p10s/week",
+        "ordinary_tutor": "150p/year",
+        "government_employee": "3p/week",
+        "nighthawk_civilian": "3p/week",
+        "lawyer": "3p/week (200p/year)",
+        "lecturer_tingen": "3p10s/week",
+        "public_school_educator": "4p/week",
+        "import_export_manager": "6p/week",
+        "formal_nighthawk": "6p/week",
+        "coim_manager": "430p/year",
+        "high_society_tutor": "400-500p/year",
+        "experienced_nighthawk": "10-12p/week (600p+ yearly)",
+        "senior_lawyer": "800-1000p/year",
+        "successful_businessman": "1500p/year",
+        "best_bank_manager": "5000p/year"
+      },
+      "animals": {
+        "trained_hound": "450-700p",
+        "susie": "450p"
+      },
+      "miscellaneous": {
+        "basic_cleaning": "1s",
+        "hospital_sedative": "1-2s",
+        "beyonder_sedative": "3-4s",
+        "urn_cemetery": "5s",
+        "grave_cemetery": "2p",
+        "divination_club": "5p first year, 1p/year",
+        "hanass_divination": "4s",
+        "klein_divination": "8p",
+        "glacis_divination": "4p",
+        "rent_revolver": "1s7p/hour",
+        "small_shooting_range": "3s/hour",
+        "standard_revolver": "3p10s",
+        "double_barrel_gun": "2p"
+      }
+    },
+    "intis_republic": {
+      "currency": {
+        "verl_dor": 1,
+        "coppet": 100
+      },
+      "transportation": {
+        "public_carriage_trier_regular": "30 coppets",
+        "public_carriage_trier_roof": "15 coppets",
+        "steam_locomotive_third_south": "<50 verl d'or",
+        "courier_carriage_south": "~120 verl d'or",
+        "steam_business_private": "100 verl d'or",
+        "steam_third_trier_upper": "30 verl d'or",
+        "steam_second_trier_upper": "45 verl d'or",
+        "steam_first_trier_upper": "60 verl d'or"
+      },
+      "food_and_beverages": {
+        "onion_bread": "5 coppets",
+        "whiskey_sour": "10 coppets/liter",
+        "croissant": "15 coppets/kg",
+        "duvar_broth": "15 coppets",
+        "rouen_meatloaf": "15 coppets",
+        "ambergis_lemonade": "20 coppets",
+        "scallion_pancake": "30 coppets",
+        "little_mummy_absinthe": "35 coppets",
+        "apple_punch": "60 coppets",
+        "fruit_juice_soda": "65 coppets",
+        "soda_bottle_return": "15 coppets"
+      },
+      "housing": {
+        "room_auberge_du_coq": "3/5 verl d'or/week",
+        "room_rue_des_blanches": "6 verl d'or/year",
+        "room_rue_des_paves": "10 verl d'or/year",
+        "house_quartier_8": "4000 verl d'or/year"
+      },
+      "wages": {
+        "handyman": "50 verl d'or/month",
+        "apprentice_attendant": "65 verl d'or/month",
+        "experienced_handyman": "70 verl d'or/month",
+        "attendant_foreman": "150 verl d'or/month",
+        "laborer_trier": "700 verl d'or/year",
+        "professional_mid_level": "500 verl d'or/month"
+      },
+      "miscellaneous": {
+        "newspaper": "11 coppets"
+      }
+    },
+    "feysac_empire": {
+      "currency": {
+        "feysilver": 1,
+        "kopek": 100
+      },
+      "transportation": {
+        "rental_carriage_nas": "4 feysilver/hour"
+      },
+      "food_and_beverages": {
+        "meal_with_beer_nas": "4s6k"
+      }
+    },
+    "trivia": {
+      "audrey_wealth": "300000p assets, 3000p annual interest",
+      "baronet_title": "~300000p",
+      "baron_title": "~800000p",
+      "pallas_negan_land": "12 million p, 850k annual rent"
+    }
+  }
+}

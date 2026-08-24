@@ -1,0 +1,52 @@
+{
+    "items": [
+      {
+        "name": "Axe of Hurricane",
+        "appearance": "A thick iron black ax with many symbols and magic runes on its surface.",
+        "function": "It can raise agility and has a chance to produce a numbing effect or lightning at every strike depending of the weather.",
+        "status": "Used"
+      },
+      {
+        "name": "Holy Sunbird Whip",
+        "appearance": "A whip that can be disguised as a belt.",
+        "function": "Purification\nHoly Water Creation",
+        "status": ""
+      },
+      {
+        "name": "Inevitable Gun",
+        "appearance": "A brass revolver.",
+        "function": "1. It will continuously spread disease and decay within a three-kilometer radius, with random types of diseases.\n2. It can add either the Certain Death or Sure Hit effect to fired bullets, for a total of thirteen times, which can be stacked with the original Heavy Strike effect.",
+        "status": ""
+      },
+      {
+        "name": "Inscribed Steel Sword",
+        "appearance": "A Steel Sword",
+        "function": "Purifying and Warding",
+        "status": ""
+      },
+      {
+        "name": "Meat Cleaver",
+        "appearance": "A meat cleaver with exquisite mechanical structure.",
+        "function": "Transformation",
+        "status": ""
+      },
+      {
+        "name": "Thunderclap Explosion",
+        "appearance": "A hunting bow",
+        "function": "",
+        "status": ""
+      },
+      {
+        "name": "Whip of Slowness",
+        "appearance": "A whip",
+        "function": "Slows the opponent",
+        "status": ""
+      },
+      {
+        "name": "Winter is Coming",
+        "appearance": "An intricate mechanical black revolver.",
+        "function": "1. The bullets it fires carry a corruption, producing two effects: One, ensures the bullet hits its target; even Saints, unless they use special abilities to dodge, will be hit.\n2. Two, ensures death; even Saints, lacking certain traits and abilities, once hit, will suffer great trauma and gradually die. For beings below demigods, a hit means certain death.\n3. These two effects cannot coexist; a choice is made for each shot.",
+        "status": ""
+      }
+    ]
+  }

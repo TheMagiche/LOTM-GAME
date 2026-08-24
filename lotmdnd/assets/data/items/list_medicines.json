@@ -1,0 +1,69 @@
+{
+    "items": [
+      {
+        "name": "Amantha extract",
+        "ingredients_process": "Mixed of Night vanilla, slumber flower, and chamomile, all distilled and extracted to form this aromatic floral essence.[10]",
+        "description": "An aromatic floral essence. Daly call it 'Amantha;' it means tranquility in the Hermes language. There is a quiet and charming fragrance, which can relax people's emotions and instantly calm as if they was gazing into the darkness of the silent night.[10]"
+      },
+      {
+        "name": "Bark Agent",
+        "ingredients_process": "",
+        "description": "It toughens the user skin and muscles, rendering them as resilient as trees.[22]"
+      },
+      {
+        "name": "Berserk Agent",
+        "ingredients_process": "",
+        "description": "It grants the user extraordinary strength when unleashed.[22]"
+      },
+      {
+        "name": "Eye of the Spirit medication",
+        "ingredients_process": "Barks and leaves of drago and poplar trees are sun-dried for seven days and decocted thrice. Then immersed them in Lanti Wine.[10]",
+        "description": "There is an ethereal scent of the aromatic wine, which is a good helper for psychics and a charming enough flower essence.[10]"
+      },
+      {
+        "name": "Goddess's Gaze",
+        "ingredients_process": "",
+        "description": "A dark red liquid. It has a certain therapeutic effect, and its main function is to stimulate the spirit and squeeze the potential of the body, so that people can maintain a good state in a short period of time and support them until they return to receive treatment.[11]"
+      },
+      {
+        "name": "Healing Agent",
+        "ingredients_process": "",
+        "description": "It mends most external wounds, alleviates severe injuries, and eliminates minor ailments.[22]"
+      },
+      {
+        "name": "Holy Night Powder",
+        "ingredients_process": "Slumber flowers, Dragon Blood grass, deep red sandalwood, mint powder, and other herbs.[12][13]",
+        "description": "Originated from the Church of the Evernight Goddess. It can assist Beyonder to guide their own power before ritual magic, create a wall of spirituality, and build a clean and undisturbed spiritual environment around them.[14] The limit is up to obtaining a personal silver knife or reaching Sequence 7.[13]"
+      },
+      {
+        "name": "Mysticism Smelling Salts (Awakening Gas)",
+        "ingredients_process": "",
+        "description": "An extremely foul-smelling gas that wakes the smeller up. It can be use to cancel or protect from the sleeping gas.[18] It was named \"Mysticism Smelling Salts\" by Franca.[20]"
+      },
+      {
+        "name": "Quelaag's Oil",
+        "ingredients_process": "A mix of mint and disinfectant",
+        "description": "It could help a person ignore the stench of rotting corpses, as well as refresh and clear the mind.[15]"
+      },
+      {
+        "name": "Sanguine Anesthesia Gas",
+        "ingredients_process": "",
+        "description": "Cause deep slumber that lasts for more than three hours.[19]"
+      },
+      {
+        "name": "Sedative Agent",
+        "ingredients_process": "",
+        "description": "A blue fluid rippled in the translucent glass bottle. It made users stay awake and feel as though they had entered a mother's embrace. It was a liquid medicine that was rarely used yet was very efficient in mediumship.[16][17]"
+      },
+      {
+        "name": "Serenity Agent",
+        "ingredients_process": "",
+        "description": "Its made users maintaining clam and rationale.[18]"
+      },
+      {
+        "name": "Truth Serum (Confession Concoction)",
+        "ingredients_process": "",
+        "description": "A serum that make exceedingly challenging to lie. What the victims utter should stem from their innermost desires.[21]"
+      }
+    ]
+  }

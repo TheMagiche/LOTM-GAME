@@ -1,0 +1,243 @@
+{
+  "pathway": "Moon",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Apothecary",
+      "potion_properties": "When exposed to light, it decomposes into a seven-colored alluring liquid, but with an extremely bitter taste.",
+      "beyonder_characteristic_appearance": "A transparent horn-like object radiating a shimmering rainbow of light.",
+      "formula": {
+        "main_ingredients": [
+          "Horn of an adult Flying Unicorn.",
+          "3 grams of a Royal Jellyfish's Venom Crystal."
+        ],
+        "alternative_main_ingredients": [
+          "A Apothecary Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of blood from an adult Flying Unicorn.",
+          "7 tentacles of a Royal Jellyfish.",
+          "10 grams of Arsenic powder.",
+          "10 grams of the Rhizome of Black Henbane."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 8,
+      "name": "Beast Tamer",
+      "potion_properties": "Rose red, wine-like, with a slightly sour taste, attracting all mosquitoes nearby.",
+      "beyonder_characteristic_appearance": "A bamboo-like object emitting a dangerous red color.",
+      "formula": {
+        "main_ingredients": [
+          "A Spring of the Elves Marrow Crystal",
+          "Fruit of the King Sword Flower."
+        ],
+        "alternative_main_ingredients": [
+          "A Beast Tamer Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of water from the Spring of the Elves.",
+          "1 flower of the King Sword Flower.",
+          "10 drops of Wild Eggplant extract.",
+          "10 grams of Animal Corpse oil."
+        ]
+      },
+      "acting_method": "Tame the beast, the higher the lifeform, the greater the challenge.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 7,
+      "name": "Vampire",
+      "potion_properties": "A cup of bright red 'blood' brimming with vitality, with a strong fishy taste.",
+      "beyonder_characteristic_appearance": "An item the size of a fist. It was completely red in color and resembled a heart. It was expanding and contracting slightly, and its surface was translucent. The holder could vaguely see a liquid flowing inside it. (Primordial Moon Believer's MUTATED: Its surface was nearly black in color and had indistinct human-faced patterns. Two transparent objects which resembled hearts—one red with vitality, and the other nearly black.)",
+      "formula": {
+        "main_ingredients": [
+          "Blood Essence of a corresponding Sequence 7 Sanguine (from this point onward, the main material of the sequence can be replaced by the 'legacy' of the corresponding Sanguine or Artificial Vampire)."
+        ],
+        "alternative_main_ingredients": [
+          "Heart of the Bloodthirsty Beast.",
+          "Head of the Red-headed Bat. (Note: These other main materials are quite difficult to collect because they have almost been exhausted by the Sanguines or Artificial Vampire forces.)",
+          "A Vampire Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of blood of the Bloodthirsty Beast.",
+          "3 teeth of the Red-headed Bat. (Note: The above two materials can be replaced with the corresponding parts of Sanguines or Artificial Vampires.)",
+          "10 hairs of the Long-eared Rabbit.",
+          "10 drops of Osmanthus Flower pure water."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 6,
+      "name": "Potions Professor",
+      "potion_properties": "Resembling a crimson moon falling into a glass of water, with the darkest color in the middle and getting lighter as it goes outwards. It has a very strong irritating effect when drank.",
+      "beyonder_characteristic_appearance": "A blood-red gem that emitted a light that resembled the moonlight.",
+      "formula": {
+        "main_ingredients": [
+          "The Legacy of a Sanguine Baron or Artificial Vampire of this sequence."
+        ],
+        "alternative_main_ingredients": [
+          "The Brain of a Giant Monster Sage",
+          "The Wings of a Dark Bat",
+          "A Potions Professor Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of blood of the Giant Monster Sage (or 100 milliliters of blood of a Sanguine Baron or an Artificial Vampire of this Sequence).",
+          "7 hairs of the Dark Bat (or 7 hairs of a Sanguine Baron or an Artificial Vampire of this Sequence).",
+          "10 drops of June Snow essential oil.",
+          "A potion invented by oneself."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 5,
+      "name": "Scarlet Scholar",
+      "potion_properties": "Static, nearly solidified crimson liquid. It's tasteless and will cause a paradoxical state of sedation and hallucination upon consuming.",
+      "beyonder_characteristic_appearance": "A simple crown woven from crimson feathers.",
+      "formula": {
+        "main_ingredients": [
+          "The Legacy of a Sanguine Viscount or Artificial Vampire of the this sequence."
+        ],
+        "alternative_main_ingredients": [
+          "The Blood Crystals of a Moon-worshipping Monster.",
+          "The Wings of an Elderly Bat.",
+          "A Scarlet Scholar Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "Heart of a Moon-worshipping Monster (or the heart of of a Sanguine Viscount or an Artificial Vampire of this Sequence).",
+          "Eye of an Elder Bat (Or the eye of a Sanguine Viscount or an Artificial Vampire of this Sequence).",
+          "100 milliliters of water that has been illuminated by a Blood Moon seven times (each time for at least 15 minutes).",
+          "10 drops of pure water made from Crimson Ode (It's a type of flower)."
+        ]
+      },
+      "advancement_ritual": "Gather different gems, metals and Beyonder Creature blood that represent different moon phases. Drink the potion under the illumination of full moon.",
+      "ritual_essence": "No data",
+      "acting_method": "Sincerity to the moon, worship the moon, and study the moon.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 4,
+      "name": "Shaman King",
+      "potion_properties": "A golden and red liquid enveloped in a rich darkness. Consuming it causes a torn-apart pain in the body and mind.",
+      "beyonder_characteristic_appearance": "A fist-sized gem condensed from thick blood. It emitted a crimson glow, like a miniature crimson moon. After purification, the miniature crimson moon was more translucent and pure.",
+      "formula": {
+        "main_ingredients": [
+          "The Legacy of a Sanguine Earl or Artificial Vampire of the same Sequence"
+        ],
+        "alternative_main_ingredients": [
+          "The Consciousness Core from a Spring of the Elves.",
+          "The Dust Aggregate from a Dark Spirit of Witchcraft.",
+          "A Shaman King Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of Golden Spring Water from the Spring of the Elves (or 100 milliliters of blood of a Sanguine Earl or an Artificial Vampire of this Sequence).",
+          "10 grams of Dark Spirit of Witchcraft Pollutant (or 10 hairs or 3 nails of a Sanguine Earl or an Artificial Vampire of this Sequence).",
+          "10 drops of Moonflower Essential Oil.",
+          "The embryo of a Dark Creature."
+        ]
+      },
+      "advancement_ritual": "Truly gain the recognition of the 'Moon'. Note: Some 'Moons' are always dangerous, some 'Moons' are dangerous at certain moments, and some 'Moons' are in your own heart.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 3,
+      "name": "High Summoner",
+      "potion_properties": "A pale red liquid filled with various rich colors that seems to reflect the illusory Spirit World.",
+      "beyonder_characteristic_appearance": "A dark red columnar crystal that seems unreal and illusory.",
+      "formula": {
+        "main_ingredients": [
+          "The Beyonder characteristic of a Sanguine Marquis or the 'legacy' of an Artificial Vampire of this Sequence."
+        ],
+        "alternative_main_ingredients": [
+          "A High Summoner Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of blood of a Sanguine Marquis or Artificial Vampire of this sequence.",
+          "Three nails of a Sanguine Marquis or Artificial Vampire of this Sequence.",
+          "One item corrupted by the Gray Fog of the 'Sefirah Castle'. (Can be replaced by blessing or bestowed item from Sequence 0 Fool.)",
+          "One 'Moon Paper Substitute' of yourself."
+        ]
+      },
+      "advancement_ritual": "Find a special piece of information in the depths of the Spirit World that is closely related to one's past, present, and future, which is deeply intertwined with the 'Moon'. Then hold a ceremony to define it as one's 'True Name' for various mystical purposes. Note: if you choose the wrong one, or find an incorrect one, you will become a slave of the 'Moon'.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 2,
+      "name": "Life-Giver",
+      "potion_properties": "Clear, clean liquid with blood-colored bubbles floating around.",
+      "beyonder_characteristic_appearance": "Resembling a womb, covered with a blood-stained translucent membrane and filled with red bubbles, each of which seems to contain a life.",
+      "formula": {
+        "main_ingredients": [
+          "The Beyonder characteristic of a Sanguine Duke or the 'legacy' of an Artificial Vampire of this Sequence."
+        ],
+        "alternative_main_ingredients": [
+          "A Life-Giver Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "1 amulet crafted by one's mother. (If the mother has passed away, it can be replaced by an Envisioned product or a Historical Projection. A conceptual mother or a mother in a broad sense can also meet the requirements.)",
+          "10 hairs from a blood offspring created by oneself. (This isn't limited to children of oneself, as creation doesn't necessarily mean giving birth.)",
+          "100 milliliters of blood from a Sanguine Duke or an Artificial vampire of this Sequence.",
+          "1 Oak Seed."
+        ]
+      },
+      "advancement_ritual": "Divide oneself into five parts, destroy and seal oneself in different places, then before completely dying, have the part of the body containing the heart take the potion. Note: There are two main difficulties in this ritual. One is how to ensure that one does not die immediately in that state, and the other is how to take the potion in a sealed state. Theoretically, cutting fingers is considered as dividing the body, but considering that one of the ritual's purposes is to lower one's life force and enter a near-death, sealed state to restrain the growth, the reproduction urge, and the spread of madness, doing this essentially nullifies the ritual's effect.",
+      "ritual_essence": "One of the ritual's purposes is to lower one's life force and enter a near-death, sealed state to restrain the growth, the reproduction urge, and the spread of madness.",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 1,
+      "name": "Beauty Goddess",
+      "potion_properties": "A blood-stained liquid that stretches into an illusory, unusually beautiful, blurry humanoid figure.",
+      "beyonder_characteristic_appearance": "A crimson sphere seemingly composed of the concept of beauty, filled with countless shadows of people.",
+      "formula": {
+        "main_ingredients": [
+          "The Beyonder Characteristic of Auernia."
+        ],
+        "alternative_main_ingredients": [
+          "A Beauty Goddess Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "The amniotic fluid from one's conception. (If none exists, this can be replaced with something imaginary, simulated, or a historical projection.)",
+          "A work of art widely recognized as incomparable.",
+          "The blood of a God's Child.",
+          "A newly sprouted Mistletoe."
+        ]
+      },
+      "advancement_ritual": "Use the 'Moon Paper Substitute' to make a substitute, allowing it to act for a long time without being exposed, and be remembered by a large number of creatures, the more the better. The person themselves will lie in a coffin, buried deep underground for at least three hundred years, and finally the original body will take the potion.",
+      "ritual_essence": "The ritual is meant to resist the Beauty and combat narcissism.",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 0,
+      "name": "Moon",
+      "potion_properties": "An illusory liquid surface reflecting the most beautiful Crimson Moon",
+      "beyonder_characteristic_appearance": "No data",
+      "formula": {
+        "main_ingredients": [
+          "The Moon Uniqueness.",
+          "Three Beauty Goddess Beyonder Characteristics."
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "Blood of an offspring of a Great Old One, or an offspring of a Sefirah."
+        ]
+      },
+      "advancement_ritual": "Find a way to enter the Astral World, occupy the concept representing the 'Moon' or engrave your true name within this concept. Note 1: The concept of the 'moon' is not unique to the barrier. Note 2: Since the concept of the 'Moon' in the Astral World was jointly occupied by the Mother Goddess of Depravity and the Brood Hive, it was impossible to complete the ritual for Sequence 0 of the Moon Pathway. Therefore, there has been no true Moon ever appearing in history.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { saveCampaign } from '../../store/campaignStore';
 import { initializeCampaignState } from '../../services/campaignInit';
 import { uid } from '../../utils/uid';
 import type { Campaign } from '../../types';
+import { worldPackToFile, type WorldPack } from '../../worldpacks/lordOfTheMysteries';
 
 export function useCampaignForm(params: {
     editingCampaign: Campaign | null;
@@ -46,6 +47,17 @@ export function useCampaignForm(params: {
         reader.readAsDataURL(file);
     };
 
+    // Quick start: fill the same file slots the pickers would, from a bundled pack.
+    const applyWorldPack = (pack: WorldPack) => {
+        if (!name.trim()) setName(pack.suggestedName);
+        setLoreFile(worldPackToFile(pack.lore));
+        setLoreName(pack.lore.name);
+        setRulesFile(worldPackToFile(pack.rules));
+        setRulesName(pack.rules.name);
+        setLootFile(worldPackToFile(pack.loot));
+        setLootName(pack.loot.name);
+    };
+
     const handleSave = async () => {
         if (!name.trim()) return;
         const isEdit = !!editingCampaign;
@@ -75,6 +87,7 @@ export function useCampaignForm(params: {
         loreFile, setLoreFile, loreName, setLoreName,
         rulesFile, setRulesFile, rulesName, setRulesName,
         lootFile, setLootFile, lootName, setLootName,
+        applyWorldPack,
         resetForm, openCreate, openEdit, handleSave,
         editingCampaign,
     };

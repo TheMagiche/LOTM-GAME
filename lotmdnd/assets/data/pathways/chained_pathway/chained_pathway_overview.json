@@ -1,0 +1,182 @@
+{
+  "pathway_name": "Chained Pathway",
+  "aliases": [
+    "Prisoner Pathway",
+    "Pathway of Mutants"
+  ],
+  "overview": {
+    "description": "The Chained Pathway has different types of mutant abilities, but they're also cursed. They can summon zombies, jump through things with reflections, resist bullets with powerful defence, possess others, control ghosts, cast death-related spells, regenerate and heal themselves, and sacrifice rationality for more power. They have high strength, speed, and defence, but have some difficulty in controlling themselves. They also lose power or control during the full moon.",
+    "high_sequence_characteristics": "At High-Sequences, they have the ability to bind their foes, control all inanimate objects within a specific radius, employ dreadful curses and curse others through all connections, and transform into terrifying, evil, distorted, chaotic Abominations that are filled by pure and extreme madness.",
+    "symbolism": "Since the Chained Pathway symbolises Binding/Restraint and Unity, from the Mid-Second Epoch onwards, the main Ingredients of each sequence, starting from Sequence 7, have essentially merged into one. There have been almost no more instances of them splitting.",
+    "origin": "The Beyonder Characteristics of this pathway originated from the Outer Deity Mother Tree of Desire.",
+    "mr_sun_description": "The mind is the prisoner of the body, and the body is the prisoner of the world. This refers to the madness that is restrained and the desire that is oppressed.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Prisoner",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Lunatic",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Werewolf",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Zombie",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Wraith",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Puppet",
+        "advancement_method": "Abi/Adv",
+        "note": "At Sequence 4, an embalmed mummy is one type of anchor, but it's not strictly necessary to use a demigod-level mummy, as any item with a similar function and the same rank can serve the purpose. The Rose School of Thought's Temperance Faction traditionally uses mummies for their advancement, because this practice is tied to the imagery and history of the Chained God and has even influenced the burial customs of the Highlands Kingdom."
+      },
+      {
+        "sequence": 3,
+        "name": "Disciple of Silence",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Ancient Bane",
+        "advancement_method": "Abi/Adv",
+        "note": "The advancement to Ancient Bane requires finding an ancient, evil item capable of bearing angelic power. This item becomes the core of the final Mythical Creature Form."
+      },
+      {
+        "sequence": 1,
+        "name": "Abomination",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Chained",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Chained Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "Temperance",
+    "card_number": "XIV",
+    "description": "Temperance (XIV) is the number fourteenth of Major Arcana. The Temperance card is a reference to the soul. It signifies balance, peace, patience, and moderation. One should take the middle road, avoid extremes, and maintain a sense of calm."
+  },
+  "god": [
+    {
+      "name": "Mother Tree of Desire",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Pitch-Black Fiend",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Master of the Shadow Cottage",
+      "status": "Dao Integrator †",
+      "type": "Former God"
+    },
+    {
+      "name": "Mutated King Kvastir",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Mother Tree of Desire",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "An invisible collection of various curses. Therefore, the Mythical Creature Form manifested by the Chained Pathway is essentially the vessel that binds this aggregate, and is dependent on the self-awareness and choices made during 'Their' advancements to Sequence 4: Puppet and Sequence 2: Ancient Bane, which bind and fixes itself into various curses, such as oil trees, dolls, mummies, etc.",
+    "innate_mythical_creatures_note": "Innate Mythical Creatures like Suah and Tirié, who have not completed the corresponding Sequence advancements, exhibit forms that are essentially amplifications of 'Their' Beyonder Characteristics."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "The Mythical Creature Form manifested by the Chained Pathway is essentially the vessel that binds an invisible collection of various curses. The form is dependent on the self-awareness and choices made during advancements, binding and fixing itself into various forms such as oil trees, dolls, mummies, etc."
+  },
+  "high_sequence_group": {
+    "name": "Abyss Chained Patriarch",
+    "pathways": [
+      "Abyss",
+      "Chained",
+      "Patriarch"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Father of Devils",
+    "alternative_name": "Mother Tree of Desire",
+    "pathways": [
+      "Abyss",
+      "Chained",
+      "Patriarch"
+    ]
+  },
+  "sefirah": {
+    "name": "Tenebrous World"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Father of Devils",
+        "pathways": ["Abyss"]
+      },
+      {
+        "group": "Mother Tree of Desire",
+        "pathways": ["Patriarch"],
+        "note": "Because the Father of Devils was originally a part of the Mother Tree of Desire."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"],
+        "note": "Because the Inextinguishable Ravings can accommodate the Tenebrous World, although this was not an optimal choice, one that 'He' would usually avoid."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Rose School of Thought"
+    },
+    {
+      "name": "Naturism Sect"
+    },
+    {
+      "name": "Church of the Fool"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "pathway_name": "Visionary Pathway",
+  "aliases": [
+    "Spectator Pathway",
+    "Pathway of Dragons"
+  ],
+  "overview": {
+    "description": "The Visionary Pathway is adept at psychological manipulation. Beyonders of this pathway can read minds, discern emotions, hypnotize, and travel between dreams. They are also good at acting, knowing what kind of emotional reaction to show in the appropriate situation and knowing, in detail, what kind of expression and body language to react.",
+    "high_sequence_characteristics": "At High-Sequences, they can enter and influence the Mind World, allowing them to manipulate others without being noticed, weave out realistic dreams, divide virtual personas, a part of themselves. 'They' get the authority to Discern 'Themselves' and the enemy, the foundation of description, interference, arrangement, and Imagination. 'They' can even affect reality through their thoughts and Imagination. What 'They' Imagine will materialize, the Divine Kingdom 'They' envision will descend upon the physical world, the futures 'They' proclaim will unfold and become reality.",
+    "authority": "The Visionary Pathway holds the authorities of Envisioning, Psyche, and Discernment, as well as partial authorities over Dreams and the Loss of Control.",
+    "door_warning": "Be careful of the 'Spectator'.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Spectator",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Telepathist",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Psychiatrist",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Hypnotist",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Dreamwalker",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Manipulator",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Dream Weaver",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Discerner",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Author",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Visionary",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Visionary Pathway represents Giant Dragon."
+  },
+  "corresponding_tarot_card": {
+    "card": "Justice",
+    "card_number": "VIII or XI (Rider-Waite Tarot No. XI)",
+    "description": "Justice (VIII or XI) is one of the 22 Major Arcana. It is numbered either VIII or XI, depending on the deck, with the Cards of Blasphemy following the Rider–Waite Tarot (No. XI). The figure on the card holds a scale made of gold in their right hand, symbolizing a balanced decision. The Justice card indicates that the fairest decision will be made. Justice is the sword that cuts through a situation and will not be swayed by outer beauty when deciding what is fair and just."
+  },
+  "god": [
+    {
+      "name": "Grisha Adam",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Adam",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Ancient Sun God",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Dragon of Imagination Ankewelt",
+      "status": "AG (Ancient God) ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A grayish-white Giant Mind Dragon with pale gold vertical pupils. They have golden vertical eyes, gray-skinned wings, and thick limbs. Their grayish-white scales are engraved with complicated, three-dimensional mysterious symbols. They extend into the flesh and the surrounding void and look like a mesh of objects that don't belong to the real world."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A grayish-white Giant Mind Dragon with pale gold vertical pupils, golden vertical eyes, gray-skinned wings, and thick limbs. Their grayish-white scales are engraved with complicated, three-dimensional mysterious symbols that extend into the flesh and the surrounding void, looking like a mesh of objects that don't belong to the real world. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Visionary Sun Tyrant White Tower Hanged Man",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "God Almighty",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "sefirah": {
+    "name": "Chaos Sea"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Sun", "Tyrant", "White Tower", "Hanged Man"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"]
+      },
+      {
+        "group": "Goddess of Fate",
+        "pathways": ["Eternal Edict"]
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because there is an overlap between the Imagination/Envisioning of the Visionary Pathway with the Illusion/Fantasy of the High-Dimensional Overseer."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The Chaos Sea is a Sefirah that the Primordial Hunger specifically targets, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Psychology Alchemists"
+    },
+    {
+      "name": "Twilight Hermit Order"
+    }
+  ],
+  "trivia": {
+    "sequence_0_characteristic_extraction": "Unlike other pathways, at Sequence 0, a Visionary can extract two of the three Sequence 1 characteristics and replace them with imagined characteristics. This is why Dragon of Nightmares Alzuhod could be at Sequence 1 while Dragon of Imagination Ankewelt was at Sequence 0.",
+    "loss_of_control": "Medici once said that high-level Beyonders of the Visionary Pathway is the hardest to lose control or go crazy, but it's also the easiest to lose control and go crazy."
+  }
+}

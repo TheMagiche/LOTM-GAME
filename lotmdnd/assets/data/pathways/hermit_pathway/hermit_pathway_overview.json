@@ -1,0 +1,171 @@
+{
+  "pathway_name": "Hermit Pathway",
+  "aliases": [
+    "Mystery Pryer Pathway",
+    "Warlock Pathway",
+    "Knowledge Pathway"
+  ],
+  "overview": {
+    "description": "The Hermit Pathway seems to specialize in knowledge of the mystical and occult world. They have good ritual magic abilities, cast various spells and make scrolls with corresponding materials, as well as conjure and manipulate stars.",
+    "high_sequence_characteristics": "At High-Sequences, they can see and hear hidden existences easily, extract powers from mystical knowledge, and foresee the woven of fate; they become information themselves; they can modify their bodies, bring power to knowledge, instill knowledge upon the minds of others, and manipulate the symbolisms of number, thus bring all sorts of strong and terrifying effects.",
+    "hidden_sage_danger": "The pathway was controlled by the Hidden Sage, which often makes the situation of Beyonders of this pathway tragic as 'He' routinely whispers knowledge into their ears, especially during their Sequence advancement. Failing to assimilate the knowledge will either turn you into a raving lunatic or an outright monster. According to Aurore, 99% of the Knowledge Pursuit comes from the Hidden Sage. 'He' doesn't have a ridiculous level of malicious intent towards members of the Moses Ascetic Order, it is relatively safe for them to listen to 'Him,' but even Cattleya who is one of them would have lost control if The Fool didn't save her.",
+    "auroe_description": "The Mystery Pryer pathway is different from other pathways. From time to time, it will be chased by a large amount of knowledge. It's impossible to ignore, and there's no way to reject it even if one can't handle it. And when one consumes a potion to advance, the situation of being chased by knowledge becomes even more serious.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Mystery Pryer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Melee Scholar",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Warlock",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Scrolls Professor",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Constellations Master",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Mysticologist",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Clairvoyant",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Sage",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Knowledge Emperor",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Hermit",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Hermit Pathway. A pair of eyes that contained countless resplendent stars. They were cold and indifferent, and they lacked eyelashes."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Hermit",
+    "card_number": "IX",
+    "description": "The Hermit (IX) is the ninth card of Major Arcana. The Hermit is the 'withdrawal from events and relationships to introspect and gather strength'. Seeking the inner voice or calling upon vision from within. A need for understanding and advice, or a wise person who will offer knowing guidance. A card of personal experience and thoughtful temperance."
+  },
+  "god": [
+    {
+      "name": "Celestial Master",
+      "status": "Dao Integrator",
+      "type": "Current God"
+    },
+    {
+      "name": "Hidden Sage",
+      "status": "UQ (Activated Uniqueness) †",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "An informational being that resembles a giant serpent or eyeballs."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "An informational being that resembles a giant serpent or eyeballs. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Hermit Paragon",
+    "pathways": [
+      "Hermit",
+      "Paragon"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Demon of Knowledge",
+    "pathways": [
+      "Hermit",
+      "Paragon"
+    ]
+  },
+  "sefirah": {
+    "name": "Knowledge Moor"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Demon of Knowledge",
+        "pathways": ["Paragon"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"],
+        "note": "Because the Inextinguishable Ravings specifically targets the Knowledge Moor."
+      },
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "Because the Supernova Dominator specifically targets the Knowledge Moor to enrich 'His' star systems and civilizations. 'He' wants to accommodate it 'Himself' and obtain the symbolism of Civilization."
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer can accommodate the Knowledge Moor. 'He' desires the Hermit Pathway and the Paragon Pathway that symbolize Information."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "God Almighty",
+        "pathways": ["White Tower"],
+        "note": "The symbols and authorities of these pathways in the Knowledge domain are highly similar, and things related to Knowledge also have a certain convergence."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Moses Ascetic Order"
+    },
+    {
+      "name": "Church of the God of Steam and Machinery"
+    },
+    {
+      "name": "Element Dawn"
+    },
+    {
+      "name": "Daoism (Western Continent)"
+    }
+  ]
+}

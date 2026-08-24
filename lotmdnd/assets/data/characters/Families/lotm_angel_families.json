@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Tudor",
+    "empire": "Tudor Empire",
+    "pathway": "Red Priest, Black Emperor",
+    "angels": [],
+    "status": "Destroyed in the War of the Four Emperors."
+  },
+  {
+    "name": "Abraham",
+    "empire": "Tudor Empire",
+    "pathway": "Door",
+    "angels": ["Fors Wall (Non-Blood Related)"],
+    "status": "Part of the Church of the Fool."
+  },
+  {
+    "name": "Antigonus",
+    "empire": "Tudor Empire",
+    "pathway": "Fool",
+    "angels": ["Antigonus"],
+    "status": "Destroyed by the Church of the Evernight Goddess."
+  },
+  {
+    "name": "Amon",
+    "empire": "Tudor Empire",
+    "pathway": "Error",
+    "angels": ["Amon"],
+    "status": "Weakened after losing the War of the Four Emperors."
+  },
+  {
+    "name": "Jacob",
+    "empire": "Tudor Empire",
+    "pathway": "Error",
+    "angels": [],
+    "status": "Weakened after losing the War of the Four Emperors."
+  },
+  {
+    "name": "Tamara",
+    "empire": "Tudor Empire",
+    "pathway": "Justiciar, Door, Chaos Mist",
+    "angels": [],
+    "status": "Split into several branches and factions: the Justiciar branch (splintered into three factions: the School of Truth faction, the Mirror People faction, and the original traditions faction), and the Door branch (later merged into the Theosophy Order)."
+  },
+  {
+    "name": "Trunsoest",
+    "empire": "Trunsoest Empire",
+    "pathway": "Justiciar, Black Emperor",
+    "angels": [],
+    "status": "Destroyed at the end of the Fourth Epoch after the death of the Night Emperor."
+  },
+  {
+    "name": "Augustus",
+    "empire": "Trunsoest Empire",
+    "pathway": "Justiciar, Black Emperor",
+    "angels": ["William Augustus", "IDlink Augustus"],
+    "status": "The Royal Family of the Loen Kingdom."
+  },
+  {
+    "name": "Castiya",
+    "empire": "Trunsoest Empire",
+    "pathway": "Justiciar",
+    "angels": [],
+    "status": "The Royal Family of the Feynapotter Kingdom."
+  },
+  {
+    "name": "Sauron",
+    "empire": "Trunsoest Empire",
+    "pathway": "Red Priest",
+    "angels": [],
+    "status": "Declined and lost control of the Intis Republic, still have control in military, intelligence, and parliament."
+  },
+  {
+    "name": "Einhorn",
+    "empire": "Trunsoest Empire",
+    "pathway": "Red Priest",
+    "angels": ["Awatoma Einhorn", "Snarner Einhorn"],
+    "status": "The Imperial Family of the Feysac Empire."
+  },
+  {
+    "name": "Sanguines",
+    "empire": "Trunsoest Empire",
+    "pathway": "Moon",
+    "angels": ["Olmer", "2 Unnamed Dukes", "Emlyn White"],
+    "status": "Part of the Church of the Earth Mother. Allies to the Church of the Fool."
+  },
+  {
+    "name": "Solomon",
+    "empire": "Solomon Empire",
+    "pathway": "Black Emperor",
+    "angels": [],
+    "status": "Mostly destroyed in the War of the Four Emperors."
+  },
+  {
+    "name": "Zaratul",
+    "empire": "Solomon Empire",
+    "pathway": "Fool",
+    "angels": [],
+    "status": "Weakened after losing the War of the Four Emperors. Is related to the Secret Order. In 1360, Zaratul was killed by Amon."
+  },
+  {
+    "name": "Zoroast",
+    "empire": "Solomon Empire",
+    "pathway": "Error",
+    "angels": ["Pallez Zoroast"],
+    "status": "Weakened after losing the War of the Four Emperors."
+  },
+  {
+    "name": "Medici",
+    "empire": "Solomon Empire",
+    "pathway": "Red Priest",
+    "angels": ["Sauron-Einhorn-Medici"],
+    "status": "Bansy Harbor descendants destroyed by the Church of the Lord of Storms."
+  },
+  {
+    "name": "Eggers",
+    "empire": "Balam Empire",
+    "pathway": "Death",
+    "angels": ["Sia Palenque Eggers", "Azik Eggers"],
+    "status": "Trying to revive Death. After The Apocalypse, joined the Church of the Eternal Darkness."
+  },
+  {
+    "name": "Nois",
+    "empire": "Devil",
+    "pathway": "Abyss",
+    "angels": ["Unnamed Archduke"],
+    "status": "The most powerful family among devil worshipers. Partially corrupted by the Mother Tree of Desire."
+  },
+  {
+    "name": "Andariel",
+    "empire": "Devil",
+    "pathway": "Abyss",
+    "angels": [],
+    "status": "Declined to a vassal of Nois Family. Partially corrupted by the Mother Tree of Desire."
+  },
+  {
+    "name": "Beria",
+    "empire": "Devil",
+    "pathway": "Abyss",
+    "angels": [],
+    "status": "Declined to a vassal of Nois Family. Partially corrupted by the Mother Tree of Desire."
+  },
+  {
+    "name": "Demoness Family",
+    "empire": "Demoness",
+    "pathway": "Demoness",
+    "angels": ["Judith", "Tissavica"],
+    "status": "Became the Demoness Sect in the Fifth Epoch. After The Apocalypse, joined the Church of the Ruler of Calamity."
+  }
+]

@@ -1,7 +1,8 @@
-import { Trash2, BookOpen } from 'lucide-react';
+import { Trash2, BookOpen, Sparkles } from 'lucide-react';
 import type { Campaign } from '../types';
 import { Backdrop } from './primitives/Backdrop';
 import { GhostBtn, PrimaryBtn } from './primitives/Buttons';
+import { WORLD_PACKS, type WorldPack } from '../worldpacks/lordOfTheMysteries';
 
 export interface CampaignFormModalProps {
     editingCampaign: Campaign | null;
@@ -19,6 +20,7 @@ export interface CampaignFormModalProps {
     lootName: string;
     setLootFile: (f: File) => void;
     setLootName: (v: string) => void;
+    applyWorldPack?: (pack: WorldPack) => void;
     handleSave: () => void;
     resetForm: () => void;
     onClose: () => void;
@@ -31,6 +33,7 @@ export function CampaignFormModal(props: CampaignFormModalProps) {
         loreName, setLoreFile, setLoreName,
         rulesName, setRulesFile, setRulesName,
         lootName, setLootFile, setLootName,
+        applyWorldPack,
         handleSave, resetForm, onClose,
     } = props;
 
@@ -70,6 +73,38 @@ export function CampaignFormModal(props: CampaignFormModalProps) {
                         boxSizing: 'border-box',
                     }}
                 />
+
+                {!editingCampaign && WORLD_PACKS.length > 0 && (
+                    <>
+                        <ModalLabel>Quick Start</ModalLabel>
+                        <div style={{ marginBottom: 20, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                            {WORLD_PACKS.map(pack => (
+                                <button
+                                    key={pack.id}
+                                    type="button"
+                                    onClick={() => applyWorldPack?.(pack)}
+                                    style={{
+                                        display: 'flex', alignItems: 'center', gap: 10,
+                                        padding: '9px 12px', background: 'var(--color-void-lighter)',
+                                        border: '1px solid color-mix(in srgb, var(--color-terminal) 20%, transparent)',
+                                        borderRadius: 4, cursor: 'pointer', textAlign: 'left',
+                                        transition: 'border-color 0.2s',
+                                    }}
+                                >
+                                    <span style={{ color: 'var(--color-terminal)' }}><Sparkles size={13} /></span>
+                                    <span style={{ flex: 1 }}>
+                                        <span style={{ display: 'block', fontSize: 12, color: 'var(--color-text-primary)', fontFamily: "'JetBrains Mono', monospace" }}>
+                                            {pack.label}
+                                        </span>
+                                        <span style={{ display: 'block', fontSize: 10, color: 'rgba(107,107,107,0.55)', fontFamily: "'JetBrains Mono', monospace", marginTop: 2 }}>
+                                            {pack.description}
+                                        </span>
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                    </>
+                )}
 
                 <ModalLabel>Cover Image</ModalLabel>
                 <div style={{ marginBottom: 20 }}>

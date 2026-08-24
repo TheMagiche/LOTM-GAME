@@ -1,0 +1,357 @@
+{
+  "pathway": "Justiciar",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Arbiter",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Order",
+          "description": "An Arbiter will subconsciously maintain the current Order, unwilling to disrupt its fabric. If they bear official identities, this tendency only intensifies."
+        },
+        {
+          "name": "Physical Enhancement",
+          "description": "They have outstanding combat skills to deal with the unexpected."
+        },
+        {
+          "name": "Authority",
+          "description": "Arbiters possess a convincing charm and have a considerable Authority, causing people to be more likely to believe and obey their commands and words. When in conflict against an Arbiter, their enemies are often less confident about their chances and will have the feeling of wanting to give up."
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Sheriff",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Spiritual Perception",
+          "description": "They possess intuition and Spiritual Perception suited for a Public Security Officer. With their supernatural senses as Sheriffs, as well as the distance between them not being too great, they can vaguely grasp their target's current location and predetermined location. They can detect any abnormalities and grasp subtle clues. When put together with Recognition, it allows them to do investigative sweeps in a rather effective manner. When the distance between them and an abnormality is close enough, they can sense unprotected thing related to Evil, Disorder, and Madness. Sheriffs have a sharp intuition for monitoring others and for being monitored by others."
+        },
+        {
+          "name": "Physical Enhancement",
+          "description": "Their physical constitution is effectively enhanced."
+        },
+        {
+          "name": "Jurisdiction",
+          "description": "A Sheriff is able to designate an area as their Jurisdiction. A Sheriff and their own area of Jurisdiction are always connected. The more familiar they are with the place, and the more trust or support they receive from the people there, the more they can exert abilities beyond their own capabilities and receive some assistance from the environment. Once they exceed their Jurisdiction range, or if they have just acquired Jurisdiction and are not yet familiar with it, they can only rely on their own Beyonder powers. Their area of Jurisdiction is approximately the size of a small town. If they receive an official appointment from the authorities, the area under their administration can be larger, but it must not exceed 5 times the normal limit."
+        },
+        {
+          "name": "Recognition",
+          "description": "As long as they see a person in the flesh, in a photo, or a sketch, they'll be able to firmly remember the target's appearance and obtain an additional sense on an extraordinary level. They possess memory, in the mystical sense, of the routes they have traversed."
+        },
+        {
+          "name": "Weapon Proficiency",
+          "description": "A Sheriff has also gained proficiency in portable melee weapons and portable firearms such as pistols and shotguns."
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Interrogator",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "Their bodies improve to a certain extent."
+        },
+        {
+          "name": "Illusory Torture Devices",
+          "description": "They can summon Illusory Torture Devices (like branding irons) in their hands which can directly damage the Spirit Body; however, there must be physical contact as these devices cannot be used from a distance. Xio Derecha used an illusory branding iron to stop an Ancient Wraith from attacking her and Fors."
+        },
+        {
+          "name": "Psychic Lashing",
+          "description": "They can coat their weapons in bolts of illusory lightning which lets them turn regular cold weapons into things capable of affecting Spirit Body-type creatures. Xio Derecha used Psychic Lashing alongside her blade to attack an Ancient Wraith."
+        },
+        {
+          "name": "Psychic Piercing",
+          "description": "This Beyonder power causes bolts of lightning appear within and shoot out from their eyes to attack their target at an effective distance of 5 meters. It can impose pressure on the Spirit Body, focus the mind, ignore the physical body, pierce the target's Soul, and directly attack their Spirit Body, bringing unbearable pain. Psychic Piercing isn't a Beyonder power that disrupted with thoughts or affected the mind, but is a means to directly attack the Spirit Body. In essence, while other abilities act on the Body of Heart and Mind, Psychic Piercing's target is the Soul Body instead, the two are significantly different."
+        },
+        {
+          "name": "Whip of Pain",
+          "description": "This directly attacks the mind, making the target feel like an electric current are running through their mind, forming a barbed whip that constantly lashes their Soul. This 'feeling' is both painful and numb, as if it comes from the depths of the brain, making it irresistible. The affected target can only tremble, their knees going weak, and they have to confess as well as dare not lie."
+        },
+        {
+          "name": "Demolition Proficiency",
+          "description": "They have also become demolition experts."
+        },
+        {
+          "name": "Strengthened Abilities - Weapon Proficiency",
+          "description": "They are proficient in using a variety of weapons."
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Judge",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Strengthened Abilities - Authority",
+          "description": "A Judge's Authority have undergone a qualitative change, not only making them have an indescribable aura that makes people around them subconsciously avoid their gazes but also being able to influence the environment. They can use Mystical Languages such as Ancient Hermes to establish new Rules or make a corresponding Verdict for a certain area. Everything within that area must abide by the Rules or the Verdict's outcome and violations will result in being bound by the Rules. Both the Judge's Spirituality and Rules limit Verdict to a degree."
+        },
+        {
+          "name": "Prohibition",
+          "description": "Pushing forward with an open palm, a Judge can use Ancient Hermes to establish a rule forbidding certain actions or Beyonder powers, forcing everyone within a certain range to comply with the Prohibition. Prohibitions generally follow this format: ''X' is Prohibited here'. Some of the examples of the Beyonder powers and actions a Judge can Prohibit include the following: Flight, floating, Teleportation, Invisibility, etc. When it comes to the Prohibition of Invisibility, those who are hidden in shadows won't be compelled to reveal themselves, as they weren't invisible to begin with. They had merely shape-shifted into a shadow being, blending with the shadows. At its current level, Prohibition targeting specific races or individuals cannot directly kill the target; it can only cause continuous suppression or repel them from the Prohibition's area of effect. Such Prohibitions that are directly aimed at a particular existence will be quickly suppressed if there is a level difference. Examples of this are Prohibiting the existence of beings such as Specters and Wraiths within an area. With preparation and only providing assistance, it can influence even Saints to a certain extent, though not necessarily effectively, but it can cause some disruption. Xio caused Botis's normally instantaneous Teleportation to be blocked by a rusty, abnormally heavy door—something that couldn't keep him from leaving after making adjustments."
+        },
+        {
+          "name": "Imprison",
+          "description": "This Verdict creates layers upon layers of transparent walls as well as a flowing, extremely viscous, transparent liquid that freezes the target in place, making it difficult for even Spirits to pass through. Imprison can root Spirit Body type creatures in place but can't prevent Spirit Bodies from escaping via abilities like Substitution."
+        },
+        {
+          "name": "Release",
+          "description": "The effect can be ended early using the word 'Release'. It will not trigger abilities such as Mirror Substitution unless they have been used beforehand."
+        },
+        {
+          "name": "Confinement",
+          "description": "This is Imprison applied to a certain area, creating an immaterial wall—a transparent cell—with their target at its center, impenetrable by Spirit Bodies. This can be used to circumvent Substitution abilities by Confining a small area. This is because targets would reappear within the Confinement's boundaries after using Substitution abilities. This can be used to Seal a room to prevent entry or exit. Confinement caused the dining room of Capim to 'freeze', as if an additional layer of invisible wall surrounded the area."
+        },
+        {
+          "name": "Maintain Secrecy",
+          "description": "By making eye contact with the target, their eyes flash with a strange light, making the other person feel that they must do as instructed and not reveal secrets."
+        },
+        {
+          "name": "Death",
+          "description": "After declaring the target as Dead, their body merges with some strange force, dragging a blur at speeds that create afterimages as they crash into the enemy. Their fist strikes the target's head with an unavoidable force, causing devastating damage and it can also be aimed at a specific spot on the target, inflicting a severe injury."
+        },
+        {
+          "name": "Flog",
+          "description": "Their hand is swung so that the target appears to be struck by an invisible soft whip, which can tear clothes, lacerate flesh, and expose bone."
+        },
+        {
+          "name": "Exile",
+          "description": "By saying the word 'Exile', they can send an immense and invisible power that forces targets out at high speeds. This affects Spirit Bodies as well, causing them to be blown away."
+        },
+        {
+          "name": "Jurisdiction",
+          "description": "A Judge's area of Jurisdiction is enhanced. The upper limit of its maximum range approaches the size of Backlund."
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Disciplinary Paladin",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancements",
+          "description": "Their body is sufficiently strong enough and sufficiently robust."
+        },
+        {
+          "name": "Enhanced Mental Attributes",
+          "description": "They have a mystical sense of self-restraint. This makes them experts at resisting interrogation and prying. They can resist truth serum and Hypnosis. Their intuition and Spiritual Perception have been enhanced. This makes them able to pinpoint the source of the threads of a Demoness of Pleasure. They would be able to perceive any surreptitious modification of the terms the moment they sign a contract with an Overseer."
+        },
+        {
+          "name": "Punishment",
+          "description": "They can select a target for Punishment, after setting it, they would emanate a dawn-like glow, enhancing their influence and offensive power against the target. Targets for Punishment include but are not limited to: Those who attack the Disciplinary Paladin or affect their actions; Those who are not part of the surrounding environment; Those who violate a certain law or morality; Those who should not affect Reality; Those who violate their own rules. They can choose non-living objects as targets for Punishment. Stratford chose the 'bindings' restricting him to be a target of punishment, tearing the Abyss Chains apart with immense strength. They can Punish the offender in different ways, for instance: A Disciplinary Paladin can restrict the offender, seemingly immobilizing their target's feet with invisible shackles, making their movements rigid. As the target is selected for Punishment, the Disciplinary Paladin will the seem to grow taller in the target's eyes, striking fear into their heart. The target will sense that the Disciplinary Paladin is a formidable figure who could end their existence with a mere thought."
+        },
+        {
+          "name": "Strengthened Abilities - Authority",
+          "description": "The aura of their Authority causes surrounding beings to feel inexplicable horror. The affected target's movements become slow, and they unconsciously wish to lower their heads, prostrate themselves, listen to every word of the Disciplinary Paladin and obey every order given by them. Some of the words they can utilize have undergone a qualitative change."
+        },
+        {
+          "name": "Prohibition",
+          "description": "This is the Judge ability at Sequence 5, it can be stacked to further impose restrictions on targets that can resist the rules to some extent. After Frunziar Edward proclamed 'Flying is prohibited here!', Ulyssan's wings that blotted out the sky seemed to be weighed down by invisible objects weighing a hundred times its body weight. It began flapping them with great difficulty. If an enemy violates the rules set by the user, and the Disciplinary Paladin proclaims 'Violators will be punished!', the Disciplinary Paladin will be enhanced by an unknown force, attacking the enemy with a guaranteed hit."
+        },
+        {
+          "name": "Death",
+          "description": "It has undergone a qualitative change. At this level, this Verdict can be used by them to target a specific location on the target, inflicting severe damage. Shortly after Siatas's successful attack, Frunziar Edward used 'Death' with the North King's wound as the target, causing all the flesh and blood in the surrounding area to wither, making the wound open all the way to the bones."
+        },
+        {
+          "name": "Other Improvements",
+          "description": "They have gained improvements to other abilities and traits from previous Sequences."
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Imperative Mage",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "They have gained enhancement to their physical fitness."
+        },
+        {
+          "name": "Imperatives",
+          "description": "The core ability of an Imperative Mage; It allows them to set broad restrictions and maintain them for a period of time. The broader the restrictions set by an Imperative, the shorter the duration. Generally speaking, the shortest duration is 30 seconds and the longest is 15 minutes. Examples of the Imperatives they can employ are: 'Weaken Mysticism, Enhance Reality' will greatly weaken all Beyonders and mysterious effects within an area (including their side), while strengthening Reality's influence. This is a powerful tool for the military in Reality to combat Beyonders. 'Weaken Reality, Enhance Mysticism' is the opposite Imperative of the former, which is able to enhance Beyonder effects while weakening the influence of Reality. Appropriate Imperatives are also able to help the them accomplish many things/effects that are normally impossible. For example, levitation, or being able to slow down bullets and cannonballs as though they sunk into a quagmire formed of air."
+        },
+        {
+          "name": "Contracts",
+          "description": "Imperative Mages can also create Contracts that conform to the Rules of the world and internalize these contracts into various restrictions on the physical and Spirit Bodies. Unlike a Notary, the binding force of an Imperative Mage's Contracts comes from the rule-based Order, rather than from the witness of Gods or higher beings. Amyrius' Contract binded Klein in many ways, including making him not have any desire or lack the ability to do it when facing Cynthia. Once a Contract is done, the piece of paper would rapidly dissipate and vanish, as though it had fused with the world's Rules."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "The abilities of all the previous Sequences have been massively strengthened."
+        },
+        {
+          "name": "Supernatural Intuition",
+          "description": "As practitioners of Order, Imperative Mages can distinguish between ordinary people and Beyonders based on their 'positions' and can even determine the level of a Beyonder, that is, their 'position'. Beyonders who have Concealment powers to some degree, such as Bizarro Sorcerers, are able to hide their Sequence level from them but not their status as a Beyonder. They can also perceive the intertwining Beyonder powers of their targets, manifesting in different colors and states. This allows them to use Deprivation effectively."
+        },
+        {
+          "name": "Authority",
+          "description": "Their Authority has been amplified to the point that it can intimidate the target and leave them rooted to the spot, also their Verdicts have been enhanced as well."
+        },
+        {
+          "name": "Prohibition",
+          "description": "They can now Prohibit more actions and Beyonder powers. They can Prohibit an area from having any interaction from the outside world. Using the Ninth Law charm, Klein proclamed 'This place is prohibited from having any interaction with the outside world!', causing his words, which were filled with mystery, to instantly spread out as the dark golden light scattered everywhere and intertwined with the countless Law-like symbols and magic labels before merging into the void. However, since the event was influenced by the Mother Tree of Desire, the level of the power was extremely high. Just a normal level of recoil was enough to penetrate the natural protection of the high-level charm and burst his eyes as fluid—a mixture of blood and plasma—gushed out horrendously. They can Prohibit stand-ins, preventing any usage of Substitution abilities. They are able to Prohibit Marionette Interchange."
+        },
+        {
+          "name": "Deprivation",
+          "description": "Deprives a target of a certain Beyonder power. Stripped Beyonder powers are made unusable for a certain period of time. Deprivation is unavoidable and could only be resisted or weakened through one's level or Sequence's characteristics. Different from a Depriver's Deprivation which takes away the corresponding Beyonder Characteristics or the Error Pathway's Theft which is within the Inconceivable symbolism, the Deprivation of an Imperative Mage only Deprives the target from using that power and does not completely take it away from them."
+        },
+        {
+          "name": "Exile",
+          "description": "Saying the word 'Exile', they can Exile their targets into a void, the destination unknown. This allows them to deal with enemies that cannot be resolved quickly."
+        },
+        {
+          "name": "Execution",
+          "description": "An Imperative Mage can make a fist with their right hand and swing it down hard, which can directly Execute the target and kill them from afar."
+        },
+        {
+          "name": "Confinement",
+          "description": "By making the left hand loosely clenched, they can Confine the target."
+        },
+        {
+          "name": "Intimidation",
+          "description": "This Verdict Intimidates the target and keeps them in place. Amyrius Rieveldt's gaze made Klein involuntarily lower his head due to his indescribable pressure and might, and made Bilt's forehead instantly broke out into a cold sweat, plopping to his knees in order to explain the situation under the indescribable pressure."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As Demigods at Sequence 4 who have obtained partial Godhood, they are able to manifest their incomplete Mythical Creature Form if they disregard any of the consequences and become an incomplete giant Brass Pillar."
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Chaos Hunter",
+      "translation_note": "In the original Chinese text, 混乱 (hǔnluàn), the term used for 'Disorder', is sometimes translated as 'Chaos', as is done in the English WebNovel translation, this conflicts with a similar term, 混沌 (hùndùn). Since these terms are both distinct authorities, this page will consistently use the same English words to refer to the same Chinese words throughout for clarity and distinction. Disorder (混乱 hǔnluàn) refers to a state of confusion, disorder, or lack of order. It implies the breakdown of established systems, rules, or expectations. Chaos (混沌 hùndùn) refers to primordial chaos—the formless and undifferentiated state that precedes or underlies creation. Usually used in creation myths. Note: The 'Chaos' in Chaos Hunter (混乱猎手 hǔnluàn lièshǒu) uses the characters for 'Disorder' (混乱 hǔnluàn), just like the Sequence 5 Mentor of Disorder (混乱导师: Hǔnluàn dǎoshī) from the Black Emperor Pathway.",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Balancing",
+          "description": "They can initially apply Balance capabilities to divide the battlefield—bringing Order to the battlefield—but it cannot prevent this Order from sliding further into Disorder."
+        },
+        {
+          "name": "Disorder Authority",
+          "description": "They gain a small portion of authority over Disorder. Chaos Hunters have the direct ability to sense, lock onto, and track Disorder, and can also quickly quell environmental Disorder. Seizing the moment, Judgment reached the cathedral's dome and pressed down with her right palm, like Chaos descending from the heavens to the earth."
+        },
+        {
+          "name": "Judgment Authority",
+          "description": "They gain partial authority over Judgment."
+        },
+        {
+          "name": "Sword of Judgment",
+          "description": "Chaos Hunters are able to make a direct Judgment on Disorderly things, which cannot be avoided. The more Disorderly the target is (that is, the more it deviates from or disrupts the current Order), the stronger the Judgment effect will be. Through this Judgment, they can use the Order of the environment to instantly jump to the target location or in front of the target. Georgina Augustus erased the distance and appeared directly above the Tutanssess II mummy, Mahmosi, and Zatwen. This can be used to deal with certain negative effects on their own body, like for instance, a Disciple of Silence's Transfiguration Curse. After he and his steam chariot were Cursed into a goat, Celt cleaved through the Disorder and Evilness, returning his original appearance."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "The Beyonder powers of their previous Sequences have become enhanced."
+        },
+        {
+          "name": "Imperatives",
+          "description": "They gain enhancements to the core power of an Imperative Mage. 'All the dead will receive their eternal peace' has the effect of creating a region that induces eternal rest to the Dead. 'Truth recedes here, while Illusion grows stronger' will cause Truth to be weaker while Illusion becomes stronger, making the line between real and false weaker."
+        },
+        {
+          "name": "Jurisdiction",
+          "description": "The Jurisdiction has been expanded to include metropolitan areas. If a Chaos Hunter is extremely familiar with the locations within their Jurisdiction, they can arrive at them almost instantly."
+        },
+        {
+          "name": "Verdict",
+          "description": "Their ability to impose Verdicts on their target has been enhanced."
+        },
+        {
+          "name": "Prohibition",
+          "description": "They can now Prohibit more Beyonder powers and existences. They can directly Prohibit Marionettes, such animated corpses would abruptly cease their movements, and this effect can work against even Miracle Invokers. By saying 'Concealment is Prohibited here.', they can make a Demoness of Despair who is invisible to instantly appear out of nowhere in the area they were."
+        },
+        {
+          "name": "Exile",
+          "description": "By declaring the word 'Exile', they can create an invisible and majestic force that coalesces into a terrifying hurricane, materializing directly where the target is."
+        },
+        {
+          "name": "Deprivation",
+          "description": "The number of abilities that can be Deprived has been greatly increased."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As a Sequence 3 Beyonder, they can respond to prayers within a certain range."
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Balancer",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Balance Authority",
+          "description": "'They' gain partial authority over Balance. 'They' can divide the battlefield, separating the various sides into different areas while roughly ensuring a Balance of power in each battlefield. Before ending their own battle and making the corresponding battlefield cease to exist, neither Angels nor Saints can interfere in other battles. Even a Planeswalker will be locked in their respective area, preventing them from joining other battlefields. If one side becomes too strong, members who exceed the Balance limit will be excluded from the battlefield within a short period of time. This will last anywhere between 10 seconds to 2 minutes, within that time, those affected will be unable to participate in the battle. Alternatively, these members could freely choose their own battlefield if the Balancer does not prevent them from doing so. The underlying Rule is to end Disorder, restore Order, and enforce Balance, however, this may not necessarily mean perfect Balance. Consequently, this Balance can Distorted by a Duke of Entropy. The Rule created by the Pillar of Severity created a disparity in strength between the two sides when including Sealed Artifacts. The Sun could not use the Proof of Glory due to its characteristics, while the Demoness of Gold could freely use the Eye of God. Using Solomon's Mask, Judgment Distorted the Balance to become more extreme, allowing her and the Demoness of Orange to join the Sun and the Demoness of Gold, while forcing Mirror Roselle Gustav and the Demoness of Black to face Temperance who wielded the Box of the Great Old Ones. In a one-on-one situation, a Balancer can forcibly reduce or increase the enemy's strength to a level roughly equivalent to their own within 1 minute. The stronger the enemy, the shorter the duration of this Balance with 1 minute being the upper limit. In other words, this meant that the Balancer can be evenly matched with anyone, even a True Deity, though this will only last for 3 seconds. 'They' can sense imbalances and Disorder in the surrounding area, allowing them to detect targets in a Concealed state."
+        },
+        {
+          "name": "Strengthened Abilities - Laws",
+          "description": "They gain the ability to enact Laws and Decrees which allow multiple Prohibitions or Enhancements to take effect simultaneously by defining the environment. 0-02 declared 'This battlefield is a Land of Light, a domain of righteousness. All depravity and evil shall find no footing.' This caused the Mirror World to be illuminated by an unknown source of light and the head of The Setting Sun Rooster to droop lifelessly with a snap, unable to utter corrupted words or emanate Depravity. It also made the Demoness of Cyan unable to cast Curses or other Dark Magic."
+        },
+        {
+          "name": "Other Improvements",
+          "description": "'They' gain an enhancement of abilities from previous Sequences."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "'They' have become a full Mythical Creature; 'Their' Mythical Creature Form is that of a giant Brass Pillar with rules written on it."
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Hand of Order",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Order Authority",
+          "description": "'They' gain partial authority over Order."
+        },
+        {
+          "name": "Order Proxy",
+          "description": "'They' are able to establish many new Rules (not at the underlying level) for an entire battlefield, all 'Their' enemies, an entire city, or a small nation. 'They' are able to modify or even temporarily remove existing Rules (not at the underlying level), but these rules cannot be completely fixed and remain in effect permanently. Due to the characteristics of the Justiciar Pathway, if the Nation of Disorder gives permission, 'They' can act as a Proxy. Otherwise, not. It must have a compliant procedure. If the Hand of Order has authorization from the Celestial Thearch, then without harming 'Themselves', 'They' can reach King of Kings of Angels level of strength for 3 seconds. At the cost of certain death, 'They' can reach the level of the weakest tier of Half Great Old One. When the Sefirah has no consciousness and operates via Symbolism, it must use specific methods to possibly succeed. Those specific methods need to be figured out. William Augustus I's Historical Projection announced 'Sealing is prohibited here.', causing shadow that enveloped Utopia to immediately shake as many gaps appeared. It was unable to completely isolate the marionette town from the outside world. 'They' can sense the changes in Order. 'They' can observe the tug-of-war between Disorder and Balance, the evolving Order of the battlefield, and the enemy forces' formation, carefully calculating the Rules, and what kind of Order should be established. William Augustus I managed to sense the death of George III through the changes in Order. 'They' can quell Disorder and Anomalies, exist in an independent position, and control the effects. After dividing the battlefield into different sections, William Augustus I's Historical Projection stood at an isolated spot, ensuring that none of the aftershocks attacked the mausoleum below."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "'They' gain an enhancement of abilities from previous Sequences."
+        }
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Justiciar",
+      "translation_note": "In the original Chinese text, 律法 (lǜfǎ) and 规律 (guīlǜ) are distinct terms with different nuances, though both can be translated as 'Laws', as is done in the English WebNovel translation. Since these terms are both distinct authorities, this page will consistently use the same English words to refer to the same Chinese words throughout for clarity and distinction. Laws (律法, lǜfǎ) refers to codified, enforceable laws—rules established by authority, often carrying judicial or binding force. It aligns with legal systems, decrees, and formal structures of governance. Officially translated as 'laws and decrees' and 'set of laws' on some relevant chapters. Principles (规律 guīlǜ) refers to inherent patterns or natural laws—the underlying order of reality that exists independently of authority. It is closer to universal principles or the fundamental workings of the world. In other contexts this term can also denote simpler patterns or regularity, not a strict law, but rather an observable consistency or recurring behavior over time such as everyday routines or behavioral patterns. On the other hand, the symbolism of Laws also uses different Chinese characters, 定律 (dìnglǜ), which are also the same characters used for the 'Laws' in the Laws of Beyonder Characteristics. Laws (定律, dìnglǜ) refers to fixed laws or established principles—a stable, universally applicable rule that does not change.",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Order Authority",
+          "description": "The Justiciar possesses the Order authority and its corresponding subordinate authorities over Rules, Laws, Principles, etc. 'They' can modify the underlying Rules of the world to some extent. Compared to the Paragon's ability to change Laws of Physics versus the Justiciar's ability to change the underlying Rules, the Justiciar is stronger as it also effects mystical Rules. The Trunsoest Brass Book has Rules presented in grayish-black that, if it were able to awaken further, it could change and do the following modifications: 'Scholar of Yore has the ability to summon Historical Void Projections. The success rate of Summoning depends on the familiarity and friendliness of the target...' It might have reduced the success rate of summoning Historical Void Projections. 'When one's rationality drops to 20% of its original value, there would be signs of losing control...' It may cause Beyonders to show signs of losing control if their rationality falls a little. 'They' can make certain modifications to the Rules of the Red Priest's Sacrifices. 'They' are able to remove existing, non-underlying Rules. 'They' are able to establish various new Rules for the world. These Rules can't be fundamental but they will be permanent, with an effect ranging from small to large, from a single nation to a planet or a star system. The Son of Chaos can even influence the Laws of Beyonder Characteristics such as Indestructibility, Convergence, and Separation to a certain extent, making limited, low-level, and small-scale modifications. Rules have to be publicized or announced before it could truly be effective. Thus, Concealing the announcement of those Laws will make them ineffective. The Rules can be made stricter over time with each additional clause. It can reach a level where it will be impossible for a person to abide by 'Their' Laws. The Rules that had been created will restrict 'Them' as well. However, 'They' could get rid of those Rules to break the restriction. 'They' can theoretically create a method for Resurrection; however, the Rules involved must be mutually reinforcing and can't directly stipulate 'Their' Revival. For instance, 'They' can establish that the Souls of the deceased in this area remain preserved and do not enter the Spirit World. Then 'They' need to specify the duration of Soul preservation before stipulating that Ghosts can retain their memories. Only then, through step-by-step regulations, can Resurrection be achieved. However, this approach is overly complex and easily disrupted. The Trunsoest Brass Book set several different Rules, each with its own corresponding Judgment when broken. 'Lost items are regarded as abandonment.' 'All living beings are equal before the Law. Even Angels can be killed by ordinary people'. 'Resurrection of the deceased is prohibited here!' This weakened the will of the Celestial Worthy awakening inside the body of Klein. 'Without my permission, no living being can leave this place.' This prevented Klein Moretti's Spirit Body from leaving and entering Sefirah Castle. In barren and dead places, both the Justiciar and the Black Emperor can rebuild a complete set of Order suitable for human survival. The Justiciar relies on the original fundamental Rules to recreate an Order suitable for human survival, while the Black Emperor will Distort the original Rules to make them suitable for humans. The effect is the same, but the methods of realization differ. The Justiciar can grant Immunity to specific individuals. This will enable those individuals to disregard the effects of indiscriminate Rules."
+        },
+        {
+          "name": "Order Proxy",
+          "description": "'They' can reach the strongest tier of Half Great Old Ones. 'They' can completely obtain all the abilities and symbolisms on the level of the Celestial Thearch in The Apocalypse war, but 'They' would die and could only maintain this state for less than 3 seconds."
+        },
+        {
+          "name": "Judgment",
+          "description": "Anyone who violates the Order can be Judged. Each Judgment will be supported by the will and power of the entire world, and this can be performed either remotely or in person. The Trunsoest Brass Book could Punish targets each time its Laws had been broken, which would also increase the corresponding level of Punishment until it reaches Death."
+        },
+        {
+          "name": "Disorder Authority",
+          "description": "'They' have partial authority over Disorder. The Justiciar is able to restore Disorder, quell Disorder, and extinguish Disorder. Order can also create Disorder."
+        },
+        {
+          "name": "Balance Authority",
+          "description": "'They' are able to force Balance. In addition to the previously manifested Balances, it can also Balance many abstract things, such as restoring the Balance between reason and madness for a certain period of time, but only 3 minutes at most."
+        },
+        {
+          "name": "Divine Kingdom",
+          "description": "Ancient Court of Judgment or Heaven of Laws."
+        }
+      ]
+    }
+  ]
+}

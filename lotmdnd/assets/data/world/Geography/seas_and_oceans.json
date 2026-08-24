@@ -1,0 +1,22 @@
+{
+    "seas_and_oceans": {
+      "description": "The major bodies of water that separate the continents.",
+      "list": [
+        {
+          "name": "Berserk Sea",
+          "type": "Sea",
+          "description": "A sea known for its constant storms, thunder, and chaotic magnetic fields, making it extremely dangerous and cutting off the Northern and Southern Continents."
+        },
+        {
+          "name": "Sonia Sea",
+          "type": "Sea",
+          "description": "The major sea separating the Northern and Southern Continents. It is plagued by sea monsters, pirate fleets, and supernatural phenomena. It contains the Rorsted Archipelago."
+        },
+        {
+          "name": "Fog Sea",
+          "type": "Sea",
+          "description": "A sea located to the west of the continents, rumored to lead to the Western Continent. It is the site of the first colonies of the Intis Republic."
+        }
+      ]
+    }
+  }

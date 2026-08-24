@@ -1,0 +1,213 @@
+{
+  "pathway": "Demoness Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Assassin",
+      "potion_overview": "Dull, inconspicuous liquid that inexplicably induces thirst.",
+      "formula": {
+        "main_ingredients": [
+          "Root tendrils of the Shadow Poison Flower",
+          "Black feathers of a Serpent-Bodied Monster Bird"
+        ],
+        "alternative": "An Assassin Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of strong vinegar",
+          "Three petals of the Shadow Poison Flower",
+          "10 drops of buttercup essential oil",
+          "One live spider"
+        ]
+      },
+      "acting_method": "Assassination is a matter of risking one's life. It is the ultimate form of punishment, a calamity for those criminals. Every Assassin possesses the ability to change their body for a short time, gaining feather-like lightness to perform a Leap of Faith, and has eagle-like vision and night vision, excelling in combat, evasion, and concealment. Shadows are their friends and their camouflage. Once they leave the shadows, they use their agile footwork to gather all their strength for a fatal strike on their target.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Instigator",
+      "potion_overview": "An obsidian potion fizzing with tiny bubbles, as though harboring hidden desires and ill intent.",
+      "formula": {
+        "main_ingredients": [
+          "A Demon Throat Honeyguide's Heart",
+          "A Dark Prowler's Poison Sac"
+        ],
+        "alternative": "An Instigator Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Purified Water",
+          "Syrinx of the Demon Throat Honeyguide",
+          "5 drops of Blue Jimsonweed Juice",
+          "10 grams of Aqua Fern Grass Powder",
+          "An unpeeled walnut"
+        ]
+      },
+      "acting_method": "Instigate people to commit crimes and spread dissension. To instigate a group of people, just need to understand the situation and ignite the spark in a few initial individuals. The ignited ones would, in turn, become agents of instigation, rallying more people to their cause in a snowballing effect. Instigation is means, not an end. The essence of Instigation lies in understanding the core of the matter and the conditions of the people involved, not in the use of abilities. Instigation will inevitably bring about consequences; it just depends on whom you want to face those consequences.",
+      "consumption_backlash": "The pain would jolt them awake, recalling memories. They would gain fresh insights, a better understanding of the true intentions and thoughts of those involved in it. They would sense malevolent thoughts that had either come to fruition or were waiting to be acted upon. Soon, their heart would be filled with rage, loathing, and a desire to obliterate those individuals and matters. They would feel an urge to cease holding back and unleash their emotions. They have to resist these feelings of hatred, anger, and desire from taking reins. Their shadow deepens, and their hair appears to lengthen. In a little over ten seconds, the pain gradually recedes, and they reconnect with their body."
+    },
+    {
+      "sequence": 7,
+      "name": "Witch",
+      "potion_overview": "A dark-red potion with concealed shadows. It tasted icy, and illusory, like melting frost. Dreamlike, romantic rose-colored liquid.",
+      "formula": {
+        "main_ingredients": [
+          "Every drop of an Abyss Demonic Fish Blood",
+          "An Agate Peacock Egg"
+        ],
+        "alternative": "A Witch Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Purified Water",
+          "5 drops of Jimsonweed juice",
+          "3 scales of a Shadow Lizard",
+          "10 drops of Daffodil Juice"
+        ]
+      },
+      "acting_method": "Become a true woman, a natural disruptor, as you become closer the Primordial 'Her'. Getting close to mystical dangers was the key.",
+      "consumption_backlash": "They would quickly begin to feel an itching, a painful sensation spreading all over their body. Their thoughts begin to blur, feeling as though they are slowly sinking into water. Suddenly, excruciating pain surges throughout their body, jolting them back to full awareness. They would find themself surrounded by black, silent flames that were slowly consuming them. Above them, a translucent layer of frost-encased ice, like a mirror, prevents them from escaping the black flames. In the next instant, a face and a figure materialized on the ice. And the face bears an uncanny resemblance to their own but with their dominant hand switched to the other side. This mirror person above the ice stares at the figure being engulfed by the black flames with anticipation and desire. The advancer must then attempt to break the ice. And this ice would shatter without a sound, and the 'corrupted' them plunging into the black flames. In the distance, a python-like black object swayed gently, with a dark-blue vertical eye at its tip. The bizarre 'python' vanished in an instant, not entering the area. Instead, it delved into a black shadow."
+    },
+    {
+      "sequence": 6,
+      "name": "Pleasure (Demoness of Pleasure)",
+      "potion_overview": "Potion emitting strands of pinkish blood hue.",
+      "formula": {
+        "main_ingredients": [
+          "A pair of Succubus Eyes",
+          "An adult Black Widow Spider Silk Gland"
+        ],
+        "alternative": "A Pleasure Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Purified Water",
+          "5 drops of Black Jimsonweed Juice",
+          "Complete remnants of a Succubus's hair",
+          "10 grams of Feynapotter Fly Powder",
+          "5 grams of real Mummy Ashes"
+        ]
+      },
+      "acting_method": "When pleasure is irresistible and impossible to break away from, it's a form of agony. Do not form romantic connections and developed feelings. Separate the spiritual from the physical. When there's too much spiritual connection, the desire for physical intimacy grows. Conversely, with too much physical intimacy, it's inevitable for souls to draw closer. Pleasure wasn't just something to offer to others; it was also meant for oneself. Pleasure begets pain, and pleasure lures people into depravity. Pleasure is akin to a candle flame to a moth.",
+      "consumption_backlash": "Their faces would twist in anguish or be pricked by tiny, needle-like pains. And they may feel like walking on the clouds. Their hair would break free from their ponytail if they have any, and their hair would be as if it is having the influence of an unseen force, defying gravity and extending away. Their hairs would continue to drift and extend, resembling a radiant web expanding in all directions. More ethereal strands emerged, dense and elongated. Swiftly, they populated the space embraced by the wall of spirituality (if they made one), fashioning a spectral woodland of filaments."
+    },
+    {
+      "sequence": 5,
+      "name": "Affliction (Demoness of Affliction, Lady of Diseases)",
+      "potion_overview": "Dark red near-black blood rapidly turning completely black with occasional disgusting green bubbles - resembles a collection of pathogens.",
+      "formula": {
+        "main_ingredients": [
+          "A head of a Flower-Faced Bat",
+          "A gallbladder of a Two-Tailed Black Snake"
+        ],
+        "alternative": "An Affliction Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "30 milliliters of Flower-Faced Bat blood",
+          "50 milliliters of a seriously ill human's blood",
+          "tail tip of the Two-Tailed Black Snake",
+          "10 drops of Enfinitas Eucalyptus Essential Oil"
+        ]
+      },
+      "advancement_ritual": "Without substitutes, be burned at the stake for fifteen minutes and survive without going mad.",
+      "ritual_essence": "No data available.",
+      "acting_method": "The more painful the pain, the more you can feel your own weakness. Pain is at its best when you desire to change yourself to become stronger. Bring pain to the target, not just physical, but also mental.",
+      "consumption_backlash": "Whether from the flames from the ritual or the potion, their head would quickly grow hot, and their mind becomes fuzzy and blurry. They may involuntarily recall their past pleasures, including their own experiences and the feedback from their partners. At this moment, they are both the giver and receiver of pleasure, drowning in it from body to soul, almost dissolving like spring water. The pain from the flames keeps their last bit of clarity for the entire way through. As their thoughts continue to drift and their sense of self gradually loses itself. The pain is not only the physical, but also the emotional, and mental pain that keeps them conscious. And so, they would recall the corresponding memory. The extreme pain from the burning flames on their body is like invisible threads pulling themself and consciousness, making them sway like a kite in a storm, not completely out of control."
+    },
+    {
+      "sequence": 4,
+      "name": "Despair (Demoness of Despair)",
+      "potion_overview": "A dark purple potion shimmering with a rosy light.",
+      "formula": {
+        "main_ingredients": [
+          "Plague Mother Serpent's Venom Sac",
+          "Silver Hunter's Crystal"
+        ],
+        "alternative": "A Despair Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "10 millilitres of Plague Mother Serpent's Bile",
+          "Three Fragments of the Silver Hunter",
+          "A fresh branch of mistletoe",
+          "10 millilitres of blood from seven victims who died from different plagues"
+        ]
+      },
+      "advancement_ritual": "Involve over thirty thousand people in a severe plague. The more that die, the stronger the despair and suffering, the better the ritual effect.",
+      "ritual_essence": "No data available.",
+      "acting_method": "Experience despair. Bring despair to others.",
+      "consumption_backlash": "Their hair would eerily begin to float, gradually growing longer. As for them, they could only feel their spirit and thoughts rapidly falling into a lightless, enclosed darkness, plummeting towards an unknown depth. The victims would suddenly feel their pain and despair condense into something tangible, turning into invisible threads extending toward the advancer. They are certainly too sick to attempt to fight the perpetrator. Their consciousness and spirit floats and falls within the enclosed darkness. They can feel countless invisible threads of intense despair extending from the outside world, following their mystical connections to grasp their body. At the same time, they would see some brilliant starry lights. Those were the people they cared about, and who cared about them, the anchors that let her know who they are. The groggy them would gradually regain clarity, vaguely sensing a gaze full of resentment, hatred, and expectation watching them from somewhere in the deep darkness. Their hair instantly turned completely black, floating in the air like tentacles, with their tips swelling into spheres, as if about to open into numerous eyes. And their faces became even more beautiful."
+    },
+    {
+      "sequence": 3,
+      "name": "Unaging (Demoness of Unaging)",
+      "potion_overview": "A grayish-white liquid clearly reflecting the surrounding Mirror World. It has the taste of soil and stone.",
+      "formula": {
+        "main_ingredients": [
+          "1 Heart of a Mirror God",
+          "A pair of Gorgon Eyes"
+        ],
+        "alternative": "An Unaging Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Nine Mirror God Fragments",
+          "80 milliliters of Gorgon Blood",
+          "An antique mirror over 500 years old with a corresponding mirror realm",
+          "22 drops of water from a drowned person's lungs"
+        ]
+      },
+      "advancement_ritual": "Find your mirror self, enslave them solely with your own power, or make them truly infatuated with you, or reconcile with them.",
+      "ritual_essence": "Lumian Lee thinks that the prerequisite for reconciliation is that both parties have a common goal for which one is willing to sacrifice themselves, and the Mirror Person has no better options. Then negotiations become possible. The Demoness of Unaging's ritual involved enslaving one's Mirror Person, or making them infatuated, or reconciling with them, because otherwise, after taking the potion, as the body petrified and the spirit wandered toward the mirror self, it would meet the Mirror Person's strong resistance, and at this time one's strength could only be exerted to a limited degree, making the situation very precarious. The host had to truly acknowledge that the Mirror Person is a part of themselves, another aspect of themselves, rather than harboring deceptive intentions and using the Instigator's abilities to persuade them. Recognition should be mutual, only then can reconciliation occur, only then can consciousness be unified.",
+      "acting_method": "Maintain an unaging mentality over the erosion of time, over hundreds or thousands of years.",
+      "consumption_backlash": "Their senses would go numb. Wherever the potion passes, their tongue, mouth, esophagus, and stomach would lose their sensation and turn into greyish-white. Right after that, their entire body rapidly petrifies. And this greyish-white would continue to seep into their soul. At this moment, they would feel their spirit float into the air, arriving at their mirror self's side, watching as their form turns into a stone, seemingly becoming a statue. Their mirror self are also undergoing the corresponding changes, just much more slowly, much more gradually. When the Mirror Person was also severely petrified, their spirit would float up again, returning to their body. By now, their body had adapted to the potion and, under the returning consciousness's drive, gradually shed its petrified state. Their mirror self would also have a transformation, as for what it is, that would depend on the method used."
+    },
+    {
+      "sequence": 2,
+      "name": "Catastrophe (Demoness of Catastrophe)",
+      "potion_overview": "As if the pre-storm sky was bottled whole.",
+      "formula": {
+        "main_ingredients": [
+          "Lilith's hair. (Before the Fourth Epoch, Lilith's hair existed as an item, later obtained by Cheek)"
+        ],
+        "alternative": "A Catastrophe Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "30 grams of soil from fertile land",
+          "100 milliliters of rainwater from the first annual flood",
+          "One Mirror World Fragment (not from Special Mirror Worlds)",
+          "10,000 curses from dead victims of disaster (Higher Sequence targets require fewer)"
+        ]
+      },
+      "advancement_ritual": "As a participant, cause a disaster affecting the entire continent, and advance during the disaster.",
+      "ritual_essence": "No data available.",
+      "acting_method": "Be a bringer of calamity, whether self-made or external. Serve the catastrophe.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Apocalypse (Demoness of Apocalypse)",
+      "potion_overview": "Deep black liquid filled with destruction.",
+      "formula": {
+        "main_ingredients": [
+          "An Apocalypse Beyonder Characteristic"
+        ],
+        "supplementary_ingredients": [
+          "A piece of completely lifeless darkness",
+          "81 people obsessed with themselves",
+          "One self-created ongoing apocalypse scenario",
+          "60 milliliters of blood from a Weather Warlock"
+        ]
+      },
+      "advancement_ritual": "Any one of the three rituals is effective: Advance at the universally acknowledged end of an epoch or the beginning of the next. Advance during the signs and process of the apocalypse's arrival. Advance when one's own involvement leads to the fall of a deity.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Demoness (Chaos Demoness, Primordial Demoness)",
+      "potion_overview": "An exquisitely charming female human skin.",
+      "formula": {
+        "main_ingredients": [
+          "The Demoness Uniqueness",
+          "Three Apocalypse Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "One portion of genuine love originating from oneself (This is illusory, it must be transformed into something between real and illusory before being used)",
+          "Half of the Mirror World"
+        ]
+      },
+      "advancement_ritual": "Altered Ritual: Descend into the depths of the earth, find the Chaos Sea, endure a degree of its corruption while maintaining oneself—neither falling nor transforming. This ritual shown in the Second Blasphemy Slate was influenced by the Primordial God Almighty to be beneficial to 'Him' as a resurrection plan. Alternative Ritual: Find a way to borrow the special traits from the Sequence 1s of five Pathways related to the Chaos Sea, combine them into a power close to the Chaos Sea, and control it. This ritual was not stated in the Second Blasphemy Slate.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

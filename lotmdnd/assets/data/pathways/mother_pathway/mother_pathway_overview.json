@@ -1,0 +1,175 @@
+{
+  "pathway_name": "Mother Pathway",
+  "aliases": [
+    "Planter Pathway",
+    "Earth Pathway"
+  ],
+  "overview": {
+    "description": "The Mother Pathway has life, plant, and earth-related abilities. They also dabble in the field of healing and genetics, in terms of both the physical and the soul body. They can become the creators of new lifeforms based off current ones.",
+    "high_sequence_characteristics": "At High-Sequences, Beyonders of this pathway can induce their surroundings to flourish quickly and create chimeras/crossbreeds, ordinary humans, and various constructs such as golems. They can also deprive life force from targets and their surroundings to return them to the earth, rebirth themselves, and create life.",
+    "authority": "The Mother Pathway has an inherent affinity and possesses characteristics that help control madness.",
+    "origin": "The Beyonder Characteristics of this pathway originated from the Outer Deity Mother Goddess of Depravity.",
+    "cuttlefish_description": "Coming from here, returning to here—this is the origin; and to return to the origin is death.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Planter",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Doctor",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Harvest Priest",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Biologist",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Druid",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Ancient Alchemist",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Pallbearer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Desolate Matriarch",
+        "advancement_method": "Abi/Adv",
+        "note": "At Sequence 2, Beyonders of this pathway are forcefully changed to the female gender. It is possible to avoid the gender transition if one becomes Sequence 2: Life-Giver of the Moon Pathway instead, then later advance to Sequence 1: Naturewalker."
+      },
+      {
+        "sequence": 1,
+        "name": "Naturewalker",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Mother",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Mother Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The World",
+    "card_number": "XXI",
+    "description": "The World (XXI) is the twenty-first of 22 Major Arcana. It's a card of powerful significance as it marks the end of the numerical progression of the Major Arcana. It's a card of fulfillment, joy, completion, and success. The World represents an ending to a cycle of life, a pause in life before the next big cycle beginning with The Fool. It is an indicator of a major and inexorable change, of tectonic breadth.",
+    "author_interpretation": "It is a whole process to take the image that the life cycle represents perfection and achievement, born from the earth, returned to the earth, and rotated again, which is close to the symbol of The World card.",
+    "card_of_blasphemy_appearance": "After Naturewalker was a female version of Emperor Roselle wearing a loose long dress, holding an infant, with two children standing beside him. This page's title was: 'Sequence 0, Mother'!"
+  },
+  "god": [
+    {
+      "name": "Mother Goddess of Depravity",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Brood Hive",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Earth Mother",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Mother Goddess of Depravity",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A mass of flesh and blood covered with various reproductive organs, golden ears of wheat, mushrooms, vines, and soil."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A mass of flesh and blood covered with various reproductive organs, golden ears of wheat, mushrooms, vines, and soil. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Mother Moon Chaos Primogenitor",
+    "pathways": [
+      "Mother",
+      "Moon",
+      "Chaos Primogenitor"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Goddess of Origin",
+    "alternative_name": "Mother Goddess of Depravity",
+    "pathways": [
+      "Mother",
+      "Moon",
+      "Chaos Primogenitor"
+    ]
+  },
+  "sefirah": {
+    "name": "Brood Hive"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Goddess of Origin",
+        "pathways": ["Moon"]
+      },
+      {
+        "group": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor"],
+        "note": "Because the Goddess of Origin was originally a part of the Mother Goddess of Depravity."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness"],
+        "note": "Because the Original Creator's feminine aspect and the universe's feminine aspect are, to some extent, equivalent, leading to convergence without causing excessive madness. This is one of the reason why Lilith is relatively more sane than the other Ancient Gods."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Earth Mother"
+    },
+    {
+      "name": "Luo Sect (Western Continent)"
+    }
+  ],
+  "trivia": {
+    "madness_control": "The reason why Omebella's bloodline can reduce the loss of control is because the Mother Pathway has an inherent affinity and possesses characteristics that help control madness.",
+    "gender_transition": "At Sequence 2, Beyonders of this pathway are forcefully changed to the female gender. It is possible to avoid the gender transition if one becomes Sequence 2: Life-Giver of the Moon Pathway instead, then later advance to Sequence 1: Naturewalker."
+  }
+}

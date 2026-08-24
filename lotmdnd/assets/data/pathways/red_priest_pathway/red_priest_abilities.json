@@ -1,0 +1,167 @@
+{
+  "pathway": "Red Priest Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Hunter",
+      "abilities": [
+        "Physical Enhancement: Inhuman physical qualities including increased strength, speed, reaction, body control, and natural healing.",
+        "Heightened Senses: Enhanced auditory, olfactory, and visual senses for strong tracking.",
+        "Spirituality: Slightly enhanced Spirituality.",
+        "Ritualistic Magic: Can learn and cast basic Ritualistic Magic.",
+        "Spirit Vision: Can learn to use Spirit Vision through Cogitation.",
+        "Danger Intuition: Can passively sense ill intentions and danger.",
+        "Knowledge (Survival, Traps): Knowledge on how to survive in the wilderness and place traps."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Provoker",
+      "abilities": [
+        "Physical Enhancement: Slightly stronger physique, strength, reflexes, speed, and agility.",
+        "Spirituality: Slightly enhanced Spirituality.",
+        "Spirit Vision: Can activate Spirit Vision smoothly using a simple gesture.",
+        "Provocation: Can induce permanent state change and discern which words/actions most easily trigger agitation."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Pyromaniac (Fire Mage)",
+      "abilities": [
+        "Spirituality: Remarkable improvement in Spirituality.",
+        "Spirit Vision: Can discreetly activate Spirit Vision and discern Ether Body components.",
+        "Danger Intuition: Enhanced; can activate pre-emptively.",
+        "Pyrokinesis: Freely control and conjure flames within vicinity.",
+        "Compression: Can compress flames for more potent strikes.",
+        "Fire Armor: Can ignite Flame Armor over body for defense.",
+        "Conjure Flames: Can conjure temporary weapons using flames.",
+        "Fire Ravens: Summons multiple ravens made of fire for interception and locking-on.",
+        "Wall of Fire: Summons flaming serpents to erect a scorching barrier.",
+        "Blazing Spear: Creates a spear of blazing-white fire for high damage.",
+        "Giant Fireball: Compression of crimson Fireballs into a devastating blast.",
+        "Fire Resistance: Remarkable resistance to flames."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Conspirer",
+      "description": "The Conspirer's direct destructive capability is ranked in the upper-tier among Sequence 6s.",
+      "abilities": [
+        "Enhanced Mental Attributes: Enhanced insight, sharper thinking, and intelligence.",
+        "Information-Gathering: Enhanced five senses and spiritual perception.",
+        "Physical Enhancement: Improved physique.",
+        "Spirituality: Enhanced Spirituality.",
+        "Incitement (Instigation): Can incite thoughts or desires through conversation.",
+        "Misdirection, Confusion, Deception (Conspiracy): Core aspects of manipulation.",
+        "Flame Transformation: Can merge with fire weapons and travel to destination.",
+        "Pyrokinesis: Improved precise control over flames; flames become crimson-white."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Reaper",
+      "description": "The Reaper has the highest damage output between all Sequence 5 Beyonders.",
+      "abilities": [
+        "Physical Enhancement: Improved strength, speed, and endurance.",
+        "Spirituality: Enhanced to a significant degree.",
+        "Enhanced Mental Attributes: Clearer thinking.",
+        "Weakness Investigation: Can discern vulnerabilities and weak points.",
+        "Cull: Can infuse attacks to harvest target's life, striking vital points.",
+        "Precision: Can precisely target predetermined locations and carefully manipulate Fire Spells.",
+        "Pyrokinesis: Enhanced flame manipulation."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Iron-blooded Knight",
+      "abilities": [
+        "Gender Transition: Advancement results in becoming male regardless of original gender.",
+        "Courage: High resistance against mental attacks and fear.",
+        "Physical Enhancement: Can fight against Twilight Giant Pathway Giants or Dragons.",
+        "Weaponizing: Can turn ordinary objects into terrifying murderous weapons.",
+        "Chain of Command: Hidden connection with those under their command.",
+        "Communication: Can share senses between troops.",
+        "Strength Concentration: Can focus the power of their army onto themselves.",
+        "Alleviation: Can spread damage on themselves to their troops.",
+        "Galvanization: Can transform body and flames into steel.",
+        "Pyrokinesis: Heat from flames increases exponentially; flames become bluish-white.",
+        "Cull: Reached Demigod level potency.",
+        "Mythical Creature Form: Incomplete Calamity Giant."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "War Bishop",
+      "abilities": [
+        "War Song & War Cry: Can yell out a War Cry or sing a War Song to enhance allies and weaken enemies.",
+        "Fog of War: Disrupts senses of anyone within and isolates connections.",
+        "Sacrifice: Can petition the Essence of War or Symbolism of War for assistance.",
+        "Gathering: Can gather power from their army and impart own power to troops.",
+        "Chain of Command: Enhanced; can unleash the true strength of an army.",
+        "Crowd Control: Can fortify and connect members to resist outside interference.",
+        "Communication: Enhanced; can pass down messages and selectively shield/modify information.",
+        "Pyrokinesis: Flames become pure azure with enhanced destructive power.",
+        "Mythical Creature Form: Can respond to prayers."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Weather Warlock",
+      "abilities": [
+        "Charm: Makes people want to follow and be loyal.",
+        "Information-Gathering: Enhanced ability to extract and restore environmental information.",
+        "Physical Enhancement: Enhanced strength and stamina.",
+        "Spirituality: Enhanced amount of Spirituality.",
+        "War Song & War Cry: Can let out a soul-shaking, chilling cry.",
+        "Weather (Weather Manipulation): Partial authority over Weather.",
+        "Gathering: Can concentrate and Gather strength within a 10 kilometer range.",
+        "Weaponizing: Can make materials as strong as the Sword of Courage.",
+        "Pyrokinesis: Flames glow violet-tinged azure.",
+        "Compression: Compressed fireball's explosive power far surpasses fleet's main guns.",
+        "Flame Transformation: Can turn into a stream of flame or flaming meteor.",
+        "Weakness Investigation: Enhanced scope including Substitutes, Avatars, and manifestations.",
+        "Cull: Greatly enhanced power.",
+        "Galvanization: Ability to turn into steel closer to symbolism of 'steel'.",
+        "Chain of Command: Massively enhanced hidden line of command.",
+        "Fog of War: Greatly enhanced; can expand to 20 kilometers.",
+        "Sacrifice: Can petition Essence of War once every week.",
+        "Tracking: Advanced Tracking skills.",
+        "Mythical Creature Form: Complete 5-6 meter tall Calamity Giant."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Conqueror",
+      "abilities": [
+        "Conquest & War: Part of the Conquest and War authorities.",
+        "Conquest: Can make target's body, mind, and spirit want to submit.",
+        "Puppets into Soldiers (Casting Beans into Soldiers): Can Conquer inanimate objects to turn into soldiers.",
+        "Gathering: Gathered power can undergo qualitative transformation.",
+        "War Commander: Can establish a temporary team of unlimited size.",
+        "Sacrifices: Can achieve power burst similar to Hand of God.",
+        "Spear of Destruction: Cull ability undergoes qualitative transformation.",
+        "Galvanization: Enhanced ability to turn flames and body into steel.",
+        "Pyrokinesis: Flames burn in pure violet color.",
+        "Weaponizing: Can coalesce fog into a spear-like weapon capable of shattering mountain peaks."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Red Priest",
+      "description": "'Red' represents the color of War, and 'Priest' can be understood as a ritual of strength.",
+      "abilities": [
+        "Lord of War: Can share power, rank, and Uniqueness across an entire planet.",
+        "Conquest: Authority can extend to territories and abstract concepts.",
+        "War: Can cause War to break out in a target area through mere gaze or presence.",
+        "Courage: Subsidiary authority of War; Courage of mind means no fear.",
+        "Fog of War: At True Deity level, can affect even the Astral World.",
+        "Destruction: Can shatter an entire planet or kill a True God.",
+        "Flames: Lesser authority of Destruction; formless and colorless Flame.",
+        "Disaster: Lesser authority of Destruction; master of various calamities.",
+        "Sacrifices: Can influence and interfere with any Sacrificial Ritual.",
+        "Charm: Possesses a certain degree of Charm authority.",
+        "Masculinity: Authority over Male forces and concepts."
+      ]
+    }
+  ]
+}

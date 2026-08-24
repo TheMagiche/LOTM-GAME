@@ -1,0 +1,116 @@
+{
+    "items": [
+      {
+        "code": "3-1328",
+        "name": "Eye of Crystal",
+        "appearance": "A monocle.",
+        "function": "Allow the wearer to see the spiritual body directly, as well as ghosts and shadows.",
+        "downside": "Attract monsters like wraiths and shadows to the vicinity.\nIf it was worn for a long time, one's vision would suffer irreversible damage.",
+        "status": ""
+      },
+      {
+        "code": "3-0782",
+        "name": "Mutated Sun Sacred Emblem",
+        "appearance": "A badge with a dark gold luster, engraved with the signs of the Sun.",
+        "function": "Purifies sentient beings in a fifteen-meter radius.",
+        "downside": "It turns the user into a Sun-worshipping idiot if used for too long.",
+        "status": ""
+      },
+      {
+        "code": "3-0625",
+        "name": "Misfortune Cloth Puppet",
+        "appearance": "A cloth puppet wearing a regal gown.",
+        "function": "It brings misfortune to people nearby, although they have to be near it for a sufficiently long period of time for it to work.",
+        "downside": "Affects the user as well.",
+        "status": ""
+      },
+      {
+        "code": "3-0611",
+        "name": "Peaceful Hair Strands",
+        "appearance": "A simple decoration formed with many strands of black hair.",
+        "function": "Any living creature that came into contact with this artifact would turn peaceful and lose all motivation.",
+        "downside": "Affects the user as well.",
+        "status": ""
+      },
+      {
+        "code": "3-0217",
+        "name": "Spirit Medium's Mirror",
+        "appearance": "A mirror, its back is plated in mercury, the front has three minor cracks.",
+        "function": "Whoever looks into it encounters danger.",
+        "downside": "Affects the user as well.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Mystery Prying Glasses",
+        "appearance": "A pair of gold-rimmed glasses with a tea-colored tint.",
+        "function": "1. Allows the wearer to perceive invisible truths.\n2. The wearer can draw paintings with various effects.\n3. The wearer can use cosmetic to achieve an excellent disguise.",
+        "downside": "1. Seeing what should remain unseen without adequate protection exposes to unknown dangers.\n2. The wearer will be seized by an uncontrollable urge to paint.\n3. If someone looks too often at his own face while in disguise, he'll be convinced that his disguise is his real face.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Flare",
+        "appearance": "A shiny golden button.",
+        "function": "1. It grants additional buffs such as courage and strength through singing.\n2. It enables the user to sense the presence of undead creatures and evil entities.\n3. It allow him to employ spells and rituals from the Sun domain, making it highly effective against undead souls and similar targets.",
+        "downside": "1. After wearing it, you'll feel compelled to sing. Darkness and cold become unbearable, and you'll yearn for sunlight and warmth.\n2. If you haven't removed it after half an hour, you'll become a devoted follower of the Eternal Blazing Sun.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Master Key",
+        "appearance": "A simple brass key.",
+        "function": "Lets the user pass through walls and open any lock that is not protected by mystical powers.",
+        "downside": "* Makes the user lost.\n* At the full moon, the holder will hear the scream of Mr. Door.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Circus",
+        "appearance": "An unassuming white glove.",
+        "function": "It can conjure a gust of wind, create fog, and use bursts of light to mess with the target's vision. By touching them, the wearer can freeze enemies.\nIt allows the wearer to open most doors without a key and to pass through solid walls.",
+        "downside": "By wearing it, the user gets lost more often. And sometimes, getting lost brings misfortune.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Green Essence",
+        "appearance": "A golden ring with inlaid emerald.",
+        "function": "It treats minor diseases and wounds.",
+        "downside": "It attracts mosquitoes.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Broken Finger",
+        "appearance": "A grayish white tweezers inlaid with two finger bones.",
+        "function": "Makes the user better at stealing items.",
+        "downside": "The user is affected by kleptomania when worn.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Murloc Cufflink",
+        "appearance": "A blue cufflink",
+        "function": "Breathe underwater, increased mobility underwater.",
+        "downside": "The user becomes more tired in hot or dry places.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Alcohol Nemesis",
+        "appearance": "A diamond Brooch.",
+        "function": "Help the user to maintain energy and lucidity in his thoughts.\nImprove user ability to resist spell that affects the Body of Heart and Mind.",
+        "downside": "It will continuously damage the liver and brain. Wearing it too long, and the user would lose thoughts and logic.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Eye of Truth",
+        "appearance": "A peculiar monocle seemingly fashioned from flesh and blood.",
+        "function": "It has the ability to see through illusions, perceive the truth, and discern the light of spirituality.",
+        "downside": "*If it is worn, the user can hear the voice of some hidden entity at any moment and experience an irresistible negative influence.\n*If it is only carried and not in contact with the body, the user will only experience faint tinnitus and auditory hallucinations.",
+        "status": ""
+      }
+    ]
+  }

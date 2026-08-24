@@ -1,0 +1,239 @@
+{
+  "pathway": "Justiciar",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Arbiter",
+      "potion_properties": "A brownish-yellow liquid with black spots floating (sinking and rising) on it.",
+      "beyonder_characteristic_appearance": "A brownish-yellow slate covered with black lines.",
+      "formula": {
+        "main_ingredients": [
+          "The facial skin of a White-maned Hunter (it resembles a male lion).",
+          "3 tail feathers of an Imperial Crown Falcon"
+        ],
+        "alternative_main_ingredients": [
+          "A Arbiter Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 ml of blood from White-maned Hunter",
+          "1 claw of an Imperial Crown Falcon",
+          "1 Green Olive",
+          "1 gram of Gold"
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 8,
+      "name": "Sheriff",
+      "potion_properties": "A liquid from the three colors iron black, dark red and silver white interweaving.",
+      "beyonder_characteristic_appearance": "The ball-shaped object, resembling a child's fist, exhibited a captivating blend of three colors—iron-black, dark red, and silver. Its beautiful spiritual radiance emanated from the intertwining hues of black iron, dark red, and a prominent swath of silver.",
+      "formula": {
+        "main_ingredients": [
+          "A pair of Terror Demon Worm's eyes.",
+          "Silver War Bear's right paw."
+        ],
+        "alternative_main_ingredients": [
+          "A Sheriff Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 ml of blood from a Silver-white War Bear",
+          "20 ml of blood from a Fear Demon Worm",
+          "1 designation letter for a sheriff or similar position (does not need to be one's own),",
+          "10 drops of Monkey Flower essential oil."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 7,
+      "name": "Interrogator",
+      "potion_properties": "A light blue, translucent liquid that occasionally flashes with a silvery-white light.",
+      "beyonder_characteristic_appearance": "A light blue, translucent hexagonal prism with rays of light flickering inside, as if lightning is coming from the depths of consciousness.",
+      "formula": {
+        "main_ingredients": [
+          "The horn of a Flash-patterned Black Snake.",
+          "Dust of a Lake Spirit."
+        ],
+        "alternative_main_ingredients": [
+          "A Interrogator Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "90ml of blood from a Flash-patterned Black Snake",
+          "10g of byproducts from a Lake Spirit",
+          "1 piece of Wood scorched by lightning",
+          "1 Tourmaline (typically black or blackish mineral that occurs as prismatic crystals in granitic and similar rocks. It consists of a boron aluminosilicate and has pyroelectric and piezoelectric properties)."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 6,
+      "name": "Judge",
+      "potion_properties": "A black liquid with 'copper pillars' vertically running through it.",
+      "beyonder_characteristic_appearance": "A crystal with heavy-feeling particles. A transparent 'tree branch' that alternates between black and copper.",
+      "formula": {
+        "main_ingredients": [
+          "The scalp of a Black Domain Feudal Lord (it's an elf-like Beyonder Creature)",
+          "The tail of a strange patterned Giant Tiger"
+        ],
+        "alternative_main_ingredients": [
+          "A Judge Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "120 ml of blood from a Black Domain Feudal Lord",
+          "2 teeth of a strange patterned Giant Tiger",
+          "1 gavel used in the Inquisition for over 10 years",
+          "1 yellow 'Amaranth'"
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 5,
+      "name": "Disciplinary Paladin",
+      "potion_properties": "It looks as if a black liquid had frozen into many sharp, outward-pointing spikes.",
+      "beyonder_characteristic_appearance": "A black, heart-shaped stone covered in spikes.",
+      "formula": {
+        "main_ingredients": [
+          "The heart of a Metal Giant Ape",
+          "Forehead Spikes of a Vengeful Stone Spirit"
+        ],
+        "alternative_main_ingredients": [
+          "A Disciplinary Paladin Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "80 ml of pus from a Metal Giant Ape",
+          "20 g of shavings from a Vengeful Stone Spirit",
+          "1 tail of a Black Lamb",
+          "13 drops of Dill Essential Oil"
+        ]
+      },
+      "advancement_ritual": "Select a wanted criminal of at least Sequence 5, determine their crimes, then track them down alone, lock them down and execute them.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 4,
+      "name": "Imperative Mage",
+      "potion_properties": "A crystal clear, translucent, grayish-white colored liquid with the top being covered in copper.",
+      "beyonder_characteristic_appearance": "A copper-colored prismatic crystal with blurred grayish-white patches.",
+      "formula": {
+        "main_ingredients": [
+          "The Crystallization of a Copper Faced Evil Spirit",
+          "The stone tooth of a Mask Elf"
+        ],
+        "alternative_main_ingredients": [
+          "A Imperative Mage Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 ml of blood from a Mask Elf",
+          "10 g of rust sediment from a Copper Faced Evil Spirit",
+          "1 copy of the current Kingdom's main legal code",
+          "10 drops of Mandrake hydrolat"
+        ]
+      },
+      "advancement_ritual": "Create a law that differs from, but does not exclude, existing laws, and have it promulgated and implemented through the current national legislative process. Once ten thousand people have violated this law and have been punished accordingly, consume the potion.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 3,
+      "name": "Chaos Hunter",
+      "potion_properties": "A brass colored liquid, silvery letters intertwining within it.",
+      "beyonder_characteristic_appearance": "A fist sized spar brass cube with numerous mysterious characters written on it.",
+      "formula": {
+        "main_ingredients": [
+          "The palm of a Bronze Elf",
+          "The tongue of a Nature Guardian (a humanoid, golden ape-like, Beyonder Creature whose mission is to strictly maintain the natural order of its region)"
+        ],
+        "alternative_main_ingredients": [
+          "A Chaos Hunter Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "120 ml of blood from a Nature Guardian",
+          "10 strands of hair from a Copper Elf",
+          "1 piece from the corpse of a Demigod hunted by oneself (it does not necessarily have to be the whole corpse)",
+          "30 grams of a Gallow's wood chips on which at least 1000 criminals have been hanged"
+        ]
+      },
+      "advancement_ritual": "Handling a mysticism event involving at least Angel level powers on their own, restoring normal order to the affected area. The less people and property is lost in the area, the better the ritual.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 2,
+      "name": "Balancer",
+      "potion_properties": "A liquid divided symmetrically in half between black and copper.",
+      "beyonder_characteristic_appearance": "A black and yellow 'turtle shell' with strange cracks.",
+      "formula": {
+        "main_ingredients": [
+          "The Beyonder Characteristic of the God of Edicts (one of the Elf King Soniathrym's Subsidiary God)."
+        ],
+        "alternative_main_ingredients": [
+          "The Beyonder Characteristic of the Island Carrying Turtle.",
+          "A Balancer Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "150 milliliters of blood from an Angel or Subsidiary God corresponding to the Sequence 'Balancer'",
+          "1 item that only praises the Sun",
+          "1 wisp of the temptation to deprave from the Abyss of Mind/Heart",
+          "150 grams of contaminants originating from a 'Duke of Entropy' or similar beings"
+        ]
+      },
+      "advancement_ritual": "End the disorder on a continent and bring about a balance among the various forces which can be maintained for at least a hundred years. The ritual does not require for one to be in a dominant position, but they must play a crucial role.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 1,
+      "name": "Hand of Order",
+      "potion_properties": "A pure, transparent and unblemished brass colored liquid.",
+      "beyonder_characteristic_appearance": "A brass 'fist' with clearly defined knuckles that clenches tightly.",
+      "formula": {
+        "main_ingredients": [
+          "A Hand of Order Beyonder Characteristic"
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "1 code of law that has remained unchanged for over 300 years",
+          "9,000 portions of blood from lawbreakers (each portion must be at least 5 ml; the higher the level of the lawbreaker, the fewer portions are required)",
+          "9 abolished laws that violated normal circumstances",
+          "100 grams of contaminants caused by a fallen True God"
+        ]
+      },
+      "advancement_ritual": "Equivalent Rituals: Establish a nation with a population of at least 10 million, making one's will the order and a strict system of rules within that nation. or Control a nation with a population of at least 50 million, making one's will the order and a strict system of rules within that nation. In both rituals, the more Beyonders and the higher their level among the citizens, the fewer people are required, but the minimum population cannot be less than 1 million.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 0,
+      "name": "Justiciar",
+      "potion_properties": "A spherical, illusory world supported by massive brass pillars.",
+      "beyonder_characteristic_appearance": "No data",
+      "formula": {
+        "main_ingredients": [
+          "The Justiciar Uniqueness.",
+          "Three Hand of Order Beyonder Characteristics."
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "An alternate world whose original rules have been completely replaced by one's own order."
+        ]
+      },
+      "advancement_ritual": "Hold a sufficiently just trial concerning a serious matter involving a True God, in accordance with the rules one has previously established and ensure that the judgment is truly carried out, then take the potion.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "pathway_name": "Moon Pathway",
+  "aliases": [
+    "Apothecary Pathway",
+    "Vampire Pathway"
+  ],
+  "overview": {
+    "description": "The Moon Pathway has powerful healing abilities, as well as the enhancement of biological targets. They can create powerful healing and buffing potions, tame animals, regenerate, and cast darkness spells.",
+    "physical_traits": "At Sequence 7, Beyonders of this pathway begin to have red eyes, and this trait can be passed on to the next generation. All Sanguine have red eyes, which also occur in some of their descendants.",
+    "high_sequence_characteristics": "At High-Sequences, they can manipulate spirituality, master all sorts of moon domain spells, summon things or people from a far distance, increase the negative energy and spirituality of a region to release monsters and evil spirits, manipulate the power of creation, and become sacred goddesses. Their authority also includes Fertility and Proliferation.",
+    "origin": "The Beyonder Characteristics of this pathway originated from the Outer Deity Mother Goddess of Depravity.",
+    "cattleya_description": "The Moon represents spirituality, plants, beauty, parts of life, parts of darkness, and parts of mystery.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Apothecary",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Beast Tamer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Vampire",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguines have a unique set of names for each sequence in the Moon Pathway after sequence 7, based on noble titles."
+      },
+      {
+        "sequence": 6,
+        "name": "Potions Professor",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguine title: Baron"
+      },
+      {
+        "sequence": 5,
+        "name": "Scarlet Scholar",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguine title: Viscount"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Shaman King",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguine title: Earl"
+      },
+      {
+        "sequence": 3,
+        "name": "High Summoner",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguine title: Marquis"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Life-Giver",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguine title: Duke"
+      },
+      {
+        "sequence": 1,
+        "name": "Beauty Goddess",
+        "advancement_method": "Abi/Adv",
+        "note": "Sanguine title: Queen. At Sequence 1, Beyonders are forcefully changed into females. It is possible to advance and avoid the gender transition by taking the Sequence 1 of the Mother Pathway, Naturewalker instead of Beauty Goddess."
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Moon",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "sanguine_nobility_notes": {
+      "sequence_6": "Baron",
+      "sequence_5": "Viscount",
+      "sequence_4": "Earl",
+      "sequence_3": "Marquis",
+      "sequence_2": "Duke",
+      "sequence_1": "Queen",
+      "above": "Sanguine Ancestor Lilith on top of all"
+    }
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Moon Pathway is the symbol of the Crimson Moon."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Moon",
+    "card_number": "XVIII",
+    "description": "The Moon (XVIII) is the number eighteenth of Major Arcana. The card represents the life of the imagination apart from the life of the spirit. The Moon is a card of illusion and deception, and therefore often suggests a time when something is not as it appears to be. The Moon can symbolize fear, anxiety, illusions, and a time of change or uncertainty."
+  },
+  "god": [
+    {
+      "name": "Mother Goddess of Depravity",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Brood Hive",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Earth Mother",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Sanguine Ancestor Lilith",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Mother Goddess of Depravity",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A humanoid creature with a phantom Moon on its back, bright red eyes, and bat wings. 'They' look as if 'They' were the embodiment of Beauty."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A humanoid creature with a phantom Moon on its back, bright red eyes, and bat wings. 'They' look as if 'They' were the embodiment of Beauty. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Mother Moon Chaos Primogenitor",
+    "pathways": [
+      "Mother",
+      "Moon",
+      "Chaos Primogenitor"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Goddess of Origin",
+    "alternative_name": "Mother Goddess of Depravity",
+    "pathways": [
+      "Mother",
+      "Moon",
+      "Chaos Primogenitor"
+    ]
+  },
+  "sefirah": {
+    "name": "Brood Hive"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Goddess of Origin",
+        "pathways": ["Mother"]
+      },
+      {
+        "group": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor"],
+        "note": "Because the Goddess of Origin was originally a part of the Mother Goddess of Depravity."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness"],
+        "note": "Because the Original Creator's feminine aspect and the universe's feminine aspect are, to some extent, equivalent, leading to convergence without causing excessive madness. This is one of the reason why Lilith is relatively more sane than the other Ancient Gods."
+      }
+    ],
+    "additional_connections": [
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "The Supernova Dominator requires the Moon and Darkness Pathways to complete the Mystical Cosmos."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Sanguines"
+    },
+    {
+      "name": "Church of the Earth Mother"
+    },
+    {
+      "name": "Rose School of Thought"
+    },
+    {
+      "name": "Life School of Thought"
+    },
+    {
+      "name": "Luo Sect (Western Continent)"
+    }
+  ],
+  "trivia": {
+    "gender_transition": "At Sequence 1, Beyonders are forcefully changed into females. It is possible to advance and avoid the gender transition by taking the Sequence 1 of the Mother Pathway, Naturewalker instead of Beauty Goddess."
+  }
+}

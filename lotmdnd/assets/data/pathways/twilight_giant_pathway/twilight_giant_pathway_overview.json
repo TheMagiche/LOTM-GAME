@@ -1,0 +1,217 @@
+{
+  "pathway_name": "Twilight Giant Pathway",
+  "aliases": [
+    "Warrior Pathway",
+    "Pathway of Giants",
+    "Divine Blood Warrior Pathway",
+    "Twilight Pathway"
+  ],
+  "overview": {
+    "description": "The Twilight Giant Pathway has traditional warrior abilities, both offensive and defensive. They possess extreme strength, can easily master all weapons, physically resist supernatural powers, conjure powerful Dawn light-based weapons and armour, harm evil spirits, take damage for others, and enter an almost unbreakable defensive stance.",
+    "high_sequence_characteristics": "At High-Sequences, they can mix powerful concoctions for enhancements, and healing, or apply various effects, conceal their intentions, physically become mercurial liquefaction, identify weaknesses in others, and bend light to hide their presence.",
+    "authority": "This pathway possesses the authorities Twilight, Combat, Holiness and Proxy, with the symbols Decay and the Passage of Time. The Sequence 0 is also called the Giant or the Twilight.",
+    "cuttlefish_description": "The most terrifying Strength, the most Gigantic form, the most potent Devastation, the most unyielding Protection—together with Skill and experience, these compose individual Combat.",
+    "physical_trait": "Beyonders of this pathway become drastically taller from Sequence 6, and this trait can be passed on to their descendants. That's why the descendants of Giants are taller than average humans. Such a trait is a stereotype amongst the Standard Pathways. Having a giant's bloodline doesn't necessarily mean that they have giant blood flowing in them. Instead, it referred to a physical characteristic that was inherited by descendants thanks to the ancestral consumption of the pathway's potion. Tall stature is one of its manifestations.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Warrior",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Pugilist",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Weapon Master",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Dawn Paladin",
+        "advancement_method": "Abi/Adv",
+        "translation_note": "While the English translation of Sequence 6 is Dawn Paladin (黎明骑士, Límíng qíshì), the literal translation from Chinese should be Dawn Knight, similar to Sequence 3 Silver Knight (银骑士, Yín qíshì)."
+      },
+      {
+        "sequence": 5,
+        "name": "Guardian",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Demon Hunter",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Silver Knight",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Glory",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Hand of God",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Twilight Giant",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Twilight Giant Pathway. The colour is orange-red, also known as tangerine, unique to dusk, dawn, and twilight."
+  },
+  "corresponding_tarot_card": {
+    "card": "Strength",
+    "card_number": "XI or VIII (Rider-Waite Tarot No. VIII)",
+    "description": "Strength (XI or VIII), historically called Fortitude, is a Major Arcana Tarot card, and is numbered either XI or VIII, depending on the deck, with the Cards of Blasphemy following the Rider–Waite Tarot (No.VIII). Strength predicts the triumphant conclusion to a major life problem, situation, or temptation through strength of character. It is a very good card if you are fighting an illness or recovering from an injury.",
+    "author_interpretation": "Willpower to overcome difficulties is 'Strength'."
+  },
+  "god": [
+    {
+      "name": "Evernight Goddess",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "Haoli Sect Master",
+      "status": "Dao Integrator ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Underworld Daoist",
+      "status": "Dao Integrator †",
+      "type": "Former God"
+    },
+    {
+      "name": "God of Combat",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Giant King Aurmir",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A Cyclops with a bluish-black, tangled body. Every inch of its skin, every pore, every piece of flesh seems to defy normal human senses, composed in a unique way, containing an unimaginable sensation of impact."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A Cyclops with a bluish-black, tangled body. Every inch of its skin, every pore, every piece of flesh seems to defy normal human senses, composed in a unique way, containing an unimaginable sensation of impact. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Darkness Death Twilight Giant",
+    "pathways": [
+      "Darkness",
+      "Death",
+      "Twilight Giant"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Eternal Darkness",
+    "pathways": [
+      "Darkness",
+      "Death",
+      "Twilight Giant"
+    ]
+  },
+  "sefirah": {
+    "name": "River of Eternal Darkness"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Eternal Darkness",
+        "pathways": ["Darkness", "Death"]
+      },
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness", "Red Priest"],
+        "note": "Because of the existence of the Fourth Pillar."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Monarch of Decay",
+        "pathways": ["Second Law"],
+        "note": "Because the Monarch of Decay specifically targets the River of Eternal Darkness."
+      },
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"],
+        "note": "Because the Circle of Inevitability specifically targets the City of Calamity and the River of Eternal Darkness, as these Pathways symbolize Destined Conclusions and various Calamities."
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer desires Sefirot related to Rules, Order, and Space-Time, which specifically includes the River of Eternal Darkness. Among the three Pathways of the Eternal Darkness, only the Twilight Giant Pathway is compatible with 'His' Pathways."
+      },
+      {
+        "group": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor"],
+        "note": "Because there is an inherent connection between life and spirit/soul."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Lord of Mysteries",
+        "pathways": ["Error"],
+        "note": "Overlap between Time authorities causes high fusion and convergence of Beyonder Characteristics. This was why the Worm of Time characteristic couldn't be separated out of the Giant King Aurmir through giving birth to children."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Eternal Darkness"
+    },
+    {
+      "name": "Church of the God of Combat"
+    },
+    {
+      "name": "Church of the Evernight Goddess"
+    },
+    {
+      "name": "Church of the Fool"
+    },
+    {
+      "name": "New City of Silver"
+    },
+    {
+      "name": "Haoli Lineage (Western Continent)"
+    }
+  ],
+  "trivia": {
+    "comparison_with_red_priest": "Compared to the Red Priest Pathway which has the highest damage output, the essence of the Twilight Giant Pathway is the progression towards Twilight.",
+    "demon_hunter_guidebook": "In the first page of the <Demon Hunter Guidebook>, the Demon Hunters are taught not to develop a habit of licking their weapon before a battle."
+  }
+}

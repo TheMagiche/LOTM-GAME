@@ -1,0 +1,211 @@
+{
+  "pathway": "Sun Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Bard",
+      "potion_overview": "A constantly churning crimson liquid.",
+      "formula": {
+        "main_ingredients": [
+          "Choose one of: A Crystal Sunflower, An Adult Flint Bird's Tail Feather, or A Fire Bird's Tail Feather",
+          "Choose one of: A piece of Siren Rock, or A Singing Sunflower"
+        ],
+        "alternative": "A Bard Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Red Wine",
+          "A blade of Midsummer Grass",
+          "5 drops of July Wine Juice",
+          "A blade of Elf Dark Leaf"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Light Suppliant",
+      "potion_overview": "Blazing white magma.",
+      "formula": {
+        "main_ingredients": [
+          "Choose one of: A piece of Brilliance Rock, or The Powder of Dazzling Soul",
+          "Choose one of: Blood of a Mirror Hedgehog, or The Heart of a Magma Titan"
+        ],
+        "alternative": "A Light Suppliant Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Red Wine",
+          "A Golden-Rimmed Sunflower",
+          "3 drops of Aconite Juice",
+          "An item of Sun Worship"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Solar High Priest",
+      "potion_overview": "Golden in color and scorching hot in temperature.",
+      "formula": {
+        "main_ingredients": [
+          "A red comb of a Dawn Rooster",
+          "1 fruit of a Radiance Spirit Pact Tree"
+        ],
+        "alternative": "A Solar High Priest Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of a Dawn Rooster's Blood",
+          "10 drops of 'Sun' essential oil",
+          "8 grams of Fingered Citron Powder",
+          "5 grams of Solidified Magma"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "They would feel a burning sensation in their throat. Their eyes light up suddenly as they grow brighter like there were two miniature suns hidden in them. Their body would radiate concentric ripples of pure light as their exposed skin protrude to form black patterns that are visible to the naked eye. At the same time, their body hair grew longer, as though they were changing into feathers that were swirling with golden flames. This would bring them to the brink of losing control but they must manage to persevere through it. After a while, everything abnormal about them will return to normal. However, the air they exhale is mixed with the warmth of the sun. They would feel that their body had become stronger again, and they had some considerable resistance against ailments and treacherous environments."
+    },
+    {
+      "sequence": 6,
+      "name": "Notary",
+      "potion_overview": "A dark golden liquid, crystal clear and translucent, seemingly able to reflect one's inner heart.",
+      "formula": {
+        "main_ingredients": [
+          "1 set of crystalized roots of the Tree of Elders",
+          "5 feathers of a Spirit Pact Bird"
+        ],
+        "alternative": "A Notary Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Radiance Spirit Pact Tree's Juice",
+          "A Golden-Rimmed Sunflower",
+          "A White-Rimmed Sunflower",
+          "5 drops of the Aqua Fern Juice"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Priest of Light",
+      "potion_overview": "A hot, golden liquid that emits light.",
+      "formula": {
+        "main_ingredients": [
+          "The red comb of a King of Dawn Roosters",
+          "A piece of Pure White Brilliant Rock"
+        ],
+        "alternative": "A Priest of Light Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "5 grams of Rosemary",
+          "7 drops of Fingered Citron Juice",
+          "7 drops of Rock Water",
+          "60 milliliters of a King of Dawn Roosters' Blood"
+        ]
+      },
+      "advancement_ritual": "In pure darkness, bury your entire body in ice that usually doesn't melt, before consuming the potion.",
+      "ritual_essence": "No data available.",
+      "acting_method": "Dispel the darkness and Praise the sun.",
+      "consumption_backlash": "To the outsider, they will see a radiant light emerge from the pile of blue ice. They scatter pure light, with a burning intensity, warmth, brightness, and vitality that is different from the surrounding lightning in the Forsaken Land of the Gods."
+    },
+    {
+      "sequence": 4,
+      "name": "Unshadowed",
+      "potion_overview": "A golden concoction without any impurities. A hot, violent liquid.",
+      "formula": {
+        "main_ingredients": [
+          "A drop of golden blood from Sequence 0: Sun OR 3 adult Sun Divine Bird's tail feathers",
+          "A piece of Holy Brilliance Rock"
+        ],
+        "alternative": "An Unshadowed Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of a Sun Divine Bird's Blood",
+          "30 milliliters of Holy Brilliance Rock Liquid",
+          "7 drops of Mutated Fingered Citron Juice",
+          "10 grams of Magma Heart Powder"
+        ]
+      },
+      "advancement_ritual": "Extract the strongest emotions that one is most unwilling to abandon before consuming the potion. Inject these emotions back again during this process.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "The potion instantly fills their entire body and occupies their soul. Rays of bright sunlight burst out from their body, washing away the remnants of their body's corruption and the heaviness of their soul. Their body becomes purer and clearer, like a holy spirit formed from pure light. Their self-awareness and emotions are being purified and repelled. It wouldn't take long for them to only have the instinct to praise the Sun. Beams of light rose up and enveloped the entire area. The noon descending for a brief moment. At this moment, whoever is responsible to inject their emotions back, no longer let the strong emotions that that person had stripped from the advancer's remain detached from them. They guided them back towards the advancer. One scene after another surfaced in their mind, causing them to experience abnormally complicated emotions. They would once again experience various emotions—their strongest emotions. This would drill deep into them, becoming a foundation of their mind world. It is very sturdy and very reliable, allowing them to withstand the last few rounds of the potion's cleansing forces. Finally, when they open their eyes—it would be pure white."
+    },
+    {
+      "sequence": 3,
+      "name": "Justice Mentor",
+      "potion_overview": "Intertwined yet distinct strands of dark golden light.",
+      "formula": {
+        "main_ingredients": [
+          "Head of a Radiant Giant OR A deep black tail feather of the Sun Divine Bird King",
+          "Stamen of the All-Praiser (a monster shaped like a giant flower)"
+        ],
+        "alternative": "A Justice Mentor Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of blood of a Radiant Giant",
+          "9 petals of the All-Praiser",
+          "A notebook recording one's own justice",
+          "One strand of sunlight each from dawn, noon, and dusk (figure out how to collect them)"
+        ]
+      },
+      "advancement_ritual": "Clearly define what your justice is and uphold it for three years without the slightest violation or doing anything in conflict with that justice.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Lightseeker (Sun Chaser)",
+      "potion_overview": "A liquid composed of converging streams of pure light.",
+      "formula": {
+        "main_ingredients": [
+          "Heart of the Radiant Giant Leader"
+        ],
+        "alternative": "A Lightseeker Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "One pair of eyes of the Radiant Giant Leader (this may be replaced by corresponding part of the Lightseeker)",
+          "300 milliliters of blood from the Radiant Giant Leader (this may be replaced by corresponding part of the Lightseeker)",
+          "One self-transcribed holy book praising the Sun",
+          "Nine types of blood from fallen clergy"
+        ]
+      },
+      "advancement_ritual": "Find an item with at least an Angel-rank authority and a deep connection to the Sun in mysticism. Bind your most important memory—closely tied to your core justice—to this item, and place it before yourself.",
+      "ritual_essence": "The item of the ritual serves as a beacon for Beyonders consuming the Lightseeker potion, providing a mystical connection that would be the last to melt, helping them maintain their direction, clarity of consciousness, and determination to persist through the transformation process.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "In an instant, it feels as though they have approached the true sun, their entire body igniting and showing signs of melting. They would not retreat. They would continue running toward the light, the sun, sensed in their core. Their bodies quickly melting like heated metal-first dripping liquid, then softening and flowing toward the ground like water. Their bones melted, his organs melted, his brain melted, and even his spirit and consciousness began to dissipate rapidly. But they would never stop. Supported by the justice deep in their core, they would struggle and wriggle forward, being guided by the faint light of the sun in their blurry consciousness. At that moment, they would seem to return to their most important memory, to what would represent their core justice. Dragging their melted body and soul, fueled by a belief that abandoned everything for the light, they still continue their pursuit with difficulty but unwavering determination. The light grows closer, and their spirit merges with the burning heat, leaving only a sliver of residual consciousness. Finally, they would see a pair of grand double doors, sensing the sun and light he longed for beyond them. Their blurred consciousness collided with the doors, pushing them ajar. A sea of golden light enters their vision, and a sun of intertwining blazing white and gold rises steadily, illuminating all and dispelling the crimson and darkness. They could stop at the entrance, immediately sensing their spirit, soul, and body flowing back together, merging into one. The door they saw quickly becomes illusory, while the sun gradually loses its color and form, revealing its true nature—whatever object they used for the ritual."
+    },
+    {
+      "sequence": 1,
+      "name": "White Angel",
+      "potion_overview": "A pure white, flawless, scorching liquid.",
+      "formula": {
+        "main_ingredients": [
+          "A rib of Aucuses"
+        ],
+        "alternative": "A White Angel Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "300 milliliters of one's own blood",
+          "One unstable miniature Sun",
+          "One symbolic artifact representing oneself as a target of faith (e.g., a Sun Sacred Emblem worshiped for over ten years atop the cathedral where one serves as the guardian angel)",
+          "Angel blood from any one of the following Pathways: Visionary, Tyrant, White Tower, or Hanged Man"
+        ]
+      },
+      "advancement_ritual": "Receive sincere and exclusive praise and worship from 1,000,000 humans, including oneself — The higher the status, the fewer believers are needed, but oneself must be included and one must not lose their sense of self in the process.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Sun",
+      "potion_overview": "A star appearing to erupt in a storm.",
+      "formula": {
+        "main_ingredients": [
+          "The Sun Uniqueness",
+          "Three White Angel Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "The concept of the Sun from the Astral World"
+        ]
+      },
+      "advancement_ritual": "Consume the potion in either the darkness that's the destination of all things or in the all-encompassing color of the Chaos Sea. Note 1: The Ancient Sun God emerged by fulfilling the latter condition. Aucuses leveraged the power of the Evernight Goddess during the divine war of that time. Note 2: Falling into the darkness that's the destination of all things is extremely dangerous and may result in immediate death—even if the one unleashing that power is your ally.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+    "pathway": "Error Pathway",
+    "sequences": [
+      {
+        "sequence": 9,
+        "name": "Marauder",
+        "description": "Marauders are difficult to separate from ordinary bandits or thieves. Perhaps the means available to them are more impressive, but their goal of stealing riches is not for enjoyment or survival - for them, it is more like answering a calling or passion.",
+        "abilities": [
+          "Physical Enhancement: Gain a certain degree of physical improvement.",
+          "Combat Proficiency: Good at using short weapons, such as daggers and short swords.",
+          "Agile Hands: Enhanced stability and flexibility of wrist and fingers, known for speed and agility.",
+          "Superior Observation: Can directly sense valuable items within a ten meter range.",
+          "Theft (Stealing): Can easily steal items from a target's pockets without being detected."
+        ]
+      },
+      {
+        "sequence": 8,
+        "name": "Swindler",
+        "description": "These Beyonders like to take part in committing fraud. They gain enjoyment from swindling.",
+        "abilities": [
+          "Charm: Strong charm that makes them more approachable and makes people believe them easily.",
+          "Physical Enhancement: Much more agile and fast.",
+          "Eloquence: Includes simple improvement of speech techniques and Beyonder effects that make people convinced.",
+          "Thought Misdirection: Can be achieved through eloquence, actions, postures, and environmental arrangements.",
+          "Mental Disruption: Can cause certain hallucinations to be experienced by a target.",
+          "Superior Observation: Can see micro-expressions and small movements.",
+          "Theft (Stealing): Can steal some spiritual materials from a shorter distance."
+        ]
+      },
+      {
+        "sequence": 7,
+        "name": "Cryptologist",
+        "abilities": [
+          "Decryption: Can recreate the truth behind anything related to mysticism or predict the development of events from bits of evidence.",
+          "Superior Observation: Includes additional perception of subtle clues and faint traces."
+        ]
+      },
+      {
+        "sequence": 6,
+        "name": "Prometheus",
+        "abilities": [
+          "Physical Enhancement: Additional physique, strength, and speed enhancements.",
+          "Mental Resistance: Increased resistance towards mental corruption.",
+          "Theft (Stealing): Can temporarily steal a target's Beyonder power within 50 meters and use it for about 10 minutes.",
+          "Superior Observation: Can directly sense where valuable items are within a 50-meter range."
+        ]
+      },
+      {
+        "sequence": 5,
+        "name": "Dream Stealer (Dreams Thief)",
+        "abilities": [
+          "Disguise (Theft of Heavenly Secrets): Can disguise as a follower of a True Deity, bypass defenses, steal prayer responses, and create Ritualistic Magic.",
+          "Theft (Stealing): Can utilize theft on thoughts, intentions, general abilities, knowledge, ideals, attacks, memories, and Dreams within 80 meters range.",
+          "Thought Usurpation: Can steal the thoughts the opponent is about to put into practice, causing brief dullness.",
+          "Decryption: Can decrypt Bizarro Sorcerer-level illusions."
+        ]
+      },
+      {
+        "sequence": 4,
+        "name": "Parasite",
+        "description": "As parts of their body have been transformed into Worms, they will not actually die from attacks unless they are hit in a vital part.",
+        "abilities": [
+          "Parasitism: Can use Worms of Time to latch onto a target's Spirit Body, turning them into a host or Avatar.",
+          "Avatars: Can create a small number of Avatars that can operate independently from the main body.",
+          "Synchronization: Can choose whether or not to synchronize certain information with their Avatars.",
+          "Decryption: Drastically enhanced ability to track others through clues.",
+          "Theft (Stealing): Can steal general abilities on large scale, and conceptual things like position, distance, or aspects of Life.",
+          "Thought Usurpation: Can steal thoughts and ideas without having to act out corresponding actions."
+        ]
+      },
+      {
+        "sequence": 3,
+        "name": "Mentor of Deceit",
+        "abilities": [
+          "Deceit: Can deceive more abstract concepts and rules of reality, manipulating laws of nature and mystical connections.",
+          "Superior Observation: Can directly discern a target's weaknesses and sense changes in order and rules.",
+          "Theft (Stealing): Can steal three Beyonder powers in one attempt.",
+          "Disguise (Theft of Heavenly Secrets): Can steal blessings or gain Beyonder powers of corresponding True Deities.",
+          "Avatars: Mastered the ability of creating Avatars."
+        ]
+      },
+      {
+        "sequence": 2,
+        "name": "Trojan Horse of Destiny (Fate Stealer)",
+        "abilities": [
+          "Loopholes: Can exploit loopholes within the world's order and rules, creating strange and terrifying effects.",
+          "Fate: Can sense subtle changes in fate, tinker with the fate of other beings, and create deviations in prophecies.",
+          "Theft (Stealing): Can steal various aspects of Fate, connections, identity, self-awareness, and Beyonder Characteristics.",
+          "Fate Siphoning: Can siphon off the luck of others or swap fates between targets.",
+          "Parasitism: Can split off Worms of Time and invade targets in a concealed manner through Spirit Body Threads.",
+          "Deceit: Can deceive and misdirect mysticism laws.",
+          "Avatars: Avatars possess traits of Angels, capable of shattering Beyonder Characteristics."
+        ]
+      },
+      {
+        "sequence": 1,
+        "name": "Worm of Time",
+        "description": "The dark side of Time, the Loophole in Time.",
+        "abilities": [
+          "Theft (Stealing): Can temporarily steal Time, anchors, and authorities.",
+          "Aging: Can cause the target to lose a significant amount of lifespan.",
+          "Time: Can slow down, speed up, or reverse Time.",
+          "History: Can make the Fog of History take the form of a 'curtain' projecting recent events.",
+          "Decryption: Capable of decrypting various mysteries and symbolic meanings.",
+          "Avatars: Can divide or make Avatars absorb Beyonder Characteristics to increase strength.",
+          "Loopholes: Can find exploitable loopholes within Inevitability and Historical Projections."
+        ]
+      },
+      {
+        "sequence": 0,
+        "name": "Error",
+        "description": "A strange word of unknown origins can be used to represent it: Bug. Once translated, it's a Trojan Horse of Destiny, The Slug of Time, The Loopholes in Rules, The Manifestation of all Errors.",
+        "abilities": [
+          "Error (Bug/Loopholes): Can fix all and create Errors within everything of a normal or abnormal nature.",
+          "Deceit: Holds the authority of Deceit.",
+          "Theft (Stealing): Authority of Theft within the Inconceivable symbolism.",
+          "Decryption: Massively improved ability to crack secrets from tiny amounts of information.",
+          "Avatars: Can create Sequence 1-level Avatars.",
+          "Time: Authority over Time, derived from the King of Space-Time.",
+          "Space: Partial authority over Space."
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,174 @@
+{
+  "pathway_name": "Tyrant Pathway",
+  "aliases": [
+    "Sailor Pathway",
+    "Storm Pathway",
+    "Pathway of Elves"
+  ],
+  "overview": {
+    "description": "The Tyrant Pathway specialises in water and weather-related abilities. They can cast powerful water, wind, and electricity spells, gain strength in water, sing to disable their opponents, glide in the air, act freely underwater for long periods, and become enraged to increase their power. They are known to have a bad temper and are sensitive to the level of a high-ranking person.",
+    "high_sequence_characteristics": "At High-Sequences, they can control sea creatures, walk freely in the ocean, create earthquakes, travel at the speed of light, and even produce enough electrical power to rival a star.",
+    "omnipotence": "The Tyrant Pathway can be understood as omnipotent in the sea, land, and air domains.",
+    "physical_trait": "Beyonders of this pathway tend to have blue hair, although it's not systematic, and this trait can be passed on to the next generation. Mixed-bloods with elvish blood mostly have blue hair.",
+    "klein_thoughts": "However, at sea, the Storm pathway is really powerful. They're practically mobile calamities.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Sailor",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Folk of Rage",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Seafarer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Wind-blessed",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Ocean Songster",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Cataclysmic Interrer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Sea King",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Calamity",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Thunder God",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Tyrant",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Tyrant Pathway is the symbol of Windstorm."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Hierophant",
+    "card_number": "V",
+    "description": "The Hierophant (V), in some decks named The Pope or the High Priest, is number fifth of the 22 Major Arcana. The Hierophant is thus a true 'pontiff', in that he is the builder of the bridge between deity and humanity. In most iconographic depictions, the Hierophant is seen seated on a throne between two pillars symbolizing Law and Liberty or obedience and disobedience.",
+    "card_of_blasphemy_appearance": "The face of the card depicts Roselle Gustav in pontiff attire, wearing a papal tiara, his hands raised as believers prostrate before him. Behind him, lightning crackles amidst dark clouds, gales, and waves. Resplendent starlight forms the text 'Sequence 0: Tyrant' at the top left of the card.",
+    "audrey_interpretation": "This Tyrant card was likely in the form of The Hierophant; however, the actual meaning has certain discrepancies with some similarities. Some of it is inversed, and some are just an extension... In short, the interpretation of the card is that of a conservative view, an emphasis on submission at the level of the soul. By relying on dominance and strength, fear is created to bring about faith..."
+  },
+  "god": [
+    {
+      "name": "Grisha Adam",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Lord of Storms",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Ancient Sun God",
+      "status": "AtS (Above the Sequence) ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Elf King Soniathrym",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A gigantic octopus-like being with thick, terrifying tentacles, surrounded by silver-white lightning."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A gigantic octopus-like being with thick, terrifying tentacles, surrounded by silver-white lightning. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Visionary Sun Tyrant White Tower Hanged Man",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "God Almighty",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "sefirah": {
+    "name": "Chaos Sea"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Visionary", "Sun", "White Tower", "Hanged Man"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"]
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The Chaos Sea is a Sefirah that the Primordial Hunger specifically targets, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Lord of Storms"
+    },
+    {
+      "name": "Twilight Hermit Order"
+    }
+  ],
+  "trivia": {
+    "comparison_with_red_priest": "Compared to the Red Priest Pathway which has the highest damage output, the essence of the Tyrant Pathway (暴君, Bàojūn, Tyrannical/Savage/Ferocious Monarch) is on Tyranny/Savageness/Ferociousness (暴, Bào)."
+  }
+}

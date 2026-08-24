@@ -1,0 +1,241 @@
+{
+  "pathway": "Abyss",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Criminal",
+      "potion_properties": "A bloody yet sweet, dark red liquid.",
+      "beyonder_characteristic_appearance": "It resembles a red quartz stone dotted with black spots.",
+      "formula": {
+        "main_ingredients": [
+          "1 Head of a Savage Dog.",
+          "Crystal Feather of a Murderous Black Crow."
+        ],
+        "alternative_main_ingredients": [
+          "A Criminal Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "70ml of blood from a 'Savage Dog'.",
+          "60 ml of blood from 'Murderous Black Crow'.",
+          "1 piece of any ill-gotten gain or trophy obtained from a crime.",
+          "10 drops of tears from a (crime) victim."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 8,
+      "name": "Unwinged Angel (Coldblooded)",
+      "potion_properties": "An ice-blue liquid with numerous black dots suspended in the air.",
+      "beyonder_characteristic_appearance": "A dark heart with flowing ice-blue blood.",
+      "formula": {
+        "main_ingredients": [
+          "The remains from a Rat King.",
+          "1 heart of a Skinless Blood Cat."
+        ],
+        "alternative_main_ingredients": [
+          "A Unwinged Angel Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "40 ml of blood from a 'Rat King'.",
+          "90 ml of blood from a 'Skinless Blood Cat'.",
+          "The heart (or a similar organ) of the first ever being murdered by the advancing Beyonder that is of the same race as the said Beyonder.",
+          "13 drops of Twin Flower Hydrolat."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 7,
+      "name": "Serial Killer",
+      "potion_properties": "A black liquid with chunks of ice floating in it; the taste is pungent yet intoxicating.",
+      "beyonder_characteristic_appearance": "A sharp-edged, prismatic ice cube, enveloping faint wisps of thin black gas.",
+      "formula": {
+        "main_ingredients": [
+          "The Beak of a 'Man-Eating Vulture'.",
+          "The Fangs of a 'Shadow Serpent'."
+        ],
+        "alternative_main_ingredients": [
+          "A Serial Killer Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "80 ml of blood from a 'Man-Eating Vulture'.",
+          "50 ml of blood from the 'Shadow Serpent'.",
+          "1 complete skin of a person killed by the concoctor's hand.",
+          "7 sets of the concoctor's victims' internal organs."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 6,
+      "name": "Devil",
+      "translation_note": "'恶魔' Is closer in definition to Demon than '魔鬼', which is the Sequence 4 Demon. When compared to real world references, this sequence should be called Demon.",
+      "potion_properties": "A dark liquid with sulfur flames burning continuously.",
+      "beyonder_characteristic_appearance": "A soft, black horn-like object covered in eerie patterns.",
+      "formula": {
+        "main_ingredients": [
+          "1 tongue of a 'Red-Eyed Evil Panther'.",
+          "1 horn from a 'Demon of Magma'."
+        ],
+        "alternative_main_ingredients": [
+          "A Devil Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 ml of blood from a 'Red-Eyed Evil Leopard'.",
+          "30 ml of molten liquid from a 'Demon of Magma'.",
+          "10 drops of Black Lily Essence.",
+          "13 fingers left behind by an infant killed by its parents."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 5,
+      "name": "Desire Apostle",
+      "potion_properties": "A brightly colored, aesthetically pleasing liquid, resembling rainbow cocktail.",
+      "beyonder_characteristic_appearance": "A black-fog-like characteristic. (Corrupted by a Wraith boon: A whimsical and flamboyant cluster of black crystals. Various crystals extended in all directions, sharp and crooked. Multiple illusory, translucent faces emerged from each black crystal, their expressions alternating between malevolence, pain, madness, and confusion.)",
+      "formula": {
+        "main_ingredients": [
+          "1 Succubus skin.",
+          "A Son of Sorrow's eyes."
+        ],
+        "alternative_main_ingredients": [
+          "A Desire Apostle Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "60 ml of 'Succubus' blood.",
+          "70 ml of a Son of Sorrow's blood.",
+          "3 pure white poppies.",
+          "9 types of pituitary glands of intelligent beings."
+        ]
+      },
+      "advancement_ritual": "Serial killings targeting those who have fallen from grace; the minimum is 13 people, the maximum is 49, the more complete the ritual, the greater the chance of advancement. There must be at least a three-day interval between two killings, otherwise it's easy to lose control, the interval also cannot exceed nine days, otherwise the ritual will reset. After each killing, after each part of the ritual, the Devil must devour the victim's internal organs. From this point on, they will remain in a state of violent bloodlust, wanting to harm others, until that desire is satisfied again.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data",
+      "translation_note": "The official translation of the Pleasure potion formula translates '魅欲女妖', which is more aptly translated as 'Captivating Banshee', as 'Succubus'. However, a more common term for 'Succubus is '魅魔', which is in the Desire Apostle potion formula, which uses the more common term."
+    },
+    {
+      "sequence": 4,
+      "name": "Demon",
+      "translation_note": "'魔鬼' Is closer in definition to Devil than '恶魔', which is the Sequence 6 Devil. When compared to real world references, this sequence should be called Devil.",
+      "potion_properties": "A bright red liquid that emits a fragrant aroma. It looks both tempting and harmless.",
+      "beyonder_characteristic_appearance": "A blood-red, alluring, half-open flower-like item.",
+      "formula": {
+        "main_ingredients": [
+          "The Blood Crystal of an 'Archdemon'.",
+          "The Reproductive Organs of a 'Desire Demon'."
+        ],
+        "alternative_main_ingredients": [
+          "A Demon Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "130 ml of a Desire Devil's blood.",
+          "1 black heart of an Archdemon. (Archdemons have more than one heart.)",
+          "1 Sacred Symbol from the Church of a True Deity.",
+          "The hearts of 99 Beyonders."
+        ]
+      },
+      "advancement_ritual": "Induce at least 10.000 intelligent beings to voluntarily sell their souls to the performer. The performer must successfully acquire the corresponding souls. The higher the target's rank, the fewer souls are required.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 3,
+      "name": "Blatherer",
+      "potion_properties": "Bubbling bubbles, each emitting sound, stacked together to form an almost ethereal liquid.",
+      "beyonder_characteristic_appearance": "Condensed, wrinkled black mist.",
+      "formula": {
+        "main_ingredients": [
+          "The brain of a 'Word Devil'.",
+          "The soul stone from a 'Demon of Souls'."
+        ],
+        "alternative_main_ingredients": [
+          "A Blatherer Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 ml of 'Word Devil's' bodily fluids.",
+          "1 item that contains the curse from a Demon of Souls.",
+          "1 native creature from the Sea of Consciousness.",
+          "9 bottles of tears from those who fell into despair, originated from different Desperate Individuals."
+        ]
+      },
+      "advancement_ritual": "Finding a way to sign a time-limited or permanent 'shared life and death' contract with a Demigod of a pathway that has purifying properties, such as Sun or Twilight Giant, or a Demigod of the path that represents life, such as Mother. Take the potion during the contract's effective period.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 2,
+      "name": "Bloody Archduke",
+      "potion_properties": "A vial of thick, disgusting, viscous blood.",
+      "beyonder_characteristic_appearance": "A deformed, enormous, black heart that exudes a strong bloody smell and drips blood constantly.",
+      "formula": {
+        "main_ingredients": [
+          "The head of a 'Demon Prince'.",
+          "The heart of a 'Twin Serpent Lord'."
+        ],
+        "alternative_main_ingredients": [
+          "A Bloody Archduke Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "1000ml of a Bloody Archduke's blood or (500 ml of a 'Demon Prince's' acidic blood, 500 ml of a 'Twin Serpent Lord's' venomous blood).",
+          "49 drops of blood from different races, ranks, and identities.",
+          "1 drop of a True God's blood."
+        ]
+      },
+      "advancement_ritual": "The ritual involves sacrificing 13 settlements, each containing at least 10.000 intelligent beings, to the Abyss. Each sacrifice must be made within three months of each other. Furthermore, the sacrifice must be performed using a 'Blood Ritual,' which involves killing each creature in the settlement one by one, then using their gushing blood to cleanse the altar and repaint the corresponding symbols and patterns.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 1,
+      "name": "Filthy Monarch",
+      "potion_properties": "A dark black pus emitting a corrosive, dark green gas.",
+      "beyonder_characteristic_appearance": "A corrosive yet strangely ethereal flaky like black sheet.",
+      "formula": {
+        "main_ingredients": [
+          "A Filthy Monarch Beyonder Characteristic"
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "1 abomination from a land of ruin, defilement, or curse. (e.g., The Forsaken Land of the Gods.)",
+          "300 ml of blood from an Angel that has lost control.",
+          "9 completely corrupted divine creatures.",
+          "100 souls drowning in desire."
+        ]
+      },
+      "advancement_ritual": "Corrupt a nation with at least 10 million inhabitants. The Upper Class shall be controlled by desires, everyone of them becoming a Devil. The Lower Class becoming destitute and without any hope of escaping their predicament, ultimately even their own children and organs become the property of others. The Middle Class becoming like climbing a series of collapsing cliffs, watching as their own layer collapses and falls into the Abyss below, desperately trying to climb upwards in fear. Just as they are going to find stability and catch their breath, the cliff collapses again, while above them the Upper Class watches with theatrical laughter.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 0,
+      "name": "Abyss",
+      "potion_properties": "Layers upon layers of eerie, black heart phantoms, forming a bottomless expanse of darkness.",
+      "beyonder_characteristic_appearance": "No data",
+      "formula": {
+        "main_ingredients": [
+          "The Abyss Uniqueness.",
+          "Three Filthy Monarch Beyonder Characteristics."
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "The corrupted regions of the Sea of Collective Subconsciousness."
+        ]
+      },
+      "advancement_ritual": "Transform a Continent into an Abyss.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    }
+  ]
+}

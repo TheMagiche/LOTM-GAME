@@ -1,0 +1,200 @@
+{
+  "currencies": {
+    "loen_kingdom": {
+      "region": "Loen Kingdom",
+      "primary_unit": "gold_pound",
+      "subunits": {
+        "soli": {
+          "value_per_primary": 0.05,
+          "notes": "1 pound = 20 soli"
+        },
+        "penny": {
+          "value_per_primary": 0.0041667,
+          "notes": "1 soli = 12 pence; 1 pound = 240 pence"
+        }
+      },
+      "denominations": {
+        "banknotes": [
+          {"value": 1, "description": "Features former king William Augustus VI"},
+          {"value": 5, "description": "Features fifth king Henry Augustus I"},
+          {"value": 10, "description": "Features Founder and Protector William Augustus I"}
+        ],
+        "coins": [
+          {"value": 1, "unit": "soli"},
+          {"value": 5, "unit": "soli"},
+          {"value": 1, "unit": "penny", "material": "bronze-colored"},
+          {"value": 5, "unit": "penny"},
+          {"value": 0.5, "unit": "penny", "material": "brass"},
+          {"value": 0.25, "unit": "penny"}
+        ]
+      },
+      "conversion_rates": {
+        "to_intis_verl_dor": 24,
+        "to_feysac_gold_hoorn": 5.5,
+        "to_feynapotter_risot": 12
+      },
+      "notes": "Gold pound is paper-based, guaranteed by gold. Most valuable currency."
+    },
+    "intis_republic": {
+      "region": "Intis Republic",
+      "primary_unit": "verl_dor",
+      "subunits": {
+        "coppet": {
+          "value_per_primary": 0.01,
+          "notes": "1 verl d'or = 100 coppet"
+        }
+      },
+      "denominations": {
+        "banknotes": [
+          {"value": 5},
+          {"value": 20},
+          {"value": 50},
+          {"value": 100},
+          {"value": 200},
+          {"value": 500},
+          {"value": 1000}
+        ],
+        "coins": {
+          "silver_verl_dor": [
+            {"value": 1},
+            {"value": 5},
+            {"value": 10}
+          ],
+          "gold_verl_dor": [
+            {"value": 5},
+            {"value": 10},
+            {"value": 20},
+            {"value": 40},
+            {"value": 50}
+          ],
+          "copper_coppet": [
+            {"value": 1},
+            {"value": 5},
+            {"value": 10}
+          ],
+          "silver_coppet": [
+            {"value": 20},
+            {"value": 50}
+          ]
+        }
+      },
+      "nicknames": {
+        "5_coppet": "Lick",
+        "20_verl_dor": "Louis d'or"
+      },
+      "conversion_rates": {
+        "to_loen_gold_pound": 0.0416667,
+        "to_feynapotter_risot": 2,
+        "to_feysac_gold_hoorn": null
+      },
+      "notes": "Louis d'or (20 verl d'or ≈ 2,000 coppet) ≈ 1 gold pound. Formerly called Roselle, renamed after Republic."
+    },
+    "feysac_empire": {
+      "region": "Feysac Empire",
+      "primary_unit": "gold_hoorn",
+      "subunits": [
+        {"name": "kopek"},
+        {"name": "feysilver"}
+      ],
+      "denominations": [
+        {"value": 1, "unit": "gold_hoorn"}
+      ],
+      "conversion_rates": {
+        "to_loen_gold_pound": 0.181818,
+        "to_intis_verl_dor": 4.36364,
+        "to_feynapotter_risot": null
+      },
+      "notes": "Base-ten denomination system. 1 gold hoorn = 10 feysilver = 100 kopek (implied)."
+    },
+    "feynapotter_kingdom": {
+      "region": "Feynapotter Kingdom",
+      "primary_unit": "risot",
+      "subunits": [
+        {"name": "setta", "value_per_primary": 0.1},
+        {"name": "degan", "value_per_primary": 0.01}
+      ],
+      "denominations": {
+        "degan_coins": [
+          {"value": 5},
+          {"value": 1},
+          {"value": 0.5},
+          {"value": 0.25}
+        ]
+      },
+      "conversion_rates": {
+        "to_loen_gold_pound": 0.083333,
+        "to_intis_verl_dor": 2,
+        "to_feysac_gold_hoorn": null
+      },
+      "notes": "Base-ten system designed by Church of Knowledge and Wisdom scholars."
+    },
+    "lenburg": {
+      "region": "Lenburg",
+      "primary_unit": "sassen",
+      "denominations": [],
+      "conversion_rates": {}
+    },
+    "masin": {
+      "region": "Masin",
+      "primary_unit": "porter",
+      "denominations": [],
+      "conversion_rates": {}
+    },
+    "segar": {
+      "region": "Segar",
+      "primary_unit": "złoty",
+      "denominations": [],
+      "conversion_rates": {},
+      "notes": "Name derived from Polish currency."
+    },
+    "balam_empire": {
+      "region": "Balam Empire",
+      "primary_unit": "motif",
+      "denominations": [],
+      "conversion_rates": {}
+    },
+    "tudor_empire": {
+      "region": "Tudor Empire (Fourth Epoch)",
+      "primary_unit": "tudor_gold_coin",
+      "denominations": [
+        {"value": 7, "description": "Dark gold coin with male profile, layered doors, raven, soldiers, weapons, blood"},
+        {"value": null, "description": "Coin engraved with war chariot and Tudor coat of arms (crown with cape and 5 angel family crests: Abraham, Antigonus, Amon, Jacob, Tamara)"}
+      ],
+      "conversion_rates": {},
+      "notes": "Confusing value system (e.g., 2, 7, 13). Coins are dark gold. Possibly influenced by Blood Emperor's pathway."
+    },
+    "solomon_empire": {
+      "region": "Solomon Empire",
+      "primary_unit": "solomon_gold_coin",
+      "denominations": [],
+      "conversion_rates": {},
+      "notes": "Dark gold coins, asymmetrical two-semicircle design, sharp crown engraved."
+    }
+  },
+  "cross_region_conversions": {
+    "base_currency": "loen_gold_pound",
+    "rates": {
+      "loen_gold_pound": 1,
+      "intis_verl_dor": 24,
+      "feysac_gold_hoorn": 5.5,
+      "feynapotter_risot": 12,
+      "intis_louis_dor": 1,
+      "loen_soli": 20,
+      "loen_penny": 240
+    }
+  },
+  "notes": [
+    "Conversions are approximate based on novel references.",
+    "Loen's currency system is non-decimal: 1 pound = 20 soli = 240 pence.",
+    "Intis uses decimal: 1 verl d'or = 100 coppet; Louis d'or = 20 verl d'or.",
+    "Feysac and Feynapotter use base-10 systems.",
+    "Tudor and Solomon currencies are historical (Fourth Epoch) and have no modern conversion.",
+    "Złoty is named after Polish currency.",
+    "Currency Convertor tool exists on wiki for Loen, Intis, and Feynapotter.",
+    "Loen gold pound is the most valuable currency."
+  ],
+  "trivia": [
+    "Official arts use 21st-century Arabic numerals, not in-universe numeral systems.",
+    "Złoty is the official currency of Poland."
+  ]
+}

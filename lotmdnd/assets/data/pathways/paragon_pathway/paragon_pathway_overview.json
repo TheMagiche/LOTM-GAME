@@ -1,0 +1,180 @@
+{
+  "pathway_name": "Paragon Pathway",
+  "aliases": [
+    "Savant Pathway",
+    "Artisan Pathway",
+    "Steam Pathway"
+  ],
+  "overview": {
+    "description": "The Paragon Pathway specializes in creation, craftsmanship, and knowledge of the physical world. Beyonders of this pathway are master artisans, inventors, and engineers who can create extraordinary items, understand complex machinery, and manipulate the physical laws of reality through their creations.",
+    "high_sequence_characteristics": "At High-Sequences, they can create magical items with incredible properties, understand and manipulate any form of technology or creation, infuse concepts and ideas into physical objects, create autonomous constructs that can think and act on their own, and even create entire civilizations or worlds through their craftsmanship.",
+    "authority": "Their authority represents Creation, Artifice, and Knowledge of the physical world.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Savant",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Apprentice",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Artisan",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Enchanter",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Arcane Engineer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Creator",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Master Artisan",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Construct Originator",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Maker of Civilizations",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Paragon",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Paragon Pathway. It represents creation, craftsmanship, and the transformation of raw materials into completed works."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Magician",
+    "card_number": "I",
+    "description": "The Magician (I) is the first card of the Major Arcana. It represents manifestation, resourcefulness, and the power to transform ideas into reality. The Magician has all the tools at his disposal to create and manifest his will into the physical world, symbolizing the creative and inventive nature of the Paragon Pathway."
+  },
+  "god": [
+    {
+      "name": "Demon of Knowledge",
+      "status": "GOO (Great Old One)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "God of Steam and Machinery",
+      "status": "Sequence 0",
+      "type": "Current God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "An entity composed of countless gears, mechanisms, and clockwork, with a core of pure creative energy. It appears as a living machine that constantly constructs and deconstructs itself, with tools and instruments emerging from its form."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A colossal mechanical being that exists as a living forge of creation. Its body is a universe of mechanisms, each gear representing a concept, each spring an idea, and each cog a law of reality. It embodies the perfect union of physical creation and mystical artifice, capable of manifesting anything from pure thought into physical reality."
+  },
+  "high_sequence_group": {
+    "name": "Hermit Paragon",
+    "pathways": [
+      "Hermit",
+      "Paragon"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Demon of Knowledge",
+    "pathways": [
+      "Hermit",
+      "Paragon"
+    ]
+  },
+  "sefirah": {
+    "name": "Knowledge Moor"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Demon of Knowledge",
+        "pathways": ["Hermit"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"],
+        "note": "Because the Inextinguishable Ravings specifically targets the Knowledge Moor."
+      },
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "Because the Supernova Dominator specifically targets the Knowledge Moor to enrich 'His' star systems and civilizations. 'He' wants to accommodate it 'Himself' and obtain the symbolism of Civilization."
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer can accommodate the Knowledge Moor. 'He' desires the Hermit Pathway and the Paragon Pathway that symbolize Information."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "God Almighty",
+        "pathways": ["White Tower"],
+        "note": "The symbols and authorities of these pathways in the Knowledge domain are highly similar, and things related to Knowledge also have a certain convergence."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the God of Steam and Machinery"
+    },
+    {
+      "name": "Element Dawn"
+    },
+    {
+      "name": "Moses Ascetic Order"
+    },
+    {
+      "name": "Daoism (Western Continent)"
+    }
+  ],
+  "trivia": {
+    "creation_philosophy": "The Paragon Pathway embodies the concept that through craftsmanship and creation, one can achieve understanding of the universe.",
+    "inventor_connection": "Many great inventors and artificers in the world of Lord of Mysteries are associated with this pathway.",
+    "civilization_building": "At the highest levels, Paragon Beyonders can create entire civilizations, reflecting their authority over creation and artifice."
+  }
+}

@@ -1,0 +1,80 @@
+{
+    "mystical_items": [
+      {
+        "name": "Amulet",
+        "description": "Objects believed to confer protection upon their possessor. Made using Ritualistic Magic with spirituality to carve incantations and symbols on corresponding materials.",
+        "characteristics": [
+          "Do not need an activation incantation",
+          "Made for long-term non-combatant passive effects",
+          "Must be engraved on both sides with exact symbols and incantations",
+          "Strength may be reduced if made incorrectly",
+          "Generally filled with mistakes when spread among ordinary populace"
+        ],
+        "examples": [
+          {
+            "name": "Amulet given by Klein",
+            "recipient": "Melissa and Benson"
+          }
+        ]
+      },
+      {
+        "name": "Beyonder Weapon",
+        "description": "A fusion of amulet and charm with activation incantation, active-passive effects for long-term usage. Made with ingredients that lose spirituality over time, not with Beyonder Characteristics.",
+        "characteristics": [
+          "Do not have negative downsides like Sealed Artifacts",
+          "Can be used until power dissipates",
+          "Temporary due to ingredient degradation",
+          "Possess activation incantation",
+          "Have active-passive effects"
+        ]
+      },
+      {
+        "name": "Charm",
+        "description": "Mystical items with power bestowed from a high-level existence, contained in a vessel and stabilized by symbols on precious metals.",
+        "characteristics": [
+          "Require specific activation incantations",
+          "Cannot be used at will",
+          "Physically burn upon completion of activation period",
+          "Spirituality decreases over time",
+          "Low-grade charms need renewal every two weeks",
+          "Vessel uniqueness influences potency",
+          "Can be made by praying to one's own name (though weaker)"
+        ],
+        "examples": [
+          "Slumber Charm",
+          "Requiem Charm",
+          "Dream Charm"
+        ],
+        "notes": "Eternal Blazing Sun domain charms are most wasteful, burning gold"
+      },
+      {
+        "name": "Medicine",
+        "description": "Extraordinary mixtures made with spiritual ingredients or through Ritualistic Magic for restorative effects.",
+        "characteristics": [
+          "Slowly lose spirituality over time",
+          "Generally have expiration dates",
+          "Cannot be made with ordinary ingredients for permanent effects",
+          "Extraordinary ingredients are very rare"
+        ],
+        "historical_note": "From 1352-1358 Fifth Epoch, The Fool Pharmaceutical Company founded by Emlyn White raised importance to medical industry"
+      }
+    ],
+    "categories": {
+      "general": {
+        "names": ["Mystical Items", "Extraordinary Items", "Beyonder Items"],
+        "common_traits": [
+          "Little negative effects",
+          "Can be used effectively",
+          "Do not contain Beyonder Characteristics",
+          "Have supernatural effects",
+          "Strength dissipates over time"
+        ],
+        "creation_methods": [
+          "Beyonders infusing their own pathway power",
+          "Praying to entities",
+          "Using Ritualistic Magic with high spirituality",
+          "Deity or hidden existence responses"
+        ]
+      }
+    }
+  }

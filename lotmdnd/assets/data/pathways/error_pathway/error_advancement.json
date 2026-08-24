@@ -1,0 +1,216 @@
+{
+    "pathway": "Error Pathway",
+    "sequences": [
+      {
+        "sequence": 9,
+        "name": "Marauder",
+        "potion_overview": "Deep blue-black, bitter taste.",
+        "formula": {
+          "main_ingredients": [
+            "1 Blood-Speckled Black Mosquito",
+            "1 Core of a Candle Devourer"
+          ],
+          "alternative": "A Marauder Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "100 milliliters of Another's Blood",
+            "9 Nail Fragments From Different People",
+            "1 Sapphire",
+            "10 grams of Verbena Powder"
+          ]
+        },
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 8,
+        "name": "Swindler",
+        "potion_overview": "A dreamlike liquid bubbling with crimson foam; sweet yet agonizingly painful.",
+        "formula": {
+          "main_ingredients": [
+            "1 Human-Faced Pitcher Plant",
+            "1 Larvae from a Soul-Bewitching Insect Colony"
+          ],
+          "alternative": "A Swindler Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "100 milliliters of Purified Water",
+            "20 milliliters of Another's Tears",
+            "1 Lapis Lazuli",
+            "10 grams of White Chestnut Balm"
+          ]
+        },
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 7,
+        "name": "Cryptologist",
+        "potion_overview": "Mist-like with glimmering specks; induces scalp-piercing pain akin to skin peeling.",
+        "formula": {
+          "main_ingredients": [
+            "1 Sphinx's Brain",
+            "1 Adult Insect from a Soul-Bewitching Insect Colony"
+          ],
+          "alternative": "A Cryptologist Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "80 milliliters of Sphinx's Blood",
+            "10 drops of Mucus Left by a Soul-Bewitching Insect Colony",
+            "1 Moonstone",
+            "1 Wild Rose",
+            "1 set of Self-Designed Cipher (written on paper)"
+          ]
+        },
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 6,
+        "name": "Prometheus",
+        "potion_overview": "Red-yellow, mesmerizing liquid with illusory flames swirling inside; akin to drinking fire.",
+        "formula": {
+          "main_ingredients": [
+            "1 Crystal Threadworm",
+            "1 Cloaked Specter's Attachment"
+          ],
+          "alternative": "A Prometheus Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "100 milliliters of Freshly Stolen Wine",
+            "10 grams of Cloaked Specter's Residual Powder",
+            "1 Citrine",
+            "10 drops of Larch Essential Oil",
+            "1 Tinder"
+          ]
+        },
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 5,
+        "name": "Dream Stealer",
+        "potion_overview": "Dark, murky, binding all thought; induces lethal suffocation upon ingestion.",
+        "formula": {
+          "main_ingredients": [
+            "1 Heart of a Dream-Eating Rat",
+            "1 Spirit of Depraved Breath"
+          ],
+          "alternative": "A Dream Stealer Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "30 milliliters of Dream-Eating Rat's Blood",
+            "30 milliliters of De-Spiritualized Depraved Breath",
+            "1 Celestine",
+            "10 drops of Lavender Hydrosol",
+            "50 milliliters of Another's Tears Shed Due to Shattered Ideals"
+          ]
+        },
+        "advancement_ritual": "Become a key antagonist or supporting figure in the unconscious dreams of at least 30 people. It doesn't matter how long these dreams last, what matters is that they are happening when the potion is consumed.",
+        "ritual_essence": "No data available.",
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 4,
+        "name": "Parasite",
+        "potion_overview": "Like yellow-green liquid squeezed from insects, along with floating insect carcasses; triggers the sensation of one's soul being possessed and skin being peeled layer by layer. Failed promotion, if not dead or having lost control, results in the drinker becoming a carrier of the potion, being Parasitized by it.",
+        "formula": {
+          "main_ingredients": [
+            "1 Soul-Snatcher's Postmortem Crystal",
+            "1 Puppet Evil Insect"
+          ],
+          "alternative": "A Parasite Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "100 milliliters of Soul-Snatcher's Blood",
+            "9 drops of Puppet Evil Insect Secretions",
+            "1 Amethyst",
+            "10 drops of Cherry Plum Juice",
+            "1 Imprisoned Soul"
+          ]
+        },
+        "advancement_ritual": "Convince nine targets to willingly offer all they possess to sustain you.",
+        "ritual_essence": "No data available.",
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 3,
+        "name": "Mentor of Deceit",
+        "potion_overview": "Emerald, crystalline, deceptively ordinary; causes bodily and spiritual fragmentation.",
+        "formula": {
+          "main_ingredients": [
+            "1 pair of Swamp Giant's Palms",
+            "1 Blasphemous Priest's Core (a faceless, robed spirit-world entity draped in fungal shrouds)"
+          ],
+          "alternative": "A Mentor of Deceit Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "80 milliliters of Swamp Giant's Blood",
+            "20 grams of Blasphemous Priest's Fungal Shroud",
+            "30 grams of Gold",
+            "10 drops of Water Violet Hydrosol",
+            "9 Spirit World Wraiths Who Died Due to the Advancer's Deceit"
+          ]
+        },
+        "advancement_ritual": "Without violence, find and exploit loopholes in rules to temporarily collapse order in a region. The area must be no smaller than a village, the smallest entity that can form a projection in the Spirit World.",
+        "ritual_essence": "No data available.",
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 2,
+        "name": "Trojan Horse of Destiny (Fate Stealer)",
+        "potion_overview": "Mercury-colored, with many looping symbols that form worm-like shadows; It carries various tastes, bringing the sensation of drowning as though sinking into the River of Fate.",
+        "formula": {
+          "main_ingredients": [
+            "1 Postmortem Crystal of a Giant King's Court Priest",
+            "OR 1 Soul-Snatcher King's Vertical Eye"
+          ],
+          "alternative": "A Trojan Horse of Destiny Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "100 milliliters of Ancient River Water (Note: An Ancient River is defined as a river with a thousand years of history that has not changed course)",
+            "1 Worm of Spirit",
+            "1 Worm of Star",
+            "A large amount of False History Believed to be True (recorded on paper)"
+          ]
+        },
+        "advancement_ritual": "Assume another's identity through disguise, deception, and other methods that don't involve Beyonder powers, then earn their social circle's trust until the identity dies naturally. Exceptions: Replacing someone on the verge of death, or someone who will die within three years. Higher-tier targets shorten the ritual duration (With a minimum of six months; does not need to be maintained until the identity dies naturally).",
+        "ritual_essence": "No data available.",
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 1,
+        "name": "Worm of Time",
+        "potion_overview": "Ethereal, shimmering, cyan-black, tasteless; drinking it subjects one to be eroded and cut by time.",
+        "formula": {
+          "main_ingredients": [
+            "Aurmir's Right Eye"
+          ],
+          "alternative": "A Worm of Time Beyonder Characteristic",
+          "supplementary_ingredients": [
+            "1 Ancient Clock",
+            "1 Used Almanac",
+            "1 Segment of Concealed Fate"
+          ]
+        },
+        "advancement_ritual": "Plunge a city into temporal disorder for at least seven days.",
+        "ritual_essence": "No data available.",
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      },
+      {
+        "sequence": 0,
+        "name": "Error (Bug)",
+        "potion_overview": "Liquid formed by overlapping layers of segmented worms.",
+        "formula": {
+          "main_ingredients": [
+            "The Error Uniqueness",
+            "Three Worm of Time Beyonder Characteristics"
+          ],
+          "supplementary_ingredients": [
+            "Three Beacons Extracted from the River of Fate"
+          ]
+        },
+        "advancement_ritual": "Replace someone during 'Their' Sequence 0 apotheosis ritual. Similarly to Thunder God, this doesn't necessarily mean the moment the target drinks the Sequence 0 potion, rather during their ritual itself. Thus, it is not obligatory to become a Dual God of the Error Pathway and the Pathway of the target.",
+        "ritual_essence": "No data available.",
+        "acting_method": "No data available.",
+        "consumption_backlash": "No data available."
+      }
+    ]
+  }

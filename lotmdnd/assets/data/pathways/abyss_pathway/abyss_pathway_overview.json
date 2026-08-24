@@ -1,0 +1,191 @@
+{
+  "pathway_name": "Abyss Pathway",
+  "aliases": [
+    "Criminal Pathway",
+    "Pathway of Devils"
+  ],
+  "overview": {
+    "description": "The Abyss Pathway has demonic and devil-related abilities. They have high strength, perception, can cast ritual and sacrificial spells, control and corrupt the desires of others, detect danger intuitively, increase in size, resist mental, poison, and curse attacks, and buff themselves for more strength and defense.",
+    "high_sequence_characteristics": "At High-Sequences, they become Demons of The Body and The Mind. They can make their enemies lose control on their desires, and corrupt others with their voice, manipulate blood and body fluids, and such as how the malice never dies, neither demons do.",
+    "origin": "The Beyonder Characteristics of this pathway originated from the Outer Deity Mother Tree of Desire.",
+    "madam_magician_description": "The Devil pathway is highly individualistic. […] Unique wills, distinct hearts, and a penchant for desires all amalgamate to form the diverse nature of devils.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Criminal",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Unwinged Angel",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Serial Killer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Devil",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Desire Apostle",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Demon",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Blatherer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Bloody Archduke",
+        "advancement_method": "Abi/Adv",
+        "mythical_form": "When a Devil attains Angelic status, the main characteristic of the Bloody Archduke will be that they seem to be made of congealed blood, capable of liquefying and coalescing."
+      },
+      {
+        "sequence": 1,
+        "name": "Filthy Monarch",
+        "advancement_method": "Abi/Adv",
+        "mythical_form": "The Mythical Creature Form of the Filthy Monarch appears as a horrifying image born from the stuff of nightmares, manifested from within a pitch-black abyss of filth and corruption."
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Abyss",
+        "advancement_method": "Abi/Adv",
+        "mythical_form": "The Sequence 0: Abyss's Mythical Creature Form is not fixed as one will see what they fear most or what they yearn for the most. This is similar to the adjacent Chained, reflecting the fact that there is an Abyss at the bottom of the human heart. Everyone's Abyss is different, and the Abyss presents a different image in their eyes."
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Abyss Pathway. The color is venetian red."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Devil",
+    "card_number": "XV",
+    "description": "The Devil (XV) is the number fifteenth of 22 Major Arcana. It represents being seduced by the material world and physical pleasures. Also living in fear, domination, and bondage, being caged by an overabundance of luxury, discretion should be used in personal and business matters."
+  },
+  "god": [
+    {
+      "name": "Mother Tree of Desire",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Pitch-Black Fiend",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Master of the Shadow Cottage",
+      "status": "Dao Integrator †",
+      "type": "Former God"
+    },
+    {
+      "name": "Dark Side of The Universe",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Mother Tree of Desire",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "saint_description": "When creatures of different races become Devils, their outward appearance will differ, but they all share several common details such as gigantic bodies, deep black and sinister skin, curved and terrifying ram horns, and pale blue sulfur flames."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "The Sequence 0: Abyss's Mythical Creature Form is not fixed as one will see what they fear most or what they yearn for the most. This is similar to the adjacent Chained, reflecting the fact that there is an Abyss at the bottom of the human heart. Everyone's Abyss is different, and the Abyss presents a different image in their eyes."
+  },
+  "high_sequence_group": {
+    "name": "Abyss Chained Patriarch",
+    "pathways": [
+      "Abyss",
+      "Chained",
+      "Patriarch"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Father of Devils",
+    "alternative_name": "Mother Tree of Desire",
+    "pathways": [
+      "Abyss",
+      "Chained",
+      "Patriarch"
+    ]
+  },
+  "sefirah": {
+    "name": "Tenebrous World"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Father of Devils",
+        "pathways": ["Chained"]
+      },
+      {
+        "group": "Mother Tree of Desire",
+        "pathways": ["Patriarch"],
+        "note": "Because the Father of Devils was originally a part of the Mother Tree of Desire."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"],
+        "note": "Because the Inextinguishable Ravings can accommodate the Tenebrous World, although this was not an optimal choice, one that 'He' would usually avoid."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Hanged Man"],
+        "note": "Because of the connection between Heaven and the Abyss, which was also consistent with the mystical similarity between the Degenerate nature of these two Pathways."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Blood Sanctify Sect"
+    },
+    {
+      "name": "Nois Family"
+    },
+    {
+      "name": "Beria Family"
+    },
+    {
+      "name": "Andariel Family"
+    }
+  ]
+}

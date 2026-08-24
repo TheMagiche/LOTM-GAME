@@ -1,0 +1,63 @@
+{
+  "pathway_specific": {
+    "Abyss": ["Devil", "Shadow-Shifter", "Wraith Devil"],
+    "Chained": ["Frost Dragon"],
+    "Condenser": ["Armored Monster Fish", "Little Devil", "Mutated Bannerfish"],
+    "Darkness": ["Demonic Wolf of Secrecy"],
+    "Death": ["Feathered Serpent", "Phoenix"],
+    "Demoness": ["Frost Dragon"],
+    "Door": ["Asmann", "Ancient Wraith", "Lavos Squid"],
+    "Error": ["Giant King's Court Priest"],
+    "Fool": [
+      "Bizarro Bane",
+      "Dark Demonic Wolf",
+      "Demonic Wolf of Fog",
+      "Hounds of Fulgrim",
+      "Human-Skinned Shadow",
+      "Lavos Squid",
+      "Mermaid",
+      "Six-Winged Gargoyle",
+      "Spirit World Plunderer"
+    ],
+    "Hermit": ["Knowledge Demon"],
+    "Justiciar": ["Bronze/Copper Elf"],
+    "Moon": ["Sanguine"],
+    "Mother": ["Child of Harvest", "Harvest Giant"],
+    "Red Priest": [
+      "Black Hunting Spider",
+      "Fürth Firefish",
+      "Gray Demonic Wolf",
+      "Magma Elf",
+      "Mist Jellyfish",
+      "Weather Giant"
+    ],
+    "Sun": ["Sun Wraith"],
+    "Twilight Giant": ["Giant", "Stone Golem"],
+    "Tyrant": [
+      "Blue Shadow Falcon",
+      "Deep-Sea Naga",
+      "Elf",
+      "King of the Deep Sea",
+      "Murloc",
+      "Naga",
+      "Obninsk",
+      "Sea Serpent"
+    ],
+    "Visionary": [
+      "Harpy",
+      "Illusory Chime Tree",
+      "Mind Dragon",
+      "Rainbow Salamander"
+    ],
+    "Wheel of Fortune": ["Phoenix"],
+    "White Tower": [
+      "Brass Dragon",
+      "Deep-Sea Naga",
+      "Naga",
+      "Naga Priest",
+      "Shadow Naga",
+      "Six-Armed Naga",
+      "Three-Eyed Naga"
+    ]
+  }
+}

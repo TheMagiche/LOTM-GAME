@@ -1,0 +1,119 @@
+{
+  "pathway": "Hermit Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Mystery Pryer",
+      "abilities": [
+        "Spirituality: Enhanced Spirituality upon drinking the potion.",
+        "Magic & Divination Arts: Comprehensive but rudimentary understanding of magic, Enchantment, witchcraft, Divination Arts, and Ritualistic Magic.",
+        "Eyes of Mystery Prying: Special eyes that can see things normally not visible, peer through Illusions, see truth and reality, discern Spirituality, and examine Astral Bodies.",
+        "Knowledge (Knowledge Pursuit): Occasionally chased by knowledge brought to life, imbuing knowledge in random intervals.",
+        "Quick Rituals: Can quickly complete Ritualistic Magic without most ritual items."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Melee Scholar",
+      "abilities": [
+        "Physical Enhancement: Improved fitness.",
+        "Combat Prying: Mastery of many different styles of martial arts."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Warlock",
+      "abilities": [
+        "Spirituality: Enhanced Spirituality with acute warnings.",
+        "Spellcasting: Can create Spells using knowledge and mind; versatile like a traditional fantasy mage.",
+        "Knowledge (Witchcraft): Can make potions and better Mystical Items.",
+        "Eyes of Mystery Prying: Greatly enhanced; can Pry into mysteries of supernatural powers."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Scrolls Professor",
+      "abilities": [
+        "Scroll Making: Can make scrolls to cast Spells; greatly enhances casting time and combat ability."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Constellations Master",
+      "description": "Astrology, Constellations, Stars, and Starlight are all concepts that possess dual meanings with both mystical and real astronomical significance. A Constellations Master has a basic grasp of the mystical aspects of these concepts.",
+      "abilities": [
+        "Starlight Cage: Can create a vast transparent amber that envelops and confines targets.",
+        "Star Pillar: Can scatter Stars and merge them into a magnificent pillar of Starlight.",
+        "Stellar Self: Can transform into a statue of Starlight particles to slip through fissures.",
+        "Starry Sea Shuttle: Can make ships fly through the use of Starlight.",
+        "Star Concealment: Can use Stars to Conceal targeted areas and nullify interference.",
+        "Star Bridge: Can manifest an illusory Starry bridge.",
+        "Star Illumination: Can utilize Stars as a light source.",
+        "Eyes of Mystery Prying: Greatly enhanced ability to sense hidden existences.",
+        "Spellcasting: Enhanced; can cast some Spells without materials via simple gestures."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Mysticologist",
+      "description": "The power of a Mysticologist stems from their extensive knowledge of Mysticism, making them extremely dangerous. In addition, among all Sequence 4 Beyonders, a Mysticologist is the Sequence that encounters danger the easiest.",
+      "abilities": [
+        "Knowledge (Knowledge Pursuit): Higher tolerance for ravings of the Hidden Sage.",
+        "Mystical Re-enactment: Core ability; can draw power from mysticism knowledge to create magic or witchcraft.",
+        "Eyes of Mystery Prying: Second core ability; can detect more Concealed objects and attributes.",
+        "Stellar Guidance: Enhanced Star capabilities.",
+        "Mythical Creature Form: Abstract 'black blob' appearing in a higher spatial dimension covered in cracks and eyes."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Clairvoyant",
+      "abilities": [
+        "Mystery Prying: Partial authority over Mystery Prying; can glimpse hidden secrets, knowledge, and Destiny.",
+        "Clairvoyance (Prophecy): Can foresee consequences, glimpse best options, and visualize past events.",
+        "Mystical Re-enactment: Enhanced; number of uses for certain Spells increased.",
+        "Stellar Guidance: Enhanced Star capabilities.",
+        "Eyes of Mystery Prying: Can manifest Eyes on parts of their body."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Sage",
+      "abilities": [
+        "Mysticism Knowledge: Authority over Mysticism Knowledge, Deletion, and Revision.",
+        "Informatization: Can abstract the body and break down into streams of complex Knowledge.",
+        "Education: Small authority over Education; can impart Knowledge in invisible streams of Information.",
+        "Mystery Prying: Enhanced Prophecies.",
+        "Clairvoyance (Prophecy): Can gain scenes or fragments of the future.",
+        "Mystical Re-enactment: Enhanced.",
+        "Mythical Creature Form: Informational serpent or eyeball consisting of countless cold, eyelash-less eyes."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Knowledge Emperor",
+      "abilities": [
+        "Knowledge Emperor: Can utilize Information gathered in the Spirit World and influence the Seven Lights.",
+        "Mysticism Knowledge: Deeper grasp; can imbue abstract Knowledge with tangible power.",
+        "Digital Avatar: Can become a Digital Avatar when in Information/Knowledge flow state.",
+        "Education: More authority over Education; can conjure complex Symbols and pour useless Knowledge.",
+        "Mystery Prying: Certain degree of Mystery Prying authority; can Pry into Mysteries of True Deities.",
+        "Clairvoyance (Prophecy): Can sense events via Clairvoyant abilities."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Hermit",
+      "abilities": [
+        "Knowledge (Information): Symbolism; holds portion of authority leaning toward Mysticism.",
+        "Mysticism Knowledge: Embodiment of Mysticism Knowledge; can imbue Digital Objects with power.",
+        "Backup: Subordinate authority allowing Revival of Information after Backup.",
+        "Hiding: Authority of Hiding; can Hide Information making it impossible to track.",
+        "Education: Authority to grant Knowledge to others.",
+        "Mystery Prying: Can Pry into any secret, Knowledge, or Mysticism Knowledge.",
+        "Spirit World Mentor: Partial authority of the Spirit World.",
+        "Divine Kingdom: The World in the Eyes or Digital Heaven, Land of Fairy Tales."
+      ]
+    }
+  ]
+}

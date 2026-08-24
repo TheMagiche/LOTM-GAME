@@ -1,0 +1,165 @@
+{
+  "languages": {
+    "mystical_languages": {
+      "god_almighty_unknown_language": {
+        "description": "An unnamed language used by the Ancient Sun God",
+        "usage": ["sacrifices", "prayers", "spell casting"],
+        "notes": "Similar to Jotun but different. Not Elvish, Dragonese, or Ancient Hermes. Has similarities with Ancient Feysac and Dutanese.",
+        "created_by": "Ancient Sun God (presumed)",
+        "epoch": "Unknown"
+      },
+      "elvish": {
+        "description": "Ancient language created by the Elf King in the Sprouting Era",
+        "usage": ["sacrifices", "prayers", "spell casting", "natural forces manipulation"],
+        "characteristics": "Every word is rich in meaning; sentences are very short",
+        "created_by": "Elf King",
+        "epoch": "Sprouting Era",
+        "notes": "According to Elvin Legend, first-generation elves are born with every word produced"
+      },
+      "dragonese": {
+        "description": "Ancient language created by Dragons in the Sprouting Era",
+        "usage": ["sacrifices", "prayers", "spell casting", "natural forces manipulation"],
+        "characteristics": "Grammatical habit of using short, simple sentences",
+        "created_by": "Dragons",
+        "epoch": "Sprouting Era"
+      },
+      "jotun": {
+        "description": "Ancient language created by Giants in the Sprouting Era",
+        "usage": ["sacrifices", "prayers", "spell casting", "natural forces manipulation"],
+        "notes": "Still used as a common language in the Forsaken Land of the Gods by the Fifth Epoch. Foundation of Ancient Feysac language.",
+        "created_by": "Giants",
+        "epoch": "Sprouting Era"
+      },
+      "devil_language": {
+        "description": "Language created by Devils in the Sprouting Era",
+        "usage": ["demonic rituals", "prayers", "spell casting"],
+        "primary_users": "Abyss Pathway Beyonders",
+        "created_by": "Devils",
+        "epoch": "Sprouting Era"
+      },
+      "ancient_hermes": {
+        "description": "Human extraordinary language based on Jotun and Dragonese",
+        "usage": ["sacrifices", "prayers", "unprotected ceremonies", "guiding words for rituals"],
+        "characteristics": "Tongue-twisting language; direct and effective effects",
+        "created_by": "Hermes (ancient Sequence 2 of Visionary Pathway)",
+        "epoch": "Second Epoch",
+        "has_alphabet": true,
+        "alphabet_image": "https://static.wikia.nocookie.net/lord-of-the-mystery/images/c/c0/AncientHermes_Language.png"
+      },
+      "hermes": {
+        "description": "Simplified version of Ancient Hermes developed in the Fourth Epoch",
+        "usage": ["daily Beyonder use", "rituals", "spirit world communication"],
+        "characteristics": "Easier to learn and disseminate; less powerful direct ritual effects than Ancient Hermes",
+        "notes": "The language that must be mastered by Beyonders; universally used by Spirit World denizens",
+        "example_phrase": "'Amantha' means 'serenity'",
+        "epoch": "Fourth Epoch",
+        "has_alphabet": true,
+        "alphabet_image": "https://static.wikia.nocookie.net/lord-of-the-mystery/images/e/e1/Hermes_Language.png"
+      },
+      "other_mystical_languages": {
+        "description": "Specialized languages for specific pathways and domains",
+        "language_of_the_dead": {
+          "pathway": "Death Pathway",
+          "usage": ["communication with spirits", "commanding spirits", "enslavement"],
+          "example_phrase": "'Calderón' means 'Unknown Soul'"
+        },
+        "language_of_fate": {
+          "pathway": "Eternal Aeon Pathway"
+        },
+        "language_of_the_stars": {
+          "pathway": "Condenser Pathway"
+        },
+        "words_of_order": {
+          "pathway": "Chaos Mist Pathway"
+        }
+      }
+    },
+    "common_languages": {
+      "pre_epoch_languages": {
+        "description": "Modern era human languages from Earth",
+        "notes": "Lost after the First Epoch; only known by transmigrators and certain deities",
+        "known_speakers": ["Evernight Goddess", "Ancient Sun God", "Roselle Gustav", "Klein Moretti", "other Transmigrators"]
+      },
+      "ancient_feysac": {
+        "description": "Common language of the Fourth Epoch",
+        "usage": ["daily communication", "written records"],
+        "characteristics": "Derived from Jotun; has some mystical properties but cannot use natural forces",
+        "notes": "Root language of all contemporary Northern Continent languages",
+        "example_phrase": "'Sodela' means 'balance'",
+        "epoch": "Fourth Epoch",
+        "script_image": "https://static.wikia.nocookie.net/lord-of-the-mystery/images/4/44/LeymanoSpellbook-text.jpg"
+      },
+      "northern_continent": {
+        "loenese": {
+          "description": "Official language of the Loen Kingdom",
+          "origin": "Derived from Ancient Feysac",
+          "characteristics": "No mystical properties or powers",
+          "primary_users": "Loen Kingdom, Klein Moretti, most Tarot Club members",
+          "has_alphabet": true,
+          "alphabet_images": [
+            "https://static.wikia.nocookie.net/lord-of-the-mystery/images/e/eb/Loen_Language.png",
+            "https://static.wikia.nocookie.net/lord-of-the-mystery/images/7/78/LoenLanguageAlphabet.png",
+            "https://static.wikia.nocookie.net/lord-of-the-mystery/images/4/44/LoenLanguageExample.png"
+          ]
+        },
+        "intisian": {
+          "description": "Official language of the Intis Republic",
+          "origin": "Derived from Ancient Feysac",
+          "characteristics": "No mystical properties; represented by French in English translations",
+          "common_phrases": [
+            {"phrase": "Mon Dieu", "meaning": "My God"},
+            {"phrase": "Dieu merci", "meaning": "Thank God"},
+            {"phrase": "Oui", "meaning": "Yes"},
+            {"phrase": "Sacrebleu", "meaning": "Holy Cow (expurgated form of 'sacred God')"},
+            {"phrase": "Grande Sœur", "meaning": "Big sister"},
+            {"phrase": "Mon ami", "meaning": "My friend"}
+          ]
+        },
+        "feysac": {
+          "description": "Official language of the Feysac Empire",
+          "origin": "Derived from Ancient Feysac",
+          "characteristics": "Language with the least difference from Ancient Feysac",
+          "example_phrase": "'Lærdal (洛达尔)' in the local language of Nas means 'Dawn'"
+        },
+        "highlander": {
+          "description": "Official language of the Feynapotter Kingdom",
+          "origin": "Derived from Ancient Feysac",
+          "example_words": [
+            {"word": "Solow", "meaning": "sun"},
+            {"word": "Soros", "meaning": "sunlight"}
+          ],
+          "notes": "Feynapotter Kingdom venerates Earth Mother despite frequent use of sun-related words"
+        },
+        "lenburg": {
+          "description": "Common language in Lenburg",
+          "origin": "Essentially same as Highlander with dialectal differences"
+        }
+      },
+      "southern_continent": {
+        "highlander_southern": {
+          "description": "Original language of the Southern Continent",
+          "status": "Equal in status to Ancient Feysac but separate origin",
+          "special_terms": {
+            "'Kadiev'": "Word for 'King' in ancient Highlands Kingdom; translated by Roselle Gustav as 'Pharaoh'"
+          },
+          "notes": "Means 'son of God, king of humans'"
+        },
+        "dutanese": {
+          "description": "Original language of the Southern Continent",
+          "usage": "Common language of the ancient Balam Empire; still used in East and West Balam",
+          "characteristics": "Similar to Ancient Feysac in many ways, as if from same origin, but not Jotun"
+        }
+      },
+      "western_continent": {
+        "description": "Common language of the Western Continent",
+        "characteristics": "Highly similar to Simplified Chinese in grammar and words",
+        "notes": "Mainland Chinese Transmigrators can easily understand it; communication has been maintained across Epochs",
+        "example_quote": "\"Imperial brother, please lend me your strength!\" - Roselle Gustav inside the Nation of Disorder"
+      }
+    },
+    "trivia": {
+      "game_connection": "The Lord of the Mysteries game introduced the Hermes alphabet, used in the theme song 'Praise The Fool'",
+      "fan_work": "Standard Hermes grammar is still being decrypted by fans"
+    }
+  }
+}

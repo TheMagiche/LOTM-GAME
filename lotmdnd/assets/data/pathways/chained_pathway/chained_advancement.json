@@ -1,0 +1,234 @@
+{
+  "pathway": "Chained",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Prisoner",
+      "potion_properties": "A crimson liquid covered by a thin, pitch black membrane.",
+      "beyonder_characteristic_appearance": "A slowly writhing mass of dark blood.",
+      "formula": {
+        "main_ingredients": [
+          "One Stone of Silence.",
+          "Blood Source of a Mimic Human."
+        ],
+        "alternative_main_ingredients": [
+          "A Prisoner Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "80 milliliters of dirty water.",
+          "Byproducts from a Stone of Silence.",
+          "10 strands of Mimic Human's hair.",
+          "10 drops of Cedar essential oil."
+        ]
+      },
+      "acting_method": "Repress desires and show temperance.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 8,
+      "name": "Lunatic",
+      "potion_properties": "A grayish-white liquid that constantly bursts and flashes inside.",
+      "beyonder_characteristic_appearance": "A blob of grayish-white light that resembled a shrunken brain.",
+      "formula": {
+        "main_ingredients": [
+          "A Shapeshifter's brain.",
+          "A Cannibal Dog's tongue."
+        ],
+        "alternative_main_ingredients": [
+          "A Lunatic Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of one's own blood.",
+          "The face of Shapeshifter.",
+          "13 drops of Cannibal Dog's saliva.",
+          "1 dried whole orange peel."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 7,
+      "name": "Werewolf",
+      "potion_properties": "A dark green liquid with short hairs and a blood-red hue floating on it.",
+      "beyonder_characteristic_appearance": "A dark-green fang. Or a blackish-green fang.",
+      "formula": {
+        "main_ingredients": [
+          "Werewolf fangs."
+        ],
+        "alternative_main_ingredients": [
+          "A Werewolf Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of Werewolf blood.",
+          "10 strands of Werewolf black hair.",
+          "1 portion of a Human's internal organs.",
+          "1 cursed item."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 6,
+      "name": "Zombie",
+      "potion_properties": "A cold, lifeless, grayish-white liquid, surrounded by a faint, icy-blue mist.",
+      "beyonder_characteristic_appearance": "A gray-white heart with hints of ice blue.",
+      "formula": {
+        "main_ingredients": [
+          "The heart of a Zombie."
+        ],
+        "alternative_main_ingredients": [
+          "A Zombie Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "90 grams of flesh and blood from a living person.",
+          "30 grams of flesh and blood from a Zombie.",
+          "1 Zombie eyeball.",
+          "3 Moonflowers."
+        ]
+      },
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 5,
+      "name": "Wraith",
+      "potion_properties": "A transparent liquid containing multiple illusory mirrors reflecting the same face, and layers of various richly colored blocks.",
+      "beyonder_characteristic_appearance": "A transparent stone with a distorted face protruding from it.",
+      "formula": {
+        "main_ingredients": [
+          "The consciousness crystal of a Wraith."
+        ],
+        "alternative_main_ingredients": [
+          "A Wraith Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of Wraith blood.",
+          "100 milliliters of cold water contaminated by a Wraith.",
+          "10 grams of dust left behind by a Wraith.",
+          "1 mirror.",
+          "9 human or supernatural souls."
+        ]
+      },
+      "advancement_ritual": "Find a way to enter the Spirit World, locate a part of information that corresponds to you, seal or imprison said information for at least 3 minutes and take the Potion before the seal is lifted.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 4,
+      "name": "Puppet",
+      "potion_properties": "A semi-illusory liquid with numerous open, dark eyes.",
+      "beyonder_characteristic_appearance": "A pair of deep black eyes that reflect the surrounding figures.",
+      "formula": {
+        "main_ingredients": [
+          "A Puppet's eyes."
+        ],
+        "alternative_main_ingredients": [
+          "A Puppet Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "90 milliliters of blood from a person who died from a curse.",
+          "13 strands of Puppet hair.",
+          "1 piece of clothing worn by a Puppet or a frequently used item.",
+          "1 set of shackles or similar used to imprison the deceased."
+        ]
+      },
+      "advancement_ritual": "Prepare a Mummy that has undergone a special ritual, possesses divinity, and originally belonged to the Chained. Then, possess the Mummy and consume the Potion. Note: True Mummies are the remains of Chained demigods who have undergone internal organ purification, curse inscription, bandaging, mausoleum construction, and burial for over a year.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 3,
+      "name": "Disciple of Silence (Cursed Artifact)",
+      "potion_properties": "It features numerous unintelligible symbols and patterns, black eyes, a bloodshot mouth, and a swirling, floating pale liquid.",
+      "beyonder_characteristic_appearance": "A pale, throat-like object dripping with black liquid and tinged with a hint of blood.",
+      "formula": {
+        "main_ingredients": [
+          "The throat of a Cursed Artifact."
+        ],
+        "alternative_main_ingredients": [
+          "A Disciple of Silence Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 milliliters of mad water contaminated by a Cursed Artifact.",
+          "1 thing cursed by a Cursed Artifact (even if it's dead).",
+          "1 complete sheepskin or rabbit skin.",
+          "1 Statue of oneself as an Anchor Point."
+        ]
+      },
+      "advancement_ritual": "Establish a cult, cultivate at least a thousand followers, so that they can understand your gaze, comprehend your thoughts, implement your ideals, most appropriately act on your will, and speak the words you want to say. The higher the level of the followers, the fewer the number required, it is not necessary to reach a thousand.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 2,
+      "name": "Ancient Bane",
+      "potion_properties": "A pale, misty liquid, with every tiny droplet exuding an aura of evil and madness.",
+      "beyonder_characteristic_appearance": "A pervasive, pale mist stained with blood and black spots, about the size of a head.",
+      "formula": {
+        "main_ingredients": [
+          "The spiritual collection of an Ancient Bane."
+        ],
+        "alternative_main_ingredients": [
+          "A Ancient Bane Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "1 commonly used item of an Ancient Bane.",
+          "9 ancient bones.",
+          "1 completely eradicated curse (the longer the curse lasted the better the effect).",
+          "1 architectural sculpture with connotations of constraint."
+        ]
+      },
+      "advancement_ritual": "Find an ancient, evil item capable of bearing angelic power. This item will become the core of the final Mythical Creature form.",
+      "ritual_essence": "The ancient, evil item will be an anchor and base, binding and stabilizing the various curses resulting from the disassembly process. Since the ancient, evil item will be the anchor for the future curse conglomerate, using a Historical Projection of the Fool Pathway will cause them to disintegrate when the projection ends.",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 1,
+      "name": "Abomination",
+      "potion_properties": "A disgusting sphere made of pitch-black slime.",
+      "beyonder_characteristic_appearance": "A strange, tree-like humanoid object coated in black slime.",
+      "formula": {
+        "main_ingredients": [
+          "A Abomination Beyonder Characteristic"
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "9 types of curses and contamination caused by an Abomination to the surroundings.",
+          "1 Corpse of a True God's child.",
+          "900 milliliters of blood from a deceased supernatural being.",
+          "1 item from a broken or corrupted Divine Kingdom."
+        ]
+      },
+      "advancement_ritual": "Receive the blessing of a True God (at least the blessing of an Activated Uniqueness or a King of Angels who had Accommodated the Uniqueness). Note: This is not a simple, verbal blessing; it means that the Deity who gives the blessing will suffer a Mad Curse during the ritual, originated from the Source of Curses symbol, which is quite dangerous.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 0,
+      "name": "Chained",
+      "potion_properties": "Layers of terrifying black thorns, yellow oily bandages, and bright, sharp roses.",
+      "beyonder_characteristic_appearance": "No data",
+      "formula": {
+        "main_ingredients": [
+          "The Chained Uniqueness.",
+          "Three Abomination Beyonder Characteristics."
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "A 'Cage' that once imprisoned or sealed a True God."
+        ]
+      },
+      "advancement_ritual": "Mummify oneself while still alive, then fill one's body with the potion as internal organs, imprisoning it within. Finally, one kills themselves, sealing oneself in a true mummy state within a coffin and mausoleum for at least a hundred years, ensuring that the remaining Spirit and Will do not perish. Note: The body is a prison of the Mind and the Potion, the Coffin and the Mausoleum are the prison of the body.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    }
+  ]
+}

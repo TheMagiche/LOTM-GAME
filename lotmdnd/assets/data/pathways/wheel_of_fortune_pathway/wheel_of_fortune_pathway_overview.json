@@ -1,0 +1,159 @@
+{
+  "pathway_name": "Wheel of Fortune Pathway",
+  "aliases": [
+    "Monster Pathway",
+    "Fate Pathway"
+  ],
+  "overview": {
+    "description": "The Wheel of Fortune Pathway, more commonly referred to as the Fate Pathway, represents the Possibility of one's Fate and represents Chaos. It holds authorities over Fate, Probability, Cycle, and Disorder, as well as the subordinate authorities of Good Luck, Bad Luck, Foresight, Save, and Select.",
+    "low_mid_characteristics": "Low and mid-Sequence Beyonders of the Monster Pathway are really extreme. Apart from the spirituality and Fate domain, they almost have zero Beyonder powers. Even their constitution and calculation skills are provided at Robot. The subsequent advancements give rather limited improvements. It could be said that they are the ideal model for a charlatan. They do not have any offensive or defensive abilities, simply relying on their premonition and how Fate blesses them.",
+    "high_sequence_characteristics": "At High-Sequences, they can bestow misfortunes, find the best possibilities within chaos, manipulate the fate of living beings, trap others in an endless loop of fated events, and avoid danger by restarting an encounter or through reincarnation, and manipulate probability, becoming the embodiment of the endless outcomes of Fate.",
+    "cuttlefish_description": "To some extent, they are the embodiment of Fate, able to travel freely in the River of Fate.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Monster",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Robot",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Lucky One",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Calamity Priest",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Winner",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Misfortune Mage",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Chaoswalker",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Soothsayer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Snake of Mercury",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Wheel of Fortune",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Wheel of Fortune Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "Wheel of Fortune",
+    "card_number": "X",
+    "description": "Wheel of Fortune (X) is the number tenth of 22 Major Arcana. The Wheel of Fortune is generally an indicator of luck or destiny. A common aspect to most interpretations of this card within a reading is to introduce an element of change in the querent's life, such change being in station, position or fortune: such as the rich becoming poor, or the poor becoming rich."
+  },
+  "god": [
+    {
+      "name": "Golden Buddha",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Holy Monk",
+      "status": "Dao Integrator",
+      "type": "Current God"
+    },
+    {
+      "name": "Devil Monarch Farbauti",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "Snake of Mercury: A giant scaleless silver snake covered with dense patterns and symbols on its surface, the symbols being various wheels that are connected to each other. Its tail and head wheels were each halved, only if the giant silver snake could bite its own tail with its mouth, the wheel would be complete. Each wheel is different and they represent different futures that might happen. They have cold, bright red eyes."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A giant scaleless silver snake covered with dense patterns and symbols on its surface, the symbols being various wheels that are connected to each other. Its tail and head wheels were each halved, only if the giant silver snake could bite its own tail with its mouth, the wheel would be complete. Each wheel is different and they represent different futures that might happen. They have cold, bright red eyes. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Wheel of Fortune",
+    "pathways": [
+      "Wheel of Fortune"
+    ],
+    "note": "This Pathway is the only one among the Standard Pathways that does not have any neighbouring Pathway."
+  },
+  "above_the_sequence": {
+    "name": "Key of Light",
+    "pathways": [
+      "Wheel of Fortune"
+    ]
+  },
+  "sefirah": {
+    "name": "Key of Light"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [],
+    "compatible_pathways": [
+      {
+        "group": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"],
+        "note": "Due to the chaotic nature of Fate itself, other Pathways cannot directly jump to the Wheel of Fortune Pathway. But one can first jump to the Pathways derived from Fate as a bridge, such as the Eternal Aeon Pathway, and then jump to the Wheel of Fortune Pathway. Such a jump is very risky because of the chaotic nature and the accumulation of madness. For example, the Error Pathway can make this jump using a bridge Pathway."
+      },
+      {
+        "group": "Goddess of Fate",
+        "pathways": ["Eternal Edict"],
+        "note": "Due to the chaotic nature of Fate itself, other Pathways cannot directly jump to the Wheel of Fortune Pathway. But one can first jump to the Pathways derived from Fate as a bridge, such as the Eternal Edict Pathway, and then jump to the Wheel of Fortune Pathway. Such a jump is very risky because of the chaotic nature and the accumulation of madness."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Life School of Thought"
+    },
+    {
+      "name": "Aurora Order"
+    },
+    {
+      "name": "Buddhism (Western Continent)"
+    }
+  ],
+  "trivia": {
+    "lonely_pathway": "Klein Moretti once made two guesses: The pathway that focuses on Fate is destined to be lonely and its Beyonders don't wear many Mystical Items. Even if they do, they will wear one or two rather low-level ones. This is likely a requirement of Fate. This isn't necessarily true. The real reason behind this is because they are afraid of depleting their luck.",
+    "price_before_bestowment": "According to Will Auceptin, for Beyonders of the Fate pathway, the exacted price needs to be paid first before awaiting the bestowment of Fate and not the other way around.",
+    "luck_requirement": "According to the author, one does not simply walk the pathway of the Wheel of Fortune, unless they have good luck."
+  }
+}

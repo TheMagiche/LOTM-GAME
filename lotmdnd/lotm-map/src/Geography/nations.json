@@ -1,0 +1,62 @@
+{
+  "major_nations_and_cities": {
+    "description": "The primary political powers and urban centers of the Northern Continent.",
+    "list": [
+      {
+        "name": "Loen Kingdom",
+        "type": "Nation",
+        "description": "A constitutional monarchy and the primary setting of the first book. It is a major power known for its industrial might and significant Beyonder organizations."
+      },
+      {
+        "name": "Backlund",
+        "type": "City",
+        "description": "The sprawling capital of the Loen Kingdom, a Victorian-era metropolis divided into districts, from the wealthy to the impoverished. It is the center of political intrigue and Beyonder activity."
+      },
+      {
+        "name": "Tingen",
+        "type": "City",
+        "description": "A mid-sized city in the Loen Kingdom, known as the 'City of Universities.' It is where the protagonist's journey begins and is home to a branch of the Nighthawks."
+      },
+      {
+        "name": "Intis Republic",
+        "type": "Nation",
+        "description": "A powerful republic modeled after France, known for its culture and as the primary setting for the second book, *Circle of Inevitability*."
+      },
+      {
+        "name": "Trier",
+        "type": "City",
+        "description": "The capital city of the Intis Republic, modeled after Paris. It is a grand city of culture, art, and intrigue."
+      },
+      {
+        "name": "Feynapotter Kingdom",
+        "type": "Nation",
+        "description": "A kingdom neighboring Intis, associated with the Mother Pathway and the Earth Mother church. It is known for its agricultural prosperity."
+      },
+      {
+        "name": "Feysac Empire",
+        "type": "Nation",
+        "description": "A continental power known for its military strength and deep religious traditions, often at odds with the Loen Kingdom."
+      },
+      {
+        "name": "Rorsted Archipelago",
+        "type": "Region",
+        "description": "A chain of islands in the sea between continents, a hub for pirates, trade, and colonial powers."
+      },
+      {
+        "name": "Bayam",
+        "type": "City",
+        "description": "A port city in the Rorsted Archipelago known for its diverse population, supernatural activity, and the influence of the Sea God."
+      },
+      {
+        "name": "Cordu Village",
+        "type": "Village",
+        "description": "A small, isolated village in the mountains of Intis, where the protagonist of *Circle of Inevitability* grew up. It is the site of mysterious supernatural events."
+      },
+      {
+        "name": "City of Silver",
+        "type": "City",
+        "description": "An ancient city located in the Forsaken Land of the Gods, perpetually shrouded in darkness. Its people fight for survival against corrupted creatures and worship the Eternal Blazing Sun."
+      }
+    ]
+  }
+}

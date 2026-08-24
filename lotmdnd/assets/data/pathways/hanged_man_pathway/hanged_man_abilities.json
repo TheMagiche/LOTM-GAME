@@ -1,0 +1,123 @@
+{
+  "pathway": "Hanged Man Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Secrets Suppliant",
+      "abilities": [
+        "High Spirituality: High Spiritual Perception to detect mysterious and horrible existences.",
+        "Ritualistic Magic & Divination Arts: Can perform Divination and Ritualistic Magic using strong Spirituality.",
+        "Knowledge (Mysticism): Bestowed with knowledge regarding sacrifices and Ritualistic Magic, including Honorific Names of secret entities."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Listener (Whispered)",
+      "description": "Nighthawk files state that every Listener is a lunatic - even if they look normal on the surface, they are always crazy on the inside. The files also state that it was difficult for Listeners to survive the next five years after taking the potion if they were unable to advance, because they frequently came into contact with powerful, distorted entities.",
+      "abilities": [
+        "High Spirituality: Further enhanced spiritual perception.",
+        "Listen: Can Listen directly into the whispers of secret entities, obtaining powerful, twisted, and unique abilities."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Shadow Ascetic",
+      "abilities": [
+        "Summon Shadows: Can summon Shadow creatures to influence, restrict, or attack targets.",
+        "Shadow Curse: Can inflict Curses using target's Flesh and Blood, Ritual cooperation, or part of target's Shadow.",
+        "Manipulating Shadows: Can influence the target's Shadow in the Shadow World and try to capture it.",
+        "Shadow Lurking: Can Conceal themselves in larger Shadows and use Shadows to secretly track targets.",
+        "Shadow Shaping: Can Shape Shadows into weapons or animals that cause cold and Degenerate damage.",
+        "Listen: Can turn off this Beyonder power at this Sequence."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Rose Bishop (Rose Priest)",
+      "abilities": [
+        "Flesh & Blood Magic: Expert in Flesh & Blood Magic; can heal physical injuries and recover from seemingly fatal wounds.",
+        "Flesh Cloak: Can create cloaks of sticky Flesh that resist magic and reduce damage.",
+        "Flesh Blood Fusion: Can melt into pure sticky Flesh and Blood to penetrate ground or hide in hosts.",
+        "Flesh Bomb: Can tear off body Flesh and make it into explosive Flesh Bombs.",
+        "Flesh Blood Servants: Can create puppets using Flesh and Blood with immense strength.",
+        "Flesh Blood Curse: Can curse targets using their Flesh and Blood.",
+        "Devouring: Can envelop targets, corrode bodies, and kill from the inside.",
+        "Flesh Softening: Can soften blows on their body like boneless piles of rotten Flesh.",
+        "Can modify appearance to some extent, change skin color and hardness, and form extra limbs."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Shepherd",
+      "description": "Shepherds are ranked first below High Sequences. They are so all-rounded that if they combined and matched their Beyonder powers well enough, they would almost have zero shortcomings.",
+      "abilities": [
+        "Grazing: Can swallow a target's Soul and Beyonder Characteristics or Boon powers into their body and use those Beyonder powers.",
+        "Flesh and Blood Magic: Further mastered abilities including Devouring.",
+        "Controlling Shadows: Advanced version allowing direct Manipulation of deep Shadows not belonging to living creatures."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Black Knight",
+      "abilities": [
+        "Cull of Spiritual Flesh: Core Beyonder power from the Degeneration domain; manifests as a Black Greatsword that renders living creatures with Degenerate thoughts defenseless.",
+        "Black Armor: Can transform into a small giant covered in Black Armor protecting from attacks.",
+        "Shadow of Depravation: Can peel off Depraved thoughts into a Shadow forming an independent creature.",
+        "Commandeering Shadows: Makes the target's own Shadow come alive and bind them tightly.",
+        "Flesh and Blood Magic: Enhanced grasp on abilities of this domain.",
+        "Flesh Rug: Can transform into a thin, Bloody Rug that divides the battlefield.",
+        "Grazing: Enhanced ability to Graze Souls; can hold up to 9 Grazed Souls.",
+        "Controlling Shadows: Enhanced ability to control Shadows."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Trinity Templar",
+      "abilities": [
+        "Shadow Substitute: Allows one's Shadow to take damage in place of the main body.",
+        "Flesh & Blood: Gain manifestations of the Flesh and Blood authorities.",
+        "Trinity: Can sprout 2 Shadowed heads from shoulders—one young and one old.",
+        "Flesh and Blood Immortality: Can rebuild body so long as there is a single cell left.",
+        "Grazing: Can simultaneously release up to 3 Souls; can Graze up to 13 Souls."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Profane Presbyter",
+      "abilities": [
+        "Profane Language: Mastered the Profane Language; can weaponize a target's responses and words.",
+        "Flesh & Blood: Strengthened previous abilities.",
+        "Trinity Body: Each created head can now use more than one Grazed Soul.",
+        "Grazing: Can Graze up to 18 Souls."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Dark Angel",
+      "abilities": [
+        "Shadows (Shadow Ruler): Can control and use the Shadow World; immune to Shadow-based abilities.",
+        "Degeneration/Depravity: Mastered authorities of Degeneration domain; can make people, Sealed Artifacts, projections, and abilities Corrode and Betray.",
+        "Profane Language: Voice carries strong Degeneration; can cause accelerated life drain.",
+        "Depraved Dependents: Can make released Grazed Souls into temporary followers up to 22 Souls.",
+        "Darkness: Can manifest pitch-black, viscous 'ocean' filled with Degeneration aura.",
+        "Grazing: Can Graze up to 22 Souls."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Hanged Man",
+      "description": "The True God presiding over the domain of Degeneration/Depravity, an amalgamation of Black Shadows and Writhing Flesh, possessing five heads and the corresponding Shadows. He holds partial authority over the domains of Shadow, Darkness, Degeneration/Depravity, Filth, and Mutation, while also embodying the concepts and partial Symbolism of Sin-Bearing and Sacrifice.",
+      "abilities": [
+        "Sin-Bearing (Scapegoat): Can take the damage and death intended for others.",
+        "Sacrifice (Hanged Man): By Sacrificing themselves, can secure absolute hope.",
+        "Darkness: Darkness leans toward all-consuming, devouring Darkness that corrupts the heart.",
+        "Mutations: Authority over Mutations; can create countless Corrupted monsters.",
+        "Shadows (Lord of Shadows): Absolute ruler of the Shadow World.",
+        "Degeneration/Depravity (Degenerate Nature): Embodies the Degenerate Nature of all living things.",
+        "Filth (Incarnation of Filth): Can Defile all things; project traces of Chaos Sea's influence.",
+        "Grazing: Authority of Grazing derived from Omnipotence symbolism.",
+        "Profane Language: Manifestation of Degeneration and Filth authorities."
+      ]
+    }
+  ]
+}

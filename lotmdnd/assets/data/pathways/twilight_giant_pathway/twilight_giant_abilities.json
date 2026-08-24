@@ -1,0 +1,117 @@
+{
+  "pathway": "Twilight Giant Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Warrior (Divine Blood Warrior, Beyonder Warrior)",
+      "abilities": [
+        "Physical Enhancement: Supernatural strength and agility that greatly transcends non-Beyonders.",
+        "Combat Mastery (Weapon, Armor, Martial Arts): Mastery of all kinds of Weapons and Armor; no Weapon they can't use. Mastery of all forms of Combat and Martial Arts."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Pugilist (Gladiator)",
+      "abilities": [
+        "Physical Enhancement: Physical abilities can weaken the effects of some Beyonder powers.",
+        "Supernatural Resistance: Experts in Combat that can use their bodies to mitigate the effects of certain supernatural forces.",
+        "Combat Mastery (Close Combat): More adept at close-quarters Combat than any other Sequence."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Weapon Master",
+      "abilities": [
+        "Physical Enhancement: Superhuman strength, physique, and agility.",
+        "Weapon Mastery: Can use any Weapon at a master-level standard, including Beyonder Weapons, Mystical Items, and Sealed Artifacts."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Dawn Paladin",
+      "abilities": [
+        "Strength of Giants: Giant-like strength, powerful offensive capability, and relatively high defense.",
+        "Light of Dawn (Sunrise Gleam): Can fill an area with pure, Sacred Dawn Light that dispels Illusions, Exorcises Wraiths and Shadows, and weakens Evil Spirits.",
+        "Dawn Armor: Can conjure a silver Armor of Dawn that is equivalent to refined full-body armor.",
+        "Sword of Dawn: Can condense Dawn into Weapons, strongest of which is a two-handed Sword of Dawn.",
+        "Hurricane of Light: Most powerful attack; creates countless fragments of Dawn-like light forming a violently sharp Hurricane filled with destructive power."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Guardian",
+      "abilities": [
+        "Strength of Giants: Defense and strength is like an adult compared to a child.",
+        "Protection: Rarely injured; can create indestructible invisible walls to Protect companions.",
+        "Illusion Immunity: Can't be deceived by Illusions.",
+        "Supernatural Resistance: Enhanced; can slow down having their Spirit Body Threads controlled."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Demon Hunter (Witcher)",
+      "abilities": [
+        "Physical & Mental Enhancement: Terrifying Physical strength and a Mind between God and human.",
+        "Spirituality: Significantly enhanced Spirituality; strong Spiritual Intuition.",
+        "Eye of Demon Hunting: Can identify a target's nature, weaknesses, condition, and whether they are Corrupted or Possessed.",
+        "Knowledge (Hunting, Alchemy): Adept at dealing with all kinds of situations; knowledge of monster parts and herbs.",
+        "Mind Concealment: Can Conceal actions and intentions, effectively interfering with Divination and Prophecy.",
+        "Protection: Enhanced; can create invisible and indestructible wall of defense.",
+        "Light of Dawn: Can be condensed into objects other than weapons.",
+        "Mythical Creature Form: Incomplete Cyclops."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Silver Knight",
+      "abilities": [
+        "Mercury Liquefaction: Can melt into a malleable silvery metallic liquid to restrict enemies and evade attacks.",
+        "Silver Rapier: Can condense silvery white beams of light that tear apart everything and can Teleport.",
+        "Light Concealment: Can utilize any light source as a way of dodging, evasion, and movement.",
+        "Silver Armor: Full-body Silver Armor much stronger than a Giant Dragon in terms of withstanding blows.",
+        "Sword of Dawn: Can permanently materialize their Sword of Dawn.",
+        "Hurricane of Light: Can ignite their body with a transparent flame, creating a terrifying Hurricane of Light.",
+        "Combat Mastery (Direct Combat): Extremely skilled in direct Combat.",
+        "Physical Enhancement: Greatly enhanced physical strength and speed.",
+        "Mythical Creature Form: Nearly 6 meter tall Cyclops."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Glory",
+      "description": "The three authorities of the Twilight Giant Pathway's Sequence 0—Holiness, Twilight, and Combat—are all manifested at this stage. For Angels, this is a kind of Glory.",
+      "abilities": [
+        "Strength of Giants: Can grow to an enormous size.",
+        "Twilight: Hold simplified authority of Twilight; can age themselves rapidly and be reborn in the Spirit World.",
+        "Combat: Hold simplified Combat authority; top Sequence 2 in frontal combat.",
+        "Protection: Can form a Cage that also gains a Sealing effect.",
+        "Twilight Sword: Can instantly condense a great sword composed of orange-red Twilight radiance.",
+        "Hurricane of Light: Can transform the Hurricane of Light into an orange-red storm capable of annihilating a wasteland.",
+        "Holiness: Hold simplified authority of Holiness.",
+        "Mythical Creature Form: Complete 12-meter tall Cyclops."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Hand of God",
+      "abilities": [
+        "Proxy: Can act on behalf of the Deity to manifest divine power and punishment.",
+        "Combat: Enhanced corresponding abilities to the Combat authority.",
+        "Protection: Can summon Cages made of dense light that can prevent even Observers or Dimensional Shadows from crossing."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Twilight Giant (Twilight, Giant)",
+      "description": "They hold partial authority over Holiness, Twilight, and Combat (which contains subordinate authorities like Strength, Gigantism, Devastation, and Protection) as well as a portion of the Proxy authority.",
+      "abilities": [
+        "Twilight: Can cause Matter, will, and the void to Decay, collapse, and vanish.",
+        "Land of Twilight: Divine Kingdom formed through Twilight, completely frozen within the Passage of Time.",
+        "Dawn: Authority of Dawn; can directly Purify a Beyonder Characteristic.",
+        "Holiness: Partial authority over Holiness; excels in Purification and discerning Evil and Corruption.",
+        "Combat: Authority of Combat; can strip opponents of Skill, forcing them to fight by instinct alone.",
+        "Proxy: Portion of the Proxy authority."
+      ]
+    }
+  ]
+}

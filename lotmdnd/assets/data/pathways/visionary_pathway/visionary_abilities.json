@@ -1,0 +1,117 @@
+{
+  "pathway": "Visionary Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Spectator",
+      "abilities": [
+        "Enhanced Mental Attributes: Great enhancements to inferential, analytical, observational, and identification abilities along with memory.",
+        "Enhanced Vision: Sharpened eyesight needed to analyze a target's body language.",
+        "Body Language Analysis: Keen powers of observation to discover true thoughts from expressions, manners, and subconscious actions."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Telepathist",
+      "abilities": [
+        "Enhanced Vision: Further enhanced eyesight.",
+        "Mind Reading: Can read the superficial thoughts of others and simulate the trajectory of such thoughts.",
+        "Body Language Analysis: Observation extends to aura, Ether Body, and other mysterious domains."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Psychiatrist (Psyche Analyst)",
+      "abilities": [
+        "Physical Enhancement: Slight increase in physical attributes, strength, speed, and health.",
+        "Frenzy: Can trigger emotions and mental state, throwing the target into a frenzy and causing psychological damage.",
+        "Telepathy: Can communicate with the Body of Heart and Mind through mediums.",
+        "Psychological Cue: Can cue a target to abide by arrangements without realizing it.",
+        "Awe (Dragon's Might, Mass Chaos): Can cause targets to panic, freeze, and turn chaotic.",
+        "Placate (Psychoanalysis): Can help Beyonders on the brink of losing control regain reason."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Hypnotist",
+      "abilities": [
+        "Physical Enhancement: Strength and agility exceeding ordinary people.",
+        "Dragon Scales: Can form a layer of Dragon Scales over skin to resist physical damage.",
+        "Psychological Invisibility: Can remain in the blind spot of consciousness, avoiding perception.",
+        "Hypnosis: Can directly alter target's consciousness and subconscious.",
+        "Battle Hypnotism: Can forcefully hypnotize enemies to do abnormal actions."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Dreamwalker",
+      "abilities": [
+        "Alteration: Can modify target's Dreams, influencing them over a long period.",
+        "Guidance: Can guide targets to reveal deepest secrets through Dreams.",
+        "Dream Traversal: Can hide in someone else's dream and jump from one dream to another.",
+        "Placate (Psychoanalysis): Can treat Demigods that have used their Incomplete Mythical Creature Form."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Manipulator",
+      "abilities": [
+        "Physical Enhancement: Extraordinary strength and exaggerated dragon scale defenses.",
+        "Manipulation: Can enter another person's Mind Island to change subconscious and read thoughts.",
+        "Mental Plague: Can implant seeds of Mental Plague in the target's Mind Island.",
+        "Mind Storm: Can transform thoughts into a Mind Storm causing negative effects.",
+        "Virtual Persona: Can create up to 13 Virtual Personas with corresponding Body of Heart and Mind.",
+        "Mind Dragon Breath: Breath attack that stimulates the Body of Heart and Mind and Soul Body.",
+        "Mind Deprivation: Enhanced Awe causing abnormal conditions in all creatures within range.",
+        "Consciousness Stroll: Enhanced Dream Traversal allowing consciousness and Spirit Body to swim in the Sea of Collective Subconscious."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Dream Weaver",
+      "abilities": [
+        "Dream Weaving: Can weave Dreams indistinguishable from reality.",
+        "Plague Storm: Can release a storm of thoughts, desires, and wills causing Corruption.",
+        "Enhanced Mental Attributes: Control over psyche makes enemy intuition unable to form pictures.",
+        "Psychological Invisibility: Can create mental mirages to mask existence.",
+        "Consciousness Stroll: Can let physical body enter the Sea of Collective Subconscious.",
+        "Virtual Persona: Can separate fake personalities and turn them into living people."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Discerner",
+      "abilities": [
+        "Dream Maze: Can create a Dream Maze made up of Mind Islands of many people.",
+        "Discernment: Can discern hidden psychological vulnerabilities and perceive past Fate.",
+        "Psychological Cue: Elevated to authority level based on belief.",
+        "Dream Weaving: Can weave images into reality, creating flawless illusions.",
+        "Consciousness Stroll: Deeper perception of the Sea of Collective Subconscious.",
+        "Virtual Persona: Can elevate a target's Mind Island, suppressing consciousness."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Author (Fairy Tale Author)",
+      "abilities": [
+        "Dream of Reality: Can intertwine Dreams with reality, allowing illusion and substance to coexist.",
+        "Coincidence: Can turn accidental phenomena into echoes of the mind.",
+        "Envisioning (Fantasy into Reality): Can temporarily pull concepts into reality.",
+        "Discernment: Preliminary control over the Sea of Collective Subconscious; any mention of them will be known.",
+        "Psyche (Mind): Partial authority over the Mind; can control Minds of living creatures."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Visionary",
+      "abilities": [
+        "Envisioning (Fantasy into Reality): Can envision materialization of Divine Kingdom and futures.",
+        "Psyche (Mind): Master of the Mind World; can regress a being's mind and strip memories.",
+        "Humanity: Can artificially manufacture humanity.",
+        "Discernment: Omniscient within the Mind World; can extend into Fate, Reality, and Illusion Domains.",
+        "Dream: Partial Dream authority.",
+        "Loss of Control: Partial authority over Loss of Control."
+      ]
+    }
+  ]
+}

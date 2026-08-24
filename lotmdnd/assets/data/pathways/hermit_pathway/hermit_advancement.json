@@ -1,0 +1,211 @@
+{
+  "pathway": "Hermit Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Mystery Pryer",
+      "potion_overview": "A gradient of colors, with the liquid becoming increasingly dark and mysterious towards the center.",
+      "formula": {
+        "main_ingredients": [
+          "1 Cornea from a Nightmare Evil Eye",
+          "1 piece of a Cursed Crystal"
+        ],
+        "alternative": "A Mystery Pryer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "70 milliliters pus from the Nightmare Evil Eye",
+          "10 grams of a Cursed Crystal's byproducts",
+          "1 sheet of paper containing other people's secrets",
+          "13 drops of rosemary essential oil"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Melee Scholar",
+      "potion_overview": "A gray liquid that resembles a raging storm.",
+      "formula": {
+        "main_ingredients": [
+          "The spine of an Iron-Armed Therianthrope (they may have been transformed from different races of wild animals, sharing the common feature of thick, iron-like forearms)",
+          "The heart of a Four-Eyed Green Turtle"
+        ],
+        "alternative": "A Melee Scholar Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100ml of Iron-Armed Therianthrope blood",
+          "20g of a Four-Eyed Green Turtle's shell powder",
+          "9 sharp nails",
+          "10 drops of Venus Flytrap Juice"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Warlock",
+      "potion_overview": "Dark green pus with gray, flocculent particles floating in it.",
+      "formula": {
+        "main_ingredients": [
+          "1 Deer-headed Therianthrope's Antlers",
+          "1 Eyeball of a Grandmother Gray Bird"
+        ],
+        "alternative": "A Warlock Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100ml of blood from a Deer-Headed Therianthrope",
+          "9 feathers of a Grandmother Gray Bird",
+          "1 pair of eyes from a deceased person",
+          "1 copy of a previous Warlock's notes"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Scrolls Professor",
+      "potion_overview": "A pale purple liquid with a decaying woody feel.",
+      "formula": {
+        "main_ingredients": [
+          "Tree Heart of a Treant Priest",
+          "Illusory Eye of a Paper Demon"
+        ],
+        "alternative": "A Scrolls Professor Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100ml of a Treant Priest's juice",
+          "15g of Paper Demon Ashes",
+          "1 scroll made by someone a Sequence higher than Scrolls Professor",
+          "10 drops of Paper Root Grass Hydrolat"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Constellations Master",
+      "potion_overview": "A transparent liquid formed from starlight converging into illusory eyes.",
+      "formula": {
+        "main_ingredients": [
+          "The Cerebrum of a Star Patterned Monster",
+          "1 Destiny Crystal"
+        ],
+        "alternative": "A Constellations Master Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90ml of pus from a Star Patterned Monster",
+          "18g contaminants of a Destiny Crystal",
+          "1 relatively complete star map",
+          "9 drops of Starflower essential oil"
+        ]
+      },
+      "advancement_ritual": "To select, observe, and draw a complete picture of a star constellation, recreating its true appearance, and mastering all the corresponding mysticism knowledge.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Mysticologist",
+      "potion_overview": "A phantom, dark liquid from which purple sparks are constantly being ignited deep within.",
+      "formula": {
+        "main_ingredients": [
+          "1 Scalp of an Arcane Spirit",
+          "1 Eye of Evil God's Pupil"
+        ],
+        "alternative": "A Mysticologist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "13 drops of an Arcane Spirit's Tears",
+          "80ml from an Eye of Evil God's Ash Liquid",
+          "1 relic related to a mystical event",
+          "1 Warlock potion created by the concoctor (any effect is acceptable)"
+        ]
+      },
+      "advancement_ritual": "Completely analyze a drop of blood from a Mythical Creature and obtain complicated and massive amounts of knowledge. Note 1: Due to the differing types of Mythical Creature blood employed, should they succeed, their specialisation within the 'Mysticologist' stage will also exhibit certain variations. Note 2: Although the advancement ritual of a Mysticologist doesn't have any requirements on the Mythical Creature's pathway, the best choice is still the Wheel of Fortune Pathway. Note 3: The blood of an Angel-level creature that is one of the main materials for a Sequence 2 angel would work, but the effect is not as good as a complete one. Note 4: The blood of a Boon-receiving Angel would also work, as long as 'Their' physical state has changed.",
+      "ritual_essence": "No data available.",
+      "acting_method": "Search for mysticism knowledge, the closer to the truth the more beneficial.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Clairvoyant",
+      "potion_overview": "A semi-solidified, translucent purple liquid streaked with fine, mercury-coloured 'veins'.",
+      "formula": {
+        "main_ingredients": [
+          "Eyeballs of a Stargazer (outwardly, they are deformed fish with eyes protruding like pillars)",
+          "Stardust Skin of a Treant High Priest"
+        ],
+        "alternative": "A Clairvoyant Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 ml of the sap of a Treant High Priest",
+          "10ml of brain fluid from a Stargazer",
+          "1 book of prophecies with a higher accuracy rate than error rate",
+          "9 hairs of people with abnormal fates (each one from a different source)"
+        ]
+      },
+      "advancement_ritual": "It involves gathering a vast amount of information, analyzing, deducing, and divining to 'Prophesy' a certain event that will occur three years later. (It must involve demigods.) Ultimately the performer has to witness its fulfillment. Throughout the process, they cannot rely on external forces or directly drive the event to happen; the ritual performer can only guide it indirectly.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Sage",
+      "potion_overview": "A bubbling concoction where each bubble contains a transparent eye.",
+      "formula": {
+        "main_ingredients": [
+          "Crystal of an Ancient Fantasy Demon",
+          "Tentacle of the Mind Wanderer"
+        ],
+        "alternative": "A Sage Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "130ml blood from a Fantasy Ancient Devil (can be replaced by a Sage's blood)",
+          "9 Mind Wanderer's light spots (Can be replaced by a Sage's information torrent's remaining light spots)",
+          "1 widely circulated ballad praising the concoctor's own deeds",
+          "1 item gathering tens of thousands of sincere blessings"
+        ]
+      },
+      "advancement_ritual": "Prevent a disaster that involves a higher level of power.",
+      "ritual_essence": "The essence of a ritual is to establish a connection with the spiritual information generated by the act. This information has a distinct imprint and is exceptionally solid due to its high level of involvement. It will not be dispersed by other information in a short period of time, helping the ritual performer to initially stabilize their own consciousness and gradually gather the scattered and diluted torrent of their original spiritual information.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "As the potion enters their mouth, their body would turn illusory at a discernible pace. They would break down into thick and complicated knowledge, changing into an existence that was a flux of information. The surrounding area would lose their sense of reality, it was as though they had been restored to the most fundamental blocks of information. For most of Sequence 3 Beyonders of the Hermit Pathway, such a state is extremely dangerous. If one's willpower isn't strong enough, their luck isn't good enough, and they aren't prepared enough, the knowledge that they transform into would be infiltrated by all kinds of information within seconds. They would be washed away, assimilated, and thus quickly lose consciousness. They won't be able to reassemble their bodies, turning into a very strange and difficult monster to deal with in mysticism. A Knowledge Demon, it was also known as an Information Creature. At that moment, they would try their best to maintain their consciousness and establish a connection with the information produced in the spirit world by preventing a high-level disaster. This information has a distinct imprint and is exceptionally solid due to its high level of involvement. It will not be dispersed by other information in a short period of time, helping the ritual performer to initially stabilize their own consciousness and gradually gather the scattered and diluted torrent of their original spiritual information. The information has a clear imprint belonging to them, and it involves a very high level of power. It is exceptionally 'solid' and couldn't be dispersed by other information for short periods of time. It would help them to stabilize their consciousness and slowly gather the dissipating flux of information around their body. Time would tick by. There may be several times when they waver on the border of losing consciousness, but in the end, they have to manage to tide through it. They would gather all the information that belonged to them and begin to reconstruct their body. At that moment, they would gradually feel their anchors. This would stabilise their condition better, allowing them to resist the ancient will that is slowly developing in their body. At this moment, a series of secret information came from nowhere. Taking the opportunity while Bernadette was reforming her body, it attempted to fuse with her. As an embodiment of this world's knowledge and information, as a quasi-Sequence 0 existence of the Hermit Pathway, the Hidden Sage had a certain influence on Beyonders of a lower Sequence than 'Him.' They would have to reassemble their body using their own anchors to balance out the terrifying will that is surfacing on their body. At that moment, they would truly become a 'Them', a Sequence 2 angel of the Hermit pathway—an important figure in the mysterious world that could be addressed as a secret existence."
+    },
+    {
+      "sequence": 1,
+      "name": "Knowledge Emperor",
+      "potion_overview": "A chaotic mass of intermingled bubbles in every colour imaginable.",
+      "formula": {
+        "main_ingredients": [
+          "A Knowledge Emperor Beyonder Characteristic"
+        ],
+        "supplementary_ingredients": [
+          "1 artifact engraved with knowledge related to the concoctor",
+          "1 crown, in the truest sense",
+          "9 types of knowledge closely related to Sequence 0",
+          "1 tome compiling the knowledge discovered by concoctor"
+        ]
+      },
+      "advancement_ritual": "Analyze oneself and master all knowledge related to oneself, then understand and find the most core, key part (in the Western Continent, this process is called 'Illuminating the Mind and Perceiving the True Nature') and use it as a link to find a way to integrate the remaining parts and other knowledge they have to initially form a whole. The whole form is known as a Primordial Spirit/Nascent Soul.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Hermit",
+      "potion_overview": "A giant eyeball that conceals another world.",
+      "formula": {
+        "main_ingredients": [
+          "The Hermit Uniqueness",
+          "Three Knowledge Emperor Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "Sufficient knowledge concerning the Great Old Ones"
+        ]
+      },
+      "advancement_ritual": "Gather all the information one has left in the world. Then, find a suitable place and way to completely hide them, leaving no traces behind.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

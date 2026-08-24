@@ -1,0 +1,122 @@
+{
+  "pathway": "Moon Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Apothecary",
+      "abilities": [
+        "Physical Enhancement: Relatively resistant to poisonous elements and toxins.",
+        "Spirituality: Enhanced Spirituality.",
+        "Spirit Vision: Shows a person's overall health and wellbeing.",
+        "Medicinal Concoction: Excels at creating and mixing herbs and dead animal parts to create Medicinal Concoctions.",
+        "Taming: Good at Taming and domesticating plants."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Beast Tamer",
+      "abilities": [
+        "Physical Enhancement: Greatly improved physical attributes; can fight wild beasts head-on.",
+        "Animal Senses: Can read thoughts of, utilize senses of, communicate to, and control Animals.",
+        "Taming: Can Tame, domesticate, and use various unique animals; includes Beyonder and supernatural creatures."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Vampire",
+      "abilities": [
+        "Physical Enhancement: Superhuman agility, speed, and regeneration; lifespan increases to ~300 years.",
+        "Wings of Darkness: Can form illusory bat wings for speed boost and limited flight.",
+        "Corrosive Claw: Nails can cut through steel with strong corrosion properties.",
+        "Abyss Shackles: Can condense Darkness or Shadows into illusory shackles to restrict enemies.",
+        "The Embrace: Can bestow excess Beyonder Characteristics to turn humans into vampires.",
+        "Blood Servant Conversion: Can Convert any living creature into a Blood Servant."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Potions Professor",
+      "abilities": [
+        "Physical Enhancement: Terrifying speed, agility, balance, and coordination; enhanced hearing and sense of smell.",
+        "Discerning Spiritual Materials: Vast knowledge on discerning spiritual materials for concoctions.",
+        "Potion & Perfume Crafting: Can mix and create Potions and Perfumes with extraordinary effects."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Scarlet Scholar",
+      "abilities": [
+        "Physical Enhancement: Terrifying speed and unimaginable regeneration; can create afterimages.",
+        "Full Moon: Creates environments advantageous for themselves through control of Moonlight.",
+        "Moonlight Transformation: Can transform into condensed Moonlight to move and reform.",
+        "Flash: Can Teleport to another location within Moonlit areas.",
+        "Potion & Perfume Crafting: Enhanced effectiveness of Potions and Perfumes.",
+        "Natural resistance to Nightmare-related influences."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Shaman King",
+      "abilities": [
+        "Physical Enhancement: Strong physique, ridiculous speed, powerful regeneration; lifespan increases to ~1000 years.",
+        "Nature Interaction: Can borrow the Moon's power on the spot without Ritualistic Magic.",
+        "Moon Paper Figurine: Can transform Moonlight into a Paper Figurine for Substitution.",
+        "Gaze of Darkness: Forms a Substitution connection to manifest eye state onto target.",
+        "Illusory Bats: Can divide into a swarm of vampire bats to reconstruct from.",
+        "Howl: Can cause enemies' blood to frost up, delaying senses.",
+        "Abyss Shackles: Enhanced ability to restrain enemies.",
+        "Mythical Creature Form: Incomplete Mythical Creature Form."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "High Summoner",
+      "abilities": [
+        "Door of Summoning: Can manifest a Door to Summon Spirit World creatures.",
+        "Summoning: Partial authority over Summoning; can utilize Moon's influence to Summon various creatures.",
+        "Bat Wing Isolation: Can manifest giant Bat Wings to enclose areas in unnatural Darkness.",
+        "Full Moon: Can make a Crimson Full Moon ascend with Nourishing effects.",
+        "Physical Enhancement: Enhanced sense of smell to pinpoint blood from far away.",
+        "Mythical Creature Form: Can respond to prayers."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Life-Giver",
+      "abilities": [
+        "Life: Authority of Life; can treat without medicines, regrow bones and flesh, and calm emotions.",
+        "Spirituality: Partial authority over Spirituality; can interfere with and affect Spirituality of targets.",
+        "Moonlight Transformation: Can transform into condensed Moonlight even without Moonlit areas.",
+        "Door of Summoning: Can open multiple Doors of Summoning under Moonlight.",
+        "Bat Wings: Can unfurl giant membranous Bat Wings capable of blotting out the sky.",
+        "Full Moon: Can cause Crimson Moonlight to fall from unknown places.",
+        "Mythical Creature Form: Complete humanoid with phantom Moon, bright red eyes, and bat wings."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Beauty Goddess",
+      "abilities": [
+        "Gender Transition: Advancing results in becoming female.",
+        "Beauty: Lower expression of Beauty authority; overwhelming and transcendent Beauty.",
+        "Plants, Animals, Humans, & Supernatural Creatures: Can Tame and Command such creatures.",
+        "Moon: Certain degree of Moon's concept; can draw upon power of the Moon.",
+        "Moonlight Transformation: Can dissolve into Crimson Light and merge with Moonlight."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Moon",
+      "description": "The Moon (which includes the imagery of Fertility and Proliferation) represents Spirituality, Plants, Beauty, Summoning, Animals, Humans, Beyonder Creatures, and portions of Life, Darkness, and Bizarreness.",
+      "abilities": [
+        "Summoning: The Call of the Moon can attract very terrifying things.",
+        "Beauty: Authority of Beauty; the second most Beautiful thing in the universe.",
+        "Life: Partial authority over Life; can create or alter Living beings.",
+        "Plants, Animals, Humans, & Supernatural Creatures: Can Tame Plants, Animals, Humans, and Supernatural Creatures.",
+        "Spirituality: Can make Spirituality unable to recover or cause it to erupt.",
+        "Darkness: Partial authority over Darkness.",
+        "Bizarreness: Partial authority over Bizarreness."
+      ]
+    }
+  ]
+}

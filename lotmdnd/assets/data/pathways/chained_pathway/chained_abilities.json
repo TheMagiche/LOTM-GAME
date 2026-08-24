@@ -1,0 +1,396 @@
+{
+  "pathway": "Chained",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Prisoner",
+      "description": "The mind is a Prisoner of the body, and the body is a Prisoner of the world. This refers to the madness that is bound and the Desire that is suppressed.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "The Beyonders of this Sequence possess strong bodies and keen senses, often possessing both a staid appearance and a crazy heart within them."
+        },
+        {
+          "name": "Binding",
+          "description": "Prisoners are not only those who are locked in prisons, but also those who have their Spirituality and Desires constrained by reason, body, and the world."
+        },
+        {
+          "name": "Knowledge (Criminal)",
+          "description": "They possess many criminal techniques. These include lock picking with wire and digging tunnels with soup spoons. They are proficient in killing with whatever they can casually acquire. They are demolition experts."
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Lunatic",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Binding",
+          "description": "Lunatics are Bound and restrained in both body and Soul, which makes it difficult to obtain useful information on them by just relying on Spirit Channeling and Divination."
+        },
+        {
+          "name": "Berserk",
+          "description": "A Lunatic's greatest characteristic is to be able to autonomously sacrifice their rationality and let their Desires run amok in exchange for strength and enhancements in every aspect. Apart from not having clear thoughts during this period, there isn't much of a problem. They can even gain stronger resistances towards Beyonder powers that can disrupt one's thoughts and influence their mind."
+        },
+        {
+          "name": "Curse",
+          "description": "From this Sequence onwards, the Curse will gradually appear. Because frequent eruptions of Desire causes their mental state to often operate at a nadir, Lunatics are more prone to losing control than most Beyonders."
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Werewolf",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "Even without transforming, a Werewolf's extreme speed will form afterimages, they also possess terrifying strength, agility, and outstanding self-healing abilities. They can also survive a Pyromaniac's blazing-white compressed Fireball, which possesses explosive power comparable to their Giant Fireball spell but even more concentrated."
+        },
+        {
+          "name": "Werewolf Transformation",
+          "description": "They can turn into a Werewolf, growing short, erect hair as fur, turning their nails sharp, long, and firm, like claws, while possessing some Spell-like abilities. While in this form, they will possess terrifying strength, agility, regeneration, and speed. A Werewolf's claws and teeth are equivalent to Beyonder weapons of the same Sequence, capable of destroying thinner steel plates in addition to being poisonous. They are particularly weak to the theurgical Spell-like abilities or Spells from the Sun domain such as a Solar High Priest's Holy Light Summoning. A Werewolf possesses powerful regenerative abilities. This is a trait that will remain even when they exit their Werewolf Transformation form. Even if a hideous wound appears on their abdomen and their intestines spill out, they will only need to wash it with water, stuff the intestines back in, and pinch the side of the gap with one's hands. Eventually the wound will heal. A Werewolf can regrow their teeth. They can outrun a gray wolf while chasing it at full speed. Werewolves can transform partially in order to utilize some of their capabilities. For example, instead of fully turning into a Werewolf to use Werewolf Infection or their sharp claws, they could simply manifest those claws on their hands. Werewolves also possess the ability to use some Spell-like abilities."
+        },
+        {
+          "name": "Werewolf Kin",
+          "description": "When their venom infiltrates a target's body over a period of time, they can turn the target into a puppet similar to a Werewolf for a period of time. The monsters that are created by Werewolf Kin are under the Werewolf's control and typically possess a very short lifespan."
+        },
+        {
+          "name": "Dark Horror",
+          "description": "They can make the Darkness grow heavier and condense like frost, slowly but firmly seeping into their target's skin, flesh, and bones. This causes an uncontrollable fear to well up within a target's mind, making it hard for them to think straight or move rationally, this also causes a slight impairment."
+        },
+        {
+          "name": "Repel Light",
+          "description": "A Werewolf is also able to slightly deepen the surrounding Darkness, banishing faint light or the crimson Moonlight."
+        },
+        {
+          "name": "Anti-Divination",
+          "description": "Regardless of whether or not the Beyonder has transformed, any Divination or spiritual means can only reveal a figure covered in black hair, making it impossible to see their true appearance."
+        },
+        {
+          "name": "Curse",
+          "description": "Every time the Crimson Moon becomes Full, they will lose part of their sanity, grow black fur, and their bloodlust and desire for tasting blood would reach its peak. A Werewolf who is always unable to suppress their instinct to kill and their bloodlust during a Full Moon will turn increasingly cold and more twisted, losing their humanity in the process. Certain Sealed Artifacts, particularly those corresponding to a Scarlet Scholar, allow them to maintain their rationality in the event of a Full Moon. This also applies to the Curses of both Zombies and Wraiths, which also activate during a Full Moon. Its essence lies in the environmental Spirituality reaching a certain intensity, allowing the call and attraction of The Mother to manifest. As long as the Moon remains part of The Mother, even a Normal Full Moon can trigger it, though not as strongly as the Crimson Moon. In a world without a Moon, it depends on whether there are periods where Spirituality becomes active."
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Zombie",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Zombie Transformation",
+          "description": "Advancing to this Sequence, they have become a special type of Zombie, one that possesses powerful defense, strength, and Spell-like capabilities. A Zombie's physical body have been greatly enhanced, making their bodies as hard as steel. A revolver shot directly to their head would make them dizzy at best, with them needing to be shot five times in the same spot to break their defenses. If their defenses get broken, all physical damage isn't lethal if their head isn't destroyed. Their defense is weak to Purification powers, or direct attacks to their Spirit Body. They are also immune to fire, drowning, and many types of magic. Their supernatural healing has been drastically improved, with bone-deep wounds now being able to heal in a short period of time."
+        },
+        {
+          "name": "Zombie Strength",
+          "description": "Their strength has been raised significantly from their Werewolf state. They can run faster than a steam locomotive at its peak speed, unleash a critical attack that is stronger then their normal blows as well as ferocious attacks that can tear opponents apart."
+        },
+        {
+          "name": "Ice Control",
+          "description": "They have some Ice and Frost mastery, which is different from a Witch."
+        },
+        {
+          "name": "Contact-Freeze",
+          "description": "Any physical attack from a Zombie that makes contact with a target's skin can Freeze their body, stiffening their flesh and blood."
+        },
+        {
+          "name": "Ice Stun",
+          "description": "Zombies are able to Seal their opponents by encasing them in Ice. This also seems to preserve the target's bodily functions as well."
+        },
+        {
+          "name": "Ice Wall",
+          "description": "Zombies are able to directly Freeze the water that they come into contact with and form them into Ice walls."
+        },
+        {
+          "name": "Ice Floor",
+          "description": "Zombies are able to quickly condense and create slippery layers of Ice to affect their target's movement."
+        },
+        {
+          "name": "Decay Powers",
+          "description": "They are able to lower the air temperature, causing strong winds to blow around and beautiful dreamlike snowflakes to fall. They also wield some powers over Decay, Rot, and Withering domain."
+        },
+        {
+          "name": "Wither Explosion",
+          "description": "They can make the air within a mid-range of them explode into countless black wisps that induce Withering upon impact."
+        },
+        {
+          "name": "Rotting Body Aura",
+          "description": "A Zombie's body can effuse out a Rotting aura to augment each and every one of their attacks with the trait of Decay."
+        },
+        {
+          "name": "Aura of Decay",
+          "description": "Zombies are able to emit an aura of Decay, able to make the surrounding vegetation visibly wither away."
+        },
+        {
+          "name": "Sludge Creation",
+          "description": "They are able to create Rotting sludge near them to affect their target's movement and strength."
+        },
+        {
+          "name": "Zombie Manipulation",
+          "description": "They possess abilities centered around controlling the Dead. They can easily awaken the dead, cultivate puppets, control ghosts, and command them."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "The traits and abilities of the previous Sequence remained unchanged without significant alteration."
+        },
+        {
+          "name": "Curse",
+          "description": "They constantly struggle against the desires in their heart and the strong malice within. They thirst for the warm blood and fresh meat of human beings. During a Full Moon, this state will be particularly serious. When the Crimson Moon is Full, it causes them great pain. If they don't give up on self-control, they will be in so much pain that they will lose their ability to fight. If they indulge themselves, they will become less and less like a human, and the risk of losing control is very high. The Zombie's Curse replaces the Werewolf's and Lunatic's Curse. They do not exist together, and it's the same later on. It can be limited with the use of certain medicines such as sedatives, however, they would eventually build up resistance against that specific type of medicine, rendering it ineffective. Sedatives made by Beyonders such as Apothecaries would be more effective."
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Wraith",
+      "description": "Their bodies are like a fusion of spirit and flesh, allowing them to transform their state into a true phantom and gain corresponding abilities, such as passing through obstacles, hiding in Mirrors, and directly attacking the Soul of their opponent. In addition, unlike ordinary Wraiths, even those with Spirit Vision cannot detect these phantoms unless they are at a high Sequence level.",
+      "abilities": [
+        {
+          "name": "Zombie Transformation",
+          "description": "Apart from certain abilities, most of their capabilities as a Zombie remained largely unchanged, without significant improvement."
+        },
+        {
+          "name": "Zombie Manipulation",
+          "description": "They can still control the undead like with their Zombie Form even in their Wraith Transformation state."
+        },
+        {
+          "name": "Ice Control",
+          "description": "The Zombie's Ice Control at the Sequence 5 level, which they can use even during Wraith Transformation. They can condense thin, translucent, hard to see Icicles to attack their enemies, create reflective surfaces to use Mirror Blink, extinguish flames, and wither vegetation."
+        },
+        {
+          "name": "Spirituality",
+          "description": "Wraiths are able to directly communicate with the Spirit World to gain information. Their Divination and Spiritual Intuition will thus be greatly enhanced at this Sequence. A Wraith is able to sense traces of living beings, and can sense whether a living person has entered a room within half a years time. Every part of a Wraith is material that is rich with Spirituality."
+        },
+        {
+          "name": "Wraith Transformation",
+          "description": "They are able to turn themselves into a Spirit Body, a Wraith, thus obtaining all the general corresponding powers and special traits. As a fusion of spirit and flesh, Wraiths have tremendous resilience in both their mind and body, being able to survive after they lose their head. Psychic attacks like an Interrogator's Psychic Piercing typically wouldn't significantly affect them. A Wraith can even cause the psychic attack to backfire on their opponent. Should a Wraith be incapacitated, they will lack the corresponding ability to reflect such psychic attacks onto their opponents. They are weak to Purification powers such as Light of Holiness from a Priest of Light and Lightning Strike from an Ocean Songster when in their Spirit Body state. Demon-Hunting and Exorcism-type Mystical Items, Sealed Artifacts, and Beyonder powers can hurt a Wraith, but it would not be fatal or very dangerous to them. They can go without eating or drinking for about 2 weeks and are immune to biological poison, regular flames, and many forms of physical attacks. Purely physical weapons or firearms without special powers cannot harm Wraiths. Their existence as a Wraith allows them to avoid instant death when entering the Underworld, however, lingering for too long will prevent them from reverting to their human form, forever existing as a true Wraith. A Wraith is able to temporarily avoid the Underworld's influence by Possessing an undead creature. Wraiths also possess various auxiliary and support abilities and traits. Most of these abilities aren't unique as they are common in many normal Wraiths and spirits."
+        },
+        {
+          "name": "Spirit World Traversal",
+          "description": "Since they can be considered Spirit World creatures to an extent, they can freely enter and exit the Spirit World and move freely within it. However, they can't compare to Spirit World creatures specialized in this area. Wraiths also possess the characteristics of being able to pass through physical obstacles, Fly through the air, and see through the dark, and hide inside Mirrors."
+        },
+        {
+          "name": "Invisibility",
+          "description": "Wraiths are able to turn Invisible; however, unlike other ordinary Wraiths and spirits, this is more effective. They are hard to detect for most Low to Mid-Sequence Beyonders. Even with Spirit Vision, it will be hard to discover them unless one was a High Sequence Beyonder. Since they are unable to hide their scent, Potions Professors can detect their presence through their discernment of smell. Since they are unable to hide their Spirit Body Threads through Invisibility, they can be seen by Marionettists."
+        },
+        {
+          "name": "Wraith Shriek",
+          "description": "Wraiths are able to let out a sharp shriek that can directly attack the opponents' Spirit Body and induce spiritual damage across a huge area. Depending on the target's resilience they could either be knocked unconscious, be close to that state, or be interrupted for a moment and stunned as they experience terrible pain."
+        },
+        {
+          "name": "Wraith Possession",
+          "description": "Wraiths have gained the ability to forcefully invade and Possess their target's body by overlapping with the opponent's eyes. Even when they are Possessing a target, a Wraith will not at all be restrained in their capabilities, being able to become Intangible and utilize their abilities freely. They can accelerate Beyonder Characteristic separation from a corpse by Possessing the target, killing them in that state, and having full control over the body. Using a simple Ritual they gained along with Possessing a target's body, a Wraith can help a person draw things realistically from said person's memories. If their target has a strong body, the Wraith can make them directly commit suicide by decapitation using the target's own bare hands. If the target is killed by a physical attack with the Wraith still possessing them, the Wraith will be unharmed as they are immune. If the target is killed by some other type of attack that can affect the Wraith, they will suffer the corresponding damage. If the target's body is fragmented, the Wraith can pull back the pieces and reassemble them, albeit with some remaining damage."
+        },
+        {
+          "name": "Mirror Blink",
+          "description": "Wraiths are also able to instantly jump through most things with reflections, such as mirrors, gold coins, ice, and even eyeballs. The maximum range they can Mirror Blink is 300 meters. This is also known as Mirror Flash or Mirror Jump."
+        },
+        {
+          "name": "Death-related Spells",
+          "description": "Wraiths wield many Death-related Spells and abilities."
+        },
+        {
+          "name": "Vengeful Wraith's Entanglement",
+          "description": "One of their Death-related Spells. Its function is to summon a large number of special undead creatures to fix the target in place, paralyzing and stiffening them, making it difficult for one to move. The specific effects vary depending on the type of undead creatures summoned."
+        },
+        {
+          "name": "Resurrection",
+          "description": "Dying may not be the end for them, as they can turn into a true Wraith shortly after death. This transformation can be halted by either destroying or pacifying their soul. This form might enable them to evolve as an Evil Spirit in the future."
+        },
+        {
+          "name": "Strengthened Abilities - Anti-Divination",
+          "description": "Their Anti-Divination traits as a Werewolf has been enhanced. Any Divination that is directed at them will only show a transparent, seemingly non-existent face or a face shrouded in Darkness."
+        },
+        {
+          "name": "Curse",
+          "description": "On nights where the Crimson Moon becomes Full, a Wraith would either need to consume a certain number of human Souls or become extremely weak and both in their body and mind. Choosing the former is equivalent to being on the brink of losing control at any moment."
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Puppet",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "Their physical durability has been enhanced. Aside from Sun Domain divine Spells, they can withstand more damage than a Shaman King."
+        },
+        {
+          "name": "Spirituality",
+          "description": "A Puppet also possesses an enhanced Spirituality."
+        },
+        {
+          "name": "Spiritual Intuition",
+          "description": "They possess a formidable Spiritual Intuition. As Puppets, they are able to stop unwanted scenes from surfacing in their mind. This trait might be more effective if they practice Temperance rather than Indulgence, and if at Sequence 2 they used a Cloth Doll as the base of their advancement ritual."
+        },
+        {
+          "name": "Source of Curses",
+          "description": "Puppets are able to transform themselves into mystical puppets and magical paper figurines identical to that of the target. Then through the established connections, Puppets are able to use various different methods as a means to Curse their targets. In order to transform themselves into mystical puppets identical to their target, a Puppet will first need to form an established connection. To prepare for a Curse, Sharron established a connection by Possessing Klarman. At Sequence 4, they can only hurt the enemy by hurting themselves. Any damage to them will be reflected on the connected target and vice versa. Upon forming a connection, Sharron grabbed the exaggerated crack that had the Crimson Moon on her head and pressed down, causing Klarman to let out a blood-curdling scream. Sharron, in her state as a figurine of Klarman, had yanked some of her messy, black-and-white hair. This in turn caused a tuff of Klarman's hair to fall out as well."
+        },
+        {
+          "name": "Poltergeist",
+          "description": "Every Puppet can awaken and control all lifeless objects within a certain range. This allows them to utilize their surroundings as weapons and traps. They can control ownerless Sealed Artifacts and Mystical Items that are not held or controlled by anyone physically or through Spirituality. The General of the Pupil-less Eye controlled the Vision of White immediately after the Sealed Artifact was thrown by Emlyn White, forming a pillar of light that enveloped Sharron. Puppets are able to transform inanimate objects in their surroundings into weapons they can shoot out at high speeds. The General of the Pupil-less Eye let out a scream, shattering the surrounding windows that turned into bullets that shot towards the floating Sharron. They can control objects that are in contact with living beings, including Demigods. Shanks tightened Klein Moretti's clothes as if a bear were giving him a hug, almost shattering his ribs and preventing movement as paper figurines covered his face to prevent him from breathing. To counteract the actions of Georgina Augustus, Zatwen first Stole her thoughts using a Error Pathway Sealed Artifact before restraining her tightly with her own gown. Zatwen and Mahmosi controlled the guns and machines of MI9, including those held by soldiers, to their advantage against Celt and Georgina Augustus."
+        },
+        {
+          "name": "Performance",
+          "description": "A Puppet is able to Perform roles such as a Prisoner, Lunatic, Werewolf, Zombie, and Wraith, elevating those Beyonder powers and traits to a weak Sequence 4 with divinity. For example, a Wraith will be able to Possess a Sealed Artifact."
+        },
+        {
+          "name": "Objectification",
+          "description": "They can transform into a true Puppet, forcefully restraining their inner madness and Desires, but they cannot influence or interfere with the outside world in return. A Puppet can only protect themself through pre-prepared, triggered or area of effect Curses and other controlled Puppets. The Objectification Beyonder power can also be used on others to temporarily control their madness or Seal it. However, at this Sequence the other party must be willing and there must be physical contact."
+        },
+        {
+          "name": "Strengthened Abilities - Evil Spirit Transformation",
+          "description": "Their original Wraith Transformation form and it's powers and attributes have entered a qualitative change, allowing them to turn into an Evil Spirit."
+        },
+        {
+          "name": "Strengthened Abilities - Binding",
+          "description": "At this stage, they can restrain the tendency of Convergence. However, it is only at Sequence 0 where it can be at the same degree as the Door Pathway."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As Demigods at Sequence 4 who have obtained partial Godhood, they are able to manifest their incomplete Mythical Creature Form if they disregard any of the consequences and become an incomplete collection of various Curses which are both invisible and intangible. The outward appearance of their incomplete Mythical Creature Form depends on their own self-awareness and choices made during their advancement. It acts as a base to bind and stabilize the various Curses resulting from their disassembly process. A Puppet of the Temperance Faction of the Rose School of Thought would therefore have the outward appearance of a Demigod-level mummy."
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Disciple of Silence (Cursed Artifact)",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Silent Curse Brewing",
+          "description": "With prolonged silence, a Disciple of Silence can brew the most potent Curse, rendering a target powerless to resist."
+        },
+        {
+          "name": "Strengthened Abilities - Evil Spirit Transformation",
+          "description": "As a Cursed Artifact, they can Possess objects."
+        },
+        {
+          "name": "Strengthened Abilities - Source of Curses",
+          "description": "There has been a qualitative change to this ability. A Disciple of Silence using Source of Curses doesn't need to hurt themselves to affect the target but could do so anyways to enhance a Curse's effectiveness. Sharron opted to pluck her eye reflecting Mirror Roselle Gustav to enhance a Curse that had the capability of banishing the latter deep within the Spirit World. Furthermore, the target would be subjected to constant attacks from dangerous creatures in the Spirit World while being banished. They are also capable of using Source of Curses to achieve effects like banishment, fixation, and sleep through different methods or corresponding media. Sharron transformed herself into a dim and stiff doll, then encased herself in layers of Ice which simultaneously emerged around Oxyto's child, fixing it in place within an Ice Cage."
+        },
+        {
+          "name": "Transfiguration Curse",
+          "description": "Both a Curse and qualitative change to Objectification, they can emit a silent scream that transforms their target into a harmless creature, losing most of their traits and Beyonder powers for a certain time period. At this level, a Transfiguration Curse can only affect a single entity at a time. Entities contained within a target are treated as part of the same whole, thus turning both into a single animal. Its effects are symmetrical, transferring across connected bodies, such as a Demoness of Unaging and their Mirror Selves. A dormant Mirror Person is exempt from this, however, because their true body is reduced to a defenseless animal, their Resurrection arrangements become vulnerable. Both living and non-living objects can be affected by this Curse. Traits or Beyonder powers that don't get stripped from the corresponding Beyonders include: Madame: The trait of New Life, which they can use to corrupt themselves and be reborn. Chaos Hunter: The Sword of Judgment, which can return their original appearance. Demoness of Unaging: The trait of Resurrection through their dormant Mirror Self. Discerner: Through usage of a Psychological Cue, a Discerner is able to believe themselves to still be powerful."
+        },
+        {
+          "name": "Other Improvements",
+          "description": "They gain improvements to other abilities in the previous Sequence."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As a Sequence 3 Beyonder, they can respond to prayers within a certain range."
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Ancient Bane",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Dwelling Space",
+          "description": "Ancient Banes need a Dwelling Place, which is a manifestation of 'Their' Restraint and also the best way to find and destroy what 'They' Possess. If the object 'They' are bound to is not destroyed, 'They' are immortal and indestructible."
+        },
+        {
+          "name": "Bane",
+          "description": "As a type of Deviant, 'They' can cause all sorts of negative influences on a target that approach or witness 'Them' while 'They' are not in 'Their' Mythical Creature Form. This can range from causing the affected targets to have very strong Evil thoughts, having their values changed, Desires explode, or even losing control on the spot."
+        },
+        {
+          "name": "Spirit Influence",
+          "description": "'They' possess the ability to directly influence and attack Spirits. 'They' can open 'Their' mouth and inhale, forming a cold breeze that forcibly pulls the enemy's Spirit, making it impossible to maintain a state of hiding."
+        },
+        {
+          "name": "Curses Authority",
+          "description": "'They' gain partial authority over Curses."
+        },
+        {
+          "name": "Source of Curses",
+          "description": "'Their' Mythical Creature Form manifests as the vessel used in 'Their' Advancement. If 'They' understand a target's core information, 'They' can create Paper Figurines, Puppets, or other mediums to Curse the other party from afar, or even cause them to die suddenly. Suah's Historical Projection created a doll that looked like Klein Moretti, using the latter's Worm of Spirit to create a connection between the two, which Zaratul used to isolate the main body from all his Marionettes and prevent him from entering Sefirah Castle. The patterns, designs, ornaments, and every detail on the vessel are manifestations of different Curses, and any living being that sees it would suffer the corresponding Curse. The surrounding environment will also be affected by 'Their' Mythical Creature Form, distorted by nature and becoming tainted with various weakened Curses."
+        },
+        {
+          "name": "Transfiguration Curse",
+          "description": "This is 'Their' Transfiguration Curse now at the Angel-level. 'They' no longer need to emit a silent scream to affect a target. Now, merely any target that is reflected in 'Their' eyes can be Cursed and transformed accordingly. The limbs left behind by a Beyonder after them undergoing a Transfiguration contain a portion of their Beyonder Characteristics that couldn't return to the main body. Multiple targets at a time can be affected by a single Transfiguration Curse, and there is almost no limit for the duration a target can be in the Cursed state. Apart from putting up resistance from someone at the same level, one can use the correct method to remove it. No Curse is irreversible. There are always exploitable Loopholes. Otherwise, the Transfiguration Curse cannot be dispelled. 'They' can create Curses rooted in one's hatred, anger, and grudges. Reinette Tinekerr, who had created a Curse whose root has lied in the anger, hatred, and 'Her' grudge that had emerged after 'She' suffered an attack, used it in order to repel a piece of 'distorted' wood as well as stagger and stun Abomination Suah for a second."
+        },
+        {
+          "name": "Strengthened Abilities - Evil Spirit Transformation",
+          "description": "The capabilities regarding 'Their' Evil Spirit form has been enhanced."
+        },
+        {
+          "name": "Resurrection",
+          "description": "With the necessary and prior preparations done beforehand, 'They' can Resurrect in the Spirit World in the form of a Spirit World creature. Having been a Wraith makes this much simpler compared to other Pathways. When Resurrecting this way, 'They' will be left with an incomplete body. Reinette Tinekerr, after 'Her' fall in battle against Suah and other foes, Resurrected in the Spirit World and now attempts to complete 'Her' incomplete body."
+        },
+        {
+          "name": "Other Improvements",
+          "description": "'They' gain improvements to other abilities of the previous Sequence."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "'They' become a complete Mythical Creature. 'Their' true Mythical Creature Form is that of a collection of various Curses which are both invisible and intangible. The outward manifestation of 'Their' complete Mythical Creature Form depends on 'Their' own self-awareness and the choices made during 'Their' Advancement, which uses an ancient, evil item that can bear Angel-level power which is used to Bind the aggregate Curses. Reinette Tinekerr's Mythical Creature Form is a castle-sized doll with blood-red eyes, dressed in a black gothic dress with countless mysterious symbols and sinister vines. For those like Suah and Tirié who have not completed the corresponding rituals, 'They' exhibit outward forms that are amplifications of 'Their' Beyonder Characteristics. By relying on 'Their' inherent vessel and corresponding symbol, an Ancient Bane can enter the Historical Void; however, 'They' are not able to surpass the era in which the vessel appeared. Within the parts 'They' can trace back to, an Ancient Bane is able to counter the History of the Fool Pathway to some extent. This is achieved through Curses."
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Abomination",
+      "literal_translation": "Divine Abomination",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Deviants Authority",
+          "description": "'They' gain partial authority over Deviants."
+        },
+        {
+          "name": "Transformation",
+          "description": "The Curse of an Abomination can not only deform the surrounding creatures, but also transform them into Werewolves, Zombies, Puppets and other Deviant species. However, these Deviant Puppets can only be maintained for a short time and will soon be devoured by madness, turning into corpses or flesh tainted by the curse. 'They' can display 'Their' true form as Abominations, gaining the corresponding abilities. In 'Their' true form, 'Their' arms will lengthen; it's surface dark and sticky with a strange liquid flowing from it. Pale skulls, eyeballs with obvious blood vessels, tongues with fangs, and all sorts of other strange-shaped things will grow out from the strange liquid. 'They' can emit an eerie roar that pierces the spirit, causing all surrounding creatures to tremble, be somewhat stiff, and suddenly go blank in the mind, briefly losing all thoughts. Abomination Suah's roar had caused the surrounding individuals near 'Him' to suddenly pause in movement, their minds going blank and thoughts lost. 'Their' true form in this state, not 'Their' Mythical Creature Form, inherently carries the effects of Madness, Evil, Distortion, Chaos, Hatred, Indulgence, and Curse. This will cause effects equivalent to revealing 'Their' Mythical Creature Form in 'Their' area as well as a strong inclination for extreme madness and Evil. One could say that 'Their' true forms were a product of 'Their' self-perception combined with 'Their' complete Mythical Creature Form. In 'Their' true form, 'They' are able to extend 'Their' own deformed arms into the sky and into the ground in order to Seal the surroundings."
+        },
+        {
+          "name": "Curses Authority",
+          "description": "'They' gain more power over this authority. 'They' can create Curses normally undetectable even by Saints and that can hit the main body through any connection, making the target to suffer an unexpected and sudden death. In an attempt to suppress Klein Moretti, a Historical Projection of Abomination Suah which was controlled by Zaratul Cursed a Marionette that 'He' had controlled. Abomination Suah had formed a Curse that hit Klein Moretti's main body (which was in the Historical Void) through a Historical Projection that he was operating. 'They' can cause the surrounding Spirituality to deviate, seemingly forming layer upon layers of barriers in an attempt to restrain the target in place and restrict their movements. This is the effect of a Curse upon the environment. While Suah restricted Klein's body and Soul, the surroundings also formed a barrier as the scarlet flames Klein came out of from Flaming Jump bound him to the ground. Near Suah's area, the surrounding Spirituality had transformed into layers of barriers that restrained and restricted Klein and Reinette Tinekerr's every action. Similarly, 'They' can cause the vicinity to boil, covering it in viscous black liquid that erodes upwards into the void, disrupting the overlap between Reality and the Spirit World. However, this doesn't immediately disable abilities that use the Spirit World like Teleportation, needing time to completely take effect. Even if a target wasn't directly attacked by 'Them' or is a main target of 'Their' attacks, 'They' can still cause them to face constant erosion and Curses without their knowledge. This affects and makes one's Spirituality 'frozen' slightly, seemingly restraining the body and Soul. As the degree of harmony between their body and Soul gradually decreases, their body will gradually be a prison for the spirit, making their movements more stiff and heavy. Suah used this on Klein, causing the harmony of his body and Soul to decrease, making his actions and movements be more rigid, slow, and heavy."
+        },
+        {
+          "name": "Strengthened Abilities - Evil Abomination",
+          "description": "'They' can rapidly spread feelings of extreme Evil and madness, instantly dry up the surroundings, and cause others' consciousness to be infected with madness. The effect of causing others' consciousness be infected with madness will either result in sudden death, mutation, or attacks on their own people, making them temporarily unable to take effective countermeasures."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "If an Abomination has not completed 'Their' previous Sequence advancement rituals, 'They' would exhibit a Mythical Creature Form of a grotesque tree-like shape coated in viscous black liquid. Creatures who are affected by 'Their' Godhood without a sufficient level or protection will be mutated, turning into Werewolves or Zombies."
+        }
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Chained",
+      "description": "Because of the Symbolism of Binding and Unity, the authorities of the Chained are highly concentrated, mainly focused on Curses, Binding (Temperance), Deviants, and Objects.",
+      "abilities": [
+        {
+          "name": "Symbolism",
+          "description": "'They' can apply surface-level symbolism through 'Their' authority over Curses."
+        },
+        {
+          "name": "Curses Authority",
+          "description": "At Sequence 0, 'Their' authority over Curses initially manifests through symbolic applications, allowing 'Them' to cause targets to unknowingly suffer Curses. 'They' can complete all kinds of Curses, and it is very difficult for 'Them' to be Cursed. Many symbolic connections cannot affect 'Them' unless a strong and direct link exists. 'They' can slowly burden 'Their' enemies with 'Their' own predicament. Compared to the Chained, the Abyss' Curses are primarily in the domains of Spirit and Mind."
+        },
+        {
+          "name": "Deviants Authority",
+          "description": "The Chained is the King of Deviants, capable of transforming into all kinds of Deviants that can exist only for a short period of time, controlling their corresponding abilities. Deviants are monsters formed by the negative effects of Beyonder Characteristics, including Devils and those who have lost control on other Pathways. All Deviants are naturally suppressed when facing the Chained, and those at low to mid Sequences may directly become 'Their' loyal servants. The Chained can allow every type of Deviant to pray to 'Them' in the simplest manner and receive 'Their' response and assistance. Using a roar formed from superimposed Ancient Hermes words that exceeded human comprehension, Suah indirectly received a response from the Chained God who descended with 'His' projection."
+        },
+        {
+          "name": "Binding (Temperance) Authority",
+          "description": "'They' can Restrain or Seal the various tendencies of Madness, Desires, Objects, creatures, and Beyonder Characteristics. In this aspect, if something does not reach the level of Sealing, the Chained is stronger than the Door; however, the Door surpasses the Chained within the Sealing domain. With proper use of Temperance, a King of Angels of this Pathway can make the Chained Uniqueness and 3 Abomination Beyonder Characteristics exist simultaneously within 'Their' body without triggering a qualitative change. This prevents immediate loss of control or death on the spot. The Chained can sever the connection between Reality and the Spirit World, Restraining Beyonder powers that rely on direct usage of the Spirit World. Conversely, 'They' can cause others to lose Restraint and abandon Temperance, which represents the Indulgence authority concentrated within Binding."
+        },
+        {
+          "name": "Objects Authority",
+          "description": "'They' can control all Objects, whether sentient or not. Since an unclaimed Sefirah can be considered an Object, the Chained can establish a connection with it and indirectly influence it through 'Their' authority over Objects."
+        },
+        {
+          "name": "Thorn Paradise",
+          "description": "This is 'Their' Divine Kingdom, a place filled with various Curses bound to different Objects, as well as numerous Deviants that exist as statues that can be brought to life."
+        }
+      ]
+    }
+  ]
+}

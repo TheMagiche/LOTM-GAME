@@ -1,0 +1,210 @@
+{
+  "pathway": "Hanged Man Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Secrets Suppliant",
+      "potion_overview": "A sacred black liquid intermittently bubbling with a bitter taste.",
+      "formula": {
+        "main_ingredients": [
+          "Singing Black Mushroom",
+          "Darkness Bat"
+        ],
+        "alternative": "A Secrets Suppliant Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Red Wine",
+          "1 segment of Church-blessed Candle",
+          "1 Poisonous Mushroom",
+          "10 grams of Verbena Powder"
+        ]
+      },
+      "acting_method": "A Secrets Suppliant's ability is based around praying and secrets. Therefore their acting is based on receiving secret knowledge through prayers or 'pleading' for it. The more dangerous the secret knowledge they receive is, the more they can digest their potion.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Listener (Whispered)",
+      "potion_overview": "A hallucinogenic, multicolored liquid with a dark core; induces spiritual euphoria upon consumption.",
+      "formula": {
+        "main_ingredients": [
+          "Ear of a Black Cat of Misfortune",
+          "Heart of a Burrow Crawler (a pangolin-like Beyonder creature)"
+        ],
+        "alternative": "A Listener Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Red Wine",
+          "1 portion of Bread",
+          "Heart of a Black Cat of Misfortune",
+          "10 drops of Begonia Flower Essential Oil"
+        ]
+      },
+      "acting_method": "Listeners are like priests in a church, listening to the sins of others. Their primary goal is to avoid being influenced by those whispers they hear. It is a state of listening without being corrupted by it, and if used good enough, it will eventually help them in advancing to a Profane Presbyter in the future.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Shadow Ascetic",
+      "potion_overview": "A gray-black liquid reflecting countless faces of the drinker; cold, bitter, and stinging.",
+      "formula": {
+        "main_ingredients": [
+          "Shadow Worm",
+          "Horn of a Blood-Eyed Black Goat"
+        ],
+        "alternative": "A Shadow Ascetic Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Another's Blood",
+          "Tail of a Blood-Eyed Black Goat",
+          "1 Item that has Desecrated a Church (any type)",
+          "10 drops of Wild Rose Hydrosol"
+        ]
+      },
+      "acting_method": "It involves unity, preaching, and serving their 'god'. It encompasses meanings such as 'practising in seclusion', 'cultivating in the shadows' as well as 'acting within the shadows to uphold the doctrine'.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Rose Bishop",
+      "potion_overview": "Blood soaked with pale flesh chunks; induces excruciating pain akin to skin peeling and flesh disintegration.",
+      "formula": {
+        "main_ingredients": [
+          "Immortal Flesh Fungus",
+          "Largest Fragment of a Vengeful Specter"
+        ],
+        "alternative": "A Rose Bishop Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of One's Own Blood",
+          "1 segment of Symbiotic Vine from the Immortal Flesh Fungus",
+          "1 portion of Residual Powder from the Vengeful Specter",
+          "10 grams of Cinnamon"
+        ]
+      },
+      "acting_method": "By Chinese definition, Roses symbolize Love, Friendship, Peace and signify Blood. A Rose Bishop is the leader of an Ascetic community/group who will spare no effort to spread their Love and Peace, even if it is radical and involves bloodshed.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Shepherd",
+      "potion_overview": "A gray-white liquid with fleeting, bloated visages; tears the soul upon consumption.",
+      "formula": {
+        "main_ingredients": [
+          "Crystallized Bloody Scarecrow",
+          "Brain of a Herd Keeper (monkey-like in appearance)"
+        ],
+        "alternative": "A Shepherd Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Herd Keeper's Blood",
+          "7 strands of Bloody Scarecrow Straw",
+          "1 Whip that has Flogged at least 100 People",
+          "10 grams of Marigold Balm"
+        ]
+      },
+      "advancement_ritual": "Extract one's soul from the body. Influence the soulless body to consume the potion. Reintegrate the soul to complete the ascension.",
+      "ritual_essence": "No data available.",
+      "acting_method": "A Shepherd is both a guide for people and a leader of lost souls, preventing those from straying from the 'herd', guiding them onto the right path.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Black Knight",
+      "potion_overview": "Viscous liquid resembling a black gemstone; ingestion causes the body to collapse anew.",
+      "formula": {
+        "main_ingredients": [
+          "Remnant Curtain of a Shadow Knight",
+          "Flesh and Blood Condensation of a Griegel (Griegel is a Beyonder creature also known as the Crimson Giant)"
+        ],
+        "alternative": "A Black Knight Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Shadow Traces of a Griegel",
+          "Black Liquid of a Shadow Knight",
+          "1 drop of Blood from Each Ritual Participant",
+          "10 drops of Lemon balm Essential Oil"
+        ]
+      },
+      "advancement_ritual": "Induce the complete degeneration of over 10,000 individuals without using violence. The higher the sequence of the degenerate individuals, the better the ritual effect. The more concentrated the transformation from normalcy to degeneracy in time, the more effective the ritual becomes.",
+      "ritual_essence": "No data available.",
+      "acting_method": "Carrying out divine will in the darkness, they are a knight willing to bear the Sins for their God's will.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Trinity Templar",
+      "potion_overview": "Resembles a tranquil nocturnal lake with storms raging beneath; ingestion inflicts soul-splitting pain into three parts.",
+      "formula": {
+        "main_ingredients": [
+          "Skull of a Herd Sovereign",
+          "Heart of a Griegel Chieftain"
+        ],
+        "alternative": "A Trinity Templar Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Herd Sovereign's blood",
+          "Eyes of a Griegel Chieftain",
+          "1 Soul-Sealed Stone (100 trapped spirits)",
+          "30 grams of Fennel"
+        ]
+      },
+      "advancement_ritual": "Use various methods to induce a controlled personality split without losing control. Note: If the personality split already exists from previous Sequences, ascending will result in immediate loss of control.",
+      "ritual_essence": "No data available.",
+      "acting_method": "A Trinity Templar embodies the sacred meaning of the 'Holy Trinity' and represents the differentiation in both, the personality and ability.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Profane Presbyter",
+      "potion_overview": "Filthy, repulsive liquid resembling sewer waste; taste matches its appearance.",
+      "formula": {
+        "main_ingredients": [
+          "Pus of the Shadow King",
+          "Crystal of the Flesh Monarch"
+        ],
+        "alternative": "A Profane Presbyter Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Residual Powder from the Shadow King",
+          "100 milliliters of Blood of the Flesh Monarch",
+          "50 grams of Flesh of the Flesh Monarch",
+          "1 Self-created, Century-old Legend related to Degeneracy (written on paper)"
+        ]
+      },
+      "advancement_ritual": "Separate, defeat, and fully control one's own shadow. Enter the Shadow World, confront dangers, and establish a personal 'domain' within it. The Shadow World is an alternate dimension intersecting with the Mirror World.",
+      "ritual_essence": "No data available.",
+      "acting_method": "'They' are the prophets and punishers of heretics for the God 'They' serve. Being an evolved form of a shepherd 'They' guide people with revelations. A Profane Presbyter has to have the willingness to become corrupted for the sake of punishment.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Dark Angel",
+      "potion_overview": "Pure black liquid with intermittent glimmers of light.",
+      "formula": {
+        "main_ingredients": [
+          "The Shadow of Sasrir OR The Two Hands of Sasrir"
+        ],
+        "alternative": "A Dark Angel Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "1 Holy Scripture of the Primordial God Almighty or Ancient Sun God",
+          "50 grams of Flesh and Blood from Angels of the Sun, Tyrant, White Tower, or Visionary Pathways *(only 2 Pathways required)*"
+        ]
+      },
+      "advancement_ritual": "Fly toward the mystically conceptualized Sun. Endure for 15 minutes to merge with the shadow of light.",
+      "ritual_essence": "No data available.",
+      "acting_method": "'They' are the Shadow of the Sun, the Darkness of Light, where there exists Light there is Shadow. Dark Angels are Angels who willingly fell from grace and bore the consequences of their sins. 'They' embody the Degenerate Nature, carrying the heavy burden of some kind of other sin.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Hanged Man",
+      "potion_overview": "A shadow of absolute darkness that isolates all surrounding light.",
+      "formula": {
+        "main_ingredients": [
+          "The Hanged Man Uniqueness",
+          "Three Dark Angel Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "The Shadow World"
+        ]
+      },
+      "advancement_ritual": "Walk upon the Chaos Sea, dissolve one's shadow into it while ensuring: The body does not sink. The mind does not fall. Meeting the requirement entails the body not fully sinking and the spirit not fully descending into degeneracy.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

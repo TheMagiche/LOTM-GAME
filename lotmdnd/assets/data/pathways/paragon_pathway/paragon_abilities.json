@@ -1,0 +1,107 @@
+{
+  "pathway": "Paragon Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Savant",
+      "abilities": [
+        "Knowledge (Mysticism and Mechanics): Gain new information about mysticism and mechanics.",
+        "Recall (Memory): Can recall every single piece of knowledge and experience ever seen."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Archaeologist",
+      "abilities": [
+        "Physical Enhancements: Strong enough physique to face many problems.",
+        "Spirituality: Barely able to apply some Ritualistic Magic.",
+        "Knowledge (History, Survival, Mysticism): Good deal of knowledge about history, wilderness survival, and taboos about ruins."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Appraiser",
+      "abilities": [
+        "Appraisal: Can rapidly identify the powers and problems of most Beyonder items without Divination."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Artisan (Machinery Specialist)",
+      "abilities": [
+        "Spirituality: Only the level of their Ritualistic Magic will be enhanced.",
+        "Manufacturing: Can make Beyonder items and mechanical artifacts, reshape Beyonder Characteristics, and craft Sealed Artifacts."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Astronomer (Astromancer)",
+      "abilities": [
+        "Astronomy: Can make use of astronomical phenomena to interfere with or attack targets.",
+        "False Constellations: Can create a fake Starry Sky to confuse or interfere with astrological predictions.",
+        "Star of Curses: Can fire rays from condensed Starlight that cause weakness, mutation, and trauma.",
+        "Blessing of Stars: Can attract Starlight, altering Gravity."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Alchemist",
+      "description": "Mechanical Heaven is not only a description of the Divine Kingdom of a Paragon but also an acknowledgment of the Alchemists' usual performance.",
+      "abilities": [
+        "Alchemy: Can infuse items with Souls, giving them life.",
+        "Manufacturing: Can make mechanical bodies and modify their own bodies.",
+        "Mythical Creature Form: Incomplete Mythical Creature Form."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Arcane Scholar (Demon of Arcana)",
+      "abilities": [
+        "Knowledge Spirit: Can transform into knowledge to influence thinking and intelligence.",
+        "Environment Controller: Can accurately extract information about the surrounding environment.",
+        "Absorption: Can extract Life force from organisms within a five-kilometer radius.",
+        "Dissociation: Can emit a beam of light capable of destroying the structures of most objects.",
+        "Manufacturing: Extraordinary Manufacturing abilities; can create giant robots.",
+        "Appraisal: Can quickly grasp relevant information when using Mystical Items.",
+        "Mythical Creature Form: Can respond to prayers."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Knowledge Magister (Master)",
+      "abilities": [
+        "Manufacturing: Weakened authority; can create most items imagined, including futuristic wonders.",
+        "Principles: Can alter physical Principles to a certain extent.",
+        "Analysis: Enhanced Analysis authority; can see the essence of Angels.",
+        "Mentor: Ability to Test others and teach.",
+        "Learning: Weakened Learning authority; learning after one look is no longer a myth.",
+        "Mythical Creature Form: Complete Informational being composed of depictions of civilizations."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Illuminator (Civilization Enlightener, Light of Darkness)",
+      "abilities": [
+        "Civilization: Authority over Civilization; can allow Chaos to settle into Order and reveal projections of history.",
+        "Manufacturing: Enhanced; can manifest artistic expressions with Mechanical Creations.",
+        "Education: Can enhance intelligence, provide enlightenment, or trap enemies in mathematical mazes.",
+        "Mythical Creature Form: Can manifest complete depiction of Civilization."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Paragon",
+      "abilities": [
+        "Reality Knowledge: Possesses all discovered Knowledge; can modify it to a certain extent.",
+        "Civilization: Can designate groups to remain in barbarism or rapidly evolve; can turn others into Knowledge.",
+        "Principles: Partial authority over Principles; can make the world operate favorably.",
+        "Education: Partial authority to grant Knowledge; emphasizes enlightenment and systematization.",
+        "Learning: Can learn easily or make it impossible for others to learn.",
+        "Manufacturing: Can create advanced programs and mystical items.",
+        "Analysis: Can analyze or see the essence of things.",
+        "Spirit World Mentor: Partial authority over the Spirit World.",
+        "Divine Kingdom: Mechanical Heaven or Civilization's Cemetery, Land of Perfection."
+      ]
+    }
+  ]
+}

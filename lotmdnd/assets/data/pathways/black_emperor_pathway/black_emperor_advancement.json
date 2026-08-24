@@ -1,0 +1,238 @@
+{
+  "pathway": "Black Emperor",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Lawyer",
+      "potion_properties": "A sticky, black liquid that even stains the surrounding air.",
+      "beyonder_characteristic_appearance": "A black, fruit-shaped object with three strange tongues.",
+      "formula": {
+        "main_ingredients": [
+          "One 'Wisdom Fruit'.",
+          "The tongue of a maze parrot."
+        ],
+        "alternative_main_ingredients": [
+          "A Lawyer Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "90 ml of maze parrot blood",
+          "1 black olive,",
+          "9 drops of cypress bark essential oil,",
+          "1 white jasmine flower."
+        ]
+      },
+      "acting_method": "The purpose of a lawyer is always to follow existing rules and systems, and find ways to win lawsuits.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 8,
+      "name": "Barbarian",
+      "potion_properties": "A translucent black liquid with miniature organs, such as internal organs and tongue, sinking and emerging.",
+      "beyonder_characteristic_appearance": "Crystalline horn-like structures covered with short black hairs.",
+      "formula": {
+        "main_ingredients": [
+          "Grass of Madness.",
+          "Core horn crystal of a Land Rhinoceros."
+        ],
+        "alternative_main_ingredients": [
+          "A Barbarian Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "1 Deep-Grained Walnut.",
+          "1 Fragrance Hornet Grass.",
+          "10 milliliters of the extract obtained from soaking poplar bark.",
+          "100 milliliters of Liquor."
+        ]
+      },
+      "acting_method": "For every system that imposes order, there must be other systems that resist that order and adhere to their own rules. Sometimes, the best way to deal with these heterogeneous systems is not to impose your order on them, but to meet them head-on.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 7,
+      "name": "Briber",
+      "potion_properties": "A clear, black liquid that bubbles constantly and looks delicious.",
+      "beyonder_characteristic_appearance": "Black floral patterns that highlight a ghastly white face.",
+      "formula": {
+        "main_ingredients": [
+          "1 Weeping Infant Flower.",
+          "Strange-faced Cannabis Crystal."
+        ],
+        "alternative_main_ingredients": [
+          "A Briber Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "5 drops of Golden Jimsonweed Juice.",
+          "5 drops of Black Jimsonweed Juice.",
+          "4 drops of Fantasy Grass Essential Oil.",
+          "80 milliliters of Red Wine."
+        ]
+      },
+      "acting_method": "Every person, organization, or system has a pivot point that can be pressured to force change. A briber doesn't waste energy fighting the whole system, bribing everyone, or using overly luxurious bribes to buy off top figures. Instead, they find that one person – who, due to their personal desires, fears, or needs, naturally becomes a key hub – and then make that person understand that serving the briber actually serves themselves.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 6,
+      "name": "Baron of Corruption",
+      "potion_properties": "A translucent, light black liquid with a sweet, enticing aroma and shimmering, sparkling light.",
+      "beyonder_characteristic_appearance": "Black, swollen human surface organs that emit a rotten smell (often fused with the nose).",
+      "formula": {
+        "main_ingredients": [
+          "The nose of a human-faced baboon,",
+          "1 rotting corpse flower;"
+        ],
+        "alternative_main_ingredients": [
+          "A Baron of Corruption Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "60 ml of human-faced baboon blood,",
+          "10 drops of gray amber perfume,",
+          "60 ml of strong fruit liquor,",
+          "10 g of lead powder."
+        ]
+      },
+      "acting_method": "Infiltrate an existing system (like the mafia, a family, an army) and subtly corrupt its rules and order from within, causing it to artificially lean in your favor and serve you.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 5,
+      "name": "Mentor of Disorder",
+      "potion_properties": "A jet-black liquid that generates its own vortexes and waves, sometimes expanding and sometimes contracting.",
+      "beyonder_characteristic_appearance": "A tightly clenched, semi-transparent, jet-black fist. The fist gives a direct sense of power and unnerving strangeness. The patterns, light spots and nails on it seem to follow normal rules, yet they are full of incongruous meaning, as if they are hiding a lot of madness and disorder.",
+      "formula": {
+        "main_ingredients": [
+          "1 Fairy Spark (possesses self-awareness).",
+          "The head of 'Child of the Forest' (it's an almost black dark green baboon with deformed horns resembling a crown)."
+        ],
+        "alternative_main_ingredients": [
+          "A Mentor of Disorder Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "100 ml of a 'Child of the Forest's' blood",
+          "7 drops of cedarwood hydrolat,",
+          "An ear of a serial traitor (has betrayed at least twice),",
+          "1 frangipani flower."
+        ]
+      },
+      "advancement_ritual": "Become the dominant force in a city's underground order, causing the city's crime rate to increase more than tenfold; this state must last for at least three months.",
+      "ritual_essence": "No data",
+      "acting_method": "Mainly focuses on destroying order, teaching others to create disorder.",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 4,
+      "name": "Earl of the Fallen",
+      "potion_properties": "A semi-solid eyeball condensed at the core of the black liquid, constantly oozing rotten pus.",
+      "beyonder_characteristic_appearance": "A fist-sized, unusually viscous black figure with eyes, a mouth, and a tongue.",
+      "formula": {
+        "main_ingredients": [
+          "A Gigantic Woodland Spirit's eyeball (they are humanoid four-armed black baboons).",
+          "A Cat-faced Ghost Shadow's tongue (they are humanoid)."
+        ],
+        "alternative_main_ingredients": [
+          "A Earl of the Fallen Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "150 ml of Gigantic Woodland Spirit blood,",
+          "3 pieces of Cat-faced Ghost Shadow's nails,",
+          "10 drops of Camellia essential oil,",
+          "13 Hairs of degenerates."
+        ]
+      },
+      "advancement_ritual": "Become a mid-to-high-level official in a country, win over and corrupt seven individuals at the same level, forming a community of interests with them, and promote the implementation of a national policy that benefits the ritual performer but is detrimental to the people.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 3,
+      "name": "Frenzied Mage",
+      "potion_properties": "Crimson magma divided into three unequal parts by a black, viscous fluid.",
+      "beyonder_characteristic_appearance": "A dark heart with cracks appearing to reveal boiling magma like blood deep within.",
+      "formula": {
+        "main_ingredients": [
+          "The Heart of a Black Mountain Lord (they are shaped like six-armed gigantic baboons).",
+          "The tail of a Violent Man-ape."
+        ],
+        "alternative_main_ingredients": [
+          "A Frenzied Mage Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "200 ml of Black Mountain Lord's blood,",
+          "4 Violent Man-ape teeth,",
+          "15 g of gold,",
+          "9 facial skins of those who died from ritual mutations."
+        ]
+      },
+      "advancement_ritual": "Select three rituals that involve at least angel-level powers, modify the key descriptions of them in a way that is beyond the ritual performer's own knowledge and purely by intuition, and then perform them one by one, ultimately surviving.",
+      "ritual_essence": "To come into contact with near-loss-of-control madness in advance. Survive within madness. It also depends on the ability to deal with random issues.",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 2,
+      "name": "Duke of Entropy",
+      "potion_properties": "A transparent liquid with numerous black characters and symbols interwoven into a crown inside it.",
+      "beyonder_characteristic_appearance": "Strange emblems formed from intertwined black fur hair with a metallic sheen.",
+      "formula": {
+        "main_ingredients": [
+          "Solomon's Knuckle;"
+        ],
+        "alternative_main_ingredients": [
+          "A Duke of Entropy Beyonder Characteristic."
+        ],
+        "supplementary_ingredients": [
+          "110 ml of a Duke of Entropy's blood,",
+          "1 authentic and valid Royal or Imperial Martial Law decree,",
+          "140 g contaminants from a 'Balancer' or similar beings,",
+          "1 luminous gem;"
+        ]
+      },
+      "advancement_ritual": "Drive a nation of at least 10 million people to gradually collapse from within without direct external intervention. The more powerful the beyonder inhabitants are, the fewer people are needed.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 1,
+      "name": "Prince of Abolition",
+      "potion_properties": "A translucent black liquid reflecting a distorted, brass-colored human figure.",
+      "beyonder_characteristic_appearance": "A translucent black scepter divided into nine sections.",
+      "formula": {
+        "main_ingredients": [
+          "A Prince of Abolition Beyonder Characteristic"
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "130 ml of the blood of a true king or emperor,",
+          "1 section of the original laws of an empire,",
+          "3 drops of corpse fluid from a true god who fell due to betrayal,",
+          "1 set of widely circulated currency issued by the concoctor"
+        ]
+      },
+      "advancement_ritual": "While not being the strongest within an empire, replace a portion of the original order with a new hidden order and maintain it for three years.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    },
+    {
+      "sequence": 0,
+      "name": "Black Emperor",
+      "potion_properties": "The reflection of a collapsing world.",
+      "beyonder_characteristic_appearance": "No data",
+      "formula": {
+        "main_ingredients": [
+          "The Black Emperor Uniqueness.",
+          "Three Prince of Abolition Beyonder Characteristics."
+        ],
+        "alternative_main_ingredients": null,
+        "supplementary_ingredients": [
+          "An alternate world where order has completely collapsed."
+        ]
+      },
+      "advancement_ritual": "Possess your own country, linking your name to the title of Emperor and making it common knowledge among the populace. Establish a set of strict and complicated rules that defy normality, including architectural styles. Spur your citizens to secretly establish nine mausoleums in the style of pyramids. Enter one of the mausoleums. Drink the Sequence 0 potion while a large majority of the citizens are scattered across different cities in the corresponding sacrificial rituals involved.",
+      "ritual_essence": "No data",
+      "acting_method": "No data",
+      "backlash": "No data"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "pathway": "White Tower Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Reader",
+      "potion_overview": "A white liquid with noticeable dust suspended in its particles.",
+      "formula": {
+        "main_ingredients": [
+          "1 Worm of Book Biting",
+          "1 Knowledge Addiction Root (a semi-illusory object resembling a miniature tree root, one of its functions is to make people addicted to learning knowledge)"
+        ],
+        "alternative": "A Reader Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "50ml of blood from a Worm of Book Biting",
+          "10 g of Knowledge Addiction Root eroding substance",
+          "50ml of strong liquor",
+          "1 notebook used for personal study (must be filled with knowledge)"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Student of Ratiocination",
+      "potion_overview": "A transparent liquid without any ripples, similar to a mirror, containing multiple blood red patches.",
+      "formula": {
+        "main_ingredients": [
+          "The brain of a Naga Priest",
+          "The spine of an Evil Riddles-Cat"
+        ],
+        "alternative": "A Student of Ratiocination Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "9 strands of hair from a Naga Priest",
+          "100 ml of blood from an Evil Riddles-Cat",
+          "10 drops of Black Datura juice",
+          "10 drops of a hydrolat that bring peace and focus"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Detective (Knowledge Keeper)",
+      "potion_overview": "A pale red liquid with interwoven copper wires.",
+      "formula": {
+        "main_ingredients": [
+          "The Liver of a six-armed Naga",
+          "The Ears from a Fox of Hunt"
+        ],
+        "alternative": "A Detective Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 ml of blood from a six-armed Naga",
+          "The tip of the tail from a Fox of Hunt",
+          "20g of Tranquil Flower incense",
+          "10 drops of red or black ink"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Polymath",
+      "potion_overview": "A blood-red liquid in which various strange characters appear and disappear, disappear and appear repeatedly.",
+      "formula": {
+        "main_ingredients": [
+          "The Scalp of a Deep Sea Naga",
+          "The Gastric Pouch of a white-tailed Red Fox"
+        ],
+        "alternative": "A Polymath Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "150 ml of blood from a white-tailed Red Fox",
+          "A pair of eyes from a Deep Sea Naga",
+          "A certificate proving that the concoctor has read 1000 books and passed an assessment",
+          "A piece of new knowledge discovered from ruins, ancient tombs, foreign libraries, etc."
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Mysticism Magister",
+      "potion_overview": "A dark red liquid with brass colored scales rising and sinking.",
+      "formula": {
+        "main_ingredients": [
+          "The brain fluid of a young Brass Dragon or Brass Giant Lizard",
+          "The small intestine of a Shadow Naga"
+        ],
+        "alternative": "A Mysticism Magister Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "3 scales of a young Brass Dragon or Brass Giant Lizard",
+          "120 ml of blood from a Shadow Naga",
+          "1 Mysticism Spell that has been conceived and verified but not yet created",
+          "1 piece of a spell's notes recorded by another person (can be a copy and come from Warlock, Witch, or other Polymath or Mysticism Magister of the White Tower Pathway, etc.)"
+        ]
+      },
+      "advancement_ritual": "Train at least 50 Erudites or 5 Mid Sequence Beyonders who have independently comprehended the Acting Method. The former is the all-rounder polymath direction. The latter is about which pathways of knowledge one is more proficient in depending on which pathways the Beyonders you taught are from.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Prophet",
+      "potion_overview": "A brass-colored liquid with multiple silver-mercury-like whirlpools.",
+      "formula": {
+        "main_ingredients": [
+          "The heart scales of an adult Brass Dragon",
+          "The brass vertical eye of a three-eyed Naga"
+        ],
+        "alternative": "A Prophet Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 ml of blood from an adult Brass Dragon",
+          "1 tooth from a three-eyed Naga",
+          "10 drops of water corroded by the River of Fate or a high sequence of the Fate Pathway",
+          "1 book of prophecy that has been partially confirmed"
+        ]
+      },
+      "advancement_ritual": "Find fragments of information about one's own future in the chaotic, overlapping spacetime of the Spirit World and make them a reality.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Cognizer",
+      "potion_overview": "A brass-colored sanguine liquid that looks as if a miniature spirit world is concealed within.",
+      "formula": {
+        "main_ingredients": [
+          "The Eyes from a Greatwood of Written Doom",
+          "Brain of an ancient Brass Dragon"
+        ],
+        "alternative": "A Cognizer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 ml of sap from a Greatwood of Written Doom",
+          "100 ml of blood from an ancient Brass Dragon",
+          "1 item frequently used by a Knowledge Magister or Sage",
+          "1 remnant from the annihilation of a Demigod-level Spirit World creature"
+        ]
+      },
+      "advancement_ritual": "Analyze either the Flesh and Blood or the Beyonder Characteristics of an Angel from the Hermit Pathway or the Paragon Pathway and grasp at least one-third of the knowledge they contain. Or obtain the blessing of one of them. Can be substituted by a corresponding Sealed Artifact.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Wisdom Angel",
+      "potion_overview": "A viscous, grayish-white liquid with wrinkles everywhere; multiple brass eyes are concealed within the wrinkles.",
+      "formula": {
+        "main_ingredients": [
+          "The Beyonder Characteristic of the 'Dragon of Wisdom' OR The Beyonder Characteristic of the Knowledge Dragon (a certain being from the Second Epoch)"
+        ],
+        "alternative": "A Wisdom Angel Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "150ml of blood from either the Dragon of Wisdom, the Knowledge Dragon, or a Wisdom Angel",
+          "10,000 souls of creatures that helped enlighten the concoctor's wisdom after their natural death",
+          "1,000 heartfelt titles of 'teacher' or 'mentor' from diverse intelligent beings (voice collected and documented in a record)",
+          "A complete grasp of a certain period of history (has to cover at least 100 years, incorporated into the potion in the form of data)"
+        ]
+      },
+      "advancement_ritual": "Use intellect rather than strength to bring down an angel.",
+      "ritual_essence": "It's about establishing a connection with the concept of wisdom in advance.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Omniscient Eye",
+      "potion_overview": "A brass-colored liquid that swirls wildly, forming a vortex that resembles a giant eye.",
+      "formula": {
+        "main_ingredients": [
+          "An Omniscient Eye Beyonder Characteristic"
+        ],
+        "supplementary_ingredients": [
+          "100 ml of a Dark Angel's blood",
+          "100 ml of a Thunder God's blood",
+          "100 ml of an Author's blood",
+          "100 ml of a White Angel's blood",
+          "(Note: All of the ingredients above can be replaced with ones of higher quality)"
+        ]
+      },
+      "advancement_ritual": "Briefly enter a semi-chaotic state, but retain basic consciousness and rationality, and take the potion in that state. The methods include, but are not limited to, the Chaos influence from Demoness, the corruption of the Chaos Sea, and so on.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "White Tower",
+      "potion_overview": "Glimmering white light points that spiral into a giant tower reaching to infinity, each light point seems to contain a book.",
+      "formula": {
+        "main_ingredients": [
+          "The White Tower Uniqueness",
+          "Three Omniscient Eye Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "A tall tower filled with all the knowledge the concoctor possesses, containing relics of a Great Old Ones (relics of a Half Great Old One also count)"
+        ]
+      },
+      "advancement_ritual": "Participate in a calamity brought by an existence beyond Sequence 0 and survive (the conditions are also met by a Sefirah if the ritual performer has the knowledge of the corresponding Sefirah's Great Old One). The principle behind the ritual is the symbolism of 'Knowledge leading to Calamity'.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

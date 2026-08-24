@@ -1,0 +1,208 @@
+{
+  "pathway": "Visionary Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Spectator",
+      "potion_overview": "A sticky silver liquid filled with countless bubbles, creating a serene atmosphere.",
+      "formula": {
+        "main_ingredients": [
+          "A Matured Manhal Fish's Eyeball",
+          "35 milliliters of Goat-Horned Blackfish Blood"
+        ],
+        "alternative": "A Spectator Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Purified Water",
+          "5 drops of Autumn Crocus Essence",
+          "13 grams of Cow Teeth Paeonol Powder",
+          "7 petals of elf flowers"
+        ]
+      },
+      "acting_method": "Whether it is at an extravagant banquet or in a lively street, a Spectator is always just a spectator - they can never take the stage themselves. Spectators do not spy, Spectators should watch openly and honestly from their positions.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Telepathist",
+      "potion_overview": "A liquid exhibiting constantly changing lusters capable of shining into the depths of everyone's hearts.",
+      "formula": {
+        "main_ingredients": [
+          "Rainbow Salamander (Phantom Netherdrake)'s complete pituitary gland",
+          "10 milliliters of a Farsman Rabbit (Half Specter Rabbit)'s spinal fluid"
+        ],
+        "alternative": "A Telepathist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "5 grams of Chestnut Spore",
+          "8 grams of Dragon Tooth Grass Powder",
+          "3 petals of Pure White Elf Flowers",
+          "100 milliliters Purified Water"
+        ]
+      },
+      "acting_method": "Do not abrupt or act against logic and reason.",
+      "consumption_backlash": "They would blank out, with the view around them appearing to be a blur or a haze. This period of backlash would last far longer than Spectator. And after a while, their view before them would clear up significantly."
+    },
+    {
+      "sequence": 7,
+      "name": "Psychiatrist (Psyche Analyst)",
+      "potion_overview": "The slightly golden liquid rippled like a deformed, gigantic pupil, its gaze seeming to penetrate into the depths of anyone's heart. It tastes cool and refreshing, like enjoying delicious ice cream.",
+      "formula": {
+        "main_ingredients": [
+          "The fruit of the Tree of Elders",
+          "A pair of eyes from a Mirror Dragon"
+        ],
+        "alternative": "A Psychiatrist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "50 milliliters of Mirror Dragon's Blood",
+          "15 grams of Tree of Elders Bark Powder",
+          "10 drops of Foxglove essential oil",
+          "9 strands of infant hair"
+        ]
+      },
+      "acting_method": "Help others solve their mental problems. People wear different personality masks when facing different situations and problems.",
+      "consumption_backlash": "Their sense of hearing would suddenly reach out, enough to hear the conversation at the end of the corridor outside the room they're in. They would feel that they would dissolve into an illusory gas and are rapidly expanding. It would fill the entire room, overlapping with a sea formed from everyone's sea of consciousness. Their vision would also change. Everything they see is abnormally smooth, turning into a mirror that reflects their current appearance. Scales would appear growing out of their exposed skin. Their irises would also contract, being dyed with a faint golden colour, as if they had turned vertical like a cat's eye or a dragon's rather. Clearly, they're turning into an inhuman monster. With a hum, their mind began to turn into a blur, as if something was slowly and painfully drilling out from the surface of their body. They would then have to recover their thoughts and try to get themself into a Spectator state. Calming down their undulating emotions quickly, and their spirit would seem to leave their body. Looking down at themself like a spectator. The scales on the surface of their body would visibly recede and their eyes return to normal. It didn't take them long to regain control of their body and understand what Beyonder powers are available to a Psychiatrist and how they are used."
+    },
+    {
+      "sequence": 6,
+      "name": "Hypnotist",
+      "potion_overview": "A translucent, colorless, sticky liquid that resembles a mirror when still, perfectly reflecting its surroundings. When disturbed, tiny whirlpools silently spin beneath its surface. It may bring about brief chill on consumption.",
+      "formula": {
+        "main_ingredients": [
+          "The complete pituitary gland of an adolescent Mind Dragon OR 60 milliliters of a Black-hunting Giant Lizard's spinal fluid",
+          "The fruit of an Illusory Chime Tree"
+        ],
+        "alternative": "A Hypnotist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of blood from an adolescent Mind Dragon (or black-hunt giant lizard)",
+          "3 scales from an adolescent Mind Dragon (or 3 pieces of bark from the Illusory Chime Tree)",
+          "1 belladonna fruit",
+          "A mirror kept in one's own room for over three months"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "After a brief chill, their mind would suddenly feel like exploding. Their body also seems to be contaminated as it turns somewhat incorporeal. At that moment, their Soul Body, Astral Projection, and Ether Body are being absorbed and assimilated by their Body of Heart and Mind. Their entire person is like an amalgamation of pure thoughts that begin churning. They would feel the boundless Sea of Collective Subconscious which connected all living creatures, and they would sense the spirituality sky that stands in contrast. They would experience the sense of alarm and maintain a sliver of lucidity and curb their instinctive urge to fuse into the 'sea'. They would allow their consciousness to spread out in all directions before contracting like a rubber band. Their exposed skin would be convered in scales, and their hair mutated. After an unknown period of time, they would eventually find their inner self and see their appearance. The aforementioned mutations would eventually recede and eventually recover. However, they would find their eyes appear clear, but deep down is a strange bottomless whirlpool. It made it difficult for others to shift their gaze away from them, easily drowning within them. This is a sign of dispersing spirituality."
+    },
+    {
+      "sequence": 5,
+      "name": "Dreamwalker",
+      "potion_overview": "The potion appears to be a liquid dotted with darkened points of grayish-white light. The potion tastes a little sour, a little sweet, a little bitter, a little surreal, and a little stimulating, like a wild dream one could let themselves loose in.",
+      "formula": {
+        "main_ingredients": [
+          "An adult mind dragon's complete brain OR A Dream Catcher's Heart",
+          "A Mind Illusion Crystal"
+        ],
+        "alternative": "A Dreamwalker Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Blood of an Adult Mind Dragon (or 90 milliliters of Blood of a Dream Catcher)",
+          "3 scales of an Adult Mind Dragon (Or 3 grams of Mind Illusion Remnant Dust)",
+          "1 Off-White Dragon's Breath Grass",
+          "3 Treeman leaves"
+        ]
+      },
+      "advancement_ritual": "Seek out a harpy in the Spirit World and sign a contract with it. Then, holding one tail feather, consume the potion amidst intense feelings of either joy or anger.",
+      "ritual_essence": "The entire ritual's essence is to be immersed in a dream and be unwilling to wake up from it. Get pulled out of the dream via an external force, or else you might sleep forever or lose control and turn into a monster. A harpy is needed because it has the ability to give nightmares, it can snap people awake from their dreams. The Harpy can be replaced by something equivalent, for example Audrey used The Fool's Angel's Embrace to remain lucid in the dream instead.",
+      "acting_method": "Come, see, record, but do not interfere, be a Spectator. Proactively walk among the dreams. If you really want to interfere, then be the mastermind and conductor behind the scenes; even if your goal is achieved, no one should notice.",
+      "consumption_backlash": "Before they could feel the effects that the potion exerted on their body, they were suddenly startled before they regained consciousness. They would see scenes of a perfect world, their hopes for the future fulfilled, their ideas fully realised. As for them, it is as if they had become a ruler of this world. They would feel their Astral Projection rise up once again, breaking out of the confines of the hazy world. They would see that their dream is like a huge bubble that grew out from the island of consciousness while silently enveloping it. Deep within it was a silent, undulating, shimmering 'wavy' illusory sea that seemed bottomless. This is the Sea of Collective Subconscious, the scene of a mind world for a Dreamwalker. They would then forcefully escape from their dream."
+    },
+    {
+      "sequence": 4,
+      "name": "Manipulator",
+      "potion_overview": "Countless points of light float within the potion, resembling the manifestation of the Sea of Collective Subconscious. When advancing, one couldn't even process the taste, or feel the potion being gulped down before feeling the backlash.",
+      "formula": {
+        "main_ingredients": [
+          "A complete brain of an Elderly Mind Dragon OR Crystalline heart of a Tree Mentor"
+        ],
+        "alternative": "A Manipulator Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Elderly Mind Dragon blood",
+          "Three pieces of a Tree Mentor's Golden Leaf",
+          "7 different drop of tears from different humans or non-human creatures that were shed due to intense emotion"
+        ]
+      },
+      "advancement_ritual": "In the middle of a grand event with at least 10,000 people, resonate with their emotions, then take the potion.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "They would immediately feel abnormal. They could no longer sense their body. Their entire being seems to have condensed into an idea as they merge into the illusory sea around them. For most of them, this may be the first time directly seeing the Sea of Collective Subconscious without passing through a dream or a mind island. As though they had returned to their mother's embrace before they were born, they would return to the very beginning where the imprints left by human ancestors were washed away by the tides as they crumbled and were influenced. There is fear, madness, and all kinds of terrifying mental corruption. For a moment, they would find it difficult to resist. Their consciousness would fade, and their 'body' shakes as though it is on the brink of melting away. The 'sea' nearby wouldn't be serene. There is a certain degree of undulation, spreading the intense sorrow and pain around. Under such influence, the self-aware them, who are about to be assimilated by the Sea of Collective Subconscious, also began to resonate, generating uncontrollable feelings of the corresponding emotions within them. The emotions spread from one thought to another. Soon, it filled the blob of 'thoughts' that they had mutated into. It would pierce through their Soul Body and pierce their soul. They would finally regain a little of their senses. They have to skillfully Placate themself, constantly giving cues to remove the corruption until they regain their senses. The voice in their ears would become clearer and clearer, louder and louder. Finally, it reverberated through the sea of collective subconscious. They would then split themself into many transparent and illusory bodies and traveled through the Sea of Collective Subconscious and reached the mind islands that represented different people and stepped onto them. In these 'places,' they could clearly see the corresponding emotions coming from different people. And even scenes that caused these emotions. Inevitably, the advancer has completely sympathised with the surrounding people."
+    },
+    {
+      "sequence": 3,
+      "name": "Dream Weaver",
+      "potion_overview": "Dark, mist-like liquid shifting constantly.",
+      "formula": {
+        "main_ingredients": [
+          "The crystalline heart of the Treant King OR The complete brain of a Dream Dragon"
+        ],
+        "alternative": "A Dream Weaver Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Treant King sap (or Dream Dragon blood)",
+          "9 strands of Hair each from 13 Intelligent Beings that died or went insane due to Nightmares",
+          "1 Sapling",
+          "10 drops of Nightmare Grass juice"
+        ]
+      },
+      "advancement_ritual": "Cause at least 100,000 people to have the same dream on the same night.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Discerner",
+      "potion_overview": "A ghastly pale liquid in which illusory vertical eyes repeatedly open and close.",
+      "formula": {
+        "main_ingredients": [
+          "The Pale heart of Ariehogg OR The Pale heart of another Ancient Mind Dragon"
+        ],
+        "alternative": "A Discerner Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90 milliliters of blood from an ancient Mind Dragon or Discerner",
+          "3 self-woven true identities",
+          "9 Black Flowers representing the Deepest, Most Vile, Most Terrifying Parts of the Human Heart",
+          "1 Feather of the Solar Divine Bird (non-tail feather)"
+        ]
+      },
+      "advancement_ritual": "Delve into the subconscious of at least ten thousand humans, uncover their deepest fears, most primal desires, and the root of all their psychological issues, then leave a mark of oneself.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Author",
+      "potion_overview": "A transparent liquid in which countless images of fate and projections of various concepts are precipitated, appearing as tiny points of starlight.",
+      "formula": {
+        "main_ingredients": [
+          "The Quill of Alzuhod"
+        ],
+        "alternative": "An Author Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Muddy Water from the underground Nightmare Swamp (Born under the influence of the 'Chaos Sea', widely present underground—yet approaching it means coming dangerously close to the Chaos Sea, so High Sequence powerhouses cannot personally retrieve it)",
+          "1 Fragment of a 'Meteor' fallen from the Astral World",
+          "9 of the Most Popular Novels or Fairy Tale Books of the Current Era",
+          "One's own depraved nature"
+        ]
+      },
+      "advancement_ritual": "Using real people as characters, write a medium- to long-length novel, and let the actual fates of those real people follow the story's plot to its conclusion, leaving corresponding imprints in both the Spirit World and the River of Fate.",
+      "ritual_essence": "No data available.",
+      "acting_method": "An Author decides how the story unfolds, where the characters go, what the ending is, or whether they can live happily ever after. However, their 'stories' cannot be illogical, otherwise they would disrupt the flow of reading. Therefore, a 'reasonable development' is always unfolding with each person being merely a word to be written under 'Their' pen.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Visionary",
+      "potion_overview": "A golden potion that seems to contain a fantasy world within.",
+      "formula": {
+        "main_ingredients": [
+          "The Visionary Uniqueness",
+          "Three Author Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "A Realm self-created from Fantasy or Dreams (this will later evolve into the Divine Kingdom upon becoming a God)"
+        ]
+      },
+      "advancement_ritual": "Make the development of the times align with one's expectations. Then, consume the potion for advancement when it's at a certain time node in that trend.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

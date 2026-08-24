@@ -1,0 +1,130 @@
+{
+  "pathway": "Sun Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Bard",
+      "abilities": [
+        "Physical Enhancement: Strengthened physical condition.",
+        "Singing: Can imbue effects to themselves and allies through singing, including courage, dispelling Fear, enhancing strength, spiritual recovery, agility, and speed."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Light Suppliant",
+      "abilities": [
+        "Sunshine: Can create Light like the scorching Sun at noon, causing great damage to corpses and ghosts.",
+        "Blessing: Can bless themselves and allies, reducing Fear, Cold, Darkness, and Death effects while enhancing damage towards undead.",
+        "Daytime: Can allow the surrounding ten meters to receive Light.",
+        "Night Vision: Can light two 'miniature Suns' in their eyes to see through Darkness.",
+        "Knowledge (Mysticism): Knowledge of Ritualistic Magic within the Sun Domain.",
+        "Evil Detection: Can sense the presence of undead creatures and evil entities."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Solar High Priest",
+      "abilities": [
+        "Physical Enhancement: Stronger body and considerable resistance against ailments.",
+        "Sun Halo: Can form a golden halo around their head that enhances courage and Purifies evil energies.",
+        "Sun Holy Water: Can imbue ordinary water to turn it into Sun Holy Water that Exorcises Evil Spirits.",
+        "Holy Oath: Can temporarily strengthen strength, agility, fire damage, and holy damage.",
+        "Holy Light Summoning: Can summon a holy beam of Light from the sky to Purify the undead.",
+        "Cleave of Purification: Can imbue physical attacks with Purification effect effective on wraiths.",
+        "Horror Immunity: Can fill the body with warm power making the target no longer feel Fear.",
+        "Fire of Light: Can instantly produce dense, golden, holy Flames at a target location."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Notary",
+      "description": "The effectiveness of their Contracts promoted the development of business, and thus Notaries became an important part of the entire business, As such there were rewards of wealth and status. This is an indirect benefit, which was enviously called 'Fortune' by the Church of the Fool.",
+      "abilities": [
+        "Physical Enhancement: Massive boost in physical attributes.",
+        "Notarization: Can achieve Authentication, Amplification, and Nullification.",
+        "Authentication: Can determine the authenticity of various things such as potion formulas and enforce Contracts.",
+        "Amplification: Can temporarily enhance a targeted Beyonder power by proclaiming 'God says it's effective!'.",
+        "Nullification: Can weaken or forcefully disperse a targeted Beyonder power by proclaiming 'God says it's ineffective!'."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Priest of Light",
+      "description": "A Priest of Light masters various divine Spells in the Sun Domain and can Purify the undead and filthy creatures within a certain range. They are the nemesis of filth and the undead.",
+      "abilities": [
+        "Light of Holiness: Calls forth a pure and blazing hot pillar of Light, extra effective against the undead.",
+        "Purification Halo: Produces a halo-like effect, Purifying all undead and foul creatures within a certain range."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Unshadowed",
+      "abilities": [
+        "Physical Enhancement: Qualitative changes in physique, strength, speed, and agility.",
+        "Intuition: Sharp Intuition that helps know if something has gone wrong.",
+        "Purification: Can directly Purify Degeneration, Corruption, Corrosion, Darkness, Evil, Aliments, and other Domains.",
+        "Unshadowed Domain: Can let a bright blazing Light illuminate every corner in a region, removing all darkness and revealing Concealed objects.",
+        "Flaring Sun: Can call forth a huge ball of pure Light condensed by countless sacred flames.",
+        "Holy Eye: Can infuse power into their eyes to seek out shadows of cold, crimson, or fallen Evil.",
+        "Holy Equipment: Can condense a layer of armor made of pure Light and manifest a Holy Weapon.",
+        "Unshadowed Spear: Can condense an Unshadowed Spear made out of pure Sunlight to strike foes from afar.",
+        "Solar Oath: Can apply various enhancements to oneself and allies within a certain range.",
+        "Pure White Ray: Can condense Light into a scorching and dazzling ray attack.",
+        "Notarization: Massively enhanced Notarization powers.",
+        "Mythical Creature Form: Incomplete Sunbird wreathed in golden flames."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Justice Mentor",
+      "abilities": [
+        "Contract & Order: Forms a set of Justice principles, gaining a portion of the Contract and Order authorities.",
+        "Justice Halo: Within a 10-kilometer radius, actions aligned with their Justice are enhanced while those that violate it are weakened or nullified.",
+        "Judgment of Justice: Can designate a single target, drastically weakening or nullifying powers that violate their Justice principles.",
+        "Holy Contract: Can establish Holy Contracts so binding that even an Angel will not dare break them.",
+        "Unshadowed Domain: Can create a pure, warm, sacred golden light that causes forces of Desolation and Death to retreat.",
+        "Holy Equipment: Can form Holy Armors on allies even if they are not near them.",
+        "Mythical Creature Form: Can listen to prayers within a certain range."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Lightseeker (Sun Chaser)",
+      "abilities": [
+        "Sun & Light: Partial authority over the Sun and Light.",
+        "Solar Envoy: Can transform into a miniature Sun, radiating terrifying Heat and Light while unleashing devastating Purification.",
+        "Praise the Sun: Can bring about absolute Purification, resulting in qualitative enhancement to all aspects.",
+        "Spear of Light: Can summon a blazing pure white Spear of Light with illusory angelic feathers.",
+        "Justice Trial: Can inflict 3 to 5 times the damage of Justice Halo on targets who violated their core Justice principle.",
+        "Mythical Creature Form: Complete Sunbird wreathed in golden flaming feathers."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "White Angel",
+      "abilities": [
+        "Holiness, Order, & Faith: Partial authority over Holiness, Order, and Faith.",
+        "Incarnation of Order: Can draw power from commercial activities and overall Order to alleviate injuries.",
+        "Holy Kingdom: Can create an illusory domain filled with the radiance of the Sun and the power of Purification.",
+        "Servant of Faith: Can enable followers to enter a state of religious fervor, granting temporary immunity to many forms of damage.",
+        "Pure White Light: Can create Pure White Light that causes everything except Pure White and the Sun to fall apart.",
+        "Sun: Can theoretically serve as a Sun to illuminate the world.",
+        "Solar Envoy: Can emit infinite pure Light, as though having suddenly become a Sun descended into reality."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Sun",
+      "abilities": [
+        "Inextinguishable Light: Extremely difficult to fully destroy—even if annihilated, revival is possible.",
+        "Light: Wherever Light exists, they exist, illuminating and destroying everything.",
+        "Order: Positive, self-centered, and exclusive Order that must derive from their previous standard of Justice.",
+        "Contracts: Authority over Contracts, a lesser authority derived from Order.",
+        "Amplification: No longer need to say 'God Says' when utilizing Notarization to enhance abilities.",
+        "Holiness: All dissonance shall be Purified and dispelled; all acts of Holiness enhanced to their highest potential.",
+        "Faith: Lesser authority stemming from Holiness; can use Faith authority to resist a Demoness' Charm.",
+        "Sun: Authority derived from Holiness and Light; can make a blazing Sun appear within a region."
+      ]
+    }
+  ]
+}

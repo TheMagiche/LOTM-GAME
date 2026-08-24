@@ -1,0 +1,212 @@
+{
+  "pathway": "Red Priest Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Hunter",
+      "potion_overview": "A deep red liquid, bubbling as if blood is staining the entire glass. It has a pungent odor of blood that would fill their nostrils.",
+      "formula": {
+        "main_ingredients": [
+          "1 Blood Red Chestnut",
+          "The Crystal of an Activated Marsh"
+        ],
+        "alternative": "A Hunter Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Red Wine",
+          "1 Red Chestnut Flower (can be a specimen or substituted with 10 drops of the corresponding essential oil)",
+          "5 grams of Poplar Tree Leaf Powder",
+          "10 grams of Basil"
+        ]
+      },
+      "acting_method": "Everyone has two identities. One, the prey, and the other, the hunter. Even the weakest hunter is a hunter. It's possible for them to harm stronger prey. Observe the environment, be familiar with the environment, and use the environment. Distinguish what can be eaten in the wild and what can't. Staying calm is crucial. When faced with unexpected prey and no time to prepare, calmness is even more vital.",
+      "consumption_backlash": "They would start to hear things the moment they drink the potion. And for a brief while, enough to set down the mug or cup. A searing pain rips through their body. It is so intense that it would make one wonder if they have swallowed a ball of fire. The flames seem to burn through their esophagus, stomach, heart, lungs, intestines, and blood vessels all at once. At the same time, a strong scent of blood wafts up from their throat. The pain and burning come in waves, but they quickly begin to recede. The writhing of their flesh and blood vanished like an illusion. The excruciating pain, the burning sensation, and the metallic scent of blood dissipates, leaves them gasping for cold air as they regain control of their body."
+    },
+    {
+      "sequence": 8,
+      "name": "Provoker",
+      "potion_overview": "A pitch-black, viscous liquor with a nauseating taste and a pungent stench. Just seeing this potion evokes an urge to throw it away and stomp on it. It is foul and pungent.",
+      "formula": {
+        "main_ingredients": [
+          "The Rootstock of an Evil Corpse Lily Cluster",
+          "The Tongue of a Cuspids Parrot"
+        ],
+        "alternative": "A Provoker Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "50 milliliters of Distilled Liquor",
+          "10 drops of Honeysuckle Extract",
+          "5 grams of Grapevine Powder",
+          "10 grams of Aqua Fern Grass Powder"
+        ]
+      },
+      "acting_method": "Grasp a lot of information and rumors, and also understand the provocation target. Only by doing this will you be able to make him lose his mind and cause his brain to be burnt out with a single sentence. Simple provocation isn't doing much for the potion's digestion. Remember that Provocation is only a tool. A means to an end, and not the end itself. Provoke someone stronger, a higher being, or even fate itself.",
+      "consumption_backlash": "After a brief moment, enough to set down their mug or cup. They would immediately feel their insides grow heavy, as if plummeting. Their breaths become heated, their emotions veering wildly between anger, sorrow, frustration, and exhilaration. They would endure the scorching, tearing sensation and the illusion of losing control. They would feel like a tiny vessel in a tempest, battered by waves and gales. Powerless, but not yet submerged. After what felt like an eternity, the pain begins to ebb as the bloodthirsty, insane thoughts recede from their consciousness."
+    },
+    {
+      "sequence": 7,
+      "name": "Pyromaniac (Fire Mage)",
+      "potion_overview": "A yellowish liquid with red bubbles floating on it, with a 'heart' at its center surrounded by a mist of blood. When drinking it, it burns from their mouth, down their esophagus, into their stomach, and sears into their heart.",
+      "formula": {
+        "main_ingredients": [
+          "A Fire Salamander Gland",
+          "A Magma Elf Core"
+        ],
+        "alternative": "A Pyromaniac Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "50 milliliters of Fire Salamander blood",
+          "10 grams of Magma Pyroxene Powder",
+          "10 grams of Redcrown Balsam Powder",
+          "10 drops of Sun Star extract"
+        ]
+      },
+      "acting_method": "Pyromaniacs not only ignite matter but also the mind and society. Pyromaniacs aren't arsonists. Only by daring to set themselves ablaze can they set others ablaze. Flames aren't just lethal; they can also be used as deterrence, intimidation, and a signal. It is necessary for Pyromaniacs to combine their flames with traps. The Pyromaniac wreaked havoc and caused utter catastrophe. As for Pyromaniacs, they could willingly unleash disaster and destruction upon anyone.",
+      "consumption_backlash": "Instantaneously, they would feel an inferno raging within them. The scorching agony searing through their body and soul, engulfing them completely. Gradually, the agony becomes unbearable, and their body begins to bend. The scent of singed flesh fills their nostrils. The spot they touch promptly blackens and chars. Their mouths would expel searing gas."
+    },
+    {
+      "sequence": 6,
+      "name": "Conspirer",
+      "potion_overview": "Iron-black, with a large amount of reddish rust floating on it. The potion has a strong rusty taste, cold like a serpent slithering in the darkness, slippery and icy.",
+      "formula": {
+        "main_ingredients": [
+          "A Black Hunting Spider Composite Eyes",
+          "A Sphinx Brain"
+        ],
+        "alternative": "A Conspirer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "1 Black Hunting Spider's Poison Gland",
+          "80 milliliters of Sphinx Blood",
+          "10 grams of Amber Powder",
+          "2 White Oak Fruits"
+        ]
+      },
+      "acting_method": "A Conspirer's core lay in their intelligence, not superpowers. The key to a conspiracy lay in concealing one's true motives. One of the keys to a conspiracy is information. A good Conspirer must be adept at exploiting information gaps and even take the initiative to create information gaps.",
+      "consumption_backlash": "Their body wouldn't burn as it had before, unlike with the previous sequences. Instead, they feel a chilling sensation, as if all the flames are absorbed by the potion. Simultaneously, their head throbbed with a familiar pain, and their vision quickly blurs. All the thoughts and information they knew materialises, intertwining in the form of miniature pictures, forming layers of interconnected spiderwebs. This tears their minds apart. Echoing in their ears are accompanied by violent and frenzied emotions. Finally, the inferno reaches them. This time, it converged within their mind, unreal and illusory. The entire ordeal lasted only 20 to 30 seconds."
+    },
+    {
+      "sequence": 5,
+      "name": "Reaper",
+      "potion_overview": "Fresh red blood with specks of black, iron-fillings-like matter floating in it, as though an iron weapon had shattered inside. It has a pungent smell of blood. There is an unfamiliar taste of rust. And there's burning sensation that instantly fills their mouth and pierces their brain on consumption.",
+      "formula": {
+        "main_ingredients": [
+          "Gray Demonic Wolf's Front Claws",
+          "Forest Hunter's Tongue"
+        ],
+        "alternative": "A Reaper Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 80 milliliters of Gray Demonic Wolf's blood OR The Reaper Beyonder Characteristic's predecessor's blood",
+          "Choose one of: 2 fangs of the Forest Hunter OR The Reaper Beyonder Characteristic's predecessor's 2 teeth",
+          "10 drops of Colorful Bearded Horned Lizard Venom",
+          "10 drops of Hornbeam Essential Oils"
+        ]
+      },
+      "advancement_ritual": "Plan and execute a successful capture of a target with a Sequence higher than your own. Flaunt the completed conspiracy before them, and consume the potion as they witness your victory, filled with fear and despair. Note: The increased number and higher Sequence of the captured targets and the greater their fear, regret, and anger, the more potent the ritual's effect.",
+      "ritual_essence": "No data available.",
+      "acting_method": "Culling is about destroying the target and reaping a harvest for yourself.",
+      "consumption_backlash": "It feels like being caught in a chaotic war, constantly facing blades, firearms, and relentless enemy assaults. Wounds appear all over their body, throbbing with pain. In this state, they would be conscious in what seems like a tangible, yet imaginary scenario. Fireballs, Fire Ravens, and blazing white spears shatters, tears through, or impales the enemies, turning them into torches that illuminate the battlefield. After an unknown span of time, they would feel their strength waning, their spiritual energy on the brink of exhaustion. In that moment, a colossal figure materializes before them, radiating a formidable and intimidating aura. Despite their weakening state, they would sense the colossal figure's fear, hatred, and frustration. They would notice that this colossal figure would be afraid of them. And finish this figure off. Afterwards, they would shake off the daze and find themself to where they in. Sweat dripped from their body, bursting into crimson sparks. Eventually, the sweat returns to normal."
+    },
+    {
+      "sequence": 4,
+      "name": "Iron-blooded Knight",
+      "potion_overview": "Like molten iron, blazing red, high temperature, and vivid.",
+      "formula": {
+        "main_ingredients": [
+          "A Magma Giant's core",
+          "A Stone of Catastrophe"
+        ],
+        "alternative": "An Iron-blooded Knight Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of boiling magma",
+          "20 grams of flora powder corrupted by a Stone of Catastrophe",
+          "20 grams of soil soaked in soldier's blood from a large battlefield",
+          "1 acorn"
+        ]
+      },
+      "advancement_ritual": "Form a team of at least thirty people, cultivate a deep friendship with them, make them strong one after another. The higher the strength and tacit understanding of the team, the better the effect of the ritual.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "War Bishop",
+      "potion_overview": "Half red, half black, with light constantly flickering between the two.",
+      "formula": {
+        "main_ingredients": [
+          "Heart of a Bipolar Centaur",
+          "Core of a War Comet"
+        ],
+        "alternative": "A War Bishop Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Bipolar Centaur Blood",
+          "War Comet Fragments",
+          "1 Blood Tudor Iris",
+          "8 gram of Flame Giant Tree bark"
+        ]
+      },
+      "advancement_ritual": "Lead your own team to defeat a powerful enemy force in a war. Note 1: The imminent atmosphere of war will attract comets symbolizing war through the spirit world. They will streak across the night sky bringing revelations, but among such comets, those with corporeal substance that can enter the real world are limited in number. Note 2: In the advancement ritual, the stronger the enemy force, the better the ritual's effect.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Weather Warlock",
+      "potion_overview": "A formed, purplish liquid that burns.",
+      "formula": {
+        "main_ingredients": [
+          "Skull of a Weather Giant",
+          "Core of a Mist Jellyfish"
+        ],
+        "alternative": "A Weather Warlock Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "30 milliliters of blood each from three deceased individuals who died in different extreme weather conditions",
+          "500 strands of a Weather Giant's hair",
+          "Five Mist Jellyfish Crystals",
+          "A segment of a tree branch struck by lightning",
+          "20 milliliters of the first snow melt of a region each year"
+        ]
+      },
+      "advancement_ritual": "Forcefully change the weather of a region without external aid in a very short time.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "Their entire being, and if they are switching from Unaging, their mirror self as well, would be instantly set ablaze. Dense, dark clouds gathered in the sky, real lightning and hail coalescing and drawn to their state, striking them. Lightning struck, sharp hail pelted down—various extreme weather phenomena assaulted the still-burning them in small bursts, tearing and ravaging them. They would feel excruciating pain in their body, mind, and spirit, their thoughts growing increasingly hazy, as if about to dissipate into this area, this Spirit World. Right after performing the ritual, the Spirit World's information of the area had not yet fully changed, still partially corresponding to the typhoon. There was a rapid influx of information about them relying on their own abilities to change the weather, creating an extremely strong connection between them, this area, and the corresponding Spirit World. This area, this Spirit World, resisted the fusion of their spirit and consciousness, because they were the destroyer, the changer—they would inevitably be rejected in the short term. At this moment, their blurry mind would hear voices—coming from their Anchors. Their body tears apart, shattering, turning to ash, including their mirror self and the them slumbering within the mirror if they are a Unaging. The next moment, a wavering, violet-tinged blue flame ignited amidst the remnant ashes. This flame rapidly expanded and intensified, forging within it black iron bones, an indescribable tangle of complex symbols and patterns. They would gradually form their complete Mythical Creature Form at this moment. Their body will then rapidly shrink, the violet-tinged blue flames on its surface dissipating. Returning to their human form, now male if they were female, exuding a powerful, masculine aura."
+    },
+    {
+      "sequence": 1,
+      "name": "Conqueror",
+      "potion_overview": "A dazzling, blazing purple sphere of light in the shape of a crown.",
+      "formula": {
+        "main_ingredients": [
+          "A Conqueror Beyonder Characteristic"
+        ],
+        "supplementary_ingredients": [
+          "90 milliliters of blood from a Conqueror or contaminated liquid from a Conqueror Beyonder Characteristic",
+          "A genuine crown",
+          "A drop of fingertip blood from each member of one's own team",
+          "Nine heads of powerful enemies (at least Sequence 4 in status)"
+        ]
+      },
+      "advancement_ritual": "Conquer a nation with a population of more than 30 million inhabitants, making all beings there fear, obey, and revere you.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Red Priest",
+      "potion_overview": "A crimson pillar wreathed in formless flames.",
+      "formula": {
+        "main_ingredients": [
+          "The Red Priest Uniqueness",
+          "Three Conqueror Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "One's own nation's deep projection within the Mirror World"
+        ]
+      },
+      "advancement_ritual": "Wage a war that sweeps an entire continent and gain sufficient victories.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

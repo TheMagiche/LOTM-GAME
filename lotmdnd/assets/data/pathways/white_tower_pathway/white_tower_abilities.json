@@ -1,0 +1,106 @@
+{
+  "pathway": "White Tower Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Reader",
+      "abilities": [
+        "Enhanced Mental Attributes: Enhanced memory, comprehension, and learning abilities.",
+        "Knowledge Addiction: Unusual desire for Knowledge.",
+        "Reading: Gain a wealth of Knowledge through extensive Reading.",
+        "Ritualistic Magic: Gain the ability to use Ritualistic Magic."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Student of Ratiocination",
+      "abilities": [
+        "Enhanced Mental Attributes: Increase in observational and logical reasoning skills.",
+        "Ritualistic Magic: Experts in Ritualistic Magic."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Detective (Knowledge Keeper)",
+      "description": "A Detective is a 'profession' that focuses on knowledge acquisition and reasoning ability, along with good fighting and weapon handling skills.",
+      "abilities": [
+        "Enhanced Mental Attributes: Can become Masters of reasoning.",
+        "Weapon Proficiency: Proficient in using weapons.",
+        "Physical Enhancement: Have become more agile.",
+        "Reconstruction: Can use Beyonder methods to analyze and Reconstruct events that have occurred within a certain area.",
+        "Ritualistic Magic Master: Can become a Master when it comes to Ritualistic Magic."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Polymath",
+      "description": "This Sequence allows them to learn and understand a great deal. Because of their extensive knowledge, they become Jack-of-all-trades, able to identify, see clearly, remember, and Imitate abilities they've encountered.",
+      "abilities": [
+        "Analysis: Can Analyze Beyonder powers used by an opponent, identify the specific situation, and understand strengths and weaknesses.",
+        "Imitation: Once sufficiently Analyzed, there is a chance to Imitate an Analyzed ability to a certain extent."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Mysticism Magister",
+      "abilities": [
+        "Mystic Arts: Masters various magical, diverse, unique, and rare Mystic Arts, and can even invent their own strange yet effective Spells.",
+        "Imitation: Imitated Spells can now have 60% of the original effect.",
+        "Invisibility: Can make themselves or others turn transparent and faint."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Prophet",
+      "description": "They begin to master higher levels of Mystical knowledge in the realm of Fate, thereby gaining the ability of 'Prophecy'.",
+      "abilities": [
+        "Physical Enhancement: Gain the physical power of a Demigod.",
+        "Prophecy: Can get a relatively clear view of the most likely scenarios to happen in the future.",
+        "Astral World Mystic Arts: Can acquire some non-dangerous Astral World Knowledge and create Mystic Arts that utilize Astral World power.",
+        "Imitation: Imitation of Spells is at 80% potency of the original effects.",
+        "Analyze: Can discern Beyonders from ordinary people and decipher secrets hidden within a Seal.",
+        "Mystic Arts: Enhanced ability to create various Mystic Arts."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Cognizer",
+      "abilities": [
+        "Principles: Gain partial authority over Principles.",
+        "Cognizing: Ability to understand the rules of the world and grasp many profound mysteries; can see through and Analyze symbols and use them to create Spells."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Wisdom Angel",
+      "abilities": [
+        "Wisdom: Always make the most correct choices at the right time due to ability to accurately foresee shifts in situations.",
+        "Imitation: Imitated abilities and Spell effects can reach 90% of the original's potency.",
+        "Can see the target's strengths and weaknesses, as well as unravel the mysteries, weaknesses, or flaws of the observed object."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Omniscient Eye",
+      "abilities": [
+        "Omniscience: Can see the information about anyone and anything, regardless of whether it pertains to knowledge about a target's past, present, or future.",
+        "Astral World Mentor: Can manipulate Astral World concepts to render certain actions ineffective, cause errors, or amplify their impact.",
+        "Imitation: Imitated abilities and Spell potency are now 100% identical to the original, but does not involve authority."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "White Tower",
+      "abilities": [
+        "Omniscience: Has Omniscience over all things, unaffected by the Spirit World; can Imitate any ability, achieving the original's power, or even optimize and surpass it.",
+        "Principles: Can 'open source' Spells to be used by ordinary people.",
+        "Astral World Ladder: Can influence the concept of Astral World convergence.",
+        "Creation: Partial authority over Creation.",
+        "Calamity: Partial authority over Calamity.",
+        "Wisdom: Partial authority over Wisdom.",
+        "Learning: Partial authority over Learning.",
+        "Analysis: Partial authority over Analysis."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "churches": [
+    {
+      "name": "Church of the Ancient Sun God",
+      "god_worshiped": "Ancient Sun God",
+      "pathways": [
+        "Sun Pathway",
+        "Tyrant Pathway",
+        "White Tower Pathway",
+        "Hanged Man Pathway",
+        "Visionary Pathway",
+        "All Pathways"
+      ],
+      "domain": "Eastern Continent, Northern Continent, Southern Continent",
+      "beyonder_teams": [
+        "Unnamed Ascetic Group of Snowman",
+        "Certainly more"
+      ],
+      "hierarchy": {
+        "leader": "Unknown",
+        "clergy_attire": "Spartan white robe (when alive in Groselle's Travels) or simple white robe (in the dream)"
+      },
+      "founded_in": "Second Epoch",
+      "extra_details": "The only orthodox church of the Third Epoch, but existed for some time in the Second Epoch along with repressed humans."
+    },
+    {
+      "name": "Church of the Evernight Goddess",
+      "also_called": "Church of Evernight",
+      "god_worshiped": "Evernight Goddess",
+      "pathways": [
+        "Darkness Pathway (Complete)",
+        "Death Pathway (Complete or Incomplete)",
+        "Twilight Giant Pathway (Complete or Incomplete)",
+        "Fool Pathway (Incomplete, to Sequence 3)",
+        "Hermit Pathway (Incomplete, to at least Sequence 9)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Loen Kingdom, East Balam",
+      "beyonder_teams": [
+        "Nighthawks",
+        "Red Gloves"
+      ],
+      "hierarchy": {
+        "leader": "Pope (教宗)",
+        "headquarters": "Cathedral of Serenity, Winter County, Loen Kingdom",
+        "upper_echelon": "Thirteen Archbishops and Nine High-ranking Deacons",
+        "clergy_attire": "Black color with red/silver marks. Red was discarded after 'She' was no longer the 'Lady of Crimson'."
+      },
+      "founded_in": "Third Epoch",
+      "extra_details": "Officially founded after the Cataclysm at the end of the Third Epoch, but existed earlier as one of the earliest Secret Organizations. Merged with the Church of the God of Combat and the Church of Death to form the Church of the Eternal Darkness after The Apocalypse."
+    },
+    {
+      "name": "Church of the God of Combat",
+      "also_called": "Church of Combat",
+      "god_worshiped": "God of Combat (Later taken by the Church of the Evernight Goddess)",
+      "pathways": [
+        "Twilight Giant Pathway (Complete)",
+        "Darkness Pathway (Incomplete)",
+        "Death Pathway (Incomplete)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Feysac Empire, Sonia Island, Gargas Archipelago, East Balam, West Balam (Limited)",
+      "beyonder_teams": [],
+      "hierarchy": {
+        "leader": "Chief Shepherd (大牧首)",
+        "headquarters": "Great Twilight Hall near Saint Millom, Feysac Empire (The Midseashire)",
+        "clergy_attire": "Black color with white marks, but a square hat for the Chief Shepherd"
+      },
+      "founded_in": "Third Epoch",
+      "extra_details": "Officially founded after the Cataclysm at the end of the Third Epoch, likely existed earlier as one of the earliest Secret Organizations. Merged with the Church of the Evernight Goddess and the Church of Death to form the Church of the Eternal Darkness after The Apocalypse."
+    },
+    {
+      "name": "Church of the Earth Mother",
+      "also_called": "Church of Earth",
+      "god_worshiped": "Earth Mother (Former)",
+      "pathways": [
+        "Mother Pathway (Complete)",
+        "Moon Pathway (Complete)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Feynapotter Kingdom, Loen Kingdom (Limited)",
+      "beyonder_teams": [
+        "Fertility Order"
+      ],
+      "hierarchy": {
+        "leader": "Matriarch (主母)",
+        "headquarters": "Unknown",
+        "clergy_attire": "Brown color with green marks"
+      },
+      "founded_in": "Third Epoch",
+      "extra_details": "Officially founded after the Cataclysm at the end of the Third Epoch, likely existed earlier as a Secret Organization. Became a secondary religious choice with limited influence after The Apocalypse."
+    },
+    {
+      "name": "Church of the Lord of Storms",
+      "also_called": "Church of Storms, Tyrant's Church",
+      "god_worshiped": "Lord of Storms (Former)",
+      "pathways": [
+        "Tyrant Pathway (Complete)",
+        "Visionary Pathway (Incomplete, to at least Sequence 7)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Loen Kingdom, East Balam, Rorsted Archipelago, Sonia Sea",
+      "beyonder_teams": [
+        "Mandated Punishers"
+      ],
+      "hierarchy": {
+        "leader": "Pontiff (教皇)",
+        "headquarters": "Chasm of Storms Cathedral, Pasu Island (formerly Backlund), Sonia Sea",
+        "upper_echelon": "Council of Cardinals",
+        "clergy_attire": "Dark blue color with white marks"
+      },
+      "founded_in": "Fourth Epoch",
+      "extra_details": "Founded after the Cataclysm at the end of the Third Epoch. Claimed to be one of the earliest Orthodox Churches. Became a secondary religious choice with limited influence after The Apocalypse."
+    },
+    {
+      "name": "Church of the God of Knowledge and Wisdom",
+      "also_called": "Church of Knowledge",
+      "god_worshiped": "God of Knowledge and Wisdom",
+      "pathways": [
+        "White Tower Pathway (Complete)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Lenburg, Segar, Masin",
+      "beyonder_teams": [],
+      "hierarchy": {
+        "leader": "Unknown",
+        "headquarters": "Unknown",
+        "clergy_attire": "White color with brass marks"
+      },
+      "founded_in": "Fourth Epoch",
+      "extra_details": "Founded after the Cataclysm at the end of the Third Epoch. Claimed to be one of the earliest Orthodox Churches. Became a secondary religious choice with limited influence after The Apocalypse."
+    },
+    {
+      "name": "Church of the Eternal Blazing Sun",
+      "also_called": "Church of Sun",
+      "god_worshiped": "Eternal Blazing Sun (Later taken by Adam)",
+      "pathways": [
+        "Sun Pathway (Complete)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Intis Republic, West Balam",
+      "beyonder_teams": [
+        "Inquisition"
+      ],
+      "hierarchy": {
+        "leader": "Pope (教宗)",
+        "headquarters": "Unknown",
+        "clergy_attire": "White/brown color with gold marks"
+      },
+      "founded_in": "Fourth Epoch",
+      "extra_details": "Founded after the Cataclysm at the end of the Third Epoch. Claimed to be one of the earliest Orthodox Churches. Became a secondary religious choice with limited influence after The Apocalypse."
+    },
+    {
+      "name": "Church of the God of Steam and Machinery",
+      "also_called": "Church of Steam",
+      "god_worshiped": "God of Steam and Machinery",
+      "pathways": [
+        "Paragon Pathway (Complete)",
+        "Hermit Pathway (Incomplete)",
+        "Other incomplete pathways"
+      ],
+      "domain": "Loen Kingdom (Limited), Intis Republic",
+      "beyonder_teams": [
+        "Machinery Hivemind"
+      ],
+      "hierarchy": {
+        "leader": "Unknown",
+        "headquarters": "Unknown",
+        "upper_echelon": "Divine Council",
+        "clergy_attire": "White color with beige marks"
+      },
+      "founded_in": "Fourth Epoch",
+      "extra_details": "Officially founded in the late Fourth Epoch, but existed earlier as a Secret Organization. Maintained its former influence post-Apocalypse."
+    },
+    {
+      "name": "Church of the Fool",
+      "also_called": "The Fool's Church",
+      "god_worshiped": "The Fool",
+      "pathways": [
+        "Abraham Family: Door Pathway (Complete)",
+        "Rose School of Thought Temperance Faction: Chained Pathway (Incomplete, to at least Sequence 1)",
+        "City of Silver: Twilight Giant Pathway (Incomplete, to at least Sequence 2), Death Pathway (Incomplete, to at least Sequence 2), Hanged Man Pathway (Incomplete, to at least Sequence 2), Sun Pathway (Incomplete, to at least Sequence 2)",
+        "Moon City: Darkness Pathway (Incomplete, to at least Sequence 2)",
+        "Red Priest Pathway (Complete)",
+        "Justiciar Pathway (Incomplete, to at least Sequence 2)",
+        "Other complete and incomplete pathways"
+      ],
+      "domain": "Rorsted Archipelago (Main), Southern Continent, Loen Kingdom, Intis Republic (Limited)",
+      "beyonder_teams": [],
+      "hierarchy": {
+        "leader": "Unknown",
+        "headquarters": "The Fool's Cathedral, New City of Silver (formerly Bayam), Rorsted Archipelago",
+        "clergy_attire": "Loen gentleman's black formal suit (a finely tailored black trench coat and a half top hat)"
+      },
+      "founded_in": "Fifth Epoch",
+      "extra_details": "Founded in year 1352 of the Fifth Epoch and acknowledged by all other Orthodox Churches."
+    },
+    {
+      "name": "Church of the Eternal Darkness",
+      "god_worshiped": "Eternal Darkness",
+      "pathways": [
+        "Darkness Pathway",
+        "Twilight Giant Pathway",
+        "Death Pathway"
+      ],
+      "domain": "Loen Kingdom (Main), Feysac Empire, Southern Continent",
+      "beyonder_teams": [],
+      "hierarchy": {
+        "leader": "Unknown",
+        "headquarters": "Unknown",
+        "clergy_attire": "Unknown"
+      },
+      "founded_in": "Fifth Epoch",
+      "extra_details": "Founded in year 1360 of the Fifth Epoch, created from the merger of three Eternal Darkness group pathways' organizations: Evernight, God of Combat, and Death."
+    },
+    {
+      "name": "Church of the Ruler of Calamity",
+      "god_worshiped": "Ruler of Calamity",
+      "pathways": [
+        "Red Priest Pathway",
+        "Demoness Pathway"
+      ],
+      "domain": "Intis Republic (Main)",
+      "beyonder_teams": [],
+      "hierarchy": {
+        "leader": "Unknown",
+        "headquarters": "Unknown",
+        "clergy_attire": "Unknown"
+      },
+      "founded_in": "Fifth Epoch",
+      "extra_details": "Founded in year 1360 of the Fifth Epoch, created from the merger of the Sick Church and Demoness Sect."
+    }
+  ],
+  "relationship_between_churches": {
+    "enmity_reason": "Driven by the Above the Sequence in-group rivalry. The fall of all adjacent pathways' gods is necessary for the rise of a Great Old One.",
+    "jurisdiction": "In the Loen Kingdom that featured polytheism, the principle of jurisdiction over Beyonder events was first to divide them according to the beliefs of the victims. If they involved followers of multiple deities, then it would be decided according to who held jurisdiction over the area.",
+    "specific_relationships": {
+      "Church of the Eternal Blazing Sun": "Poor relationship with Church of the Lord of Storms and Church of the God of Knowledge and Wisdom. They see each other as enemies.",
+      "Church of the Lord of Storms": "Poor relationship with Church of the Eternal Blazing Sun and Church of the God of Knowledge and Wisdom. They see each other as enemies.",
+      "Church of the God of Knowledge and Wisdom": "Poor relationship with Church of the Eternal Blazing Sun and Church of the Lord of Storms. They see each other as enemies.",
+      "Church of the Evernight Goddess": "At odds with the Church of the God of Combat from the Feysac Empire."
+    }
+  },
+  "gender_roles_perspectives": {
+    "Church of the Earth Mother": "Similar to the Church of the Evernight Goddess, believes women should have the same standing as men. Places more emphasis on reproduction, treating it as the holiest matter.",
+    "Church of the Evernight Goddess": "Believes women should have the same standing as men.",
+    "Church of the Lord of Storms": "Most biased towards men.",
+    "Church of the God of Combat": "Most biased towards men.",
+    "Church of the Eternal Blazing Sun": "Next biased towards men, but has high-ranking women and at least one female Angel.",
+    "Church of the God of Knowledge and Wisdom": "Discriminates based on intelligence, different from other Churches.",
+    "Church of the God of Steam and Machinery": "Neutral, has worked with the Church of the Evernight Goddess to encourage women to work due to industrial labor needs."
+  },
+  "powers_and_artifacts": {
+    "sealed_artifact_grading": {
+      "Grade 0": "Angels level",
+      "Grade 1": "Saints",
+      "Grade 2": "Mid-Sequences",
+      "Grade 3": "Low-Sequences"
+    },
+    "information_exchange": "The Seven Orthodox Churches formed a uniform naming convention for Sealed Artifacts. They exchange information regarding Grade 0 and Grade 1, telling each other which ones they possess, so code names won't be repeated. Grade 2 and Grade 3 are arranged by respective churches.",
+    "church_assets": {
+      "orthodox_churches": "Own 5 to 8 Grade 0 Sealed Artifacts, and fewer than 4 grounded Angels in each church.",
+      "church_of_the_fool_1352": "City of Silver: A Sequence 3 saint, three Sequence 4 saints, nearly ten Grade 1 Sealed Artifacts, and a few demigod Beyonder characteristics. Moon City: Three demigods, five Grade 1 Sealed Artifacts. Combined equivalent to a quarter of the Church of Storms. The Church of Storms has around 20 Saints."
+    }
+  },
+  "hierarchy_positions": {
+    "Patriarch": "Leader of the Church.",
+    "Pope (教宗)": "Leader of Church of the Evernight Goddess and Church of the Eternal Blazing Sun.",
+    "Pontiff (教皇)": "Leader of Church of the Lord of Storms and Church of the Sea God.",
+    "Matriarch (主母)": "Leader of Church of the Earth Mother.",
+    "Chief Shepherd (大牧首)": "Leader of Church of the God of Combat.",
+    "Cardinals": "Advisers to the Patriarch and electors of the next Patriarch.",
+    "Archbishops": "Responsible for overseeing multiple dioceses.",
+    "Bishops": "Responsible for overseeing a single diocese.",
+    "Priests": "Serve as spiritual leaders of individual parishes.",
+    "Deacons": "Assist priests in their duties.",
+    "High-ranking Deacons": "Sequence 4 and higher Beyonders loyal to the Church.",
+    "Laity": "Believers, all members not ordained."
+  },
+  "trivia": {
+    "address_respect": "In various Churches, if a demigod at the angel level walked the land, they are addressed as 'Your Eminence'. Towards the pontiff, pope, and chief shepherd - representatives of the deities - one uses 'Your Holiness'.",
+    "rose_school_of_thought": "Formerly an orthodox organization in the Southern Continent, ruling the Paz Valley and Star Highlands where the government and church were one."
+  }
+}

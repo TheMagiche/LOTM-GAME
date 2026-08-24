@@ -1,0 +1,428 @@
+{
+    "items": [
+      {
+        "code": "Unknown",
+        "name": "Harris Rapier",
+        "appearance": "A thin, iron-black rapier.",
+        "function": "Absolute Destruction",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "2-37",
+        "name": "Dream of Eternity",
+        "appearance": "A dark heart.",
+        "function": "Can pull multiple people into the same dream.",
+        "downside": "Using it at its maximum range leaves the user with strong mental trauma.",
+        "status": ""
+      },
+      {
+        "code": "2-247",
+        "name": "Pride Armor",
+        "appearance": "A silver-white full-body armor.",
+        "function": "Grants the user abilities of a Dawn Paladin",
+        "downside": "1. Wearer hold disdain for those standing behind them and targets concealed in the darkness or invisible. They may attack them.\n2. It indiscriminately eliminates weak humans within a 50-meter radius. Should the wearer weaken, they too become a target.\n3. The wearer of the armor eventually experiences varying degrees of betrayal, irrespective of whether they still wear the item.\n4. The wearer is vulnerable to its attacks when using other mystical items.",
+        "status": ""
+      },
+      {
+        "code": "2-217",
+        "name": "Tanago Scarecrow",
+        "appearance": "A scarecrow, parts of it were made of brownish-green straw, but its arms, chest, and thighs were covered in real skin.",
+        "function": "Erases people within 30-meter radius.",
+        "downside": "Affects the user as well.",
+        "status": ""
+      },
+      {
+        "code": "2-166",
+        "name": "2-166",
+        "appearance": "A golden box engraved with symbols and magic labels.",
+        "function": "Maintains the internal temperature inside the box.",
+        "downside": "1. Long contact turns the person into Eternal Blazing Sun believer.\n2. Objects placed inside will develop sentience.",
+        "status": ""
+      },
+      {
+        "code": "2-105",
+        "name": "Blood Vessel Thief",
+        "appearance": "A thick, stiffened blood vessel.",
+        "function": "Can steal abilities and let the user use them for 10 minutes, the stolen would need a few days to recover it.",
+        "downside": "Drains the user's lifespan.",
+        "status": ""
+      },
+      {
+        "code": "2-081",
+        "name": "2-081",
+        "appearance": "A ring inlaid with many tiny diamonds.",
+        "function": "Imitates Beyonder abilities the user has seen, identifies abilities and items.",
+        "downside": "Overworks the user's brain, leading to retardation if used for too long.",
+        "status": ""
+      },
+      {
+        "code": "2-078",
+        "name": "Door of Death",
+        "appearance": "Normally a normal wooden door. It can disguise itself into pre-existing doors.",
+        "function": "Kills whoever walks through.",
+        "downside": "Tries to escape and disguise itself as a normal door.",
+        "status": ""
+      },
+      {
+        "code": "2-049",
+        "name": "Antigonus Family Puppet",
+        "appearance": "A puppet covered in an oil-stained brown cloth, its face is painted like a clown in red and yellow.",
+        "function": "Slows people nearby down, physically and mentally.",
+        "downside": "Affects everybody, including the user.",
+        "status": ""
+      },
+      {
+        "code": "2-030",
+        "name": "Inexhaustible Poison",
+        "appearance": "A silver cup filled with a crystal-clear liquid.",
+        "function": "Tempts and kills the drinker.",
+        "downside": "Affects everyone around it including the user.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Wintry Blade",
+        "appearance": "A transparent, nearly invisible triangular blade.",
+        "function": "Freezes the body and thoughts of those pierced by it. Turns thoughts and movements of enemies sluggish and rigid.",
+        "downside": "Slowly losing body temperature. Once the limit is exceeded (3 or 4 hours), the holder turn into an undead.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Word of the Sea",
+        "appearance": "A black silver-inlaid cane.",
+        "function": "The holder can use lightning, wind, water, acid rain, underwater breathing, and flight.",
+        "downside": "Sings dangerous songs, living artifact that attacks the user, and attracts lightning.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Gargoyle Glasses",
+        "appearance": "Grayish-white glasses.",
+        "function": "Making people turn numb.",
+        "downside": "The user loses agility, user can become numb if used in front of the mirror.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Hand of Horror",
+        "appearance": "A long black glove made of gauze.",
+        "function": "1. Charm Bribe: By giving the target an item, the target will have positive emotions toward the user.\n2. Distortion: By twisting the words, actions, and intentions of their target, they can produce \"order.\"\n3. Confusion: They can make the target or a specific location \"confused.\"\n4. Majesty: They can display a sense of great majesty, causing others to want to lower their bodies and obey them.",
+        "downside": "The user becomes dishonest and corrupt.\nThe user becomes confused when he worn it for too long.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Flower of Blood",
+        "appearance": "A gold ring with an inlaid ruby.",
+        "function": "It gives the user flesh and blood magic, including regeneration.",
+        "downside": "The user randomly loses thinking and reasoning ability.",
+        "status": "Lost during the George III's Apotheosis Ritual"
+      },
+      {
+        "code": "",
+        "name": "Thunder God's Roar",
+        "appearance": "A heavy, dark blue hammer, surrounded by silvery electric light. Its handle resembles the leg bone of a creature.",
+        "function": "It can produce sounds that left the enemy in fear and chaos, and destructive lightning when used.",
+        "downside": "Increases the probability of being attacked in the dark to 100%, the holder becomes irritated more easily.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Scales of Luck",
+        "appearance": "A silver necklace, it has an ancient coin as a pendant with words carved in ancient Hermes: \"You will be as unlucky as you are lucky now.\"",
+        "function": "1. Make the wearer lucky: in daily life, the user will encounter good things from time to time.\n2. In the event of great peril, the wearer becomes absurdly lucky for ten minutes.\n3. The wearer can actively give the enemy bad luck.",
+        "downside": "After having been lucky, the user become likewise unlucky. The luck gained in the battle will be reversed in the same fierce way after ten minutes.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Death Knell",
+        "appearance": "An iron black revolver.",
+        "function": "1. Finds and aim precisely the target's weakness.\n2. Increase damages.\n3. Shotgun effect.",
+        "downside": "Gives the user a random phobia for 6 hours.\nThe user will also be continuously thirsty.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Leymano's Travels",
+        "appearance": "A palm-sized notebook with a hard copper-green outer casing.",
+        "function": "Copies Beyonder abilities it has seen, allowing them to be reused only once.",
+        "downside": "Makes the user lost. This can be avoided by smearing his blood on its cover.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Tinder",
+        "appearance": "A glove that can change its color.",
+        "function": "1. Enhance the user's charm, making his words very convincing.\n2. Can steal a target's ability and allow the wearer to use it for 10 minutes. The stolen would need at least 12 hours to recover it.",
+        "downside": "1. Before he can steal someone's ability, the wearer need to let the glove take one of his own power for 12 hours, in exchange he would be allowed to use steal as many time he wants for 12 hours.\n2. The wearer is more likely to lose his carried items.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Whip of Mind",
+        "appearance": "A black iron ring with a spiked bulge stained with blood at the top.",
+        "function": "Cause mental damage to the target.\nThe wearer becomes more proficient with various weapons.",
+        "downside": "Gives the user headaches.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Lie",
+        "appearance": "Normally a silver half-mask, but it can change its appearance.",
+        "function": "Appearance Morphing, Flame Controlling, Damage Transfer, Improved balance and agility, Danger intuition.",
+        "downside": "The user's emotions will be amplified.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Gold Mask",
+        "appearance": "A golden mask with rough facial features.",
+        "function": "Enhanced physical abilities, curse, and black magic.",
+        "downside": "Lose your humanity the more you use it.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Scarlet Lunar Corona",
+        "appearance": "A dark red moon-shaped accessory.",
+        "function": "Make the user immune to the influence of the full moon. Simulates the full moon, gives user great speed, rejuvenation, and darkness spells.",
+        "downside": "The user's blood slowly freezes as long as he keeps it active. If he doesn't stop, or drink the blood of a living person, he will ultimately die.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Shapeshifting Hat",
+        "appearance": "A hat that can change its shapes.",
+        "function": "Wearing it allows to move freely underwater for 30 minutes and use some Water and Wind domain spells.",
+        "downside": "You will desire water; on land you will gradually weaken.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Sun Brooch",
+        "appearance": "Brooch",
+        "function": "Gives access to Sun Pathway spells",
+        "downside": "Makes the user feel very hot",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Creeping Hunger",
+        "appearance": "A thin human-skinned glove.",
+        "function": "1. Can use the stored souls' Beyonder abilities.\n2. Allows the user to hide in shadows.\n3. Turn bodies into flesh bombs.",
+        "downside": "Consumes a human's soul and flesh for each twenty-four-hour period it is used.\nIt will praise the True Creator from time to time.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Biological Poison Bottle",
+        "appearance": "A translucent bottle.",
+        "function": "Produces a variety of random poisonous fumes.",
+        "downside": "Affects the user as well.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Traveler Robe",
+        "appearance": "A classical black robe with a door-shaped symbol formed with three rubies, three emeralds, and three diamonds.",
+        "function": "Allows the user to teleport.",
+        "downside": "It gradually tightened the user's body after each uses.",
+        "status": "Unknown"
+      },
+      {
+        "code": "",
+        "name": "Boxing Glove",
+        "appearance": "An iron-black boxing glove.",
+        "function": "Similar to Sequence 5 Guardian.",
+        "downside": "The user becomes more rash and often acts without thinking.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "All-Black Eye",
+        "appearance": "A black, pupil-less eye.",
+        "function": "User can see Spirit Body Threads, which can be used to find the hidden target.",
+        "downside": "User will hears a illusory raving. Can mutate nearby creatures that have been contaminated by the True Creator.",
+        "status": "Consumed"
+      },
+      {
+        "code": "",
+        "name": "Mental Terror Candle",
+        "appearance": "A short candle with a black wick. It is wrapped in a layer of something that looks like human skin.",
+        "function": "Entering the deepest part of the target's soul. There, the user would be able to resolve psychological issues, or plant a cue.",
+        "downside": "After using it for five minutes, the user will completely lose consciousness, and his mind will never be able to return to his body.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Judge Button",
+        "appearance": "An ordinary button.",
+        "function": "Corresponding Sequence 6 Judge of the Justiciar Pathway.",
+        "downside": "Wearer easily offends people or monsters.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Notary Certificate",
+        "appearance": "An orange paper with symbols corresponding to the sun on it.",
+        "function": "Can enforce contracts after somebody presses his palm against the blank area and makes an oath.",
+        "downside": "The person who made the oath have to respect it or pay the price.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Sleep Bugle",
+        "appearance": "A human skull bugle.",
+        "function": "When blown, it produces a melody with the power to cause calmness.",
+        "downside": "Unknown",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Clown Mask",
+        "appearance": "A thin and soft leather clown mask",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Lifeblood",
+        "appearance": "An injector made of rubber hoses, a glass syringe, and a thin needle",
+        "function": "Once injected into the user body, it allows them to control their flesh and blood completely for a short period.",
+        "downside": "With each injection, the user will become closer to the True Creator.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Decency",
+        "appearance": "A golden brooch carved into a Scotch Broom",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Cardi's Ring",
+        "appearance": "An iron-black ring engraved with dark and complicated patterns.",
+        "function": "Psychologically shock the target or cause the target to lose his reasoning.",
+        "downside": "The user develops a split personality.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Integrity Brooch",
+        "appearance": "A gold brooch.",
+        "function": "Can create Holy sunlight and ignite materials to deal with ghost-type creatures.",
+        "downside": "Wearing it for too long will cause the wielder to become fanatical.\nAs long someone wear it, he will lose some thoughts.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Needle and Tube",
+        "appearance": "A combination of a needle, a tube, and a container with mysterious patterns.",
+        "function": "Can draw blood of the user, then transfuse it back later for healing and increased physical attributes.",
+        "downside": "1. Drawing blood weakens the user for 12 hours.\n2. Using it too often will weaken the user permanently.\n3. If someone carry it around for more than half an hour, he'll become a little neurotic.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Flog",
+        "appearance": "A boxing glove",
+        "function": "*It induces a surge of desire or emotion of the target. The user can predict and influence the target's reaction, with a success rate of 70-80%.\n*It possesses unparalleled sturdiness, capable of withstanding an assault from a Reaper without sustaining damage.",
+        "downside": "*Carrying the boxing glove will have a negative impact on one's self-control.\n*Wearing the boxing glove will draw the attention of a hidden entity.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Shadow Bracelet",
+        "appearance": "A Bracelet",
+        "function": "1. The user can conceal himself within larger shadows.\n2. It can summon a Shadow Servant with a few special abilities and can bring shadows to life to restrain targets to some extent.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Arrow of the Bloodthirsty",
+        "appearance": "A broken obsidian arrow",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Ring of Punishment",
+        "appearance": "An iron-colored ring with a thick band and slender spikes on its surface.",
+        "function": "It can pierce a target's Spirit Body within a five-meter range, causing excruciating pain and rendering them temporarily unconscious.",
+        "downside": "1. Wearing it for an extended period will make the user, bloodthirsty, cruel, and impulsive.\n2. If used more than three times in an hour, it will cause the wearer's personality to undergo mutation.\n3. If removed, the user will suffer indiscriminate Psychic Piercing damage once he enters in a five-meter radius.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Symphony of Hatred",
+        "appearance": "A charred bone flute.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Blade of Poison",
+        "appearance": "A short blade.",
+        "function": "Randomly poisons target on hit.",
+        "downside": "Medicine becomes ineffective on user, feeling of drunkenness.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Fury of the Sea",
+        "appearance": "Grayish-white lightning-shaped brooch",
+        "function": "Underwater mobility and electric shock attack",
+        "downside": "Heightened likelihood of being struck by lightning on rainy days, coupled with increased irritability and anxiety after wearing it.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Blood Gold",
+        "appearance": "A golden ring that bears an engraving on its inner loop.",
+        "function": "It gives the user the ability to control their flesh and blood and some flesh and blood magic.",
+        "downside": "Repeated use may lead to dependence. Ceasing to wear it results in the body collapsing into a pile of flesh and blood, unable to maintain human form. Continual wear may lead to madness and loss of control.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Devil's Whisper",
+        "appearance": "A pitch-black bone ring",
+        "function": "*Devil's Arm\n*Malice Perception\n*Desire Incarnation\n*Wraith Shriek",
+        "downside": "*After wearing it, the user's malice will become more pronounced.\n*Whether worn or not, just carrying it will cause the user's body to suffer burns from sulphur flames, both internally and externally.\n*People within a hundred meters radius, including the user, will be subtly influenced by the Devil's Whisper, more prone to ill thoughts and impulsive actions.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Elf Flying Carpet",
+        "appearance": "A peacock-blue carpet",
+        "function": "Ability to suspend and fly",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Mother of Success",
+        "appearance": "A four-leaved clover charm",
+        "function": "It allows the user to accumulate luck after each failure",
+        "downside": "It would magnify the user shortcomings",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Shermane Box",
+        "appearance": "Box",
+        "function": "Bestows beauty and charm onto people.",
+        "downside": "Attracts people in a way where they lose their reasoning",
+        "status": ""
+      }
+    ]
+  }

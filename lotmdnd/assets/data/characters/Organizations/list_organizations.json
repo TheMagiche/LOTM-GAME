@@ -1,0 +1,214 @@
+{
+    "organizations": [
+      {
+        "name": "Great White Brotherhood",
+        "epoch_founded": "Second Epoch",
+        "god_worshipped": "The Seven Lights",
+        "pathways": []
+      },
+      {
+        "name": "Rose Redemption",
+        "epoch_founded": "Third Epoch",
+        "god_worshipped": "True Creator",
+        "pathways": "Member Dependent"
+      },
+      {
+        "name": "Twilight Hermit Order",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "The Original Creator",
+        "pathways": "Member Dependent"
+      },
+      {
+        "name": "Moses Ascetic Order",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "Hidden Sage",
+        "pathways": ["Hermit"]
+      },
+      {
+        "name": "Demoness Sect",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "Primordial Demoness",
+        "pathways": ["Demoness"]
+      },
+      {
+        "name": "Mirror People",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "Chaos Demoness",
+        "pathways": "Member Dependent"
+      },
+      {
+        "name": "Secret Order",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "None",
+        "pathways": ["Fool"]
+      },
+      {
+        "name": "Shadow of Order",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "Black Emperor",
+        "pathways": ["Black Emperor"]
+      },
+      {
+        "name": "Blood Sanctify Sect",
+        "epoch_founded": "Fourth Epoch",
+        "god_worshipped": "Dark Side of The Universe",
+        "pathways": ["Abyss"]
+      },
+      {
+        "name": "Theosophy Order",
+        "epoch_founded": "Beginning of the Fifth Epoch",
+        "god_worshipped": "Primordial Demoness",
+        "pathways": ["Demoness", "Door"]
+      },
+      {
+        "name": "Numinous Episcopate",
+        "epoch_founded": "Beginning of the Fifth Epoch",
+        "god_worshipped": "Death",
+        "pathways": ["Death"]
+      },
+      {
+        "name": "Life School of Thought",
+        "epoch_founded": "Beginning of the Fifth Epoch",
+        "god_worshipped": "None",
+        "pathways": ["Wheel of Fortune", "Moon"]
+      },
+      {
+        "name": "Rose School of Thought",
+        "epoch_founded": "Beginning of the Fifth Epoch",
+        "god_worshipped": ["Mother Tree of Desire", "Primordial Moon", "Chained God (Former)"],
+        "pathways": ["Chained", "Moon", "Chaos Primogenitor", "Patriarch"]
+      },
+      {
+        "name": "Aurora Order",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "True Creator",
+        "pathways": ["Hanged Man", "Door", "Wheel of Fortune"]
+      },
+      {
+        "name": "Iron and Blood Cross Order",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "True Creator (Former)",
+        "pathways": ["Red Priest"]
+      },
+      {
+        "name": "Psychology Alchemists",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "Adam (Former)",
+        "pathways": ["Visionary"]
+      },
+      {
+        "name": "Element Dawn",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "None",
+        "pathways": ["Hermit"]
+      },
+      {
+        "name": "Hermits of Fate",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "None",
+        "pathways": ["Error"]
+      },
+      {
+        "name": "Naturism Sect",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "Mother Tree of Desire",
+        "pathways": ["Chained", "Patriarch"]
+      },
+      {
+        "name": "Tarot Club",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "The Fool",
+        "pathways": "Member Dependent"
+      },
+      {
+        "name": "Celestial Research Association",
+        "epoch_founded": "Newly Founded in the Fifth Epoch",
+        "god_worshipped": "Monarch of Decay",
+        "pathways": ["Second Law"]
+      },
+      {
+        "name": "Curly-Haired Baboons Research Society",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Member Dependent",
+        "pathways": "Member Dependent"
+      },
+      {
+        "name": "April Fool's",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Celestial Worthy of Heaven and Earth for Blessings",
+        "pathways": "Member Dependent"
+      },
+      {
+        "name": "Sinners",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Circle of Inevitability",
+        "pathways": ["Eternal Aeon"]
+      },
+      {
+        "name": "Nightstalkers",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor", "Mother", "Moon"]
+      },
+      {
+        "name": "Bliss Society",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Mother Tree of Desire",
+        "pathways": ["Patriarch", "Abyss", "Chained"]
+      },
+      {
+        "name": "Order of All Extinction",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Monarch of Decay",
+        "pathways": ["Second Law"]
+      },
+      {
+        "name": "Entry Persons",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"]
+      },
+      {
+        "name": "First Philosophy",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"]
+      },
+      {
+        "name": "Dreamseekers",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Goddess of Fate",
+        "pathways": ["Eternal Edict"]
+      },
+      {
+        "name": "School of God's Descent",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Mother Goddess of Depravity",
+        "pathways": ["Chaos Primogenitor", "Mother", "Moon"]
+      },
+      {
+        "name": "School of Truth",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Uncertain Mist",
+        "pathways": ["Chaos Mist", "Black Emperor", "Justiciar"]
+      },
+      {
+        "name": "Sick Church",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": ["God of Plague", "God of Disease", "Monarch of Decay (Former)"],
+        "pathways": ["Second Law (Former)"]
+      },
+      {
+        "name": "School of Deliciousness",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"]
+      },
+      {
+        "name": "Fantasy Association",
+        "epoch_founded": "After the World War of the Fifth Epoch",
+        "god_worshipped": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"]
+      }
+    ]
+  }

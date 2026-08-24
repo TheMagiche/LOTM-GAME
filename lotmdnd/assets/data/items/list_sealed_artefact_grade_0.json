@@ -1,0 +1,268 @@
+{
+    "items": [
+      {
+        "code": "0-62",
+        "name": "Staff of the Stars",
+        "appearance": "A black cane with embedded gems.",
+        "function": "1. While holding the staff, using corresponding scenes in your mind, holder will directly descend to their desired destination. The prerequisite was that the outlined scene had to be absolutely correct.\n2. While holding the Staff, if some Beyonder powers or figures appear in your mind, this cane will reenact the corresponding powers and person.\n3. Any foes struck by it will randomly mutate or encounter various strange effects.",
+        "downside": "If the staff is left unsealed with no one holding it, various anomalies would appear around it unpredictably.",
+        "status": ""
+      },
+      {
+        "code": "0-61",
+        "name": "Box of the Great Old Ones",
+        "appearance": "A three-layered old jewelry box.",
+        "function": "1. The first layer of the box can turn everything in a targeted place into toys and swap it with its own internal space.\n2. The second layer recorded different locations. Once it was released, the holder and the living beings within its effective range would randomly head directly to the corresponding region. Depending on their luck, they could end up in places like the Abyss or the Cosmos.\n3. The third layer of the box seals something extremely powerful, horrible, and dangerous.",
+        "downside": "The holder of the box will disappear randomly, die, or change to a new holder.",
+        "status": ""
+      },
+      {
+        "code": "0-59",
+        "name": "The Divine Kingdom Without People",
+        "appearance": "",
+        "function": "Turn living beings into undead",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "0-36",
+        "name": "Thorned Crown",
+        "appearance": "A thorned crown.",
+        "function": "Similar to Sequence 2, Lightseeker.",
+        "downside": "Needs to be supplied with blood to activate its power.",
+        "status": ""
+      },
+      {
+        "code": "0-32",
+        "name": "Theater With Curtains That Never Draw",
+        "appearance": "Unknown",
+        "function": "Similar to Sequence 2, Miracle Invoker.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "0-17",
+        "name": "Angel of Concealment",
+        "appearance": "An expressionless woman with black eyes.",
+        "function": "* Erases people.\n* Descent vessel of the Darkness Pathway Deity.",
+        "downside": "Cannot be controlled. The range of abilities randomly fluctuates.",
+        "status": "Released from 'Secret' Seal"
+      },
+      {
+        "code": "0-15",
+        "name": "The Fourth Sun",
+        "appearance": "",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "0-13",
+        "name": "The Last Banquet",
+        "appearance": "Unknown",
+        "function": "Based on a Sequence 2 Miracle Invoker.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "0-08",
+        "name": "Quill of Alzuhod",
+        "appearance": "A common quill.",
+        "function": "1. Can make what it writes happen if it is possible and without the participants knowing, except if they notice the coincidences.\n2. The more you know about 0-08, the more it knows about you and everyone around you.",
+        "downside": "Tries to kill user, causes a backlash when used.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "0-05",
+        "name": "Magic Wishing Lamp",
+        "appearance": "A golden lamp covered with mysterious and complicated symbols",
+        "function": "Able to grant up to 10 wishes of its holder.",
+        "downside": "The granted wish would always come in a distorted and horrible manner and accompanied with terrible consequences. The holder can avoid the harm brought by the first two wishes, through proper wording and preparations, but the third wish will have terrible consequences.",
+        "status": "Damaged by Chaos Sea"
+      },
+      {
+        "code": "0-02",
+        "name": "Trunsoest Brass Book",
+        "appearance": "A book bound by thin brass sheets.",
+        "function": "Introducing laws, offenders of the law will automatically be punished accordingly or the action itself will become impossible to do.",
+        "downside": "It cumulatively writes new laws, eventually creating a system wherein one would be punished regardless of what they do, that includes the user himself, unless he could negotiate immunity with it.",
+        "status": "Accommodated"
+      },
+      {
+        "code": "0-01",
+        "name": "Salinger's Blood Banner",
+        "appearance": "A charred banner. The flagpole is iron-black metal, and there are a large number of dangerous blood spots on the banner.",
+        "function": "",
+        "downside": "",
+        "status": "Accommodated by Lumian Lee"
+      },
+      {
+        "code": "",
+        "name": "Scroll of God",
+        "appearance": "An ordinary oil painting in a brass frame, but the content depicted inside will change from time to time.",
+        "function": "There are various effect corresponding to each scene depicted by the painting.",
+        "downside": "If the oil painting is left unattended and unappreciated, the characters in it will come alive, comes out from the oil painting, and enter the real world.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Gift of the Land",
+        "appearance": "A giant, withered tree trunk.",
+        "function": "Various High-Sequence abilities of the Mother Pathway.",
+        "downside": "1. User has high chance of death if certain conditions are not met.\n2. Dying people within a 50km vicinity will turn into an Evil Spirit unless killed by a family member or if they can leave the range of the artifact.\n3. Will randomly cause the land within a 300-kilometer range to become desolate.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Pale Death",
+        "appearance": "A pale mask with glittering metallic lustre.",
+        "function": "The wearer's surroundings \"die\", even lifeless objects.",
+        "downside": "Slowly turns the user into an undead and enslaves them.",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Sage Frontlet",
+        "appearance": "A frontlet with a vertical diamond eye in the centre.",
+        "function": "Allows the wearer to turn into an immaterial illusory knowledge form.",
+        "downside": "Wearing it too long is the equivalent of taking a Sage potion. One will either successfully advance or lose control and become a monster.",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Proof of Glory",
+        "appearance": "A crown that seemed to coalesce from dawn's light. Its ancient design exuded splendor, majesty, pride, and resilience.",
+        "function": "Create defensive power in form of a cage.",
+        "downside": "",
+        "status": "destroyed"
+      },
+      {
+        "code": "",
+        "name": "Book of Calamity",
+        "appearance": "A yellowish-brown book.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Shadow of the Beauty Goddess",
+        "appearance": "A blurry figure formed from crimson moonlight.",
+        "function": "",
+        "downside": "",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Black Emperor's Crown",
+        "appearance": "A crown inlaid with many dark gems",
+        "function": "",
+        "downside": "",
+        "status": "Accommodated"
+      },
+      {
+        "code": "",
+        "name": "Destined Madness",
+        "appearance": "Long-necked silver flask.",
+        "function": "(Unknown)",
+        "downside": "(Unknown)",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Cloak of Stars",
+        "appearance": "A deep black Warlock Robe.",
+        "function": "",
+        "downside": "",
+        "status": "destroyed"
+      },
+      {
+        "code": "",
+        "name": "Solomon's Mask",
+        "appearance": "An asymmetrical black and gold mask.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Post-Apocalyptic Scripture",
+        "appearance": "An ancient book made of sheepskin parchment.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Love's Dread",
+        "appearance": "A glass ring with an extending sharp crystalline spike.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Calamity of Crimson",
+        "appearance": "A crystalline, queen's crown.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "The Setting Sun Rooster",
+        "appearance": "A black, three-headed rooster.",
+        "function": "",
+        "downside": "",
+        "status": "Destroyed"
+      },
+      {
+        "code": "",
+        "name": "Eye of God",
+        "appearance": "A vertical eye-shaped tiara.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Tamara's Everchanging Card",
+        "appearance": "A card with changing images on both sides.",
+        "function": "",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Pillar of Severity",
+        "appearance": "A blackened stone pillar with a faint bronze hue.",
+        "function": "",
+        "downside": "",
+        "status": "destroyed"
+      },
+      {
+        "code": "",
+        "name": "Robe of Divine Blood",
+        "appearance": "A crimson robe.",
+        "function": "Plant malice in others.",
+        "downside": "",
+        "status": ""
+      },
+      {
+        "code": "",
+        "name": "Die of Probability",
+        "appearance": "An ordinary die with red pips on each of its faces.",
+        "function": "Uncontrollably affects the luck of the user.",
+        "downside": "Uncontrollable.",
+        "status": "Accommodated"
+      },
+      {
+        "code": "",
+        "name": "Golden Phoenix Accessory",
+        "appearance": "A golden bird-shaped accessory.",
+        "function": "Connect to the River of Eternal Darkness",
+        "downside": "",
+        "status": ""
+      }
+    ]
+  }

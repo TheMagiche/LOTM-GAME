@@ -1,0 +1,61 @@
+{
+  "beyonder_pathways": {
+    "description": "The mystical systems of progression for Beyonders, each divided into sequences.",
+    "list": [
+      {
+        "name": "Seer Pathway",
+        "associated_god": "The Fool",
+        "entry_sequence": "Seer",
+        "description": "A pathway focused on divination, control, and ritual magic. It is the protagonist's pathway in the first book."
+      },
+      {
+        "name": "Apprentice Pathway",
+        "associated_god": "The Door",
+        "entry_sequence": "Apprentice",
+        "description": "A pathway centered around mobility, evasion, and spatial shenanigans."
+      },
+      {
+        "name": "Spectator Pathway",
+        "associated_god": "The Visionary",
+        "entry_sequence": "Spectator",
+        "description": "A pathway for mind-readers and manipulators, focused on observation and mental influence."
+      },
+      {
+        "name": "Warrior Pathway",
+        "associated_god": "Twilight Giant",
+        "entry_sequence": "Warrior",
+        "description": "A pathway focused on melee combat, mastery of weapons, and physical prowess."
+      },
+      {
+        "name": "Bard Pathway",
+        "associated_god": "The Sun",
+        "entry_sequence": "Bard",
+        "description": "A pathway with holy songs, party support, and tanking capabilities, represented by the Sun."
+      },
+      {
+        "name": "Hermit Pathway",
+        "associated_god": "The Hermit",
+        "entry_sequence": "Mystery Pryer",
+        "description": "A pathway focused on occult knowledge, mysticism, and prying secrets. It is oriented around knowledge and spellcasting."
+      },
+      {
+        "name": "Hunter Pathway",
+        "associated_god": "Red Priest",
+        "entry_sequence": "Provoker",
+        "description": "A pathway based on combat, tracking, and manipulation, specializing in provoking enemies. Its abilities include fire manipulation and conspiracy weaving at higher sequences."
+      },
+      {
+        "name": "Paragon Pathway",
+        "associated_god": "Paragon",
+        "entry_sequence": "Savant",
+        "description": "A pathway that combines science and craftsmanship. Higher sequences can create artificial life and perform transmutation."
+      },
+      {
+        "name": "Darkness Pathway",
+        "associated_god": "Evernight Goddess",
+        "entry_sequence": "Sleepless",
+        "description": "A pathway associated with the night, concealment, and slumber. It is controlled by the Church of the Evernight Goddess."
+      }
+    ]
+  }
+}

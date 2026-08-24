@@ -1,0 +1,180 @@
+{
+  "pathway_name": "White Tower Pathway",
+  "aliases": [
+    "Reader Pathway"
+  ],
+  "overview": {
+    "description": "The White Tower Pathway represents the search for knowledge. In contrast to Hermit Pathway and Paragon Pathway, this pathway includes both scientific and mysticism knowledge. Beyonders of this pathway have a good memory and the ability to imitate others' powers by analysis. They are also skilled in ritual magic.",
+    "high_sequence_characteristics": "At High-Sequences, they can see the future, directly observe, analyze and use the fundamental laws of reality, and reveal all information about a person, hidden or otherwise.",
+    "roselle_description": "We basically came to a consensus and believe that the Reader pathway represents the 'omniscient' part of 'omnipotent and omniscient.'",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Reader",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Student of Ratiocination",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Detective",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Polymath",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Mysticism Magister",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Prophet",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Cognizer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Wisdom Angel",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Omniscient Eye",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "White Tower",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the White Tower Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Tower",
+    "card_number": "XVI",
+    "description": "The Tower (XVI) is the number sixteenth of 22 Major Arcana. The image of the Tower card is powerful, depicting a solid tower being struck by lightning, and fire crawling out from the small windows at its top. The Tower is commonly interpreted as meaning danger, crisis, destruction, and liberation. It is associated with sudden unforeseen change.",
+    "author_interpretation": "In the ideological worldview, knowledge equals disaster and danger."
+  },
+  "god": [
+    {
+      "name": "Grisha Adam",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "God of Knowledge and Wisdom",
+      "status": "Sequence 0 ‡",
+      "type": "Current God"
+    },
+    {
+      "name": "Ancient Sun God",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Dragon of Imagination Ankewelt",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "An illusory Tower, every level is made up of thick books. Each book has a brass eye on it. The higher one looks, the darker it becomes. It is filled with the aura of insanity, destruction, inauspiciousness, and disaster."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A spiral, illusory bookshelf that contains all the knowledge in the world. Hidden within the gaps of its ancient volumes are pools of brass eyes that ooze black liquid, capable of contracting and extending at will. Atop the towering, illusory structure formed by the stacked bookshelves rests an Omniscient Eye, brimming with an aura of madness. Like a lighthouse beam, it can illuminate and perceive all things of the past and future."
+  },
+  "high_sequence_group": {
+    "name": "Visionary Sun Tyrant White Tower Hanged Man",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "God Almighty",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "sefirah": {
+    "name": "Chaos Sea"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Visionary", "Sun", "Tyrant", "Hanged Man"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"]
+      },
+      {
+        "group": "Goddess of Fate",
+        "pathways": ["Eternal Edict"]
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The Chaos Sea is a Sefirah that the Primordial Hunger specifically targets, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Demon of Knowledge",
+        "pathways": ["Hermit", "Paragon"],
+        "note": "The symbols and authorities of these pathways in the Knowledge domain are highly similar, and things related to Knowledge also have a certain convergence."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the God of Knowledge and Wisdom"
+    },
+    {
+      "name": "Twilight Hermit Order"
+    }
+  ],
+  "ingredients": {
+    "associated_ingredients": "Lavender, pepper, and mint are ingredients associated to God of Knowledge and Wisdom's domain."
+  }
+}

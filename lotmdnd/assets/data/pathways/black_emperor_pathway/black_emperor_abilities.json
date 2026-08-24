@@ -1,0 +1,235 @@
+{
+  "pathway": "Black Emperor",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Lawyer",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Eloquence",
+          "description": "Lawyers are masters of eloquence and reasoning, able to influence judgment, thoughts, and conclusions through their words, actions, and established processes. They can, to some extent, distort or guide the target's thinking, making them seem approachable and trustworthy. Instead of negotiating further, Klein Moretti readily agreed to a major financial transaction without any hesitation. This influence is difficult to detect as Spiritual Intuition alone might not be enough to notice their deception. Klein Moretti was unable to realize that his thoughts had been distorted until Jurgen Cooper mentioned the abnormality, and even then, he wasn't certain. This power can be passively triggered without the explicit intent of the Lawyer."
+        },
+        {
+          "name": "Law Proficiency",
+          "description": "They are good discovering and exploiting loopholes in the rules and the weaknesses of their opponents. By relying on Order to strike their opponents, they can create an advantageous atmosphere to achieve ultimate victory. As very good Beyonders at using Order, they can deceive Dream and Spirit Channeling abilities."
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Barbarian",
+      "description": "Problems that cannot be solved by the law will be solved by force. This is also one of the rules.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "Upon advancement, a Barbarian will gain various physical improvements such as a physical strength and constitution that breaks the 'rules' of a normal human body."
+        },
+        {
+          "name": "Mental Resistance",
+          "description": "In addition to their Physical Enhancement, upon advancement, a Barbarian will also possess a high resistance to psychological influences."
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Briber",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Bribe",
+          "description": "The core ability of a Briber. By giving their target an actual or symbolic Bribe, they would be able to achieve several domineering effects over their target. A Bribe can be anywhere between giving a target money to throwing an object near the direction of the target; even if the target does not 'accept' the object, it still counts as a Bribe. There are 4 types of Bribes: Weaken, Charm, Arrogance, and Connection. Weaken: For a certain amount of time, this significantly weakens the target's attacks, defenses, and control over the Briber. Arrogance: The target will become proud and Arrogant, lowering their intelligence and leading them to make erroneous judgments. Charm: The target will feel a great sense of fondness, making it difficult to have any thoughts of animosity or even wish to fight the Briber. If the conditions are suitable, the person who received the Bribe has an extremely small chance of attacking their companions. Connection: This establishes a connection between the target and the Briber."
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Baron of Corruption (Corruption)",
+      "description": "They appear to be the compliant to the rules, but in fact Distorts them, constantly drawing on the power of Order to serve themself.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "A Baron of Corruption's physique is further enhanced. Their punches resemble that of a cannonball, and can cause an entire building to shake."
+        },
+        {
+          "name": "Distortion",
+          "description": "They can use the loopholes found in Order. By Distorting the target's words, actions, and intent, they could formulate a certain Order that provided themself with an advantage, so as to achieve the goal of restraining and influencing their opponent. They can Distort the direction and target of attacks. Mithor King Distorted the trajectory of a bullet upwards slightly, causing it to miss. Klein used Creeping Hunger to Distort the target of Ludwell's Door to the Underworld, using the skeletons and zombies to substitute himself. Using Creeping Hunger, Klein Distorted Kircheis' Sulfur Fireballs, they lost their trajectories and acted chaotically as though in random motion, some even flew backwards at Kircheis himself. Klein used Creeping Hunger to Distort Cynthia's words, turning 'Admiral, I want to have a child with you' to 'Admiral, I only wish to have a child with you.' believing that the bodyguards and male attendants around her to would be pushed away, far away by Cynthia, after having her will Distorted, giving them a chance for a breather. However, his Distortion failed and Cynthia directly resisted his ability. They can Seal ordinary rooms or Unseal confined spaces. The action of 'closing the door' can be Distorted into the rule 'Seal this place, isolate the outside from the inside', one that can withstand the bombardment of several Sulfur Fireballs from a Desire Apostle afflicted with Bribe-Weaken. Mr. A Distorted Bakerland's order to stay away from his room and to not be disturbed, which made it as though the room became a completely isolated world. Lumian Distorted the action of 'opening the door' with the concept of 'Unsealing this confined space' to open the Bottle of Fiction. Other uses of this ability include: Klein used Creeping Hunger and Distorted the goal of 'separate and intercept' into 'separate and take action alone', making Kircheis and his companions separate."
+        },
+        {
+          "name": "Corrosion",
+          "description": "It can turn the hearts of people within 10 meters dark and greedy, making them make irrational choices."
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Mentor of Disorder (Disorder)",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Physical Enhancement",
+          "description": "A Mentor of Disorders physique is further enhanced."
+        },
+        {
+          "name": "Disorder",
+          "description": "They can produce a Disorder effect on a target or the surrounding area. A Mentor of Disorder can use Disorder to make it difficult for attacks to land on them. They can cause the Wind Blades of an Ocean Songster to move in every direction at random to perfectly avoid hitting the target. They can make enemies easily 'choose' to make the wrong judgment. The negative effects of the Hand of Horror caused Audrey to unknowingly make a mistake, making her take a bath in an abnormal procedure. They can Disorder the standards of distance measurement. Bird Mustang covered quite a sizable distance in about eight steps to arrive in front of Nast Solomon's cabin. They can make it so walking to the left would cause one to walk forward. This can cause an Ocean Songster, a Beyonder with exceptional Balance, to hobble forward. In conjunction with Distortion, they can extricate themselves from the control abilities of an enemy and unfavorable situations. One such situation is a Wraith's Possession."
+        },
+        {
+          "name": "Commanding Presence",
+          "description": "A Mentor of Disorder is able to display a sense of great royalty, a majesty that causes others to want to lower their bodies and obey their every command."
+        },
+        {
+          "name": "Strengthened Abilities - Distortion",
+          "description": "The Baron of Corruption's power is elevated to the Sequence 5 level. The Distortion of a target's language, actions, and intentions gains enhancements. The Seal created by Distortion can barely withstand several Sulfur Fireballs from a Desire Apostle even without the support of Bribe-Weaken. Lockhart Siakam was able to Distort the stairs to the attic, causing them to rise as if giving him a hand and thus allowing him to get closer to the attic. Lockhart Siakam had Distorted the surrounding vases and other objects in his way, causing them to avoid him as if they had a life of their own. They can now Distort the concepts of oneself and the target, causing both parties to equally share the damage from Curses, Diseases, etc., they receive. Lockhart Siakam Distorted the concept of himself and Jason Beria such that half of the Language of Foulness's effects were borne by the latter. They gain enhancements of other abilities from previous Sequences."
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Earl of the Fallen (Fallen)",
+      "description": "There are Rules to everything, and everything follows certain Principles. As Demigods of the Black Emperor Pathway, they are good at finding whatever loopholes there are in an Order to Exploit for themselves. They have the ability to demarcate a region, able to change, boost, and use certain Rules to create a favorable combat environment. Through Magnify, Exploit and Distortion they can achieve certain things that only Beyonders of the Justiciar Pathway can accomplish.",
+      "abilities": [
+        {
+          "name": "Exploit",
+          "description": "They can extend certain states for longer periods of time or end it ahead of time. This makes the Rules more beneficial to themselves. For example, after jumping in mid air, an Earl of the Fallen can Exploit the state of being away from the ground, extending it and achieving the effect of floating. By Exploiting the jumping process of their jump itself while also Exploiting the state of being away from the ground, an Earl of the Fallen can achieve a form of flight. They can achieve effect similar to the Manipulation of Laws of nature from Deceit of the Mentor of Deceit when paired with Distortion."
+        },
+        {
+          "name": "Bestowment",
+          "description": "They can directly Bestow a negative effect onto a target, which can cause them to: Turn sluggish; Lose their will to fight; Become greedily impatient; or Be only capable of focusing attention on money."
+        },
+        {
+          "name": "Magnify",
+          "description": "They can boost the effects or influence of their own actions. Under normal circumstances, Magnify could only amplify the effects and influence that strengthened one's body or actions without helping others. For example, assisting a Bizarro Sorcerer in their control of Spirit Body Threads would be impossible unless the Earl of the Fallen is a Marionette with a Worm of Spirit, in that case, the Bizarro Sorcerer would only be Magnifying their own actions. Magnify has been shown to be used in the following ways: They are able to Magnify the attacks and negative effects of Sealed Artifacts and Mystical Items, allowing lower ranked items to significantly affect Demigods. This includes the negative effects of the items on their enemies. They can turn a hug or grab from a distance into a restriction, able to pull a target from nearly 100 meters at least to just inches before them. While under the effects of Exploiting their jumping state, they can Magnify their movements to forcefully change their direction. The injuries they have dealt to their opponents can be Magnified, in some cases, this would make them die on the spot. Strong winds near them can be Magnified into a Hurricane. They can make an ordinary attack become an execution. Magnify cannot be used consecutively in a quick succession. It is limited to a one-time use each time. Magnify is effective on abilities above the Sequence 4 level."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "They gain enhancements of their abilities from previous Sequences."
+        },
+        {
+          "name": "Disorder",
+          "description": "It influences the structure of objects, the standards of measurement, and the accuracy of attacks. It will make a seemingly massive building collapse, causing what seems like a huge distance to be shortened to that of a few paces, as well as allowing attacks that are aimed at them to miss their mark. Qonas Kilgor unleashed Disorder to grasp the patterns of the Concealed world that enveloped Maygur Manor, using the feedback to determine the location of an exit."
+        },
+        {
+          "name": "Bribe",
+          "description": "Their Bribes are stronger and can be used in tandem with Magnify. A simple rose being thrown can be Magnified to an extent that it causes a violent quake when impacting the ground while at the same time imparting the effects of Bribe—Weaken."
+        },
+        {
+          "name": "Distortion",
+          "description": "They can better Distort a target's language, actions, intentions, as well as can Distort the effects of attacks, turning fatal wounds into serious injuries, strikes into pushes, advances into retreats, and escapes into charges. They can Distort the rules of the Marionette Interchange power of a Bizarro Sorcerer so that they could only swap between 2 Marionettes. Klein's Air Cannons had it's direction and trajectory Distorted to the right by Qonas Kilgor, significantly missing him in the process. They are able to directly create a Seal in thin air, effectively creating an invisible wall, through just Distorting an act of 'closing a door'. Qonas Kilgor was able to fully Distort his moving trajectory to a large degree, causing him to change directions instantly. They are able to distort the level of a mental disease, such as a Mental Plague from a Manipulator, weakening it and slowing down the deterioration. Distortion can cause a bullet's trajectory to be ridiculously off its mark and simultaneously cause its power to be extremely lacking. Using the Qonas Kilgor Marrionette, Klein used Distortion to circumvent the isolation and stay hidden into the darkness created by Nibbs' wings."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As Demigods at Sequence 4 who have obtained partial Godhood, they are able to manifest their incomplete Mythical Creature Form if they disregard any of the consequences and become an incomplete Curly Haired Baboon."
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Frenzied Mage (Frenzy)",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Strata Authority",
+          "description": "They possess partial authority over Strata, from which the Superior ability originates."
+        },
+        {
+          "name": "Superior",
+          "description": "Their Commanding Presence comes from a 'rightful role,' from social class to their strength and resources, this dignified aura can now be materialized into a weapon. Even their voice can make Spiritual Bodies tremble and make subordinates feel a powerful pressure, forcing them to follow orders and being unable to lift their heads. A Frenzied Mage can gigantify their body, increasing their height in the process."
+        },
+        {
+          "name": "Disorder Authority",
+          "description": "They gain a certain degree of authority over Disorder, from which the Frenzy ability originates."
+        },
+        {
+          "name": "Frenzy",
+          "description": "In the midst of Frenzied fluctuations, their abilities will undergo some random variations, which are often beneficial, while the abilities of their opponents will also undergo random changes, which are often detrimental. Of course, whether beneficial or detrimental, the Frenzied Mage themselves are not able to predict the specific effect. Concerto of Light and Shadow turned a volley of Air Cannons into illusory doves that don't pose any threat. Concerto of Light and Shadow changed the Distortion effects of Qonas Kilgor to summoning a flower from the garden below. Concerto of Light and Shadow made the Air Cannons and the Deprivation Bullet explode, turning into red, purple, yellow, or green fireworks."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "They gain enhancement of previous Sequences' other abilities and traits."
+        },
+        {
+          "name": "Distortion",
+          "description": "Their Distortion can now can directly Distort the trajectory of projectiles as well as Distort a target's intention to move forward, making them unable to stop. Nast Solomon was able to Distort Klein's intent of 'proceeding forward', making that intent into an action that was impossible for Klein Moretti to stop."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "As Sequence 3 Beyonders, they can respond to prayers within a certain range."
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Duke of Entropy (Entropy)",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Disorder Authority",
+          "description": "'They' gain partial authority over Disorder, which gives rise to the Entropy ability."
+        },
+        {
+          "name": "Entropy",
+          "description": "The longer one fights a Duke of Entropy, the more random, Disordered and uncontrollable one's own abilities, thoughts, and state become, eventually turning into a mess, falling into a strange state of annihilation; the target of Entropy can be an enemy, or it can be the environment, rules, etc."
+        },
+        {
+          "name": "Exploit Authority",
+          "description": "'They' gain partial authority over Exploitation. 'Their' Exploitation of the rules have been strengthened to a degree where a Duke of Entropy can Exploit 'Their' airborne state when jumping once to travel from the earth to the crimson moon."
+        },
+        {
+          "name": "Strata Authority",
+          "description": "'Their' Superior ability has been enhanced. Using Solomon's Mask, Miss Judgement grew significantly over 6 feet."
+        },
+        {
+          "name": "Strengthened Abilities",
+          "description": "'They' gain enhancements of previous Sequences' abilities."
+        },
+        {
+          "name": "Distortion",
+          "description": "'Their' Distortion ability has reached the Angel level, allowing 'Them' to Distort the rules created by authorities to a certain degree, twisting them to suit their will. Xio Derecha Distorted the rule created by the Pillar of Severity, 'The battlefield shall be divided,' by intensifying its core principle -Balance- to an even more extreme degree. This caused the Balance to focus on Sealed Artifacts as well, causing Xio Derecha and the Demoness of Gold to join the battle between Derrick Berg and Demoness of Orange. With 'Their' Distortion power, 'They' can redirect the change of the battlefield made by a Planeswalker to somewhere else."
+        },
+        {
+          "name": "Mythical Creature Form",
+          "description": "'They' have become a full Mythical Creature; 'Their' full Mythical Creature Form takes the appearance of a Giant Black Baboon with nine arms and a dark crown on its head."
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Prince of Abolition (Abolition)",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Distortion & Definition Authorities",
+          "description": "'They' have partial authorities over Distortion and Definition. A Prince of Abolition is able to re-Define and Distort the existing Order to 'Their' advantage in order to achieve 'Their' desired goals. For example, 'They' can Define what counts as a Substitute, what is the 'original body', what counts as Bribery, who is 'corrupted', how to instantly transform the original body into a Substitute, how to turn normal behavior into Bribery, and so on. In the midst of 'His' silence, George Augustus III silently swapped 'Himself' with a Substitute, which was the Imagined version of 'Him' doing the speech. 'Their' Distortion directly Distorts the corresponding Order and Rules (not the underlying ones). With great difficulty, George Augustus III split off some of 'His' strength, and with the help of the preparations 'He' had put in place, 'He' forcefully Distorted the surrounding area and isolated the dark and solemn secret mausoleum from the real world, preventing earthquakes and meteors from approaching the target."
+        }
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Black Emperor",
+      "description": "No description provided.",
+      "abilities": [
+        {
+          "name": "Autocrat Authority",
+          "description": "A core authority of the Black Emperor, and an authority under the Shadow of Order symbolism. Under it are the subordinate authorities like Distortion, Exploit, Definition and Strata. Except for the Strata authority, all the other subordinate authorities are based on Order, by Exploiting Loopholes within Order or Distorting the original intent of it, the Black Emperor can make Order serve 'Their' own purposes. In barren and dead places, both the Justiciar and the Black Emperor can rebuild a complete set of Order suitable for human survival. The Justiciar relies on the original fundamental Rules to recreate an Order suitable for human survival, while the Black Emperor Distorts the original Rules to make them suitable for humans. The effect is the same, but the methods of realization differ. In comparison, the Sun's Order is more positive, self-centered, and exclusive, and must derive from 'Their' previous standard of justice. There is an overlap and intersection in the authority of Order between the Black Emperor Pathway and the Sun Pathway."
+        },
+        {
+          "name": "Distortion Authority",
+          "description": "'They' hold the authority of Distortion. The authority of Distortion has been shown to be used in the following ways: 'They' can Distort the extension direction of Spirit Body Threads, making those who can see it unable to detect the target in advance. 'They' are able to disrupt Teleportation by Distorting the destination of the Teleportation, turning everything extremely chaotic. 'They' can delay the consequence of an effect by constantly Distorting their state back to when the effect's activity is only gradual. 'They' can Distort the spatial position between a used Substitute, swapping the positions of the Substitute and the main body. Using this on a Fool Pathway Beyonder will result in them forcibly appearing in the desired position once they exit the Historical Void. The rules and process to use Sealed Artifacts can be disrupted and Distorted, stopping the user from activating their power. 'They' are able to Distort the True Vision of onlookers, causing them to see scene of the past from one or two seconds ago. 'They' can Distort the rules of Concealed spaces, making its entrance appear directly before 'Them'. When 'They' advance to become a Black Emperor or start 'Their' revival process, it will cause various Distortions to manifest in reality. Spirit World Traversals will be Distorted, causing the user to discover that their intended destination is far away, or that their Wandering has ended abruptly. High Sequence Error Pathway Beyonders will have the connection to 'Their' external Worms of Time be Distorted, losing the ability to command 'Them'. The rules of the Circle Inhabitant will be Distorted, allowing leaving the area of the Circle Inhabitant without it triggering the Loop. In different parts of the world: Some people may find themselves back home despite having just left; Others might see their bright cathedrals turn dark and silent; Some might be habitually drinking milk but wouldn't notice they were using their nostrils, suffering no harm; Long-abandoned compulsory education schools might strangely light up, as if filled with students quietly attending classes. After fulfilling certain conditions, the Black Emperor will be able to Distort the faith and mystical connections that point to the Great Old Ones. Roselle forcefully Distorted the faith of the Uncertain Mist's followers to 'Himself' using 'His' authority, the Black Emperor Pathway's connection with the Uncertain Mist, and the corruption of the Uncertain Mist while relying on the Astral Barrier. This granted 'Him' absolute authority over the Uncertain Mist followers but also deepened 'His' connection to the Uncertain Mist. Roselle Gustav Distorted the relationship between the main body and the external items, briefly making 'Himself' an appendage of the Genie. Allowing Amon, as the Error, to use this firm and close connection to severely injure the Uncertain Mist by severely injuring the Genie."
+        },
+        {
+          "name": "Resurrection",
+          "description": "Even if 'They' were to be truly annihilated and killed, Death is a part of the most underlying and core part of the Order of reality, thus, the Black Emperor can be resurrected. 'They' will still be able to awaken and return from one of the mausoleums 'They' made for 'Their' apotheosis. There are three stages in the process of 'Their' Resurrection: The Uniqueness leaves the person possessing it, turning into an abstract concept. The subjects ruled by the Black Emperor will hear 'Their' mighty voice again. 'They' will fuse with the Uniqueness and would reappear in the Astral World. The Sequence 1 characteristics would be returned to 'Their' hands. Whether the Sequence 1 characteristics come with the corresponding Sequences 9-2 characteristics depends on the state of the Sequence 1 characteristic itself. 'Their' Resurrection is an Order that other True Gods are unable to Distort or prevent. It can be interfered with in the following known scenarios: The birth of a new Black Emperor. The intervention of a God formed from the Black Emperor Uniqueness + 2 Black Emperor Sequence 1 + 1 Justiciar Sequence 1. The birth of The Anarchy. With the Lord of Mysteries' help, 'They' could still Resurrect through the Rules, but 'They' would only be able to reclaim two portions of the Prince of Abolition Beyonder characteristics. Deliberately terminating the Resurrection process 'Themselves'. This would leave 'Them' as an incomplete Sequence 0. 'They' would then live in a special state inside 'Their' mausoleum, without the Uniqueness and Beyonder Characteristics. How long it takes for the retrieval of the Prince of Abolition Beyonder Characteristics and the total duration of the Resurrection still depends on related arrangements. Unlike Solomon, Roselle's Resurrection was fast since Adam took the initiative to give the characteristics and the Black Emperor Uniqueness to him. 'Their' Resurrection can cleanse the Corruption and madness brought by multiple different pathway Beyonder Characteristics, but can't cleanse the Corruption and madness that's intrinsic to itself. For the latter, it includes the following known scenarios: Failing the Apotheosis Ritual. The Corruption and madness brought along by the Mother Goddess of Depravity. Even if 'They' were killed and had all nine mausoleums destroyed, if a certain amount of the Order set up by 'Them' remained, it is still possible for 'Them' to mysteriously Revive. This appears to be a Loophole against the natural Order of death. Ancient Gods with the Black Emperor Uniqueness like the Mutated King Kvastir could also Resurrect with this mechanism, provided that 'They' had prepared thoroughly."
+        },
+        {
+          "name": "Disorder Authority",
+          "description": "A core authority of the Black Emperor. 'They' wield the majority of this authority. 'They' are no longer merely a parasite, interpreter, or Distorter of Order; 'They' have broken free from Order, plunging the very concepts of Order and Rules themselves into total Disorder. 'They' can cause a person's thoughts to descend into Disorder, making it become active and uncontrollable. This seemed to be a trend that couldn't be changed — one that led to chaos."
+        },
+        {
+          "name": "Divine Kingdom",
+          "description": "Order Hell, or False Law Heaven."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+    "land_creatures": [
+      {
+        "name": "Beastmen",
+        "description": "A variety of creatures like humans and beasts. They have gone extinct after the Cataclysm.",
+        "pathway": null
+      },
+      {
+        "name": "Bizarro Bane",
+        "description": "Also called 'Shapeshifter', a monster found in the Forsaken Land of the Gods. Appears as a blurry, transparent shadow with a ghostly-blue single eye. Adept at setting traps and disguising themselves.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Black Hunting Spider",
+        "description": "A black spider-like creature with one pair of eyes, each containing numerous tiny single eyes moving independently. Its composite eyes are a main ingredient for the Conspirer potion.",
+        "pathway": "Red Priest"
+      },
+      {
+        "name": "Blue Shadow Falcon",
+        "description": "A blue bird of prey that resembles a shadow. Its crystalline feathers are a main ingredient for the Wind-blessed potion.",
+        "pathway": "Tyrant"
+      },
+      {
+        "name": "Dark Demonic Wolf",
+        "description": "High-level Demonic Wolves born in the Fool Pathway. Their heart and blood are ingredients for the Miracle Invoker potion.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Demonic Wolf of Fog",
+        "description": "High-level Demonic Wolves, extremely rare and good at anti-divination and deceit. Their transformed heart and White Frost Crystal are ingredients for the Scholar of Yore potion.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Gray Demonic Wolf",
+        "description": "Mid-level Demonic Wolves related to the Red Priest Pathway. Their front claws and blood are ingredients for the Reaper potion.",
+        "pathway": "Red Priest"
+      },
+      {
+        "name": "Demonic Wolf of Secrecy",
+        "description": "A type of high-level Demonic Wolves. Their blood is a supplementary ingredient for Servant of Concealment.",
+        "pathway": "Darkness"
+      },
+      {
+        "name": "Devil",
+        "description": "Also called Demons, they were one of the dominant races in the Second Epoch. Evolved from the stomach and intestines of the Original Creator. Sequence 6 of the Abyss Pathway is also called Devil.",
+        "pathway": "Abyss"
+      },
+      {
+        "name": "Shadow-Shifter",
+        "description": "A kind of devil with the ability to abandon their bodies and only leave a shadow behind when forced into a life-threatening situation.",
+        "pathway": "Abyss"
+      },
+      {
+        "name": "Wraith Devil",
+        "description": "An unnamed breed of special demon that can switch freely between body and spirit like a wraith.",
+        "pathway": "Abyss"
+      },
+      {
+        "name": "Frost Dragon",
+        "description": "Dragons with the power of frost. Most likely absorbed characteristics from the Chained or Demoness Pathway.",
+        "pathway": "Chained or Demoness"
+      },
+      {
+        "name": "Brass Dragon",
+        "description": "Dragons that belong to the White Tower Pathway. Different parts are used for potions from Sequence 5 to 3.",
+        "pathway": "White Tower"
+      },
+      {
+        "name": "Mind Dragon",
+        "description": "The main type of dragons with powers of the Visionary Pathway. They have grayish-white stone-like scales and can swim through the Sea of Collective Subconscious.",
+        "pathway": "Visionary"
+      },
+      {
+        "name": "Bronze/Copper Elf",
+        "description": "A kind of elves with the Justiciar Pathway.",
+        "pathway": "Justiciar"
+      },
+      {
+        "name": "Magma Elf",
+        "description": "A type of Elves related to the Red Priest Pathway. Their core is a main ingredient for the Pyromaniac potion.",
+        "pathway": "Red Priest"
+      },
+      {
+        "name": "Elf",
+        "description": "Humanoid creatures with slightly sharp ears, evolved from humans. They were a dominant race in the Second Epoch and are now basically extinct. They have octopus characteristics from the Tyrant Pathway's Mythical Creature Form.",
+        "pathway": "Tyrant"
+      },
+      {
+        "name": "Feathermen",
+        "description": "Strange creature in the Southern Continent. Their heart is a Sequence 6 main ingredient.",
+        "pathway": null
+      },
+      {
+        "name": "Feathered Serpent",
+        "description": "Called 'Quetzalcoatl' in the Southern Continent, a humongous serpent with dark green scales and white feathers. The mythical creature form of the Death Pathway.",
+        "pathway": "Death"
+      },
+      {
+        "name": "Weather Giant",
+        "description": "They went extinct after the Fourth Epoch. Their skull is a main ingredient for the Weather Warlock potion.",
+        "pathway": "Red Priest"
+      },
+      {
+        "name": "Harvest Giant",
+        "description": "Giants who choose to become Harvest Giants if they have the bloodline of Omebella. Not a branch but a profession.",
+        "pathway": "Mother"
+      },
+      {
+        "name": "Child of Harvest",
+        "description": "Leaders of the Harvest Giants, all female. They are Sequence 2: Desolate Matriarch of the Mother Pathway.",
+        "pathway": "Mother"
+      },
+      {
+        "name": "Giant King's Court Priest",
+        "description": "Court priests under the Giant King Aurmir. They are a main ingredient for the Sequence 2: Trojan Horse of Destiny of the Error Pathway.",
+        "pathway": "Error"
+      },
+      {
+        "name": "Giant",
+        "description": "Humanoid creatures with grayish-blue skin and a single vertical eye, nearly four meters tall. They were a dominant race in the Second Epoch. Most are Beyonders of the Twilight Giant Pathway.",
+        "pathway": "Twilight Giant"
+      },
+      {
+        "name": "Gray Beast",
+        "description": "A creature from the planet Darbilla in the Cosmos. When roasted, it can prevent one from getting lost in most dreams.",
+        "pathway": null
+      },
+      {
+        "name": "Human",
+        "description": "Created by the Original Creator and the Mother Goddess of Depravity. They became the dominant race after the death of the Ancient Gods.",
+        "pathway": null
+      },
+      {
+        "name": "Human-Skinned Shadow",
+        "description": "A scary monster in the Forsaken Land of the Gods. Its characteristic is a main ingredient for the Faceless potion.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "King of Nightmares",
+        "description": "An Angel level creature from the Cosmos that rules planet Four Snake. Eating its gallbladder gives one permanent dream lucidity.",
+        "pathway": null
+      },
+      {
+        "name": "Mutant",
+        "description": "A dominant race in the Second Epoch. Also a general term for humans under the negative effects of Beyonder characteristics, causing them to transform into different races.",
+        "pathway": null
+      },
+      {
+        "name": "Phoenix",
+        "description": "Also called Immortal Birds. They were a dominant race in the Second Epoch. Their immortality relates to the Undying of the Death Pathway and Reboot of the Wheel of Fortune Pathway.",
+        "pathway": "Death or Wheel of Fortune"
+      },
+      {
+        "name": "Rainbow Salamander",
+        "description": "Also called 'Phantom Netherdrake', a nearly extinct Beyonder creature. Its pituitary gland is a main ingredient for the Telepathist potion.",
+        "pathway": "Visionary"
+      },
+      {
+        "name": "Sanguine",
+        "description": "Also called the Blood Race. They were a dominant race in the Second Epoch. All new Sanguine are born as Sequence 7: Vampires of the Moon Pathway.",
+        "pathway": "Moon"
+      },
+      {
+        "name": "Six-Winged Gargoyle",
+        "description": "A being with greyish-white skin, goat horns, and six pairs of wings. Its core crystal is a main ingredient for the Marionettist potion.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Stone Golem",
+        "description": "A stone golem with a greyish-white body formed from boulders. Its core is a main ingredient for the Guardian potion.",
+        "pathway": "Twilight Giant"
+      }
+    ],
+    "aquatic_creatures": [
+      {
+        "name": "Armored Monster Fish",
+        "description": "One of the 'sea spawn' connected to the Sea Prayer Ritual. They drift in the void, appearing and disappearing, adorned in dark-grey armour.",
+        "pathway": "Condenser"
+      },
+      {
+        "name": "Asmann",
+        "description": "A monster that existed in ancient times, looking like an unprotected human brain. Its complete brain is a main ingredient for the Scribe potion.",
+        "pathway": "Door"
+      },
+      {
+        "name": "Fürth Firefish",
+        "description": "A mutated fish from the corruption of Fourth Epoch Trier. Its meat and blood can resist cold, and its meat with blood from a Hunter can reduce flame damage.",
+        "pathway": "Red Priest"
+      },
+      {
+        "name": "King of the Deep Sea",
+        "description": "An Angel-level creature. Their Beyonder Characteristic is the main ingredient for the Sequence 2 Calamity potion.",
+        "pathway": "Tyrant"
+      },
+      {
+        "name": "Lavos Squid",
+        "description": "An extraordinary biological species. Its blood is used for the Seer potion, and crystallized blood for the Astrologer potion.",
+        "pathway": "Fool or Door"
+      },
+      {
+        "name": "Mermaid",
+        "description": "Humanoid sea creatures with beautiful faces and fishtails. Their singing is used for the Marionettist advancement ritual.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Mist Jellyfish",
+        "description": "They went extinct after the Fourth Epoch. Their core is a main ingredient for the Weather Warlock potion.",
+        "pathway": "Red Priest"
+      },
+      {
+        "name": "Murloc",
+        "description": "The lowest-grade sea monster in the Sonia Sea. Its bladder is the main ingredient for the Sailor potion.",
+        "pathway": "Tyrant"
+      },
+      {
+        "name": "Mutated Bannerfish",
+        "description": "Also called the 'Death Navigator'. They are former humans who mutated as a result of the Condenser Pathway boons.",
+        "pathway": "Condenser"
+      },
+      {
+        "name": "Deep-Sea Naga",
+        "description": "Their hair is a supplementary ingredient for Faceless, and their scalp and eyes for Polymath.",
+        "pathway": "Fool or White Tower"
+      },
+      {
+        "name": "Naga Priest",
+        "description": "Their brain and blood are ingredients for the Student of Ratiocination potion.",
+        "pathway": "White Tower"
+      },
+      {
+        "name": "Six-Armed Naga",
+        "description": "Their liver and blood are ingredients for the Detective potion.",
+        "pathway": "White Tower"
+      },
+      {
+        "name": "Shadow Naga",
+        "description": "Their small intestine and blood are ingredients for the Mysticism Magister potion.",
+        "pathway": "White Tower"
+      },
+      {
+        "name": "Three-Eyed Naga",
+        "description": "Their brass vertical eye and tooth are ingredients for the Prophet potion.",
+        "pathway": "White Tower"
+      },
+      {
+        "name": "Naga",
+        "description": "Sea monsters with the upper body of a human and the bottom half of a snake. They have six arms and are very agile. There are types for the White Tower and Tyrant Pathways.",
+        "pathway": "White Tower or Tyrant"
+      },
+      {
+        "name": "Obninsk",
+        "description": "An ancient sea monster with a humongous, distorted body and three heads. Its power is equal to Sequence 5. Used for the Ocean Songster advancement ritual.",
+        "pathway": "Tyrant"
+      },
+      {
+        "name": "Sea Serpent",
+        "description": "Serpents that have sharp fangs and two eyes.",
+        "pathway": null
+      }
+    ],
+    "spirit_beings": [
+      {
+        "name": "Abscessed Hand",
+        "description": "A bluish-black, gangrenous hand that snaps necks and vanishes. It is a fragment of something greater and is one of Lumian Lee's contracted creatures.",
+        "pathway": null
+      },
+      {
+        "name": "Abyss Demon Flower",
+        "description": "Monstrous flora with pitch-black vines and massive blood-red flowers. They have the power to induce sleep.",
+        "pathway": null
+      },
+      {
+        "name": "Ancient Wraith",
+        "description": "A ghost-like creature with a Beyonder Characteristic mixed in. Its cursed artifacts are a main ingredient for the Scribe potion.",
+        "pathway": "Door"
+      },
+      {
+        "name": "Armored Shadow",
+        "description": "A shadowy figure clad in pitch-black armor with faces on each scale. Originates from the Western Continent and is one of Lumian Lee's contracted creatures.",
+        "pathway": null
+      },
+      {
+        "name": "Batings Black Insect",
+        "description": "A special spirit world creature or degenerated Beyonder creature from the Cosmos. They invade human bodies via the cervical spine and control their nervous systems.",
+        "pathway": null
+      },
+      {
+        "name": "Black Dream Tapir",
+        "description": "A spirit world creature that feeds on emotions in human dreams. Its dust can prevent one from sinking into dreams.",
+        "pathway": null
+      },
+      {
+        "name": "Evil Shadow Black Beast",
+        "description": "A spirit world denizen that resides in the shadows of creatures. Its descendants require the stripping of a shadow as a carrier, killing the creature that loses its shadow.",
+        "pathway": null
+      },
+      {
+        "name": "Evil Spirit",
+        "description": "Soul-like creatures that usually form as a result of the death of High-Sequence Beyonders.",
+        "pathway": null
+      },
+      {
+        "name": "Fantasy Face",
+        "description": "A spirit world creature with the 'Bottle of Fiction' ability. It is one of Lumian Lee's contracted creatures.",
+        "pathway": null
+      },
+      {
+        "name": "Goddess of the Lake",
+        "description": "A powerful type of deceased spirit that appears as a strange transparent figure in a tranquil foggy lake.",
+        "pathway": null
+      },
+      {
+        "name": "Harpy",
+        "description": "A monster with the ability to give nightmares and snap people awake from dreams. Used for the Dreamwalker advancement ritual.",
+        "pathway": "Visionary"
+      },
+      {
+        "name": "Headless Bride",
+        "description": "A spirit creature born from a girl killed by her brother. Dressed in scarlet bridal raiment, she hunts her lineage and transforms to lure victims.",
+        "pathway": null
+      },
+      {
+        "name": "Hounds of Fulgrim",
+        "description": "Also called Sefirah Castle Keepers. They are unique creatures of the spirit world that reside in the gray fog. Their eyes and blood are ingredients for the Scholar of Yore potion.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Human-Faced Mantis",
+        "description": "A spirit creature that was once a playboy. He metamorphosed into a mantis bearing a human visage and is one of Lumian Lee's contracted creatures.",
+        "pathway": null
+      },
+      {
+        "name": "Knowledge Demon",
+        "description": "Also known as an Information Creature. They are shapeless transformed knowledge infiltrated by information. They correspond to a Sequence 2 Sage from the Hermit Pathway.",
+        "pathway": "Hermit"
+      },
+      {
+        "name": "Lamotte",
+        "description": "Monsters with a human upper body and a python lower body. They prey on humans, feeding on human spirits, internal organs, and blood.",
+        "pathway": null
+      },
+      {
+        "name": "Little Devil",
+        "description": "One of the 'sea spawn' connected to the Sea Prayer Ritual. They have short figures with disproportionately large heads and can blend into shadows.",
+        "pathway": "Condenser"
+      },
+      {
+        "name": "Long Shadow",
+        "description": "A spirit world creature with the ability to morph into shadows. It is one of Lumian Lee's contracted creatures.",
+        "pathway": null
+      },
+      {
+        "name": "Malmouth",
+        "description": "An extremely rare void creature that roams in the Spirit World. It can swallow items into its belly without harming them.",
+        "pathway": null
+      },
+      {
+        "name": "Morna",
+        "description": "A type of spirit creature that looks like offspring of owls and humans. They like to kill children.",
+        "pathway": null
+      },
+      {
+        "name": "Rabbit of Knowledge",
+        "description": "A friendly and weak spirit creature with an innate curiosity for learning. They excel in language and communication.",
+        "pathway": null
+      },
+      {
+        "name": "Shadow of Shriek",
+        "description": "A confluence of translucent shadows with frequent outbursts of shrieks that induce unconsciousness.",
+        "pathway": null
+      },
+      {
+        "name": "Spirit of Lust",
+        "description": "Subordinates of these beings like to suck the energy and life force of the opposite sex.",
+        "pathway": null
+      },
+      {
+        "name": "Spirit World Plunderer",
+        "description": "Creatures that live in the depths of the spirit world. They can capture creatures and make them soul avatars. Their true soul body is a main ingredient for the Bizarro Sorcerer potion.",
+        "pathway": "Fool"
+      },
+      {
+        "name": "Sun Wraith",
+        "description": "An incongruent existence with a blurry figure but emitting warmth resembling sunlight. Can emit light similar to the Priest of Light of the Sun Pathway.",
+        "pathway": "Sun"
+      },
+      {
+        "name": "Tamed Imp",
+        "description": "Translucent and indistinct, looking like newborns with pale-white skin. They have no corporeal form and can pass through objects.",
+        "pathway": null
+      },
+      {
+        "name": "Terror Banshee",
+        "description": "A powerful spirit world creature with a beautiful face and a rotting body. It has eagle wings and is good at draining consciousness and injecting terror.",
+        "pathway": null
+      },
+      {
+        "name": "Thousand-Eyed Evil",
+        "description": "Comprised of fleshy forms with eyes that cause swift slumber. They occasionally manifest in the darkest recesses of nightmares.",
+        "pathway": null
+      }
+    ],
+    "plants": [
+      {
+        "name": "Black Faced Grass",
+        "description": "A plant that grows between stone cracks in the City of Silver. It is the staple food of the City and can be made into powder or bread. It is a product of the Grade 0 Sealed Artifact, Gift of the Land.",
+        "pathway": null
+      },
+      {
+        "name": "Donningsman Tree",
+        "description": "A commonly exotic tree in the Southern Continent. Its sap is naturally water-resistant and has beneficial effects on hair growth.",
+        "pathway": null
+      },
+      {
+        "name": "Doom Blood Vine",
+        "description": "A plant that grows by absorbing nutrients from rotten corpses. It has black fruits called Doom fruits, which are edible.",
+        "pathway": null
+      },
+      {
+        "name": "Illusory Chime Tree",
+        "description": "A strange tree on primitive islands that can hypnotize animals to commit suicide. Its fruit is a main ingredient for the Hypnotist potion.",
+        "pathway": "Visionary"
+      },
+      {
+        "name": "Treant",
+        "description": "Evolved from the liver of the Original Creator. They have gone extinct after the Cataclysm.",
+        "pathway": null
+      }
+    ]
+  }

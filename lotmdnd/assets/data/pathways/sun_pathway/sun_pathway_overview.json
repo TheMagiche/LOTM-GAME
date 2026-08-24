@@ -1,0 +1,171 @@
+{
+  "pathway_name": "Sun Pathway",
+  "aliases": [
+    "Bard Pathway",
+    "Notary Pathway"
+  ],
+  "overview": {
+    "description": "The Sun Pathway has traditional priest abilities, such as powerful light and holy magic, as well as buffing abilities. They can cast light and fire spells, buff others and themselves with proclamations, buffing or weakening people and Beyonder powers, purify and exorcise, and establish contracts that are hard to break.",
+    "high_sequence_characteristics": "At High-Sequences, they can create a domain where every type of profanity will be Purified. They will find their Justice, defining their own Order—a Contract formed with themselves, the deities, and the world. 'They' gain authority over Light and acquire corresponding abilities. 'They' become a Sun capable of illuminating the world and a holy existence with the power to create a Holy Land. Wherever Light exists, 'They' exist, illuminating and destroying everything.",
+    "authority": "The Sun Pathway holds the authorities of Light, Holiness, and Order, as well as the corresponding lesser authorities of Sun, Faith, and Contracts.",
+    "franca_description": "The Sun pathway is truly exceptional. Befitting of the pathway that governs Purification.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Bard",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Light Suppliant",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Solar High Priest",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Notary",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Priest of Light",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Unshadowed",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Justice Mentor",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Lightseeker",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "White Angel",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Sun",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Sun Pathway is the Sun."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Sun",
+    "card_number": "XIX",
+    "description": "The Sun (XIX) is number nineteenth of the 22 Major Arcana. This card is associated with attained knowledge, generally considered positive. It is said to reflect happiness and contentment, vitality, self-confidence and success. It represents good things and positive outcomes to current struggles; the conscious mind prevails over the fears and illusions of the unconscious. Innocence is renewed through discovery, bringing hope for the future."
+  },
+  "god": [
+    {
+      "name": "Grisha Adam",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Eternal Blazing Sun",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Ancient Sun God",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A Sunbird wreathed in golden flames, appearing like a sphere of light."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A divine bird that spreads its wings to face all things in the world, carrying a radiant golden sun on its back. Its body is wreathed in flames, and its light can dispel all darkness in the world. It holds a sword to judge order and the contracts of the just; yet it is also forever bound by the armor, mask, and crown of rationality, eternally suspended in the heavens."
+  },
+  "high_sequence_group": {
+    "name": "Visionary Sun Tyrant White Tower Hanged Man",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "God Almighty",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "sefirah": {
+    "name": "Chaos Sea"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Visionary", "Tyrant", "White Tower", "Hanged Man"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"]
+      },
+      {
+        "group": "Uncertain Mist",
+        "pathways": ["Chaos Mist"],
+        "note": "Because the Uncertain Mist craves things related to Chaos and Order."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The Chaos Sea is a Sefirah that the Primordial Hunger specifically targets, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Eternal Blazing Sun"
+    },
+    {
+      "name": "Twilight Hermit Order"
+    }
+  ],
+  "trivia": {
+    "foundation_of_omnipotence": "According to Klein Moretti's deduction, among the five pathways of God Almighty, the Sun Pathway is the foundation that accommodates 'Omnipotence and Omniscience'. According to the author, the Sun Pathway is the cornerstone of the energy of The Omnipotence and Omniscience. Any of the five pathways can serve as a foundation, the Sun Pathway was only the foundation of the Ancient Sun God, not an essential one.",
+    "unshadowed_suppression": "The Unshadowed symbol of the Sun Pathway is capable of suppressing the spiritual imprint of the God Almighty and other Great Old Ones, it's mutual counteraction."
+  }
+}

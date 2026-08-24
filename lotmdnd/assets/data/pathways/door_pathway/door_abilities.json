@@ -1,0 +1,129 @@
+{
+  "pathway": "Door Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Apprentice",
+      "description": "An Apprentice's abilities are rather strange. Apprentices pursue the footprints of freedom and are rarely trapped and very difficult to stop. They are often able to escape from situations and pass through obstacles every time.",
+      "abilities": [
+        "Door Opening: Can open things related to Doors, phase through walls and obstacles by opening a symbolic, incorporeal Door.",
+        "Ritualistic Magic: Can use different Ritualistic Magics."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Trickmaster",
+      "abilities": [
+        "Flash: Impairs the vision of others, several times more dazzling than old-fashioned cameras.",
+        "Black Screen: Creates a dark curtain out of thin air to conceal objects.",
+        "Gas Transfer: Transfers toxic or harmful gases away or to wherever they are needed within 15 meters.",
+        "Loud Noise: Creates a deafening sound out of thin air to fake explosions or disrupt attention.",
+        "Freezing: Rapidly lowers temperature, forms frost, or creates a thin layer of ice.",
+        "Electric Shock: Intensity similar to non-high-voltage electric shocks, requires a conducting medium.",
+        "Fog: Generates fog with an effective range of 15 meters.",
+        "Wind: Conjures winds equivalent to a level 7 or 8 gale.",
+        "Ignition: Ignites objects within 3 meters by rubbing fingers together.",
+        "Tumble: Creates a slippery area or causes a target's feet to slip.",
+        "Object Manipulation: Moves or bounces designated objects within 5 meters.",
+        "Escape Trick: After diverting attention, rapidly shifts their own figure."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Astrologer",
+      "abilities": [
+        "Spirituality: Greatly enhanced spirituality.",
+        "Spiritual Intuition: Greatly improved spiritual intuition for divination and danger premonitions.",
+        "Interference: Can interfere with others' Divination and Spiritual Intuition.",
+        "Astrology: Can use a Crystal Ball for Divination and recall past memories.",
+        "Door Opening: Enhanced ability to phase through obstacles; can now bring other people.",
+        "Escape Trick: Can move more than 10 meters away after a successful diversion."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Scribe",
+      "description": "Once a demigod-level expert became a backer, a Scribe wielded extremely powerful strength. They wouldn't be weaker than a Sequence 5, or may even be stronger than one at times.",
+      "abilities": [
+        "Record: After witnessing a Beyonder power, can attempt to Record its mystical symbols for a single use. Limited number of records increases with digestion."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Traveler",
+      "abilities": [
+        "Positioning: Can identify their current location; intuitive sense of direction in the Spirit World.",
+        "Traveler's Door: Can open a Door to the Spirit World and Travel there for long distance Teleportation.",
+        "Blink: A form of short distance Traveling that leaves afterimages.",
+        "Invisible Hand: Can capture objects from a distance.",
+        "Record: Enhanced ability to Record Beyonder powers."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Secrets Sorcerer",
+      "description": "When it comes to the 'Secret' of a Secret Sorcerer, it represents numerous hidden spaces, including that of the Mirror World, the world within various Paintings, etc.",
+      "abilities": [
+        "Space Concealment: Can split a targeted area into 2 to create a Concealed space, only accessible through a specific Door.",
+        "Transfiguration: Can transform into one illusory Door after another, making attacks never reach them.",
+        "Secret Keeping: Can Conceal Secrets and block intuition, or become a Secret to affect tracking.",
+        "Exile: Creates illusory Doors that can throw a target into chaotic Space-Time turbulence.",
+        "Record: Can now Record Angel-level Beyonder powers and 'States' of various existences.",
+        "Door Opening: Can open restrictions on Travelling capabilities.",
+        "Blink: Greatly enhanced; can use Beyonder powers at faster speeds."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Wanderer",
+      "abilities": [
+        "Wandering: Can Wander through the Astral World, enter the Cosmos and head to different planets.",
+        "Space Tearing: Can Tear Space and make it become swallowed by the void.",
+        "Space Integration: Serves as both a form of Concealment and adaption to different planetary environments.",
+        "Space Concealment: Can create a temporary 'spatial cage' equivalent to a form of Sealing.",
+        "Door Opening: Can Open a Door and break through almost all types of barriers."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Planeswalker",
+      "abilities": [
+        "Symbolization: Can transform into Symbols to use the Astral World more effectively.",
+        "Dimension Sight: Can project distant scenes from other locations into a circular veil.",
+        "Authorities: Teleportation (initial control), Replication (can replicate Beyonder powers and scenes).",
+        "Space Tearing: Can tear the area around a target and warp it into the void.",
+        "Sealing: Can use starlight to Seal concepts in both literal and mystical senses.",
+        "Astrology: Enhanced astrology abilities without needing a crystal ball.",
+        "Secret Keeping: Can condense darkness into an illusory glass barrier for Secrecy.",
+        "Space Concealment: Can create spaces similar to Hostels.",
+        "Exile: Can Exile targets to the Historical Void."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Key of Stars",
+      "abilities": [
+        "Space Fragmentation (Gravity Manipulation): Can use the power of stars to shatter and bend Space, time, and light.",
+        "Position: Can precisely locate the Position of anything anywhere.",
+        "Seals: Initial control of the authority over Seals.",
+        "Space-Time Labyrinth: Can create various kinds of mazes to trap others.",
+        "Teleportation: Can open Doors to Higher Dimensions.",
+        "Dimension Sight: Can conjure a fantastical screen showing targets moving between Dimensions."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Door",
+      "abilities": [
+        "Door: Authority over Space, Sealing, Alternate Worlds. Can open or close all things related to Doors.",
+        "Space: Can instantly Travel to any Space and exert influence across all alternate Dimensions.",
+        "Space Fragmentation (Gravity Manipulation): Can annihilate a planet.",
+        "Seals: Can create various types of Seals that can trap a True Deity.",
+        "Conceptualization: Can turn into a Conceptual Creature to avoid damage.",
+        "Concealment: Can make things related to themselves unable to be spoken of directly.",
+        "Replication (Recreation): Can Replicate a True God's authorities.",
+        "Position: Extends to concepts and domains such as Time, Destiny, and Mind."
+      ]
+    }
+  ]
+}

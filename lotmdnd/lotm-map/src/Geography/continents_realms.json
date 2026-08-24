@@ -1,0 +1,57 @@
+{
+  "continents_and_realms": {
+    "description": "The primary landmasses and mystical dimensions of the world.",
+    "list": [
+      {
+        "name": "Northern Continent",
+        "type": "Continent",
+        "description": "The main landmass where most of the story takes place, home to major nations like the Loen Kingdom and Intis Republic. It is the center of civilization in the Fifth Epoch."
+      },
+      {
+        "name": "Southern Continent",
+        "type": "Continent",
+        "description": "A less developed continent with various colonies and native peoples, known for its exotic Beyonder materials and ancient ruins."
+      },
+      {
+        "name": "Eastern Continent (Forsaken Land of the Gods)",
+        "type": "Continent",
+        "description": "A desolate region in perpetual darkness, abandoned by the gods after a great catastrophe. Home to the ancient City of Silver and dangerous supernatural creatures."
+      },
+      {
+        "name": "Western Continent",
+        "type": "Continent",
+        "description": "A mysterious and sealed continent with a different advancement system based on Daoism, rather than the potion system used elsewhere."
+      },
+      {
+        "name": "Astral World",
+        "type": "Realm",
+        "description": "A higher-dimensional plane of existence where powerful Beyonder entities and deities reside. It contains the Historical Fog and the remnants of fallen gods."
+      },
+      {
+        "name": "Spirit World",
+        "type": "Realm",
+        "description": "A higher dimension that completely overlaps with the real world, inhabited by spirits. It is largely symbolic in nature."
+      },
+      {
+        "name": "Underworld",
+        "type": "Realm",
+        "description": "A special place created within the Spirit World."
+      },
+      {
+        "name": "Mind World",
+        "type": "Realm",
+        "description": "A world formed by the sky of spirituality, the sea of subconsciousness, and the island of consciousness, connected to the Spirit World."
+      },
+      {
+        "name": "Mirror World",
+        "type": "Realm",
+        "description": "An amalgamation of the concept of doors, connected to mirrors and alternate spaces. It is not a true world like the others."
+      },
+      {
+        "name": "Abyss",
+        "type": "Realm",
+        "description": "A place separated from the corporeal world, known to be extremely corrupting."
+      }
+    ]
+  }
+}

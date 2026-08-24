@@ -1,0 +1,210 @@
+{
+  "pathway": "Paragon Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Savant",
+      "potion_overview": "Appears to be a very delicious and very sweet looking icy blue liquid.",
+      "formula": {
+        "main_ingredients": [
+          "The Brain core of a High Mountain Snowman",
+          "The Crystalline Matter of a Library Shadow Spirit"
+        ],
+        "alternative": "A Savant Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of High Mountain Snowman blood",
+          "1 item bearing stains of a Library Shadow Spirit",
+          "1 basic education textbook",
+          "1 piece of a Carnelian"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Archaeologist",
+      "potion_overview": "Resembles rotten, yellowish-green pus.",
+      "formula": {
+        "main_ingredients": [
+          "The Crystallization of an Ancient Tomb Shadow",
+          "The Spinal Cord of a Ruin Wanderer (a humanoid creature)"
+        ],
+        "alternative": "An Archaeologist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "20 grams of Ancient Tomb Shadow dust",
+          "150 milliliters of Ruin Wanderer blood",
+          "1 ancient document of value",
+          "1 ancient item with a little mystical power (Choosing the wrong one could be very dangerous)"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Appraiser",
+      "potion_overview": "A liquid of intertwining black and white.",
+      "formula": {
+        "main_ingredients": [
+          "1 Spirit World Evil Eye",
+          "1 'Human-Skin Ancient Scroll'"
+        ],
+        "alternative": "An Appraiser Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "9 drops of tears from the Spirit World Evil Eye",
+          "100 milliliters of blood from the 'Human-Skin Ancient Scroll'",
+          "1 type illustrated handbook",
+          "9 drops of mint essential oil"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Artisan (Machinery Specialist)",
+      "potion_overview": "It is as if composed of crimson flames, yet various iron-black objects float within.",
+      "formula": {
+        "main_ingredients": [
+          "The Cerebrum of a Four-Armed Madman",
+          "The Tinder of a Carnivorous Furnace"
+        ],
+        "alternative": "An Artisan Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "150 milliliters of Four-Armed Madman blood",
+          "30 grams of ashes from the Carnivorous Furnace",
+          "1 piece of personally polished gear or another mechanical component",
+          "1 newly conceived mechanical design drawing, free from major errors"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Astronomer (Astromancer)",
+      "potion_overview": "A liquid reflecting a dreamy starry sky.",
+      "formula": {
+        "main_ingredients": [
+          "The Eyes of a Star marked Elephant Man",
+          "The Crystal shell of an Enchanted Dancing Giant Turtle"
+        ],
+        "alternative": "An Astronomer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "200 milliliters of a Star marked Elephant Man blood",
+          "3 fragments of ordinary shell from the Enchanted Dancing Giant Turtle",
+          "1 complete set of convex and concave lenses",
+          "10 drops of Starflower hydrolat"
+        ]
+      },
+      "advancement_ritual": "Discover and name an astronomical phenomenon or a celestial body.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Alchemist",
+      "potion_overview": "A viscous black liquid divided into several parts with no parts connecting. It's like frozen black porridge that had been cut by a blade.",
+      "formula": {
+        "main_ingredients": [
+          "1 Heart of a Soul Eater (a humanoid creature)",
+          "1 Spirit of Machinery's Core"
+        ],
+        "alternative": "An Alchemist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Soul Eater blood",
+          "1 core component of a mechanical construct belonging to a Spirit of Machinery",
+          "1 piece of one's own flesh and blood",
+          "1 item symbolizing good fortune"
+        ]
+      },
+      "advancement_ritual": "Extract all life force within a designated area; causing the soil to desertify, and the lakes to dry up.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Arcane Scholar (Demon of Arcana)",
+      "potion_overview": "A transparent liquid in which sparks unceasingly appear and vanish.",
+      "formula": {
+        "main_ingredients": [
+          "1 Spirit World Meteor",
+          "1 Crystallization of an Annihilation Ghost"
+        ],
+        "alternative": "An Arcane Scholar Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: 1 type of combustible material from the Spirit World Star-Fire OR 30 grams of dust from the Annihilation Ghost OR 40 grams of dust from an Arcane Scholar",
+          "1 object once possessed by an Arcane Scholar",
+          "90 milliliters of water contaminated by the Spirit World",
+          "50 grams of a highly radioactive material"
+        ]
+      },
+      "advancement_ritual": "Select a certain special Spirit World knowledge and find a way to establish a close connection with it, achieving integration at the spiritual level. Note: 'Certain special Spirit World knowledge' refers to knowledge that can contaminate you, lock onto you, or knowledge that has come to life.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Knowledge Magister (Master)",
+      "potion_overview": "An icy liquid stretched into a distorted humanoid shape.",
+      "formula": {
+        "main_ingredients": [
+          "1 'Otherworldly Brain' (a brain-like creature capable of creating a realm with physical rules that differ from reality)"
+        ],
+        "alternative": "A Knowledge Magister Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "5,000 milliliters of water from the 'Knowledge Sea' formed after the death of a Knowledge Magister or the 'Otherworldly Brain'",
+          "One copy of one's own work that has been cited or utilized by more than 100,000 people (recorded on paper)",
+          "A blessing from any of the Seven Lights of the Spirit World",
+          "Heartfelt tokens of gratitude from different students of the concoctor (at least 1,000)"
+        ]
+      },
+      "advancement_ritual": "Make a groundbreaking and systematically outstanding contribution in any existing field.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Illuminator (Civilization Enlightener, Light of Darkness)",
+      "potion_overview": "A pool of black liquid with a faint but clear radiance shining from within.",
+      "formula": {
+        "main_ingredients": [
+          "An Illuminator Beyonder Characteristic"
+        ],
+        "supplementary_ingredients": [
+          "100,000 souls of those who perished during a civilization's decline",
+          "1 History book recording a civilization",
+          "1 of the most outstanding mechanical creations from a civilization (must be near perfect)",
+          "12 miniature idols sculpted by one's students out of worship and faith"
+        ]
+      },
+      "advancement_ritual": "Popularize new knowledge to promote the civilizational renewal of at least one country.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Paragon",
+      "potion_overview": "A flawless, ethereal humanoid form emitting a faint glow.",
+      "formula": {
+        "main_ingredients": [
+          "The Paragon Uniqueness",
+          "Three Illuminator Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "Knowledge gleaned from the Aura or remnants of the Great Old Ones"
+        ]
+      },
+      "advancement_ritual": "Nurture a Civilization, witnessing and recording its entire process from enlightenment, development and prosperity to decline, demise or replacement. Note: A regional civilization is sufficient. The main point is the long duration, and it cannot be interrupted.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "pathway": "Tyrant Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Sailor (Keeper of the Seas)",
+      "potion_overview": "A stirred, black-green, slimy substance filled with fishy stench.",
+      "formula": {
+        "main_ingredients": [
+          "Murloc's Bladder",
+          "One man-eating conch"
+        ],
+        "alternative": "A Sailor Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "300 milliliters of strong liquor",
+          "200 milliliters of seawater",
+          "3 Murloc scales",
+          "12 drops of seaweed extract",
+          "9 drops of one's own blood"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Folk of Rage (Guardian of the Windstorm)",
+      "potion_overview": "A bubbling, blood-red liquid, as if already boiled.",
+      "formula": {
+        "main_ingredients": [
+          "Deep-diver's alveoli",
+          "War-cry bird's breastbone"
+        ],
+        "alternative": "A Folk of Rage Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "500 milliliters of strong liquor",
+          "Half of a deep-diver's tongue",
+          "A segment of a War-cry bird's beak",
+          "10 drops of red algae essential oil"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Seafarer (Windstorm Priest)",
+      "potion_overview": "A calm, gem-like blue liquid, reflecting twinkling starlight.",
+      "formula": {
+        "main_ingredients": [
+          "Pituitary gland of a Black-Scaled Shark",
+          "Heart of a Raging White Dolphin (often called the Darling of the Elves)"
+        ],
+        "alternative": "A Seafarer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "500 milliliters of strong liquor",
+          "One black-scaled shark fin",
+          "100 milliliters of raging white dolphin's blood",
+          "A branch of blue star coral",
+          "One crystal"
+        ]
+      },
+      "acting_method": "Wander the sea. Seek out new sea routes. Seek out undiscovered islands. The core principle involved being intimate with the sea, to masterfully grasp information regarding sea routes and the weather, as well as exploration and discovery.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Wind-blessed",
+      "potion_overview": "A fist-sized, half-real half-illusory entity formed by intertwining threads of turquoise silk.",
+      "formula": {
+        "main_ingredients": [
+          "6 crystalline feathers of a Blue Shadow Falcon",
+          "A pair of the Dragon-Eyed Sea Condor eyeballs"
+        ],
+        "alternative": "A Wind-blessed Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "500 milliliters of high-purity liquor",
+          "One Blue Shadow Falcon bone",
+          "Two Dragon-Eyed Sea Condor feathers",
+          "30 milliliters of rainwater untouched by the ground",
+          "A breeze captured when the sun has lit the horizon but not yet risen"
+        ]
+      },
+      "acting_method": "Make yourself like the wind, including being irritable from time to time.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Ocean Songster",
+      "potion_overview": "The liquid is dark, akin to the ocean before a storm, devoid of ripples or bubbles. The liquid is cold as it brings about a numbness that slides down their gullet and into their stomach. It then spread throughout his body cells at an unimaginable speed.",
+      "formula": {
+        "main_ingredients": [
+          "Siren's throat",
+          "Crystal cluster from a Crystal Jellyfish"
+        ],
+        "alternative": "An Ocean Songster Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "500 milliliters of high-purity liquor",
+          "5 strands of Siren hair",
+          "5 tentacles of the Crystal Jellyfish",
+          "One tide-shell",
+          "One porous coral branch"
+        ]
+      },
+      "advancement_ritual": "Take the potion in the belly of an Obninsk.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "In the instant they drank the potion, they would hear countless voices. They came from all life at sea. They would feel that their heart was beating violently as it spewed blood outwards. Their spirituality and the sound waves begin to mold their voice and soul. One may not help but open their mouth, letting out a loud sigh. Amidst the sigh, they would feel their Spirit Body being ripped slightly. As the sound waves spread outwards, they first turn into mottled scales on their skin before pulling out long flesh tendrils that appear like flailing tentacles. The sound wave continues to spread outwards with their Spirit Body fragments. The voices they heard at the start of the backlash from all life at sea would be blocked by Obninsk's body, leaving a relatively screened out version. The sound waves continue to spread forward, until making contact with the sticky liquid within the Obninsk's stomach, and they magically bounce back, infusing their body once again. They, who were on the brink of losing control, instantly feels better as they may seize the opportunity. Beginning to sing loudly in a bid to vent the invisible sound waves that would blast their body apart. The exact singing would depend on them. As the tunes spread outward, wave after wave, mixing with the numerous Spirit Body fragments before bouncing back on the Obninsk's sticky stomach walls. In this process, they are like an ingredient being baked in sound waves as they are being molded into form. Finally, they would regain control of their body, and grasp their spreading spirituality."
+    },
+    {
+      "sequence": 4,
+      "name": "Cataclysmic Interrer",
+      "potion_overview": "A dark blue, nearly black liquid, ceaselessly surging with violent 'wind and waves'.",
+      "formula": {
+        "main_ingredients": [
+          "Stomach of the Whale of Punishment",
+          "Blood crystal of the Vortex Terror-Beast"
+        ],
+        "alternative": "A Cataclysmic Interrer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "500 milliliters of the whale's gastric fluid",
+          "One tentacle of the vortex terror-beast",
+          "50 milliliters of water from the 'Spring of the Elves'",
+          "10 drops of mucus from a deep-diver leader",
+          "One hair or nail from a Shipwreck victim"
+        ]
+      },
+      "advancement_ritual": "Cause an earthquake and tsunami, drink the potion amidst this environment until the ascension is over.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Sea King",
+      "potion_overview": "Like a massive sea-blue gem, reflecting the depths of an ocean region.",
+      "formula": {
+        "main_ingredients": [
+          "Skull of a deep-sea python",
+          "Eye of the King of Green Wings (a giant Octopus-like creature with wings)"
+        ],
+        "alternative": "A Sea King Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "600 milliliters of the King of Green Wings' blue blood",
+          "One fang of the Deep-Sea Python",
+          "A small idol imbued with Sea God faith",
+          "10 drops of paste made from over 100 kinds of fish roe",
+          "50 grams of freshly sun-dried sea salt"
+        ]
+      },
+      "advancement_ritual": "Select a sea region, build with your own power a stone tower on the seafloor reaching the surface, then subdue all powerful creatures within a 300-nautical-mile radius.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Calamity",
+      "potion_overview": "Like a tornado compressed and sealed inside a bottle, accompanied by silver-white lightning.",
+      "formula": {
+        "main_ingredients": [
+          "The Beyonder Characteristic of Queen of Calamity Cohinem (Note: Cohinem is not a pure Sequence 2 Angel of the Tyrant Pathway) OR The Beyonder Characteristic of the 'King of the Deep Sea'"
+        ],
+        "alternative": "A Calamity Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "An item from the remains of a historic disaster",
+          "600 ml of the King of the Deep Sea's or another Calamity's blood",
+          "3 leaves of the Elven Ancestor Tree",
+          "One hair each from a thousand people who died of fear"
+        ]
+      },
+      "advancement_ritual": "With only your own strength, trigger a natural disaster affecting at least one million people. At the peak of their fear and despair, reveal yourself and halt the disaster—this stage must also rely solely on your own power.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Thunder God",
+      "potion_overview": "Water of thunder formed by intertwining flashes of multicolored lightning.",
+      "formula": {
+        "main_ingredients": [
+          "A Thunder God Beyonder Characteristic"
+        ],
+        "supplementary_ingredients": [
+          "A fragment of lightning from the Astral World",
+          "One depraved nature of a Hanged Man Pathway Angel",
+          "One stone from the underground Nightmare Swamp (Born under the influence of the 'Chaos Sea', widely present underground—yet approaching it means coming dangerously close to the Chaos Sea, so High Sequence powerhouses cannot personally retrieve it)"
+        ]
+      },
+      "advancement_ritual": "Find and harness lightning to disrupt at least three Sequence 2 Angels' advancement rituals to Sequence 1 (optimal if the angels belong to the Hanged Man, White Tower, Visionary, Sun, or Tyrant Pathways). Interrupting a ritual to Sequence 0 will count as completing it in one go. Interrupting a ritual isn't limited to drinking the potion but any part of the ritual, such as blowing up the marionette town of a Miracle Invoker that want to advance to Attendant of Mysteries.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Tyrant",
+      "potion_overview": "A massive humanoid form condensed from lightning and storms.",
+      "formula": {
+        "main_ingredients": [
+          "The Tyrant Uniqueness",
+          "Three Thunder God Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "Blood of a God sufficient to drench the whole body"
+        ]
+      },
+      "advancement_ritual": "Gather over 100,000 followers. They must submit and believe in the person out of fear. Challenge a Sequence 0 True God and survive. After surviving the challenge, drink the potion under the watch of the fearful followers.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

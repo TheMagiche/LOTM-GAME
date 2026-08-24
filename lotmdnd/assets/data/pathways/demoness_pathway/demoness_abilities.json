@@ -1,0 +1,129 @@
+{
+  "pathway": "Demoness Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Assassin",
+      "abilities": [
+        "Physical Enhancement: Various improvements to body for combat, evasion, and Concealment.",
+        "Feather Fall: Can be as light as a feather, descending gracefully or gliding.",
+        "Mighty Blow: Can release all physical strength in a single blow.",
+        "Heightened Senses: Sharp ears and eagle-like vision.",
+        "Night Vision: Can easily see through darkness.",
+        "Shadow Concealment: Can Conceal themselves within darkness and Shadows."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Instigator",
+      "abilities": [
+        "Physical Enhancement: Stronger bodies, but combat abilities other than speed aren't significantly improved.",
+        "Instigation: Adept at triggering evil desires deep in people's hearts, causing them to commit violent crimes."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Witch",
+      "abilities": [
+        "Gender Transition: Advancing results in becoming female regardless of original gender.",
+        "Charm: Appearance and charm enhanced significantly.",
+        "Dark Magic: Gain various forms of Dark Magic including Black Flames, Frost, and Curses.",
+        "Black Flames: Can conjure Black Flames that ignite Spirituality rather than physical matter.",
+        "Frost: Can cast Spells related to Frost and freezing.",
+        "Mirror Magic: Can manipulate Mirrors for Substitution and hiding.",
+        "Mirror Substitution: Can utilize Mirrors as a medium to create Substitutes that can take damage.",
+        "Bloodline Curse: Can curse any target within the bloodline of a medium.",
+        "Invisibility: Can turn Invisible to the naked eye.",
+        "Divination: Possess considerable Divination capabilities.",
+        "Anti-Divination: Can interfere with others' Divination."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Pleasure (Demoness of Pleasure)",
+      "abilities": [
+        "Physical Enhancement: Strong throat control; not easily choked.",
+        "Heightened Senses: Enhanced vision to see their own Threads.",
+        "Threads: Can make thin, almost invisible Threads to control and restrict enemy movements.",
+        "Charm: Enhanced Charm; can provide unforgettable pleasure during sex.",
+        "Dark Magic: Enhanced capabilities including Frost and Black Fire.",
+        "Mirror Magic: Increased speed of Mirror and Staff Substitution."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Affliction (Demoness of Affliction, Lady of Diseases)",
+      "abilities": [
+        "Physical Enhancement: Can freely manipulate their hair as a weapon.",
+        "Disease: Can create multiple airborne pathogens with accelerated infection speed.",
+        "Threads: Enhanced Threads capable of more precise actions.",
+        "Charm: Can use Charm as an active ability; a simple glance can Charm a person.",
+        "Dark Magic: Enhanced capabilities including Curses and Frost.",
+        "Mirror Magic: Can use Mirror World to create scene illusions and Mirror Mazes."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Despair (Demoness of Despair)",
+      "abilities": [
+        "Plague: Enhanced form of Disease with vastly increased scope, distance, and potency.",
+        "Threads: Enhanced Threads within hair; can cause Petrification.",
+        "Charm: Beauty greatly enhanced physically and spiritually.",
+        "Dark Magic: Great mastery of Frost, Curses, and Black Flames.",
+        "Mirror Magic: Enhanced; can project themselves through Mirrors within a city-wide range.",
+        "Mythical Creature Form: Incomplete Gorgon."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Unaging (Demoness of Unaging)",
+      "description": "Every Demoness of Unaging is forever youthful, skilled in Resurrection, bizarrely difficult to kill, a darling of the Mirror World, and a true Gorgon.",
+      "abilities": [
+        "Mirror Self: Consciousnesses of Mirror Person and real-world counterpart fuse together.",
+        "Concealed Resurrection: Can create Mirror Persons sleeping within Mirrors for revival.",
+        "Petrification: Enhanced; can slowly Petrify surroundings.",
+        "Charm: Greatly strengthened; can make Angels fall in love.",
+        "Dark Magic: Enhanced Mirror and Curse capabilities.",
+        "Plague: Upon full digestion, Plagues can reach a range of up to 10 kilometers.",
+        "Mythical Creature Form: More complete Gorgon."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Catastrophe (Demoness of Catastrophe)",
+      "description": "Everyone who mentions 'Their' name feels fear from the depths of their heart.",
+      "abilities": [
+        "Catastrophe: Authority over natural and man-made calamities.",
+        "Plague: Mystical pathogens can erode and influence complete Mythical Creatures.",
+        "Mirror Self: Can initially separate 5 Mirror Persons.",
+        "Mythical Creature Form: Complete Gorgon."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Apocalypse (Demoness of Apocalypse)",
+      "abilities": [
+        "Mirror World: Can directly utilize the power and special traits of the Mirror World.",
+        "Apocalypse: Ascendant form of Catastrophe; brings complete Apocalypse within a designated area.",
+        "Pleasure: Supreme Pleasure that drives people to indulge; part of ultimate Charm.",
+        "Disease: Portion of the Disease authority; can govern all causes of Disease.",
+        "Dark Magic: Mastery reaches Archangel-level Witch.",
+        "Curses: Can exploit even the faintest connections."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Demoness (Chaos Demoness, Primordial Demoness)",
+      "description": "'She' is the Source of Catastrophes, the Symbol of the Apocalypse, the Demoness wielding Chaos, and the Ruler of the Mirror World. 'She' corresponds to the feminine aspect of the Original Creator and possesses the authorities of Primordium, Chaos, Charm, the Mirror World, Femininity, Dark Magic, and Disease.",
+      "abilities": [
+        "Chaos: Core authority governing the return of all things to Chaos and the Primordial state.",
+        "Disease & Plague: Subordinate authorities of Chaos; embodies the concept of Disease itself.",
+        "Primordium: Authority over Stillness, Stagnation, and Omnipotence.",
+        "Dark Magic: Sovereign of all Dark Magic; any Spell in domains of Darkness, Curse, Depravity, or Evil becomes ineffective.",
+        "Charm: Conceptual level Charm; exerts extreme effect on all things.",
+        "Mirror World: Complete control over the Mirror World and all derivative abilities.",
+        "Femininity: Authority over female forces and concepts."
+      ]
+    }
+  ]
+}

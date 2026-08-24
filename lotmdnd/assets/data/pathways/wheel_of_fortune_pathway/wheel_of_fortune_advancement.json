@@ -1,0 +1,214 @@
+{
+  "pathway": "Wheel of Fortune Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Monster",
+      "potion_overview": "A transparent liquid seemingly imbued with iridescent aurora.",
+      "formula": {
+        "main_ingredients": [
+          "Tail of a Colorful Carp",
+          "One Silver Four-leaf Clover"
+        ],
+        "alternative": "A Monster Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of murky river water",
+          "Three ordinary Four-leaf Clovers",
+          "10 drops of monkeyflower pure",
+          "One lucky charm (the kind that can be made by a Sequence 9 Beyonder)",
+          "9 drops of one's own blood"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 8,
+      "name": "Robot",
+      "potion_overview": "A cold, gray liquid that seems almost solidified.",
+      "formula": {
+        "main_ingredients": [
+          "One piece of Orange-glow Stone",
+          "Crystal of a Young Unicorn"
+        ],
+        "alternative": "A Robot Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Young Unicorn Blood",
+          "10 Snake Scales (preferably white or silver)",
+          "7 drops of White Chestnut Flower essential oil",
+          "9 Lemon Grass Stems",
+          "13 grams of Iron Rust"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 7,
+      "name": "Lucky One",
+      "potion_overview": "A mercury-colored liquid with suspended bubbles, as if eyes are opening within it.",
+      "formula": {
+        "main_ingredients": [
+          "One flower of good fortune",
+          "Eyeball of a Silver-eyed Serpent"
+        ],
+        "alternative": "A Lucky One Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Silver-eyed Serpent Blood",
+          "15 grams of soil from where the flower of good fortune grew",
+          "One gold or silver coin picked up within three days",
+          "10 milliliters of mercury"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 6,
+      "name": "Calamity Priest",
+      "potion_overview": "A silver liquid covered in a black-green layer, emitting a foul and nauseating odor.",
+      "formula": {
+        "main_ingredients": [
+          "Heart of a Blue-spotted Firebird",
+          "Snake tail of a One-eyed White Bull"
+        ],
+        "alternative": "A Calamity Priest Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90 milliliters of One-eyed White Bull blood",
+          "3 feathers of a Blue-spotted Firebird",
+          "7 drops of white chestnut flower essential oil",
+          "10 drops of gentian hydrosol",
+          "One piece of obsidian stained with another's blood"
+        ]
+      },
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 5,
+      "name": "Winner",
+      "potion_overview": "A golden, radiant liquid that evokes joy.",
+      "formula": {
+        "main_ingredients": [
+          "One piece of Divine-blessed Crystal",
+          "Heartwood of a Red-flame Treant"
+        ],
+        "alternative": "A Winner Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "80 milliliters of Red-flame Treant sap",
+          "20 grams of accretions from a Divine-blessed Crystal",
+          "10 grams of white mustard seeds",
+          "9 drops of sweet chestnut flower essential oil",
+          "Luck derived from another person"
+        ]
+      },
+      "advancement_ritual": "For a full month, remain in an unlucky state—absolutely no instances of good fortune.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 4,
+      "name": "Misfortune Mage",
+      "potion_overview": "A black liquid streaked with streams of grey-white.",
+      "formula": {
+        "main_ingredients": [
+          "Brain of a Four-eared Giant Ape",
+          "Horn of an Adult Unicorn"
+        ],
+        "alternative": "A Misfortune Mage Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "90 milliliters of Adult Unicorn blood",
+          "One ear of a Four-eared Giant Ape",
+          "One piece of sea-blue crystal purified by the salt-curing method (Note: Salt-curing method—cure in sea salt for 7–24 hours, place in a sufficiently large geode for 12–24 hours, then bury in soil for 7–28 days)",
+          "One gold orange"
+        ]
+      },
+      "advancement_ritual": "Without prior preparation, and without seeking a way to negate or alleviate the effects, directly face a major calamity while at the lowest ebb of your luck—and survive.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 3,
+      "name": "Chaoswalker",
+      "potion_overview": "An exceptionally chaotic liquid churning with cold tones of silver, grey, black, green, etc.",
+      "formula": {
+        "main_ingredients": [
+          "Crystal Core of a Calamity Phoenix",
+          "Gall of a Misfortune White Snake"
+        ],
+        "alternative": "A Chaoswalker Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "40 milliliters of Misfortune White Snake venom",
+          "40 milliliters of Calamity Phoenix blood",
+          "One 'Soothe' talisman made by a high-ranking 'Spectator' (at least Sequence 2) or an equivalent item",
+          "Nine written thank-you notes from survivors of misfortune or calamity"
+        ]
+      },
+      "advancement_ritual": "Fix a node, or 'beacon', that your destiny must inevitably reach within the next ten years. This node can be fixed in any way but it must be absolute, inevitable to reach.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 2,
+      "name": "Soothsayer",
+      "potion_overview": "A pure, viscous mass of mercury covered in countless tiny symbols and patterns.",
+      "formula": {
+        "main_ingredients": [
+          "Horn of a Fate Grey Tiger OR The Heart of a Scale-covered Treant Elder"
+        ],
+        "alternative": "A Soothsayer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Fate Grey Tiger blood or 100 milliliters of Scale-covered Treant Elder sap or 100 milliliters of a corresponding Angel's blood (choose one)",
+          "One important prophecy that has been fulfilled (must have been recorded on stone or paper before it came true)",
+          "The blessing of one of the Seven Lights of the Spirit World",
+          "Luck accumulated over more than a hundred years"
+        ]
+      },
+      "advancement_ritual": "Peer into the River of Fate, uncover an important revelation concerning at least one nation, and ensure that this revelation ultimately manifests exactly as you 'saw' it.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 1,
+      "name": "Snake of Mercury (Giant Serpent, Snake of Fate, Tail-Devouring Serpent of Fate)",
+      "potion_overview": "A head-to-tail mercury-colored small serpent (more like a flow of water) encased in a semi-transparent shell.",
+      "formula": {
+        "main_ingredients": [
+          "The Crystal Core of a Mercury Phoenix OR The Crystal Core of a Mercury Giant Serpent"
+        ],
+        "alternative": "A Snake of Mercury Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "One's own umbilical cord from birth or eggshell remnants",
+          "9 drops of 'water' closely related to oneself extracted via a special method from the River of Fate (each drop is a segment of fate)",
+          "One item contaminated by the Gray Fog of the Sefirah Castle (can be replaced by the blessing or bestowed item from Sequence 0 Fool)"
+        ]
+      },
+      "advancement_ritual": "Find a way to extract all of your memories, then, after consuming the potion, infuse them back into yourself. Alternatively, with the aid of a Visionary during the ritual, regress to the state of a fetus, stripped of all memory, and awaken the full breadth of cognition buried deep within your soul and mind. Note 1: Specific term from the Western Continent: Unveiling the Enigma of the Womb. Note 2: Here memory mean ALL memory, conscious and unconscious.",
+      "ritual_essence": "The core of the Snake of Mercury is 'reboot'. The purpose of the ritual is to ensure the promoter does not get lost during the reboot and lose control.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    },
+    {
+      "sequence": 0,
+      "name": "Wheel of Fortune",
+      "potion_overview": "A slowly rotating, semi-illusory, semi-substantial wheel filled with mysterious meaning and symbol.",
+      "formula": {
+        "main_ingredients": [
+          "The Wheel of Fortune Uniqueness",
+          "Three Snake of Mercury Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "Nine beacons from the River of Fate (from the past, present, or future)"
+        ]
+      },
+      "advancement_ritual": "One must find the right opportunity in the flow of destiny, then take the potion. The right opportunity cannot be divined and cannot be predicted. It can't be locked in any way. One can only rule out certain obstacles and must patiently look for it.",
+      "ritual_essence": "No data available.",
+      "acting_method": "No data available.",
+      "consumption_backlash": "No data available."
+    }
+  ]
+}

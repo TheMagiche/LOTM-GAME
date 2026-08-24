@@ -1,0 +1,337 @@
+{
+  "bounties": {
+    "loen_pounds": {
+      "pirate_kings": [
+        {
+          "name": "Nast Solomon",
+          "alias": "King of the Five Seas",
+          "flagship": "The Black Emperor",
+          "amount": 800000,
+          "status": "active"
+        },
+        {
+          "name": "Bernadette Gustav",
+          "alias": "Queen Mystic",
+          "flagship": "The Dawn",
+          "amount": 650000,
+          "status": "active"
+        },
+        {
+          "name": "Barros Hopkins",
+          "alias": "King of the Black Throne",
+          "flagship": null,
+          "amount": null,
+          "status": "deceased"
+        },
+        {
+          "name": "Agalito",
+          "alias": "King of Immortality",
+          "flagship": "The Death Announcer",
+          "amount": 100000,
+          "status": "active"
+        },
+        {
+          "name": "Cattleya",
+          "alias": "Queen of Stars",
+          "flagship": "The Future (Stars Pirates)",
+          "amount": 37000,
+          "status": "active",
+          "notes": "Increased from 37,000 to 45,000 later in Book One"
+        }
+      ],
+      "pirate_admirals": [
+        {
+          "name": "Ludwell",
+          "alias": "Admiral Hell",
+          "flagship": "The Black Tulip",
+          "amount": 55000,
+          "status": "deceased"
+        },
+        {
+          "name": "Senor",
+          "alias": "Admiral of Blood",
+          "flagship": "Tree of Flesh and Blood",
+          "amount": 42000,
+          "status": "deceased"
+        },
+        {
+          "name": "Qilangos",
+          "alias": "Vice Admiral Hurricane",
+          "flagship": "The Black Death",
+          "amount": 30000,
+          "status": "unknown",
+          "notes": "10,000 from Loen alone; total includes bounties from Intis, Feysac, and others"
+        },
+        {
+          "name": "Edwina Edwards",
+          "alias": "Vice Admiral Iceberg",
+          "flagship": "The Golden Dream",
+          "amount": 26000,
+          "status": "active"
+        },
+        {
+          "name": "Howl Constantine",
+          "alias": "Admiral Deep Sea (formerly Vice Admiral Deep Sea)",
+          "flagship": "The Newins",
+          "amount": null,
+          "status": "active"
+        }
+      ],
+      "pirate_captains_and_crew": [
+        {
+          "name": "Bird Mustang",
+          "alias": "Horror Viscount",
+          "affiliation": "The Black Emperor",
+          "amount": 10000,
+          "status": "active",
+          "notes": "Bounty exceeds 10,000"
+        },
+        {
+          "name": "Danitz",
+          "alias": "Blazing",
+          "affiliation": "The Golden Dream",
+          "amount": 10000,
+          "status": "removed",
+          "notes": "Bounty fluctuated: 3,000 → 4,200 → 5,500 → 10,000; removed after 1352 due to becoming an official Beyonder under the Church of the Fool"
+        },
+        {
+          "name": "Kircheis",
+          "alias": "Slaughterer",
+          "affiliation": "The Death Announcer",
+          "amount": 9500,
+          "status": "deceased"
+        },
+        {
+          "name": "Heath Doyle",
+          "affiliation": "Stars Pirates",
+          "amount": 7600,
+          "status": "active"
+        },
+        {
+          "name": "Frank Lee",
+          "affiliation": "Stars Pirates",
+          "amount": 7000,
+          "status": "active"
+        },
+        {
+          "name": "Bru Walls",
+          "alias": "Gourmet",
+          "affiliation": "The Golden Dream",
+          "amount": 6200,
+          "status": "active"
+        },
+        {
+          "name": "Maveti",
+          "alias": "Steel",
+          "affiliation": "Tree of Flesh and Blood",
+          "amount": 6000,
+          "status": "deceased"
+        },
+        {
+          "name": "Orpheus",
+          "alias": "Singer",
+          "affiliation": "The Golden Dream",
+          "amount": 5500,
+          "status": "active"
+        },
+        {
+          "name": "Mithor King",
+          "affiliation": "The Black Death",
+          "amount": 5400,
+          "status": "deceased"
+        },
+        {
+          "name": "Jodeson",
+          "alias": "Flowery Bow Tie",
+          "affiliation": "The Golden Dream",
+          "amount": 5200,
+          "status": "active"
+        },
+        {
+          "name": "Hendry",
+          "alias": "Blood Brambles",
+          "affiliation": "Tree of Flesh and Blood",
+          "amount": 3800,
+          "status": "deceased"
+        },
+        {
+          "name": "Nina",
+          "affiliation": "Stars Pirates",
+          "amount": 3600,
+          "status": "active"
+        },
+        {
+          "name": "Connors Viktor",
+          "alias": "Crazy Captain",
+          "affiliation": "Single-eyed Skull",
+          "amount": 3300,
+          "status": "deceased"
+        },
+        {
+          "name": "Calm Squall",
+          "affiliation": "Tree of Flesh and Blood",
+          "amount": 1500,
+          "status": "deceased"
+        },
+        {
+          "name": "Jonson",
+          "alias": "Sea Wolf",
+          "affiliation": "Red Skull",
+          "amount": 900,
+          "status": "active"
+        },
+        {
+          "name": "Anderson",
+          "alias": "One-Eyed",
+          "affiliation": "Red Skull",
+          "amount": 500,
+          "status": "active"
+        },
+        {
+          "name": "Goltadt",
+          "affiliation": null,
+          "amount": 950,
+          "status": "active"
+        }
+      ],
+      "others": [
+        {
+          "name": "Lanevus",
+          "amount": 100,
+          "status": "deceased",
+          "notes": "100 from Loen; additionally 100 from Audrey Hall"
+        },
+        {
+          "name": "Jason Beria",
+          "amount": 3000,
+          "status": "deceased",
+          "notes": "Increased from 2,000"
+        },
+        {
+          "name": "Gehrman Sparrow",
+          "amount": 90000,
+          "status": "active",
+          "notes": "Increased from 50,000"
+        },
+        {
+          "name": "Azik Eggers",
+          "amount": 150,
+          "status": "active"
+        }
+      ]
+    },
+    "intis_verl_dor": {
+      "pirate_kings": [
+        {
+          "name": "Nast Solomon",
+          "alias": "King of the Five Seas",
+          "flagship": "The Black Emperor",
+          "amount": 20000000,
+          "status": "active"
+        },
+        {
+          "name": "Bernadette Gustav",
+          "alias": "Queen Mystic",
+          "flagship": "The Dawn",
+          "amount": 100000000,
+          "status": "active"
+        },
+        {
+          "name": "Barros Hopkins",
+          "alias": "King of the Black Throne",
+          "flagship": null,
+          "amount": null,
+          "status": "deceased"
+        },
+        {
+          "name": "Agalito",
+          "alias": "King of Immortality",
+          "flagship": "The Death Announcer",
+          "amount": 4000000,
+          "status": "active"
+        },
+        {
+          "name": "Cattleya",
+          "alias": "Queen of Stars",
+          "flagship": "The Future (Stars Pirates)",
+          "amount": 11000000,
+          "status": "active"
+        },
+        {
+          "name": "Tracy",
+          "alias": "Queen of Ailment",
+          "flagship": "The Black Death",
+          "amount": 3000000,
+          "status": "active"
+        },
+        {
+          "name": "Bulatov Ivan",
+          "alias": "King of Dusk",
+          "flagship": null,
+          "amount": 2600000,
+          "status": "active"
+        }
+      ],
+      "pirate_admirals": [
+        {
+          "name": "Holle Sassen",
+          "alias": "Vice Admiral Black Tide",
+          "flagship": null,
+          "amount": 700000,
+          "status": "active"
+        }
+      ],
+      "pirate_captains_and_crew": [
+        {
+          "name": "Basil",
+          "alias": "Bone Splitter",
+          "affiliation": "Black Octopus",
+          "amount": 250000,
+          "status": "active"
+        },
+        {
+          "name": "Khizi",
+          "alias": "Baronet Black Class",
+          "affiliation": "Golden Nepos",
+          "amount": 65000,
+          "status": "active"
+        }
+      ],
+      "others": [
+        {
+          "name": "Burman",
+          "amount": 600000,
+          "status": "active"
+        },
+        {
+          "name": "Hisoka",
+          "amount": 70000,
+          "status": "active"
+        },
+        {
+          "name": "Bram Andariel",
+          "amount": 50000,
+          "status": "active"
+        },
+        {
+          "name": "Guillaume Bénet",
+          "amount": 20000,
+          "status": "active"
+        },
+        {
+          "name": "Pualis de Roquefort",
+          "amount": 20000,
+          "status": "active"
+        },
+        {
+          "name": "Lumian Lee",
+          "amount": 50000,
+          "status": "active",
+          "notes": "As Ciel Dubois; also has a 3,000 bounty elsewhere"
+        }
+      ]
+    }
+  },
+  "currency_conversion_note": "Conversion rate noted: approximately 166,667 pounds ≈ 1 verl d'or (based on the ≈166,667 pounds note on the page)",
+  "notes": "All bounties are based on data from the Lord of Mysteries and Circle of Inevitability series. Bounties may fluctuate over time, and some individuals have bounties in multiple regions."
+}

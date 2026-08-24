@@ -1,0 +1,188 @@
+{
+  "pathway_name": "Justiciar Pathway",
+  "aliases": [
+    "Arbiter Pathway",
+    "Judgment Pathway"
+  ],
+  "overview": {
+    "description": "The Justiciar Pathway is about defending Order. It is strong at setting laws and punishing lawbreakers. They can set up rules that will inflict punishments if broken, directly attack minds and souls, recognize people supernaturally, detect abnormalities, and use all kinds of weapons and explosives.",
+    "high_sequence_characteristics": "At High-Sequences, they can negate other Beyonder powers and supernatural phenomena, and enforce order upon chaos. They can also set Verdicts and Rules and any sentence they speak in mystical language can be set as a rule for their targets to follow.",
+    "origin": "The Beyonder Characteristics of this pathway originated from the Outer Deity Son of Chaos.",
+    "trunsoest_brass_book": "All living beings are equal before the law.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Arbiter",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Sheriff",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Interrogator",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Judge",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Disciplinary Paladin",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Imperative Mage",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Chaos Hunter",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Balancer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Hand of Order",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Justiciar",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Justiciar Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "Judgment",
+    "card_number": "XX",
+    "description": "Judgment (XX), or in some decks spelled Judgement, is the twentieth card of the Major Arcana. Its order is significant: it's the last card before the completion of the Major Arcana's numerical cycle. This card is referred to as a time of resurrection and awakening, a time when a period of our life comes to an absolute end making way for dynamic new beginnings."
+  },
+  "god": [
+    {
+      "name": "Celestial Thearch",
+      "status": "AtS (Above the Sequence)",
+      "type": "Current Above the Sequence"
+    },
+    {
+      "name": "Night Emperor",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Elf King Soniathrym",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    },
+    {
+      "name": "Son of Chaos",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "A giant Brass Pillar with rules written on it."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A giant Brass Pillar with rules written on it. (Note: The pinnacle form shares the same description as the standard mythical creature form for this pathway.)"
+  },
+  "high_sequence_group": {
+    "name": "Black Emperor Justiciar Chaos Mist",
+    "pathways": [
+      "Black Emperor",
+      "Justiciar",
+      "Chaos Mist"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "The Anarchy",
+    "alternative_name": "Son of Chaos",
+    "pathways": [
+      "Black Emperor",
+      "Justiciar",
+      "Chaos Mist"
+    ]
+  },
+  "sefirah": {
+    "name": "Nation of Disorder"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "The Anarchy",
+        "pathways": ["Black Emperor"]
+      },
+      {
+        "group": "Uncertain Mist",
+        "pathways": ["Chaos Mist"],
+        "note": "Because The Anarchy was originally a part of the Son of Chaos."
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Supernova Dominator",
+        "pathways": ["Condenser"],
+        "note": "Because the Supernova Dominator specifically targets the Nation of Disorder."
+      },
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer specifically targets the Nation of Disorder. 'He' desires the Black Emperor Pathway and the Justiciar Pathway that could give the world within paintings a real Order."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Lord of Mysteries",
+        "pathways": ["Fool", "Error", "Door"],
+        "note": "Some of the Justiciar's authorities overlap with the three Mysteries-group pathways. Because inherent authority overlap itself brings convergence attraction, this enables the Celestial Worthy to swallow the Nation of Disorder."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Augustus Family"
+    },
+    {
+      "name": "Castiya Family"
+    },
+    {
+      "name": "Tamara Family"
+    },
+    {
+      "name": "Trunsoest Family"
+    }
+  ]
+}

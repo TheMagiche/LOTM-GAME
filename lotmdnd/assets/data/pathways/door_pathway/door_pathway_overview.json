@@ -1,0 +1,174 @@
+{
+  "pathway_name": "Door Pathway",
+  "aliases": [
+    "Apprentice Pathway",
+    "Mysteries Pathway"
+  ],
+  "overview": {
+    "description": "The Door Pathway has many abilities that allow an unrestrained freedom of movement. They can phase through walls, fight with a diverse set of tricky spells, divine the future through Astrology, record and use the powers of others Beyonders, and travel the Spirit World, which achieves teleportation.",
+    "high_sequence_characteristics": "At High Sequences, they gain higher abilities of space manipulation, and their teleportation powers are no longer restricted to the Spirit World. They can also conceal spaces, allowing them to avoid detection through Beyonder means and with sufficient knowledge, they can directly replicate Beyonder powers without recording them first, utilize space-time to seal all sorts of things, use the power of stars to manipulate gravity, locate anything they want everywhere, and create whole alternate spaces.",
+    "authority": "This Pathway represents the concept of Door, Alternate Worlds, Seals, and Space itself.",
+    "alternate_spaces_note": "Among the Pathways that have abilities, authorities, and knowledge corresponding to Alternate Spaces and Illusory Worlds, the Door Pathway is the main one, however, it's uncertain whether the Sublunary Eye Pathway can match Door in this domain.",
+    "lumian_description": "The Apprentice Pathway that represented the concept of 'Door', alternate worlds, and space itself...",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Apprentice",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Trickmaster",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Astrologer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Scribe",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Traveler",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Secrets Sorcerer",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Wanderer",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Planeswalker",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Key of Stars",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Door",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Door Pathway is Numerous Layers upon Layers of Illusory Doors."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Magician",
+    "card_number": "I",
+    "description": "The Magician (I) is number one of the 22 Major Arcana. The Magician is depicted with one hand pointing upwards towards the sky and the other pointing down to the earth, interpreted widely as an 'as above, so below' that refers to the spiritual and physical realms. The Magician as an object of occult study is interpreted as symbolic of power, potential, and the unification of the physical and spiritual worlds, and the conduit converting spiritual energy into real-world action."
+  },
+  "god": [
+    {
+      "name": "The Fool",
+      "status": "GOO (Great Old One)",
+      "type": "Current God"
+    },
+    {
+      "name": "The Error",
+      "status": "Sequence 0",
+      "type": "Current God"
+    },
+    {
+      "name": "Phoenix Ancestor Gregrace",
+      "status": "AG (Ancient God) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Celestial Worthy of Heaven and Earth for Blessings",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "The Mythical Creature Form of the Door Pathway manifests as a huge humanoid figure composed of balls of light formed by Worms of Star and constructed by layers of Doors."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A figure symbolizing the Door of all Doors slowly emerges from layered and nested illusory Star-Doors. The being within the Door is like a key within a lock—it is the key to all mysterious worlds. The Worms of Stars, condensed from starlight and surrounded by stellar radiance, roam through countless Doors, twisting Space and traversing the Spirit World."
+  },
+  "high_sequence_group": {
+    "name": "Fool Error Door",
+    "pathways": [
+      "Fool",
+      "Error",
+      "Door"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "Lord of Mysteries",
+    "pathways": [
+      "Fool",
+      "Error",
+      "Door"
+    ]
+  },
+  "sefirah": {
+    "name": "Sefirah Castle"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "Lord of Mysteries",
+        "pathways": ["Fool", "Error"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "High-Dimensional Overseer",
+        "pathways": ["Sublunary Eye"],
+        "note": "Because the High-Dimensional Overseer desires Sefirot related to Rules, Order, and Space-Time. 'He' seeks to control Sefirah Castle and accommodate the Door Uniqueness (because the Door Pathway represents the concepts of Door, Alternate Worlds, and Space itself) and the Error Uniqueness."
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "The Anarchy",
+        "pathways": ["Justiciar"],
+        "note": "Some of the Justiciar's authorities overlap with the three Mysteries-group pathways. Because inherent authority overlap itself brings convergence attraction, this enables the Celestial Worthy to swallow the Nation of Disorder."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Church of the Fool"
+    },
+    {
+      "name": "Abraham Family"
+    },
+    {
+      "name": "Tamara Family"
+    },
+    {
+      "name": "Theosophy Order"
+    }
+  ],
+  "trivia": null
+}

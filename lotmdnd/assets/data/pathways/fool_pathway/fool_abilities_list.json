@@ -1,0 +1,111 @@
+{
+    "pathway": "Fool Pathway",
+    "sequences": [
+      {
+        "sequence": 9,
+        "name": "Seer",
+        "abilities": [
+          "Enhanced Memory: Continuously improving memory, helps in learning Ritualistic Magic and Divination Arts.",
+          "Spirituality: Enhanced spirituality upon drinking the potion.",
+          "Spirit Vision: Can see non-physical things like ghosts and specters, deduce health and emotions, and detect magical auras.",
+          "Divination Arts & Ritualistic Magic: Mastery of divination methods including astrology, spiritual numbers, and scrying.",
+          "Danger Intuition: Can intuitively detect danger using spirituality."
+        ]
+      },
+      {
+        "sequence": 8,
+        "name": "Clown",
+        "abilities": [
+          "Physical Enhancement: Strong control over body, master acrobat, complete control over bodily functions and facial expressions.",
+          "Enhanced Spirituality: Marginally enhanced spirituality.",
+          "Enhanced Danger Intuition: Greatly enhanced, can sometimes predict the next action of others.",
+          "Paper Daggers: Can temporarily turn sheets of paper as hard and sharp as steel."
+        ]
+      },
+      {
+        "sequence": 7,
+        "name": "Magician",
+        "abilities": [
+          "Physical Enhancement: More agile and nimble hands.",
+          "Spirit Vision: Slightly enhanced ability to see spiritual things.",
+          "Damage Transfer: Can transfer wounds to different areas, turning fatal wounds into minor injuries.",
+          "Flaming Jump: Can phase through fire sparks and flames within 30 meters.",
+          "Air Bullet: Can produce air projectiles comparable to bullets.",
+          "Paper Figurine Substitute: Can transform a paper figurine into themselves to block fatal blows.",
+          "Flame Controlling: Can freely manipulate flames within 30 meters.",
+          "Underwater Breathing: Can create an invisible air pipe to breathe underwater.",
+          "Bone Softening: Can soften bones to escape restraints.",
+          "Drawing Paper As Weapons: Can turn paper into various weapons.",
+          "Illusion Creation: Can create illusions with colors, sounds, and smells."
+        ]
+      },
+      {
+        "sequence": 6,
+        "name": "Faceless",
+        "abilities": [
+          "Shapeshifting: Can freely mold body and flesh to mimic others perfectly.",
+          "Enhanced Previous Abilities: Flame Controlling, Flaming Jump, and other powers become stronger.",
+          "Combat, Tracking, and Anti-Tracking: Improved due to shapeshifting and bodily control."
+        ]
+      },
+      {
+        "sequence": 5,
+        "name": "Marionettist",
+        "abilities": [
+          "Spirit Body Threads Manipulation: Can perceive and manipulate Spirit Body Threads from up to 100 meters away.",
+          "Marionette: Can turn targets into marionettes under full control.",
+          "Enhanced Abilities: Air Bullet strength comparable to a steam rifle."
+        ]
+      },
+      {
+        "sequence": 4,
+        "name": "Bizarro Sorcerer",
+        "abilities": [
+          "Enhanced Spirituality and Divination.",
+          "Bestowal: Can gift Worms of Spirit to marionettes.",
+          "Concealment: Can hide their sequence level.",
+          "Enhanced Abilities: Damage Transfer, Air Cannon, Flaming Jump, Illusion Creation, Shapeshifting, Spirit Body Threads Manipulation.",
+          "Mythical Creature Form: Can split Worms of Spirit."
+        ]
+      },
+      {
+        "sequence": 3,
+        "name": "Scholar of Yore",
+        "abilities": [
+          "History: Can borrow strength from the past, summon historical projections, and hide in the historical void.",
+          "Enhanced Abilities: Paper Figurine Substitutes, Damage Transfer, Flaming Jump, Air Cannon, Shapeshifting, Spirit Body Threads Manipulation.",
+          "Mythical Creature Form: Can split more Worms of Spirit."
+        ]
+      },
+      {
+        "sequence": 2,
+        "name": "Miracle Invoker",
+        "abilities": [
+          "Enhanced Spirituality and Soul aspects.",
+          "Authorities: Miracles (can grant wishes), Jamming in Fate, Historical Void Summoning.",
+          "Resurrection: Can resurrect up to 4 times.",
+          "Enhanced Spirit Body Threads Manipulation.",
+          "Mythical Creature Form: Complete Mythical Creature form."
+        ]
+      },
+      {
+        "sequence": 1,
+        "name": "Attendant of Mysteries",
+        "abilities": [
+          "Regenerate: Can regenerate past Spirit Body Threads of items.",
+          "Authorities: Reassembly (can graft physical objects and abstract concepts), Realm of Mysteries (concealment), Miracles.",
+          "Enhanced Spirit Body Threads Manipulation and Resurrection.",
+          "Mythical Creature Form: Evolved Worms of Spirit."
+        ]
+      },
+      {
+        "sequence": 0,
+        "name": "Fool",
+        "abilities": [
+          "Authorities: Fooling (turns falsehood into reality), Reassembly (grafting), Controller of the Spirit World, Puppetry, History, Miracles, Realm of Mysteries (Concealment), Anchor of Destiny, Shapeshifting.",
+          "Symbolism: Blind Stupidity (lowers IQ of targets).",
+          "General Traits: Extreme deity with ability to destroy a star but weak defense."
+        ]
+      }
+    ]
+  }

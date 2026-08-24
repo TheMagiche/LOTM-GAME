@@ -1,0 +1,136 @@
+{
+  "pathway": "Mother Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Planter",
+      "abilities": [
+        "Physical Enhancement: High physical strength.",
+        "Farming Proficiency: High proficiency with farming tools, distinguishing among different seeds, and nurturing them.",
+        "Weather Forecasting: Can predict the weather by observing clouds, wind, and other natural phenomena."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Doctor (Healing Pastor)",
+      "abilities": [
+        "Spirituality: Enhanced Spirituality, allowing use of Spirit Vision.",
+        "Spirit Vision: Can discern a patient's health condition with precision.",
+        "Healing: Can heal most forms of physical and Soul injuries.",
+        "Surgical Mastery: Experts at surgery with fine control over medical tools.",
+        "Treatments: Various treatments for different injuries and illnesses.",
+        "Evil Ailment Treatment: Can relieve ailments associated with Evil and Depravity.",
+        "Disease Treatments: Can heal diseases not associated with Evil.",
+        "Trauma Treatment: Can effectively treat most forms of physical trauma.",
+        "Soul Suture (Soul Sewing): Can perform Soul level surgery to repair wounds.",
+        "Giving Life: Can gradually restore energy and strength of a weakened person.",
+        "Time Distinguishment: Can easily distinguish the time."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Harvest Priest",
+      "description": "A bringer of fertility and growth, whose powers ensure abundance and bountiful harvests.",
+      "abilities": [
+        "Physical Enhancement: Various enhancements, though not much.",
+        "Seed Catalyzation: Can catalyze life within seeds or plants to cause rapid growth.",
+        "Plant & Insect Commanding: Can command plants and insects within 30 meters.",
+        "Knowledge (Ritualistic Spells): Obtains Ritualistic Spells for manipulating weather.",
+        "Healing: Improved healing capabilities; can cure diseases in plants and land."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Biologist",
+      "abilities": [
+        "Cross-breeding: Can create chimeras and Cross-breeds between various animals, plants, and objects.",
+        "Poison Creation: Body can produce highly potent toxins.",
+        "Knowledge (Life): Deep understanding of the characteristics of living organisms."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Druid",
+      "description": "Druids are the favored of Nature, attendants of the oak, and are able to rely on plants and animals to accomplish various tasks.",
+      "abilities": [
+        "Underground Travel: Can soften ground to sink and travel underground.",
+        "Wrath of Nature: Can make surrounding environment turn hostile against designated adversaries.",
+        "Swamp: Can turn ground into a Swamp to restrict movements.",
+        "Child of the Oak: Can create a layer of stone or wood skin for protection.",
+        "Golem Creation: Can create Stone Golems.",
+        "Animal Transformation: Can transform into giant bears or other creatures.",
+        "Cross-breeding: Enhanced ability to create Cross-breeds.",
+        "Seed Catalyzation: Enhanced; can cause mutated vines to grow at target location.",
+        "Poison Creation: Can throw strands of hair that combust and emit toxic substances."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Ancient Alchemist",
+      "abilities": [
+        "Mutation: Can cause Mutations to spring up in target's body and mind.",
+        "Artificial Life Creation: Can create golems and ordinary humans using fragmented Souls.",
+        "Creature Commanding: Can control Beyonder creatures with low intelligence.",
+        "Life Aura: Can fill surroundings with vibrant Life force causing rapid growth.",
+        "Healing: Greatly enhanced healing abilities; can regenerate entire limbs.",
+        "Animal Transformation: Can transform into supernatural creatures without Godhood.",
+        "Cross-breeding: Cross-breeds can now possess a Soul.",
+        "Mythical Creature Form: Incomplete Mythical Creature Form."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Pallbearer",
+      "description": "The Pallbearer is an important component of the Mother Pathway's construction of the Cycle of Reality, thus linking it to the authorities of Death and Return.",
+      "abilities": [
+        "Death & Return: Many abilities in the domain of Death and Earth representing Returning to the Earth.",
+        "Evil Spirit Transformation: Can transform the dead into Evil Spirits.",
+        "Life Deprivation: Each hit subjects target to a trial of Death.",
+        "Return to Earth: Can make Undead creatures quickly dissipate and Return to Earth.",
+        "Maternal Embrace: Can Seal away Undead Angels.",
+        "Artificial Life Creation: Can create Golems with Sequence 4 power from Soil or Clay.",
+        "Mythical Creature Form: Can respond to prayers."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Desolate Matriarch",
+      "abilities": [
+        "Gender Transition: Advancing results in becoming female regardless of original gender.",
+        "Earth, Desolation, Harvest, & Life: Partial authority over Earth, Desolation, Harvest, and Life.",
+        "Desolation: Can cause all Life within 30 kilometers to drain away until Death.",
+        "Evil Spirit Transformation: Can turn dead humans into Evil Spirits.",
+        "Artificial Life Creation: Can create dolls and Golems from Soil, Plants, and Metals.",
+        "Mythical Creature Transformation: Can briefly transform into a Mythical Creature.",
+        "Life Deprivation: Each strike subjects target to trials of Losing Control and Death.",
+        "Mythical Creature Form: Complete mass of flesh and blood with reproductive organs, wheat, mushrooms, and vines."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Naturewalker",
+      "abilities": [
+        "Nature & Mother: Partial authority over Nature and Mother.",
+        "Child of Nature: Can reshape environments and become one with Natural elements.",
+        "World Creation: Can nurture and conceive realms embodying the concept of Nature."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Mother",
+      "abilities": [
+        "Mother: Authority derived from Mother of All symbolism; gives birth to all things.",
+        "Earth: Authority derived from Mother of All and Brood Hive of Filth.",
+        "Nature: Authority derived from Goddess of Origin symbolism; immense vitality.",
+        "Death: Partial authority over Death derived from Goddess of Origin and Brood Hive of Filth.",
+        "Life: Partial authority over Life derived from Mother of All and Goddess of Origin.",
+        "Bountiful Earth: Divine Kingdom filled with the Mother's definition of Nature, Life, and Death.",
+        "Return: Lower authority derived from Earth and Death; can create Cycle of Reincarnation.",
+        "Healing (Treatment): Lower authority originating from Mother and Life.",
+        "Desolation: Lower authority from Nature and Death.",
+        "Transmutation: Lower authority from Mother and Life.",
+        "Harvest: Lesser manifestation of Nature and Life."
+      ]
+    }
+  ]
+}

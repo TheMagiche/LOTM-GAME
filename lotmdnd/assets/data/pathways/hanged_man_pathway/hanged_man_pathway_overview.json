@@ -1,0 +1,179 @@
+{
+  "pathway_name": "Hanged Man Pathway",
+  "aliases": [
+    "Secret Supplicant Pathway",
+    "Listener Pathway",
+    "Shepherd Pathway"
+  ],
+  "overview": {
+    "description": "The Hanged Man Pathway represents Degeneration, but also sacrifice and responsibility in a positive sense. Beyonders of this pathway have innate knowledge about Ritualistic Magic and secrets entities. They have high Spiritual Intuition, shadow-related spells, flesh and blood magic, and are able to graze Souls to use their powers.",
+    "high_sequence_characteristics": "At High-Sequences, they can peel evil thoughts and fuse them with a shadow to form a separate other self, manipulate the blood and flesh to create a trinity, extract a portion of the ambiguity of others' words to achieve various effects, bring degeneration to all sort of things, spread betrayal, make their profane words bring all sort of evil effects, create shadow servants, become the embodiment of Sacrifice and Sin, and master the control over the domains of Shadows, Degeneration, Mutation and others.",
+    "authority": "The Hanged Man Pathway holds the symbolisms of Sin-Bearing and Sacrifice, and partial authorities over the domains of Shadow, Darkness, Degeneration, Filth, and Mutation.",
+    "hermes_question": "Who do you think would be most likely to develop in the direction of being omnipotent and omniscient among all the present gods?",
+    "easiest_to_lose_control": "According to Klein, this pathway is the easiest to lose control and turn mad: 'Nothing came close; even the Abyss Pathway, which represented evil, was slightly lacking'.",
+    "pathway_switching_note": "The Beyonders of this group can only exchange their Pathway starting at Sequence 3."
+  },
+  "sequence_levels": {
+    "low_sequence": [
+      {
+        "sequence": 9,
+        "name": "Secrets Suppliant",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 8,
+        "name": "Listener",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "mid_sequence": [
+      {
+        "sequence": 7,
+        "name": "Shadow Ascetic",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 6,
+        "name": "Rose Bishop",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 5,
+        "name": "Shepherd",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_saint": [
+      {
+        "sequence": 4,
+        "name": "Black Knight",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 3,
+        "name": "Trinity Templar",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "high_sequence_angel": [
+      {
+        "sequence": 2,
+        "name": "Profane Presbyter",
+        "advancement_method": "Abi/Adv"
+      },
+      {
+        "sequence": 1,
+        "name": "Dark Angel",
+        "advancement_method": "Abi/Adv"
+      }
+    ],
+    "true_god": [
+      {
+        "sequence": 0,
+        "name": "Hanged Man",
+        "advancement_method": "Abi/Adv"
+      }
+    ]
+  },
+  "pathway_symbol": {
+    "description": "The official symbol of the Hanged Man Pathway."
+  },
+  "corresponding_tarot_card": {
+    "card": "The Hanged Man",
+    "card_number": "XII",
+    "description": "The Hanged Man (XII) is the number twelfth of 22 Major Arcana. An image of a man being hanged upside-down by one ankle, and his facial expression is calm and serene, suggesting that he is in this hanging position by his own choice. The Hanged Man is the card of ultimate surrender, of being suspended in time, and of martyrdom and sacrifice to the greater good."
+  },
+  "god": [
+    {
+      "name": "Grisha Adam",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "True Creator",
+      "status": "Sequence 0 †",
+      "type": "Former God"
+    },
+    {
+      "name": "Ancient Sun God",
+      "status": "AtS (Above the Sequence) †",
+      "type": "Former God"
+    },
+    {
+      "name": "Primordial God Almighty",
+      "status": "GOO (Great Old One) ‡",
+      "type": "Former God"
+    }
+  ],
+  "mythical_creature_form": {
+    "description": "Black shadow and writhing flesh."
+  },
+  "pinnacle_mythical_creature_form": {
+    "description": "A flowing shadow concealed behind a dark curtain, its eyes hidden behind the scenes, burying secrets of history and fate. From the place where it stands, all things are corrupted and fall into depravity, just like its body, which is covered in twisted flesh and mutated eyes. This fallen flesh transforms into its believers, who kneel and worship it."
+  },
+  "high_sequence_group": {
+    "name": "Visionary Sun Tyrant White Tower Hanged Man",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "above_the_sequence": {
+    "name": "God Almighty",
+    "pathways": [
+      "Visionary",
+      "Sun",
+      "Tyrant",
+      "White Tower",
+      "Hanged Man"
+    ]
+  },
+  "sefirah": {
+    "name": "Chaos Sea"
+  },
+  "neighboring_and_compatible_pathways": {
+    "neighboring_pathways": [
+      {
+        "group": "God Almighty",
+        "pathways": ["Visionary", "Sun", "Tyrant", "White Tower"]
+      }
+    ],
+    "compatible_pathways": [
+      {
+        "group": "Inextinguishable Ravings",
+        "pathways": ["Everlasting"]
+      },
+      {
+        "group": "Primordial Hunger",
+        "pathways": ["Tail-Devourer"],
+        "note": "The Chaos Sea is a Sefirah that the Primordial Hunger specifically targets, since 'He' would not miss any opportunities related to Chaos or Primordial qualities. Among its five Pathways, the Hanged Man Pathway is one Pathway that the Primordial Hunger prioritizes. As the Primordial Hunger is the symbol of Convergence, it is theoretically possible for 'His' Pathway to mutually switch to any Pathway. However, at higher sequences, especially at the Angel stage, it is difficult for 'His' pathway to switch out, as it is the symbol of convergence and can only devour others. Despite this, one can cleverly use the symbol of separation to switch; the simplest idea is to 'die' once, because symbols of termination naturally carry some separation. This temporarily causes one's own characteristics to die or fall dormant, allowing a switch under such conditions. However, this is very dangerous and will most likely result in actual death."
+      }
+    ],
+    "non_adjacent_with_hidden_neighbouring": [
+      {
+        "group": "Calamity of Destruction",
+        "pathways": ["Demoness"],
+        "note": "Based on the Demoness' authorities over the Return of All Things to Chaos and the Primordial State. The reason why the City of Calamity was the first Sefirah to be accommodated by the Primordial God Almighty must have been due to a mystical connection, an instinctive tendency that had long existed. Which of the five God Almighty's Pathways have a connection with the Demoness' Chaos Authority is never explicitly stated. However, the Hanged Man is singled out as a God Almighty's Pathway that the Primordial Hunger specifically targets because of its Chaos and Primordial qualities. Furthermore, among the five Pathways, only the Hanged Man has an Authority related to Chaos—the Authority of Filth that signifies 'Them' being tainted by the Chaos Sea and are capable of projecting traces of the Chaos Sea's influence."
+      },
+      {
+        "group": "Father of Devils",
+        "pathways": ["Abyss"],
+        "note": "Because of the connection between Heaven and the Abyss, which was also consistent with the mystical similarity between the Degenerate nature of these two Pathways."
+      }
+    ]
+  },
+  "related_organizations": [
+    {
+      "name": "Aurora Order"
+    },
+    {
+      "name": "Twilight Hermit Order"
+    },
+    {
+      "name": "Rose Redemption"
+    }
+  ]
+}

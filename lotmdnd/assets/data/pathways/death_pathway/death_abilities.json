@@ -1,0 +1,122 @@
+{
+  "pathway": "Death Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Corpse Collector",
+      "description": "From this stage forward, these Beyonders will become increasingly afraid of Sunlight and Purification.",
+      "abilities": [
+        "Physical Enhancement: Enhanced physical attributes, gloomy presence, and lower body temperature.",
+        "Spirituality: Slightly enhanced Spirituality.",
+        "Spirit Vision: Can see non-physical things such as ghosts and specters.",
+        "Knowledge (Undead): Abundant knowledge of specific characteristics and weaknesses of many Undead creatures."
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Gravedigger",
+      "abilities": [
+        "Physical Enhancement: Stronger and more agile.",
+        "Spirituality: Increased Spirituality.",
+        "Spirit Vision: Enhanced ability to use Spirit Vision.",
+        "Spirit Communication: Can communicate with nearby Spirits and command them.",
+        "Eye of Death: Can quickly determine weaknesses of Undead and Spirit World creatures."
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Spirit Medium",
+      "abilities": [
+        "Physical Enhancement: No significant improvements in physique or agility.",
+        "Spirituality: Greatly enhanced Spirituality.",
+        "Spiritual Perception: Extremely strong; can sense hidden Spirits even with eyes closed.",
+        "Spirit Vision: More powerful.",
+        "Spirit Affinity: Deceased and natural Spirits see them as a fellow Spirit.",
+        "Spirit Channeling: Core ability to communicate with natural Spirits and dead souls.",
+        "Zombie Disguise: Can disguise as a Zombie to endure Decay, Cold, and Death auras.",
+        "Knowledge (Mysticism): Knowledge of Ritualistic Magic related to Spirits."
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Spirit Guide",
+      "description": "Spirit Guides are very powerful against Zombies and Wraiths, and can even effectively target Evil Spirits. They can directly control groups of ownerless Undead that are of similar status to themselves.",
+      "abilities": [
+        "Language of the Dead: Can urge a target's Spirit to leave a body, bypassing physical protection.",
+        "Resurrection: Can turn corpses into living skeletons and Zombies.",
+        "Spirit Channeling: Can control groups of ownerless Undead; can swap their own Spirit with Undead under command.",
+        "Knowledge (Spirit World): Considerable information about the Spirit World."
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Gatekeeper",
+      "abilities": [
+        "Physical Enhancement: Stronger and quicker.",
+        "Spiritual Perception: Can sense if an unknown creature is crossing the Spirit World.",
+        "Door to the Underworld: Can sense the entrance to the Underworld and summon it.",
+        "Internal Underworld: Can house numerous Souls, deceased, and natural Spirits within their body.",
+        "Spirit Channeling: Maximum number of Undead and Spirits controlled slightly increased."
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Undying",
+      "abilities": [
+        "Physical Enhancement: Physical attacks no longer fatal unless body is completely destroyed.",
+        "Spirit Body: Can exist between physical body and Spirit Body.",
+        "Reincarnation: Long lifespan; dies and resurrects every 60 years, forgetting memories.",
+        "Underworld Authority: More closely connected to the Underworld.",
+        "Sealing: Can use the Underworld to Seal objects and reduce negative effects.",
+        "Spirit World Traversal: Can use connection to Underworld for Spirit World Traversal.",
+        "Door to the Underworld: Can create combat environment favorable to themselves.",
+        "Language of the Dead: Evolved into a Spell system related to Death, Spirits, Zombies, Withering, and Enslavement."
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Ferryman",
+      "abilities": [
+        "Physical Enhancement: Most forms of attack ineffective except Purification.",
+        "Death: Partial authority over Death; any living being making eye contact dies instantly.",
+        "Reincarnation: Can float on the River Styx; can cross the River Styx.",
+        "Undying: Will not die naturally; gradually transform into sentient undead."
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Death Consul",
+      "abilities": [
+        "Death: Partial authority over Death; can strip all vitality from an area.",
+        "Absolute Death: Most Resurrection or Substitution abilities become ineffective.",
+        "Nation of the Dead: Can create a domain where life instantly dies and transforms into Undead.",
+        "Enslavement: Can issue commands that Beyonders below Sequence 2 of the Death Pathway cannot resist.",
+        "Undead Judgment: More damage against Undead with suppression effect based on status.",
+        "King of the Dead: Can house a vast Undead army within Internal Underworld."
+      ]
+    },
+    {
+      "sequence": 1,
+      "name": "Pale Emperor",
+      "abilities": [
+        "Pallor (Pale World): Can create a world devoid of all color where Beyonder powers Wither.",
+        "Enslavement: Authority of Enslavement.",
+        "Soul Control: Can directly extract target's Spirit Body from their body.",
+        "Sovereign of Spirits: Can suppress and Enslave any creature with a Soul.",
+        "Death: Partial authority over Death.",
+        "Death Decree: Any target seen or pointed at dies instantly (below True God level)."
+      ]
+    },
+    {
+      "sequence": 0,
+      "name": "Death (Eternal Sleeper)",
+      "abilities": [
+        "Death: Authority of Death ascends to conceptual level; life, memories, connections, and imprints of existence will Die.",
+        "Pallor: Ultimate form of Withering; mind, will, and Beyonder powers fall silent.",
+        "Endpoint: Final Destination of all things, common Endpoint of all Life.",
+        "Undead: Source of Undead existence; master of all Undead.",
+        "Enslavement: Enslaver of all things who have Souls."
+      ]
+    }
+  ]
+}

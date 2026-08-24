@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "name": "Band of Light Ring",
+      "appearance": "",
+      "function": "Can summon blinding light and use several spells in the Sun domain.",
+      "downside": "The user will slowly become a believer of the Eternal Blazing Sun.",
+      "status": ""
+    },
+    {
+      "name": "Building Blocks",
+      "appearance": "A collection of brightly colored blocks.",
+      "function": "Able to establish a connection with the real building.",
+      "downside": "Without external help, it was almost impossible for people or items inside to leave.",
+      "status": ""
+    },
+    {
+      "name": "Moonlight Sash",
+      "appearance": "A leather belt.",
+      "function": "It can effectively reduce Sun and Lightning damage.",
+      "downside": "The user senses become more acute, able to easily see things that shouldn't be seen, hear the sounds they shouldn't hear.\nThe wearer will feel itchy intermittently.",
+      "status": ""
+    },
+    {
+      "name": "Oath of Rose",
+      "appearance": "A pair of silvery-white rings with a sapphire gem embedded in it.",
+      "function": "Allows both wearer to share their senses and transmit their thoughts to each other.",
+      "downside": "It occasionally lets the user's thoughts appear in the mind of the counterpart.\nIf it is worn for a week without being taken off, both people who wore the ring have a great chance to fall in love, regardless of their gender and race.",
+      "status": ""
+    },
+    {
+      "name": "Rever's Shout of Despair",
+      "appearance": "A big gray revolver with six big barrels.",
+      "function": "Mental at attack every shot.\nInfinite ammunition.\nMachine gun mode.",
+      "downside": "The user would also hear the shout of despair, from time to time.",
+      "status": ""
+    },
+    {
+      "name": "Specter Portrait Frame",
+      "appearance": "A brown portrait frame.",
+      "function": "Seals the soul of whoever looks at it.",
+      "downside": "Can seal the users soul if not careful.",
+      "status": ""
+    },
+    {
+      "name": "Trumpet Telegraph",
+      "appearance": "A golden, palm-sized telegraph with a trumpet attached to it.",
+      "function": "It allows the user's voice to sound out simultaneously up to a radius of 5 kilometers.",
+      "downside": "All sounds within 5 kilometers will be transmitted to the user's ears for an extended period of time.",
+      "status": ""
+    }
+  ]
+}
