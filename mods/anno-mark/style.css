@@ -65,7 +65,7 @@
 
 .anno-mark-input {
     width: 56px;
-    background: var(--bg, #0b0e14);
+    /* background: var(--bg, #0b0e14); */
     border: 1px solid var(--border, #374151);
     color: var(--text, inherit);
     padding: 2px 4px;
