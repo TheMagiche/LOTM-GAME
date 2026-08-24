@@ -5,6 +5,9 @@
 import loreMd from '../../Example_Setup/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md?raw';
 import rulesMd from '../../Example_Setup/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
 import lootJson from '../../Example_Setup/World_compendium/Lord of the Mysteries/loot.json?raw';
+import starterMd from '../../Example_Setup/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md?raw';
+import claraJson from '../../Example_Setup/World_compendium/Lord of the Mysteries/lotm_pc_clara_whitlock.json?raw';
+import type { CampaignUiSkin } from '../types';
 
 export interface WorldPackFile {
     name: string;
@@ -21,6 +24,10 @@ export interface WorldPack {
     lore: WorldPackFile;
     rules: WorldPackFile;
     loot: WorldPackFile;
+    starter?: WorldPackFile;
+    defaultPc?: WorldPackFile;
+    uiSkin?: CampaignUiSkin;
+    coverAssetPath?: string;
 }
 
 export function worldPackToFile(file: WorldPackFile): File {
@@ -32,6 +39,8 @@ export const LORD_OF_THE_MYSTERIES_PACK: WorldPack = {
     label: 'Lord of the Mysteries',
     description: 'Fifth Epoch Victorian occult — Beyonder potions, 22 pathways, Sealed Artifacts',
     suggestedName: 'Lord of the Mysteries',
+    uiSkin: 'lotm-illustrated',
+    coverAssetPath: 'image/cover.webp',
     lore: {
         name: 'world_lore_lord_of_the_mysteries.md',
         contents: loreMd,
@@ -43,6 +52,14 @@ export const LORD_OF_THE_MYSTERIES_PACK: WorldPack = {
     loot: {
         name: 'loot.json',
         contents: lootJson,
+    },
+    starter: {
+        name: 'lotm_starterPrompt.md',
+        contents: starterMd,
+    },
+    defaultPc: {
+        name: 'lotm_pc_clara_whitlock.json',
+        contents: claraJson,
     },
 };
 

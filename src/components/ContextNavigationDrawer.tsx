@@ -1,7 +1,7 @@
 import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Database, FileText,
-    MapPin, Pin, ScrollText, Sparkles, UserCircle, Users, Workflow,
+    Image, MapPin, Pin, ScrollText, Sparkles, UserCircle, Users, Workflow,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -17,6 +17,7 @@ import {
 } from '../services/mods/mounts/mountRegistry';
 import { resolveModText } from '../services/mods/mounts/chromeRenderers';
 import { useTranslation } from '../i18n/useTranslation';
+import { isLotmCampaign } from '../services/lotm/lotmSkin';
 
 type GroupId = 'story' | 'world' | 'play' | 'mods';
 type NavIcon = typeof ScrollText;
@@ -86,6 +87,7 @@ export function ContextNavigationDrawer() {
     const pinnedCount = useAppStore((s) => s.pinnedExcerpts.length);
     const headerEntries = useHeaderEntries();
     const { t } = useTranslation();
+    const lotmCampaign = isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
     const [expanded, setExpanded] = useState<Record<GroupId, boolean>>({
         story: true, world: true, play: true, mods: false,
     });
@@ -107,6 +109,9 @@ export function ContextNavigationDrawer() {
             { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
             { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
             { ...CONTEXT_LEAVES.world, onSelect: () => openContextScreen('world') },
+            ...(lotmCampaign
+                ? [{ id: 'lotm-archive', label: 'Illustrated Archive', icon: Image, onSelect: () => useAppStore.getState().toggleIllustratedArchive() } satisfies NavLeaf]
+                : []),
         ],
         play: [
             { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },

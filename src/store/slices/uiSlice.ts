@@ -88,6 +88,9 @@ export type UISlice = {
     pinnedMemoriesOpen: boolean;
     togglePinnedMemories: () => void;
     closePinnedMemories: () => void;
+    illustratedArchiveOpen: boolean;
+    toggleIllustratedArchive: () => void;
+    closeIllustratedArchive: () => void;
     // Inline Scene Image V1
     sceneImageModalOpen: boolean;
     sceneImageDraft: import('../../types').SceneImageDraft | null;
@@ -166,6 +169,9 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     pinnedMemoriesOpen: false,
     togglePinnedMemories: () => set((s) => ({ pinnedMemoriesOpen: !s.pinnedMemoriesOpen })),
     closePinnedMemories: () => set({ pinnedMemoriesOpen: false }),
+    illustratedArchiveOpen: false,
+    toggleIllustratedArchive: () => set((s) => ({ illustratedArchiveOpen: !s.illustratedArchiveOpen })),
+    closeIllustratedArchive: () => set({ illustratedArchiveOpen: false }),
     sceneImageModalOpen: false,
     sceneImageDraft: null,
     openSceneImageModal: (draft) => set({ sceneImageModalOpen: true, sceneImageDraft: draft }),

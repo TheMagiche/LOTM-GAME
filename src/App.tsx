@@ -5,6 +5,7 @@ import { CampaignHub } from './components/CampaignHub';
 import { Header } from './components/Header';
 import { ContextNavigationDrawer as ContextDrawer } from './components/ContextNavigationDrawer';
 import { ChatArea } from './components/ChatArea';
+import { LotmIllustratedShell } from './components/lotm/LotmIllustratedShell';
 import { SettingsModal } from './components/SettingsModal';
 import { ChatRightRail } from './components/ChatRightRail';
 import { WindowManager } from './components/WindowManager';
@@ -27,9 +28,11 @@ import { hydrateCampaign } from './store/campaignHydrator';
 import { useRulesIndexer } from './hooks/useRulesIndexer';
 import { loadBackground } from './services/background/backgroundManager';
 import { refreshMods } from './services/mods/modBootstrap';
+import { shouldUseIllustratedShell } from './services/lotm/lotmSkin';
 
 export default function App() {
   const activeCampaignId = useAppStore((s) => s.activeCampaignId);
+  const activeCampaignMeta = useAppStore((s) => s.activeCampaignMeta);
   useRulesIndexer();
   const settingsLoaded = useAppStore((s) => s.settingsLoaded);
   const loadSettings = useAppStore((s) => s.loadSettings);
@@ -90,6 +93,19 @@ export default function App() {
     if (!settingsLoaded) return;
     refreshMods();
   }, [settingsLoaded]);
+
+  const illustrated = shouldUseIllustratedShell(activeCampaignMeta);
+
+  useEffect(() => {
+    if (illustrated) {
+      document.documentElement.setAttribute('data-ui-skin', 'lotm-illustrated');
+    } else {
+      document.documentElement.removeAttribute('data-ui-skin');
+    }
+    return () => {
+      document.documentElement.removeAttribute('data-ui-skin');
+    };
+  }, [illustrated]);
 
   // After settings load, if we already have an activeCampaignId (restored from a previous
   // session), we MUST load the campaign's data before rendering ChatArea.
@@ -186,7 +202,7 @@ export default function App() {
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <ContextDrawer />
-        <ChatArea />
+        {illustrated ? <LotmIllustratedShell /> : <ChatArea />}
         <ChatRightRail />
       </div>
       {/* Phase 4.5 — `window.layer`. Renders null when no mod has opened a

@@ -3,7 +3,7 @@ import {
     loadCampaignState, getLoreChunks, getNPCLedger,
     loadArchiveIndex, loadTimeline, loadChapters, loadEntities,
     loadDivergenceRegister, saveDivergenceRegister, saveChapters,
-    saveNPCLedger, saveCampaignState,
+    saveNPCLedger, saveCampaignState, getCampaign,
 } from './campaignStore';
 import { loadRelationshipMemories } from './relationshipMemoryStore';
 import { DEFAULT_CONTEXT, DEFAULT_CONDENSER } from '../services/campaignInit';
@@ -258,6 +258,16 @@ export function rebuildSceneStamps(
     return changed > 0 ? { messages: out, changed } : { messages, changed: 0 };
 }
 
+async function loadCampaignMeta(campaignId: string) {
+    const fallback = { id: campaignId, name: '', coverImage: '', createdAt: 0, lastPlayedAt: 0 };
+    try {
+        const meta = await getCampaign(campaignId);
+        return meta?.id ? meta : fallback;
+    } catch {
+        return fallback;
+    }
+}
+
 export async function hydrateCampaign(campaignId: string) {
     const [state, chunks, npcs, locations, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
         loadCampaignState(campaignId),
@@ -375,6 +385,7 @@ export async function hydrateCampaign(campaignId: string) {
         entities: entities ?? [],
         divergenceRegister: register,
         activeCampaignId: campaignId,
+        activeCampaignMeta: await loadCampaignMeta(campaignId),
         inventoryItems: finalContext.inventoryItems,
         characterProfileData: finalContext.characterProfileData,
         playerCharacter: finalContext.playerCharacter ?? null,

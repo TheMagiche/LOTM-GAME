@@ -301,6 +301,9 @@ export function CampaignHub() {
                     setLootFile={form.setLootFile}
                     setLootName={form.setLootName}
                     applyWorldPack={form.applyWorldPack}
+                    appliedPack={form.appliedPack}
+                    playAsClara={form.playAsClara}
+                    setPlayAsClara={form.setPlayAsClara}
                     handleSave={form.handleSave}
                     resetForm={form.resetForm}
                     onClose={() => setModalOpen(false)}

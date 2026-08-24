@@ -17,6 +17,13 @@ export const PUBLIC_ASSETS_DIR = process.env.NODE_ENV === 'production'
     : path.join(__projectRoot, 'public', 'assets', 'portraits');
 
 /**
+ * Lord of the Mysteries illustrated-shell art pack. Served read-only at
+ * `/assets/lotm` so campaigns do not copy hundreds of webps into their
+ * own folders. Overridable for tests via LOTM_ASSETS_DIR.
+ */
+export const LOTM_ASSETS_DIR = process.env.LOTM_ASSETS_DIR || path.join(__projectRoot, 'lotmdnd');
+
+/**
  * Installed mods (Project 2 / WO-P2-04). Deliberately a SIBLING of `data/` rather than a child:
  * mods are app-level, not campaign-level, so wiping `data/` must not uninstall them.
  * Overridable for tests and packaged builds via MODS_DIR.

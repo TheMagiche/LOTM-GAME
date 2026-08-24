@@ -2,8 +2,20 @@ import { useState } from 'react';
 import { saveCampaign } from '../../store/campaignStore';
 import { initializeCampaignState } from '../../services/campaignInit';
 import { uid } from '../../utils/uid';
-import type { Campaign } from '../../types';
+import type { Campaign, PlayerCharacter } from '../../types';
 import { worldPackToFile, type WorldPack } from '../../worldpacks/lordOfTheMysteries';
+import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
+
+function parseDefaultPc(raw: string): PlayerCharacter | null {
+    try {
+        const parsed = JSON.parse(raw) as unknown;
+        const row = Array.isArray(parsed) ? parsed[0] : parsed;
+        if (!row || typeof row !== 'object') return null;
+        return row as PlayerCharacter;
+    } catch {
+        return null;
+    }
+}
 
 export function useCampaignForm(params: {
     editingCampaign: Campaign | null;
@@ -21,12 +33,16 @@ export function useCampaignForm(params: {
     const [rulesName, setRulesName] = useState('');
     const [lootFile, setLootFile] = useState<File | null>(null);
     const [lootName, setLootName] = useState('');
+    const [appliedPack, setAppliedPack] = useState<WorldPack | null>(null);
+    const [playAsClara, setPlayAsClara] = useState(false);
 
     const resetForm = () => {
         setName(''); setCoverFile(null); setCoverPreview('');
         setLoreFile(null); setLoreName('');
         setRulesFile(null); setRulesName('');
         setLootFile(null); setLootName('');
+        setAppliedPack(null);
+        setPlayAsClara(false);
         setEditingCampaign(null);
     };
 
@@ -38,6 +54,8 @@ export function useCampaignForm(params: {
         setCoverPreview(campaign.coverImage || '');
         setLoreName(''); setRulesName(''); setLootName('');
         setLoreFile(null); setRulesFile(null); setLootFile(null); setCoverFile(null);
+        setAppliedPack(null);
+        setPlayAsClara(false);
     };
 
     const handleCoverChange = (file: File) => {
@@ -56,6 +74,10 @@ export function useCampaignForm(params: {
         setRulesName(pack.rules.name);
         setLootFile(worldPackToFile(pack.loot));
         setLootName(pack.loot.name);
+        setAppliedPack(pack);
+        if (pack.coverAssetPath && !coverFile) {
+            setCoverPreview(lotmAssetUrl(pack.coverAssetPath));
+        }
     };
 
     const handleSave = async () => {
@@ -70,10 +92,28 @@ export function useCampaignForm(params: {
             };
 
         if (coverFile) campaign.coverImage = coverPreview;
+        else if (coverPreview) campaign.coverImage = coverPreview;
         else if (isEdit) campaign.coverImage = coverPreview;
 
+        if (appliedPack) {
+            campaign.worldPackId = appliedPack.id;
+            if (appliedPack.uiSkin) campaign.uiSkin = appliedPack.uiSkin;
+        }
+
+        const playerCharacter = playAsClara && appliedPack?.defaultPc
+            ? parseDefaultPc(appliedPack.defaultPc.contents)
+            : null;
+
         await saveCampaign(campaign);
-        await initializeCampaignState({ campaignId: campaign.id, loreFile, rulesFile, lootFile });
+        await initializeCampaignState({
+            campaignId: campaign.id,
+            loreFile,
+            rulesFile,
+            lootFile,
+            starterText: appliedPack?.starter?.contents ?? null,
+            playerCharacter,
+            attachLotmVisuals: appliedPack?.id === 'lord-of-the-mysteries',
+        });
 
         resetForm();
         onDone();
@@ -88,6 +128,9 @@ export function useCampaignForm(params: {
         rulesFile, setRulesFile, rulesName, setRulesName,
         lootFile, setLootFile, lootName, setLootName,
         applyWorldPack,
+        appliedPack,
+        playAsClara,
+        setPlayAsClara,
         resetForm, openCreate, openEdit, handleSave,
         editingCampaign,
     };

@@ -1,9 +1,9 @@
 import { useMemo, useSyncExternalStore } from 'react';
 import type { ReactNode } from 'react';
-import { Settings, PanelLeftOpen, PanelLeftClose, LogOut, Cpu } from 'lucide-react';
+import { Settings, PanelLeftOpen, PanelLeftClose, LogOut, Cpu, BookOpen } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { TokenGauge } from './TokenGauge';
-import { saveCampaignState } from '../store/campaignStore';
+import { saveCampaignState, saveCampaign } from '../store/campaignStore';
 import type { AiTier } from '../types/llm';
 import { APP_VERSION } from '../version';
 import { useTranslation } from '../i18n/useTranslation';
@@ -11,6 +11,7 @@ import { readRegion, subscribeToRegion, isHeaderStatusEntry, type RegisteredChro
 import { registerHeaderBuiltins, HEADER_BUILTIN_ID_SET, HEADER_TRAILING_ID_SET } from '../services/mods/mounts/headerBuiltins';
 import { HeaderModGroup } from './header/HeaderModGroup';
 import { HeaderScrollRow } from './header/HeaderScrollRow';
+import { isLotmCampaign } from '../services/lotm/lotmSkin';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
@@ -45,6 +46,11 @@ export function Header() {
         settings,
         updateSettings,
     } = useAppStore();
+
+    const activeCampaignMeta = useAppStore(s => s.activeCampaignMeta);
+    const patchActiveCampaignMeta = useAppStore(s => s.patchActiveCampaignMeta);
+    const lotmCampaign = isLotmCampaign(activeCampaignMeta);
+    const illustratedOn = activeCampaignMeta?.uiSkin === 'lotm-illustrated';
 
     const pinnedExcerpts = useAppStore(s => s.pinnedExcerpts);
     const aiTier = (settings?.aiTier ?? 'pro') as AiTier;
@@ -143,6 +149,24 @@ export function Header() {
               * they remain the last things in the row.
               */}
             <div className="flex items-center gap-1.5 ml-auto min-w-0">
+                {lotmCampaign && (
+                    <button
+                        type="button"
+                        onClick={async () => {
+                            if (!activeCampaignMeta) return;
+                            const nextSkin = illustratedOn ? 'classic' as const : 'lotm-illustrated' as const;
+                            const next = { ...activeCampaignMeta, uiSkin: nextSkin };
+                            patchActiveCampaignMeta({ uiSkin: nextSkin });
+                            await saveCampaign(next);
+                        }}
+                        className="chrome-label flex items-center gap-1.5 h-8 px-2.5 rounded-sm border border-border/40 hover:border-terminal bg-void-lighter hover:bg-terminal/5 text-text-dim hover:text-terminal transition-colors shrink-0 cursor-pointer text-[10px] font-bold uppercase tracking-wider font-mono"
+                        title={illustratedOn ? 'Switch to classic chat' : 'Switch to illustrated play'}
+                        aria-label={illustratedOn ? 'Use classic interface' : 'Use illustrated interface'}
+                    >
+                        <BookOpen size={13} />
+                        <span className="hidden sm:inline">{illustratedOn ? 'Classic' : 'Illustrated'}</span>
+                    </button>
+                )}
                 <HeaderScrollRow>
                 {/*
                   * Phase 4.2 — the right-hand action group is now the

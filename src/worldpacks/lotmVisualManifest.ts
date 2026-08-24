@@ -1,0 +1,203 @@
+/**
+ * Curated LOTM visual index for in-play matching.
+ * Archive galleries list the rest of the pack via GET /api/lotm/index.
+ */
+
+export type LotmSpoilerTag = 'safe' | 'spoiler';
+
+export type LotmPlaceVisual = {
+    id: string;
+    aliases: string[];
+    backdrop: string;
+};
+
+export type LotmPortraitVisual = {
+    id: string;
+    aliases: string[];
+    portrait: string;
+    spoiler?: boolean;
+};
+
+export type LotmCgEcho = {
+    id: string;
+    aliases: string[];
+    image: string;
+    tag: LotmSpoilerTag;
+};
+
+export const LOTM_DEFAULT_BACKDROP = 'image/backgrounds/tingen_city.webp';
+export const LOTM_COVER = 'image/cover.webp';
+export const LOTM_LATE_VOLUME_CUTOFF = 4;
+
+export const LOTM_PLACES: LotmPlaceVisual[] = [
+    {
+        id: 'tingen',
+        aliases: ['tingen', 'tagen', 'st. selena', 'st selena', 'dorge', 'print-house', 'print house'],
+        backdrop: 'image/backgrounds/tingen_city.webp',
+    },
+    {
+        id: 'backlund',
+        aliases: ['backlund', 'loen', 'east chester', 'bridge district', 'queens district', 'west borough'],
+        backdrop: 'image/backgrounds/backlund_city.webp',
+    },
+    {
+        id: 'divination-club',
+        aliases: ['divination club', 'divination club of tingen'],
+        backdrop: 'image/backgrounds/divination_club.webp',
+    },
+    {
+        id: 'sefirah-castle',
+        aliases: ['sefirah', 'sefirah castle', 'grey fog', 'above the grey fog', 'the fool\'s palace'],
+        backdrop: 'image/backgrounds/sefirah_castle.webp',
+    },
+    {
+        id: 'spirit-world',
+        aliases: ['spirit world', 'spirit-world', 'spirit body'],
+        backdrop: 'image/backgrounds/spirit_world.webp',
+    },
+    {
+        id: 'mind-world',
+        aliases: ['mind world', 'dream world', 'psychological alchemy'],
+        backdrop: 'image/backgrounds/mind_world.webp',
+    },
+    {
+        id: 'city-of-silver',
+        aliases: ['city of silver', 'forsaken land'],
+        backdrop: 'image/backgrounds/city_of_silver.webp',
+    },
+    {
+        id: 'calderon',
+        aliases: ['calderon', 'calderon city'],
+        backdrop: 'image/backgrounds/calderon_city.webp',
+    },
+    {
+        id: 'giant-kings-court',
+        aliases: ['giant king', "giant king's court", 'giant kings court'],
+        backdrop: 'image/backgrounds/giant_king_s_court.webp',
+    },
+    {
+        id: 'inverted-mausoleum',
+        aliases: ['inverted mausoleum', 'mausoleum'],
+        backdrop: 'image/backgrounds/inverted_mausoleum.webp',
+    },
+];
+
+export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
+    { id: 'dunn-smith', aliases: ['dunn smith', 'dunn', 'captain dunn'], portrait: 'image/characters/dunn_smith.webp' },
+    { id: 'leonard-mitchell', aliases: ['leonard mitchell', 'leonard'], portrait: 'image/characters/leonard_mitchell.webp' },
+    { id: 'audrey-hall', aliases: ['audrey hall', 'audrey', 'miss justice'], portrait: 'image/characters/audrey_hall.webp' },
+    { id: 'alger-wilson', aliases: ['alger wilson', 'alger', 'the hanged man'], portrait: 'image/characters/alger_wilson.webp' },
+    { id: 'fors-wall', aliases: ['fors wall', 'fors', 'the magician'], portrait: 'image/characters/fors_wall.webp' },
+    { id: 'xio-derecha', aliases: ['xio derecha', 'xio', 'judgment'], portrait: 'image/characters/xio_derecha.webp' },
+    { id: 'azik-eggers', aliases: ['azik eggers', 'azik'], portrait: 'image/characters/azik_eggers.webp' },
+    { id: 'daly-simone', aliases: ['daly simone', 'daly'], portrait: 'image/characters/daly_simone.webp' },
+    { id: 'klein-nighthawk', aliases: ['klein moretti', 'klein'], portrait: 'image/characters/klein_moretti_nighthawk.webp' },
+    { id: 'zhou-mingrui', aliases: ['zhou mingrui'], portrait: 'image/characters/zhou_mingrui.webp' },
+    { id: 'the-fool', aliases: ['the fool'], portrait: 'image/characters/the_fool.webp' },
+    { id: 'gehrman-sparrow', aliases: ['gehrman sparrow', 'gehrman'], portrait: 'image/characters/gehrman_sparrow.webp' },
+    { id: 'sherlock-moriarty', aliases: ['sherlock moriarty', 'sherlock'], portrait: 'image/characters/sherlock_moriarty.webp' },
+    { id: 'merlin-hermes', aliases: ['merlin hermes', 'merlin'], portrait: 'image/characters/merlin_hermes.webp' },
+    { id: 'cattleya', aliases: ['cattleya', 'the hermit'], portrait: 'image/characters/cattleya.webp' },
+    { id: 'emlyn-white', aliases: ['emlyn white', 'emlyn', 'the moon'], portrait: 'image/characters/emlyn_white.webp' },
+    { id: 'derrick-berg', aliases: ['derrick berg', 'derrick', 'the sun'], portrait: 'image/characters/derrick_berg.webp' },
+    { id: 'sharron', aliases: ['sharron'], portrait: 'image/characters/sharron.webp' },
+    { id: 'danitz', aliases: ['danitz dubois', 'danitz'], portrait: 'image/characters/danitz_dubois.webp' },
+    { id: 'edwina', aliases: ['edwina edwards', 'edwina'], portrait: 'image/characters/edwina_edwards.webp' },
+    { id: 'bernadette', aliases: ['bernadette gustav', 'bernadette'], portrait: 'image/characters/bernadette_gustav.webp' },
+    { id: 'roselle', aliases: ['roselle gustav', 'roselle'], portrait: 'image/characters/roselle_gustav.webp' },
+    { id: 'will-auceptin', aliases: ['will auceptin', 'will'], portrait: 'image/characters/will_auceptin.webp' },
+    { id: 'colin-iliad', aliases: ['colin iliad', 'colin'], portrait: 'image/characters/colin_iliad.webp' },
+    { id: 'frank-lee', aliases: ['frank lee', 'frank'], portrait: 'image/characters/frank_lee.webp' },
+    { id: 'reinette', aliases: ['reinette tinekerr', 'reinette'], portrait: 'image/characters/reinette_tinekerr.webp' },
+    { id: 'trissy', aliases: ['trissy'], portrait: 'image/characters/trissy.webp' },
+    { id: 'ince-zangwill', aliases: ['ince zangwill', 'ince'], portrait: 'image/characters/ince_zangwill.webp' },
+    { id: 'cynthia', aliases: ['cynthia'], portrait: 'image/characters/cynthia.webp' },
+    { id: 'true-creator', aliases: ['true creator'], portrait: 'image/characters/true_creator.webp', spoiler: true },
+    { id: 'amon', aliases: ['amon'], portrait: 'image/characters/spoiler_characters/amon.webp', spoiler: true },
+    { id: 'adam', aliases: ['adam'], portrait: 'image/characters/spoiler_characters/adam.webp', spoiler: true },
+    { id: 'evernight', aliases: ['evernight goddess', 'evernight', 'goddess of the night'], portrait: 'image/characters/spoiler_characters/evernight_goddess.webp', spoiler: true },
+    { id: 'ouroboros', aliases: ['ouroboros'], portrait: 'image/characters/spoiler_characters/ouroboros.webp', spoiler: true },
+    { id: 'sasrir', aliases: ['sasrir'], portrait: 'image/characters/spoiler_characters/sasrir.webp', spoiler: true },
+    { id: 'aucuses', aliases: ['aucuses'], portrait: 'image/characters/spoiler_characters/aucuses.webp', spoiler: true },
+    { id: 'leodero', aliases: ['leodero'], portrait: 'image/characters/spoiler_characters/leodero.webp', spoiler: true },
+    { id: 'herabergen', aliases: ['herabergen'], portrait: 'image/characters/spoiler_characters/herabergen.webp', spoiler: true },
+    { id: 'medici', aliases: ['sauron einhorn medici', 'medici'], portrait: 'image/characters/spoiler_characters/sauron_einhorn_medici.webp', spoiler: true },
+];
+
+/** Conservative in-play echoes — location or NPC, never an auto-plot of Klein's volumes. */
+export const LOTM_CG_ECHOES: LotmCgEcho[] = [
+    {
+        id: 'tingen-nighthawks',
+        aliases: ['tingen', 'nighthawk', 'nighthawks', 'st. selena', 'st selena'],
+        image: 'image/vol_1/Miscellaneous/nighthawks.webp',
+        tag: 'safe',
+    },
+    {
+        id: 'dunn-office',
+        aliases: ['dunn smith', 'dunn'],
+        image: 'image/vol_1/0184_please_come_in_dunn_smith.webp',
+        tag: 'safe',
+    },
+    {
+        id: 'leonard-early',
+        aliases: ['leonard mitchell', 'leonard'],
+        image: 'image/vol_1/0017_you_don_t_know_leonard_di.webp',
+        tag: 'safe',
+    },
+    {
+        id: 'audrey-susie',
+        aliases: ['audrey hall', 'audrey', 'susie'],
+        image: 'image/vol_1/Miscellaneous/audrey_hall_and_susie.webp',
+        tag: 'safe',
+    },
+    {
+        id: 'divination-club-echo',
+        aliases: ['divination club'],
+        image: 'image/backgrounds/divination_club.webp',
+        tag: 'safe',
+    },
+    {
+        id: 'sefirah-echo',
+        aliases: ['sefirah', 'grey fog', 'the fool'],
+        image: 'image/backgrounds/sefirah_castle.webp',
+        tag: 'spoiler',
+    },
+    {
+        id: 'city-of-silver-echo',
+        aliases: ['city of silver', 'derrick berg'],
+        image: 'image/backgrounds/city_of_silver.webp',
+        tag: 'spoiler',
+    },
+];
+
+export const LOTM_PATHWAY_SYMBOLS: Record<string, string> = {
+    fool: 'assets/data/pathways/fool_pathway/Fool_Symbol2.webp',
+    seer: 'assets/data/pathways/fool_pathway/Fool_Symbol2.webp',
+    door: 'assets/data/pathways/door_pathway/Door_Symbol2.webp',
+    error: 'assets/data/pathways/error_pathway/Error_Symbol2.webp',
+    darkness: 'assets/data/pathways/darkness_pathway/Darkness_Symbol2.webp',
+    sleepless: 'assets/data/pathways/darkness_pathway/Darkness_Symbol2.webp',
+    death: 'assets/data/pathways/death_pathway/Death_Symbol2.webp',
+    visionary: 'assets/data/pathways/visionary_pathway/Visionary_Symbol2.webp',
+    spectator: 'assets/data/pathways/visionary_pathway/Visionary_Symbol2.webp',
+    tyrant: 'assets/data/pathways/tyrant_pathway/Tyrant_Symbol2.webp',
+    sailor: 'assets/data/pathways/tyrant_pathway/Tyrant_Symbol2.webp',
+    sun: 'assets/data/pathways/sun_pathway/Sun_Symbol2.webp',
+    hermit: 'assets/data/pathways/hermit_pathway/Hermit_Symbol2.webp',
+    hanged_man: 'assets/data/pathways/hanged_man_pathway/Hanged_Man_Symbol2.webp',
+};
+
+export const LOTM_CHURCH_EMBLEMS: Record<string, string> = {
+    evernight: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_Evernight_Goddess2.webp',
+    storms: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_Lord_of_Storms2.webp',
+    steam: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_God_of_Steam_and_Machinery2.webp',
+    knowledge: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_God_of_Knowledge_and_Wisdom2.webp',
+    sun: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_Eternal_Blazing_Sun2.webp',
+    earth: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_Earth_Mother2.webp',
+    fool: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_Fool2.webp',
+    combat: 'assets/data/churches/Emblems/Sacred_Emblem_-_Church_of_the_God_of_Combat2.webp',
+};
+
+export function normalizeAlias(value: string): string {
+    return value.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+}

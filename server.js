@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { KeyVault } from './server/vault.js';
-import { DATA_DIR, CAMPAIGNS_DIR, PUBLIC_ASSETS_DIR, MODS_DIR, BUNDLED_MODS_DIR, APP_VERSION, ensureDirs } from './server/lib/fileStore.js';
+import { DATA_DIR, CAMPAIGNS_DIR, PUBLIC_ASSETS_DIR, LOTM_ASSETS_DIR, MODS_DIR, BUNDLED_MODS_DIR, APP_VERSION, ensureDirs } from './server/lib/fileStore.js';
 import { createVaultRouter } from './server/routes/vault.js';
 import { createSettingsRouter } from './server/routes/settings.js';
 import { createCampaignsRouter } from './server/routes/campaigns.js';
@@ -19,6 +19,7 @@ import { createLLMProxyRouter } from './server/routes/llmProxy.js';
 import { createEmbeddingRouter } from './server/routes/embedding.js';
 import { createTtsRouter } from './server/routes/tts.js';
 import { createSceneImagesRouter } from './server/routes/sceneImages.js';
+import { createLotmAssetsRouter } from './server/routes/lotmAssets.js';
 import { createModsRouter } from './server/routes/mods.js';
 import { loadMods } from './server/lib/modLoader.js';
 import { registerModTables } from './server/lib/modTableRegistry.js';
@@ -74,6 +75,7 @@ app.use(cors({
 app.use(express.json({ limit: '500mb' }));
 app.use('/assets/portraits', express.static(PUBLIC_ASSETS_DIR));
 app.use('/assets/campaigns', express.static(CAMPAIGNS_DIR));
+app.use('/assets/lotm', express.static(LOTM_ASSETS_DIR));
 
 // ─── Vector Search Init ───
 try {
@@ -103,6 +105,7 @@ app.use(createLLMProxyRouter());
 app.use(createEmbeddingRouter());
 app.use(createTtsRouter());
 app.use(createSceneImagesRouter(vault));
+app.use(createLotmAssetsRouter());
 app.use('/api/mods', createModsRouter({ modsDir: MODS_DIR, appVersion: APP_VERSION, bundledModsDir: BUNDLED_MODS_DIR }));
 
 // Phase 6.4 — register mod tables ONCE AT BOOT, not only as a side effect of

@@ -21,6 +21,9 @@ export interface CampaignFormModalProps {
     setLootFile: (f: File) => void;
     setLootName: (v: string) => void;
     applyWorldPack?: (pack: WorldPack) => void;
+    appliedPack?: WorldPack | null;
+    playAsClara?: boolean;
+    setPlayAsClara?: (v: boolean) => void;
     handleSave: () => void;
     resetForm: () => void;
     onClose: () => void;
@@ -34,6 +37,9 @@ export function CampaignFormModal(props: CampaignFormModalProps) {
         rulesName, setRulesFile, setRulesName,
         lootName, setLootFile, setLootName,
         applyWorldPack,
+        appliedPack,
+        playAsClara,
+        setPlayAsClara,
         handleSave, resetForm, onClose,
     } = props;
 
@@ -104,6 +110,28 @@ export function CampaignFormModal(props: CampaignFormModalProps) {
                             ))}
                         </div>
                     </>
+                )}
+
+                {appliedPack?.defaultPc && (
+                    <label style={{
+                        display: 'flex', alignItems: 'flex-start', gap: 10,
+                        marginBottom: 20, cursor: 'pointer',
+                        fontSize: 12, color: 'var(--color-text-primary)',
+                        fontFamily: "'EB Garamond', serif",
+                    }}>
+                        <input
+                            type="checkbox"
+                            checked={!!playAsClara}
+                            onChange={e => setPlayAsClara?.(e.target.checked)}
+                            style={{ marginTop: 3 }}
+                        />
+                        <span>
+                            Play as Clara Whitlock
+                            <span style={{ display: 'block', fontSize: 10, color: 'rgba(107,107,107,0.55)', fontFamily: "'JetBrains Mono', monospace", marginTop: 2 }}>
+                                Tingen Sequence 9 Seer. Leave unchecked for the three-segment interview.
+                            </span>
+                        </span>
+                    </label>
                 )}
 
                 <ModalLabel>Cover Image</ModalLabel>

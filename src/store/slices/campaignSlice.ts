@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand';
-import type { ArchiveChapter, ChatMessage, CondenserState, GameContext, LoreChunk, ArchiveIndexEntry, NPCEntry, NpcSuggestion, SemanticFact, EntityEntry, TimelineEvent, InventoryItem, CharacterProfile, PinnedExcerpt, LocationEntry, LocationSuggestion, RelationshipMemoryFault, RelationshipMemoryRecord } from '../../types';
+import type { ArchiveChapter, Campaign, ChatMessage, CondenserState, GameContext, LoreChunk, ArchiveIndexEntry, NPCEntry, NpcSuggestion, SemanticFact, EntityEntry, TimelineEvent, InventoryItem, CharacterProfile, PinnedExcerpt, LocationEntry, LocationSuggestion, RelationshipMemoryFault, RelationshipMemoryRecord } from '../../types';
 import { DEFAULT_CHARACTER_PROFILE, DEFAULT_INVENTORY, migrateLegacyContext, buildDefaultDiceSystem, normalizeInventoryItem } from '../../types';
 import { emitCoreEvent } from '../../services/mods/events';
 import { normalizeRelations } from '../../services/npc/relationDedupe';
@@ -288,6 +288,9 @@ export type PlayerCharacter = NPCEntry;
 
 export type CampaignSlice = {
     activeCampaignId: string | null;
+    activeCampaignMeta: Campaign | null;
+    setActiveCampaignMeta: (campaign: Campaign | null) => void;
+    patchActiveCampaignMeta: (patch: Partial<Campaign>) => void;
     setActiveCampaign: (id: string | null) => void;
     loreChunks: LoreChunk[];
     setLoreChunks: (chunks: LoreChunk[]) => void;
@@ -415,6 +418,12 @@ export const createCampaignSlice: StateCreator<CampaignDeps, [], [], CampaignSli
 
     return {
     activeCampaignId: null,
+    activeCampaignMeta: null,
+    setActiveCampaignMeta: (campaign) => set({ activeCampaignMeta: campaign } as Partial<CampaignDeps>),
+    patchActiveCampaignMeta: (patch) => set((s) => {
+        if (!s.activeCampaignMeta) return {} as Partial<CampaignDeps>;
+        return { activeCampaignMeta: { ...s.activeCampaignMeta, ...patch } } as Partial<CampaignDeps>;
+    }),
     setActiveCampaign: async (id) => {
         // Swipe Generation v1 — commit any pending turn for the CURRENT campaign
         // before switching. The arc/agency ticks + archive append derived at
@@ -481,7 +490,13 @@ export const createCampaignSlice: StateCreator<CampaignDeps, [], [], CampaignSli
             emitCoreEvent('campaign.closing', { campaignId: currentId, nextCampaignId: id });
         }
 
-        set({ activeCampaignId: id, relationshipMemoriesNpcToMc: [], relationshipMemoriesNpcToNpc: [], relationshipMemoryFaults: [] } as Partial<CampaignDeps>);
+        set({
+            activeCampaignId: id,
+            activeCampaignMeta: id ? get().activeCampaignMeta : null,
+            relationshipMemoriesNpcToMc: [],
+            relationshipMemoriesNpcToNpc: [],
+            relationshipMemoryFaults: [],
+        } as Partial<CampaignDeps>);
         const s = get();
         debouncedSaveSettings(s.settings, id);
 

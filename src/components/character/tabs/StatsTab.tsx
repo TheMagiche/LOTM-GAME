@@ -3,6 +3,9 @@ import { useAppStore } from '../../../store/useAppStore';
 import { scanCharacterProfile } from '../../../services/characterProfileParser';
 import { toast } from '../../Toast';
 import type { EndpointConfig, ProviderConfig, CharacterProfile } from '../../../types';
+import { isLotmCampaign } from '../../../services/lotm/lotmSkin';
+import { lotmAssetUrl } from '../../../services/lotm/lotmAssetUrl';
+import { LOTM_PATHWAY_SYMBOLS } from '../../../worldpacks/lotmVisualManifest';
 
 function SceneTag({ lastScene }: { lastScene: string }) {
     if (!lastScene || lastScene === 'Never') {
@@ -54,6 +57,17 @@ export function StatsTab() {
     };
 
     const profile = characterProfileData as CharacterProfile;
+    const lotm = isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
+    const identityFields = ([
+        { k: 'name', label: 'Name' },
+        { k: 'race', label: 'Race' },
+        { k: 'class', label: lotm ? 'Pathway' : 'Class' },
+        { k: 'level', label: lotm ? 'Sequence' : 'Level', type: 'number' },
+    ] as { k: keyof CharacterProfile; label: string; type?: string }[]);
+    const pathwayKey = String(profile.class ?? '').toLowerCase();
+    const pathwaySymbol = lotm
+        ? Object.entries(LOTM_PATHWAY_SYMBOLS).find(([k]) => pathwayKey.includes(k))?.[1]
+        : undefined;
 
     return (
         <div className="px-4 py-4 space-y-4">
@@ -69,6 +83,9 @@ export function StatsTab() {
             <div className="pt-2">
                 <div className="flex items-center justify-between mb-2">
                     <h3 className="text-[11px] uppercase tracking-wider text-ember">Character Profile</h3>
+                    {pathwaySymbol && (
+                        <img src={lotmAssetUrl(pathwaySymbol)} alt="" className="h-8 w-8 object-contain opacity-80" />
+                    )}
                 </div>
                 {rawEdit ? (
                     <textarea
@@ -84,12 +101,7 @@ export function StatsTab() {
                     />
                 ) : (
                     <div className="space-y-2">
-                        {([
-                            { k: 'name', label: 'Name' },
-                            { k: 'race', label: 'Race' },
-                            { k: 'class', label: 'Class' },
-                            { k: 'level', label: 'Level', type: 'number' },
-                        ] as { k: keyof CharacterProfile; label: string; type?: string }[]).map((f) => (
+                        {identityFields.map((f) => (
                             <div key={f.k} className="flex items-center gap-2">
                                 <label className="text-[9px] text-text-dim/60 w-12">{f.label}</label>
                                 <input

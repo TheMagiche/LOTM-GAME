@@ -66,12 +66,20 @@ export type ChatMessage = {
     relationshipStances?: RelationshipStance[];
 };
 
+export type CampaignUiSkin = 'classic' | 'lotm-illustrated';
+
 export type Campaign = {
     id: string;
     name: string;
-    coverImage: string; // base64 data URL
+    coverImage: string; // base64 data URL or a static asset path
     createdAt: number;
     lastPlayedAt: number;
+    /** Presentation overlay. Absent on pre-skin campaigns → classic chat. */
+    uiSkin?: CampaignUiSkin;
+    /** Bundled world pack id, e.g. `lord-of-the-mysteries`. */
+    worldPackId?: string;
+    /** When true, late-volume CGs and spoiler portraits may appear. */
+    lotmSpoilers?: boolean;
 };
 
 export type PinnedExcerpt = {

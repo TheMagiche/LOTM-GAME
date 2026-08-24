@@ -1,4 +1,5 @@
-import type { GameContext, LootTree } from '../types';
+import type { GameContext, LootTree, PlayerCharacter } from '../types';
+import { buildDefaultDiceSystem } from '../types';
 import {
     saveLoreChunks, getNPCLedger, saveNPCLedger,
     loadCampaignState, saveCampaignState,
@@ -17,7 +18,7 @@ import {
 } from '../store/slices/settingsSlice';
 import { dedupeNPCLedger } from '../store/slices/campaignSlice';
 import { loadLootTree } from './lore/lootTreeLoader';
-import { buildDefaultDiceSystem } from '../types';
+import { attachLotmPortraitsToNpcs, findTingenLocationId } from './lotm/lotmVisualMatcher';
 
 
 export const DEFAULT_CONTEXT = {
@@ -46,8 +47,11 @@ export async function initializeCampaignState(params: {
     loreFile: File | null;
     rulesFile: File | null;
     lootFile?: File | null;
+    starterText?: string | null;
+    playerCharacter?: PlayerCharacter | null;
+    attachLotmVisuals?: boolean;
 }): Promise<void> {
-    const { campaignId, loreFile, rulesFile, lootFile } = params;
+    const { campaignId, loreFile, rulesFile, lootFile, starterText, playerCharacter, attachLotmVisuals } = params;
 
     let seeds: ReturnType<typeof extractEngineSeeds> | null = null;
     if (loreFile) {
@@ -82,7 +86,10 @@ export async function initializeCampaignState(params: {
         const parsedNPCs = parseNPCsFromLore(chunks);
         if (parsedNPCs.length > 0) {
             const existingNPCs = await getNPCLedger(campaignId);
-            await saveNPCLedger(campaignId, dedupeNPCLedger([...existingNPCs, ...parsedNPCs]));
+            const withPortraits = attachLotmVisuals
+                ? attachLotmPortraitsToNpcs(parsedNPCs)
+                : parsedNPCs;
+            await saveNPCLedger(campaignId, dedupeNPCLedger([...existingNPCs, ...withPortraits]));
         }
 
         // Same deal for places. Dedupe against the existing ledger by name+alias
@@ -111,10 +118,30 @@ export async function initializeCampaignState(params: {
     }
 
     const existingState = await loadCampaignState(campaignId);
-    if (!existingState || rulesFile || seeds || lootTree) {
+    if (!existingState || rulesFile || seeds || lootTree || starterText || playerCharacter || attachLotmVisuals) {
         const ctx = { ...DEFAULT_CONTEXT, ...(existingState?.context ?? {}) } as GameContext;
         if (rulesFile) ctx.rulesRaw = await rulesFile.text();
         if (lootTree) ctx.lootTree = lootTree;
+        if (starterText) {
+            ctx.starter = starterText;
+            ctx.starterActive = true;
+        }
+        if (playerCharacter) {
+            ctx.playerCharacter = playerCharacter;
+            ctx.characterProfileActive = true;
+            ctx.characterProfileData = {
+                ...ctx.characterProfileData,
+                name: playerCharacter.name || ctx.characterProfileData.name,
+                race: playerCharacter.visualProfile?.race || ctx.characterProfileData.race,
+                class: playerCharacter.pcMeta?.archetype || playerCharacter.signatureKit?.element || ctx.characterProfileData.class,
+                level: typeof playerCharacter.skillRung === 'number' ? Math.max(1, 9 - playerCharacter.skillRung) : ctx.characterProfileData.level,
+            };
+        }
+        if (attachLotmVisuals && !ctx.currentPlaceId) {
+            const locations = await loadLocationTable(campaignId);
+            const tingenId = findTingenLocationId(locations);
+            if (tingenId) ctx.currentPlaceId = tingenId;
+        }
         if (seeds) {
             ctx.surpriseConfig = {
                 ...ctx.surpriseConfig, initialDC: ctx.surpriseConfig?.initialDC ?? 95,

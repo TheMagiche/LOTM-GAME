@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { BookOpen, Pencil, Trash2, ChevronLeft, ChevronRight, Download, Loader2 } from 'lucide-react';
 import type { Campaign } from '../types';
+import { campaignCoverSrc } from '../services/lotm/lotmAssetUrl';
 
 interface SlotStyle {
     x: number;
@@ -208,7 +209,7 @@ function CoverCard({ campaign, isActive, slotStyle, isExporting, onClick, onEdit
             }}>
                 {campaign.coverImage ? (
                     <img
-                        src={campaign.coverImage} alt={campaign.name}
+                        src={campaignCoverSrc(campaign.coverImage)} alt={campaign.name}
                         style={{
                             width: '100%', height: '100%', objectFit: 'cover', display: 'block',
                             transition: 'transform 0.5s ease',

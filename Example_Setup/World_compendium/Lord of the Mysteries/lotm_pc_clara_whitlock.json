@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_clara_whitlock",
+    "name": "Clara Whitlock",
+    "aliases": "",
+    "appearance": "A slight woman of twenty-four who looks older whenever she stops moving. Dark auburn hair pinned under a plain grey hat; storm-grey eyes that flick to shop-glass reflections out of habit rather than vanity. Her hands give her away — ink at the cuticles, a faint chemical burn scar across the left thumb from the composing frame. She dresses in mourning-grey wool, practical and second-best, with a cracked leather notebook riding on a strap at her hip. Lately she has begun pausing mid-step, head tilted, as if listening to a room agree on something.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Female",
+      "ageRange": "Early twenties",
+      "build": "Lean and slightly stooped from years bent over a composing frame",
+      "symmetry": "Plain-pretty; striking when perfectly still",
+      "hairStyle": "Dark auburn, pinned up beneath a plain hat",
+      "eyeColor": "Storm grey",
+      "skinTone": "Pale; ink-stained fingers",
+      "gait": "Quick and near-silent, habitually checking reflections in shop glass",
+      "distinctMarks": "Chemical burn scar across the left thumb; pupils that occasionally track something not there",
+      "clothing": "Mourning-grey wool dress, pressman's apron rolled into her satchel, grandfather's leather casebook on a shoulder strap",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated civilian (unregistered Beyonder)",
+    "storyRelevance": "Her grandfather, Aldous Whitlock, kept the ledgers for a Nighthawk chantry for thirty years and retired to Tingen to die quietly. He died in spring. His locked drawer held more than receipts: a Seer formula in his own cipher, ingredient lists priced beyond her wages, and marginal warnings about the Acting Method written like penance. Since she drank the potion, the deaths that cross her obituaries desk have stopped adding up — three this month with the same wrongness about them — and a jobbing print order for a private collector included engravings of a Sealed Artifact she has seen once before, in her grandfather's margin notes. A grey-eyed stranger tipped his hat outside St. Selena Cathedral and called her 'Eyes of the Fool,' a title she has never used aloud. Whoever he belongs to now knows she exists.",
+    "goals": "Clear the print house's back rent before quarter-day, or lose the last thing her family owns. Work out which recent deaths in the obituaries column share a hand. Find out who the grey-eyed stranger serves before he calls on her again — and stay off every church ledger while doing it.",
+    "disposition": "Guarded, observant, dryly funny in the way of people who read death notices for a living. Polite deference first, then quietly does exactly what she already judged correct.",
+    "status": "Alive",
+    "voice": "Soft Tingen burr, precise and unhurried. Asks questions the way a coroner does. Never states an interpretation of fate without naming it a guess.",
+    "personality": "Reverent toward fate and distrustful of her own certainty — the Seer creed took root fast because it matched how she already worked. Methodical, patient, superstitious in practice if not in speech. Terrified, privately, of the whispers at the edge of her hearing; manages the fear with routine and cataloguing.",
+    "exampleOutput": "[**Clara**]: \"He died on a Tuesday.\" She taps the set column without looking up. \"They all die on Tuesdays lately — did you notice? I should very much like to know who is doing the arranging.\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Tingen",
+    "haunt": "The print-house composing room and the Dorge River docks",
+    "drives": {
+      "coreWant": "To master divination without becoming the thing her grandfather's margins warn about",
+      "sessionWant": "Clear the print-house debt and identify the grey-eyed stranger before he finds her again",
+      "sceneWant": "Read the room before anyone thinks to read her"
+    },
+    "wants": {
+      "short": [
+        "Catalogue the morning's omens in her casebook",
+        "Listen to dock gossip over penny coffee",
+        "Re-read one more page of the cipher margins"
+      ],
+      "medium": [
+        "Find a safe source of Seer potion ingredients",
+        "Earn the print house enough to clear the loan",
+        "Map which deaths in the obituaries column do not add up"
+      ],
+      "long": "Become a Seer whom the churches cannot ignore and the fog cannot take."
+    },
+    "personalityHex": {
+      "drive": 1,
+      "diligence": 2,
+      "boldness": -1,
+      "warmth": 0,
+      "empathy": 1,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Grandfather's leather casebook (Seer formula and cipher margins)",
+        "Divination kit — chalk, silver pendulum, candle stubs",
+        "Brass pocket watch, stopped at 3:07",
+        "Composing stick (improvised club)",
+        "Key to a Dorge riverside garret"
+      ],
+      "abilities": [
+        "Spirit Vision — see ghosts, spectres, health and emotional auras",
+        "Danger Intuition",
+        "Divination Arts — astrology, spiritual numerology, dowsing and scrying",
+        "Ritualistic Magic — chalk circles, offerings, incantation",
+        "Enhanced Memory",
+        "Enhanced Spirituality"
+      ],
+      "element": "divination"
+    },
+    "traits": [
+      "curious",
+      "superstitious",
+      "secretive",
+      "pragmatic",
+      "stubborn"
+    ],
+    "pcMeta": {
+      "archetype": "Seer — Sequence 9 (Fool Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "PWR": 4,
+        "SPD": 5,
+        "WIL": 7
+      }
+    }
+  }
+]
