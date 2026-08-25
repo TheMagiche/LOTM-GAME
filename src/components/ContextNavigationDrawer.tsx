@@ -1,7 +1,7 @@
 import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
-    Image, LogOut, MapPin, Package, Pin, ScrollText, Settings, Sparkles, UserCircle, Users, Workflow,
+    LogOut, MapPin, Package, Pin, ScrollText, Settings, Sparkles, UserCircle, Users, Workflow,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -17,7 +17,6 @@ import {
 } from '../services/mods/mounts/mountRegistry';
 import { resolveModText } from '../services/mods/mounts/chromeRenderers';
 import { useTranslation } from '../i18n/useTranslation';
-import { isLotmCampaign } from '../services/lotm/lotmSkin';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
 import { exitLotmCampaign } from './lotm/LotmPlayHeader';
 import { TokenGauge } from './TokenGauge';
@@ -99,7 +98,6 @@ export function ContextNavigationDrawer() {
     const pinnedCount = useAppStore((s) => s.pinnedExcerpts.length);
     const headerEntries = useHeaderEntries();
     const { t } = useTranslation();
-    const lotmCampaign = isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
     const [expanded, setExpanded] = useState<Record<GroupId, boolean>>(LOTM_EXCLUSIVE_UI
         ? { play: true, engine: false, mods: false, story: false, world: false }
         : { story: true, world: true, play: true, mods: false, engine: false }
@@ -119,7 +117,6 @@ export function ContextNavigationDrawer() {
             { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
             { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
             { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
-            { id: 'lotm-archive', label: 'Illustrated Archive', icon: Image, onSelect: () => useAppStore.getState().toggleIllustratedArchive() },
             { ...CONTEXT_LEAVES.chpt, badge: chaptersCount, onSelect: () => openContextScreen('chpt') },
             { id: 'askGm', label: 'Ask GM', icon: Sparkles, onSelect: () => useAppStore.getState().openAskGm() },
             { id: 'dice', label: 'Dice', icon: Dices, onSelect: () => useAppStore.getState().openDiceRollModal() },
@@ -161,9 +158,6 @@ export function ContextNavigationDrawer() {
             { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
             { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
             { ...CONTEXT_LEAVES.world, onSelect: () => openContextScreen('world') },
-            ...(lotmCampaign
-                ? [{ id: 'lotm-archive', label: 'Illustrated Archive', icon: Image, onSelect: () => useAppStore.getState().toggleIllustratedArchive() } satisfies NavLeaf]
-                : []),
         ],
         play: [
             { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },

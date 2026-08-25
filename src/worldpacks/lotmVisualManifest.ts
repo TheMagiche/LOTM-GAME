@@ -1,6 +1,5 @@
 /**
  * Curated LOTM visual index for in-play matching.
- * Archive galleries list the rest of the pack via GET /api/lotm/index.
  */
 
 export type LotmSpoilerTag = 'safe' | 'spoiler';

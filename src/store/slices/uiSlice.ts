@@ -88,9 +88,6 @@ export type UISlice = {
     pinnedMemoriesOpen: boolean;
     togglePinnedMemories: () => void;
     closePinnedMemories: () => void;
-    illustratedArchiveOpen: boolean;
-    toggleIllustratedArchive: () => void;
-    closeIllustratedArchive: () => void;
     askGmOpen: boolean;
     openAskGm: () => void;
     closeAskGm: () => void;
@@ -172,9 +169,6 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     pinnedMemoriesOpen: false,
     togglePinnedMemories: () => set((s) => ({ pinnedMemoriesOpen: !s.pinnedMemoriesOpen })),
     closePinnedMemories: () => set({ pinnedMemoriesOpen: false }),
-    illustratedArchiveOpen: false,
-    toggleIllustratedArchive: () => set((s) => ({ illustratedArchiveOpen: !s.illustratedArchiveOpen })),
-    closeIllustratedArchive: () => set({ illustratedArchiveOpen: false }),
     askGmOpen: false,
     openAskGm: () => set({ askGmOpen: true }),
     closeAskGm: () => set({ askGmOpen: false }),
