@@ -299,12 +299,20 @@ describe('parseNPCsFromLore — signature kit (durable loadout)', () => {
         expect(npc.signatureKit).toBeUndefined();
     });
 
-    it('supports an element-only kit (no gear/powers)', () => {
+        it('supports an element-only kit (no gear/powers)', () => {
         const body = NARUTO_BLOCK + '\n**Element:** lightning';
         const [npc] = parseNPCsFromLore([charChunk('CHARACTER -- Naruto Uzumaki', body)]);
         expect(npc.signatureKit).toBeDefined();
         expect(npc.signatureKit!.element).toBe('lightning');
         expect(npc.signatureKit!.equipment).toEqual([]);
         expect(npc.signatureKit!.abilities).toEqual([]);
+    });
+
+    it('parses Pathway and Sequence and fills that Sequence\'s abilities', () => {
+        const body = NARUTO_BLOCK + '\n**Pathway:** Fool\n**Sequence:** 9';
+        const [npc] = parseNPCsFromLore([charChunk('CHARACTER -- Test Seer', body)]);
+        expect(npc.signatureKit?.pathway).toBe('fool');
+        expect(npc.signatureKit?.sequence).toBe(9);
+        expect(npc.signatureKit!.abilities).toEqual(expect.arrayContaining(['Enhanced Memory', 'Spirit Vision']));
     });
 });

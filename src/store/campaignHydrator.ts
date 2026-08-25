@@ -17,6 +17,8 @@ import { fetchMods } from '../services/mods/modClient';
 import { emitCoreEvent } from '../services/mods/events';
 import { safeSceneNum } from '../utils/helpers';
 import type { ArcRecord } from '../types/arc';
+import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
+import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
 
 /**
  * WO-P5-12 §7 Step 1 — migrate Arc's state from `context.arcs` to the
@@ -318,11 +320,47 @@ export async function hydrateCampaign(campaignId: string) {
     // disk so the legacy row doesn't复活 on next hydrate.
     const pcMigration = migratePCIntoContext(migratedContext, npcs ?? []);
     let finalContext = pcMigration.context;
-    const finalNpcLedger = pcMigration.npcLedger;
+    let finalNpcLedger = pcMigration.npcLedger;
     if (pcMigration.migrated) {
         console.log('[Hydrator] Migrated legacy isPC row from npcLedger into context.playerCharacter');
         try { await saveNPCLedger(campaignId, finalNpcLedger); } catch (e) {
             console.warn('[Hydrator] Failed to persist trimmed npcLedger after PC migration:', e);
+        }
+    }
+
+    // Backfill LOTM pathway + sequence on older campaigns that still have D&D
+    // element tags (or no kit at all) on canon names. Idempotent: same-reference
+    // no-op when pathway/sequence/abilities already match the catalog.
+    let lotmPcBackfilled = false;
+    if (LOTM_EXCLUSIVE_UI) {
+        const nextNpcs = attachLotmPathwaysToNpcs(finalNpcLedger);
+        if (nextNpcs.some((n, i) => n !== finalNpcLedger[i])) {
+            finalNpcLedger = nextNpcs;
+            console.log('[Hydrator] Backfilled LOTM pathway/sequence on NPC ledger');
+            try { await saveNPCLedger(campaignId, finalNpcLedger); } catch (e) {
+                console.warn('[Hydrator] Failed to persist LOTM pathway backfill:', e);
+            }
+        }
+        if (finalContext.playerCharacter) {
+            const nextPc = attachLotmPathwaysToNpcs([finalContext.playerCharacter])[0];
+            if (nextPc !== finalContext.playerCharacter) {
+                const pathwayLabel = formatLotmPathwayLabel(nextPc.signatureKit?.pathway, nextPc.signatureKit?.sequence);
+                finalContext = {
+                    ...finalContext,
+                    playerCharacter: nextPc,
+                    characterProfileData: {
+                        ...finalContext.characterProfileData,
+                        class: pathwayLabel || finalContext.characterProfileData.class,
+                        level: typeof nextPc.signatureKit?.sequence === 'number'
+                            ? nextPc.signatureKit.sequence
+                            : finalContext.characterProfileData.level,
+                        abilities: nextPc.signatureKit?.abilities?.length
+                            ? nextPc.signatureKit.abilities
+                            : finalContext.characterProfileData.abilities,
+                    },
+                };
+                lotmPcBackfilled = true;
+            }
         }
     }
 
@@ -345,7 +383,7 @@ export async function hydrateCampaign(campaignId: string) {
         console.log(`[Hydrator] Recovered ${stampsRecovered} scene stamp(s) from the archive index`);
     }
 
-    if (swipeOrphansChanged || inventoryMigrated || stampsRecovered > 0) {
+    if (swipeOrphansChanged || inventoryMigrated || stampsRecovered > 0 || lotmPcBackfilled) {
         console.log('[Hydrator] Persisting updated context/messages after hydration migration');
         try { await saveCampaignState(campaignId, { context: finalContext, messages: finalMessages, condenser: state?.condenser ?? DEFAULT_CONDENSER, pinnedExcerpts: state?.pinnedExcerpts ?? [] }); } catch (e) {
             console.warn('[Hydrator] Failed to persist state after hydration migration:', e);

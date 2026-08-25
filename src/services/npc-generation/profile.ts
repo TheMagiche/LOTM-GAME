@@ -1,6 +1,7 @@
 import type { EndpointConfig, ProviderConfig, ChatMessage, NPCEntry, SceneEventType } from '../../types';
 import { uid } from '../../utils/uid';
 import { sendMessageAndParseJson, sanitizeSignatureKit } from './shared';
+import { applyLotmPathwayToNpc } from '../../worldpacks/lotmPathways';
 import { TRAIT_VOCAB, TRAIT_NAMES } from '../npc/agency/agencyPools';
 import { affinityToPcRelation, describeHex } from '../npc/agency/agencyBands';
 import { drawShortWants, drawMediumWants } from '../npc/agency/agencyWantDraw';
@@ -178,8 +179,9 @@ export async function generateNPCProfile(
         // NPC Signature Kit (v1) — durable loadout seeded from the render call. `undefined`
         // (empty kit) is fine and expected for plain characters. Bounded by sanitizeSignatureKit.
         newEntry.signatureKit = sanitizeSignatureKit(parsed?.signatureKit);
+        const withPathway = newEntry.signatureKit ? applyLotmPathwayToNpc(newEntry) : newEntry;
 
-        addNPCToStore(newEntry);
+        addNPCToStore(withPathway);
         console.log(`[NPC Generator] Successfully generated and added profile for: ${newEntry.name} (primaryGroup=${primary}, secondaryGroup=${secondary ?? 'none'})`);
 
     } catch (err) {
@@ -314,15 +316,16 @@ ${voiceSection}OUTPUT FORMAT — respond with a JSON object matching this struct
   "softBoundaries": ["String — something this NPC dislikes but may tolerate under pressure. Example: 'dislikes being excluded from plans'"],
   "longWant": "String — ONE long-term life ambition driving this NPC across the whole campaign, grounded in their bio/faction. Archetypes: ascend to power, become the strongest, avenge/restore, transcend/transform.",
   "region": "String — the NPC's coarse home or current location if discernible from context (e.g. 'Ryuten', 'the academy'), else an empty string.",
-  "signatureKit": { "equipment": [up to 8 signature items this character is known for], "abilities": [up to 8 signature powers/techniques], "element": "<single affinity tag or omit>" }
+  "signatureKit": { "equipment": [up to 8 signature items], "abilities": [up to 8 Beyonder powers for their current Sequence], "pathway": "<Fool, Door, Error, Darkness, Death, Visionary, Tyrant, Sun, White Tower, Hanged Man, Hermit, Paragon, Wheel of Fortune, Mother, Moon, Abyss, Chained, Black Emperor, Justiciar, Red Priest, Demoness, Twilight Giant — or omit if mundane>", "sequence": "<integer 9 lowest through 0 True God, or omit if mundane>" }
 }
 
 IMPORTANT: Do NOT emit a "personalityHex" field, numeric axis values, or a "traits" array. The engine has already rolled the personality hexagon and chosen the traits; you only render flavour. Numeric personality output will be discarded.
 
 SIGNATURE KIT RULES:
-- "signatureKit" is this NPC's durable loadout — the gear and powers that should stay consistent whenever they appear. It is NOT a full inventory.
-- Only give equipment/abilities this character is actually established or strongly implied to have in the context — do not invent a full arsenal. Stay inside this world's genre and tech level. A mundane character may have an empty kit (omit "signatureKit" or send empty arrays).
-- Each entry is a short noun phrase (e.g. "Excalibur (holy longsword)", "fire magic"). Max 8 entries per array. "element" is a single optional tag (e.g. "fire").
+- "signatureKit" is this NPC's durable loadout — the gear and Beyonder powers that should stay consistent whenever they appear. It is NOT a full inventory.
+- Power system is Lord of the Mysteries pathways, NOT D&D ability scores or elemental affinity. Do NOT invent fire/ice/light tags.
+- If they are a Beyonder, set "pathway" and "sequence" (9 is the first potion; lower numbers are stronger). Abilities must match that Sequence. Different named Beyonders should have different pathways unless they share a church/order.
+- A mundane character omits "signatureKit" or sends empty arrays with no pathway. Max 8 entries per array.
 
 CONTROLLED TRAIT VOCABULARY — for reference only (the engine has already chosen the traits from this list): ${offeredTraitNames(matureMode).join(', ')}.
 

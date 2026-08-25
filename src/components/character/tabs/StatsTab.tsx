@@ -4,8 +4,19 @@ import { scanCharacterProfile } from '../../../services/characterProfileParser';
 import { toast } from '../../Toast';
 import type { EndpointConfig, ProviderConfig, CharacterProfile } from '../../../types';
 import { isLotmCampaign } from '../../../services/lotm/lotmSkin';
+import { LOTM_EXCLUSIVE_UI } from '../../../services/lotm/lotmFlags';
 import { lotmAssetUrl } from '../../../services/lotm/lotmAssetUrl';
 import { LOTM_PATHWAY_SYMBOLS } from '../../../worldpacks/lotmVisualManifest';
+import {
+    LOTM_PATHWAYS,
+    abilitiesForLotmSequence,
+    formatLotmPathwayLabel,
+    getLotmPathway,
+    getLotmSequence,
+    kitFromLotmPathway,
+    nextLotmSequence,
+    resolveLotmPathway,
+} from '../../../worldpacks/lotmPathways';
 
 function SceneTag({ lastScene }: { lastScene: string }) {
     if (!lastScene || lastScene === 'Never') {
@@ -57,17 +68,31 @@ export function StatsTab() {
     };
 
     const profile = characterProfileData as CharacterProfile;
-    const lotm = isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
+    const lotm = LOTM_EXCLUSIVE_UI || isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
+    const playerCharacter = useAppStore(s => s.playerCharacter);
+    const updatePlayerCharacter = useAppStore(s => s.updatePlayerCharacter);
     const identityFields = ([
         { k: 'name', label: 'Name' },
         { k: 'race', label: 'Race' },
         { k: 'class', label: lotm ? 'Pathway' : 'Class' },
         { k: 'level', label: lotm ? 'Sequence' : 'Level', type: 'number' },
     ] as { k: keyof CharacterProfile; label: string; type?: string }[]);
-    const pathwayKey = String(profile.class ?? '').toLowerCase();
-    const pathwaySymbol = lotm
-        ? Object.entries(LOTM_PATHWAY_SYMBOLS).find(([k]) => pathwayKey.includes(k))?.[1]
+    const pathway = lotm
+        ? (getLotmPathway(playerCharacter?.signatureKit?.pathway)
+            ?? resolveLotmPathway(String(profile.class ?? ''))
+            ?? resolveLotmPathway(playerCharacter?.signatureKit?.element))
         : undefined;
+    const sequence = lotm
+        ? (typeof playerCharacter?.signatureKit?.sequence === 'number'
+            ? playerCharacter.signatureKit.sequence
+            : Number(profile.level))
+        : undefined;
+    const pathwaySymbol = pathway
+        ? Object.entries(LOTM_PATHWAY_SYMBOLS).find(([k]) => pathway.id.includes(k) || pathway.name.toLowerCase().includes(k))?.[1]
+        : undefined;
+    const nextSeq = nextLotmSequence(sequence);
+    const nextInfo = getLotmSequence(pathway, nextSeq);
+    const nextAbilities = abilitiesForLotmSequence(pathway?.id, nextSeq);
 
     return (
         <div className="px-4 py-4 space-y-4">
@@ -101,7 +126,7 @@ export function StatsTab() {
                     />
                 ) : (
                     <div className="space-y-2">
-                        {identityFields.map((f) => (
+                        {identityFields.filter(f => !(lotm && (f.k === 'class' || f.k === 'level'))).map((f) => (
                             <div key={f.k} className="flex items-center gap-2">
                                 <label className="text-[9px] text-text-dim/60 w-12">{f.label}</label>
                                 <input
@@ -112,6 +137,74 @@ export function StatsTab() {
                                 />
                             </div>
                         ))}
+                        {lotm && (
+                            <>
+                                <div className="flex items-center gap-2">
+                                    <label className="text-[9px] text-text-dim/60 w-12">Pathway</label>
+                                    <select
+                                        className="flex-1 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1"
+                                        value={pathway?.id ?? ''}
+                                        onChange={(e) => {
+                                            const next = getLotmPathway(e.target.value);
+                                            const seq = Number.isFinite(sequence) ? sequence! : 9;
+                                            setCharacterProfileData({
+                                                ...profile,
+                                                class: next ? formatLotmPathwayLabel(next.id, seq) : '',
+                                                level: seq,
+                                                abilities: abilitiesForLotmSequence(next?.id, seq),
+                                            });
+                                            if (playerCharacter && next) {
+                                                updatePlayerCharacter({
+                                                    signatureKit: kitFromLotmPathway(next.id, seq, playerCharacter.signatureKit),
+                                                    pcMeta: {
+                                                        ...playerCharacter.pcMeta,
+                                                        archetype: formatLotmPathwayLabel(next.id, seq),
+                                                        combatTier: `Sequence ${seq}`,
+                                                    },
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        <option value="">Mundane</option>
+                                        {LOTM_PATHWAYS.map(p => (
+                                            <option key={p.id} value={p.id}>{p.name}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <label className="text-[9px] text-text-dim/60 w-12">Sequence</label>
+                                    <select
+                                        className="flex-1 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1"
+                                        value={pathway && Number.isFinite(sequence) ? String(sequence) : ''}
+                                        disabled={!pathway}
+                                        onChange={(e) => {
+                                            const seq = Number(e.target.value);
+                                            setCharacterProfileData({
+                                                ...profile,
+                                                class: formatLotmPathwayLabel(pathway?.id, seq),
+                                                level: seq,
+                                                abilities: abilitiesForLotmSequence(pathway?.id, seq),
+                                            });
+                                            if (playerCharacter && pathway) {
+                                                updatePlayerCharacter({
+                                                    signatureKit: kitFromLotmPathway(pathway.id, seq, playerCharacter.signatureKit),
+                                                    pcMeta: {
+                                                        ...playerCharacter.pcMeta,
+                                                        archetype: formatLotmPathwayLabel(pathway.id, seq),
+                                                        combatTier: `Sequence ${seq}`,
+                                                    },
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        {!pathway && <option value="">—</option>}
+                                        {pathway?.sequences.map(s => (
+                                            <option key={s.sequence} value={s.sequence}>Seq {s.sequence} · {s.name}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </>
+                        )}
                         <div className="flex items-center gap-2">
                             <label className="text-[9px] text-text-dim/60 w-12">HP</label>
                             <input
@@ -130,7 +223,13 @@ export function StatsTab() {
                         </div>
                         {(['skills', 'abilities', 'traits'] as (keyof CharacterProfile)[]).map((k) => (
                             <div key={k}>
-                                <label className="text-[9px] text-text-dim/60">{k[0].toUpperCase() + k.slice(1)} <span className="text-text-dim/30">(comma-separated)</span></label>
+                                <label className="text-[9px] text-text-dim/60">
+                                    {k === 'skills' && lotm ? 'Acting Method'
+                                        : k === 'abilities' && lotm ? 'Sequence abilities'
+                                            : k[0].toUpperCase() + k.slice(1)}
+                                    {' '}
+                                    <span className="text-text-dim/30">(comma-separated)</span>
+                                </label>
                                 <input
                                     className="w-full bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1"
                                     value={((profile[k] as string[] | undefined) ?? []).join(', ')}
@@ -138,6 +237,14 @@ export function StatsTab() {
                                 />
                             </div>
                         ))}
+                        {lotm && nextInfo && nextAbilities.length > 0 && (
+                            <div className="bg-void border border-amber-300/20 rounded px-2 py-2">
+                                <p className="text-[9px] uppercase tracking-wider text-amber-300/80 mb-1">
+                                    To advance · Seq {nextInfo.sequence} {nextInfo.name}
+                                </p>
+                                <p className="text-[11px] text-text-dim leading-relaxed">{nextAbilities.join(' · ')}</p>
+                            </div>
+                        )}
                         <div>
                             <label className="text-[9px] text-text-dim/60">Notes</label>
                             <textarea

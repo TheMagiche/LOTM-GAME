@@ -285,6 +285,17 @@ describe('WO-A2 §4.7 — commitCharacterDraft', () => {
         expect(pc.signatureKit?.element).toBe('fire');
         expect(pc.signatureKit?.abilities).toEqual(['fire magic', 'ice bolts']);
     });
+
+    it('assemblePlayerCharacter extracts LOTM pathway and sequence from slot 4', () => {
+        const draft: CharacterCreationDraft = {
+            name: 'Clara',
+            answers: { 4: '(pathway: Fool) (sequence: 9)' },
+        };
+        const pc = assemblePlayerCharacter({ draft });
+        expect(pc.signatureKit?.pathway).toBe('fool');
+        expect(pc.signatureKit?.sequence).toBe(9);
+        expect(pc.signatureKit?.abilities).toEqual(expect.arrayContaining(['Enhanced Memory', 'Spirit Vision']));
+    });
 });
 
 // ── Test 8: pcUpdater whitelist ──────────────────────────────────────────────

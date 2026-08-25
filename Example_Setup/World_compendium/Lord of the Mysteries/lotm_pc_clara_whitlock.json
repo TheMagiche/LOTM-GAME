@@ -70,14 +70,14 @@
         "Key to a Dorge riverside garret"
       ],
       "abilities": [
-        "Spirit Vision — see ghosts, spectres, health and emotional auras",
-        "Danger Intuition",
-        "Divination Arts — astrology, spiritual numerology, dowsing and scrying",
-        "Ritualistic Magic — chalk circles, offerings, incantation",
         "Enhanced Memory",
-        "Enhanced Spirituality"
+        "Spirituality",
+        "Spirit Vision",
+        "Divination Arts & Ritualistic Magic",
+        "Danger Intuition"
       ],
-      "element": "divination"
+      "pathway": "fool",
+      "sequence": 9
     },
     "traits": [
       "curious",
@@ -90,9 +90,9 @@
       "archetype": "Seer — Sequence 9 (Fool Pathway)",
       "combatTier": "Sequence 9",
       "stats": {
-        "PWR": 4,
-        "SPD": 5,
-        "WIL": 7
+        "Spirituality": 7,
+        "Physique": 4,
+        "Reasoning": 6
       }
     }
   }

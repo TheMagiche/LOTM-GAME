@@ -113,6 +113,16 @@ describe('NPC Signature Kit (v1)', () => {
             expect(kit!.abilities).toEqual([]);
             expect(kit!.element).toBe('fire');
         });
+
+        it('preserves pathway + sequence as a valid kit and caps the pathway name', () => {
+            const kit = sanitizeSignatureKit({ pathway: 'fool', sequence: 9 });
+            expect(kit).toBeDefined();
+            expect(kit!.pathway).toBe('fool');
+            expect(kit!.sequence).toBe(9);
+            const long = sanitizeSignatureKit({ pathway: 'x'.repeat(80), sequence: 4 });
+            expect(long!.pathway!.length).toBe(40);
+            expect(sanitizeSignatureKit({ pathway: 'fool', sequence: 99 })!.sequence).toBeUndefined();
+        });
     });
 
     // ── 2. Sanitizer per-channel supersession merge ────────────────────────
@@ -177,6 +187,23 @@ describe('NPC Signature Kit (v1)', () => {
             expect(line).toContain('POWERS: fire magic');
             expect(line).toContain('element: fire');
             expect(line.startsWith('PLAY AS: ')).toBe(true);
+        });
+
+        it('surfaces PATHWAY instead of element when a LOTM kit is present', () => {
+            const npc = baseNpc({
+                signatureKit: {
+                    equipment: ["Grandfather's leather casebook"],
+                    abilities: ['Spirit Vision'],
+                    pathway: 'fool',
+                    sequence: 9,
+                },
+            });
+            const line = buildCoreDirective(npc);
+            expect(line).toContain('PATHWAY:');
+            expect(line).toMatch(/Seq 9 Seer/);
+            expect(line).toContain('KIT:');
+            expect(line).toContain('POWERS: Spirit Vision');
+            expect(line).not.toContain('element:');
         });
 
         it('injects only the channels present (no POWERS when abilities empty)', () => {

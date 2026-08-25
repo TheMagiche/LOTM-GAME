@@ -71,6 +71,28 @@ describe('LOTM world pack — NPC ledger seeding', () => {
         expect(dunn?.haunt?.length ?? 0).toBeGreaterThan(0);
         expect(amon?.signatureKit?.abilities.length ?? 0).toBeGreaterThan(0);
     });
+
+    it('assigns LOTM pathways instead of elemental affinity, and keeps them distinct', () => {
+        const byName = Object.fromEntries(npcs.map(n => [n.name, n.signatureKit]));
+        expect(byName['Klein Moretti']?.pathway).toBe('fool');
+        expect(byName['Klein Moretti']?.sequence).toBe(9);
+        expect(byName['Audrey Hall']?.pathway).toBe('visionary');
+        expect(byName['Alger Wilson']?.pathway).toBe('tyrant');
+        expect(byName['Dunn Smith']?.pathway).toBe('darkness');
+        expect(byName['Dunn Smith']?.sequence).toBe(7);
+        expect(byName['Leonard Mitchell']?.pathway).toBe('darkness');
+        expect(byName['Amon']?.pathway).toBe('error');
+        expect(byName['Fors Wall']?.pathway).toBe('door');
+        expect(byName['Xio Derecha']?.pathway).toBe('justiciar');
+        expect(byName['Azik Eggers']?.pathway).toBe('death');
+        expect(byName['Roselle Gustav']?.pathway).toBe('black_emperor');
+        expect(byName['Will Auceptin']?.pathway).toBe('wheel_of_fortune');
+        for (const npc of npcs) {
+            expect(npc.signatureKit?.element, `${npc.name} should not use D&D element tags`).toBeUndefined();
+        }
+        const unique = new Set(npcs.map(n => n.signatureKit?.pathway).filter(Boolean));
+        expect(unique.size).toBeGreaterThanOrEqual(8);
+    });
 });
 
 describe('LOTM world pack — location ledger seeding', () => {

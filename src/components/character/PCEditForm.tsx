@@ -8,6 +8,7 @@ import { getEntriesForNpc, CATEGORY_LABELS, EMPTY_REGISTER } from '../../service
 import { TRAIT_NAMES, TRAIT_VOCAB } from '../../services/npc/agency/agencyPools';
 import { hexBand, relationBand } from '../../services/npc/agency/agencyBands';
 import { RelationshipMemoryEditor } from './RelationshipMemoryEditor';
+import { LotmPathwayKitFields } from '../lotm/LotmPathwayKitFields';
 
 /**
  * PCEditForm — the player character editor (WO-A rewrite 2 — baseline parity).
@@ -132,10 +133,6 @@ export function PCEditForm({
         const kit = form.signatureKit ?? emptyKit;
         const list = [...(kit[field] || [])].filter((_, i) => i !== index);
         setForm({ ...form, signatureKit: { ...kit, [field]: list } });
-    };
-    const setKitElement = (value: string) => {
-        const kit = form.signatureKit ?? emptyKit;
-        setForm({ ...form, signatureKit: { ...kit, element: value } });
     };
 
     return (
@@ -316,7 +313,7 @@ export function PCEditForm({
                                         value={item}
                                         onChange={e => updateKitEntry('equipment', i, e.target.value)}
                                         disabled={!isEditing}
-                                        placeholder="e.g. Excalibur (holy longsword)"
+                                        placeholder="e.g. grandfather's casebook"
                                         className="flex-1 bg-surface border border-border rounded px-2 py-1.5 text-[12px] text-text-primary placeholder:text-text-dim/50 disabled:opacity-70 disabled:bg-void focus:outline-none focus:border-amber-500"
                                     />
                                     {isEditing && <button onClick={() => removeKitEntry('equipment', i)} className="text-danger/60 hover:text-danger p-1 shrink-0"><Trash2 size={11} /></button>}
@@ -328,7 +325,7 @@ export function PCEditForm({
                         </div>
                         <div>
                             <div className="flex items-center justify-between mb-1">
-                                <label className="text-ice text-[10px] uppercase tracking-wider">Abilities / Powers</label>
+                                <label className="text-ice text-[10px] uppercase tracking-wider">Pathway abilities</label>
                                 {isEditing && (form.signatureKit?.abilities?.length ?? 0) < KIT_MAX && (
                                     <button onClick={() => addKitEntry('abilities')} className="text-[9px] text-terminal hover:text-terminal/80 uppercase tracking-wider">+ Add</button>
                                 )}
@@ -340,7 +337,7 @@ export function PCEditForm({
                                         value={item}
                                         onChange={e => updateKitEntry('abilities', i, e.target.value)}
                                         disabled={!isEditing}
-                                        placeholder="e.g. fire magic"
+                                        placeholder="e.g. Spirit Vision"
                                         className="flex-1 bg-surface border border-border rounded px-2 py-1.5 text-[12px] text-text-primary placeholder:text-text-dim/50 disabled:opacity-70 disabled:bg-void focus:outline-none focus:border-ice"
                                     />
                                     {isEditing && <button onClick={() => removeKitEntry('abilities', i)} className="text-danger/60 hover:text-danger p-1 shrink-0"><Trash2 size={11} /></button>}
@@ -350,17 +347,11 @@ export function PCEditForm({
                                 <p className="text-[10px] text-text-dim/40 italic">No signature powers.</p>
                             )}
                         </div>
-                        <div>
-                            <label className="block text-amber-300 text-[10px] uppercase tracking-wider mb-1">Element / Affinity</label>
-                            <input
-                                type="text"
-                                value={form.signatureKit?.element || ''}
-                                onChange={e => setKitElement(e.target.value)}
-                                disabled={!isEditing}
-                                placeholder="e.g. fire (optional)"
-                                className="w-full bg-surface border border-border rounded px-3 py-2 text-sm text-text-primary placeholder:text-text-dim/50 disabled:opacity-70 disabled:bg-void disabled:border-transparent focus:outline-none focus:border-amber-300"
-                            />
-                        </div>
+                        <LotmPathwayKitFields
+                            kit={form.signatureKit}
+                            isEditing={isEditing}
+                            onChange={next => setForm({ ...form, signatureKit: next })}
+                        />
                     </div>
 
                     {/* ── Traits (searchable multi-select, max 5) ────────────────── */}

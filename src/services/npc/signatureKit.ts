@@ -9,6 +9,7 @@ import type { NPCSignatureKit } from '../../types';
 export const KIT_MAX_ENTRIES = 8;
 export const KIT_ENTRY_MAXLEN = 48;
 export const KIT_ELEMENT_MAXLEN = 20;
+export const KIT_PATHWAY_MAXLEN = 40;
 
 function cleanEntries(raw: unknown): string[] {
     if (!Array.isArray(raw)) return [];
@@ -33,7 +34,13 @@ export function sanitizeSignatureKit(
     if (!raw || typeof raw !== 'object') return mergeInto;
     const r = raw as Record<string, unknown>;
     const base: NPCSignatureKit = mergeInto
-        ? { equipment: [...mergeInto.equipment], abilities: [...mergeInto.abilities], element: mergeInto.element }
+        ? {
+            equipment: [...mergeInto.equipment],
+            abilities: [...mergeInto.abilities],
+            element: mergeInto.element,
+            pathway: mergeInto.pathway,
+            sequence: mergeInto.sequence,
+        }
         : { equipment: [], abilities: [] };
 
     if ('equipment' in r) base.equipment = cleanEntries(r.equipment);
@@ -42,7 +49,15 @@ export function sanitizeSignatureKit(
         const el = String(r.element ?? '').replace(/\s+/g, ' ').trim();
         base.element = el ? el.slice(0, KIT_ELEMENT_MAXLEN) : undefined;
     }
+    if ('pathway' in r) {
+        const p = String(r.pathway ?? '').replace(/\s+/g, ' ').trim();
+        base.pathway = p ? p.slice(0, KIT_PATHWAY_MAXLEN) : undefined;
+    }
+    if ('sequence' in r) {
+        const n = Number(r.sequence);
+        base.sequence = Number.isInteger(n) && n >= 0 && n <= 9 ? n : undefined;
+    }
 
-    if (base.equipment.length === 0 && base.abilities.length === 0 && !base.element) return undefined;
+    if (base.equipment.length === 0 && base.abilities.length === 0 && !base.element && !base.pathway) return undefined;
     return base;
 }

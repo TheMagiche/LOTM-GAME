@@ -170,8 +170,12 @@ export type NpcSuggestion = { name: string; context?: string; firstSeen: number 
  */
 export type NPCSignatureKit = {
     equipment: string[];   // signature gear; <=8 entries; each a short noun phrase, e.g. "Excalibur (holy longsword)"
-    abilities: string[];   // signature powers/techniques; <=8 entries, e.g. "fire magic", "regeneration"
-    element?: string;      // optional single affinity/damage-type tag, e.g. "fire"
+    abilities: string[];   // signature powers/techniques; <=8 entries, e.g. "Spirit Vision", "fire magic"
+    element?: string;      // optional single affinity/damage-type tag, e.g. "fire" (non-LOTM)
+    /** LOTM Beyonder pathway id (e.g. "fool", "darkness") or display name. */
+    pathway?: string;
+    /** LOTM Sequence 9 (lowest) through 0 (True God). */
+    sequence?: number;
 };
 
 export type NPCEntry = {

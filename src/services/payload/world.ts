@@ -10,6 +10,7 @@ import { isKnownToAnyOnStage, parseKnownByToken } from '../campaign-state/knowle
 import { dedupElevatedScenes, type ElevatedScene } from '../archive-memory/dynamicElevation';
 import { renderSlottedRagBlock, type SlottedRagSnippet } from '../archive-memory/slottedRag';
 import type { TraceCollector } from './traceCollector';
+import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 
 const RECENT_SCENE_WINDOW = 3;      // mobile used 2; desktop can see a touch deeper
 const SCENE_EVENTS_TOKEN_BUDGET = 350; // mobile rationed ~200; desktop has headroom
@@ -49,12 +50,14 @@ export function buildCoreDirective(npc: NPCEntry, relationshipMemoryEnabled = fa
     }
     // NPC Signature Kit (v1) — durable loadout rides CORE so scene-tag filtering
     // can never drop it. The anti-drift analogue of personalityHex.
-    if (npc.signatureKit) {
+        if (npc.signatureKit) {
         const k = npc.signatureKit;
         const kitBits: string[] = [];
+        const pathway = formatLotmPathwayLabel(k.pathway, k.sequence);
+        if (pathway) kitBits.push(`PATHWAY: ${pathway}`);
+        else if (k.element) kitBits.push(`element: ${k.element}`);
         if (k.equipment.length) kitBits.push(`KIT: ${k.equipment.join(', ')}`);
         if (k.abilities.length) kitBits.push(`POWERS: ${k.abilities.join(', ')}`);
-        if (k.element) kitBits.push(`element: ${k.element}`);
         if (kitBits.length) parts.push(kitBits.join(' | '));
     }
     return parts.length > 0 ? `PLAY AS: ${parts.join(' | ')}` : '';

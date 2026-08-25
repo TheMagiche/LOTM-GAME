@@ -172,7 +172,8 @@ Where gods and high-sequence existences reside, symbolized as radiant spheres ab
 **Example Output:** "Let's be clear about one thing: I have no idea what I'm doing. But I'll do it before you do."
 **Affinity:** 50
 **SignatureAbilities:** [divination arts, marionette threads, fooling of time and fate]
-**Element:** mystery
+**Pathway:** Fool
+**Sequence:** 9
 Klein began as a history graduate who shot himself in the head with a luck-ritual gone wrong and woke in another man's skull. Everything since — Nighthawk service, the gray fog, the Tarot Club — grew from one decision to keep going anyway.
 **Wandering: true**
 **Intro Boost: fool, divination, gray fog, tarot, marionette**
@@ -190,6 +191,8 @@ Klein began as a history graduate who shot himself in the head with a luck-ritua
 **Example Output:** "I don't mean to alarm anyone, but our new acquaintance believes every word he just said. That's what alarms me."
 **Affinity:** 60
 **SignatureAbilities:** [mind reading, emotion manipulation, dream walking]
+**Pathway:** Visionary
+**Sequence:** 9
 **Region:** backlund
 **Tier:** recurring
 Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wrong séance and decided, characteristically, to be excellent at it.
@@ -209,7 +212,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "I'll tell you for free what you'd otherwise pay me for later: whatever you've been told about that island, halve the treasure and double the bodies."
 **Affinity:** 45
 **SignatureAbilities:** [water affinity, lightning calling, ship-borne combat mastery]
-**Element:** storm
+**Pathway:** Tyrant
+**Sequence:** 7
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: sea, ship, storm, hanged man, harbor**
@@ -228,6 +232,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Affinity:** 55
 **SignatureEquipment:** [standard-issue revolver, sealed relic containment case]
 **SignatureAbilities:** [sleepless endurance, combat command, beyonder suppression]
+**Pathway:** Darkness
+**Sequence:** 7
 **Region:** tingen
 **Haunt:** the Nighthawk chantry after nightfall
 **Tier:** recurring
@@ -247,6 +253,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "I'd offer to buy you a drink, but I'm technically working, spiritually exhausted, and hearing voices. So — rain check?"
 **Affinity:** 55
 **SignatureAbilities:** [sleeplessness, nightmare resistance, spirit perception]
+**Pathway:** Darkness
+**Sequence:** 8
 **Region:** tingen
 **Tier:** recurring
 **Location: Tingen**
@@ -265,7 +273,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "You mistake me for someone who threatens. I merely recall the future, and in it you cooperate."
 **Affinity:** 25
 **SignatureAbilities:** [marionettist threads, historical projection, illusion mastery]
-**Element:** mystery
+**Pathway:** Fool
+**Sequence:** 4
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: secret order, marionette, antigonus, prophecy**
@@ -283,7 +292,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "Wrong. Try again. Third time's the charm — oh, wait, that was also me."
 **Affinity:** 10
 **SignatureAbilities:** [identity theft, ability plagiarism, worm of time parasitism]
-**Element:** error
+**Pathway:** Error
+**Sequence:** 1
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: monocle, thief, error, mischief, disguise**
@@ -301,7 +311,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "Peace. What you're about to choose, you chose well the last time."
 **Affinity:** 30
 **SignatureAbilities:** [mind weaving, prophetic authorship, resurrection of the written]
-**Element:** vision
+**Pathway:** Visionary
+**Sequence:** 2
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: visionary, prophet, adam, script, destiny**
@@ -319,7 +330,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "Take the long way to your lodgings tonight. Consider it an eccentric professor's whim — please."
 **Affinity:** 50
 **SignatureAbilities:** [death perception, spirit command, curse of the departed]
-**Element:** death
+**Pathway:** Death
+**Sequence:** 2
 **Region:** tingen
 **Haunt:** Khoy University's history department
 **Tier:** recurring
@@ -339,6 +351,8 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Example Output:** "Day 412: Another assassination attempt. Court is boring, invented a better harvester. Note: find decent chili peppers."
 **Affinity:** 50
 **SignatureAbilities:** [posthumous guidance via diary, invention blueprints, lingering wards]
+**Pathway:** Black Emperor
+**Sequence:** 0
 **Tier:** recurring
 Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger hunt of diary pages that empires would start wars to complete.
 **Intro Boost: roselle, diary, emperor, invention, intis**
@@ -356,7 +370,8 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Example Output:** "Ga-ga... the ship sinks Thursday. Pack light."
 **Affinity:** 60
 **SignatureAbilities:** [fate manipulation, calamity redirection, rebirth]
-**Element:** fate
+**Pathway:** Wheel of Fortune
+**Sequence:** 1
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: baby, fortune, fate, wheel, omen**
@@ -373,8 +388,9 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **StoryRelevance:** Gatekeeper between street-level adventuring and the Tarot Club's upper table.
 **Example Output:** "Heroics cost extra. Saving your life specifically — that I'll comp, since it doubles as chapter twelve."
 **Affinity:** 55
-**SignatureAbilities:** [spell casting, teleportation tricks, fire manipulation]
-**Element:** flame
+**SignatureAbilities:** [Door Opening, Ritualistic Magic]
+**Pathway:** Door
+**Sequence:** 9
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: magician, novel, spell, tarot club, fors**
@@ -392,7 +408,9 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Example Output:** "Fifty soli a day plus expenses. I don't do curses, hauntings, or prophecies. ...Fine, show me the curse."
 **Affinity:** 55
 **SignatureEquipment:** [worn leather armor, warrant ledger, short blade]
-**SignatureAbilities:** [appraisal of lies, tracking, combat grappling]
+**SignatureAbilities:** [Order, Physical Enhancement, Authority]
+**Pathway:** Justiciar
+**Sequence:** 9
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: bounty, detective, xio, warrant, missing person**

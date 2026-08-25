@@ -1,6 +1,7 @@
 import type { PlayerCharacter, CharacterCreationDraft, NPCVisualProfile, InventoryItem, CharacterProfileState } from '../../types';
 import { DEFAULT_VISUAL_PROFILE } from '../../types';
 import { uid } from '../../utils/uid';
+import { applyLotmPathwayToNpc, getLotmPathway, resolveLotmPathway } from '../../worldpacks/lotmPathways';
 
 /**
  * WO-A2 §2.8 — commit the assembled draft into the live store.
@@ -63,17 +64,32 @@ export function assemblePlayerCharacter(inputs: CommitInputs): PlayerCharacter {
         wants: { short: [], medium: [], long: draft.answers?.[7] || '' },
     };
 
-    // §2.3 slot 4 → signatureKit.abilities + element. Free-text answer is
-    // split into abilities (comma/pipe separated). Element is a single tag
-    // pulled from a trailing " (element: fire)" if present.
+    // §2.3 slot 4 → signatureKit.abilities + LOTM pathway/sequence (legacy element tag still parsed).
     const slot4 = draft.answers?.[4] || '';
     if (slot4) {
         const elemMatch = slot4.match(/\(element:\s*([^)]+)\)/i);
+        const pathwayMatch = slot4.match(/\(pathway:\s*([^)]+)\)/i);
+        const sequenceMatch = slot4.match(/\(sequence:\s*(\d)\)/i);
         const element = elemMatch ? elemMatch[1].trim().slice(0, 20) : undefined;
-        const stripped = slot4.replace(/\(element:\s*[^)]+\)/i, '').trim();
+        const pathwayRaw = pathwayMatch?.[1].trim();
+        const pathway = pathwayRaw
+            ? (getLotmPathway(pathwayRaw) ?? resolveLotmPathway(pathwayRaw))?.id
+            : undefined;
+        const sequence = sequenceMatch
+            ? Number(sequenceMatch[1])
+            : (pathway ? 9 : undefined);
+        const stripped = slot4
+            .replace(/\(element:\s*[^)]+\)/i, '')
+            .replace(/\(pathway:\s*[^)]+\)/i, '')
+            .replace(/\(sequence:\s*[^)]+\)/i, '')
+            .trim();
         const abilities = stripped.split(/[,|]/).map(s => s.trim()).filter(Boolean).slice(0, 8);
-        if (abilities.length || element) {
-            pc.signatureKit = { equipment: [], abilities, element };
+        if (abilities.length || element || pathway) {
+            pc.signatureKit = { equipment: [], abilities, element, pathway, sequence };
+            if (pathway) {
+                const applied = applyLotmPathwayToNpc(pc);
+                pc.signatureKit = applied.signatureKit;
+            }
         }
     }
 

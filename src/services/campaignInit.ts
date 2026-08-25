@@ -19,6 +19,7 @@ import {
 import { dedupeNPCLedger } from '../store/slices/campaignSlice';
 import { loadLootTree } from './lore/lootTreeLoader';
 import { attachLotmPortraitsToNpcs, findTingenLocationId } from './lotm/lotmVisualMatcher';
+import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
 
 
 export const DEFAULT_CONTEXT = {
@@ -86,10 +87,10 @@ export async function initializeCampaignState(params: {
         const parsedNPCs = parseNPCsFromLore(chunks);
         if (parsedNPCs.length > 0) {
             const existingNPCs = await getNPCLedger(campaignId);
-            const withPortraits = attachLotmVisuals
-                ? attachLotmPortraitsToNpcs(parsedNPCs)
-                : parsedNPCs;
-            await saveNPCLedger(campaignId, dedupeNPCLedger([...existingNPCs, ...withPortraits]));
+            const seededNpcs = attachLotmPathwaysToNpcs(
+                attachLotmVisuals ? attachLotmPortraitsToNpcs(parsedNPCs) : parsedNPCs,
+            );
+            await saveNPCLedger(campaignId, dedupeNPCLedger([...existingNPCs, ...seededNpcs]));
         }
 
         // Same deal for places. Dedupe against the existing ledger by name+alias
@@ -127,14 +128,21 @@ export async function initializeCampaignState(params: {
             ctx.starterActive = true;
         }
         if (playerCharacter) {
-            ctx.playerCharacter = playerCharacter;
+            const seededPc = attachLotmPathwaysToNpcs([playerCharacter])[0];
+            ctx.playerCharacter = seededPc;
             ctx.characterProfileActive = true;
+            const pathwayLabel = formatLotmPathwayLabel(seededPc.signatureKit?.pathway, seededPc.signatureKit?.sequence);
             ctx.characterProfileData = {
                 ...ctx.characterProfileData,
-                name: playerCharacter.name || ctx.characterProfileData.name,
-                race: playerCharacter.visualProfile?.race || ctx.characterProfileData.race,
-                class: playerCharacter.pcMeta?.archetype || playerCharacter.signatureKit?.element || ctx.characterProfileData.class,
-                level: typeof playerCharacter.skillRung === 'number' ? Math.max(1, 9 - playerCharacter.skillRung) : ctx.characterProfileData.level,
+                name: seededPc.name || ctx.characterProfileData.name,
+                race: seededPc.visualProfile?.race || ctx.characterProfileData.race,
+                class: pathwayLabel || seededPc.pcMeta?.archetype || seededPc.signatureKit?.element || ctx.characterProfileData.class,
+                level: typeof seededPc.signatureKit?.sequence === 'number'
+                    ? seededPc.signatureKit.sequence
+                    : (typeof seededPc.skillRung === 'number' ? Math.max(0, 9 - seededPc.skillRung) : ctx.characterProfileData.level),
+                abilities: seededPc.signatureKit?.abilities?.length
+                    ? seededPc.signatureKit.abilities
+                    : ctx.characterProfileData.abilities,
             };
         }
         if (attachLotmVisuals && !ctx.currentPlaceId) {

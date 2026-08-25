@@ -98,7 +98,7 @@ export function IdentityFields({ identity, onChange, disabled, hideLevel }: {
                 type="text"
                 value={identity.class || ''}
                 onChange={(e) => onChange({ class: e.target.value })}
-                placeholder="Class"
+                placeholder="Pathway"
                 disabled={disabled}
                 className="bg-void-dark border border-border rounded px-2 py-1 text-[12px] text-text-bright disabled:opacity-70"
             />
@@ -115,7 +115,7 @@ export function IdentityFields({ identity, onChange, disabled, hideLevel }: {
                     type="number"
                     value={identity.level ?? ''}
                     onChange={(e) => onChange({ level: e.target.value ? Number(e.target.value) : undefined })}
-                    placeholder="Level"
+                    placeholder="Sequence"
                     disabled={disabled}
                     className="bg-void-dark border border-border rounded px-2 py-1 text-[12px] text-text-bright disabled:opacity-70"
                 />

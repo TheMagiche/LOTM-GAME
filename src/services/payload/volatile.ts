@@ -5,7 +5,7 @@ import { minifyBookkeepingStub, minifySelectedInventory, minifySelectedProfile }
 import { queryTraits, formatTraitsForContext } from '../retrieval/semanticMemory';
 import type { TraceCollector } from './traceCollector';
 import { connectionBand } from '../locationParser';
-import { formatDayRange } from '../location/distance';
+import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 
 export function buildVolatile(opts: {
     context: GameContext;
@@ -235,8 +235,8 @@ export function buildLocationBlock(context: GameContext, ledger: LocationEntry[]
  * PC Signature Kit line for the [CHARACTER PROFILE] block (WO-A §5).
  * Reads the PC record from `context.playerCharacter` (WO-A rewrite 2 §2 — D1:
  * the PC is no longer a row in `npcLedger`). When the PC has a `signatureKit`,
- * emits one bounded line: `Kit: <equipment> | Powers: <abilities> | element: <element>`.
- * Empty segments are omitted; the line is omitted entirely when there is no kit
+ * emits one bounded line: `Kit: <equipment> | Powers: <abilities> | PATHWAY: Fool · Seq 9 Seer`
+ * (or `element: <element>` when no pathway is set). Empty segments are omitted.
  * or no PC record. Returns '' so the caller can skip insertion (byte-identical
  * to the pre-kit payload when there is no kit — regression guard).
  *
@@ -253,8 +253,10 @@ export function buildPcKitLine(pc: PlayerCharacter | null | undefined, npcLedger
     if (!kitOwner || !kitOwner.signatureKit) return '';
     const kit = kitOwner.signatureKit;
     const segments: string[] = [];
+    const pathway = formatLotmPathwayLabel(kit.pathway, kit.sequence);
     if (kit.equipment.length > 0) segments.push(`Kit: ${kit.equipment.join(', ')}`);
     if (kit.abilities.length > 0) segments.push(`Powers: ${kit.abilities.join(', ')}`);
-    if (kit.element) segments.push(`element: ${kit.element}`);
+    if (pathway) segments.push(`PATHWAY: ${pathway}`);
+    else if (kit.element) segments.push(`element: ${kit.element}`);
     return segments.length > 0 ? segments.join(' | ') : '';
 }

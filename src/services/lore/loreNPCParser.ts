@@ -1,6 +1,7 @@
 import type { NPCEntry, LoreChunk, HexAxis, PersonalityHex, NPCDrives, NPCWants, NPCBehavioralTrigger } from '../../types';
 import { TRAIT_NAMES } from '../npc/agency/agencyPools';
 import { sanitizeSignatureKit } from '../npc/signatureKit';
+import { applyLotmPathwayToNpc, resolveLotmPathway } from '../../worldpacks/lotmPathways';
 
 const HEX_AXES: readonly HexAxis[] = ['drive', 'diligence', 'boldness', 'warmth', 'empathy', 'composure'];
 const KNOWN_TRAITS = new Set<string>(TRAIT_NAMES);
@@ -35,9 +36,11 @@ function uid(): string {
  *           - **CoreWant:** a deep character truth (drives.coreWant)
  *           - **SessionWant:** arc-level goal (drives.sessionWant)
  *           - **SceneWant:** immediate-scene want (drives.sceneWant)
- *           - **SignatureEquipment:** [Excalibur (holy longsword), plate armor]  (durable loadout gear, ≤4)
- *           - **SignatureAbilities:** [fire magic, holy smite]                    (signature powers/techniques, ≤4)
- *           - **Element:** fire                                                   (single affinity tag)
+ *           - **SignatureEquipment:** [grandfather's casebook, silver pendulum]  (durable loadout gear)
+ *           - **SignatureAbilities:** [Spirit Vision, Divination Arts]           (current Sequence powers)
+ *           - **Pathway:** Fool                                                   (Beyonder pathway name)
+ *           - **Sequence:** 9                                                     (9 first potion → 0 True God)
+ *           - **Element:** fire                                                   (legacy affinity tag; unused in LOTM)
  *         Optional desktop-only visual fields (mobile parser ignores these):
  *           VisualRace, VisualGender, VisualAgeRange, VisualBuild, VisualSymmetry,
  *           VisualHairStyle, VisualEyeColor, VisualSkinTone, VisualGait,
@@ -254,13 +257,18 @@ export function parseNPCsFromLore(chunks: LoreChunk[]): NPCEntry[] {
         // Zero-LLM: parsed straight from lore bullets and bounded by the shared sanitizer
         // (cap 8/channel, entry+element length caps) so a lore-seeded kit is identical in
         // shape to one the post-turn updater would accept. Absent fields → undefined kit.
+        const pathwayField = getAny(['Pathway', 'BeyonderPathway']);
+        const resolvedPathway = resolveLotmPathway(pathwayField);
+        const sequenceRaw = getNum('Sequence', NaN);
         const signatureKit = sanitizeSignatureKit({
             equipment: getStringList('SignatureEquipment') ?? getStringList('Equipment'),
             abilities: getStringList('SignatureAbilities') ?? getStringList('Abilities') ?? getStringList('Powers'),
             element: getAny(['Element', 'SignatureElement']),
+            pathway: resolvedPathway?.id || pathwayField || undefined,
+            sequence: Number.isFinite(sequenceRaw) ? sequenceRaw : undefined,
         });
 
-        npcs.push({
+        npcs.push(applyLotmPathwayToNpc({
             id: uid(),
             name,
             aliases: get('Aliases'),
@@ -290,7 +298,7 @@ export function parseNPCsFromLore(chunks: LoreChunk[]): NPCEntry[] {
             wants,
             signatureKit,
             portrait: '',
-        });
+        }));
     }
 
     return npcs;
