@@ -15,6 +15,7 @@ const iconPalette = {
   nation: '#f97316',
   city: '#ef4444',
   village: '#fb7185',
+  harbor: '#14b8a6',
   landmark: '#a855f7',
   sea: '#3b82f6'
 };
