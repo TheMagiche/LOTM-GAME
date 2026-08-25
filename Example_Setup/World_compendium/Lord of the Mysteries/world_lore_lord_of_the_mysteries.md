@@ -621,6 +621,341 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Wandering: true**
 **Intro Boost: bounty, detective, xio, warrant, missing person**
 
+### CHARACTER — The Evernight Goddess
+**Aliases:** Goddess of the Night, Lady of Crimson (former)
+**Appearance:** Never seen directly — manifest as moonlight through fog, a shadow with patient eyes, or a woman's silhouette woven of darkness.
+**Personality:** Concealment, quiet mercy, and long patience. She protects her followers the way night protects fugitives: completely, silently, and without asking gratitude.
+**Status:** Alive (god)
+**Faction:** Church of the Evernight Goddess
+**StoryRelevance:** Loen's guardian deity; her Nighthawks act with her implicit sanction, and her attention falls on those who work in the dark.
+**Pathway:** Darkness
+**Sequence:** 0
+**Intro Boost: evernight, goddess, night, concealment, mercy**
+
+### CHARACTER — The Lord of Storms
+**Aliases:** Ruler of the Skies and Seas
+**Appearance:** A towering figure wreathed in stormcloud and lightning, or simply the sudden pressure before a squall.
+**Personality:** Proud, jealous, magnificent in wrath. Oaths sworn to him bind absolutely; blasphemy against him invites lightning with a return address.
+**Status:** Alive (god)
+**Faction:** Church of the Lord of Storms
+**StoryRelevance:** Sovereign of sailors and the archipelagos; his Punishers answer direct prayers with devastating weather.
+**Pathway:** Tyrant
+**Sequence:** 0
+**Intro Boost: storm, sea, oath, lightning, pontiff**
+
+### CHARACTER — The God of Combat
+**Aliases:** Lord of War
+**Appearance:** A giant-scaled warrior god armored in twilight bronze, his voice the cadence of marching armies.
+**Personality:** Glory through battle, strength above subtlety, honor between enemies. He despises cowardice more than heresy.
+**Status:** Alive (god)
+**Faction:** Church of the God of Combat (Feysac Empire)
+**StoryRelevance:** Feysac's state god; his blessing rides with imperial armies, and his clergy treat coming war as sacrament.
+**Pathway:** Twilight Giant
+**Sequence:** 0
+**Intro Boost: combat, war, feysac, warrior, glory**
+
+### CHARACTER — The God of Steam and Machinery
+**Aliases:** The Steam God
+**Appearance:** An immense figure of interlocking gears and boiler-plate, steam venting from his shoulders like breath.
+**Personality:** Methodical, pragmatic, secretive. Grants industry as covenant; hoards mechanical truth as treasure.
+**Status:** Alive (god)
+**Faction:** Church of the God of Steam and Machinery
+**StoryRelevance:** Patron of the industrial age; his Mechanical Heart polices machinery-grade artifacts and inventors who know too much.
+**Pathway:** Hermit
+**Sequence:** 0
+**Intro Boost: steam, machinery, gears, industry, invention**
+
+### CHARACTER — The Eternal Blazing Sun
+**Aliases:** The Sun God
+**Appearance:** A radiant figure whose face is a white-hot sun; shadows flee from his presence.
+**Personality:** Righteous, purifying, absolute. Light that heals the clean and burns the unclean without distinguishing much between them.
+**Status:** Alive (god)
+**Faction:** Church of the Eternal Blazing Sun (Intis Republic)
+**StoryRelevance:** Intis's patron deity; his Inquisition purges undead and filth across the southern colonies.
+**Pathway:** Sun
+**Sequence:** 0
+**Intro Boost: sun, blazing, light, purification, inquisition**
+
+### CHARACTER — Lilith (The Earth Mother)
+**Aliases:** Mother Earth
+**Appearance:** A warm maternal figure crowned with wheat and wildflowers, or simply the feeling of safe harbor in a dangerous world.
+**Personality:** Gentle, fertile, quietly ancient. Governs harvests, birth, healing — and the blood-tides of her Moon aspect, which frighten those who look too closely.
+**Status:** Alive (god)
+**Faction:** Church of the Earth Mother (Feynapotter Kingdom)
+**StoryRelevance:** Rural guardian whose pastoral warmth conceals Moon-pathway blood magic and her vampire clans' covenant.
+**Pathway:** Mother
+**Sequence:** 0
+**Intro Boost: earth mother, lilith, harvest, birth, healing**
+
+### CHARACTER — The God of Knowledge and Wisdom
+**Aliases:** The All-Knowing
+**Appearance:** A serene scholar-figure whose eyes are written pages; every answer costs a question.
+**Personality:** Orderly, curious, dispassionate. Believes all knowledge belongs in archives — including knowledge best left unread.
+**Status:** Alive (god)
+**Faction:** Church of the God of Knowledge and Wisdom (Lenburg, Segar, Masin)
+**StoryRelevance:** Keeper of records and patents; his clergy collect anything written, and they never forget where it's filed.
+**Pathway:** White Tower
+**Sequence:** 0
+**Intro Boost: knowledge, wisdom, archive, library, truth**
+
+### CHARACTER — The True Creator
+**Aliases:** The Fallen Creator, Lord of the Hanged Man
+**Appearance:** A mutilated divine figure glimpsed in mirrors and nightmares; his churches feel wrong before they look wrong.
+**Personality:** Corrupting liberation — freedom through surrender to desire and madness. His gifts are real and the price is the self.
+**Status:** Alive (fallen god)
+**Faction:** Rose School of Thought; hidden cult cells
+**StoryRelevance:** The era's active heresy. Cult scenes bearing his mark draw church bounties and party attention alike.
+**Pathway:** Hanged Man
+**Sequence:** 0
+**Intro Boost: true creator, fallen god, cult, heresy, corruption**
+
+### CHARACTER — Bethel Abraham
+**Aliases:** Angel of the Door
+**Appearance:** A tall traveler in a coat stitched from distances; doors he passes through never quite close behind him.
+**Personality:** Imprisoned yet everywhere — an angel of passage, exile, and escape who aids the desperate for prices paid in journeys.
+**Status:** Trapped outside the world (imprisoned by the Visionary's design)
+**Faction:** Abraham Family
+**Goals:** Escape his prison; shield his cursed family from afar.
+**StoryRelevance:** The Abraham family curse scatters its members because their angel is sealed away; freeing him is a campaign-spanning thread.
+**Pathway:** Door
+**Sequence:** 1
+**Intro Boost: bethel abraham, door, exile, imprisonment, travel**
+
+### CHARACTER — Medici
+**Aliases:** Angel of War, Sauron-Einhorn-Medici
+**Appearance:** A flame-haired warrior whose laughter sounds like musket volleys; three ancient bloodlines share this existence.
+**Personality:** Battle made joyful — war as festival, slaughter as art. Loyal to those who earn it in fire.
+**Status:** Alive (angel)
+**Faction:** Red Priest lineage (Tudor/Sauron/Einhorn heritage)
+**StoryRelevance:** A King of Angels bound to old empire-blood; his favor marks parties for greatness or battlefield conscription.
+**Pathway:** Red Priest
+**Sequence:** 1
+**Intro Boost: medici, war angel, conquest, flame, battle**
+
+### CHARACTER — Ouroboros
+**Aliases:** The Serpent That Devours Its Tail
+**Appearance:** An endless serpent coiled around time itself; in mortal guise, someone who always seems to be leaving as you arrive.
+**Personality:** Fate's custodian — cyclical, inevitable, neither kind nor cruel. What goes around comes around, expedited.
+**Status:** Alive (angel)
+**Faction:** None (Wheel of Fortune lineage)
+**StoryRelevance:** A King of Angels of destiny; encounters with him mean the timeline is correcting something.
+**Pathway:** Wheel of Fortune
+**Sequence:** 1
+**Intro Boost: ouroboros, serpent, fate, cycle, destiny**
+
+### CHARACTER — Pallez Zoroast
+**Aliases:** Angel of the Error (elder)
+**Appearance:** A dapper old gentleman whose pockets contain things that were elsewhere moments ago.
+**Personality:** The Amon family's elder counterpart: thievery refined into philosophy. Steals elegantly, returns nothing, apologizes beautifully.
+**Status:** Alive (angel)
+**Faction:** Zoroast/Jacob families (Error pathway)
+**StoryRelevance:** High-sequence Error power; anything lost anywhere may simply be in his collection.
+**Pathway:** Error
+**Sequence:** 2
+**Intro Boost: pallez, zoroast, error, theft, elder**
+
+### CHARACTER — Reinette Tinekerr
+**Aliases:** Miss Tinekerr
+**Appearance:** A pale noblewoman attended by four headless maids who carry her words; she herself rarely speaks aloud.
+**Personality:** Ancient, courteous, and quietly terrifying — a chained spirit of vengeance bound by etiquette older than nations.
+**Status:** Alive (angel)
+**Faction:** Chained pathway; allied to the Tarot Club's circle
+**StoryRelevance:** A supernatural patroness whose favors come wrapped in obligations; her headless maids deliver messages no one wants twice.
+**Pathway:** Chained
+**Sequence:** 2
+**Intro Boost: reinette, tinekerr, chained, spirit, vengeance**
+
+### CHARACTER — Arianna
+**Aliases:** none
+**Appearance:** A veiled woman whose shadow moves a heartbeat out of step with her body.
+**Personality:** A high-sequence servant of the night: watchful, protective of the Goddess's flock, merciless to predators of the faithful.
+**Status:** Alive (angel)
+**Faction:** Church of the Evernight Goddess
+**StoryRelevance:** The Nighthawks' distant guardian; when a squad survives the impossible, her hand was likely on the scale.
+**Pathway:** Darkness
+**Sequence:** 2
+**Intro Boost: arianna, darkness, angel, guardian, night**
+
+### CHARACTER — Bernadette Gustav
+**Aliases:** none
+**Appearance:** A composed woman in traveling dress with her great-grandfather emperor's knowing eyes; carries a notebook no one else can read.
+**Personality:** Roselle's descendant and heir to his secrets: brilliant, guarded, hunting the truth about her ancestor's death and diary.
+**Status:** Alive (angel)
+**Faction:** Gustav lineage (Hermit pathway); independent
+**StoryRelevance:** A collector of Roselle's scattered pages — rival or ally for any party chasing the same MacGuffins.
+**Pathway:** Hermit
+**Sequence:** 2
+**Intro Boost: bernadette, gustav, hermit, roselle, diary**
+
+### CHARACTER — Cattleya
+**Aliases:** The Hermit (Tarot title)
+**Appearance:** A quiet young woman with ink-dark hair and the stillness of deep water; surrounded by books that rearrange themselves.
+**Personality:** The Star of Knowledge's disciple: scholarly, reserved, ascending the Hermit pathway under the Steam God's church while serving stranger masters.
+**Status:** Alive
+**Faction:** Church of the God of Steam and Machinery; Tarot Club (The Hermit)
+**StoryRelevance:** Tarot Club's researcher — the party's access to rare formulas, texts, and esoteric answers at a price.
+**Pathway:** Hermit
+**Sequence:** 4
+**Intro Boost: cattleya, hermit, scholar, tarot club, research**
+
+### CHARACTER — Emlyn White
+**Aliases:** none
+**Appearance:** A fastidious young vampire with immaculate dress sense and a horror of unsanitary feeding practices.
+**Personality:** A Sanguine clan scion thrust into church service: vain, squeamish, unexpectedly brave when his friends bleed.
+**Status:** Alive
+**Faction:** Sanguines; Church of the Earth Mother
+**StoryRelevance:** Bridge between polite vampire society and mortal adventurers; apothecary talents make him useful and slightly unsettling.
+**Pathway:** Moon
+**Sequence:** 3
+**Intro Boost: emlyn, vampire, sanguine, moon, apothecary**
+
+### CHARACTER — Derrick Berg
+**Aliases:** none
+**Appearance:** A sun-browned youth from a city that has never seen dawn, wearing wonder like a coat.
+**Personality:** The City of Silver's hope: earnest, resilient, carrying his people's survival on young shoulders into a world of sunlight he was born forbidden.
+**Status:** Alive
+**Faction:** City of Silver; Church of the Fool (emerging)
+**StoryRelevance:** Link to the Forsaken Land's last human city — quests for relics, food, and salvation run through him.
+**Pathway:** Sun
+**Sequence:** 3
+**Intro Boost: derrick, city of silver, sun, forsaken land, hope**
+
+### CHARACTER — Ince Zangwill
+**Aliases:** none
+**Appearance:** A gaunt middle-aged cleric with a writer's calluses and a quill that whispers when it should be silent.
+**Personality:** A fallen high-ranking deacon: ambition dressed as faith, wielding a Grade 1 sealed artifact that writes atrocities into being.
+**Status:** Alive (fugitive)
+**Faction:** Formerly Church of the Evernight Goddess; now rogue
+**StoryRelevance:** A major antagonist-grade threat — his sealed quill (0-08) makes him a walking catastrophe the churches want buried quietly.
+**Pathway:** Darkness
+**Sequence:** 4
+**Intro Boost: ince zangwill, quill, sealed artifact, traitor, nighthawks**
+
+### CHARACTER — Sharron
+**Aliases:** none
+**Appearance:** A doll-like woman of preternatural beauty whose joints bend a little too smoothly; speaks rarely, precisely.
+**Personality:** A chained-pathway hunter who tracks escaped horrors across continents; deadpan, relentless, oddly protective of children.
+**Status:** Alive
+**Faction:** Independent (Chained pathway)
+**StoryRelevance:** Monster-hunter of legend — employer, rescuer, or warning sign depending on what the party is hunting.
+**Pathway:** Chained
+**Sequence:** 3
+**Intro Boost: sharron, hunter, chained, doll, monster**
+
+### CHARACTER — Anderson Hood
+**Aliases:** none
+**Appearance:** A broad-shouldered swordsman with a permanent grin and a blade that hums with appetite.
+**Personality:** A battle-mad mercenary who lives for worthy opponents; cheerful, direct, terrifying in motion.
+**Status:** Alive
+**Faction:** Independent mercenary; Feysac contacts
+**StoryRelevance:** The wandering storm any fight-scene party may meet — ally today, duel tomorrow, both sincerely.
+**Pathway:** Red Priest
+**Sequence:** 4
+**Wandering: true**
+**Intro Boost: anderson, swordsman, mercenary, duel, battle**
+
+### CHARACTER — Colin Iliad
+**Aliases:** Chief Shepherd's chosen
+**Appearance:** A scarred Feysac veteran priest in black-and-white vestments, square-shouldered as a fortress gate.
+**Personality:** Faith as discipline: every prayer a drill, every battle a liturgy. Protects the faithful with overwhelming force.
+**Status:** Alive
+**Faction:** Church of the God of Combat
+**StoryRelevance:** Feysac's high-clergy muscle — the face parties see when the Combat church takes personal interest.
+**Pathway:** Twilight Giant
+**Sequence:** 4
+**Intro Boost: colin iliad, combat, feysac, priest, giant**
+
+### CHARACTER — Daly Simone
+**Aliases:** none
+**Appearance:** A sharp-eyed woman in mourning colors with a medium's faraway gaze and a gallows wit.
+**Personality:** A Spirit-Channeling Nighthawk who jokes with the dead because the living don't appreciate timing. Brave past the point of sense.
+**Status:** Alive
+**Faction:** Church of the Evernight Goddess (Nighthawks)
+**StoryRelevance:** Nighthawk specialist for hauntings and spirit-world breaches; her séances open plot doors and occasionally gates.
+**Pathway:** Death
+**Sequence:** 6
+**Intro Boost: daly, simone, spirit, seance, nighthawk**
+
+### CHARACTER — Qilangos
+**Aliases:** Faceless
+**Appearance:** Whoever he wishes — literally; stolen faces worn like gloves, discarded when inconvenient.
+**Personality:** A serial predator of the Tyrant pathway: charming in any skin, monstrous beneath all of them.
+**Status:** Deceased (killed in Backlund; legacy lingers)
+**Faction:** None (predator)
+**StoryRelevance:** The Faceless killer whose crime spree haunts Backlund's docks — a template for identity-theft horror plots.
+**Pathway:** Tyrant
+**Sequence:** 6
+**Intro Boost: qilangos, faceless, disguise, killer, backlund**
+
+### CHARACTER — Mr. A
+**Aliases:** none
+**Appearance:** A gentle-faced man in plain clerical grey whose serenity never reaches his eyes.
+**Personality:** The True Creator's shepherd: soft-spoken, utterly committed, building a congregation of the corrupted one soul at a time.
+**Status:** Deceased (killed; cells persist)
+**Faction:** Rose School of Thought
+**StoryRelevance:** The cult-priest archetype — his surviving cells keep the Rose School a living threat in Loen's cities.
+**Pathway:** Hanged Man
+**Sequence:** 5
+**Intro Boost: mr a, true creator, cult leader, rose school, corruption**
+
+### CHARACTER — Dorian Gray Abraham
+**Aliases:** none
+**Appearance:** An elegant wanderer whose portrait-quality beauty never ages and never quite belongs to the room he's in.
+**Personality:** An Abraham scion shaped by the family curse: restless, fatalistic, collecting experiences against the day the wandering stops.
+**Status:** Alive
+**Faction:** Abraham Family
+**StoryRelevance:** The cursed family's public face — guide to Door-pathway mysteries and the mystery of Bethel's imprisonment.
+**Pathway:** Door
+**Sequence:** 6
+**Wandering: true**
+**Intro Boost: dorian gray, abraham, door, wanderer, curse**
+
+### CHARACTER — Susie
+**Aliases:** none
+**Appearance:** A golden retriever who sits with perfect posture and understands every word you say. This is not a trick of the light.
+**Personality:** A dog elevated to personhood by the Spectator potion: loyal, observant, wiser than half the humans she counsels.
+**Status:** Alive
+**Faction:** Audrey Hall's household; Psychology Alchemists (student)
+**StoryRelevance:** Beloved companion NPC and genuine Beyonder — proof the pathways make no distinction species finds convenient.
+**Pathway:** Visionary
+**Sequence:** 5
+**Intro Boost: susie, dog, spectator, visionary, companion**
+
+### CHARACTER — Old Neil
+**Aliases:** Neil Wood (full name)
+**Appearance:** A stout, graying Nighthawk with tea-stained teeth, cardigan armor over his uniform, and a fortune-teller's tired smile.
+**Personality:** The chantry's veteran diviner: kind, superstitious, hiding the cost of decades reading fates no one should touch.
+**Status:** Deceased (died containing what his own divination unleashed)
+**Faction:** Church of the Evernight Goddess (Nighthawks)
+**StoryRelevance:** The mentor whose fate teaches the lesson every young Beyonder must learn: some futures read you back.
+**Pathway:** Hermit
+**Sequence:** 6
+**Intro Boost: old neil, divination, nighthawk, mentor, fate**
+
+### CHARACTER — Melissa Moretti
+**Aliases:** none
+**Appearance:** A serious young woman with her brother Klein's careful eyes and ink-stained cuffs from accounting ledgers.
+**Personality:** The Moretti anchor: practical, brave in emergencies, holding a poor family together with arithmetic and willpower. Unknowingly adjacent to everything cosmic.
+**Status:** Alive
+**Faction:** None (civilian, awakening)
+**StoryRelevance:** Klein's sister — the reason he stays human, and a low-sequence Beyonder in the making the party may witness bloom.
+**Pathway:** Paragon
+**Sequence:** 8
+**Region:** tingen/backlund
+**Intro Boost: melissa, moretti, family, civilian, tingen**
+
+### CHARACTER — Frank Lee
+**Aliases:** none
+**Appearance:** A cheerful farmer-built man with soil under his nails and seeds in every pocket, radiating unsettling agricultural enthusiasm.
+**Personality:** A Planter whose crops grow wrong and wonderful: guileless, tireless, casually creating biological horrors he calls "progress."
+**Status:** Alive
+**Faction:** Church of the Earth Mother (nominal); independent
+**StoryRelevance:** Comic relief with body-horror edges — his experimental farms are quest sites waiting to be quarantined.
+**Pathway:** Mother
+**Sequence:** 6
+**Wandering: true**
+**Intro Boost: frank lee, farmer, planter, crops, horror**
+
 ## 5. POWER SYSTEM & RULES
 
 ### [CHUNK: POWER] POWER_SYSTEM — Beyonder Potions & the 22 Pathways
