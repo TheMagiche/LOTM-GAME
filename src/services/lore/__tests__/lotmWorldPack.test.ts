@@ -4,6 +4,7 @@ import { resolve } from 'path';
 import { chunkLoreFile } from '../loreChunker';
 import { parseNPCsFromLore } from '../loreNPCParser';
 import { parseLocationsFromLore } from '../loreLocationParser';
+import { parseFactionsFromLore } from '../loreFactionParser';
 import { extractEngineSeeds } from '../loreEngineSeeder';
 import { loadLootTree } from '../lootTreeLoader';
 
@@ -121,6 +122,27 @@ describe('LOTM world pack — location ledger seeding', () => {
         for (const loc of locations) {
             expect((loc.description ?? '').length).toBeLessThanOrEqual(240);
         }
+    });
+});
+
+describe('LOTM world pack — faction ledger seeding', () => {
+    const factions = parseFactionsFromLore(chunks);
+
+    it('extracts canon churches, clubs, and houses', () => {
+        expect(factions.map(f => f.name)).toEqual(expect.arrayContaining([
+            'Church of the Evernight Goddess',
+            'Tarot Club',
+            'Aurora Order',
+        ]));
+        expect(new Set(factions.map(f => f.name)).size).toBeGreaterThanOrEqual(8);
+    });
+
+    it('fills type and stance for orthodox churches', () => {
+        const evernight = factions.find(f => f.name === 'Church of the Evernight Goddess');
+        expect(evernight?.type).toBe('Orthodox Church');
+        expect(evernight?.stance).toMatch(/Loen/i);
+        expect(evernight?.pathways.toLowerCase()).toContain('darkness');
+        expect(evernight?.keyMembers).toMatch(/Dunn Smith/i);
     });
 });
 

@@ -1,4 +1,4 @@
-import type { ChatMessage, LoreChunk, NPCEntry, ArchiveScene, ArchiveIndexEntry, TimelineEvent, DivergenceRegister, DivergenceEntry, ArchiveChapter, SceneEvent, SceneEventType } from '../../types';
+import type { ChatMessage, LoreChunk, NPCEntry, ArchiveScene, ArchiveIndexEntry, TimelineEvent, DivergenceRegister, DivergenceEntry, ArchiveChapter, SceneEvent, SceneEventType, FactionEntry } from '../../types';
 import { countTokens } from '../infrastructure/tokenizer';
 import { buildDriftAlert, buildKnowledgeBoundary, buildReactionMenuLine } from '../npc/npcBehaviorDirective';
 import { relationBand, describeHex } from '../npc/agency/agencyBands';
@@ -11,6 +11,7 @@ import { dedupElevatedScenes, type ElevatedScene } from '../archive-memory/dynam
 import { renderSlottedRagBlock, type SlottedRagSnippet } from '../archive-memory/slottedRag';
 import type { TraceCollector } from './traceCollector';
 import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
+import { buildFactionBlock } from './factions';
 
 const RECENT_SCENE_WINDOW = 3;      // mobile used 2; desktop can see a touch deeper
 const SCENE_EVENTS_TOKEN_BUDGET = 350; // mobile rationed ~200; desktop has headroom
@@ -149,6 +150,8 @@ export function buildWorld(opts: {
     slottedRagSnippets?: SlottedRagSnippet[];
     /** WO-5: v3 stances replace scalar relationship context in this payload. */
     relationshipMemoryEnabled?: boolean;
+    factionLedger?: FactionEntry[];
+    playerFaction?: string;
 }): { worldContent: string; currentWorldTokens: number; divergenceContent: string; divergenceTokens: number; plannerEventTypes: SceneEventType[]; relationsBlock: string } {
     const {
         history,
@@ -177,6 +180,8 @@ export function buildWorld(opts: {
         elevatedScenes,
         slottedRagSnippets,
         relationshipMemoryEnabled = false,
+        factionLedger,
+        playerFaction,
     } = opts;
 
     // --- 3. Gather trimmable World Context (Medium Priority) ---
@@ -521,6 +526,24 @@ export function buildWorld(opts: {
                 reason: `NPCs detected in context (${activeNPCs.length}, tiered core+extended)`,
             });
         }
+    }
+
+    const factionBlock = buildFactionBlock({
+        ledger: factionLedger ?? [],
+        history,
+        userMessage,
+        relevantLore,
+        npcLedger,
+        onStageNpcIds,
+        playerFaction,
+    });
+    if (factionBlock) {
+        worldBlocks.push({
+            source: 'Factions',
+            content: factionBlock,
+            tokens: countTokens(factionBlock),
+            reason: 'Mentioned or on-stage factions from the ledger',
+        });
     }
 
     // ── Phase 6: per-turn scoped-knowledge block (the cage) ──

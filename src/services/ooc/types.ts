@@ -1,7 +1,7 @@
-import type { ArchiveIndexEntry, ChatMessage, EndpointConfig, GameContext, LocationEntry, LoreChunk, NPCEntry, ProviderConfig, SemanticFact } from '../../types';
+import type { ArchiveIndexEntry, ChatMessage, EndpointConfig, FactionEntry, GameContext, LocationEntry, LoreChunk, NPCEntry, ProviderConfig, SemanticFact } from '../../types';
 
 /** The kinds core's own sections and the retrieval path emit. */
-export type OocCoreSourceKind = 'fact' | 'recent-story' | 'archive' | 'lore' | 'rules' | 'npc' | 'place';
+export type OocCoreSourceKind = 'fact' | 'recent-story' | 'archive' | 'lore' | 'rules' | 'npc' | 'place' | 'faction';
 
 /**
  * A citation's kind.
@@ -45,6 +45,7 @@ export type OocCampaignSnapshot = {
     archiveIndex: ArchiveIndexEntry[];
     npcLedger: NPCEntry[];
     locationLedger: LocationEntry[];
+    factionLedger?: FactionEntry[];
 };
 
 export type OocAnswerRequest = {

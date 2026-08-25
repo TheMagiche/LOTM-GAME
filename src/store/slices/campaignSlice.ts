@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand';
-import type { ArchiveChapter, Campaign, ChatMessage, CondenserState, GameContext, LoreChunk, ArchiveIndexEntry, NPCEntry, NpcSuggestion, SemanticFact, EntityEntry, TimelineEvent, InventoryItem, CharacterProfile, PinnedExcerpt, LocationEntry, LocationSuggestion, RelationshipMemoryFault, RelationshipMemoryRecord } from '../../types';
+import type { ArchiveChapter, Campaign, ChatMessage, CondenserState, GameContext, LoreChunk, ArchiveIndexEntry, NPCEntry, NpcSuggestion, SemanticFact, EntityEntry, TimelineEvent, InventoryItem, CharacterProfile, PinnedExcerpt, LocationEntry, LocationSuggestion, FactionEntry, RelationshipMemoryFault, RelationshipMemoryRecord } from '../../types';
 import { DEFAULT_CHARACTER_PROFILE, DEFAULT_INVENTORY, migrateLegacyContext, buildDefaultDiceSystem, normalizeInventoryItem } from '../../types';
 import { emitCoreEvent } from '../../services/mods/events';
 import { normalizeRelations } from '../../services/npc/relationDedupe';
@@ -16,6 +16,7 @@ import { API_BASE as API } from '../../lib/apiBase';
 
 import { createDebouncedSave, createTableSlice } from '../../services/tables/genericAccessor';
 import { locationTableDescriptor } from '../../services/tables/locationTable';
+import { factionTableDescriptor } from '../../services/tables/factionTable';
 let autoBackupTimer: ReturnType<typeof setInterval> | null = null;
 
 function preOpBackup(campaignId: string | null, trigger: string) {
@@ -32,9 +33,9 @@ function preOpBackup(campaignId: string | null, trigger: string) {
 // Getter registered by the slice creator so we always read fresh state at fire time.
 // This prevents stale-snapshot race conditions where two rapid updates within the 1s
 // debounce window would cause the first update's changes to be overwritten.
-let _getStateForSave: (() => { activeCampaignId: string | null; context: GameContext; messages: ChatMessage[]; condenser: CondenserState; loreChunks: LoreChunk[]; npcLedger: NPCEntry[]; locationLedger: LocationEntry[]; pinnedExcerpts: PinnedExcerpt[] }) | null = null;
+let _getStateForSave: (() => { activeCampaignId: string | null; context: GameContext; messages: ChatMessage[]; condenser: CondenserState; loreChunks: LoreChunk[]; npcLedger: NPCEntry[]; locationLedger: LocationEntry[]; factionLedger: FactionEntry[]; pinnedExcerpts: PinnedExcerpt[] }) | null = null;
 export function _registerCampaignStateGetter(
-    getter: () => { activeCampaignId: string | null; context: GameContext; messages: ChatMessage[]; condenser: CondenserState; loreChunks: LoreChunk[]; npcLedger: NPCEntry[]; locationLedger: LocationEntry[]; pinnedExcerpts: PinnedExcerpt[] }
+    getter: () => { activeCampaignId: string | null; context: GameContext; messages: ChatMessage[]; condenser: CondenserState; loreChunks: LoreChunk[]; npcLedger: NPCEntry[]; locationLedger: LocationEntry[]; factionLedger: FactionEntry[]; pinnedExcerpts: PinnedExcerpt[] }
 ) {
     _getStateForSave = getter;
 }
@@ -59,6 +60,7 @@ export function cancelPendingSaves() {
     if (loreTimer)  { clearTimeout(loreTimer);  loreTimer  = null; }
     if (npcTimer)   { clearTimeout(npcTimer);   npcTimer   = null; }
     locationLedgerSave.cancel();
+    factionLedgerSave.cancel();
 }
 
 /** Immediately fires any pending debounced saves so the latest in-memory state is on
@@ -107,6 +109,7 @@ export async function flushAllPendingSaves(): Promise<void> {
     }
 
     saves.push(locationLedgerSave.flush());
+    saves.push(factionLedgerSave.flush());
 
     if (saves.length > 0) await Promise.all(saves);
 }
@@ -335,6 +338,12 @@ export type CampaignSlice = {
     addLocationSuggestions: (suggestions: LocationSuggestion[]) => void;
     dismissLocationSuggestion: (name: string) => void;
     clearLocationSuggestions: () => void;
+    // ── Faction Ledger — churches, orders, houses ──
+    factionLedger: FactionEntry[];
+    setFactionLedger: (factions: FactionEntry[]) => void;
+    addFaction: (fac: FactionEntry) => void;
+    updateFaction: (id: string, patch: Partial<FactionEntry>) => void;
+    removeFaction: (id: string) => void;
     semanticFacts: SemanticFact[];
     setSemanticFacts: (facts: SemanticFact[]) => void;
     timeline: TimelineEvent[];
@@ -406,6 +415,19 @@ const locationLedgerSave = createDebouncedSave<LocationEntry[]>(locationTableDes
     return { activeCampaignId: state?.activeCampaignId ?? null, field: state?.locationLedger ?? [] };
 });
 
+const factionSliceDescriptor = {
+    ...factionTableDescriptor,
+    hooks: { onRemove: ((campaignId: string) => {
+        preOpBackup(campaignId, 'pre-delete-faction');
+        return undefined;
+    }) as never },
+};
+const factionTableSlice = createTableSlice<FactionEntry[], CampaignDeps>(factionSliceDescriptor, []);
+const factionLedgerSave = createDebouncedSave<FactionEntry[]>(factionTableDescriptor as never, () => {
+    const state = _getStateForSave?.();
+    return { activeCampaignId: state?.activeCampaignId ?? null, field: state?.factionLedger ?? [] };
+});
+
 // ── Slice creator ──────────────────────────────────────────────────────
 
 export const createCampaignSlice: StateCreator<CampaignDeps, [], [], CampaignSlice> = (set, get) => {
@@ -413,7 +435,7 @@ export const createCampaignSlice: StateCreator<CampaignDeps, [], [], CampaignSli
     // not a stale closure snapshot from the time the action was called.
     _registerCampaignStateGetter(() => {
         const s = get();
-        return { activeCampaignId: s.activeCampaignId, context: s.context, messages: s.messages, condenser: s.condenser, loreChunks: s.loreChunks, npcLedger: s.npcLedger, locationLedger: s.locationLedger, pinnedExcerpts: s.pinnedExcerpts };
+        return { activeCampaignId: s.activeCampaignId, context: s.context, messages: s.messages, condenser: s.condenser, loreChunks: s.loreChunks, npcLedger: s.npcLedger, locationLedger: s.locationLedger, factionLedger: s.factionLedger, pinnedExcerpts: s.pinnedExcerpts };
     });
 
     return {
@@ -696,6 +718,34 @@ export const createCampaignSlice: StateCreator<CampaignDeps, [], [], CampaignSli
         locationSuggestions: s.locationSuggestions.filter(x => x.name.toLowerCase() !== name.toLowerCase()),
     }) as Partial<CampaignDeps>),
     clearLocationSuggestions: () => set({ locationSuggestions: [] } as Partial<CampaignDeps>),
+    factionLedger: factionTableSlice.initial,
+    setFactionLedger: (factions) => set((s) => {
+        const transition = factionTableSlice.set(s.factionLedger, factions);
+        factionLedgerSave(transition.field);
+        return { factionLedger: transition.field } as Partial<CampaignDeps>;
+    }),
+    addFaction: (fac) => set((s) => {
+        const transition = factionTableSlice.add(s.factionLedger, fac);
+        factionLedgerSave(transition.field);
+        return { factionLedger: transition.field } as Partial<CampaignDeps>;
+    }),
+    updateFaction: (id, patch) => set((s) => {
+        const transition = factionTableSlice.update(s.factionLedger, id, patch);
+        factionLedgerSave(transition.field);
+        return { factionLedger: transition.field } as Partial<CampaignDeps>;
+    }),
+    removeFaction: (id) => set((s) => {
+        const transition = factionTableSlice.remove(s.factionLedger, id, {
+            campaignId: s.activeCampaignId,
+            state: s,
+        });
+        const field = transition.field.map(f => ({
+            ...f,
+            relations: (f.relations ?? []).filter(r => r.toId !== id),
+        }));
+        factionLedgerSave(field);
+        return { factionLedger: field, ...transition.statePatch } as Partial<CampaignDeps>;
+    }),
     semanticFacts: [],
     setSemanticFacts: (facts) => set({ semanticFacts: facts } as Partial<CampaignDeps>),
     timeline: [],

@@ -9,6 +9,9 @@ import { extractEngineSeeds } from './lore/loreEngineSeeder';
 import { parseNPCsFromLore } from './lore/loreNPCParser';
 import { parseLocationsFromLore } from './lore/loreLocationParser';
 import { locationTableDescriptor, loadLocationTable } from './tables/locationTable';
+import { factionTableDescriptor, loadFactionTable } from './tables/factionTable';
+import { parseFactionsFromLore } from './lore/loreFactionParser';
+import { resolveFaction } from './faction/resolveFaction';
 import { genericSave } from './tables/genericAccessor';
 import { resolvePlace } from './locationParser';
 import {
@@ -102,6 +105,15 @@ export async function initializeCampaignState(params: {
             const additions = parsedLocations.filter(loc => !resolvePlace(loc.name, existingLocations));
             if (additions.length > 0) {
                 await genericSave(locationTableDescriptor as never, campaignId, [...existingLocations, ...additions]);
+            }
+        }
+
+        const parsedFactions = parseFactionsFromLore(chunks);
+        if (parsedFactions.length > 0) {
+            const existingFactions = await loadFactionTable(campaignId);
+            const additions = parsedFactions.filter(fac => !resolveFaction(fac.name, existingFactions));
+            if (additions.length > 0) {
+                await genericSave(factionTableDescriptor as never, campaignId, [...existingFactions, ...additions]);
             }
         }
 

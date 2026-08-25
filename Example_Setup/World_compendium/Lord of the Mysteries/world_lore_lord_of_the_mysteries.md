@@ -111,12 +111,19 @@ Collectors of forbidden texts and lost lineages — the Door branch of the ancie
 Hermit-ascetics who renounce worldly comfort to master their Sequences safely. They shelter hunted Beyonders, demand confession in return, and consider gratitude a form of debt.
 <!-- rag: keyword, priority:5, triggers: moses ascetic, monk, ascetic, sanctuary -->
 
-### FACTION — Life School of Thought & Rose School of Thought
-**Type:** Philosophical Beyonder schools
-**Key Members:** Practitioners of life-transformation and desire-adjacent paths
-**Stance:** The Life school heals; the Rose school corrupts.
-Two schools, one contrast: the Life School pursues mastery of flesh, healing, and natural cycles, often clashing with orthodox monopoly on medicine; the Rose School of Thought worships the True Creator's liberating creed, and its cells leave ritual scenes the churches pay bounties to forget.
-<!-- rag: keyword, priority:5, triggers: life school, rose school, true creator, healing, cult -->
+### FACTION — Life School of Thought
+**Type:** Philosophical Beyonder school (life-transformation paths)
+**Key Members:** Healers, naturalists, flesh-craft practitioners
+**Stance:** Benevolent but unorthodox; rivals orthodox medicine.
+A school pursuing mastery of flesh, healing, and natural cycles. Its practitioners mend what apothecaries cannot and often clash with the churches' monopoly on sanctioned healing — help from them is real, but accepting it marks you as outside the faiths.
+<!-- rag: keyword, priority:5, triggers: life school, healing, flesh, natural cycles, unorthodox -->
+
+### FACTION — Rose School of Thought
+**Type:** Cult of the True Creator
+**Key Members:** Desire-adjacent Beyonders in hidden cells
+**Stance:** Heretical, corrupting, hunted by every church.
+Worshipers of the True Creator's liberating creed. Its cells leave ritual scenes the churches pay bounties to forget, recruit through temptation rather than doctrine, and answer to principals whose Sequence no member ever learns.
+<!-- rag: keyword, priority:6, triggers: rose school, true creator, cult, heresy, ritual scene -->
 
 ### FACTION — Demoness Sect
 **Type:** Hidden sect descended from the ancient Demoness Family
@@ -171,12 +178,96 @@ Rulers of the green kingdom, content to let the Earth Mother's church govern the
 After losing control of Intis, the Saurons retreated into the republic's army, spy ministries, and legislature — where unelected influence outlasts elections. Their cooperation with the Aurora Order is an open secret in Trier.
 <!-- rag: keyword, priority:6, triggers: sauron, intis, military, intelligence, parliament -->
 
-### FACTION — The Ancient Angel Families (Tudor, Trunsoest, Solomon, Antigonus, Amon, Zaratul, Abraham, Tamara, Eggers, Sanguines)
-**Type:** Fourth-Epoch angel bloodlines — extinct, scattered, or hiding
-**Key Members:** Antigonus (Fool — destroyed by the Evernight Goddess's church), Tudor (Red Priest/Black Emperor — destroyed in the War of the Four Emperors), Solomon (Black Emperor — mostly destroyed, same war), Amon & Jacob (Error — weakened), Zaratul (Fool — tied to the Secret Order), Abraham (Door — absorbed into the Church of the Fool's orbit), Tamara (Justiciar/Door — splintered into the School of Truth, Mirror People, and Theosophy Order branches), Eggers (Death — seeking to revive their god), Sanguines (Moon — sworn to the Earth Mother, allied to the Fool)
-**Stance:** Relics of a bloodier epoch; their heirlooms are still lethal.
-When the four empires fell in the War of the Four Emperors, their angel houses were exterminated, scattered, or forced into servitude to surviving churches. Their characteristics, artifacts, and notebooks surface on the market like sunken treasure — each one a plot hook with a body count. Devil-line families (Nois, Andariel, Beria) persist in the Abyss-worshipping underworld, corrupted by the Mother Tree of Desire. Any family name spoken aloud in Beyonder company changes the temperature of the room.
-<!-- rag: keyword, priority:7, triggers: angel family, antigonus, tudor, solomon, amon, abraham, tamara, eggers, sanguines, zaratul, devil family, war of the four emperors -->
+### FACTION — Antigonus Family
+**Type:** Extinct angel family; Fool pathway
+**Key Members:** Scattered descendants; wardens of the Secret Order
+**Stance:** Destroyed by the Church of the Evernight Goddess; legacy still surfacing.
+Holders of the Fool-lineage heritage, purged and scattered generations ago. Their relics — a notebook among them — surface periodically, each surfacing leaving madmen and corpses in its wake.
+<!-- rag: keyword, priority:6, triggers: antigonus, fool, notebook, purge, inheritance -->
+
+### FACTION — Tudor Family
+**Type:** Extinct imperial family; Red Priest & Black Emperor pathways
+**Key Members:** None surviving of the main line
+**Stance:** Destroyed in the War of the Four Emperors.
+The ruling house of the Tudor Empire, which once dominated the Northern Continent. Its fall broke the Fourth Epoch order, and its sealed heirlooms are prized — and feared — by collectors today.
+<!-- rag: keyword, priority:5, triggers: tudor, red priest, black emperor, war of the four emperors, empire -->
+
+### FACTION — Solomon Family
+**Type:** Mostly extinct royal family; Black Emperor pathway
+**Key Members:** Remnant descendants in hiding
+**Stance:** Mostly destroyed in the War of the Four Emperors.
+Founders of the Solomon Empire under their Black Emperor ancestor. What survived the empire's collapse survives by silence; the name alone invites church attention.
+<!-- rag: keyword, priority:5, triggers: solomon, black emperor, solomon empire, remnant -->
+
+### FACTION — Amon Family
+**Type:** Angel family; Error pathway
+**Key Members:** The angel Amon and his parasitic progeny
+**Stance:** Weakened after losing the War of the Four Emperors — but never count them out.
+The house of the God of Mischief. Its members steal identities, fates, and secrets as casually as pickpockets take coins. Encountering "a member" of this family is a paradox in itself: any stranger might be Amon wearing someone's life.
+<!-- rag: keyword, priority:7, triggers: amon, error, theft, mischief, parasite -->
+
+### FACTION — Jacob Family
+**Type:** Angel family; Error pathway
+**Key Members:** Weakened remnants after the War of the Four Emperors
+**Stance:** Diminished, secretive, allied to Amon's orbit.
+A lesser Error-pathway line that lost much of its strength alongside the Amon family. They survive at the margins of the Beyonder world, trading in stolen fortunes and borrowed faces.
+<!-- rag: keyword, priority:4, triggers: jacob family, error, remnant -->
+
+### FACTION — Zaratul Family
+**Type:** Angel family; Fool pathway
+**Key Members:** Descendants tied to the Secret Order; Zaratul himself (killed 1360)
+**Stance:** Weakened after losing the War of the Four Emperors.
+A Solomon-Empire-era line bound to the Secret Order's custodianship of the Antigonus inheritance. Their marionette-craft and fog-walking make them dangerous even diminished.
+<!-- rag: keyword, priority:5, triggers: zaratul, fool, secret order, marionette -->
+
+### FACTION — Abraham Family
+**Type:** Noble family; Door pathway
+**Key Members:** Cursed descendants bearing the family's wandering affliction
+**Stance:** Part of the Church of the Fool's orbit; scattered and cursed.
+Descendants of the Door pathway's ancient holders. A curse scatters the family's members across distant places against their will, making them natural wanderers, couriers of secrets, and tragic figures in Beyonder society.
+<!-- rag: keyword, priority:6, triggers: abraham, door, curse, wandering, exile -->
+
+### FACTION — Tamara Family
+**Type:** Splintered angel family; Justiciar, Door & Chaos Mist pathways
+**Key Members:** School of Truth faction, Mirror People faction, original-traditions faction; Door branch merged into the Theosophy Order
+**Stance:** Fractured into rival branches with divergent loyalties.
+Once a single powerful line, now split three ways — one branch pursuing truth-obsessed scholarship, one guarding mirror-world mysteries, one keeping the old ways. Their internal feuds are quiet but absolute.
+<!-- rag: keyword, priority:5, triggers: tamara, justiciar, chaos mist, school of truth, mirror people, splinter -->
+
+### FACTION — Trunsoest Family
+**Type:** Extinct imperial family; Justiciar & Black Emperor pathways
+**Key Members:** None surviving of the main line
+**Stance:** Destroyed at the end of the Fourth Epoch after the Night Emperor's death.
+The house of the Trunsoest Empire and ancestors of today's royal lines. From their fall sprang the Augustus, Castiya, Sauron, and Einhorn dynasties — every modern throne sits on Trunsoest bones.
+<!-- rag: keyword, priority:5, triggers: trunsoest, night emperor, fourth epoch, ancestor -->
+
+### FACTION — Eggers Family
+**Type:** Angel family; Death pathway
+**Key Members:** Azik Eggers and kin
+**Stance:** Seeking to revive Death; joined the Church of the Eternal Darkness after The Apocalypse.
+Bearers of the Death lineage, haunted by their god's absence. Family members carry uncanny stillness and bone-deep secrets; their long game is nothing less than resurrection of what died with the Third Epoch.
+<!-- rag: keyword, priority:6, triggers: eggers, death, azik, revival, eternal darkness -->
+
+### FACTION — Sanguines
+**Type:** Moon-pathway vampire clans
+**Key Members:** Vampire elders sworn to the Earth Mother's church
+**Stance:** Part of the Church of the Earth Mother; allies to the Church of the Fool.
+The disciplined vampire houses who traded wild bloodlust for church-sanctioned existence. Polite, ancient, and bound by strict feeding law — breaking their covenant earns the Earth Mother's own punishment.
+<!-- rag: keyword, priority:6, triggers: sanguine, vampire, moon, blood, earth mother -->
+
+### FACTION — Nois Family (and Devil Vassals Andariel & Beria)
+**Type:** Devil families; Abyss pathway
+**Key Members:** House Nois; vassal houses Andariel and Beria
+**Stance:** The most powerful devil-worshiper lineage; partially corrupted by the Mother Tree of Desire.
+The apex of the Abyss-worshipping underworld. Nois rules the devil lines while Andariel and Beria survive as its vassals — all three partially corrupted by the Mother Tree of Desire, which makes every bargain with them a slow surrender.
+<!-- rag: keyword, priority:5, triggers: nois, andariel, beria, devil, abyss, mother tree of desire -->
+
+### FACTION — Demoness Family
+**Type:** Calamity lineage turned sect; Demoness pathway
+**Key Members:** The matriarchs of the Demoness Sect
+**Stance:** Became the Demoness Sect in the Fifth Epoch; joined the Church of the Ruler of Calamity after The Apocalypse.
+An entire family that became an organization: the ancient Demoness line reorganized into the hidden sect that now weaves misfortune across generations from the shadows.
+<!-- rag: keyword, priority:5, triggers: demoness family, demoness sect, calamity, ruler of calamity -->
 
 ## 3. LOCATIONS
 

@@ -12,6 +12,7 @@ export * from './gamecontext';
 export * from './arc';
 export * from './loot';
 export * from './location';
+export * from './faction';
 export * from './sceneImage';
 // Phase 8.5 — `./enemy` is gone. The seventeen enemy types left core with the
 // subsystem; the `enemies` mod holds the shape in its own `validator.js`.

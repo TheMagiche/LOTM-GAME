@@ -12,6 +12,9 @@ import type { GameContext, ArchiveChapter, ArchiveIndexEntry, DivergenceRegister
 import { migrateV1ToV2 } from '../services/campaign-state/divergenceRegister';
 import { migratePCIntoContext } from '../services/character/migratePC';
 import { loadLocationTable } from '../services/tables/locationTable';
+import { factionTableDescriptor, loadFactionTable } from '../services/tables/factionTable';
+import { parseFactionsFromLore } from '../services/lore/loreFactionParser';
+import { genericSave } from '../services/tables/genericAccessor';
 import { hydrateModTables, saveModTable } from '../services/mods/modTables';
 import { fetchMods } from '../services/mods/modClient';
 import { emitCoreEvent } from '../services/mods/events';
@@ -271,11 +274,12 @@ async function loadCampaignMeta(campaignId: string) {
 }
 
 export async function hydrateCampaign(campaignId: string) {
-    const [state, chunks, npcs, locations, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
+    const [state, chunks, npcs, locations, factions, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
         loadCampaignState(campaignId),
         getLoreChunks(campaignId),
         getNPCLedger(campaignId),
         loadLocationTable(campaignId),
+        loadFactionTable(campaignId),
         loadArchiveIndex(campaignId),
         loadTimeline(campaignId),
         loadChapters(campaignId),
@@ -410,6 +414,19 @@ export async function hydrateCampaign(campaignId: string) {
         console.warn('[Hydrator] Arc migration failed (non-fatal); context.arcs left intact:', e);
     }
 
+    let factionLedger = Array.isArray(factions) ? factions : [];
+    if (factionLedger.length === 0 && (chunks?.length ?? 0) > 0) {
+        const seeded = parseFactionsFromLore(chunks);
+        if (seeded.length > 0) {
+            factionLedger = seeded;
+            try {
+                await genericSave(factionTableDescriptor as never, campaignId, seeded);
+            } catch (e) {
+                console.warn('[Hydrator] Failed to persist lore-seeded factions:', e);
+            }
+        }
+    }
+
     useAppStore.setState({
         context: finalContext,
         messages: finalMessages,
@@ -417,6 +434,7 @@ export async function hydrateCampaign(campaignId: string) {
         loreChunks: chunks,
         npcLedger: finalNpcLedger,
         locationLedger: locations ?? [],
+        factionLedger,
         archiveIndex: archiveIndex ?? [],
         timeline: timeline ?? [],
         chapters: backfilled,

@@ -472,6 +472,7 @@ export function buildTurnPayload(
         pinnedExcerpts: state.pinnedExcerpts,
         // plannerEventTypes omitted — recomputed inside buildWorld.
         locationLedger: ctx.locationLedger,
+        factionLedger: ctx.factionLedger,
         ...(ctx.worldFacts && ctx.worldFacts.length > 0 ? { directorWorldFacts: ctx.worldFacts } : {}),
         nextTurnOocBrief: state.nextTurnOocBrief,
         watchdogNudge: ctx.watchdogNudge,

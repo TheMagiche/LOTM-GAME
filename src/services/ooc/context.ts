@@ -1,4 +1,4 @@
-import type { ChatMessage, LocationEntry, NPCEntry, SemanticFact } from '../../types';
+import type { ChatMessage, LocationEntry, NPCEntry, SemanticFact, FactionEntry } from '../../types';
 import { relationBand } from '../npc/agency/agencyBands';
 import { oocSections } from './sections';
 import type { OocCampaignSnapshot, OocSource } from './types';
@@ -6,6 +6,7 @@ import type { OocCampaignSnapshot, OocSource } from './types';
 /** Ledger entries are cheap individually but unbounded in aggregate, so every ledger is capped. */
 const MAX_NPCS = 6;
 const MAX_PLACES = 4;
+const MAX_FACTIONS = 4;
 const MAX_PC_TRAITS = 8;
 
 const excerpt = (value: string, max = 500) => value.trim().replace(/\s+/g, ' ').slice(0, max);
@@ -100,6 +101,23 @@ function selectPlaces(ledger: LocationEntry[], question: string, currentPlaceId:
     const current = currentPlaceId ? ledger.find(entry => entry.id === currentPlaceId) : undefined;
     const asked = ledger.filter(place => place !== current && namedIn(question, place.name, place.aliases));
     return [current, ...asked].filter((place): place is LocationEntry => !!place).slice(0, MAX_PLACES);
+}
+
+function factionLine(faction: FactionEntry): string {
+    const bits: string[] = [];
+    if (faction.aliases?.trim()) bits.push(`aka ${excerpt(faction.aliases, 80)}`);
+    if (faction.type?.trim()) bits.push(`type: ${excerpt(faction.type, 60)}`);
+    if (faction.stance?.trim()) bits.push(`stance: ${excerpt(faction.stance, 120)}`);
+    if (faction.status?.trim()) bits.push(`status: ${excerpt(faction.status, 80)}`);
+    if (faction.region?.trim()) bits.push(`region: ${excerpt(faction.region, 60)}`);
+    if (faction.pathways?.trim()) bits.push(`pathways: ${excerpt(faction.pathways, 80)}`);
+    if (faction.keyMembers?.trim()) bits.push(`members: ${excerpt(faction.keyMembers, 120)}`);
+    if (faction.description?.trim()) bits.push(excerpt(faction.description, 200));
+    return bits.join('; ');
+}
+
+function selectFactions(ledger: FactionEntry[], question: string): FactionEntry[] {
+    return ledger.filter(faction => namedIn(question, faction.name, faction.aliases)).slice(0, MAX_FACTIONS);
 }
 
 /**
@@ -202,6 +220,17 @@ export function buildOocContext(snapshot: OocCampaignSnapshot, question: string)
             const line = `${place.name}${here}${details ? ` - ${details}` : ''}`;
             parts.push(`- ${line}`);
             sources.push({ kind: 'place', id: place.id, label: `Place: ${place.name}`, excerpt: excerpt(line, 500) });
+        }
+    }
+
+    const factions = selectFactions(snapshot.factionLedger ?? [], question);
+    if (factions.length > 0) {
+        parts.push('Known factions (faction ledger):');
+        for (const faction of factions) {
+            const details = factionLine(faction);
+            const line = `${faction.name}${details ? ` - ${details}` : ''}`;
+            parts.push(`- ${line}`);
+            sources.push({ kind: 'faction', id: faction.id, label: `Faction: ${faction.name}`, excerpt: excerpt(line, 500) });
         }
     }
 

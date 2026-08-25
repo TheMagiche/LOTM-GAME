@@ -12,6 +12,7 @@ import { WindowManager } from './components/WindowManager';
 import { NPCLedgerModal } from './components/NPCLedgerModal';
 import { CharacterLedgerModal } from './components/character/CharacterLedgerModal';
 import { LocationLedgerModal } from './components/LocationLedgerModal';
+import { FactionLedgerModal } from './components/FactionLedgerModal';
 import { BlockViewModal } from './components/block-view/BlockViewModal';
 import { BackupModal } from './components/BackupModal';
 import { LoreCheckModal } from './components/LoreCheckModal';
@@ -232,6 +233,7 @@ export default function App() {
       <NPCLedgerModal />
       <CharacterLedgerModal />
       <LocationLedgerModal />
+      <FactionLedgerModal />
       <BlockViewModal />
       <BackupModal />
       <LoreCheckModal />

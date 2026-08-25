@@ -249,11 +249,10 @@ export const BUILTIN_CAMPAIGN_FILE_SUFFIXES = Object.freeze([
     MIGRATION_LEDGER_SUFFIX,
     '.relationship-memory.npc-to-mc.json',
     '.relationship-memory.npc-to-npc.json',
+    '.factions.json',
 ]);
 
 export function campaignFileNames(id) {
-    // Derived (WO-P5-03 Step 2.1): with no descriptors registered this is the
-    // built-in 21, including the two relationship-memory files.
     return getCampaignFileSuffixes().map(s => `${id}${s}`);
 }
 

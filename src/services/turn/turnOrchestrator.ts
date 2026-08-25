@@ -175,6 +175,7 @@ export async function runTurn(
         input,
         displayInput,
         locationLedger: useAppStore.getState().locationLedger ?? [],
+        factionLedger: useAppStore.getState().factionLedger ?? [],
         npcLedger: npcLedger ?? [],
     });
 

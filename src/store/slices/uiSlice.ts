@@ -16,6 +16,7 @@ export type UISlice = {
     npcLedgerOpen: boolean;
     pcPanelOpen: boolean;
     locationLedgerOpen: boolean;
+    factionLedgerOpen: boolean;
     blockViewOpen: boolean;
     backupModalOpen: boolean;
     contextScreen: ContextScreenId | null;
@@ -32,6 +33,7 @@ export type UISlice = {
     toggleNPCLedger: () => void;
     togglePCPanel: () => void;
     toggleLocationLedger: () => void;
+    toggleFactionLedger: () => void;
     toggleBlockView: () => void;
     toggleBackupModal: () => void;
     openContextScreen: (screen: ContextScreenId) => void;
@@ -109,6 +111,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     npcLedgerOpen: false,
     pcPanelOpen: false,
     locationLedgerOpen: false,
+    factionLedgerOpen: false,
     blockViewOpen: false,
     backupModalOpen: false,
     contextScreen: null,
@@ -124,6 +127,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     toggleNPCLedger: () => set((s) => ({ npcLedgerOpen: !s.npcLedgerOpen })),
     togglePCPanel: () => set((s) => ({ pcPanelOpen: !s.pcPanelOpen })),
     toggleLocationLedger: () => set((s) => ({ locationLedgerOpen: !s.locationLedgerOpen })),
+    toggleFactionLedger: () => set((s) => ({ factionLedgerOpen: !s.factionLedgerOpen })),
     toggleBlockView: () => set((s) => ({ blockViewOpen: !s.blockViewOpen })),
     toggleBackupModal: () => set((s) => ({ backupModalOpen: !s.backupModalOpen })),
     openContextScreen: (screen) => set({ contextScreen: screen }),

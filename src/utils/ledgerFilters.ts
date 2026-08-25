@@ -1,4 +1,4 @@
-import type { NPCEntry, LocationEntry } from '../types';
+import type { NPCEntry, LocationEntry, FactionEntry } from '../types';
 
 export type SortOrder = 'none' | 'az' | 'za';
 
@@ -37,6 +37,20 @@ export function filterLocations(locations: LocationEntry[], query: string): Loca
             l.name.toLowerCase().includes(q) ||
             l.aliases?.toLowerCase().includes(q) ||
             l.broadLocation?.toLowerCase().includes(q)
+        );
+    }
+    return [...list].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function filterFactions(factions: FactionEntry[], query: string): FactionEntry[] {
+    let list = factions;
+    if (query.trim()) {
+        const q = query.toLowerCase();
+        list = list.filter(f =>
+            f.name.toLowerCase().includes(q) ||
+            f.aliases?.toLowerCase().includes(q) ||
+            f.type?.toLowerCase().includes(q) ||
+            f.region?.toLowerCase().includes(q)
         );
     }
     return [...list].sort((a, b) => a.name.localeCompare(b.name));
