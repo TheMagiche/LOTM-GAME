@@ -91,6 +91,9 @@ export type UISlice = {
     illustratedArchiveOpen: boolean;
     toggleIllustratedArchive: () => void;
     closeIllustratedArchive: () => void;
+    askGmOpen: boolean;
+    openAskGm: () => void;
+    closeAskGm: () => void;
     // Inline Scene Image V1
     sceneImageModalOpen: boolean;
     sceneImageDraft: import('../../types').SceneImageDraft | null;
@@ -105,7 +108,7 @@ export type UISlice = {
 
 export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     settingsOpen: false,
-    drawerOpen: true,
+    drawerOpen: false,
     npcLedgerOpen: false,
     pcPanelOpen: false,
     locationLedgerOpen: false,
@@ -172,6 +175,9 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     illustratedArchiveOpen: false,
     toggleIllustratedArchive: () => set((s) => ({ illustratedArchiveOpen: !s.illustratedArchiveOpen })),
     closeIllustratedArchive: () => set({ illustratedArchiveOpen: false }),
+    askGmOpen: false,
+    openAskGm: () => set({ askGmOpen: true }),
+    closeAskGm: () => set({ askGmOpen: false }),
     sceneImageModalOpen: false,
     sceneImageDraft: null,
     openSceneImageModal: (draft) => set({ sceneImageModalOpen: true, sceneImageDraft: draft }),

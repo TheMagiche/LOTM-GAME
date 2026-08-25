@@ -28,7 +28,9 @@ import { hydrateCampaign } from './store/campaignHydrator';
 import { useRulesIndexer } from './hooks/useRulesIndexer';
 import { loadBackground } from './services/background/backgroundManager';
 import { refreshMods } from './services/mods/modBootstrap';
-import { shouldUseIllustratedShell } from './services/lotm/lotmSkin';
+import { isLotmCampaign, shouldUseIllustratedShell } from './services/lotm/lotmSkin';
+import { applyLotmExclusiveDocumentChrome, LOTM_EXCLUSIVE_UI } from './services/lotm/lotmExclusiveUi';
+import { getCampaign } from './store/campaignStore';
 
 export default function App() {
   const activeCampaignId = useAppStore((s) => s.activeCampaignId);
@@ -69,6 +71,7 @@ export default function App() {
   }, [vaultStatus, unlockVaultWithRemembered, isCheckingVault]);
 
   useEffect(() => {
+    if (LOTM_EXCLUSIVE_UI) applyLotmExclusiveDocumentChrome();
     loadSettings();
   }, [loadSettings]);
 
@@ -94,9 +97,14 @@ export default function App() {
     refreshMods();
   }, [settingsLoaded]);
 
-  const illustrated = shouldUseIllustratedShell(activeCampaignMeta);
+  const theme = useAppStore((s) => s.settings?.theme);
+  const illustrated = LOTM_EXCLUSIVE_UI || shouldUseIllustratedShell(activeCampaignMeta);
 
   useEffect(() => {
+    if (LOTM_EXCLUSIVE_UI) {
+      applyLotmExclusiveDocumentChrome();
+      return;
+    }
     if (illustrated) {
       document.documentElement.setAttribute('data-ui-skin', 'lotm-illustrated');
     } else {
@@ -105,7 +113,7 @@ export default function App() {
     return () => {
       document.documentElement.removeAttribute('data-ui-skin');
     };
-  }, [illustrated]);
+  }, [illustrated, settingsLoaded, theme]);
 
   // After settings load, if we already have an activeCampaignId (restored from a previous
   // session), we MUST load the campaign's data before rendering ChatArea.
@@ -129,6 +137,15 @@ export default function App() {
     setCampaignLoaded(false);
 
     (async () => {
+      if (LOTM_EXCLUSIVE_UI) {
+        const meta = await getCampaign(activeCampaignId);
+        if (cancelled) return;
+        if (!isLotmCampaign(meta)) {
+          useAppStore.getState().setActiveCampaign(null);
+          setCampaignLoaded(true);
+          return;
+        }
+      }
       await hydrateCampaign(activeCampaignId);
       if (cancelled) return;
       setCampaignLoaded(true);
@@ -191,7 +208,7 @@ export default function App() {
       <ErrorBoundary>
         <CampaignHub />
         <SettingsModal />
-        <BackupModal />
+        {!LOTM_EXCLUSIVE_UI && <BackupModal />}
         <ToastContainer />
       </ErrorBoundary>
     );
@@ -203,7 +220,7 @@ export default function App() {
       <div className="flex flex-1 overflow-hidden">
         <ContextDrawer />
         {illustrated ? <LotmIllustratedShell /> : <ChatArea />}
-        <ChatRightRail />
+        {!LOTM_EXCLUSIVE_UI && <ChatRightRail />}
       </div>
       {/* Phase 4.5 — `window.layer`. Renders null when no mod has opened a
           floating window (MOUNTS.md §2.8), so zero-mod DOM is byte-identical

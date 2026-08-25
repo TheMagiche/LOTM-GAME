@@ -12,6 +12,8 @@ import { registerHeaderBuiltins, HEADER_BUILTIN_ID_SET, HEADER_TRAILING_ID_SET }
 import { HeaderModGroup } from './header/HeaderModGroup';
 import { HeaderScrollRow } from './header/HeaderScrollRow';
 import { isLotmCampaign } from '../services/lotm/lotmSkin';
+import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
+import { LotmPlayHeader } from './lotm/LotmPlayHeader';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
@@ -33,6 +35,13 @@ function useHeaderActions(): readonly RegisteredChromeEntry[] {
 }
 
 export function Header() {
+    if (LOTM_EXCLUSIVE_UI) {
+        return <LotmPlayHeader />;
+    }
+    return <ClassicHeader />;
+}
+
+function ClassicHeader() {
     const {
         toggleSettings,
         toggleDrawer,

@@ -16,8 +16,17 @@ import { Backdrop } from './primitives/Backdrop';
 import { GhostBtn, DangerBtn } from './primitives/Buttons';
 import { WorldLoreModal } from './WorldLoreModal';
 import { useTranslation } from '../i18n/useTranslation';
+import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
+import { LotmTitleHub } from './lotm/LotmTitleHub';
 
 export function CampaignHub() {
+    if (LOTM_EXCLUSIVE_UI) {
+        return <LotmTitleHub />;
+    }
+    return <ClassicCampaignHub />;
+}
+
+function ClassicCampaignHub() {
     // `chromeText` handles the inline-styled hero label below: CSS cannot
     // override a style="" attribute at any specificity, so the [data-lang]
     // rules in index.css can't reach it. See the LANGUAGE OVERRIDES block.

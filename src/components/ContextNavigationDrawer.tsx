@@ -1,7 +1,7 @@
 import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
-    Archive, BookOpen, Brain, ChevronDown, ChevronRight, Database, FileText,
-    Image, MapPin, Pin, ScrollText, Sparkles, UserCircle, Users, Workflow,
+    Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
+    Image, LogOut, MapPin, Package, Pin, ScrollText, Settings, Sparkles, UserCircle, Users, Workflow,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -18,8 +18,12 @@ import {
 import { resolveModText } from '../services/mods/mounts/chromeRenderers';
 import { useTranslation } from '../i18n/useTranslation';
 import { isLotmCampaign } from '../services/lotm/lotmSkin';
+import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
+import { exitLotmCampaign } from './lotm/LotmPlayHeader';
+import { TokenGauge } from './TokenGauge';
+import type { AiTier } from '../types/llm';
 
-type GroupId = 'story' | 'world' | 'play' | 'mods';
+type GroupId = 'story' | 'world' | 'play' | 'mods' | 'engine';
 type NavIcon = typeof ScrollText;
 
 interface NavLeaf {
@@ -41,12 +45,20 @@ const CONTEXT_LEAVES: Record<ContextScreenId, Omit<NavLeaf, 'onSelect'>> = {
     mem: { id: 'mem', label: 'Memory', icon: Brain },
 };
 
-const GROUPS: Array<{ id: GroupId; label: string; icon: NavIcon }> = [
-    { id: 'story', label: 'Story', icon: FileText },
-    { id: 'world', label: 'World', icon: Database },
-    { id: 'play', label: 'Play', icon: Sparkles },
-    { id: 'mods', label: 'Mods', icon: Workflow },
-];
+const GROUPS: Array<{ id: GroupId; label: string; icon: NavIcon }> = LOTM_EXCLUSIVE_UI
+    ? [
+        { id: 'play', label: 'Play', icon: Sparkles },
+        { id: 'engine', label: 'Engine', icon: Workflow },
+        { id: 'mods', label: 'Mods', icon: Workflow },
+    ]
+    : [
+        { id: 'story', label: 'Story', icon: FileText },
+        { id: 'world', label: 'World', icon: Database },
+        { id: 'play', label: 'Play', icon: Sparkles },
+        { id: 'mods', label: 'Mods', icon: Workflow },
+    ];
+
+const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
 function useHeaderEntries(): readonly RegisteredChromeEntry[] {
     return useSyncExternalStore(
@@ -88,9 +100,10 @@ export function ContextNavigationDrawer() {
     const headerEntries = useHeaderEntries();
     const { t } = useTranslation();
     const lotmCampaign = isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
-    const [expanded, setExpanded] = useState<Record<GroupId, boolean>>({
-        story: true, world: true, play: true, mods: false,
-    });
+    const [expanded, setExpanded] = useState<Record<GroupId, boolean>>(LOTM_EXCLUSIVE_UI
+        ? { play: true, engine: false, mods: false, story: false, world: false }
+        : { story: true, world: true, play: true, mods: false, engine: false }
+    );
 
     const modEntries = useMemo(
         () => headerEntries.filter((entry) => entry.mod !== undefined && !isHeaderStatusEntry(entry)),
@@ -99,7 +112,46 @@ export function ContextNavigationDrawer() {
     const modCount = useMemo(() => new Set(modEntries.map((entry) => entry.mod?.id)).size, [modEntries]);
     const modT = t as unknown as (key: string, vars?: Record<string, string | number>) => string;
 
-    const legacyLeaves: Record<GroupId, NavLeaf[]> = {
+    const aiTier = useAppStore(s => s.settings?.aiTier ?? 'pro') as AiTier;
+
+    const exclusiveLeaves: Record<GroupId, NavLeaf[]> = {
+        play: [
+            { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
+            { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
+            { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
+            { id: 'lotm-archive', label: 'Illustrated Archive', icon: Image, onSelect: () => useAppStore.getState().toggleIllustratedArchive() },
+            { ...CONTEXT_LEAVES.chpt, badge: chaptersCount, onSelect: () => openContextScreen('chpt') },
+            { id: 'askGm', label: 'Ask GM', icon: Sparkles, onSelect: () => useAppStore.getState().openAskGm() },
+            { id: 'dice', label: 'Dice', icon: Dices, onSelect: () => useAppStore.getState().openDiceRollModal() },
+            { id: 'loot', label: 'Loot', icon: Package, onSelect: () => useAppStore.getState().openLootRollModal() },
+        ],
+        engine: [
+            { ...CONTEXT_LEAVES.sys, onSelect: () => openContextScreen('sys') },
+            { ...CONTEXT_LEAVES.world, onSelect: () => openContextScreen('world') },
+            { ...CONTEXT_LEAVES.mem, onSelect: () => openContextScreen('mem') },
+            { ...CONTEXT_LEAVES.eng, onSelect: () => openContextScreen('eng') },
+            { id: 'pinned', label: 'Pinned', icon: Pin, badge: pinnedCount, onSelect: () => useAppStore.getState().togglePinnedMemories() },
+            { id: 'backups', label: 'Backups', icon: Archive, onSelect: () => useAppStore.getState().toggleBackupModal() },
+            { id: 'blocks', label: 'Blocks', icon: Workflow, onSelect: () => useAppStore.getState().toggleBlockView() },
+            { id: 'settings', label: 'Settings', icon: Settings, onSelect: () => useAppStore.getState().toggleSettings() },
+            {
+                id: 'aiTier',
+                label: `AI tier · ${aiTier}`,
+                icon: Cpu,
+                onSelect: () => useAppStore.getState().updateSettings({ aiTier: TIER_CYCLE[aiTier] }),
+            },
+        ],
+        story: [],
+        world: [],
+        mods: modEntries.map((entry) => ({
+            id: entry.qualifiedId,
+            label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
+            icon: FileText,
+            onSelect: () => { Promise.resolve(entry.entry.onSelect(entry.context)).catch(() => undefined); },
+        })),
+    };
+
+    const classicLeaves: Record<GroupId, NavLeaf[]> = {
         story: [
             { ...CONTEXT_LEAVES.sys, onSelect: () => openContextScreen('sys') },
             { ...CONTEXT_LEAVES.chpt, badge: chaptersCount, onSelect: () => openContextScreen('chpt') },
@@ -118,13 +170,11 @@ export function ContextNavigationDrawer() {
             { id: 'pinned', label: 'Pinned', icon: Pin, badge: pinnedCount, onSelect: () => useAppStore.getState().togglePinnedMemories() },
             { ...CONTEXT_LEAVES.eng, onSelect: () => openContextScreen('eng') },
         ],
-        mods: modEntries.map((entry) => ({
-            id: entry.qualifiedId,
-            label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
-            icon: FileText,
-            onSelect: () => { Promise.resolve(entry.entry.onSelect(entry.context)).catch(() => undefined); },
-        })),
+        engine: [],
+        mods: exclusiveLeaves.mods,
     };
+
+    const legacyLeaves = LOTM_EXCLUSIVE_UI ? exclusiveLeaves : classicLeaves;
 
     // WO-screen-modernization §A-2 — `rules-mgr` is no longer a separate
     // screen. RulesTab hosts the [Write | Retrieval] segmented control and
@@ -146,13 +196,19 @@ export function ContextNavigationDrawer() {
     return (
         <>
             {drawerOpen && (
-                <aside className="w-72 max-w-[85vw] bg-surface border-r border-border flex flex-col overflow-hidden shrink-0">
+                <aside className="lotm-play-drawer w-72 max-w-[85vw] bg-surface border-r border-border flex flex-col overflow-hidden shrink-0">
                     <div className="px-4 py-3 border-b border-border flex items-center justify-between shrink-0">
-                        <h2 className="text-[11px] text-terminal uppercase tracking-[0.25em] font-bold">◆ CONTEXT</h2>
+                        <h2 className="text-[11px] text-terminal uppercase tracking-[0.25em] font-bold">
+                            {LOTM_EXCLUSIVE_UI ? 'Menu' : '◆ CONTEXT'}
+                        </h2>
                         <button type="button" onClick={toggleDrawer} className="text-text-dim hover:text-terminal text-xs uppercase tracking-wider" title={t('header.drawer.close')} aria-label={t('header.drawer.close')}>×</button>
                     </div>
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
-                        {GROUPS.map((group) => {
+                        {GROUPS.filter((group) => {
+                            if (group.id === 'mods' && modCount === 0) return false;
+                            if (LOTM_EXCLUSIVE_UI && (group.id === 'story' || group.id === 'world')) return false;
+                            return true;
+                        }).map((group) => {
                             const GroupIcon = group.icon;
                             const isExpanded = expanded[group.id];
                             const groupBadge = group.id === 'mods' && modCount > 0 ? modCount : undefined;
@@ -169,14 +225,32 @@ export function ContextNavigationDrawer() {
                                         <span className="flex-1 text-left">{group.label}</span>
                                         {groupBadge !== undefined && <span className="text-terminal font-mono">{groupBadge}</span>}
                                     </button>
-                                    {isExpanded && <div className="pb-1">{legacyLeaves[group.id].map((leaf) => <NavRow key={leaf.id} leaf={leaf} />)}</div>}
+                                    {isExpanded && (
+                                        <div className="pb-1">
+                                            {legacyLeaves[group.id].map((leaf) => <NavRow key={leaf.id} leaf={leaf} />)}
+                                            {LOTM_EXCLUSIVE_UI && group.id === 'engine' && (
+                                                <div className="px-3 py-2">
+                                                    <TokenGauge />
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
                                 </section>
                             );
                         })}
-                        <div className="my-2 border-t border-border" />
-                        <NavRow leaf={{ id: 'backups', label: 'Backups', icon: Archive, onSelect: () => useAppStore.getState().toggleBackupModal() }} />
-                        <NavRow leaf={{ id: 'blocks', label: 'Blocks', icon: Workflow, onSelect: () => useAppStore.getState().toggleBlockView() }} />
+                        {!LOTM_EXCLUSIVE_UI && (
+                            <>
+                                <div className="my-2 border-t border-border" />
+                                <NavRow leaf={{ id: 'backups', label: 'Backups', icon: Archive, onSelect: () => useAppStore.getState().toggleBackupModal() }} />
+                                <NavRow leaf={{ id: 'blocks', label: 'Blocks', icon: Workflow, onSelect: () => useAppStore.getState().toggleBlockView() }} />
+                            </>
+                        )}
                     </nav>
+                    {LOTM_EXCLUSIVE_UI && (
+                        <div className="border-t border-border shrink-0 py-1">
+                            <NavRow leaf={{ id: 'leave', label: 'Leave chronicle', icon: LogOut, onSelect: () => { void exitLotmCampaign(); } }} />
+                        </div>
+                    )}
                 </aside>
             )}
             {contextScreen && (

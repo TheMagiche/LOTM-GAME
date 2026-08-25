@@ -855,3 +855,238 @@ html[style*="--lang-font-stack"] {
   max-height: 100%;
   object-fit: contain;
 }
+
+/* ── Exclusive LOTM title + play chrome ── */
+
+[data-ui-skin="lotm-illustrated"] {
+  background: #0b0a0d;
+}
+
+[data-ui-skin="lotm-illustrated"] body,
+[data-ui-skin="lotm-illustrated"] #root {
+  background: #0b0a0d;
+  color: #f3ead8;
+}
+
+.lotm-title-hub {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  overflow: hidden;
+  background: #0b0a0d;
+}
+
+.lotm-title-hub-art {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.7) contrast(1.1) brightness(0.55);
+}
+
+.lotm-title-hub-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(8, 7, 10, 0.96) 0%, rgba(8, 7, 10, 0.55) 46%, rgba(8, 7, 10, 0.4) 100%),
+    radial-gradient(ellipse at 50% 80%, rgba(20, 16, 28, 0.35), transparent 60%);
+}
+
+.lotm-title-hub-gear {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: rgba(12, 10, 14, 0.55);
+  color: rgba(232, 224, 208, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lotm-title-hub-gear:hover {
+  color: #e0c36a;
+  border-color: rgba(201, 162, 39, 0.65);
+}
+
+.lotm-title-hub-copy,
+.lotm-title-hub-actions,
+.lotm-title-hub-saves {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.lotm-title-hub-kicker {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c9a227;
+  margin: 0 0 12px;
+}
+
+.lotm-title-hub-copy h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f3ead8;
+  margin: 0 0 12px;
+}
+
+.lotm-title-hub-sub {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(243, 234, 216, 0.62);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.lotm-title-hub-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.lotm-title-hub-primary,
+.lotm-title-hub-ghost {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lotm-title-hub-primary {
+  color: #0b0a0d;
+  background: #c9a227;
+  border: 1px solid #e0c36a;
+  padding: 12px 36px;
+}
+
+.lotm-title-hub-primary:disabled,
+.lotm-title-hub-ghost:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.lotm-title-hub-ghost {
+  color: rgba(232, 224, 208, 0.7);
+  background: transparent;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  padding: 8px 18px;
+}
+
+.lotm-title-hub-saves {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  width: min(420px, 100%);
+}
+
+.lotm-title-hub-saves li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.lotm-title-hub-save {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(12, 10, 14, 0.72);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  color: #e8e0d0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 15px;
+  padding: 10px 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.lotm-title-hub-save span:last-child {
+  font-size: 12px;
+  color: rgba(232, 224, 208, 0.45);
+}
+
+.lotm-title-hub-save-delete {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(192, 57, 43, 0.35);
+  background: rgba(12, 10, 14, 0.7);
+  color: #e05555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lotm-play-header {
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  background: #0b0a0d;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  color: #f3ead8;
+}
+
+.lotm-play-header-menu {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: transparent;
+  color: #e8e0d0;
+  cursor: pointer;
+}
+
+.lotm-play-header-titles {
+  min-width: 0;
+}
+
+.lotm-play-header-kicker {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin: 0;
+}
+
+.lotm-play-header h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotm-play-drawer {
+  background: #120f16 !important;
+  border-right-color: rgba(201, 162, 39, 0.22) !important;
+}

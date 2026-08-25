@@ -87,8 +87,10 @@ export function ChatArea({
 
     const [input, setInput] = useState('');
     // Session-local OOC state stays outside the campaign store and turn lifecycle.
-    const [oocOpen, setOocOpen] = useState(false);
     const [oocBusy, setOocBusy] = useState(false);
+    const oocOpen = useAppStore(s => s.askGmOpen);
+    const openAskGm = useAppStore(s => s.openAskGm);
+    const closeAskGm = useAppStore(s => s.closeAskGm);
     const [armedAskGmBrief, setArmedAskGmBrief] = useState<{ campaignId: string; text: string } | null>(null);
 
     // A brief belongs to this in-memory chat session and one campaign only.
@@ -277,15 +279,17 @@ export function ChatArea({
                 />
             )}
 
+            {presentation !== 'illustrated' && (
             <ChatActionStrip
                 isStreaming={isStreaming}
                 isSaving={isSaving}
                 messagesCount={messages.length}
                 onForceSave={handleForceSave}
                 onTrim={triggerCondense}
-                onOpenOoc={() => setOocOpen(true)}
+                onOpenOoc={openAskGm}
                 onOpenArchive={handleOpenArchive}
             />
+            )}
 
             <div className="chat-composer-bar flex-shrink-0 bg-void border-t border-border">
                 <IndexingBanner campaignId={activeCampaignId} />
@@ -337,7 +341,7 @@ export function ChatArea({
                     }}
                     storyBusy={isStreaming || pipelinePhase !== 'idle'}
                     onBusyChange={setOocBusy}
-                    onClose={() => setOocOpen(false)}
+                    onClose={closeAskGm}
                 />
             )}
 
