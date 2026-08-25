@@ -956,6 +956,579 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Wandering: true**
 **Intro Boost: frank lee, farmer, planter, crops, horror**
 
+### CHARACTER — Salinger
+**Aliases:** Death, Underworld Emperor, God of the Dead
+**Summary:** The Sequence 0 Death god who founded the Balam Empire in the Southern Continent before going mad fusing his pathway with the Red Priest Uniqueness.
+**Status:** Deceased (killed by the Seven Orthodox Gods)
+**Faction:** Eggers Family; Balam Empire (historical)
+**StoryRelevance:** His death left the Death pathway godless — the Eggers family's revival scheme and the Numinous Episcopate's "Artificial Death" faction both orbit his absence.
+**Pathway:** Death
+**Sequence:** 0
+**Intro Boost: salinger, death, balam empire, underworld, eggers**
+
+### CHARACTER — Solomon
+**Aliases:** The Black Emperor
+**Summary:** Sequence 0 of the Black Emperor pathway; ascended in the Fourth Epoch's Warring Era and ruled the Solomon Empire until the War of the Four Emperors.
+**Status:** Deceased (resurrected once)
+**Faction:** Solomon Family; Solomon Empire (historical)
+**StoryRelevance:** His fallen empire's remnants — the Solomon family, Nast Solomon's pirate throne — still carry his Black Emperor heritage into the Fifth Epoch.
+**Pathway:** Black Emperor
+**Sequence:** 0
+**Intro Boost: solomon, black emperor, fourth epoch, empire**
+
+### CHARACTER — Trunsoest
+**Aliases:** The Night Emperor
+**Summary:** Founder of the Trunsoest Empire and co-ruler of the Tudor-Trunsoest United Empire; died in the War of the Four Emperors.
+**Status:** Deceased
+**Faction:** Trunsoest Family (historical)
+**StoryRelevance:** Ancestor of every modern royal house — Augustus, Castiya, Sauron, Einhorn. His underground ruins beneath Backlund are sealed-artifact-grade dangerous.
+**Pathway:** Black Emperor
+**Sequence:** 0
+**Intro Boost: trunsoest, night emperor, ruins, fourth epoch**
+
+### CHARACTER — Alista Tudor
+**Aliases:** The Blood Emperor
+**Summary:** Ancestor of the Tudor family; ruled the Tudor Empire after the United Empire fractured. Switched from Black Emperor to Red Priest pathway, hair turning blood-red.
+**Status:** Deceased (killed by the Primordial Demoness and Death)
+**Faction:** Tudor Family (historical)
+**StoryRelevance:** His death mark and inheritance still surface — the Tudor-Trunsoest ruins under Backlund hold his legacy and the fused evil spirit of his victims.
+**Pathway:** Red Priest
+**Sequence:** 0
+**Intro Boost: alista tudor, blood emperor, tudor, red priest**
+
+### CHARACTER — The Ancient Sun God
+**Aliases:** The Creator, The Omniscient and Omnipotent
+**Summary:** The human savior of the Third Epoch who killed the Ancient Gods and unified mankind — shattered at his height, his fragments became Adam and the True Creator.
+**Status:** Deceased (fragments persist as Adam and the True Creator)
+**Faction:** Church of the Ancient Sun God (historical); City of Silver faith
+**StoryRelevance:** The hidden origin behind the era's deepest mysteries — the City of Silver, the Forsaken Land, and the true nature of Adam all trace back to him.
+**Pathway:** Visionary
+**Sequence:** 0
+**Intro Boost: ancient sun god, creator, third epoch, city of silver**
+
+### CHARACTER — The Primordial Demoness
+**Aliases:** Cheek, Chaos Demoness
+**Summary:** Sequence 0 of the Demoness pathway; born of chaos, worshipped by the Demoness Sect as the true inheritor of the Original Creator and the ultimate Ender.
+**Status:** Alive
+**Faction:** Demoness Sect
+**StoryRelevance:** Her sect weaves calamity through the Fifth Epoch; her beauty is a conceptual weapon that entrances all who perceive it.
+**Pathway:** Demoness
+**Sequence:** 0
+**Intro Boost: primordial demoness, demoness sect, calamity, ender**
+
+### CHARACTER — The Mother Goddess of Depravity
+**Aliases:** The Great Mother, Sovereign of the Physical World
+**Summary:** An Outer Deity occupying the Crimson Moon, projecting power into the world through fabricated identities and corrupting faiths.
+**Status:** Alive (Outer Deity)
+**Faction:** Rose School of Thought; Life School of Thought (infiltrated)
+**StoryRelevance:** The cosmic horror above the moon — her influence explains corrupted cults, crimson moon omens, and impossible prayers answered.
+**Pathway:** Mother
+**Sequence:** 0
+**Intro Boost: mother goddess, depravity, outer deity, crimson moon**
+
+### CHARACTER — The Mother Tree of Desire
+**Summary:** An Outer Deity and second child of the Original Creator; a two-headed colossal tree whose fruits grant desires at the cost of corruption.
+**Status:** Alive (injured)
+**Faction:** Rose School of Thought; Naturism Sect; devil families (Nois, Andariel, Beria)
+**StoryRelevance:** Patron of desire cults and the devil lines; her corrupted servants spread through colonies and pirate havens.
+**Pathway:** Abyss
+**Sequence:** 0
+**Intro Boost: mother tree, desire, outer deity, devil, corruption**
+
+### CHARACTER — Farbauti
+**Aliases:** Devil Monarch, Dark Side of the Universe
+**Summary:** An Ancient God of the Abyss — secretly a modern-era transmigrator like Roselle and Klein — who ruled devils until cursing himself to death.
+**Status:** Deceased (suicide by curses)
+**Faction:** Blood Sanctify Sect; Nois Family (historical patron)
+**StoryRelevance:** His legacy governs the Abyss-worshipping underworld; the devil families still bear his corruption.
+**Pathway:** Abyss
+**Sequence:** 0
+**Intro Boost: farbauti, devil monarch, abyss, transmigrator**
+
+### CHARACTER — Flegrea
+**Aliases:** Annihilation Demonic Wolf
+**Summary:** One of the eight Ancient Gods of the Second Epoch — crazy, cruel, bloodthirsty; father of Antigonus and the Mother of the Sky.
+**Status:** Deceased (early Second Epoch)
+**Faction:** Demonic Wolves (historical)
+**StoryRelevance:** His ravings survive in cursed texts; his children endure in the Nation of the Evernight, carrying his Fool-lineage heritage.
+**Pathway:** Darkness
+**Sequence:** 0
+**Intro Boost: flegrea, demonic wolf, ancient god, raving**
+
+### CHARACTER — Sasrir
+**Aliases:** The Dark Angel
+**Summary:** Leader of the Ancient Sun God's eight Kings of Angels, created from part of the god's own personality to wield the Chaos Sea; held the First Blasphemy Slate.
+**Status:** Deceased (died in the Feast of Betrayal; obsession persists as an Evil Spirit)
+**Faction:** Rose Redemption (co-founder)
+**StoryRelevance:** His evil spirit haunts the Giant King's Court in the Forsaken Land — one of the deadliest encounters beyond civilization.
+**Pathway:** Hanged Man
+**Sequence:** 1
+**Intro Boost: sasrir, dark angel, blasphemy slate, giant king's court**
+
+### CHARACTER — The Chained God
+**Summary:** A King of Angels holding the Chained Uniqueness; once God of Spiritual Creatures, later a bound proxy of the Mother Tree of Desire.
+**Status:** Deceased (killed by the Mother Tree of Desire)
+**Faction:** Rose School of Thought (historical)
+**StoryRelevance:** His suspended, bandaged form in the Southern Continent is a pilgrimage site for curse-cults — and a warning about what desire worship costs.
+**Pathway:** Chained
+**Sequence:** 1
+**Intro Boost: chained god, mummy, curse, southern continent**
+
+### CHARACTER — Omebella
+**Aliases:** Child of God, Goddess of Harvest
+**Summary:** Giant Queen and wife of the Giant King Aurmir; born with the Mother Uniqueness and killed repeatedly across epochs — her fate stolen by Lilith.
+**Status:** Deceased
+**Faction:** Giant King's Court (historical)
+**StoryRelevance:** Her lingering characteristics make "Child of God" possessions a recurring catastrophe in harvest lands.
+**Pathway:** Mother
+**Sequence:** 1
+**Intro Boost: omebella, harvest, giant queen, child of god**
+
+### CHARACTER — Antigonus
+**Aliases:** The Half-Fool, An Xiaotian
+**Summary:** Youngest son of the Demonic Wolf Flegrea; a King of Angels of the Fool pathway who founded the Nation of the Evernight in the Eastern Continent.
+**Status:** Alive (sealed/mad)
+**Faction:** Antigonus Family; Nation of the Evernight
+**StoryRelevance:** The mad half-Fool behind the Antigonus family notebook's ravings — contact with his legacy drives listeners toward madness.
+**Pathway:** Fool
+**Sequence:** 1
+**Intro Boost: antigonus, half fool, nation of evernight, raving, notebook**
+
+### CHARACTER — Kotar
+**Aliases:** God of Wishes (former)
+**Summary:** A four-meter Dark Demonic Wolf, former Subsidiary God of Flegrea, now a Miracle Invoker who survived five epochs through systematic cowardice.
+**Status:** Alive
+**Faction:** None (survivor)
+**StoryRelevance:** A living relic of the Second Epoch who trades wishes and secrets — cowardly, daring, and unexpectedly negotiable.
+**Pathway:** Fool
+**Sequence:** 2
+**Intro Boost: kotar, demonic wolf, wish, miracle, survivor**
+
+### CHARACTER — Zaratul Senior
+**Summary:** Founder of the Zaratul family; hunted the second Sequence 1 characteristic after the War of the Four Emperors and was assassinated by Antigonus and Bethel Abraham for it.
+**Status:** Deceased
+**Faction:** Zaratul Family; Secret Order (historical)
+**StoryRelevance:** His murder is the root grudge between the Secret Order and the great angel families — old vendettas parties may inherit.
+**Pathway:** Fool
+**Sequence:** 2
+**Intro Boost: zaratul senior, secret order, vendetta, assassination**
+
+### CHARACTER — Gaard II
+**Aliases:** Pontiff of the Church of the Lord of Storms
+**Summary:** Head of the Cardinal Council for nearly a century despite appearing middle-aged; wears the triple crown of storms above the Chasm of Storms Cathedral.
+**Status:** Alive (angel)
+**Faction:** Church of the Lord of Storms; Mandated Punishers
+**StoryRelevance:** The Storm church's supreme authority — his decrees send Punisher fleets after anyone the sea gods deem blasphemous.
+**Pathway:** Tyrant
+**Sequence:** 2
+**Intro Boost: gaard, pontiff, storms, cardinal, punisher**
+
+### CHARACTER — Hermes
+**Aliases:** Mr. Wrath
+**Summary:** Creator of the Hermes and Ancient Hermes languages used in all mysticism; active since the Second Epoch, currently a councilor of the Psychology Alchemists.
+**Status:** Alive (angel)
+**Faction:** Psychology Alchemists
+**StoryRelevance:** Every ritual the party performs uses his alphabet; the old rabbit-shaped mind behind mysticism's common tongue is still collecting debts.
+**Pathway:** Visionary
+**Sequence:** 2
+**Intro Boost: hermes, language, mysticism, psychology alchemists**
+
+### CHARACTER — Steph
+**Aliases:** Angel of the Holy Word
+**Summary:** A two-and-a-half-meter priest-figure serving as attendant and Blessed of the True Creator within the Aurora Order's ranks.
+**Status:** Alive (angel)
+**Faction:** Rose Redemption
+**StoryRelevance:** The True Creator's herald — his sermons precede major cult offensives.
+**Pathway:** Hanged Man
+**Sequence:** 2
+**Intro Boost: steph, holy word, true creator, herald**
+
+### CHARACTER — Suah
+**Aliases:** Brainless Abomination
+**Summary:** Leader of the Rose School of Thought's Indulgence faction; a nine-century-old abomination whose true form is a colossal tree studded with rolling eyeballs.
+**Status:** Deceased
+**Faction:** Rose School of Thought; Bliss Society
+**StoryRelevance:** Even dead, his Indulgence cells keep the desire cult alive across the archipelagos — his lieutenants inherit the network.
+**Pathway:** Chained
+**Sequence:** 2
+**Intro Boost: suah, indulgence, rose school, abomination**
+
+### CHARACTER — Ariehogg
+**Aliases:** none
+**Summary:** A mind dragon and one of three surviving dragons of the Second Epoch; resurrected vessel of the Dragon of Imagination's lineage, hiding inside a child's mind-world.
+**Status:** Alive (angel)
+**Faction:** Dragons (remnant)
+**StoryRelevance:** A Second Epoch survivor dreaming inside Loen itself — discovering his refuge means touching the Visionary pathway's oldest secrets.
+**Pathway:** Visionary
+**Sequence:** 2
+**Intro Boost: ariehogg, dragon, mind, visionary, second epoch**
+
+### CHARACTER — Cohinem
+**Aliases:** Queen of Calamity
+**Summary:** The Elf Queen, wife of the Elf King Soniathrym; split her Beyonder characteristic in halves — one hidden in the Book of Calamity.
+**Status:** Alive (resurrecting)
+**Faction:** Elves (historical)
+**StoryRelevance:** Her returning calamity-characteristic is a prize every faction would kill to control or destroy.
+**Pathway:** Wheel of Fortune
+**Sequence:** 2
+**Intro Boost: cohinem, elf queen, calamity, book of calamity**
+
+### CHARACTER — Olmer
+**Aliases:** Round Moon Duke
+**Summary:** One of the three Dukes of the Sanguines; over five thousand years old and a direct descendant of the Sanguine Ancestor Lilith.
+**Status:** Alive (angel)
+**Faction:** Sanguines; Church of the Earth Mother
+**StoryRelevance:** The vampire clans' ultimate elder — his verdicts bind every Sanguine, and his patience spans civilizations.
+**Pathway:** Moon
+**Sequence:** 2
+**Intro Boost: olmer, sanguine duke, vampire elder, moon**
+
+### CHARACTER — George Augustus III
+**Aliases:** King of Loen
+**Summary:** King of Loen and its colonies; secretly a Sequence 1 Black Emperor Beyonders who attempted apotheosis — a ritual that ended in catastrophe for the capital.
+**Status:** Deceased (failed apotheosis)
+**Faction:** Augustus Family; Loen Kingdom
+**StoryRelevance:** His hidden pathway and failed godhood are the kingdom's most buried scandal — evidence could topple the monarchy.
+**Pathway:** Black Emperor
+**Sequence:** 2
+**Intro Boost: george augustus, king of loen, apotheosis, black emperor**
+
+### CHARACTER — Sia Palenque Eggers
+**Aliases:** Pale-White Empress
+**Summary:** An Eggers-family angel who advanced to Sequence 1 using her descent from Death itself; leads the royal family faction of the Numinous Episcopate.
+**Status:** Alive (angel)
+**Faction:** Numinous Episcopate; Eggers Family
+**StoryRelevance:** West Balam's pale empress — the most powerful figure in the Southern Continent's Death-cult politics.
+**Pathway:** Death
+**Sequence:** 2
+**Intro Boost: sia palenque, pale empress, numinous episcopate, balam**
+
+### CHARACTER — Sauron-Einhorn-Medici
+**Aliases:** The Red Angel Evil Spirit, Medici
+**Summary:** A fused evil spirit of three murdered Red Priest angels — Sauron, Einhorn, and Medici — haunting the Tudor-Trunsoest ruins beneath Backlund with two mouths on his cheeks.
+**Status:** Evil Spirit (active)
+**Faction:** None (bound to the ruins)
+**StoryRelevance:** Backlund's sealed basement nightmare — bargains with him are possible, survival afterward is not guaranteed.
+**Pathway:** Red Priest
+**Sequence:** 2
+**Intro Boost: red angel, evil spirit, medici, sauron einhorn, ruins**
+
+### CHARACTER — Anthony Stevenson
+**Aliases:** Saint Anthony
+**Summary:** One of the Thirteen Archbishops of the Evernight church; commands the Backlund diocese from Saint Samuel Cathedral.
+**Status:** Alive
+**Faction:** Church of the Evernight Goddess
+**StoryRelevance:** Backlund's supreme Nighthawk authority — his approval opens sealed vaults, his suspicion closes city gates.
+**Pathway:** Darkness
+**Sequence:** 4
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: saint anthony, archbishop, backlund, cathedral**
+
+### CHARACTER — Crestet Cesimir
+**Aliases:** Goddess's Sword
+**Summary:** One of the Nine High-ranking Deacons and one of the Red Gloves' three powerhouses; carries a holy white bone sword and travels alone in commoner carriages.
+**Status:** Alive
+**Faction:** Church of the Evernight Goddess (Red Gloves)
+**StoryRelevance:** The church's lone-walk blade — when a problem exceeds any Nighthawk squad, he arrives quietly and alone.
+**Pathway:** Darkness
+**Sequence:** 4
+**Wandering: true**
+**Intro Boost: crestet cesimir, red gloves, goddess sword, bone sword**
+
+### CHARACTER — Jahn Kottman
+**Summary:** Cardinal of the Storm church and high-ranking deacon of the Mandated Punishers; former Archbishop of Bayam and de facto ruler of the archipelago's Beyonder world.
+**Status:** Alive
+**Faction:** Church of the Lord of Storms (Mandated Punishers)
+**StoryRelevance:** The sea's iron hand — pirate deals, smuggling treaties, and island justice all ultimately answer to him.
+**Pathway:** Tyrant
+**Sequence:** 3
+**Region:** rorsted
+**Location: Bayam**
+**Intro Boost: jahn kottman, punisher, bayam, cardinal, sea**
+
+### CHARACTER — Ace Snake
+**Aliases:** Spellsinger of God
+**Summary:** Cardinal of the Storm church with silver eyes; former Archbishop of Backlund's Holy Wind Cathedral.
+**Status:** Alive
+**Faction:** Church of the Lord of Storms (Mandated Punishers)
+**StoryRelevance:** The Storm church's man inside the capital — his hymns can call weather no umbrella survives.
+**Pathway:** Tyrant
+**Sequence:** 4
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: ace snake, spellsinger, storm cardinal, backlund**
+
+### CHARACTER — Nast Solomon
+**Aliases:** The King of the Five Seas, Earl of White Maple
+**Summary:** One of the Five Pirate Kings and widely considered the strongest pirate alive; a Solomon-family descendant whose eyes swirl with red glow.
+**Status:** Alive
+**Faction:** Black Emperor lineage; pirate fleets
+**StoryRelevance:** The apex predator of the Sonia Sea — his crown predates nations, and his courtly menace precedes him into every port.
+**Pathway:** Black Emperor
+**Sequence:** 3
+**Wandering: true**
+**Intro Boost: nast solomon, pirate king, five seas, black emperor**
+
+### CHARACTER — Qonas Kilgor
+**Summary:** Brigadier General and Deputy Director of MI9 who secretly advanced to Saint-tier with the Augustus family's help — Loen intelligence's coldest enforcer.
+**Status:** Deceased (killed by Gehrman Sparrow)
+**Faction:** MI9; Augustus Family
+**StoryRelevance:** His death exposed how deep royal-family Beyonder schemes ran inside Loen's secret service — his files are still lethal reading.
+**Pathway:** Black Emperor
+**Sequence:** 4
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: qonas kilgor, mi9, intelligence, black emperor**
+
+### CHARACTER — Amyrius Rieveldt
+**Aliases:** Admiral Amyrius, Law Weaver
+**Summary:** Loen's highest-ranking navy commander of the Central Sonia Sea, later head of the Ministry of Defense.
+**Status:** Alive
+**Faction:** Loen Kingdom (Ministry of Defense)
+**StoryRelevance:** The crown's military spine — naval blockades, colonial deployments, and covert maritime operations require his signature.
+**Pathway:** Justiciar
+**Sequence:** 3
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: amyrius, admiral, navy, defense, loen**
+
+### CHARACTER — Georgina Augustus
+**Summary:** A Duchess of the Augustus family and demigod agent of MI9, operating masked in Backlund society.
+**Status:** Alive
+**Faction:** Augustus Family; MI9
+**StoryRelevance:** The royal house's hidden blade in the capital — galas she attends are intelligence operations.
+**Pathway:** Justiciar
+**Sequence:** 4
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: georgina augustus, duchess, mi9, mask**
+
+### CHARACTER — Horamick Haydn
+**Summary:** Archbishop of the Steam church and famous scientist; emeritus professor at Backlund University and member of the Divine Council.
+**Status:** Alive
+**Faction:** Church of the God of Steam and Machinery
+**StoryRelevance:** Where faith meets the laboratory — his patronage launches inventors, his scrutiny ends them.
+**Pathway:** Paragon
+**Sequence:** 4
+**Region:** backlund/trier
+**Intro Boost: horamick, steam archbishop, scientist, university**
+
+### CHARACTER — Pauli Derlau
+**Aliases:** Mr. President
+**Summary:** President of the Psychology Alchemists and a hidden Pirate King; a Dream Weaver who ran the order from a black wheelchair.
+**Status:** Deceased (killed by Gehrman Sparrow)
+**Faction:** Psychology Alchemists
+**StoryRelevance:** His death left the mind-order leaderless — its seven masked councilors now maneuver for succession.
+**Pathway:** Visionary
+**Sequence:** 3
+**Intro Boost: pauli derlau, psychology alchemists, dream weaver, president**
+
+### CHARACTER — Hvin Rambis
+**Aliases:** Mr. Pride (former)
+**Summary:** Royal consultant and Psychology Alchemists councilor; a beloved public scholar whose Pride mask made him contemptuous of lesser Beyonders.
+**Status:** Deceased (killed by Klein Moretti)
+**Faction:** Augustus Family; Psychology Alchemists
+**StoryRelevance:** Proof that the palace's trusted advisors included mind-pathway manipulators — his research notes remain dangerous.
+**Pathway:** Visionary
+**Sequence:** 4
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: hvin rambis, pride, royal consultant, psychology**
+
+### CHARACTER — Lovia Tiffany
+**Aliases:** Elder Lovia
+**Summary:** Elder of the City of Silver's six-member council; a Black Knight secretly devoted to the True Creator who sacrificed herself against Sasrir's evil spirit.
+**Status:** Deceased
+**Faction:** City of Silver; Aurora Order (secret)
+**StoryRelevance:** Her betrayal-and-redemption arc defines the City of Silver's factions — her name is spoken there with grief and caution alike.
+**Pathway:** Hanged Man
+**Sequence:** 4
+**Region:** forsaken land
+**Location: City of Silver**
+**Intro Boost: lovia tiffany, city of silver, black knight, true creator**
+
+### CHARACTER — Katarina Pelle
+**Aliases:** Saintess of White, Demoness of White
+**Summary:** A thirteen-century-old Unaging demoness and high-ranking member of the Demoness Sect; mother of Vice Admiral Ailment Tracy.
+**Status:** Deceased (killed by Emlyn White)
+**Faction:** Demoness Sect
+**StoryRelevance:** The white-robed matron of calamity — her death destabilized the Demoness Sect's European operations.
+**Pathway:** Demoness
+**Sequence:** 3
+**Intro Boost: katarina pelle, demoness, white, unaging**
+
+### CHARACTER — Botis
+**Aliases:** Saint of Secrets
+**Summary:** A Saint of the Aurora Order and former Abraham-family member who betrayed his kin while wielding the Box of the Great Old Ones.
+**Status:** Deceased (consumed by the Box)
+**Faction:** Aurora Order
+**StoryRelevance:** His fate is the standard warning about Great Old One artifacts — the Box still circulates, still hungry.
+**Pathway:** Door
+**Sequence:** 4
+**Intro Boost: botis, saint of secrets, aurora order, box of great old ones**
+
+### CHARACTER — Edwina Edwards
+**Aliases:** Vice Admiral Iceberg
+**Summary:** Former Pirate Admiral turned Archbishop of the Knowledge church; captain of the Golden Dream who teaches her crew like a university class.
+**Status:** Alive
+**Faction:** Church of the God of Knowledge and Wisdom; Golden Dream Pirates
+**StoryRelevance:** The seas' scholar-admiral — passage on her ship doubles as the best education money can't buy.
+**Pathway:** White Tower
+**Sequence:** 6
+**Wandering: true**
+**Intro Boost: edwina, iceberg, golden dream, knowledge, pirate**
+
+### CHARACTER — Danitz Dubois
+**Aliases:** Blazing, Mr. 4,200 Pounds
+**Summary:** Fourth boatswain of the Golden Dream; a cautious, romantic Red Priest Beyonder who became an Oracle of The Fool.
+**Status:** Alive
+**Faction:** Golden Dream Pirates; Church of the Sea God
+**StoryRelevance:** Comic-relief deckhand with divine connections — his terror of Gehrman Sparrow is legendary in every port bar.
+**Pathway:** Red Priest
+**Sequence:** 6
+**Wandering: true**
+**Intro Boost: danitz, blazing, golden dream, oracle, boatswain**
+
+### CHARACTER — Tracy
+**Aliases:** Vice Admiral of Ailment, Queen of Ailment
+**Summary:** Pirate Admiral who inherited Qilangos's position; a Demoness-pathway former man who rules the Ailment Pirates and traffics for the Demoness Sect.
+**Status:** Alive
+**Faction:** Demoness Sect; Ailment Pirates
+**StoryRelevance:** A rising pirate queen with disease-powers and old-sect backing — cruel to enemies, complicated to everyone.
+**Pathway:** Demoness
+**Sequence:** 6
+**Wandering: true**
+**Intro Boost: tracy, ailment, pirate admiral, demoness, disease**
+
+### CHARACTER — Isengard Stanton
+**Aliases:** Eye of Wisdom
+**Summary:** Backlund's renowned private detective; runs a low-to-mid-sequence Beyonder gathering near Backlund Bridge for the Knowledge church.
+**Status:** Alive
+**Faction:** Church of the God of Knowledge and Wisdom
+**StoryRelevance:** The natural first contact for detective-minded parties — his gathering is where fledgling Beyonders trade formulas and rumors.
+**Pathway:** White Tower
+**Sequence:** 6
+**Region:** backlund
+**Haunt:** his wooden gathering-house near Bravehearts Bar, Backlund Bridge
+**Location: Backlund**
+**Intro Boost: isengard, eye of wisdom, detective, gathering, backlund bridge**
+
+### CHARACTER — Father Utravsky
+**Aliases:** Bishop Utravsky
+**Summary:** A former Feysac pirate who swore devotion to the Earth Mother; now the towering bishop of Backlund's Harvest Church.
+**Status:** Alive
+**Faction:** Church of the Earth Mother (Harvest Church)
+**StoryRelevance:** Redemption incarnate — his parish shelters Emlyn White and offers sanctuary to Beyonders seeking a way out of darker paths.
+**Pathway:** Twilight Giant
+**Sequence:** 6
+**Region:** backlund
+**Haunt:** Harvest Church, Rose Street
+**Location: Backlund**
+**Intro Boost: utravsky, harvest church, earth mother, redemption, priest**
+
+### CHARACTER — Larrion
+**Summary:** Former Chief Shepherd of the Combat church who fled with Sealed Artifact 0-02 after his god's death, intending his body as the god's resurrection vessel.
+**Status:** Alive (fugitive)
+**Faction:** Formerly Church of the God of Combat
+**StoryRelevance:** A walking Grade-0 crisis — churches across two continents hunt the shepherd who stole his god's relic.
+**Pathway:** Twilight Giant
+**Sequence:** 6
+**Wandering: true**
+**Intro Boost: larrion, chief shepherd, 0-02, fugitive, resurrection**
+
+### CHARACTER — Maric
+**Aliases:** Knight of Swords
+**Summary:** A temperance-faction Chained Beyoner who escaped the Rose School of Thought with Sharron; fights his pathway's murderous urges daily.
+**Status:** Alive
+**Faction:** Tarot Club (Minor Arcana); Temperance Faction
+**StoryRelevance:** Sharron's partner in monster-hunting — proof that Chained-pathway discipline can hold the abyss at arm's length.
+**Pathway:** Chained
+**Sequence:** 6
+**Region:** backlund
+**Haunt:** Braveheart Bar
+**Location: Backlund**
+**Intro Boost: maric, chained, temperance, swords, restraint**
+
+### CHARACTER — Senor
+**Aliases:** Admiral of Blood
+**Summary:** Former Pirate Admiral and head of the Rose School's pirate wing; commanded seven ships and fed the Scales of Luck sealed artifact.
+**Status:** Deceased (killed by Gehrman Sparrow)
+**Faction:** Rose School of Thought
+**StoryRelevance:** His fleet's wreckage scattered cult relics across the archipelago — treasure maps to his caches come with curses included.
+**Pathway:** Chained
+**Sequence:** 5
+**Intro Boost: senor, admiral of blood, rose school, scales of luck**
+
+### CHARACTER — Howl Constantine
+**Aliases:** Admiral Deep Sea
+**Summary:** Pirate Admiral of the Tyrant pathway who wears a translucent octopus over his face; half-elven with a hauntingly handsome true face.
+**Status:** Alive
+**Faction:** Independent (pirate admiralty)
+**StoryRelevance:** One of the seven admirals parties will eventually cross — courteous until the song starts.
+**Pathway:** Tyrant
+**Sequence:** 5
+**Wandering: true**
+**Intro Boost: howl constantine, deep sea, admiral, octopus, song**
+
+### CHARACTER — Hazel Macht
+**Summary:** A young Backlund lady secretly taught the Marauder pathway by Flora Jacob — a demigod parasitizing a rat — without grasping how hunted that inheritance makes her.
+**Status:** Alive
+**Faction:** None (Evernight churchgoer)
+**StoryRelevance:** An innocent carrying Error-pathway secrets — protecting her from Amon's family is a quiet, urgent quest.
+**Pathway:** Error
+**Sequence:** 6
+**Region:** backlund
+**Location: Backlund**
+**Intro Boost: hazel macht, marauder, student, error, backlund**
+
+### CHARACTER — Darkwill
+**Aliases:** Lawson Darkwill
+**Summary:** A sarcastic Apothecary of the Life School of Thought with a Beyonder owl named Mr. Harry; motivated partly by deeply unheroic medical ambitions.
+**Status:** Alive
+**Faction:** Life School of Thought
+**StoryRelevance:** The party's likeliest potion supplier — competent, rude, and surprisingly reliable when paid.
+**Pathway:** Moon
+**Sequence:** 8
+**Wandering: true**
+**Intro Boost: darkwill, apothecary, life school, potions, owl**
+
+### CHARACTER — Swain
+**Summary:** Boss of Tingen's Evil Dragon Bar and former captain of the city's Mandated Punishers squad; drinks professionally toward a chosen end.
+**Status:** Alive
+**Faction:** Evil Dragon Bar; formerly Mandated Punishers
+**StoryRelevance:** Tingen's information broker for the drinking class — old-Nighthawk stories, harbor rumors, and strong opinions at fair prices.
+**Pathway:** Tyrant
+**Sequence:** 8
+**Region:** tingen
+**Haunt:** the Evil Dragon Bar's worst stool
+**Location: Tingen**
+**Intro Boost: swain, evil dragon bar, tingen, informant, retired punisher**
+
+### CHARACTER — Hanass Vincent
+**Summary:** A Tingen fortune-teller and Aurora Order member who sold the Antigonus Family Notebook — the sale that started everything.
+**Status:** Deceased (heart attack, suspiciously timed)
+**Faction:** Aurora Order; Divination Club
+**StoryRelevance:** The origin-point NPC: whoever handles the notebook's provenance walks the campaign's opening trail.
+**Pathway:** Hanged Man
+**Sequence:** 9
+**Region:** tingen
+**Location: Tingen**
+**Intro Boost: hanass vincent, fortune teller, antigonus notebook, tingen**
+
+### CHARACTER — Sirius Arapis
+**Summary:** A Tingen cloth merchant, Hanass Vincent's friend, and a Secrets Suppliant of the Aurora Order caught in the notebook's aftermath.
+**Status:** Deceased (killed by Klein Moretti)
+**Faction:** Aurora Order
+**StoryRelevance:** The other half of the notebook transaction — his shop on Howes Street still draws divination-flavored trouble.
+**Pathway:** Hanged Man
+**Sequence:** 9
+**Region:** tingen
+**Location: Tingen**
+**Intro Boost: sirius arapis, cloth merchant, aurora order, tingen, howes street**
+
+> **Reference:** The complete crawled character roster (256 entries, including minor and one-off figures) lives in [`characters.md`](./characters.md) alongside this file. This lore section carries only gameplay-relevant characters; consult `characters.md` for deep cuts, spoilers, and Book 2 figures.
+
 ## 5. POWER SYSTEM & RULES
 
 ### [CHUNK: POWER] POWER_SYSTEM — Beyonder Potions & the 22 Pathways
