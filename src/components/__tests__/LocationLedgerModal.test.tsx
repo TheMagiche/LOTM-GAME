@@ -1,5 +1,10 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('../location-ledger/LotmWorldMapView', () => ({
+    LotmWorldMapView: () => <div data-testid="lotm-world-map">World map</div>,
+}));
+
 import { LocationLedgerModal } from '../LocationLedgerModal';
 import { normalizeLocationIds } from '../../utils/locationIds';
 import { useAppStore } from '../../store/useAppStore';
@@ -40,6 +45,25 @@ describe('LocationLedgerModal', () => {
             locationLedgerOpen: false,
             locationLedger: [],
         });
+    });
+
+    it('shows the world map when no place is selected', () => {
+        render(<LocationLedgerModal />);
+        expect(screen.getByTestId('lotm-world-map')).toBeInTheDocument();
+        expect(screen.queryByRole('heading', { name: 'Place Details' })).not.toBeInTheDocument();
+    });
+
+    it('returns to the world map when View Map unselects a place', () => {
+        render(<LocationLedgerModal />);
+        saveNewLocation('Point A');
+        expect(screen.getByRole('heading', { name: 'Place Details' })).toBeInTheDocument();
+        expect(screen.queryByTestId('lotm-world-map')).not.toBeInTheDocument();
+
+        fireEvent.click(screen.getByRole('button', { name: 'View Map' }));
+
+        expect(screen.getByTestId('lotm-world-map')).toBeInTheDocument();
+        expect(screen.queryByRole('heading', { name: 'Place Details' })).not.toBeInTheDocument();
+        expect(screen.getByText('Point A')).toBeInTheDocument();
     });
 
     it('keeps the saved place selected after creating and connecting two places', () => {

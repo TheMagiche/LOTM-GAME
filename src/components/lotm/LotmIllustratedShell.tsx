@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
 import { matchLotmVisuals } from '../../services/lotm/lotmVisualMatcher';
@@ -18,6 +18,8 @@ export function LotmIllustratedShell() {
     const campaignId = useAppStore(s => s.activeCampaignId);
     const [dismissedCgs, setDismissedCgs] = useState<Set<string>>(() => new Set());
     const [chronicleOpen, setChronicleOpen] = useState(false);
+    const campaignRef = useRef(campaignId);
+    const openingAssistantId = useRef<string | null | undefined>(undefined);
 
     useEffect(() => {
         setDismissedCgs(new Set());
@@ -48,7 +50,13 @@ export function LotmIllustratedShell() {
         npcLedger, onStageNpcIds, playerCharacter, spoilers, dismissedCgs,
     ]);
 
+    if (campaignRef.current !== campaignId || openingAssistantId.current === undefined) {
+        campaignRef.current = campaignId;
+        openingAssistantId.current = latestGm?.id ?? null;
+    }
+
     const backdropUrl = lotmAssetUrl(match.backdrop);
+    const showCgEcho = !!match.cgEcho && !chronicleOpen && latestGm?.id !== openingAssistantId.current;
 
     return (
         <div className="lotm-shell relative flex-1 flex flex-col min-w-0 overflow-hidden">
@@ -71,7 +79,7 @@ export function LotmIllustratedShell() {
                 latestAssistantId={latestGm?.id ?? null}
             />
 
-            {match.cgEcho && !chronicleOpen && (
+            {showCgEcho && match.cgEcho && (
                 <LotmCgEcho
                     image={match.cgEcho.image}
                     onDismiss={() => setDismissedCgs(prev => new Set(prev).add(match.cgEcho!.image))}

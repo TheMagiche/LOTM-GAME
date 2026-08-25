@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -685,6 +686,93 @@ html[style*="--lang-font-stack"] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.lotm-world-map-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #090d16;
+}
+
+.lotm-world-map.leaflet-container,
+.lotm-world-map-view .leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #090d16;
+  font-family: inherit;
+}
+
+.custom-lotm-pin {
+  background: none !important;
+  border: none !important;
+}
+
+.lotm-world-map-layers {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: rgba(12, 10, 14, 0.88);
+  color: #e8e0d0;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lotm-world-map-layers-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 4px;
+  color: rgba(201, 162, 39, 0.85);
+  font-weight: 700;
+}
+
+.lotm-world-map-layers label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #cfc6b4;
+}
+
+.lotm-map-popup .leaflet-popup-content-wrapper {
+  border-radius: 6px;
+  background: #16131a;
+  color: #e8e0d0;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+}
+
+.lotm-map-popup .leaflet-popup-tip {
+  background: #16131a;
+}
+
+.lotm-map-popup h4 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #f3ead8;
+}
+
+.lotm-map-popup-meta {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-map-popup-body {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #cfc6b4;
 }
 
 .lotm-chapter-card {

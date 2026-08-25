@@ -1,14 +1,16 @@
 import { useState, useEffect, useMemo } from 'react';
-import { X, Plus, MapPin, Trash2, Search, Navigation, BookOpen } from 'lucide-react';
+import { X, Plus, Map, MapPin, Trash2, Search, Navigation, BookOpen } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { LocationEntry } from '../types';
 import { connectionBand } from '../services/locationParser';
 import type { DistanceBand } from '../services/location/distance';
 import { LocationSuggestionsPanel } from './location-ledger/LocationSuggestionsPanel';
 import { LocationEditForm } from './location-ledger/LocationEditForm';
+import { LotmWorldMapView } from './location-ledger/LotmWorldMapView';
 import { filterLocations } from '../utils/ledgerFilters';
 import { parseLocationsFromLore } from '../services/lore/loreLocationParser';
 import { resolvePlace } from '../services/locationParser';
+import { mapPinSearchNames } from '../worldpacks/lotmMapData';
 import { newLocationId, normalizeLocationIds } from '../utils/locationIds';
 
 const EMPTY_ENTRY: LocationEntry = {
@@ -93,6 +95,16 @@ export function LocationLedgerModal() {
         setNewConnectionBand('local');
         setNewConnectionNote('');
         setIsEditing(true);
+    };
+
+    const handleViewMap = () => {
+        setSelectedId(null);
+        setIsEditing(false);
+        setForm({ ...EMPTY_ENTRY });
+        setFeaturesDraft('');
+        setNewConnectionTo('');
+        setNewConnectionBand('local');
+        setNewConnectionNote('');
     };
 
     const handleSave = () => {
@@ -263,6 +275,12 @@ export function LocationLedgerModal() {
                     {/* Action Bar */}
                     <div className="p-3 border-b border-border bg-void-lighter shrink-0 space-y-2">
                         <button
+                            onClick={handleViewMap}
+                            className={`w-full flex items-center justify-center gap-2 py-2 px-4 border border-dashed rounded text-xs uppercase tracking-wider transition-colors ${!selectedId && !isEditing ? 'border-terminal text-terminal bg-terminal/10' : 'border-border text-text-dim hover:text-terminal hover:border-terminal'}`}
+                        >
+                            <Map size={14} /> View Map
+                        </button>
+                        <button
                             onClick={handleCreateNew}
                             className={`w-full flex items-center justify-center gap-2 py-2 px-4 border border-dashed rounded text-xs uppercase tracking-wider transition-colors ${!selectedId && isEditing ? 'border-terminal text-terminal bg-terminal/10' : 'border-border text-text-dim hover:text-terminal hover:border-terminal'}`}
                         >
@@ -366,17 +384,22 @@ export function LocationLedgerModal() {
                 <div className="flex-1 flex flex-col bg-surface overflow-hidden relative">
                     <button
                         onClick={toggleLocationLedger}
-                        className="absolute top-4 right-4 text-text-dim hover:text-text-primary hidden sm:block p-1 bg-void rounded border border-border hover:border-terminal transition-colors z-10"
+                        className="absolute top-4 right-4 text-text-dim hover:text-text-primary hidden sm:block p-1 bg-void rounded border border-border hover:border-terminal transition-colors z-[1100]"
                     >
                         <X size={18} />
                     </button>
 
                     {!selectedId && !isEditing && (
-                        <div className="flex-1 flex items-center justify-center p-8 text-text-dim text-sm">
-                            <div className="text-center space-y-2">
-                                <MapPin size={32} className="mx-auto opacity-30" />
-                                <p>Select a place or create a new one.</p>
-                            </div>
+                        <div className="flex-1 min-h-0 relative bg-void">
+                            <LotmWorldMapView onSelectName={(name) => {
+                                for (const candidate of mapPinSearchNames(name)) {
+                                    const hit = resolvePlace(candidate, locationLedger);
+                                    if (hit) {
+                                        handleSelect(hit);
+                                        return;
+                                    }
+                                }
+                            }} />
                         </div>
                     )}
 

@@ -126,12 +126,7 @@ export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
 
 export function matchLotmCgEcho(input: LotmMatchInput, dismissed: ReadonlySet<string> = new Set()): LotmCgEcho | null {
     const spoilers = !!input.spoilers;
-    const text = haystack([
-        input.placeName,
-        input.placeAliases,
-        input.latestGmText,
-        ...(input.npcLedger ?? []).filter(n => (input.onStageNpcIds ?? []).includes(n.id)).map(n => n.name),
-    ]);
+    const text = haystack([input.latestGmText]);
     if (!text) return null;
     let best: { echo: LotmCgEcho; len: number } | null = null;
     for (const echo of LOTM_CG_ECHOES) {
