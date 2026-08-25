@@ -147,9 +147,10 @@ export type AppSettings = {
     imageNegativePrompt?: string;    // negative prompt for image models that support it
     showPcTab?: boolean;             // default true; hides/shows Character Profile tab in Context Drawer
 
-    // Kokoro TTS (local text-to-speech for GM narration)
+    // Local TTS for GM narration (Kokoro or Chatterbox-Nano)
     ttsEnabled?: boolean;            // master toggle; default false
-    ttsVoice?: string;               // kokoro voice id, e.g. 'af_heart'; default 'af_heart'
+    ttsProvider?: 'kokoro' | 'chatterbox-nano';  // engine; default 'kokoro'
+    ttsVoice?: string;               // kokoro voice id ('af_heart') or chatterbox reference-clip filename
 
     // LOD history rendering (WO-09). Optional with migrated defaults — old campaigns
     // hydrate undefined and the payload builder falls back to the defaults below.

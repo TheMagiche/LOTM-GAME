@@ -25,7 +25,7 @@ export function AdvancedTab() {
     const [reindexStatus, setReindexStatus] = useState('');
     const [rebuildingRules, setRebuildingRules] = useState(false);
 
-    // TTS (Kokoro) state
+    // TTS state (Kokoro / Chatterbox-Nano)
     const settings = useAppStore(s => s.settings);
     const updateSettings = useAppStore(s => s.updateSettings);
     const [ttsStatus, setTtsStatus] = useState<TtsStatus | null>(null);
@@ -46,6 +46,12 @@ export function AdvancedTab() {
         { id: 'bf_emma', label: 'Emma (F, British)' },
         { id: 'bm_george', label: 'George (M, British)' },
     ];
+    // Chatterbox-Nano voices are reference clips the user drops into
+    // data/.tts_cache/chatterbox/voices/ — listed by the server.
+    const [chatterboxVoices, setChatterboxVoices] = useState<string[]>([]);
+
+    const selectedProvider = settings.ttsProvider ?? 'kokoro';
+    const providerInfo = ttsStatus?.providers?.find(p => p.id === selectedProvider);
 
     useEffect(() => {
         let cancelled = false;
@@ -108,7 +114,7 @@ export function AdvancedTab() {
         }
     };
 
-    // ── TTS (Kokoro) ──
+    // ── TTS (Kokoro / Chatterbox-Nano) ──
     const refreshTtsStatus = async () => {
         try {
             const status = await getTtsStatus();
@@ -119,18 +125,37 @@ export function AdvancedTab() {
         }
     };
 
+    // Fetch the selected provider's voice list (Chatterbox lists reference clips).
+    useEffect(() => {
+        if (selectedProvider !== 'chatterbox-nano') return;
+        let cancelled = false;
+        fetch(`${API_BASE}/tts/voices?provider=chatterbox-nano`)
+            .then(res => res.ok ? res.json() : null)
+            .then(data => { if (!cancelled && data?.voices) setChatterboxVoices(data.voices); })
+            .catch(() => { /* best-effort */ });
+        return () => { cancelled = true; };
+    }, [selectedProvider, ttsStatus?.modelReady]);
+
+    const stopTtsPolling = () => {
+        if (ttsPollTimer.current) clearInterval(ttsPollTimer.current);
+        ttsPollTimer.current = null;
+        setTtsPolling(false);
+        setTtsIniting(false);
+    };
+
     const startTtsPolling = () => {
         if (ttsPollTimer.current) return;
         setTtsPolling(true);
         ttsPollTimer.current = setInterval(() => {
             getTtsStatus().then(s => {
                 setTtsStatus(s);
-                if (s.modelReady) {
-                    if (ttsPollTimer.current) clearInterval(ttsPollTimer.current);
-                    ttsPollTimer.current = null;
-                    setTtsPolling(false);
-                    setTtsIniting(false);
-                    toast.success('Kokoro TTS model ready');
+                const info = s.providers?.find(p => p.id === selectedProvider);
+                if (info?.ready) {
+                    stopTtsPolling();
+                    toast.success(`${info.label ?? 'TTS'} engine ready`);
+                } else if (info?.error) {
+                    // handleTtsDownload's catch toasts the same failure; just stop spinning.
+                    stopTtsPolling();
                 }
             }).catch(() => {});
         }, 2000);
@@ -164,14 +189,12 @@ export function AdvancedTab() {
         setTtsIniting(true);
         startTtsPolling();
         try {
-            await initTtsModel();
+            await initTtsModel(selectedProvider);
             refreshTtsStatus();
-            toast.success('Kokoro TTS model downloaded');
+            toast.success(`${providerInfo?.label ?? (selectedProvider === 'kokoro' ? 'Kokoro' : 'Chatterbox-Nano')} downloaded`);
         } catch (err) {
-            toast.error(`TTS download failed: ${err instanceof Error ? err.message : 'Unknown error'}`);
-            setTtsIniting(false);
-            setTtsPolling(false);
-            if (ttsPollTimer.current) { clearInterval(ttsPollTimer.current); ttsPollTimer.current = null; }
+            toast.error(`TTS setup failed: ${err instanceof Error ? err.message : 'Unknown error'}`);
+            stopTtsPolling();
         }
     };
 
@@ -187,7 +210,10 @@ export function AdvancedTab() {
         }
         setTtsPreviewing(true);
         try {
-            const blob = await generateTts(text, settings.ttsVoice ?? 'af_heart');
+            const voice = selectedProvider === 'chatterbox-nano'
+                ? (settings.ttsVoice && chatterboxVoices.includes(settings.ttsVoice) ? settings.ttsVoice : chatterboxVoices[0])
+                : (settings.ttsVoice ?? 'af_heart');
+            const blob = await generateTts(text, voice, selectedProvider);
             const url = URL.createObjectURL(blob);
             const audio = new Audio(url);
             ttsPreviewAudio.current = audio;
@@ -207,39 +233,54 @@ export function AdvancedTab() {
         }
     };
 
-    const ttsReady = !!ttsStatus?.modelReady;
-    const ttsCached = !!ttsStatus?.modelCached;
+    const ttsReady = !!providerInfo?.ready;
+    const ttsCached = !!providerInfo?.cached;
 
     return (
         <div className="space-y-6">
             <label className="text-text-dim text-xs uppercase tracking-widest font-bold block">Advanced</label>
 
-            {/* Kokoro TTS — local text-to-speech for GM narration */}
+            {/* Local TTS — Kokoro (in-process) or Chatterbox-Nano (Python sidecar) */}
             <div className="bg-void p-4 border border-border rounded space-y-3">
                 <div>
                     <label className="block text-[11px] text-text-primary uppercase tracking-wider font-bold mb-1 flex items-center gap-1.5">
-                        <Volume2 size={11} /> Text-to-Speech (Kokoro)
+                        <Volume2 size={11} /> Text-to-Speech Engine
                     </label>
                     <p className="text-[9px] text-text-dim max-w-[320px] leading-tight">
-                        Local neural TTS for GM narration. ~90MB one-time download (q8), runs fully offline.
-                        Not bundled — opt in here. A speaker icon appears on GM messages once ready.
+                        Local neural TTS for GM narration, runs fully offline after a one-time download.
+                        Not bundled — opt in per engine. A speaker icon appears on GM messages once ready.
                     </p>
+                </div>
+
+                {/* Engine selector */}
+                <div>
+                    <label className="block text-[9px] text-text-dim uppercase tracking-wider mb-1">Engine</label>
+                    <select
+                        value={selectedProvider}
+                        onChange={e => updateSettings({ ttsProvider: e.target.value as 'kokoro' | 'chatterbox-nano' })}
+                        className="bg-void-darker border border-border text-text-primary text-[11px] px-2 py-1 rounded outline-none focus:border-terminal w-full"
+                    >
+                        <option value="kokoro">Kokoro-82M (~90MB, in-app)</option>
+                        <option value="chatterbox-nano">Chatterbox-Nano (~300MB, voice cloning)</option>
+                    </select>
                 </div>
 
                 {/* Status pill */}
                 <div className="border border-terminal/30 bg-terminal/5 rounded p-3 flex items-center justify-between">
                     <div>
                         <div className="text-[11px] font-bold text-text-primary">
-                            {ttsStatus?.modelId?.split('/').pop() ?? 'Kokoro-82M'}
+                            {providerInfo?.label ?? (selectedProvider === 'kokoro' ? 'Kokoro-82M' : 'Chatterbox-Nano')}
                         </div>
                         <div className="text-[9px] text-text-dim">
                             {ttsReady
-                                ? `Ready · voice: ${ttsStatus?.voice}`
+                                ? `Ready${selectedProvider === 'kokoro' ? ` · voice: ${settings.ttsVoice ?? 'af_heart'}` : ''}`
                                 : ttsIniting || ttsPolling
                                     ? 'Downloading / warming up...'
                                     : ttsCached
                                         ? 'Installed / warming up...'
-                                        : 'Not downloaded'}
+                                        : selectedProvider === 'chatterbox-nano'
+                                            ? 'Not installed (first setup installs Python deps)'
+                                            : 'Not downloaded'}
                         </div>
                     </div>
                     <span className={`text-[9px] font-bold uppercase ${ttsReady ? 'text-terminal' : 'text-text-dim'}`}>
@@ -272,18 +313,40 @@ export function AdvancedTab() {
                             <span className="uppercase tracking-wider">Read GM replies aloud (speaker button)</span>
                         </label>
 
-                        <div>
-                            <label className="block text-[9px] text-text-dim uppercase tracking-wider mb-1">Voice</label>
-                            <select
-                                value={settings.ttsVoice ?? 'af_heart'}
-                                onChange={e => updateSettings({ ttsVoice: e.target.value })}
-                                className="bg-void-darker border border-border text-text-primary text-[11px] px-2 py-1 rounded outline-none focus:border-terminal w-full"
-                            >
-                                {TTS_VOICES.map(v => (
-                                    <option key={v.id} value={v.id}>{v.label}</option>
-                                ))}
-                            </select>
-                        </div>
+                        {selectedProvider === 'kokoro' ? (
+                            <div>
+                                <label className="block text-[9px] text-text-dim uppercase tracking-wider mb-1">Voice</label>
+                                <select
+                                    value={settings.ttsVoice ?? 'af_heart'}
+                                    onChange={e => updateSettings({ ttsVoice: e.target.value })}
+                                    className="bg-void-darker border border-border text-text-primary text-[11px] px-2 py-1 rounded outline-none focus:border-terminal w-full"
+                                >
+                                    {TTS_VOICES.map(v => (
+                                        <option key={v.id} value={v.id}>{v.label}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        ) : (
+                            <div>
+                                <label className="block text-[9px] text-text-dim uppercase tracking-wider mb-1">Voice (reference clip)</label>
+                                {chatterboxVoices.length > 0 ? (
+                                    <select
+                                        value={chatterboxVoices.includes(settings.ttsVoice ?? '') ? settings.ttsVoice : chatterboxVoices[0]}
+                                        onChange={e => updateSettings({ ttsVoice: e.target.value })}
+                                        className="bg-void-darker border border-border text-text-primary text-[11px] px-2 py-1 rounded outline-none focus:border-terminal w-full"
+                                    >
+                                        {chatterboxVoices.map(v => (
+                                            <option key={v} value={v}>{v.replace(/\.(wav|mp3|flac)$/i, '')}</option>
+                                        ))}
+                                    </select>
+                                ) : (
+                                    <p className="text-[9px] text-text-dim leading-tight">
+                                        No reference clips found. Drop a ~10s WAV of the voice you want into
+                                        data/.tts_cache/chatterbox/voices/ — Nano clones speech from it.
+                                    </p>
+                                )}
+                            </div>
+                        )}
 
                         <div>
                             <label htmlFor="tts-preview-text" className="block text-[9px] text-text-dim uppercase tracking-wider mb-1">Voice preview</label>

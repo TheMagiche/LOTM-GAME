@@ -13,6 +13,7 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
     const ttsStatus = useTtsStatus();
     const ttsEnabled = useAppStore(s => s.settings.ttsEnabled);
     const ttsVoice = useAppStore(s => s.settings.ttsVoice);
+    const ttsProvider = useAppStore(s => s.settings.ttsProvider);
     const [ttsLoading, setTtsLoading] = useState(false);
     const [ttsPlaying, setTtsPlaying] = useState(false);
     const [ttsPaused, setTtsPaused] = useState(false);
@@ -47,14 +48,14 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // Preload disk-cached chunks on mount / voice change.
+    // Preload disk-cached chunks on mount / voice or engine change.
     useEffect(() => {
         if (!ttsEnabled || msg.role !== 'assistant') return;
-        return buffer.preloadFromDisk(markdownContent, ttsVoice ?? 'af_heart');
+        return buffer.preloadFromDisk(markdownContent, ttsVoice ?? 'af_heart', ttsProvider);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ttsEnabled, ttsVoice, msg.id]);
+    }, [ttsEnabled, ttsVoice, ttsProvider, msg.id]);
 
-    const handleSpeak = () => { void buffer.speak(markdownContent, ttsVoice ?? 'af_heart'); };
+    const handleSpeak = () => { void buffer.speak(markdownContent, ttsVoice ?? 'af_heart', ttsProvider); };
     const handlePauseResume = () => buffer.pauseResume();
     const handleWipeTts = () => buffer.wipe();
     const handleSpeedChange = (delta: number) => buffer.changeSpeed(delta);

@@ -34,13 +34,62 @@ describe('TTS persisted model status', () => {
         fs.mkdirSync(path.dirname(modelFile), { recursive: true });
         fs.writeFileSync(modelFile, 'model');
 
-        const { getTtsStatus, isTtsModelCached } = await import('../lib/tts.js');
+        const { getTtsStatus, listProviders } = await import('../lib/tts.js');
 
-        expect(isTtsModelCached()).toBe(true);
+        const kokoro = listProviders().find(p => p.id === 'kokoro');
+        expect(kokoro).toMatchObject({ cached: true, ready: false });
         expect(getTtsStatus()).toMatchObject({
+            provider: 'kokoro',
             modelCached: true,
             modelReady: false,
-            initializing: false,
         });
+    });
+
+    it('exposes chatterbox-nano as a selectable second engine', async () => {
+        const { listProviders, getTtsStatus } = await import('../lib/tts.js');
+
+        const providers = listProviders();
+        expect(providers.map(p => p.id)).toContain('chatterbox-nano');
+        const nano = providers.find(p => p.id === 'chatterbox-nano');
+        expect(nano.requiresSidecar).toBe(true);
+        // Not installed in a fresh tmp DATA_DIR — venv doesn't exist yet.
+        expect(nano.cached).toBe(false);
+        // Status lists all engines even when only reporting the active one.
+        expect(getTtsStatus().providers.map(p => p.id)).toEqual(['kokoro', 'chatterbox-nano']);
+    });
+
+    it('does not report a half-installed chatterbox venv as cached', async () => {
+        // A venv whose python exists but whose pip install died partway through
+        // must not count as installed, or init reports "cached" and then fails.
+        const venvPython = process.platform === 'win32'
+            ? path.join(tmpDir, '.tts_cache', 'chatterbox-venv', 'Scripts', 'python.exe')
+            : path.join(tmpDir, '.tts_cache', 'chatterbox-venv', 'bin', 'python');
+        fs.mkdirSync(path.dirname(venvPython), { recursive: true });
+        fs.writeFileSync(venvPython, '');
+
+        const { listProviders } = await import('../lib/tts.js');
+        expect(listProviders().find(p => p.id === 'chatterbox-nano').cached).toBe(false);
+    });
+
+    it('reports chatterbox as cached once the install marker is written', async () => {
+        const venvDir = path.join(tmpDir, '.tts_cache', 'chatterbox-venv');
+        const venvPython = process.platform === 'win32'
+            ? path.join(venvDir, 'Scripts', 'python.exe')
+            : path.join(venvDir, 'bin', 'python');
+        fs.mkdirSync(path.dirname(venvPython), { recursive: true });
+        fs.writeFileSync(venvPython, '');
+        fs.writeFileSync(path.join(venvDir, '.chatterbox-install.json'), '{"profile":"legacy"}');
+
+        const { listProviders } = await import('../lib/tts.js');
+        expect(listProviders().find(p => p.id === 'chatterbox-nano').cached).toBe(true);
+    });
+
+    it('keys the audio cache by provider so engines never collide', async () => {
+        const { audioCacheHash } = await import('../lib/tts/cache.js');
+        const a = audioCacheHash('kokoro', 'hello', 'af_heart');
+        const b = audioCacheHash('chatterbox-nano', 'hello', 'af_heart');
+        expect(a).not.toBe(b);
+        // Same inputs → same key (stable).
+        expect(audioCacheHash('kokoro', 'hello', 'af_heart')).toBe(a);
     });
 });
