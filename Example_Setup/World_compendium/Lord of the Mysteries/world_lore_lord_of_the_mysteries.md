@@ -14,19 +14,30 @@ Above the mundane world lie the Spirit World and the Astral World; beneath it, t
 
 ## 2. FACTIONS
 
+Power in the Fifth Epoch is divided among three great classes of faction: the **orthodox churches**, who hold the pathways and police the supernatural; the **secret organizations**, who operate beyond church control; and the **noble and angel families**, whose bloodlines carry Sequence heritage older than any living nation.
+
+### 2a. ORTHODOX CHURCHES
+
 ### FACTION — Church of the Evernight Goddess
-**Type:** Orthodox Church (Darkness, Death, Twilight Giant pathways)
-**Key Members:** Dunn Smith (Tingen Nighthawks captain), Leonard Mitchell (Sleepless)
+**Type:** Orthodox Church (Darkness pathway complete; Death & Twilight Giant near-complete; Fool incomplete to Sequence 3)
+**Key Members:** Dunn Smith (Tingen Nighthawks captain), Leonard Mitchell (Sleepless); led by a Pope advised by Thirteen Archbishops and Nine High-ranking Deacons
 **Stance:** Lawful establishment in the Loen Kingdom.
-The Evernight Goddess rules the night, concealment, and quiet mercy. Her church fields the Nighthawks — plainclothes Beyonder teams that investigate supernatural crime, contain out-of-control Beyonders, and seal dangerous artifacts. Nighthawk squads operate in every major Loen city out of an unmarked chantry, holding nightly prayers to resist corruption. Internal tension: older hardliners want out-of-control Beyonders destroyed on sight, while field captains like Dunn Smith risk everything to bring rookies home alive.
-<!-- rag: keyword, priority:7, triggers: nighthawks, evernight, goddess, church -->
+The Evernight Goddess rules the night, concealment, and quiet mercy. Her church fields the Nighthawks — plainclothes Beyonder teams that investigate supernatural crime, contain out-of-control Beyonders, and seal dangerous artifacts — backed by the Red Gloves, her elite strike force. Nighthawk squads operate in every major Loen city out of an unmarked chantry, holding nightly prayers to resist corruption. Her cathedral seat rests in Winter County. Internal tension: older hardliners want out-of-control Beyonders destroyed on sight, while field captains like Dunn Smith risk everything to bring rookies home alive. The church is also quietly at odds with the God of Combat's flock across the Feysac border.
+<!-- rag: keyword, priority:7, triggers: nighthawks, evernight, goddess, red gloves, church -->
 
 ### FACTION — Church of the Lord of Storms
 **Type:** Orthodox Church (Tyrant pathway complete; Visionary incomplete)
-**Key Members:** Mandated Punisher squads of the Rorsted Archipelago
+**Key Members:** Mandated Punisher squads of the Rorsted Archipelago; led by a Pontiff
 **Stance:** Dominant sea power; jealous, proud, quick to punish blasphemy.
-The Lord of Storms commands sailors' oaths, weather, and wrath. His Mandated Punishers hunt pirates and rogue Beyonders across the islands, answering direct pleas with devastating lightning. The church is more zealous than its Loen counterpart: oaths sworn to the Storm are binding, and breaking one invites a very literal response.
-<!-- rag: keyword, priority:7, triggers: storm, sailor, sea, punisher, oath -->
+The Lord of Storms commands sailors' oaths, weather, and wrath. His Mandated Punishers hunt pirates and rogue Beyonders across the islands, answering direct pleas with devastating lightning. The church is more zealous than its Loen counterpart: oaths sworn to the Storm are binding, and breaking one invites a very literal response. It holds roughly twenty Saints among its forces — a martial depth no rival takes lightly.
+<!-- rag: keyword, priority:7, triggers: storm, sailor, sea, punisher, oath, pontiff -->
+
+### FACTION — Church of the God of Combat
+**Type:** Orthodox Church (Twilight Giant pathway complete; Darkness & Death incomplete)
+**Key Members:** Chief Shepherd; warrior-clergy of the Feysac Empire
+**Stance:** Militant state church of Feysac; glory through battle, strength above subtlety.
+The God of Combat is war made divine, and his Great Twilight Hall near Saint Millom anchors the Feysac Empire's faith. His clergy bless armies, duel for honor, and treat negotiation as a prelude to victory. Feysac's imperial ambitions and the church's doctrine of righteous conquest put it in constant cold friction with the Evernight Goddess's church in Loen — the northern border is where their proxies test each other.
+<!-- rag: keyword, priority:6, triggers: combat, feysac, chief shepherd, twilight giant, war, battle -->
 
 ### FACTION — Church of the God of Steam and Machinery
 **Type:** Orthodox Church (Paragon pathway complete; Hermit incomplete)
@@ -37,31 +48,135 @@ The God of Steam gifted humanity its industrial age. The church runs the great e
 
 ### FACTION — Church of the God of Knowledge and Wisdom
 **Type:** Orthodox Church (White Tower pathway complete)
-**Key Members:** Archivist clergy, university patrons
+**Key Members:** Archivist clergy, university patrons; strongest in Lemburg, Segar, and Masin
 **Stance:** Scholastic, neutral-leaning, obsessed with records and truth.
 Keeper of libraries, patents, and examination systems. Its clergy believe knowledge belongs in ordered archives, and they quietly collect anything written — including diaries best left unread. They are the least militant church, and the most persistent when something should be found.
-<!-- rag: keyword, priority:6, triggers: knowledge, wisdom, library, archive, university -->
+<!-- rag: keyword, priority:6, triggers: knowledge, wisdom, library, archive, university, lemburg -->
 
 ### FACTION — Church of the Eternal Blazing Sun
 **Type:** Orthodox Church (Sun pathway complete)
-**Key Members:** Sun-clad clergy of Intis and the southern colonies
+**Key Members:** Inquisition squads; Sun-clad clergy of Intis and the southern colonies
 **Stance:** Righteous, purifying, intolerant of the undead and of filth.
-Worshipers of light, purification, and unyielding law. Their holy songs burn corruption, their notaries bind contracts in holy ink, and their zealots rarely negotiate with what they deem unclean. Old grudges with the Darkness and Death churches still smolder under diplomatic politeness.
-<!-- rag: keyword, priority:6, triggers: sun, blazing, purification, holy, light -->
+Worshipers of light, purification, and unyielding law. Their Inquisition burns corruption out of congregation and countryside alike, their notaries bind contracts in holy ink, and their zealots rarely negotiate with what they deem unclean. Old grudges with the Darkness and Death churches still smolder under diplomatic politeness.
+<!-- rag: keyword, priority:6, triggers: sun, blazing, purification, holy, light, inquisition -->
 
 ### FACTION — Church of the Earth Mother
 **Type:** Orthodox Church (Mother & Moon pathways complete)
-**Key Members:** Feynapotter clergy, village midwives, apothecaries
+**Key Members:** Fertility Order clergy, village midwives, apothecaries; led by a Matriarch
 **Stance:** Gentle rural establishment; strongest in Feynapotter and the countryside.
-The Earth Mother governs harvests, birth, healing, and livestock; her Moon aspect covers blood, potions, and life's tides. Village priests bless fields and deliver babies; higher clergy brew remedies no apothecary can match. Beneath the pastoral warmth, Moon-pathway blood magic makes the church quietly feared.
-<!-- rag: keyword, priority:6, triggers: earth mother, harvest, moon, vampire, healing, feynapotter -->
+The Earth Mother governs harvests, birth, healing, and livestock; her Moon aspect covers blood, potions, and life's tides. Village priests bless fields and deliver babies; higher clergy brew remedies no apothecary can match. Beneath the pastoral warmth, Moon-pathway blood magic — and the Sanguine clans sworn to her service — make the church quietly feared.
+<!-- rag: keyword, priority:6, triggers: earth mother, harvest, moon, vampire, sanguine, healing, feynapotter -->
 
-### FACTION — Secret Organizations (Aurora Order, Psychology Alchemists, Tarot Club, and others)
-**Type:** Hidden societies beyond church control
-**Key Members:** Unknown principals; membership by invitation only
-**Stance:** Various — heretical, mercantile, scholarly, or simply survivalist.
-Beyond the orthodox churches operate secret orders: the Aurora Order (nobles seeking personal power under an unknown master), the Psychology Alchemists (mind-pathway scholars), the Element Dawn order, the Theosophy Society, pirate councils, and — whispered of in divination circles only — a Tarot Club whose members call themselves Justice, Hanged Man, Magician, and The World, and who may be reached by rituals addressed to The Fool that does not yet exist. Joining any of them means owing favors to people whose Sequence you cannot guess.
-<!-- rag: keyword, priority:7, triggers: secret organization, aurora, psychology alchemists, tarot club, ritual to the fool -->
+### FACTION — Inter-Church Politics & Jurisdiction
+**Type:** Framework governing the seven orthodox churches
+**Key Members:** The Seven Orthodox Churches collectively
+**Stance:** Cold war of faiths, punctuated by formal cooperation.
+In polytheistic Loen, jurisdiction over Beyonder incidents divides along the victims' beliefs; when multiple gods' followers are involved, whoever holds dominion over the territory takes the case. The churches share a uniform naming convention for Sealed Artifacts and exchange intelligence on Grade 0 and Grade 1 items so code names never collide — each orthodox church holds five to eight Grade 0 artifacts and fewer than four grounded Angels. Beneath the protocol: the Sun, Storms, and Knowledge churches regard one another as open enemies, and every church watches every pathway for weakness. For a freelance Beyonder, this means the wrong miracle in the wrong parish can trigger a jurisdictional tug-of-war over your corpse.
+<!-- rag: keyword, priority:6, triggers: jurisdiction, seven churches, sealed artifact grading, grade 0, church politics, cold war -->
+
+### 2b. SECRET ORGANIZATIONS
+
+### FACTION — Aurora Order
+**Type:** Secret society of Intis nobility
+**Key Members:** Aristocratic Beyonders under an unknown master
+**Stance:** Heretical power-seeking dressed in enlightenment rhetoric.
+Intis nobles who traded faith for personal power, gathering Beyonder formulas and artifacts beneath a patron they dare not name. They recruit the ambitious and dispose of the compromised; crossing one means discovering how far aristocratic reach extends.
+<!-- rag: keyword, priority:6, triggers: aurora order, intis nobles, secret society, heresy -->
+
+### FACTION — Psychology Alchemists
+**Type:** Scholarly secret order (Visionary/mind pathways)
+**Key Members:** Mind-pathway scholars and therapists of questionable ethics
+**Stance:** Research-first; minds are their laboratory.
+An order of mind-pathway scholars who treat thoughts as reagents. They offer genuine help to Beyonders on the edge of losing control — for a price measured in access to memories and secrets. Their sanctums hold techniques no university would print.
+<!-- rag: keyword, priority:6, triggers: psychology alchemists, mind, visionary, sanity, therapy -->
+
+### FACTION — Element Dawn
+**Type:** Occult order of elemental mystics
+**Key Members:** Elemental-pathway practitioners
+**Stance:** Guarded neutral; trades in mysteries.
+A twilight order courting the raw elements behind nature's curtain. They appear at auctions of mystical items, guard old sites of power, and test strangers with riddles before deciding whether to help, rob, or obliviate them.
+<!-- rag: keyword, priority:5, triggers: element dawn, elements, occult order, auction -->
+
+### FACTION — Theosophy Order
+**Type:** Esoteric study society
+**Key Members:** Antiquarians, spiritualists, absorbed Door-pathway remnants
+**Stance:** Curiosity without scruple.
+Collectors of forbidden texts and lost lineages — the Door branch of the ancient Tamara family merged into their ranks. Their salons trade rumors of other epochs, and their libraries sometimes answer back.
+<!-- rag: keyword, priority:5, triggers: theosophy, door pathway, tamara, esoteric, texts -->
+
+### FACTION — Moses Ascetic Order
+**Type:** Ascetic brotherhood
+**Key Members:** Monastic Beyonders of austere discipline
+**Stance:** Withdrawn; aids the desperate on their own terms.
+Hermit-ascetics who renounce worldly comfort to master their Sequences safely. They shelter hunted Beyonders, demand confession in return, and consider gratitude a form of debt.
+<!-- rag: keyword, priority:5, triggers: moses ascetic, monk, ascetic, sanctuary -->
+
+### FACTION — Life School of Thought & Rose School of Thought
+**Type:** Philosophical Beyonder schools
+**Key Members:** Practitioners of life-transformation and desire-adjacent paths
+**Stance:** The Life school heals; the Rose school corrupts.
+Two schools, one contrast: the Life School pursues mastery of flesh, healing, and natural cycles, often clashing with orthodox monopoly on medicine; the Rose School of Thought worships the True Creator's liberating creed, and its cells leave ritual scenes the churches pay bounties to forget.
+<!-- rag: keyword, priority:5, triggers: life school, rose school, true creator, healing, cult -->
+
+### FACTION — Demoness Sect
+**Type:** Hidden sect descended from the ancient Demoness Family
+**Key Members:** Calamity- and Demoness-pathway devotees
+**Stance:** Predatory, vengeful, bound by old calamities.
+Survivors of a lineage that became its own sect, weaving misfortune like thread. They settle grudges across generations, and their blessings are curses wearing perfume.
+<!-- rag: keyword, priority:5, triggers: demoness sect, calamity, curse, vengeance -->
+
+### FACTION — Secret Order
+**Type:** Custodian order of Antigonus inheritance
+**Key Members:** Descendants and oath-bound wardens of the fallen Antigonus family
+**Stance:** Reclamation of what was lost.
+The Secret Order exists largely to reclaim the scattered Antigonus legacy — relics, notebooks, and madmen's inheritances — before anyone else can read them.
+<!-- rag: keyword, priority:5, triggers: secret order, antigonus, inheritance, notebook -->
+
+### FACTION — Tarot Club
+**Type:** Unknown — gathering above the gray fog
+**Key Members:** Justice, Hanged Man, Magician, The World (true names unknown)
+**Stance:** Neutral information exchange under a god who does not yet exist.
+Whispered of only in divination circles: a weekly convocation above the spirit world whose members take tarot titles and trade formulas, artifacts, and intelligence in perfect anonymity. Access requires a ritual addressed to The Fool — a deity with no church, no history, and no recorded name. Every faction above wants an invitation; none admit to seeking one.
+<!-- rag: keyword, priority:7, triggers: tarot club, justice, hanged man, the fool, gray fog, ritual to the fool -->
+
+### 2c. NOBLE & ANGEL FAMILIES
+
+Every ruling house of the Northern Continent descends from the angel families of the Fourth Epoch empires — Tudor, Trunsoest, Solomon, and Balam — whose founders were Angels or greater. Their bloodlines still shape which pathways each nation can safely cultivate, and their old wars are the reason today's borders exist.
+
+### FACTION — House Augustus (Loen Royal Family)
+**Type:** Royal family; Justiciar & Black Emperor lineage (Trunsoest descent)
+**Key Members:** The King of Loen and his court
+**Stance:** Constitutional monarchy balancing all orthodox churches against each other.
+Descended from the Trunsoest Empire's angel line, the Augustus kings rule Loen by keeping the churches competing for crown favor — and by never letting any single pathway grow indispensable. The palace knows more about Beyonder affairs than any single church suspects.
+<!-- rag: keyword, priority:6, triggers: augustus, loen king, royal family, justiciar, black emperor -->
+
+### FACTION — House Einhorn (Feysac Imperial Family)
+**Type:** Imperial family; Red Priest lineage (Trunsoest descent)
+**Key Members:** The Feysac Emperor and war-party aristocracy
+**Stance:** Militant expansionism blessed by the God of Combat.
+The Einhorn emperors carry the Red Priest line's appetite for conquest. Feysac's court dreams of continental war, and its angel-blooded officers treat the coming conflict as sacrament.
+<!-- rag: keyword, priority:6, triggers: einhorn, feysac emperor, red priest, imperialism -->
+
+### FACTION — House Castiya (Feynapotter Royal Family)
+**Type:** Royal family; Justiciar lineage (Trunsoest descent)
+**Key Members:** The Feynapotter monarchy and rural gentry
+**Stance:** Quiet, agrarian conservatism allied to the Earth Mother.
+Rulers of the green kingdom, content to let the Earth Mother's church govern the soul of the countryside while the crown governs its taxes. Feynapotter fights no one's war unless invaded.
+<!-- rag: keyword, priority:5, triggers: castiya, feynapotter, royal family, agrarian -->
+
+### FACTION — House Sauron (Intis Republic)
+**Type:** Declined royal line; Red Priest lineage
+**Key Members:** Sauron interests in the military, intelligence services, and parliament
+**Stance:** Lost the throne, kept the levers of power.
+After losing control of Intis, the Saurons retreated into the republic's army, spy ministries, and legislature — where unelected influence outlasts elections. Their cooperation with the Aurora Order is an open secret in Trier.
+<!-- rag: keyword, priority:6, triggers: sauron, intis, military, intelligence, parliament -->
+
+### FACTION — The Ancient Angel Families (Tudor, Trunsoest, Solomon, Antigonus, Amon, Zaratul, Abraham, Tamara, Eggers, Sanguines)
+**Type:** Fourth-Epoch angel bloodlines — extinct, scattered, or hiding
+**Key Members:** Antigonus (Fool — destroyed by the Evernight Goddess's church), Tudor (Red Priest/Black Emperor — destroyed in the War of the Four Emperors), Solomon (Black Emperor — mostly destroyed, same war), Amon & Jacob (Error — weakened), Zaratul (Fool — tied to the Secret Order), Abraham (Door — absorbed into the Church of the Fool's orbit), Tamara (Justiciar/Door — splintered into the School of Truth, Mirror People, and Theosophy Order branches), Eggers (Death — seeking to revive their god), Sanguines (Moon — sworn to the Earth Mother, allied to the Fool)
+**Stance:** Relics of a bloodier epoch; their heirlooms are still lethal.
+When the four empires fell in the War of the Four Emperors, their angel houses were exterminated, scattered, or forced into servitude to surviving churches. Their characteristics, artifacts, and notebooks surface on the market like sunken treasure — each one a plot hook with a body count. Devil-line families (Nois, Andariel, Beria) persist in the Abyss-worshipping underworld, corrupted by the Mother Tree of Desire. Any family name spoken aloud in Beyonder company changes the temperature of the room.
+<!-- rag: keyword, priority:7, triggers: angel family, antigonus, tudor, solomon, amon, abraham, tamara, eggers, sanguines, zaratul, devil family, war of the four emperors -->
 
 ## 3. LOCATIONS
 
