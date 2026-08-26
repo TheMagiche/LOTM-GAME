@@ -104,7 +104,11 @@
       "hp": { "current": 20, "max": 20 },
       "mp": { "current": 12, "max": 12 },
       "stats": { "Spirituality": 6, "Physique": 3, "Reasoning": 8 },
-      "skills": ["Recall every text studied", "Interpret occult languages", "Research forbidden history"],
+      "skills": [
+        "Enhanced Memory — recall every page he has ever touched",
+        "Language Comprehension — read dead tongues on first sight",
+        "Whisper Discernment — separate a book's opinions from its facts"
+      ],
       "abilities": ["Enhanced Memory", "Language Comprehension", "Spirituality", "Research Mastery", "Whisper Discernment"],
       "traits": ["erudite", "reckless", "ironic", "patient", "secretive"],
       "notes": "Scholar of the Hermit Pathway whose Fourth Epoch research has begun whispering interpretations of its own."

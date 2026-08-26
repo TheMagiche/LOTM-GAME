@@ -104,7 +104,11 @@
       "hp": { "current": 24, "max": 24 },
       "mp": { "current": 12, "max": 12 },
       "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 6 },
-      "skills": ["Read and amplify desire", "Resist corruption through discipline", "Move through decadent social circles"],
+      "skills": [
+        "Desire Manipulation — shape what a room finds irresistible",
+        "Pleasure Aura — make her presence feel like indulgence",
+        "Appetite Sense — taste every hunger in the company she keeps"
+      ],
       "abilities": ["Desire Manipulation", "Enhanced Charm", "Pleasure Aura", "Ritual Magic", "Appetite Sense"],
       "traits": ["indulgent", "self-aware", "magnetic", "disciplined", "damned-adjacent"],
       "notes": "Abyss pathway Pleasure who uses charm and discipline to keep predatory appetites from choosing for her."

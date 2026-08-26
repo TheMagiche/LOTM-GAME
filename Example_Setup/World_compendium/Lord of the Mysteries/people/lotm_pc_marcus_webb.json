@@ -104,7 +104,11 @@
       "hp": { "current": 28, "max": 28 },
       "mp": { "current": 12, "max": 12 },
       "stats": { "Spirituality": 6, "Physique": 7, "Reasoning": 4 },
-      "skills": ["Endure pain and confinement", "Resist physical and spiritual control", "Turn restraints into leverage"],
+      "skills": [
+        "Confinement Authority — command the boundaries that hold things in",
+        "Lock Dominion — rule every lock, chain, and barred door",
+        "Containment Aura — keep dangerous things contained by presence alone"
+      ],
       "abilities": ["Confinement Authority", "Enhanced Endurance", "Pain Resistance", "Lock Dominion", "Containment Aura"],
       "traits": ["steadfast", "taciturn", "disciplined", "fair", "unbreakable"],
       "notes": "Chained pathway survivor whose strength is built from endurance, restraint, and refusal to be owned again."

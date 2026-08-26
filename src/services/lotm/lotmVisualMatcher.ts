@@ -1,4 +1,5 @@
 import type { LocationEntry, NPCEntry } from '../../types';
+import { PROPER_NOUN_STOP_WORDS } from '../../utils/stopWords';
 import {
     LOTM_CG_ECHOES,
     LOTM_DEFAULT_BACKDROP,
@@ -8,6 +9,67 @@ import {
     type LotmCgEcho,
     type LotmPortraitVisual,
 } from '../../worldpacks/lotmVisualManifest';
+
+const WEAK_SINGLE_TOKENS = new Set([
+    'the', 'a', 'an', 'of', 'and', 'or', 'to', 'in', 'on', 'at', 'for', 'with', 'by',
+    ...[...PROPER_NOUN_STOP_WORDS].map(w => w.toLowerCase()),
+]);
+
+function tokensOf(normalized: string): string[] {
+    return normalized.split(/\s+/).filter(Boolean);
+}
+
+/** Single-word articles/stopwords are too common to use as visual aliases. */
+export function isWeakAlias(normalized: string): boolean {
+    const tokens = tokensOf(normalized);
+    if (tokens.length === 0) return true;
+    if (tokens.length >= 2) return false;
+    const t = tokens[0];
+    return t.length < 3 || WEAK_SINGLE_TOKENS.has(t);
+}
+
+/** True when `needle` appears as consecutive whole words in `hay`. */
+export function phraseContained(hay: string, needle: string): boolean {
+    const hayT = tokensOf(hay);
+    const needleT = tokensOf(needle);
+    if (!needleT.length || needleT.length > hayT.length) return false;
+    for (let i = 0; i <= hayT.length - needleT.length; i++) {
+        let ok = true;
+        for (let j = 0; j < needleT.length; j++) {
+            if (hayT[i + j] !== needleT[j]) { ok = false; break; }
+        }
+        if (ok) return true;
+    }
+    return false;
+}
+
+function longestMatchingAlias(aliases: string[], text: string): string | null {
+    const hay = normalizeAlias(text);
+    let best: string | null = null;
+    for (const alias of aliases) {
+        const a = normalizeAlias(alias);
+        if (!a || isWeakAlias(a)) continue;
+        if (phraseContained(hay, a) && a.length > (best?.length ?? 0)) best = a;
+    }
+    return best;
+}
+
+function isAutoLotmPortrait(src: string): boolean {
+    return /\/assets\/lotm\//.test(src) || src.startsWith('image/characters/') || src.startsWith('image/vol_');
+}
+
+function manifestPortraitSrc(portrait: string): string {
+    return portrait.startsWith('/') ? portrait : `/assets/lotm/${portrait}`;
+}
+
+/** Prefer a manifest hit over a previously auto-attached (and possibly wrong) LOTM asset. */
+function resolvePortraitSrc(stored: string | undefined, hit: LotmPortraitVisual | null): string {
+    if (hit) {
+        const next = hit.portrait;
+        if (!stored || isAutoLotmPortrait(stored)) return next;
+    }
+    return stored || '';
+}
 
 export type LotmMatchInput = {
     placeName?: string | null;
@@ -36,15 +98,6 @@ function haystack(parts: Array<string | null | undefined>): string {
     return normalizeAlias(parts.filter(Boolean).join(' '));
 }
 
-function aliasHits(aliases: string[], text: string): boolean {
-    const hay = normalizeAlias(text);
-    return aliases.some(alias => {
-        const a = normalizeAlias(alias);
-        if (!a) return false;
-        return hay.includes(a);
-    });
-}
-
 export function matchLotmBackdrop(placeName?: string | null, placeAliases?: string | null, gmText?: string | null): string {
     const text = haystack([placeName, placeAliases, gmText]);
     if (!text) return LOTM_DEFAULT_BACKDROP;
@@ -52,7 +105,7 @@ export function matchLotmBackdrop(placeName?: string | null, placeAliases?: stri
     for (const place of LOTM_PLACES) {
         for (const alias of place.aliases) {
             const a = normalizeAlias(alias);
-            if (a && text.includes(a) && a.length >= (best?.len ?? 0)) {
+            if (a && !isWeakAlias(a) && phraseContained(text, a) && a.length >= (best?.len ?? 0)) {
                 best = { id: place.id, backdrop: place.backdrop, len: a.length };
             }
         }
@@ -63,13 +116,19 @@ export function matchLotmBackdrop(placeName?: string | null, placeAliases?: stri
 export function matchLotmPortraitEntry(name: string, spoilers: boolean): LotmPortraitVisual | null {
     const key = normalizeAlias(name);
     if (!key) return null;
+    // A bare article ("The") must not pick "the hanged man" / "the sun".
+    if (isWeakAlias(key) && tokensOf(key).length === 1) return null;
     let best: LotmPortraitVisual | null = null;
     let bestLen = 0;
     for (const entry of LOTM_PORTRAITS) {
         if (entry.spoiler && !spoilers) continue;
         for (const alias of entry.aliases) {
             const a = normalizeAlias(alias);
-            if (a && (key === a || key.includes(a) || a.includes(key)) && a.length > bestLen) {
+            if (!a || isWeakAlias(a)) continue;
+            const hit = key === a
+                || phraseContained(key, a)
+                || (!isWeakAlias(key) && phraseContained(a, key));
+            if (hit && a.length > bestLen) {
                 best = entry;
                 bestLen = a.length;
             }
@@ -78,23 +137,36 @@ export function matchLotmPortraitEntry(name: string, spoilers: boolean): LotmPor
     return best;
 }
 
+type RankedPortraitHit = LotmPortraitHit & { matchedAlias: string; locked?: boolean };
+
+function suppressNestedAliasHits(hits: RankedPortraitHit[]): RankedPortraitHit[] {
+    return hits.filter(h => h.locked || !hits.some(other =>
+        other !== h
+        && other.matchedAlias !== h.matchedAlias
+        && phraseContained(other.matchedAlias, h.matchedAlias)
+    ));
+}
+
 export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
     const spoilers = !!input.spoilers;
-    const hits: LotmPortraitHit[] = [];
+    const ranked: RankedPortraitHit[] = [];
     const seen = new Set<string>();
 
-    const push = (name: string, src: string, isPc?: boolean) => {
+    const push = (name: string, src: string, matchedAlias: string, opts?: { isPc?: boolean; locked?: boolean }) => {
         const key = normalizeAlias(name);
-        if (!key || seen.has(key)) return;
+        if (!key || seen.has(key) || !src) return;
         seen.add(key);
-        hits.push({ name, src, isPc });
+        ranked.push({
+            name, src, isPc: opts?.isPc, locked: opts?.locked,
+            matchedAlias: normalizeAlias(matchedAlias) || key,
+        });
     };
 
     const pc = input.playerCharacter;
     if (pc) {
         const fromManifest = matchLotmPortraitEntry(pc.name, spoilers);
-        const src = pc.portrait || fromManifest?.portrait || '';
-        if (src) push(pc.name, src, true);
+        const src = resolvePortraitSrc(pc.portrait, fromManifest);
+        if (src) push(pc.name, src, pc.name, { isPc: true, locked: true });
     }
 
     const ledger = input.npcLedger ?? [];
@@ -104,24 +176,27 @@ export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
     for (const npc of ledger) {
         if (npc.archived) continue;
         const staged = onStage.has(npc.id);
-        const named = aliasHits([npc.name, ...(npc.aliases ? npc.aliases.split(',') : [])], gm);
-        if (!staged && !named) continue;
-        const fromManifest = matchLotmPortraitEntry(npc.name, spoilers);
-        const src = npc.portrait || fromManifest?.portrait || '';
-        if (src) push(npc.name, src);
+        const namedAlias = gm
+            ? longestMatchingAlias([npc.name, ...(npc.aliases ? npc.aliases.split(',') : [])], gm)
+            : null;
+        if (!staged && !namedAlias) continue;
+        const fromManifest = matchLotmPortraitEntry(npc.name, spoilers)
+            ?? (npc.aliases ? matchLotmPortraitEntry(npc.aliases.split(',')[0] ?? '', spoilers) : null);
+        const src = resolvePortraitSrc(npc.portrait, fromManifest);
+        if (src) push(npc.name, src, namedAlias || npc.name, { locked: staged });
     }
 
     if (gm) {
         for (const entry of LOTM_PORTRAITS) {
             if (entry.spoiler && !spoilers) continue;
-            if (aliasHits(entry.aliases, gm)) {
-                const display = entry.aliases[0];
-                push(display.replace(/\b\w/g, c => c.toUpperCase()), entry.portrait);
-            }
+            const matched = longestMatchingAlias(entry.aliases, gm);
+            if (!matched) continue;
+            const display = entry.aliases[0];
+            push(display.replace(/\b\w/g, c => c.toUpperCase()), entry.portrait, matched);
         }
     }
 
-    return hits.slice(0, 3);
+    return suppressNestedAliasHits(ranked).slice(0, 3).map(({ matchedAlias: _a, locked: _l, ...hit }) => hit);
 }
 
 export function matchLotmCgEcho(input: LotmMatchInput, dismissed: ReadonlySet<string> = new Set()): LotmCgEcho | null {
@@ -134,7 +209,7 @@ export function matchLotmCgEcho(input: LotmMatchInput, dismissed: ReadonlySet<st
         if (dismissed.has(echo.image)) continue;
         for (const alias of echo.aliases) {
             const a = normalizeAlias(alias);
-            if (a && text.includes(a) && a.length >= (best?.len ?? 0)) {
+            if (a && !isWeakAlias(a) && phraseContained(text, a) && a.length >= (best?.len ?? 0)) {
                 best = { echo, len: a.length };
             }
         }
@@ -165,13 +240,17 @@ export function matchLotmVisuals(input: LotmMatchInput, dismissedCgs: ReadonlySe
 export function attachLotmPortraitsToNpcs<T extends { name: string; aliases?: string; portrait?: string }>(
     npcs: T[],
     spoilers = false,
+    mode: 'fill' | 'correct' = 'fill',
 ): T[] {
     return npcs.map(npc => {
-        if (npc.portrait) return npc;
         const hit = matchLotmPortraitEntry(npc.name, spoilers)
             ?? (npc.aliases ? matchLotmPortraitEntry(npc.aliases.split(',')[0] ?? '', spoilers) : null);
         if (!hit) return npc;
-        return { ...npc, portrait: `/assets/lotm/${hit.portrait}` };
+        const next = manifestPortraitSrc(hit.portrait);
+        if (npc.portrait === next) return npc;
+        if (npc.portrait && !isAutoLotmPortrait(npc.portrait)) return npc;
+        if (!npc.portrait && mode === 'correct') return npc;
+        return { ...npc, portrait: next };
     });
 }
 

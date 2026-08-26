@@ -104,7 +104,11 @@
       "hp": { "current": 22, "max": 22 },
       "mp": { "current": 14, "max": 14 },
       "stats": { "Spirituality": 7, "Physique": 4, "Reasoning": 6 },
-      "skills": ["Read emotional states", "Observe without being noticed", "Shape a scene through insight"],
+      "skills": [
+        "Emotion Perception — read feelings before they are spoken",
+        "Psychological Insight — find the want beneath the words",
+        "Composure — remain unreadable while reading everyone else"
+      ],
       "abilities": ["Spirit Vision", "Emotion Perception", "Spirituality", "Psychological Insight", "Composure"],
       "traits": ["perceptive", "composed", "vindictive", "protective", "secretive"],
       "notes": "Visionary pathway Spectator whose calm observation reveals what people want before they admit it to themselves."

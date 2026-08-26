@@ -104,7 +104,11 @@
       "hp": { "current": 30, "max": 30 },
       "mp": { "current": 10, "max": 10 },
       "stats": { "Spirituality": 5, "Physique": 8, "Reasoning": 4 },
-      "skills": ["Break through physical obstacles", "Protect companions in close combat", "Endure exhaustion and injury"],
+      "skills": [
+        "Enhanced Strength — break what ordinary men cannot move",
+        "Toughness — keep standing after the fight should have ended him",
+        "Weapon Mastery (improvised) — turn anything into an arm"
+      ],
       "abilities": ["Enhanced Strength", "Toughness", "Weapon Mastery (improvised)", "Intimidation", "Heat Resistance"],
       "traits": ["protective", "honest", "strong", "hot-tempered", "loyal"],
       "notes": "Twilight Giant pathway Barbarian whose formidable strength is tempered by a stubborn instinct to shield others."

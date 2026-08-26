@@ -104,7 +104,11 @@
       "hp": { "current": 20, "max": 20 },
       "mp": { "current": 14, "max": 14 },
       "stats": { "Spirituality": 7, "Physique": 4, "Reasoning": 6 },
-      "skills": ["Offer dangerous prayers", "Hear hidden supplications", "Shelter the desperate"],
+      "skills": [
+        "Ritual Prayer — offer rites that reach something that answers",
+        "Spirit Hearing — overhear prayers meant for other ears",
+        "Sanctuary Sense — find holy ground and its hollow imitations"
+      ],
       "abilities": ["Ritual Prayer", "Spirit Hearing", "Blessing", "Spirituality", "Sanctuary Sense"],
       "traits": ["compassionate", "heretical", "humble", "haunted", "devout"],
       "notes": "Former deacon and Secrets Suppliant. His prayers work in small, terrible ways, and he cannot stop hearing them."

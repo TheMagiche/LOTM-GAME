@@ -104,7 +104,11 @@
       "hp": { "current": 24, "max": 24 },
       "mp": { "current": 12, "max": 12 },
       "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 7 },
-      "skills": ["Bind agreements with words", "Detect lies in testimony", "Pass judgment with authority"],
+      "skills": [
+        "Binding Words — make spoken judgments carry literal weight",
+        "Lie Detection — hear the crack in sworn testimony",
+        "Judgment Strike — halt the guilty mid-stride"
+      ],
       "abilities": ["Binding Words", "Authority Presence", "Legal Mastery", "Lie Detection", "Judgment Strike"],
       "traits": ["principled", "severe", "articulate", "incorruptible", "unforgiving"],
       "notes": "Arbiter who left the courts after discovering that spoken judgments can bind oaths and halt the guilty."

@@ -104,7 +104,11 @@
       "hp": { "current": 26, "max": 26 },
       "mp": { "current": 14, "max": 14 },
       "stats": { "Spirituality": 7, "Physique": 6, "Reasoning": 4 },
-      "skills": ["Bring light into darkness", "Bolster allies with faith", "Burn away corruption"],
+      "skills": [
+        "Light of Purification — burn away shadow and corruption alike",
+        "Enhanced Healing — mend wounds with borrowed sunlight",
+        "Courage Aura — steady allies by standing among them"
+      ],
       "abilities": ["Light of Purification", "Enhanced Healing", "Spirituality", "Bane Against Evil", "Courage Aura"],
       "traits": ["devout", "compassionate", "courageous", "conflicted", "stubborn"],
       "notes": "Sun pathway Sun-Blessed whose radiance strengthens allies and makes hidden corruption difficult to conceal."

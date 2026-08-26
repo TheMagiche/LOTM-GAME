@@ -104,7 +104,11 @@
       "hp": { "current": 24, "max": 24 },
       "mp": { "current": 10, "max": 10 },
       "stats": { "Spirituality": 5, "Physique": 5, "Reasoning": 6 },
-      "skills": ["Spot exploitable flaws", "Steal small advantages", "Escape through misdirection"],
+      "skills": [
+        "Plunder — take what was guarded as though it were offered",
+        "Sleight of Hand — lift a purse or plant a lie unseen",
+        "Trap Sense — feel the snare before it springs"
+      ],
       "abilities": ["Plunder", "Enhanced Agility", "Spirituality", "Sleight of Hand", "Trap Sense"],
       "traits": ["greedy", "charming", "agile", "loyal", "superstitious"],
       "notes": "Error pathway Marauder who finds the loophole in every lock, contract, and carefully guarded advantage."

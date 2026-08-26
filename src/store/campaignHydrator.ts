@@ -23,6 +23,7 @@ import { safeSceneNum } from '../utils/helpers';
 import type { ArcRecord } from '../types/arc';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
 import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
+import { attachLotmPortraitsToNpcs } from '../services/lotm/lotmVisualMatcher';
 import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
 
 /**
@@ -346,6 +347,15 @@ export async function hydrateCampaign(campaignId: string) {
             console.log('[Hydrator] Backfilled LOTM pathway/sequence on NPC ledger');
             try { await saveNPCLedger(campaignId, finalNpcLedger); } catch (e) {
                 console.warn('[Hydrator] Failed to persist LOTM pathway backfill:', e);
+            }
+        }
+        const spoilers = (await loadCampaignMeta(campaignId)).lotmSpoilers === true;
+        const nextPortraits = attachLotmPortraitsToNpcs(finalNpcLedger, spoilers, 'correct');
+        if (nextPortraits.some((n, i) => n !== finalNpcLedger[i])) {
+            finalNpcLedger = nextPortraits;
+            console.log('[Hydrator] Backfilled LOTM portraits on NPC ledger');
+            try { await saveNPCLedger(campaignId, finalNpcLedger); } catch (e) {
+                console.warn('[Hydrator] Failed to persist LOTM portrait backfill:', e);
             }
         }
         if (finalContext.playerCharacter) {

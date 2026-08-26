@@ -104,7 +104,11 @@
       "hp": { "current": 28, "max": 28 },
       "mp": { "current": 12, "max": 12 },
       "stats": { "Spirituality": 6, "Physique": 7, "Reasoning": 4 },
-      "skills": ["Read currents and storms", "Command a ship in impossible weather", "Endure lightning and rough seas"],
+      "skills": [
+        "Water Affinity — hear the sea speak in pressures and currents",
+        "Storm Sense — know weather before it knows itself",
+        "Lightning Resistance — let the storm's fury part around her"
+      ],
       "abilities": ["Water Affinity", "Enhanced Strength", "Storm Sense", "Seamanship Mastery", "Lightning Resistance"],
       "traits": ["commanding", "blunt", "loyal", "superstitious", "defiant"],
       "notes": "Bayam sailor and Tyrant pathway Beyonder. The sea speaks to her in pressure and current, and storms bend around her mast."

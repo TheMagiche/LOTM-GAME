@@ -104,7 +104,11 @@
       "hp": { "current": 24, "max": 24 },
       "mp": { "current": 12, "max": 12 },
       "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 6 },
-      "skills": ["Approach without notice", "Prepare precise poisons", "Exploit an opening in combat"],
+      "skills": [
+        "Stealth — arrive beside a target unnoticed",
+        "Poison Craft — prepare doses precise to purpose",
+        "Charm — be welcomed where force would fail"
+      ],
       "abilities": ["Enhanced Agility", "Stealth", "Assassination Arts", "Poison Craft", "Charm"],
       "traits": ["charming", "ruthless", "disciplined", "vain", "principled"],
       "notes": "Demoness pathway Assassin whose elegance, poisons, and discipline conceal a life built around controlled danger."

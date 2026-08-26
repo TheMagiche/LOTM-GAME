@@ -104,7 +104,11 @@
       "hp": { "current": 28, "max": 28 },
       "mp": { "current": 10, "max": 10 },
       "stats": { "Spirituality": 5, "Physique": 7, "Reasoning": 5 },
-      "skills": ["Track prey through hostile ground", "Set ambushes and traps", "Exploit an enemy's weakness"],
+      "skills": [
+        "Enhanced Tracking — follow prey across any hostile ground",
+        "Body Control — push his body past its ordinary limits",
+        "Survival Instinct — endure where pursuit should have ended him"
+      ],
       "abilities": ["Enhanced Tracking", "Enhanced Strength", "Body Control", "Firearms Mastery", "Survival Instinct"],
       "traits": ["disciplined", "blunt", "loyal", "wrathful", "practical"],
       "notes": "Hunter pathway tracker who treats every pursuit as a contest of preparation, terrain, and patience."
