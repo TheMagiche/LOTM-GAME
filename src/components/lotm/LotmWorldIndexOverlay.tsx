@@ -115,6 +115,7 @@ export function LotmWorldIndexOverlay() {
                         <div className="lotm-world-index-bar-fill" style={{ width: `${pct}%` }} />
                     </div>
                 )}
+                <p id="lotm-world-index-progress-2" className="lotm-world-index-progress text-dim text-xs mt-2">This only runs once during first load. It may take a few minutes to complete.</p>
             </div>
         </div>
     );

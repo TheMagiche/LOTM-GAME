@@ -29,4 +29,27 @@ describe('characterProfileFromPlayerCharacter', () => {
         expect(identity.level).toBe(9);
         expect(identity.archetype).toMatch(/Seer/);
     });
+
+    it('seeds an authored wanted bounty onto the live sheet', () => {
+        const profile = characterProfileFromPlayerCharacter(
+            {
+                id: 'pc-1',
+                name: 'Clara Whitlock',
+                aliases: '',
+                appearance: '',
+                faction: '',
+                storyRelevance: '',
+                disposition: '',
+                status: '',
+                goals: '',
+                voice: '',
+                personality: '',
+                exampleOutput: '',
+                affinity: 0,
+                pcMeta: { bounty: { amountPounds: 30, issuer: 'Church of the Evernight', status: 'active' } },
+            },
+            DEFAULT_CHARACTER_PROFILE,
+        );
+        expect(profile.bounty).toBe('Church of the Evernight — 30 pounds');
+    });
 });

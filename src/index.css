@@ -1340,6 +1340,365 @@ html[style*="--lang-font-stack"] {
   color: #f3ead8;
 }
 
+.lotm-player-hud {
+  position: relative;
+  /* Stay above the backdrop (0) and scrim (1), but below `.lotm-chat` (3).
+     Chat owns the loot/dice modals (`fixed z-[120]`); if the HUD's stacking
+     context is higher, the expanded panel paints over those dialogs. */
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 10px 0;
+  padding: 8px 12px 10px;
+  background: linear-gradient(180deg, rgba(22, 18, 24, 0.9), rgba(14, 12, 16, 0.94));
+  border: 1px solid rgba(201, 162, 39, 0.32);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  color: #f3ead8;
+}
+
+.lotm-player-hud-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.lotm-player-hud-identity-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 180px;
+  margin: 0;
+  padding: 2px 6px 2px 2px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lotm-player-hud-identity-btn:hover,
+.lotm-player-hud-identity-btn:focus-visible {
+  border-color: rgba(201, 162, 39, 0.45);
+}
+
+.lotm-player-hud-emblem {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.28));
+}
+
+.lotm-player-hud-emblem.is-fallback {
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.18), transparent 70%);
+}
+
+.lotm-player-hud-identity {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.lotm-player-hud-kicker {
+  display: block;
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-player-hud-name {
+  display: block;
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotm-player-hud-pathway {
+  display: block;
+  margin: 2px 0 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.72);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotm-player-hud-meters {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 220px;
+  min-width: 140px;
+}
+
+.lotm-player-hud-meter {
+  flex: 1;
+  min-width: 0;
+}
+
+.lotm-player-hud-meter-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 224, 208, 0.7);
+  margin-bottom: 4px;
+}
+
+.lotm-player-hud-meter-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(232, 224, 208, 0.12);
+  overflow: hidden;
+}
+
+.lotm-player-hud-meter-track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.lotm-player-hud-meter.is-hp .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #8a1f24, #d4a017);
+}
+
+.lotm-player-hud-meter.is-hp.is-low .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #5a1216, #c0392b);
+}
+
+.lotm-player-hud-meter.is-spi .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #4a3a72, #c9b6e4);
+}
+
+.lotm-player-hud-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.lotm-player-hud-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: transparent;
+  color: #e8e0d0;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lotm-player-hud-toggle svg {
+  transition: transform 0.18s ease;
+}
+
+.lotm-player-hud.is-expanded .lotm-player-hud-toggle svg {
+  transform: rotate(180deg);
+}
+
+.lotm-player-hud-track {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lotm-player-hud-track li {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: rgba(232, 224, 208, 0.35);
+  border-bottom: 1px solid rgba(232, 224, 208, 0.12);
+  padding-bottom: 2px;
+}
+
+.lotm-player-hud-track li.is-past {
+  color: rgba(201, 162, 39, 0.55);
+  border-bottom-color: rgba(201, 162, 39, 0.35);
+}
+
+.lotm-player-hud-track li.is-current {
+  color: #e0c36a;
+  border-bottom-color: #e0c36a;
+  font-weight: 700;
+}
+
+.lotm-player-hud-ability-preview {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.72);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotm-player-hud-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(201, 162, 39, 0.18);
+}
+
+.lotm-player-hud-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.lotm-player-hud-fact dt {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.8);
+}
+
+.lotm-player-hud-fact dd {
+  margin: 2px 0 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 14px;
+  color: #f3ead8;
+}
+
+.lotm-player-hud-stats {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+}
+
+.lotm-player-hud-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lotm-player-hud-stats dt {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.8);
+}
+
+.lotm-player-hud-stats dd {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+}
+
+.lotm-player-hud-section {
+  margin: 0 0 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-player-hud-abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lotm-player-hud-abilities li {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: #f3ead8;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  padding: 2px 8px;
+}
+
+.lotm-player-hud-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lotm-player-hud-items li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: #f3ead8;
+}
+
+.lotm-player-hud-qty,
+.lotm-player-hud-equipped {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.75);
+}
+
+.lotm-player-hud-empty {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.5);
+  font-style: italic;
+}
+
+.lotm-player-hud-next p:last-child {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.7);
+}
+
+@media (max-width: 720px) {
+  .lotm-player-hud-main {
+    flex-wrap: wrap;
+  }
+
+  .lotm-player-hud-meters {
+    flex: 1 1 100%;
+    order: 3;
+  }
+
+  .lotm-player-hud-actions {
+    margin-left: auto;
+  }
+
+  .lotm-player-hud-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
 .lotm-play-header-menu {
   width: 32px;
   height: 32px;

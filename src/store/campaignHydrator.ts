@@ -23,6 +23,8 @@ import { safeSceneNum } from '../utils/helpers';
 import type { ArcRecord } from '../types/arc';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
 import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
+import { attachLotmPortraitsToNpcs } from '../services/lotm/lotmVisualMatcher';
+import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
 
 /**
  * WO-P5-12 §7 Step 1 — migrate Arc's state from `context.arcs` to the
@@ -347,6 +349,15 @@ export async function hydrateCampaign(campaignId: string) {
                 console.warn('[Hydrator] Failed to persist LOTM pathway backfill:', e);
             }
         }
+        const spoilers = (await loadCampaignMeta(campaignId)).lotmSpoilers === true;
+        const nextPortraits = attachLotmPortraitsToNpcs(finalNpcLedger, spoilers, 'correct');
+        if (nextPortraits.some((n, i) => n !== finalNpcLedger[i])) {
+            finalNpcLedger = nextPortraits;
+            console.log('[Hydrator] Backfilled LOTM portraits on NPC ledger');
+            try { await saveNPCLedger(campaignId, finalNpcLedger); } catch (e) {
+                console.warn('[Hydrator] Failed to persist LOTM portrait backfill:', e);
+            }
+        }
         if (finalContext.playerCharacter) {
             const nextPc = attachLotmPathwaysToNpcs([finalContext.playerCharacter])[0];
             if (nextPc !== finalContext.playerCharacter) {
@@ -365,6 +376,11 @@ export async function hydrateCampaign(campaignId: string) {
                             : finalContext.characterProfileData.abilities,
                     },
                 };
+                lotmPcBackfilled = true;
+            }
+            const seededInv = seedInventoryIfEmpty(finalContext.inventoryItems, finalContext.playerCharacter);
+            if (seededInv !== (finalContext.inventoryItems ?? []) && seededInv.length > 0) {
+                finalContext = { ...finalContext, inventoryItems: seededInv };
                 lotmPcBackfilled = true;
             }
         }

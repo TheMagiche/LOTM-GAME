@@ -100,4 +100,51 @@ describe('lotmVisualMatcher', () => {
         expect(match.portraits.length).toBeGreaterThan(0);
         expect(match.speakerName).toBe('Dunn');
     });
+
+    it('maps Eternal Blazing Sun / The Sun God to Aucuses, not Derrick', () => {
+        expect(matchLotmPortraitEntry('The Eternal Blazing Sun', false)?.id).toBe('eternal-blazing-sun');
+        expect(matchLotmPortraitEntry('The Sun God', false)?.id).toBe('eternal-blazing-sun');
+        expect(matchLotmPortraitEntry('The Sun God', false)?.portrait).toContain('aucuses');
+        expect(matchLotmPortraitEntry('The', false)).toBeNull();
+    });
+
+    it('does not stage a portrait from the English word "the"', () => {
+        const hits = matchLotmPortraits({
+            latestGmText: 'The tavern door opened and the rain came in.',
+            npcLedger: [{
+                id: 'n1',
+                name: 'The Eternal Blazing Sun',
+                aliases: 'The Sun God',
+                portrait: '/assets/lotm/image/characters/derrick_berg.webp',
+            } as never],
+        });
+        expect(hits.map(h => h.name).join(' ')).not.toMatch(/eternal|sun god|derrick/i);
+    });
+
+    it('prefers the Sun God over Derrick when the longer title is used', () => {
+        const hits = matchLotmPortraits({
+            latestGmText: 'A hymn to the Sun God rolled through the cathedral.',
+        });
+        expect(hits.some(h => h.src.includes('aucuses'))).toBe(true);
+        expect(hits.some(h => h.src.includes('derrick'))).toBe(false);
+    });
+
+    it('rewrites a wrong auto-attached LOTM portrait onto the Sun God', () => {
+        const [sun] = attachLotmPortraitsToNpcs([{
+            name: 'The Eternal Blazing Sun',
+            aliases: 'The Sun God',
+            portrait: '/assets/lotm/image/characters/derrick_berg.webp',
+        }], false, 'correct');
+        expect(sun.portrait).toContain('aucuses');
+        expect(sun.portrait).not.toContain('derrick');
+    });
+
+    it('does not refill a cleared portrait in correct mode', () => {
+        const [sun] = attachLotmPortraitsToNpcs([{
+            name: 'The Eternal Blazing Sun',
+            aliases: 'The Sun God',
+            portrait: '',
+        }], false, 'correct');
+        expect(sun.portrait).toBe('');
+    });
 });

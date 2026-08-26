@@ -93,7 +93,25 @@
         "Spirituality": 6,
         "Physique": 4,
         "Reasoning": 8
-      }
+      },
+      "purse": { "soli": 10, "pence": 4 }
+    },
+    "characterProfile": {
+      "name": "Isadora Quill",
+      "race": "Human (Loen)",
+      "class": "Reader — Sequence 9 (White Tower Pathway)",
+      "level": 9,
+      "hp": { "current": 22, "max": 22 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 4, "Reasoning": 8 },
+      "skills": [
+        "Speed Reading — devour a library in an afternoon",
+        "Document Analysis — extract truth from forgery and cipher alike",
+        "Hidden Text Perception — see what was written between the lines"
+      ],
+      "abilities": ["Speed Reading", "Enhanced Memory", "Document Analysis", "Spirituality", "Hidden Text Perception"],
+      "traits": ["relentless", "curious", "skeptical", "brave", "stubborn"],
+      "notes": "White Tower Reader whose hunger for knowledge turns every book, clue, and mystery into a lesson."
     }
   }
 ]

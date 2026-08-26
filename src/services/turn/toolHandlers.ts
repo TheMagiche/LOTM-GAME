@@ -123,7 +123,7 @@ const PROPOSE_INVENTORY_TOOL = {
             properties: {
                 name:            { type: 'string' as const, description: 'Item name.' },
                 op:              { type: 'string' as const, enum: ['grant', 'remove', 'equip', 'relocate'], description: "Operation. Default 'grant'." },
-                kind:            { type: 'string' as const, enum: ['weapon', 'armor', 'consumable', 'misc'], description: "Item kind. Default 'misc'." },
+                kind:            { type: 'string' as const, enum: ['weapon', 'armor', 'consumable', 'currency', 'misc'], description: "Item kind. Default 'misc'. Use 'currency' for coins, pounds, soli, or pence." },
                 quality:         { type: 'string' as const, enum: ['common', 'uncommon', 'rare', 'epic', 'legendary'], description: "Rarity/quality tier. Default 'common'." },
                 scalingStat:     { type: 'string' as const, enum: ['PWR', 'SPD', 'WIL'], description: "Scaling stat for weapons. Default 'PWR'." },
                 range:           { type: 'string' as const, enum: ['Close', 'Reach', 'Ranged'], description: "Weapon range. Default 'Close'." },
@@ -207,7 +207,7 @@ export function handleNotebookTool(
 }
 
 const VALID_OPS = new Set<string>(['grant', 'remove', 'equip', 'relocate']);
-const VALID_KINDS = new Set<string>(['weapon', 'armor', 'consumable', 'misc']);
+const VALID_KINDS = new Set<string>(['weapon', 'armor', 'consumable', 'currency', 'misc']);
 const VALID_QUALITIES = new Set<string>(['common', 'uncommon', 'rare', 'epic', 'legendary']);
 const VALID_SCALING_STATS = new Set<string>(['PWR', 'SPD', 'WIL']);
 const VALID_RANGES = new Set<string>(['Close', 'Reach', 'Ranged']);

@@ -93,7 +93,25 @@
         "Spirituality": 6,
         "Physique": 5,
         "Reasoning": 7
-      }
+      },
+      "purse": { "soli": 6, "pence": 5 }
+    },
+    "characterProfile": {
+      "name": "Emil Vasari",
+      "race": "Human (Loen)",
+      "class": "Apothecary — Sequence 9 (Moon Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 7 },
+      "skills": [
+        "Pharmacy Arts — compound remedies no apothecary can match",
+        "Blood Affinity — read bodies through their blood",
+        "Diagnosis Insight — name an ailment before it shows itself"
+      ],
+      "abilities": ["Pharmacy Arts", "Blood Affinity", "Enhanced Healing Potions", "Night Vision", "Diagnosis Insight"],
+      "traits": ["precise", "compassionate", "hungry", "ironic", "disciplined"],
+      "notes": "Apothecary whose remedies perform small miracles while the Moon Pathway awakens a dangerous hunger."
     }
   }
 ]

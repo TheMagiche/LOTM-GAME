@@ -93,7 +93,25 @@
         "Spirituality": 7,
         "Physique": 5,
         "Reasoning": 5
-      }
+      },
+      "purse": { "soli": 11, "pence": 7 }
+    },
+    "characterProfile": {
+      "name": "Evangeline Moss",
+      "race": "Human (Loen)",
+      "class": "Planter — Sequence 9 (Mother Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 14, "max": 14 },
+      "stats": { "Spirituality": 7, "Physique": 5, "Reasoning": 5 },
+      "skills": [
+        "Plant Cultivation — grow medicines no apothecary can match",
+        "Enhanced Healing Touch — mend flesh with a hand laid gently",
+        "Growth Sense — feel what the garden is becoming"
+      ],
+      "abilities": ["Plant Cultivation", "Enhanced Healing Touch", "Spirituality", "Herbalism", "Growth Sense"],
+      "traits": ["nurturing", "patient", "devout", "stubborn", "observant"],
+      "notes": "Earth Mother Planter whose healing garden produces medicines and one troubling thing in the compost."
     }
   }
 ]

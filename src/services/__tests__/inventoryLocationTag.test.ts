@@ -179,6 +179,18 @@ describe('Inventory Location Tag Subsystem', () => {
             expect(proposal.fromLocationTag).toBe('inventory');
             expect(proposal.locationTag).toBe('player base');
         });
+
+        it('accepts currency as a propose_inventory_change kind', () => {
+            const args = JSON.stringify({
+                name: 'soli',
+                op: 'grant',
+                kind: 'currency',
+                qty: 8,
+            });
+            const { proposal } = handleProposeInventoryTool(args);
+            expect(proposal.kind).toBe('currency');
+            expect(proposal.name).toBe('soli');
+        });
     });
 
     describe('Context Minification & OOC Support', () => {

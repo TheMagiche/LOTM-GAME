@@ -55,6 +55,7 @@ export function InventoryStagingBar({
             const category: InventoryItemCategory = p.kind === 'weapon' ? 'weapon'
                 : p.kind === 'armor' ? 'armor'
                 : p.kind === 'consumable' ? 'consumable'
+                : p.kind === 'currency' ? 'currency'
                 : 'misc';
             const newItem: InventoryItem = {
                 id: uid(),

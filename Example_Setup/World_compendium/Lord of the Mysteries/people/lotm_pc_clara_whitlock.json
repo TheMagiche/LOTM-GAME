@@ -93,7 +93,8 @@
         "Spirituality": 7,
         "Physique": 4,
         "Reasoning": 6
-      }
+      },
+      "purse": { "soli": 4, "pence": 6 }
     },
     "characterProfile": {
       "name": "Clara Whitlock",

@@ -93,7 +93,25 @@
         "Spirituality": 6,
         "Physique": 4,
         "Reasoning": 7
-      }
+      },
+      "purse": { "soli": 9, "pence": 8 }
+    },
+    "characterProfile": {
+      "name": "Edmund Vale",
+      "race": "Human (Loen)",
+      "class": "Apprentice — Sequence 9 (Door Pathway)",
+      "level": 9,
+      "hp": { "current": 22, "max": 22 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 4, "Reasoning": 7 },
+      "skills": [
+        "Ritualistic Magic — cast the Door pathway's opening rites",
+        "Spatial Awareness — feel how rooms and distances lie",
+        "Lock Intuition — persuade locked doors to stop arguing"
+      ],
+      "abilities": ["Spirituality", "Enhanced Learning", "Ritualistic Magic", "Spatial Awareness", "Lock Intuition"],
+      "traits": ["curious", "methodical", "absent-minded", "secretive", "brave"],
+      "notes": "Tingen Apprentice who can open doors into places he has never entered, including destinations that should not exist yet."
     }
   }
 ]

@@ -27,6 +27,7 @@ import { loadLootTree } from './lore/lootTreeLoader';
 import { attachLotmPortraitsToNpcs, findTingenLocationId } from './lotm/lotmVisualMatcher';
 import { attachLotmPathwaysToNpcs } from '../worldpacks/lotmPathways';
 import { characterIdentityFromPlayerCharacter, characterProfileFromPlayerCharacter } from './character/profileFromPc';
+import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
 
 
 export const DEFAULT_CONTEXT = {
@@ -167,6 +168,7 @@ export async function initializeCampaignState(params: {
                 identity: { ...ctx.characterProfile.identity, ...identity },
                 stats: ctx.characterProfileData.stats,
             };
+            ctx.inventoryItems = seedInventoryIfEmpty(ctx.inventoryItems, seededPc);
         }
         if (attachLotmVisuals && !ctx.currentPlaceId) {
             const locations = await loadLocationTable(campaignId);

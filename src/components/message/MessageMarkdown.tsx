@@ -4,6 +4,8 @@ import { useMemo } from 'react';
 import type { ReactNode } from 'react';
 import type { NPCEntry } from '../../types';
 import { useAppStore } from '../../store/useAppStore';
+import TITLES from '../../data/titles.json';
+import { PROPER_NOUN_STOP_WORDS } from '../../utils/stopWords';
 
 // WO-J: NPC names arrive wrapped in [Name] / [**Name**] brackets so the ledger detector
 // can read them out of the raw content. Render them as inline **bold** markdown instead of
@@ -33,6 +35,44 @@ type NpcLookup = {
     nameToId: Map<string, string>;
 };
 
+const TITLES_SET = new Set(TITLES.map(t => t.toLowerCase()));
+const LEADING_ARTICLES = new Set(['the', 'a', 'an']);
+const NAME_CONNECTIVES = new Set(['of', 'the', 'von', 'de', 'di', 'al', 'el', 'ibn', 'bin']);
+const WEAK_HIGHLIGHT_TOKENS = new Set([
+    ...LEADING_ARTICLES,
+    ...NAME_CONNECTIVES,
+    ...TITLES_SET,
+    ...[...PROPER_NOUN_STOP_WORDS].map(w => w.toLowerCase()),
+    'god', 'goddess', 'deity', 'king', 'queen', 'sun', 'moon',
+]);
+
+function isWeakHighlightToken(value: string): boolean {
+    const key = value.trim().toLowerCase();
+    if (!key) return true;
+    if (key.includes(' ')) return false;
+    return key.length < 3 || WEAK_HIGHLIGHT_TOKENS.has(key);
+}
+
+/**
+ * First usable given-name token for hover chips. Strips leading articles/titles
+ * so "The Eternal Blazing Sun" does not index the English word "the".
+ */
+export function firstNameHighlightToken(name: string): string | null {
+    const parts = name.trim().split(/\s+/).filter(Boolean);
+    if (parts.length < 2) return null;
+    let i = 0;
+    while (i < parts.length - 1 && isWeakHighlightToken(parts[i])) i++;
+    const token = parts[i]?.trim();
+    if (!token || isWeakHighlightToken(token)) return null;
+    return token;
+}
+
+export function npcHighlightVariants(npc: Pick<NPCEntry, 'name' | 'aliases'>): string[] {
+    const explicit = [npc.name, ...(npc.aliases ? npc.aliases.split(',').map(s => s.trim()).filter(Boolean) : [])];
+    const first = firstNameHighlightToken(npc.name);
+    return [...explicit, ...(first ? [first] : [])].filter(v => v && !isWeakHighlightToken(v));
+}
+
 function buildNpcLookup(ledger: NPCEntry[]): NpcLookup | null {
     const withPortrait = ledger.filter(n => n.portrait && !n.archived);
     if (withPortrait.length === 0) return null;
@@ -41,17 +81,10 @@ function buildNpcLookup(ledger: NPCEntry[]): NpcLookup | null {
     const nameToId = new Map<string, string>();
     for (const npc of withPortrait) {
         idToNpc.set(npc.id, { id: npc.id, name: npc.name, portrait: npc.portrait! });
-        const explicitVariants = [npc.name, ...(npc.aliases ? npc.aliases.split(',').map(s => s.trim()).filter(Boolean) : [])];
-        // Auto-index the first token of multi-word names (e.g. "Rin" from "Rin Holmes")
-        // so recurring NPCs get highlighted by their first name in prose. Skip tokens
-        // shorter than 3 chars to limit false-positive common-word matches.
-        const firstName = npc.name.split(/\s+/)[0]?.trim();
-        const autoVariants = firstName && firstName.length >= 3 ? [firstName] : [];
-        const variants = [...explicitVariants, ...autoVariants];
-        for (const v of variants) {
+        for (const v of npcHighlightVariants(npc)) {
             const key = v.toLowerCase();
             // Longer names win — only set if not already present (we sort names desc below).
-            if (v && !nameToId.has(key)) nameToId.set(key, npc.id);
+            if (!nameToId.has(key)) nameToId.set(key, npc.id);
         }
     }
     // Sort names by length descending so "Captain Aldric" matches before "Aldric".

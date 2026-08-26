@@ -603,7 +603,7 @@ function DiceFairnessSection({ context, updateContext }: DiceFairnessSectionProp
 // toggle that gates a *specific* dataset (`characterProfileActive`) stays
 // glued to its dataset in the Record tab.
 
-const ALL_PROFILE_FIELDS = ['name', 'race', 'class', 'level', 'hp', 'mp', 'stats', 'skills', 'abilities', 'traits', 'notes'];
+const ALL_PROFILE_FIELDS = ['name', 'race', 'class', 'level', 'hp', 'mp', 'stats', 'skills', 'abilities', 'traits', 'notes', 'bounty'];
 
 function BookkeepingBudgetSection() {
     const context = useAppStore((s) => s.context);

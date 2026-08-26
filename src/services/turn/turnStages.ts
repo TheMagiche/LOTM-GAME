@@ -24,6 +24,7 @@ import { uid } from '../../utils/uid';
 import { buildPayload, sendMessage } from '../chatEngine';
 import { rollEngines, rollDiceFairness, resolveManualRoll } from '../engine/engineRolls';
 import { resolveLootDrop } from '../engine/lootEngine';
+import { mergeLootIntoInventory } from '../engine/lootToInventory';
 import { buildOneShotDirective } from '../oneshot/oneShotEvents';
 import { toast } from '../../components/Toast';
 import { sanitizePayloadForApi } from '../lib/payloadSanitizer';
@@ -138,6 +139,10 @@ export function resolveEngineRolls(
                 `do NOT change its identity, inflate it, or add items beyond this list.]`;
             // Player-facing reveal — shows the drop on their own turn bubble.
             ctx.displayInputFinal += `\n\n💰 Loot drop armed (${armedLoot.rolls})`;
+            const merged = mergeLootIntoInventory(context.inventoryItems ?? [], loot.items ?? []);
+            if (merged !== context.inventoryItems) {
+                callbacks.setInventoryItems(merged);
+            }
         }
     }
 

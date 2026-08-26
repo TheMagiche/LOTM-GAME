@@ -244,9 +244,9 @@ describe('WO-A2 §4.7 — commitCharacterDraft', () => {
         expect(savedPc!.faction).toBe('Ironspire');
         expect(savedPc!.wants.long).toBe('find the sword');
 
-        // Inventory from slot 8.
-        expect(savedInventory.length).toBe(2);
-        expect(savedInventory.map(i => i.name)).toEqual(['a cloak', 'a knife']);
+        // Inventory from slot 8, plus a default civilian purse when no coins were listed.
+        expect(savedInventory.map(i => i.name)).toEqual(expect.arrayContaining(['a cloak', 'a knife', 'soli']));
+        expect(savedInventory.find(i => i.name === 'soli')?.qty).toBe(10);
 
         // The last context patch clears the draft.
         const last = contextPatches[contextPatches.length - 1];
@@ -267,6 +267,13 @@ describe('WO-A2 §4.7 — commitCharacterDraft', () => {
         const ledger = useAppStore.getState().npcLedger ?? [];
         expect(ledger.find(n => n.isPC)).toBeUndefined();
         expect(useAppStore.getState().playerCharacter?.name).toBe('Solo');
+    });
+
+    it('parseStartingInventory classifies Loen coins as currency and reads a leading quantity', () => {
+        const items = parseStartingInventory('8 soli, Grandfather\'s casebook, 12 pence');
+        expect(items.find(i => i.name === 'soli')).toEqual(expect.objectContaining({ qty: 8, category: 'currency' }));
+        expect(items.find(i => i.name === 'pence')).toEqual(expect.objectContaining({ qty: 12, category: 'currency' }));
+        expect(items.find(i => i.name === "Grandfather's casebook")?.category).toBe('misc');
     });
 
     it('parseStartingInventory splits on comma/pipe/newline and caps at 30', () => {
