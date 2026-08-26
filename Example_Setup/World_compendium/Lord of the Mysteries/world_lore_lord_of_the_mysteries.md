@@ -379,7 +379,7 @@ Where gods and high-sequence existences reside, symbolized as radiant spheres ab
 **Affinity:** 50
 **SignatureAbilities:** [divination arts, marionette threads, fooling of time and fate]
 **Pathway:** Fool
-**Sequence:** 9
+**Sequence:** 0
 Klein began as a history graduate who shot himself in the head with a luck-ritual gone wrong and woke in another man's skull. Everything since — Nighthawk service, the gray fog, the Tarot Club — grew from one decision to keep going anyway.
 **Wandering: true**
 **Intro Boost: fool, divination, gray fog, tarot, marionette**
@@ -398,7 +398,7 @@ Klein began as a history graduate who shot himself in the head with a luck-ritua
 **Affinity:** 60
 **SignatureAbilities:** [mind reading, emotion manipulation, dream walking]
 **Pathway:** Visionary
-**Sequence:** 9
+**Sequence:** 3
 **Region:** backlund
 **Tier:** recurring
 Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wrong séance and decided, characteristically, to be excellent at it.
@@ -419,7 +419,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Affinity:** 45
 **SignatureAbilities:** [water affinity, lightning calling, ship-borne combat mastery]
 **Pathway:** Tyrant
-**Sequence:** 7
+**Sequence:** 4
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: sea, ship, storm, hanged man, harbor**
@@ -460,7 +460,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Affinity:** 55
 **SignatureAbilities:** [sleeplessness, nightmare resistance, spirit perception]
 **Pathway:** Darkness
-**Sequence:** 8
+**Sequence:** 4
 **Region:** tingen
 **Tier:** recurring
 **Location: Tingen**
@@ -480,7 +480,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Affinity:** 25
 **SignatureAbilities:** [marionettist threads, historical projection, illusion mastery]
 **Pathway:** Fool
-**Sequence:** 4
+**Sequence:** 2
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: secret order, marionette, antigonus, prophecy**
@@ -499,7 +499,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Affinity:** 10
 **SignatureAbilities:** [identity theft, ability plagiarism, worm of time parasitism]
 **Pathway:** Error
-**Sequence:** 1
+**Sequence:** 2
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: monocle, thief, error, mischief, disguise**
@@ -518,7 +518,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Affinity:** 30
 **SignatureAbilities:** [mind weaving, prophetic authorship, resurrection of the written]
 **Pathway:** Visionary
-**Sequence:** 2
+**Sequence:** 0
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: visionary, prophet, adam, script, destiny**
@@ -596,7 +596,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Affinity:** 55
 **SignatureAbilities:** [Door Opening, Ritualistic Magic]
 **Pathway:** Door
-**Sequence:** 9
+**Sequence:** 4
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: magician, novel, spell, tarot club, fors**
@@ -616,7 +616,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **SignatureEquipment:** [worn leather armor, warrant ledger, short blade]
 **SignatureAbilities:** [Order, Physical Enhancement, Authority]
 **Pathway:** Justiciar
-**Sequence:** 9
+**Sequence:** 4
 **Tier:** recurring
 **Wandering: true**
 **Intro Boost: bounty, detective, xio, warrant, missing person**
@@ -806,7 +806,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Sanguines; Church of the Earth Mother
 **StoryRelevance:** Bridge between polite vampire society and mortal adventurers; apothecary talents make him useful and slightly unsettling.
 **Pathway:** Moon
-**Sequence:** 3
+**Sequence:** 4
 **Intro Boost: emlyn, vampire, sanguine, moon, apothecary**
 
 ### CHARACTER — Derrick Berg
@@ -817,7 +817,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** City of Silver; Church of the Fool (emerging)
 **StoryRelevance:** Link to the Forsaken Land's last human city — quests for relics, food, and salvation run through him.
 **Pathway:** Sun
-**Sequence:** 3
+**Sequence:** 4
 **Intro Boost: derrick, city of silver, sun, forsaken land, hope**
 
 ### CHARACTER — Ince Zangwill
@@ -839,7 +839,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Independent (Chained pathway)
 **StoryRelevance:** Monster-hunter of legend — employer, rescuer, or warning sign depending on what the party is hunting.
 **Pathway:** Chained
-**Sequence:** 3
+**Sequence:** 4
 **Intro Boost: sharron, hunter, chained, doll, monster**
 
 ### CHARACTER — Anderson Hood
@@ -850,7 +850,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Independent mercenary; Feysac contacts
 **StoryRelevance:** The wandering storm any fight-scene party may meet — ally today, duel tomorrow, both sincerely.
 **Pathway:** Red Priest
-**Sequence:** 4
+**Sequence:** 5
 **Wandering: true**
 **Intro Boost: anderson, swordsman, mercenary, duel, battle**
 
@@ -862,7 +862,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Church of the God of Combat
 **StoryRelevance:** Feysac's high-clergy muscle — the face parties see when the Combat church takes personal interest.
 **Pathway:** Twilight Giant
-**Sequence:** 4
+**Sequence:** 3
 **Intro Boost: colin iliad, combat, feysac, priest, giant**
 
 ### CHARACTER — Daly Simone
@@ -873,7 +873,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Church of the Evernight Goddess (Nighthawks)
 **StoryRelevance:** Nighthawk specialist for hauntings and spirit-world breaches; her séances open plot doors and occasionally gates.
 **Pathway:** Death
-**Sequence:** 6
+**Sequence:** 5
 **Intro Boost: daly, simone, spirit, seance, nighthawk**
 
 ### CHARACTER — Qilangos
@@ -906,7 +906,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Abraham Family
 **StoryRelevance:** The cursed family's public face — guide to Door-pathway mysteries and the mystery of Bethel's imprisonment.
 **Pathway:** Door
-**Sequence:** 6
+**Sequence:** 7
 **Wandering: true**
 **Intro Boost: dorian gray, abraham, door, wanderer, curse**
 
@@ -929,7 +929,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Church of the Evernight Goddess (Nighthawks)
 **StoryRelevance:** The mentor whose fate teaches the lesson every young Beyonder must learn: some futures read you back.
 **Pathway:** Hermit
-**Sequence:** 6
+**Sequence:** 9
 **Intro Boost: old neil, divination, nighthawk, mentor, fate**
 
 ### CHARACTER — Melissa Moretti
@@ -952,7 +952,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Church of the Earth Mother (nominal); independent
 **StoryRelevance:** Comic relief with body-horror edges — his experimental farms are quest sites waiting to be quarantined.
 **Pathway:** Mother
-**Sequence:** 6
+**Sequence:** 5
 **Wandering: true**
 **Intro Boost: frank lee, farmer, planter, crops, horror**
 
@@ -1190,7 +1190,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Augustus Family; Loen Kingdom
 **StoryRelevance:** His hidden pathway and failed godhood are the kingdom's most buried scandal — evidence could topple the monarchy.
 **Pathway:** Black Emperor
-**Sequence:** 2
+**Sequence:** 1
 **Intro Boost: george augustus, king of loen, apotheosis, black emperor**
 
 ### CHARACTER — Sia Palenque Eggers
@@ -1200,7 +1200,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Numinous Episcopate; Eggers Family
 **StoryRelevance:** West Balam's pale empress — the most powerful figure in the Southern Continent's Death-cult politics.
 **Pathway:** Death
-**Sequence:** 2
+**Sequence:** 1
 **Intro Boost: sia palenque, pale empress, numinous episcopate, balam**
 
 ### CHARACTER — Sauron-Einhorn-Medici
@@ -1220,7 +1220,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Church of the Evernight Goddess
 **StoryRelevance:** Backlund's supreme Nighthawk authority — his approval opens sealed vaults, his suspicion closes city gates.
 **Pathway:** Darkness
-**Sequence:** 4
+**Sequence:** 3
 **Region:** backlund
 **Location: Backlund**
 **Intro Boost: saint anthony, archbishop, backlund, cathedral**
@@ -1310,7 +1310,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Faction:** Church of the God of Steam and Machinery
 **StoryRelevance:** Where faith meets the laboratory — his patronage launches inventors, his scrutiny ends them.
 **Pathway:** Paragon
-**Sequence:** 4
+**Sequence:** 3
 **Region:** backlund/trier
 **Intro Boost: horamick, steam archbishop, scientist, university**
 
