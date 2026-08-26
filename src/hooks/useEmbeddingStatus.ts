@@ -14,6 +14,8 @@ export type EmbedJob = {
 export type EmbeddingRuntime = {
     modelReady: boolean;
     jobs: EmbedJob[];
+    /** False until the first runtime request settles, so callers can avoid treating the optimistic idle default as truth. */
+    polled: boolean;
 };
 
 const ACTIVE_MS = 1500;   // poll fast while the model is cold or a bulk embed runs
@@ -30,12 +32,13 @@ const IDLE_SCHEDULE_MS = [8000, 8000, 8000, 12000, 16000, 18000, 24000, 30000];
  * resolves.
  */
 export function useEmbeddingStatus(campaignId: string | null): EmbeddingRuntime {
-    const [runtime, setRuntime] = useState<EmbeddingRuntime>({ modelReady: true, jobs: [] });
+    const [runtime, setRuntime] = useState<EmbeddingRuntime>({ modelReady: true, jobs: [], polled: false });
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
         let cancelled = false;
         let idleStep = 0;
+        setRuntime({ modelReady: true, jobs: [], polled: false });
 
         const poll = async () => {
             let next = IDLE_SCHEDULE_MS[0];
@@ -44,7 +47,7 @@ export function useEmbeddingStatus(campaignId: string | null): EmbeddingRuntime 
                 const res = await fetch(`${API}/embedding/runtime${qs}`);
                 if (res.ok) {
                     const data = (await res.json()) as EmbeddingRuntime;
-                    if (!cancelled) setRuntime(data);
+                    if (!cancelled) setRuntime({ ...data, polled: true });
                     if (!data.modelReady || data.jobs.length > 0) {
                         // Active: poll fast, reset idle backoff so the next idle
                         // phase starts fresh from the schedule's beginning.
@@ -55,8 +58,11 @@ export function useEmbeddingStatus(campaignId: string | null): EmbeddingRuntime 
                         next = IDLE_SCHEDULE_MS[Math.min(idleStep, IDLE_SCHEDULE_MS.length - 1)];
                         idleStep++;
                     }
+                } else if (!cancelled) {
+                    setRuntime(prev => ({ ...prev, polled: true }));
                 }
             } catch {
+                if (!cancelled) setRuntime(prev => ({ ...prev, polled: true }));
                 next = IDLE_SCHEDULE_MS[Math.min(idleStep, IDLE_SCHEDULE_MS.length - 1)];
                 idleStep++;
             }

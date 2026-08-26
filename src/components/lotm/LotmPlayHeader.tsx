@@ -47,5 +47,6 @@ export async function exitLotmCampaign(): Promise<void> {
             }
         }
     }
+    useAppStore.getState().endLotmWorldIndex();
     setActiveCampaign(null);
 }

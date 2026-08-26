@@ -8,6 +8,11 @@ import type { OneShotEventId } from '../../services/oneshot/oneShotEvents';
 export type ContextScreenId = 'sys' | 'world' | 'eng' | 'chpt' | 'mem';
 
 
+export type LotmWorldIndexLock = {
+    campaignId: string | null;
+    emblemSrc: string;
+};
+
 // ── Slice type ─────────────────────────────────────────────────────────
 
 export type UISlice = {
@@ -103,6 +108,10 @@ export type UISlice = {
     updateSceneImageDraft: (patch: Partial<import('../../types').SceneImageDraft>) => void;
     setComposingSceneImage: (v: boolean) => void;
     setGeneratingSceneImage: (v: boolean) => void;
+    /** Blocks the LOTM UI while a newly created chronicle's world lore is embedding. */
+    lotmWorldIndexLock: LotmWorldIndexLock | null;
+    beginLotmWorldIndex: (lock: LotmWorldIndexLock) => void;
+    endLotmWorldIndex: () => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -193,4 +202,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     setGeneratingSceneImage: (v) => set((s) => ({
         sceneImageDraft: s.sceneImageDraft ? { ...s.sceneImageDraft, isGenerating: v } : null,
     })),
+    lotmWorldIndexLock: null,
+    beginLotmWorldIndex: (lock) => set({ lotmWorldIndexLock: lock }),
+    endLotmWorldIndex: () => set({ lotmWorldIndexLock: null }),
 });

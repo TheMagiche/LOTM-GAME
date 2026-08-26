@@ -57,7 +57,7 @@ export function AccordionList({ items, listKey, noun, placeholder, categoryLabel
                         <div className="flex items-center gap-1">
                             <button
                                 onClick={() => toggleItem(item.id)}
-                                className="flex-shrink-0 p-2 text-text-dim hover:text-terminal transition-colors"
+                                className="shrink-0 p-2 text-text-dim hover:text-terminal transition-colors"
                             >
                                 {isExpanded ? <ChevronDown size={14} className="text-terminal" /> : <ChevronRight size={14} />}
                             </button>
@@ -71,7 +71,7 @@ export function AccordionList({ items, listKey, noun, placeholder, categoryLabel
                             <button
                                 onClick={() => handleDelete(item.id)}
                                 onBlur={() => handleDeleteBlur(item.id)}
-                                className={`flex-shrink-0 px-2 py-1 transition-colors text-[10px] uppercase tracking-wider ${
+                                className={`shrink-0 px-2 py-1 transition-colors text-[10px] uppercase tracking-wider ${
                                     isConfirming
                                         ? 'bg-danger/20 text-danger border border-danger/60 hover:bg-danger/30'
                                         : 'text-text-dim hover:text-danger'

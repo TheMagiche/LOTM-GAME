@@ -889,12 +889,13 @@ html[style*="--lang-font-stack"] {
   left: 20px;
 }
 
-.lotm-title-hub-gear:hover,
+.lotm-title-hub-gear:hover:not(:disabled),
 .lotm-title-hub-back:hover:not(:disabled) {
   color: #e0c36a;
   border-color: rgba(201, 162, 39, 0.65);
 }
 
+.lotm-title-hub-gear:disabled,
 .lotm-title-hub-back:disabled {
   opacity: 0.45;
   cursor: default;
@@ -1373,4 +1374,86 @@ html[style*="--lang-font-stack"] {
 .lotm-play-drawer {
   background: #120f16 !important;
   border-right-color: rgba(201, 162, 39, 0.22) !important;
+}
+
+.lotm-world-index-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 6, 10, 0.82);
+  backdrop-filter: blur(10px);
+  cursor: wait;
+  outline: none;
+}
+
+.lotm-world-index-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  max-width: 360px;
+  text-align: center;
+}
+
+.lotm-world-index-emblem-wrap {
+  width: 148px;
+  height: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lotm-world-index-pulse 2.2s ease-in-out infinite;
+}
+
+.lotm-world-index-emblem {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.lotm-world-index-emblem.is-fallback {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 162, 39, 0.55);
+  width: 72px;
+  height: 72px;
+}
+
+@keyframes lotm-world-index-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.18)); }
+  50% { filter: drop-shadow(0 0 32px rgba(201, 162, 39, 0.8)); }
+}
+
+.lotm-world-index-title {
+  margin: 8px 0 0;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #e0c36a;
+}
+
+.lotm-world-index-progress {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  color: #f3ead8;
+}
+
+.lotm-world-index-bar {
+  width: 220px;
+  height: 3px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.18);
+  overflow: hidden;
+}
+
+.lotm-world-index-bar-fill {
+  height: 100%;
+  background: #c9a227;
+  transition: width 0.4s ease;
 }

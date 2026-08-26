@@ -6,6 +6,7 @@ import { ChatArea } from '../ChatArea';
 import { LotmStage } from './LotmStage';
 import { LotmCgEcho } from './LotmCgEcho';
 import { LotmChapterCard } from './LotmChapterCard';
+import { LotmWorldIndexOverlay } from './LotmWorldIndexOverlay';
 
 export function LotmIllustratedShell() {
     const context = useAppStore(s => s.context);
@@ -87,6 +88,7 @@ export function LotmIllustratedShell() {
             )}
 
             <LotmChapterCard />
+            <LotmWorldIndexOverlay />
         </div>
     );
 }

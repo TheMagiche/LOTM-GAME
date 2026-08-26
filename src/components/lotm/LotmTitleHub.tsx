@@ -8,7 +8,7 @@ import { createLotmCampaign } from '../../services/lotm/createLotmCampaign';
 import { filterLoadableCampaigns, pickContinueCampaign } from '../../services/lotm/lotmExclusiveUi';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
 import { LORD_OF_THE_MYSTERIES_PACK, DEFAULT_PLAYABLE_PC_ID } from '../../worldpacks/lordOfTheMysteries';
-import { lotmChronicleName } from '../../worldpacks/lotmPathways';
+import { getLotmPathway, lotmChronicleName, resolveLotmPathway } from '../../worldpacks/lotmPathways';
 import type { Campaign } from '../../types';
 import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
@@ -91,12 +91,17 @@ export function LotmTitleHub() {
         const pcId = selectedPcId || DEFAULT_PLAYABLE_PC_ID;
         const pc = playablePcs.find(option => option.id === pcId);
         const name = pc ? lotmChronicleName(pc.name, pc.pathway) : undefined;
+        const emblemSrc = getLotmPathway(pc?.pathway)?.emblemSrc
+            || resolveLotmPathway(pc?.pathway)?.emblemSrc
+            || '';
         setBusy(true);
         try {
             const created = await createLotmCampaign({ pcId, name });
+            useAppStore.getState().beginLotmWorldIndex({ campaignId: created.id, emblemSrc });
             await enterCampaign(created);
         } catch (e) {
             console.error('[LotmTitleHub] begin failed', e);
+            useAppStore.getState().endLotmWorldIndex();
             setBusy(false);
         }
     };
@@ -170,6 +175,7 @@ export function LotmTitleHub() {
                 className="lotm-title-hub-gear"
                 title="Settings"
                 aria-label="Settings"
+                disabled={busy}
                 onClick={() => useAppStore.getState().toggleSettings()}
             >
                 <Settings size={15} />
