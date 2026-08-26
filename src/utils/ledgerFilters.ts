@@ -1,4 +1,5 @@
-import type { NPCEntry, LocationEntry, FactionEntry } from '../types';
+import type { NPCEntry, LocationEntry, FactionEntry, ItemLedgerEntry, ItemLedgerKind } from '../types';
+import { ITEM_KIND_LABELS } from '../types';
 
 export type SortOrder = 'none' | 'az' | 'za';
 
@@ -51,6 +52,34 @@ export function filterFactions(factions: FactionEntry[], query: string): Faction
             f.aliases?.toLowerCase().includes(q) ||
             f.type?.toLowerCase().includes(q) ||
             f.region?.toLowerCase().includes(q)
+        );
+    }
+    return [...list].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export type ItemLedgerFilter = ItemLedgerKind | 'all' | 'possessed';
+
+export function filterItems(
+    items: ItemLedgerEntry[],
+    query: string,
+    kind: ItemLedgerFilter = 'all',
+): ItemLedgerEntry[] {
+    let list = items;
+    if (kind === 'possessed') {
+        list = list.filter(item => item.possessed);
+    } else if (kind !== 'all') {
+        list = list.filter(item => item.kind === kind);
+    }
+    if (query.trim()) {
+        const q = query.toLowerCase();
+        list = list.filter(item =>
+            item.name.toLowerCase().includes(q) ||
+            item.aliases?.toLowerCase().includes(q) ||
+            item.code?.toLowerCase().includes(q) ||
+            item.holder?.toLowerCase().includes(q) ||
+            item.locationTag?.toLowerCase().includes(q) ||
+            item.status?.toLowerCase().includes(q) ||
+            ITEM_KIND_LABELS[item.kind]?.toLowerCase().includes(q)
         );
     }
     return [...list].sort((a, b) => a.name.localeCompare(b.name));

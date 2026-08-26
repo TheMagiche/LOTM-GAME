@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_marcus_webb",
+    "name": "Marcus Webb",
+    "aliases": "\"Webb the Warden\"",
+    "appearance": "A heavyset man of thirty-nine with a boxer's scar tissue over both eyes, a warden's uniform gone soft at the collar, and keys on his belt that outnumber his duties. His voice is gravel and his patience is geological. He has not been surprised since 1347 and considers this a professional accomplishment.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Late thirties",
+      "build": "Heavyset, immovable, barrel-chested",
+      "symmetry": "Scarred, craggy, dependable-looking",
+      "hairStyle": "Brown, cropped to stubble",
+      "eyeColor": "Muddy brown, unblinking",
+      "skinTone": "Weathered, ruddy",
+      "gait": "Slow, planted, weight low",
+      "distinctMarks": "Boxer's scar tissue over both eyes; knuckles like cobblestones",
+      "clothing": "Prison warden's uniform, oversized key ring, truncheon worn smooth",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Loen Prison Service (warden, Backlund House of Correction)",
+    "storyRelevance": "Marcus took the Prisoner potion after eleven years watching men break against walls — the formula was pressed on him by a chaplain who said the prison needed a warden who understood cages from inside. The potion made him nearly unbreakable and gave him authority over confinement itself: locks acknowledge him, cells feel thicker near him, and once, memorably, a rampaging Beyonder couldn't leave the exercise yard until Marcus nodded. The chaplain has vanished. The prison's newest wing holds prisoners no court sentenced.",
+    "goals": "Keep order in a house holding things worse than criminals. Find the chaplain or his grave. Understand what the unsentenced wing actually contains — and who holds its keys besides him.",
+    "disposition": "Steadfast, taciturn, fair within his walls and merciless to chaos. Believes everyone deserves a cell that keeps them and the world safe — including himself.",
+    "status": "Alive",
+    "voice": "Gravel-rough, economical, prison-yard cadence. Silence is half his vocabulary.",
+    "personality": "The Prisoner creed demands he understand bondage to master it, which Marcus does with uncomfortable honesty — he knows exactly what twenty years of walls would make of him. His risk is the cage becoming comfort: the pathway rewards endurance, and endurance without hope is just slow burial.",
+    "exampleOutput": "[**Marcus**]: \"New wing's got six men on paper and nine at count.\" He turns the biggest key slowly. \"I don't ask what the extra three are yet. I just know my locks hold them and my men don't see them.\" He looks up. \"You're going to ask me to open something. Answer first: can you put it back?\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "Backlund House of Correction, night rounds",
+    "drives": {
+      "coreWant": "To be the wall that holds — for prisoners, wardens, and the world alike",
+      "sessionWant": "Learn what the unsentenced wing holds and find the chaplain's fate",
+      "sceneWant": "Contain the situation — literally if possible"
+    },
+    "wants": {
+      "short": [
+        "Run the night count personally",
+        "Inspect the new wing's wards (unofficially)",
+        "Write the letter to the chaplain's order he writes weekly"
+      ],
+      "medium": [
+        "Identify who sentences prisoners to the new wing",
+        "Master Confinement without becoming its prisoner",
+        "Advance toward Warden of Secrets deliberately"
+      ],
+      "long": "Retire having lost no warden, freed no monster, and broken no promise to any cell."
+    },
+    "personalityHex": {
+      "drive": 1,
+      "diligence": 2,
+      "boldness": 1,
+      "warmth": 1,
+      "empathy": 1,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Oversized key ring including three keys he didn't cut",
+        "Truncheon worn smooth as driftwood",
+        "Chaplain's formula page and final letter",
+        "Warden's logbook with unofficial annotations",
+        "Iron ring of confinement (Beyonder-forged)"
+      ],
+      "abilities": [
+        "Confinement Authority",
+        "Enhanced Endurance",
+        "Pain Resistance",
+        "Lock Dominion",
+        "Containment Aura"
+      ],
+      "pathway": "chained",
+      "sequence": 9
+    },
+    "traits": [
+      "steadfast",
+      "taciturn",
+      "disciplined",
+      "fair",
+      "unbreakable"
+    ],
+    "pcMeta": {
+      "archetype": "Prisoner — Sequence 9 (Chained Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 7,
+        "Reasoning": 4
+      }
+    }
+  }
+]

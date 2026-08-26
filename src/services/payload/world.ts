@@ -1,4 +1,4 @@
-import type { ChatMessage, LoreChunk, NPCEntry, ArchiveScene, ArchiveIndexEntry, TimelineEvent, DivergenceRegister, DivergenceEntry, ArchiveChapter, SceneEvent, SceneEventType, FactionEntry } from '../../types';
+import type { ChatMessage, LoreChunk, NPCEntry, ArchiveScene, ArchiveIndexEntry, TimelineEvent, DivergenceRegister, DivergenceEntry, ArchiveChapter, SceneEvent, SceneEventType, FactionEntry, ItemLedgerEntry } from '../../types';
 import { countTokens } from '../infrastructure/tokenizer';
 import { buildDriftAlert, buildKnowledgeBoundary, buildReactionMenuLine } from '../npc/npcBehaviorDirective';
 import { relationBand, describeHex } from '../npc/agency/agencyBands';
@@ -12,6 +12,7 @@ import { renderSlottedRagBlock, type SlottedRagSnippet } from '../archive-memory
 import type { TraceCollector } from './traceCollector';
 import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 import { buildFactionBlock } from './factions';
+import { buildItemLedgerBlock } from './items';
 
 const RECENT_SCENE_WINDOW = 3;      // mobile used 2; desktop can see a touch deeper
 const SCENE_EVENTS_TOKEN_BUDGET = 350; // mobile rationed ~200; desktop has headroom
@@ -151,6 +152,7 @@ export function buildWorld(opts: {
     /** WO-5: v3 stances replace scalar relationship context in this payload. */
     relationshipMemoryEnabled?: boolean;
     factionLedger?: FactionEntry[];
+    itemLedger?: ItemLedgerEntry[];
     playerFaction?: string;
 }): { worldContent: string; currentWorldTokens: number; divergenceContent: string; divergenceTokens: number; plannerEventTypes: SceneEventType[]; relationsBlock: string } {
     const {
@@ -181,6 +183,7 @@ export function buildWorld(opts: {
         slottedRagSnippets,
         relationshipMemoryEnabled = false,
         factionLedger,
+        itemLedger,
         playerFaction,
     } = opts;
 
@@ -543,6 +546,20 @@ export function buildWorld(opts: {
             content: factionBlock,
             tokens: countTokens(factionBlock),
             reason: 'Mentioned or on-stage factions from the ledger',
+        });
+    }
+
+    const itemBlock = buildItemLedgerBlock({
+        ledger: itemLedger ?? [],
+        history,
+        userMessage,
+    });
+    if (itemBlock) {
+        worldBlocks.push({
+            source: 'Items',
+            content: itemBlock,
+            tokens: countTokens(itemBlock),
+            reason: 'Possessed or mentioned artefacts from the inventory ledger',
         });
     }
 

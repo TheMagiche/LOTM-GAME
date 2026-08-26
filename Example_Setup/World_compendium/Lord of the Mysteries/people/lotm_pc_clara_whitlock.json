@@ -87,13 +87,46 @@
       "stubborn"
     ],
     "pcMeta": {
-      "archetype": "Seer — Sequence 9 (Fool Pathway)",
+      "archetype": "Fool Pathway · Seq 9 Seer",
       "combatTier": "Sequence 9",
       "stats": {
         "Spirituality": 7,
         "Physique": 4,
         "Reasoning": 6
       }
+    },
+    "characterProfile": {
+      "name": "Clara Whitlock",
+      "race": "Human (Loen)",
+      "class": "Fool Pathway · Seq 9 Seer",
+      "level": 9,
+      "hp": { "current": 18, "max": 18 },
+      "mp": { "current": 14, "max": 14 },
+      "stats": {
+        "Spirituality": 7,
+        "Physique": 4,
+        "Reasoning": 6
+      },
+      "skills": [
+        "Revere fate — interpret revelations, never treat them as certainties",
+        "Guide others, then remain a bystander",
+        "Divination isn't all-powerful"
+      ],
+      "abilities": [
+        "Enhanced Memory",
+        "Spirituality",
+        "Spirit Vision",
+        "Divination Arts & Ritualistic Magic",
+        "Danger Intuition"
+      ],
+      "traits": [
+        "curious",
+        "superstitious",
+        "secretive",
+        "pragmatic",
+        "stubborn"
+      ],
+      "notes": "Tingen jobbing printer; unregistered Seq 9 Seer. Grandfather's ciphered formula in the casebook; obituaries that no longer add up; a grey-eyed stranger who called her Eyes of the Fool. Wants the print-house debt cleared before quarter-day, and every church ledger to stay empty of her name."
     }
   }
 ]

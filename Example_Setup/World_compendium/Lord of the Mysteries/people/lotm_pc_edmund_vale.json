@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_edmund_vale",
+    "name": "Edmund Vale",
+    "aliases": "",
+    "appearance": "A tall, gangly postgraduate of twenty-six with perpetually ink-smudged cuffs and a brass sextant hanging from his belt like an afterthought. Sandy hair falls into pale blue eyes that measure distances by instinct. He wears a threadbare academic coat over a student's waistcoat, and his pockets clink with chalk stubs, star charts, and keys that open doors he has never seen.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Mid twenties",
+      "build": "Tall, gangly, slightly stooped from hunching over telescopes",
+      "symmetry": "Bookish-handsome; unremarkable until he smiles",
+      "hairStyle": "Sandy, perpetually falling forward",
+      "eyeColor": "Pale blue",
+      "skinTone": "Fair, wind-burned from rooftop observation nights",
+      "gait": "Long, distracted strides; walks into lampposts while reading",
+      "distinctMarks": "Ink-stained cuffs; a faint scar splitting one eyebrow",
+      "clothing": "Threadbare academic coat, student's waistcoat, brass sextant on his belt",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Khoy University astronomy department (unregistered Beyonder)",
+    "storyRelevance": "Edmund found the Apprentice formula folded inside a second-hand copy of Ptolemy bought from a Tingen bookstall, priced at two soli by a seller who clearly never read marginalia. He brewed the potion in the observatory basement during a meteor shower and has since discovered that locked doors no longer argue with him — including doors in buildings he has never entered. A letter arrived last week addressed to 'the Wanderer' at his lodgings, containing a star chart of constellations that will not exist for another century.",
+    "goals": "Finish his thesis before the university notices his absences. Learn why certain doors answer him and others scream. Find whoever is mailing him charts of skies that haven't happened yet — preferably before they arrive in person.",
+    "disposition": "Absent-minded, earnest, quietly brave in the way of men who have looked into deep space and refused to blink. Talks to doors. They sometimes seem to listen.",
+    "status": "Alive",
+    "voice": "Soft, precise lecture-hall diction that speeds up when excited. Narrates observations aloud as habit.",
+    "personality": "Methodical to the point of ritual, curious past the point of safety. Treats the Beyonder world like a research problem because treating it like a horror would stop him working. Keeps meticulous notes and shares none of them.",
+    "exampleOutput": "[**Edmund**]: He runs a thumb along the doorframe without touching it. \"Interesting. This one's been warded twice — once properly, once by an amateur.\" A pause. \"The amateur was frightened. I should like to know of what.\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Tingen",
+    "haunt": "The university observatory and its rooftop stairs",
+    "drives": {
+      "coreWant": "To map every hidden passage between the world's doors without being mapped himself",
+      "sessionWant": "Decode the impossible star chart and finish his thesis undetected",
+      "sceneWant": "Know what lies behind the nearest wall"
+    },
+    "wants": {
+      "short": [
+        "Sketch tonight's constellations against the chart that shouldn't exist",
+        "Test whether the library's sealed archive door answers him",
+        "Buy chalk and candles before shops close"
+      ],
+      "medium": [
+        "Find a safe source of Apprentice potion ingredients",
+        "Identify who mailed the century-forward star chart",
+        "Keep the observatory basement laboratory undiscovered"
+      ],
+      "long": "Walk every road the Door pathway opens — and choose which ones to close behind him."
+    },
+    "personalityHex": {
+      "drive": 1,
+      "diligence": 2,
+      "boldness": 0,
+      "warmth": 1,
+      "empathy": 0,
+      "composure": 1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Brass sextant (his grandfather's, slightly bent)",
+        "Star charts, including one that shows the wrong sky",
+        "Chalk, candles, and a travel ritual kit",
+        "University library key (official)",
+        "Notebook of door measurements across Tingen"
+      ],
+      "abilities": [
+        "Spirituality",
+        "Enhanced Learning",
+        "Ritualistic Magic",
+        "Spatial Awareness",
+        "Lock Intuition"
+      ],
+      "pathway": "door",
+      "sequence": 9
+    },
+    "traits": [
+      "curious",
+      "methodical",
+      "absent-minded",
+      "secretive",
+      "brave"
+    ],
+    "pcMeta": {
+      "archetype": "Apprentice — Sequence 9 (Door Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 4,
+        "Reasoning": 7
+      }
+    }
+  }
+]

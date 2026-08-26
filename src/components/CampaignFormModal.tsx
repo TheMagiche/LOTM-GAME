@@ -22,8 +22,8 @@ export interface CampaignFormModalProps {
     setLootName: (v: string) => void;
     applyWorldPack?: (pack: WorldPack) => void;
     appliedPack?: WorldPack | null;
-    playAsClara?: boolean;
-    setPlayAsClara?: (v: boolean) => void;
+    selectedPcId?: string;
+    setSelectedPcId?: (v: string) => void;
     handleSave: () => void;
     resetForm: () => void;
     onClose: () => void;
@@ -38,8 +38,8 @@ export function CampaignFormModal(props: CampaignFormModalProps) {
         lootName, setLootFile, setLootName,
         applyWorldPack,
         appliedPack,
-        playAsClara,
-        setPlayAsClara,
+        selectedPcId,
+        setSelectedPcId,
         handleSave, resetForm, onClose,
     } = props;
 
@@ -112,26 +112,32 @@ export function CampaignFormModal(props: CampaignFormModalProps) {
                     </>
                 )}
 
-                {appliedPack?.defaultPc && (
-                    <label style={{
-                        display: 'flex', alignItems: 'flex-start', gap: 10,
-                        marginBottom: 20, cursor: 'pointer',
-                        fontSize: 12, color: 'var(--color-text-primary)',
-                        fontFamily: "'EB Garamond', serif",
-                    }}>
-                        <input
-                            type="checkbox"
-                            checked={!!playAsClara}
-                            onChange={e => setPlayAsClara?.(e.target.checked)}
-                            style={{ marginTop: 3 }}
-                        />
-                        <span>
-                            Play as Clara Whitlock
-                            <span style={{ display: 'block', fontSize: 10, color: 'rgba(107,107,107,0.55)', fontFamily: "'JetBrains Mono', monospace", marginTop: 2 }}>
-                                Tingen Sequence 9 Seer. Leave unchecked for the three-segment interview.
-                            </span>
-                        </span>
-                    </label>
+                {(appliedPack?.playablePcs?.length || appliedPack?.defaultPc) && (
+                    <div style={{ marginBottom: 20 }}>
+                        <ModalLabel>Starting character</ModalLabel>
+                        <select
+                            value={selectedPcId ?? ''}
+                            onChange={e => setSelectedPcId?.(e.target.value)}
+                            style={{
+                                width: '100%', background: 'var(--color-void-lighter)',
+                                border: '1px solid color-mix(in srgb, var(--color-terminal) 20%, transparent)',
+                                borderRadius: 4, padding: '9px 12px',
+                                fontSize: 13, color: 'var(--color-text-primary)',
+                                fontFamily: "'EB Garamond', serif",
+                                outline: 'none', boxSizing: 'border-box',
+                            }}
+                        >
+                            <option value="">Create my own (interview)</option>
+                            {(appliedPack?.playablePcs ?? []).map(pc => (
+                                <option key={pc.id} value={pc.id}>
+                                    {pc.name} — {pc.subtitle}{pc.region ? ` · ${pc.region}` : ''}
+                                </option>
+                            ))}
+                        </select>
+                        <p style={{ color: 'rgba(107,107,107,0.50)', fontSize: 11, fontFamily: "'JetBrains Mono', monospace", marginTop: 6, marginBottom: 0 }}>
+                            One Sequence 9 starter per pathway. Leave on Create my own for the three-segment interview.
+                        </p>
+                    </div>
                 )}
 
                 <ModalLabel>Cover Image</ModalLabel>

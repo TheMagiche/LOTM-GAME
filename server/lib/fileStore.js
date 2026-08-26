@@ -250,6 +250,7 @@ export const BUILTIN_CAMPAIGN_FILE_SUFFIXES = Object.freeze([
     '.relationship-memory.npc-to-mc.json',
     '.relationship-memory.npc-to-npc.json',
     '.factions.json',
+    '.items.json',
 ]);
 
 export function campaignFileNames(id) {

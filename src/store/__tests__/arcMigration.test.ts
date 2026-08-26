@@ -13,6 +13,10 @@ vi.mock('../../services/tables/factionTable', () => ({
     factionTableDescriptor: { name: 'factions', fileSuffix: '.factions.json', recordShape: 'array' },
     loadFactionTable: vi.fn().mockResolvedValue([]),
 }));
+vi.mock('../../services/tables/itemTable', () => ({
+    itemTableDescriptor: { name: 'items', fileSuffix: '.items.json', recordShape: 'array' },
+    loadItemTable: vi.fn().mockResolvedValue([]),
+}));
 
 // Mock the campaignStore accessors the hydrator uses. The arc migration also calls
 // `saveCampaignState` to persist the cleared context — that is mocked here too.
@@ -84,6 +88,7 @@ function resetStore(): void {
         archiveIndex: [],
         locationLedger: [],
         factionLedger: [],
+        itemLedger: [],
         loreChunks: [],
         timeline: [],
         chapters: [],

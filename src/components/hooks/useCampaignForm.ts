@@ -2,20 +2,10 @@ import { useState } from 'react';
 import { saveCampaign } from '../../store/campaignStore';
 import { initializeCampaignState } from '../../services/campaignInit';
 import { uid } from '../../utils/uid';
-import type { Campaign, PlayerCharacter } from '../../types';
+import type { Campaign } from '../../types';
 import { worldPackToFile, type WorldPack } from '../../worldpacks/lordOfTheMysteries';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
-
-function parseDefaultPc(raw: string): PlayerCharacter | null {
-    try {
-        const parsed = JSON.parse(raw) as unknown;
-        const row = Array.isArray(parsed) ? parsed[0] : parsed;
-        if (!row || typeof row !== 'object') return null;
-        return row as PlayerCharacter;
-    } catch {
-        return null;
-    }
-}
+import { resolvePlayablePc } from '../../services/lotm/createLotmCampaign';
 
 export function useCampaignForm(params: {
     editingCampaign: Campaign | null;
@@ -34,7 +24,7 @@ export function useCampaignForm(params: {
     const [lootFile, setLootFile] = useState<File | null>(null);
     const [lootName, setLootName] = useState('');
     const [appliedPack, setAppliedPack] = useState<WorldPack | null>(null);
-    const [playAsClara, setPlayAsClara] = useState(false);
+    const [selectedPcId, setSelectedPcId] = useState('');
 
     const resetForm = () => {
         setName(''); setCoverFile(null); setCoverPreview('');
@@ -42,7 +32,7 @@ export function useCampaignForm(params: {
         setRulesFile(null); setRulesName('');
         setLootFile(null); setLootName('');
         setAppliedPack(null);
-        setPlayAsClara(false);
+        setSelectedPcId('');
         setEditingCampaign(null);
     };
 
@@ -55,7 +45,7 @@ export function useCampaignForm(params: {
         setLoreName(''); setRulesName(''); setLootName('');
         setLoreFile(null); setRulesFile(null); setLootFile(null); setCoverFile(null);
         setAppliedPack(null);
-        setPlayAsClara(false);
+        setSelectedPcId('');
     };
 
     const handleCoverChange = (file: File) => {
@@ -100,8 +90,8 @@ export function useCampaignForm(params: {
             if (appliedPack.uiSkin) campaign.uiSkin = appliedPack.uiSkin;
         }
 
-        const playerCharacter = playAsClara && appliedPack?.defaultPc
-            ? parseDefaultPc(appliedPack.defaultPc.contents)
+        const playerCharacter = appliedPack
+            ? resolvePlayablePc(appliedPack, selectedPcId)
             : null;
 
         await saveCampaign(campaign);
@@ -129,8 +119,8 @@ export function useCampaignForm(params: {
         lootFile, setLootFile, lootName, setLootName,
         applyWorldPack,
         appliedPack,
-        playAsClara,
-        setPlayAsClara,
+        selectedPcId,
+        setSelectedPcId,
         resetForm, openCreate, openEdit, handleSave,
         editingCampaign,
     };

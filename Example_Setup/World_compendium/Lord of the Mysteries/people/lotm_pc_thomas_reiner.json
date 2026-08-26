@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_thomas_reiner",
+    "name": "Thomas Reiner",
+    "aliases": "",
+    "appearance": "A broad man of thirty-two with a steam-fitter's forearms, soot worked permanently into the creases of his knuckles, and a mustache he maintains with military precision. He wears the quilted jacket and brass-buttoned cap of a Backlund railway works engineer, and his toolbox is heavier than any toolbox should be. When he concentrates, faint warmth radiates from his hands.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Early thirties",
+      "build": "Broad, powerful, furnace-fed",
+      "symmetry": "Ruggedly handsome in an honest way",
+      "hairStyle": "Dark brown, flat under a works cap",
+      "eyeColor": "Furnace amber",
+      "skinTone": "Soot-tanned, scarred forearms",
+      "gait": "Solid, rolling gait of a man used to catwalks",
+      "distinctMarks": "Burn scars lacing both forearms; heat shimmer near his hands when angry",
+      "clothing": "Quilted steam-fitter's jacket, brass-buttoned cap, overloaded toolbox",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Backlund Railway Works (unregistered Beyonder)",
+    "storyRelevance": "Thomas drank the Barbarian potion brewed by a Mechanical Heart defector who needed muscle and found loyalty instead. His strength now bends iron bars and his skin turns ordinary blades, but every use stokes a furnace-temper the Acting Method demands he spend only on worthy causes. The Mechanical Heart has noticed their missing brewer's handiwork, and two inspectors in gear-grey coats have started riding Thomas's morning train.",
+    "goals": "Protect the works crew he considers family. Find his missing benefactor before the Mechanical Heart does. Learn what the boiler-room accident three years ago actually was, because his potion says it wasn't an accident.",
+    "disposition": "Steady, protective, slow to anger and terrible upon arriving. Honest to a fault that audits would call criminal.",
+    "status": "Alive",
+    "voice": "Loud, warm, workshop-clarity over machinery noise. Swears at equipment affectionately.",
+    "personality": "The Barbarian creed demands strength spent openly and honestly, which matches how he was raised. His danger is the temper: the potion feeds fury, and fury feeds it back. He manages it the way he manages boilers — gauges, routines, and never letting pressure find nowhere to go.",
+    "exampleOutput": "[**Thomas**]: He sets the bent coupling bar down, straightened. \"Machine did that. Not me.\" He wipes his hands slowly. \"Which means someone's feeding her bad coal on purpose. Third time this week. I'd like a word with whoever thinks my crew's expendable.\"",
+    "affinity": 55,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The railway works' boiler house and the Anchor & Anvil pub",
+    "drives": {
+      "coreWant": "To stand between danger and everyone who can't stand for themselves",
+      "sessionWant": "Find the saboteur in the works and shake the Mechanical Heart's tail",
+      "sceneWant": "Be the immovable thing when something movable goes wrong"
+    },
+    "wants": {
+      "short": [
+        "Inspect the night shift's boiler logs",
+        "Walk the inspectors' route home (just to be seen)",
+        "Fix the crew room's stove before winter"
+      ],
+      "medium": [
+        "Trace his benefactor's last known address",
+        "Learn the truth of the boiler-room accident",
+        "Advance toward Knight without church strings attached"
+      ],
+      "long": "Become the shield the East Borough can believe in — unbought and unbent."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 2,
+      "boldness": 2,
+      "warmth": 2,
+      "empathy": 1,
+      "composure": -1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Overloaded toolbox (wrench, pry bar, things that are not tools)",
+        "Brass pressure gauge that reads wrong near Beyonder activity",
+        "Works crew photograph, creased from carrying",
+        "Benefactor's half-finished potion notes",
+        "Railway pass and a union pin"
+      ],
+      "abilities": [
+        "Enhanced Strength",
+        "Toughness",
+        "Weapon Mastery (improvised)",
+        "Intimidation",
+        "Heat Resistance"
+      ],
+      "pathway": "twilight_giant",
+      "sequence": 9
+    },
+    "traits": [
+      "protective",
+      "honest",
+      "strong",
+      "hot-tempered",
+      "loyal"
+    ],
+    "pcMeta": {
+      "archetype": "Barbarian — Sequence 9 (Twilight Giant Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 5,
+        "Physique": 8,
+        "Reasoning": 4
+      }
+    }
+  }
+]

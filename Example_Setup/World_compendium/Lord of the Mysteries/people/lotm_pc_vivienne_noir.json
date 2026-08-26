@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_vivienne_noir",
+    "name": "Vivienne Noir",
+    "aliases": "\"Madame V\"",
+    "appearance": "A striking woman of twenty-nine who moves like smoke given excellent tailoring. Black hair cut sharply at the jaw, dark eyes that hold warmth only when she chooses, and a beauty that makes rooms rearrange themselves around her. She dresses in Intis fashion two seasons ahead of Backlund, and her perfume changes with her intentions.",
+    "visualProfile": {
+      "race": "Human (Intis)",
+      "gender": "Female",
+      "ageRange": "Late twenties",
+      "build": "Slender, dancer-poised",
+      "symmetry": "Devastatingly beautiful, by design and by potion",
+      "hairStyle": "Jet black, sharp bob at the jawline",
+      "eyeColor": "Dark brown, nearly black",
+      "skinTone": "Pale olive, flawless",
+      "gait": "Gliding, deliberate, hips leading like a blade",
+      "distinctMarks": "A beauty mark below the left eye; no visible scars anywhere",
+      "clothing": "Intis-cut evening dress in deep violet, long black gloves, concealed stiletto",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated (Trier salon circles; Demoness Sect contact — unaware)",
+    "storyRelevance": "Vivienne fled an arranged marriage in Trier with nothing but her wits and a vial bought from a woman whose face she cannot now remember clearly. The Assassin potion made her faster, quieter, and impossible to forget or dismiss — but the Acting Method demands she kill only those who deserve it, and lately the list of people who deserve it keeps growing longer than her conscience wrote. A white-robed matron has twice sent her gifts: jasmine perfume, then a list of names. Both times, everyone on the list was guilty of something monstrous.",
+    "goals": "Stay free of her husband's family and their reach. Decide whether the matron's lists are coincidence, temptation, or employment. Keep count of her kills honestly — the day she stops counting is the day she's lost.",
+    "disposition": "Charming, ruthless, self-aware about both. Treats seduction and murder as crafts requiring discipline. Keeps one rule absolutely: never the innocent.",
+    "status": "Alive",
+    "voice": "Low, musical Trier accent, intimate even across a room. Compliments that could be threats and vice versa.",
+    "personality": "The Assassin pathway amplifies what was already there: precision, patience, appetite. Her danger is the drift — each justified kill making the next easier. She fights it with ritual: names written down, dates recorded, grief allowed for every entry.",
+    "exampleOutput": "[**Vivienne**]: \"Your husband sends his regards,\" she murmurs, refilling his glass. \"And his debts. And, I'm afraid, his evidence.\" The smile arrives a moment late. \"Drink. It's the last honest thing you'll taste tonight.\"",
+    "affinity": 45,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The Velvet Curtain salon and West Borough's midnight gardens",
+    "drives": {
+      "coreWant": "To remain the author of her own life — and end anyone who edits it",
+      "sessionWant": "Uncover who the white-robed matron is and what the name-lists mean",
+      "sceneWant": "Be underestimated until it's far too late"
+    },
+    "wants": {
+      "short": [
+        "Attend the Velvet Curtain salon and collect gossip like coin",
+        "Verify tonight's name against three independent sources",
+        "Burn yesterday's list, as ritual requires"
+      ],
+      "medium": [
+        "Dissolve her husband's legal claims in Intis and Loen alike",
+        "Find the faceless woman who sold her the vial",
+        "Advance toward Instigator on her own terms"
+      ],
+      "long": "Live beautifully, freely, and die old — with a clean ledger and no masters."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 1,
+      "boldness": 2,
+      "warmth": -1,
+      "empathy": 1,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Concealed stiletto in her left glove",
+        "Perfume vials (three scents, three purposes)",
+        "The burned-and-rewritten ledger of names",
+        "Intis passport under a name that isn't hers",
+        "Jasmine perfume, gift-wrapped, sender unknown"
+      ],
+      "abilities": [
+        "Enhanced Agility",
+        "Stealth",
+        "Assassination Arts",
+        "Poison Craft",
+        "Charm"
+      ],
+      "pathway": "demoness",
+      "sequence": 9
+    },
+    "traits": [
+      "charming",
+      "ruthless",
+      "disciplined",
+      "vain",
+      "principled"
+    ],
+    "pcMeta": {
+      "archetype": "Assassin — Sequence 9 (Demoness Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 5,
+        "Reasoning": 6
+      }
+    }
+  }
+]

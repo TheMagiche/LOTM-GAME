@@ -53,7 +53,7 @@ export function ChatArea({
     const relationshipMemoriesNpcToNpc = useAppStore(s => s.relationshipMemoriesNpcToNpc);
     const relationshipMemoryFaults = useAppStore(s => s.relationshipMemoryFaults);
 
-    const { settings, loreChunks, npcLedger, archiveIndex, chapters, locationLedger, factionLedger } = useAppStore(
+    const { settings, loreChunks, npcLedger, archiveIndex, chapters, locationLedger, factionLedger, itemLedger } = useAppStore(
         useShallow(s => ({
             settings: s.settings,
             loreChunks: s.loreChunks,
@@ -62,6 +62,7 @@ export function ChatArea({
             chapters: s.chapters,
             locationLedger: s.locationLedger,
             factionLedger: s.factionLedger,
+            itemLedger: s.itemLedger,
         }))
     );
 
@@ -334,6 +335,7 @@ export function ChatArea({
                         npcLedger,
                         locationLedger,
                         factionLedger,
+                        itemLedger,
                     }}
                     utilityProvider={activeUtilityProvider}
                     hasArmedBrief={armedAskGmBrief?.campaignId === activeCampaignId}
