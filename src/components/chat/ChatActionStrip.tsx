@@ -44,7 +44,7 @@ async function drainPendingCommit(): Promise<void> {
 }
 
 /**
- * The horizontal button strip above the composer: Save, Trim, Deep Search,
+ * The horizontal button strip below the composer input: Save, Trim, Deep Search,
  * Dice Me, Roll Loot, One-Shot injector, Absolute Command, Ask GM, Archive.
  * Extracted from ChatArea; arming state lives in the store.
  *
@@ -91,7 +91,7 @@ export function ChatActionStrip({
     const ordered = useComposerActions();
 
     return (
-        <div className="px-2 md:px-4 pb-1 flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="chat-action-strip px-2 md:px-4 pb-3 sm:pb-4 flex gap-2 overflow-x-auto no-scrollbar">
             {ordered.map((entry) => {
                 if (entry.renderer === 'builtin' && COMPOSER_BUILTIN_ID_SET.has(entry.entryId)) {
                     return renderComposerBuiltin(entry.entryId, {

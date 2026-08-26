@@ -578,8 +578,8 @@ html[style*="--lang-font-stack"] {
 .lotm-chat {
   background: transparent;
   z-index: 3;
-  flex: 0 0 auto;
-  max-height: 48%;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .lotm-chat-chronicle {
@@ -591,6 +591,10 @@ html[style*="--lang-font-stack"] {
   background: rgba(12, 10, 14, 0.72);
   border-top-color: rgba(201, 162, 39, 0.28);
   backdrop-filter: blur(8px);
+}
+
+.lotm-chat .lotm-plate-slot .lotm-plate {
+  max-height: 100%;
 }
 
 .lotm-chronicle-bar {
@@ -1346,6 +1350,11 @@ html[style*="--lang-font-stack"] {
   background: transparent;
   color: #e8e0d0;
   cursor: pointer;
+}
+
+.lotm-play-header-menu:disabled {
+  opacity: 0.45;
+  cursor: default;
 }
 
 .lotm-play-header-titles {

@@ -2,7 +2,7 @@
  * Phase 4.2 — register the composer action strip's built-in buttons with
  * the mount registry (`MOUNTS.md` §2.3).
  *
- * The row above the composer at `src/components/chat/ChatActionStrip.tsx:48`
+ * The row below the composer input at `src/components/chat/ChatActionStrip.tsx`
  * is the `composer.actions` region. Nine buttons live there today: Save,
  * Trim, Deep Search, Dice Me, Roll Loot, One-Shot, Absolute Command, Ask
  * GM, Archive.

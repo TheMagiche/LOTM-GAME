@@ -6,8 +6,19 @@ import type { ChatMessage, AppSettings, GameContext, CondenserState } from '../.
 
 const { mockAnswerOocQuestion, mockSummarizeAskGmConversation } = vi.hoisted(() => ({ mockAnswerOocQuestion: vi.fn(), mockSummarizeAskGmConversation: vi.fn() }));
 
-vi.mock('../../store/useAppStore', () => {
-    const state = {
+vi.mock('../../store/useAppStore', async () => {
+    const { useSyncExternalStore } = await import('react');
+    const listeners = new Set<() => void>();
+    let version = 0;
+    const emit = () => {
+        version += 1;
+        listeners.forEach(listener => listener());
+    };
+    const subscribe = (listener: () => void) => {
+        listeners.add(listener);
+        return () => { listeners.delete(listener); };
+    };
+    const state: Record<string, unknown> = {
         messages: [] as ChatMessage[],
         condenser: { condensedUpToIndex: -1 } as CondenserState,
         context: {
@@ -37,6 +48,9 @@ vi.mock('../../store/useAppStore', () => {
         } as unknown as AppSettings,
         loreChunks: [],
         npcLedger: [],
+        locationLedger: [],
+        factionLedger: [],
+        itemLedger: [],
         archiveIndex: [],
         chapters: [],
         timeline: [],
@@ -83,8 +97,6 @@ vi.mock('../../store/useAppStore', () => {
         setStreamingStats: vi.fn(),
         setStreaming: vi.fn(),
         askGmOpen: false,
-        openAskGm: vi.fn(),
-        closeAskGm: vi.fn(),
         deepArmed: false,
         setDeepArmed: vi.fn(),
         armedRoll: null,
@@ -100,14 +112,15 @@ vi.mock('../../store/useAppStore', () => {
         armedAbsoluteCommand: null,
         setArmedAbsoluteCommand: vi.fn(),
     };
-    const subscribe = vi.fn(() => vi.fn());
+    state.openAskGm = vi.fn(() => { state.askGmOpen = true; emit(); });
+    state.closeAskGm = vi.fn(() => { state.askGmOpen = false; emit(); });
     const getState = vi.fn(() => state);
     const useAppStore = Object.assign(
         (selector: any) => {
-            const result = selector(state);
-            return result;
+            useSyncExternalStore(subscribe, () => version, () => version);
+            return selector(state);
         },
-        { getState, subscribe }
+        { getState, subscribe: vi.fn(subscribe) }
     );
     return { useAppStore };
 });
@@ -199,6 +212,7 @@ describe('ChatArea', () => {
         state.archiveIndex = [];
         state.chapters = [];
         state.pipelinePhase = 'idle';
+        state.askGmOpen = false;
         (mockSummarizeAskGmConversation as ReturnType<typeof vi.fn>).mockResolvedValue('Keep the gate scene tense.');
         (mockAnswerOocQuestion as ReturnType<typeof vi.fn>).mockResolvedValue({ text: 'Ask GM answer', sources: [], archiveSearched: false });
     });
@@ -376,6 +390,24 @@ describe('ChatArea', () => {
         render(<ChatArea />);
         const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
         await user.click(saveBtn);
+    });
+
+    it('shows the chronicle transcript and composer actions below the input', () => {
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ role: 'user', content: 'I walk into the fog' }),
+            makeMessage({ role: 'assistant', content: 'The gas lamps hiss.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.queryByText('Illustrated play')).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /chronicle/i })).not.toBeInTheDocument();
+        expect(screen.getByText('I walk into the fog')).toBeInTheDocument();
+        expect(screen.getByText('The gas lamps hiss.')).toBeInTheDocument();
+        const input = screen.getByPlaceholderText('What do you do?');
+        const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
+        const askGm = screen.getByTitle('Open Ask GM side chat');
+        expect(input.compareDocumentPosition(saveBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+        expect(input.compareDocumentPosition(askGm) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     });
 
     it('shows load more button when messages exceed visibleCount', () => {

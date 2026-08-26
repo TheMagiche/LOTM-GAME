@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { ABSOLUTE_COMMAND_MAX_CHARS, clampAbsoluteCommand } from '../services/turn/absoluteCommand';
@@ -122,9 +123,13 @@ function AbsoluteCommandModal({
     const canArm = trimmed.length > 0;
     const charCount = clampAbsoluteCommand(text).length;
 
-    return (
+    // Portal to body: illustrated play's composer bar uses `backdrop-filter`,
+    // which makes `position: fixed` a child of that strip, and `.lotm-chat`
+    // (`z-index: 3`, overflow hidden) sits under CG/chapter overlays (30–50).
+    // A local z-index bump cannot escape those containing/stacking contexts.
+    return createPortal(
         <div
-            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/60"
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60"
             onClick={handleBackdropClick}
         >
             <div
@@ -191,6 +196,7 @@ function AbsoluteCommandModal({
                     </button>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body,
     );
 }
