@@ -1342,7 +1342,10 @@ html[style*="--lang-font-stack"] {
 
 .lotm-player-hud {
   position: relative;
-  z-index: 4;
+  /* Stay above the backdrop (0) and scrim (1), but below `.lotm-chat` (3).
+     Chat owns the loot/dice modals (`fixed z-[120]`); if the HUD's stacking
+     context is higher, the expanded panel paints over those dialogs. */
+  z-index: 2;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
