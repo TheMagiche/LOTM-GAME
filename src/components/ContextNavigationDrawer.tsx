@@ -1,7 +1,7 @@
 import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
-    Landmark, LogOut, MapPin, Package, Pin, ScrollText, Settings, Sparkles, UserCircle, Users, Workflow,
+    Landmark, LogOut, MapPin, Package, Pin, ScrollText, Settings, Sparkles, UserCircle, Users, Workflow, Gem,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -96,6 +96,7 @@ export function ContextNavigationDrawer() {
     const npcCount = useAppStore((s) => s.npcLedger.length);
     const placesCount = useAppStore((s) => s.locationLedger.length);
     const factionsCount = useAppStore((s) => s.factionLedger.length);
+    const itemsCount = useAppStore((s) => s.itemLedger.length);
     const pinnedCount = useAppStore((s) => s.pinnedExcerpts.length);
     const headerEntries = useHeaderEntries();
     const { t } = useTranslation();
@@ -119,6 +120,7 @@ export function ContextNavigationDrawer() {
             { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
             { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
             { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },
+            { id: 'items', label: 'Inventory', icon: Gem, badge: itemsCount, onSelect: () => useAppStore.getState().toggleItemLedger() },
             { ...CONTEXT_LEAVES.chpt, badge: chaptersCount, onSelect: () => openContextScreen('chpt') },
             { id: 'askGm', label: 'Ask GM', icon: Sparkles, onSelect: () => useAppStore.getState().openAskGm() },
             { id: 'dice', label: 'Dice', icon: Dices, onSelect: () => useAppStore.getState().openDiceRollModal() },
@@ -160,6 +162,7 @@ export function ContextNavigationDrawer() {
             { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
             { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
             { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },
+            { id: 'items', label: 'Inventory', icon: Gem, badge: itemsCount, onSelect: () => useAppStore.getState().toggleItemLedger() },
             { ...CONTEXT_LEAVES.world, onSelect: () => openContextScreen('world') },
         ],
         play: [

@@ -8,6 +8,11 @@ import type { OneShotEventId } from '../../services/oneshot/oneShotEvents';
 export type ContextScreenId = 'sys' | 'world' | 'eng' | 'chpt' | 'mem';
 
 
+export type LotmWorldIndexLock = {
+    campaignId: string | null;
+    emblemSrc: string;
+};
+
 // ── Slice type ─────────────────────────────────────────────────────────
 
 export type UISlice = {
@@ -17,6 +22,7 @@ export type UISlice = {
     pcPanelOpen: boolean;
     locationLedgerOpen: boolean;
     factionLedgerOpen: boolean;
+    itemLedgerOpen: boolean;
     blockViewOpen: boolean;
     backupModalOpen: boolean;
     contextScreen: ContextScreenId | null;
@@ -34,6 +40,7 @@ export type UISlice = {
     togglePCPanel: () => void;
     toggleLocationLedger: () => void;
     toggleFactionLedger: () => void;
+    toggleItemLedger: () => void;
     toggleBlockView: () => void;
     toggleBackupModal: () => void;
     openContextScreen: (screen: ContextScreenId) => void;
@@ -101,6 +108,10 @@ export type UISlice = {
     updateSceneImageDraft: (patch: Partial<import('../../types').SceneImageDraft>) => void;
     setComposingSceneImage: (v: boolean) => void;
     setGeneratingSceneImage: (v: boolean) => void;
+    /** Blocks the LOTM UI while a newly created chronicle's world lore is embedding. */
+    lotmWorldIndexLock: LotmWorldIndexLock | null;
+    beginLotmWorldIndex: (lock: LotmWorldIndexLock) => void;
+    endLotmWorldIndex: () => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -112,6 +123,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     pcPanelOpen: false,
     locationLedgerOpen: false,
     factionLedgerOpen: false,
+    itemLedgerOpen: false,
     blockViewOpen: false,
     backupModalOpen: false,
     contextScreen: null,
@@ -128,6 +140,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     togglePCPanel: () => set((s) => ({ pcPanelOpen: !s.pcPanelOpen })),
     toggleLocationLedger: () => set((s) => ({ locationLedgerOpen: !s.locationLedgerOpen })),
     toggleFactionLedger: () => set((s) => ({ factionLedgerOpen: !s.factionLedgerOpen })),
+    toggleItemLedger: () => set((s) => ({ itemLedgerOpen: !s.itemLedgerOpen })),
     toggleBlockView: () => set((s) => ({ blockViewOpen: !s.blockViewOpen })),
     toggleBackupModal: () => set((s) => ({ backupModalOpen: !s.backupModalOpen })),
     openContextScreen: (screen) => set({ contextScreen: screen }),
@@ -189,4 +202,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     setGeneratingSceneImage: (v) => set((s) => ({
         sceneImageDraft: s.sceneImageDraft ? { ...s.sceneImageDraft, isGenerating: v } : null,
     })),
+    lotmWorldIndexLock: null,
+    beginLotmWorldIndex: (lock) => set({ lotmWorldIndexLock: lock }),
+    endLotmWorldIndex: () => set({ lotmWorldIndexLock: null }),
 });

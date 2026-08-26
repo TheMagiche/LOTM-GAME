@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
+import { PcBackgroundModal } from './PcBackgroundModal';
 
 /**
  * Empty-chat placeholder shown before the first message: the "Awaiting
@@ -8,13 +10,19 @@ import { useAppStore } from '../../store/useAppStore';
  * `isPC` row in `npcLedger`. The legacy `npcLedger.some(n => n.isPC)` check
  * always returns false post-migration (the hydrator strips any `isPC` row
  * into `context.playerCharacter`), so we read `playerCharacter` directly.
+ *
+ * When a PC exists, their sheet "Who You Are" (`storyRelevance`) opens in
+ * `PcBackgroundModal` on first empty-chat load — no trigger button.
  */
 export function ChatEmptyState({ onCreateCharacter }: { onCreateCharacter: () => void }) {
-    const hasPC = useAppStore(s => s.playerCharacter != null);
+    const playerCharacter = useAppStore(s => s.playerCharacter);
+    const hasPC = playerCharacter != null;
+    const whoTheyAre = playerCharacter?.storyRelevance?.trim() ?? '';
+    const [backgroundDismissed, setBackgroundDismissed] = useState(false);
 
     return (
         <div className="flex items-center justify-center h-full">
-            <div className="text-center space-y-3">
+            <div className="text-center space-y-3 max-w-lg px-2">
                 <div className="text-4xl">⚔</div>
                 <p className="text-text-dim text-xs uppercase tracking-widest">
                     Awaiting transmission...
@@ -29,12 +37,19 @@ export function ChatEmptyState({ onCreateCharacter }: { onCreateCharacter: () =>
                         </button>
                     )}
                     <p className="text-text-dim/50 text-[10px]">
-                        {!hasPC 
+                        {!hasPC
                             ? "Or paste your lore in the context drawer, configure your LLM, and begin."
                             : "Paste your lore in the context drawer, configure your LLM, and begin."}
                     </p>
                 </div>
             </div>
+            {whoTheyAre && !backgroundDismissed && (
+                <PcBackgroundModal
+                    name={playerCharacter?.name ?? ''}
+                    storyRelevance={whoTheyAre}
+                    onClose={() => setBackgroundDismissed(true)}
+                />
+            )}
         </div>
     );
 }

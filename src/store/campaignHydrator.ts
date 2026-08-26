@@ -7,12 +7,13 @@ import {
 } from './campaignStore';
 import { loadRelationshipMemories } from './relationshipMemoryStore';
 import { DEFAULT_CONTEXT, DEFAULT_CONDENSER } from '../services/campaignInit';
-import { migrateLegacyContext } from '../types';
+import { migrateLegacyContext, normalizeItemLedgerEntry } from '../types';
 import type { GameContext, ArchiveChapter, ArchiveIndexEntry, DivergenceRegister, DivergenceEntry, ChatMessage } from '../types';
 import { migrateV1ToV2 } from '../services/campaign-state/divergenceRegister';
 import { migratePCIntoContext } from '../services/character/migratePC';
 import { loadLocationTable } from '../services/tables/locationTable';
 import { factionTableDescriptor, loadFactionTable } from '../services/tables/factionTable';
+import { loadItemTable } from '../services/tables/itemTable';
 import { parseFactionsFromLore } from '../services/lore/loreFactionParser';
 import { genericSave } from '../services/tables/genericAccessor';
 import { hydrateModTables, saveModTable } from '../services/mods/modTables';
@@ -22,6 +23,8 @@ import { safeSceneNum } from '../utils/helpers';
 import type { ArcRecord } from '../types/arc';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
 import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
+import { attachLotmPortraitsToNpcs } from '../services/lotm/lotmVisualMatcher';
+import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
 
 /**
  * WO-P5-12 §7 Step 1 — migrate Arc's state from `context.arcs` to the
@@ -274,12 +277,13 @@ async function loadCampaignMeta(campaignId: string) {
 }
 
 export async function hydrateCampaign(campaignId: string) {
-    const [state, chunks, npcs, locations, factions, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
+    const [state, chunks, npcs, locations, factions, items, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
         loadCampaignState(campaignId),
         getLoreChunks(campaignId),
         getNPCLedger(campaignId),
         loadLocationTable(campaignId),
         loadFactionTable(campaignId),
+        loadItemTable(campaignId),
         loadArchiveIndex(campaignId),
         loadTimeline(campaignId),
         loadChapters(campaignId),
@@ -345,6 +349,15 @@ export async function hydrateCampaign(campaignId: string) {
                 console.warn('[Hydrator] Failed to persist LOTM pathway backfill:', e);
             }
         }
+        const spoilers = (await loadCampaignMeta(campaignId)).lotmSpoilers === true;
+        const nextPortraits = attachLotmPortraitsToNpcs(finalNpcLedger, spoilers, 'correct');
+        if (nextPortraits.some((n, i) => n !== finalNpcLedger[i])) {
+            finalNpcLedger = nextPortraits;
+            console.log('[Hydrator] Backfilled LOTM portraits on NPC ledger');
+            try { await saveNPCLedger(campaignId, finalNpcLedger); } catch (e) {
+                console.warn('[Hydrator] Failed to persist LOTM portrait backfill:', e);
+            }
+        }
         if (finalContext.playerCharacter) {
             const nextPc = attachLotmPathwaysToNpcs([finalContext.playerCharacter])[0];
             if (nextPc !== finalContext.playerCharacter) {
@@ -363,6 +376,11 @@ export async function hydrateCampaign(campaignId: string) {
                             : finalContext.characterProfileData.abilities,
                     },
                 };
+                lotmPcBackfilled = true;
+            }
+            const seededInv = seedInventoryIfEmpty(finalContext.inventoryItems, finalContext.playerCharacter);
+            if (seededInv !== (finalContext.inventoryItems ?? []) && seededInv.length > 0) {
+                finalContext = { ...finalContext, inventoryItems: seededInv };
                 lotmPcBackfilled = true;
             }
         }
@@ -435,6 +453,7 @@ export async function hydrateCampaign(campaignId: string) {
         npcLedger: finalNpcLedger,
         locationLedger: locations ?? [],
         factionLedger,
+        itemLedger: Array.isArray(items) ? items.map(normalizeItemLedgerEntry) : [],
         archiveIndex: archiveIndex ?? [],
         timeline: timeline ?? [],
         chapters: backfilled,

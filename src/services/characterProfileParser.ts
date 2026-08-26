@@ -28,7 +28,7 @@ export async function scanCharacterProfile(
 
     const profileJson = JSON.stringify(currentProfile, null, 0);
 
-    const prompt = `You are an AI character profile manager for a Lord of the Mysteries RPG. Review the recent chat and character profile below.\nIdentify any changes to HP, MP, Spirituality/Physique/Reasoning stats, Acting Method (skills), Sequence abilities, traits, name, race, pathway (class), or Sequence (level).\nSequence 9 is the first potion; Sequence 0 is a True God. Do not invent D&D ability scores or elemental affinities.\nIf they drink a potion and advance, update class to the new pathway label, set level to the new Sequence number, and replace abilities with that Sequence's powers.\n\n=== CURRENT PROFILE ===\n${profileJson}\n\n=== RECENT CHAT HISTORY ===\n${turns}\n\n=== INSTRUCTIONS ===\nReturn ONLY a valid JSON object containing changed fields and their new values. No other text.\nUse top-level keys matching the profile fields.\n\nTo increment/decrement a numeric value, return the NEW absolute value (not delta).\n\nExample response when HP drops by 5:\n{"hp":{"current":15,"max":20}}\n\nExample response when a new Acting Method skill is gained:\n{"skills":["Acting as a Seer","Not looking directly at fate"]}\n\nExample response when they advance from Sequence 9 to 8:\n{"class":"Fool Pathway · Seq 8 Clown","level":8,"abilities":["Physical Enhancement","Enhanced Spirituality","Enhanced Danger Intuition","Paper Daggers"]}\n\nExample response when nothing changes:\n{}\n\nOnly include keys that changed. Return {} if nothing changed.`;
+    const prompt = `You are an AI character profile manager for a Lord of the Mysteries RPG. Review the recent chat and character profile below.\nIdentify any changes to HP, MP, Spirituality/Physique/Reasoning stats, Acting Method (skills), Sequence abilities, traits, name, race, pathway (class), Sequence (level), or the wanted bounty posted ON this character.\nSequence 9 is the first potion; Sequence 0 is a True God. Do not invent D&D ability scores or elemental affinities.\nIf they drink a potion and advance, update class to the new pathway label, set level to the new Sequence number, and replace abilities with that Sequence's powers.\nBounty is the price on THIS character's head (e.g. "Church of the Evernight — 30 pounds"), not a hunt poster they picked up. Use "" or omit when none is posted. Return the NEW absolute bounty string when it is posted, raised, or lifted.\n\n=== CURRENT PROFILE ===\n${profileJson}\n\n=== RECENT CHAT HISTORY ===\n${turns}\n\n=== INSTRUCTIONS ===\nReturn ONLY a valid JSON object containing changed fields and their new values. No other text.\nUse top-level keys matching the profile fields.\n\nTo increment/decrement a numeric value, return the NEW absolute value (not delta).\n\nExample response when HP drops by 5:\n{"hp":{"current":15,"max":20}}\n\nExample response when a new Acting Method skill is gained:\n{"skills":["Acting as a Seer","Not looking directly at fate"]}\n\nExample response when they advance from Sequence 9 to 8:\n{"class":"Fool Pathway · Seq 8 Clown","level":8,"abilities":["Physical Enhancement","Enhanced Spirituality","Enhanced Danger Intuition","Paper Daggers"]}\n\nExample response when a church posts a bounty on them:\n{"bounty":"Church of the Evernight — 30 pounds"}\n\nExample response when nothing changes:\n{}\n\nOnly include keys that changed. Return {} if nothing changed.`;
 
     try {
         const result = modelCall
@@ -42,14 +42,14 @@ export async function scanCharacterProfile(
         const objMatch = text.match(/\{[\s\S]*\}/);
         const patch = objMatch ? JSON.parse(objMatch[0]) : {};
         if (!patch || typeof patch !== 'object') return currentProfile;
-        return applyPatch(currentProfile, patch);
+        return applyCharacterProfilePatch(currentProfile, patch);
     } catch (e) {
         console.error('[CharacterProfileParser]', e);
         return currentProfile;
     }
 }
 
-function applyPatch(profile: CharacterProfile, patch: Record<string, unknown>): CharacterProfile {
+export function applyCharacterProfilePatch(profile: CharacterProfile, patch: Record<string, unknown>): CharacterProfile {
     const next: CharacterProfile = JSON.parse(JSON.stringify(profile));
     if ('name' in patch && typeof patch.name === 'string') next.name = patch.name;
     if ('race' in patch && typeof patch.race === 'string') next.race = patch.race;
@@ -70,5 +70,6 @@ function applyPatch(profile: CharacterProfile, patch: Record<string, unknown>): 
     if ('abilities' in patch && Array.isArray(patch.abilities)) next.abilities = patch.abilities as string[];
     if ('traits' in patch && Array.isArray(patch.traits)) next.traits = patch.traits as string[];
     if ('notes' in patch && typeof patch.notes === 'string') next.notes = patch.notes;
+    if ('bounty' in patch && typeof patch.bounty === 'string') next.bounty = patch.bounty;
     return next;
 }

@@ -27,7 +27,7 @@ afterEach(() => {
  * built-in list exactly.
  */
 describe('WO-P5-03 Step 2.1 — derived suffixes', () => {
-    it('is set-equal to the 22 built-in suffixes when the registry is empty', async () => {
+    it('is set-equal to the 23 built-in suffixes when the registry is empty', async () => {
         const { getCampaignFileSuffixes, BUILTIN_CAMPAIGN_FILE_SUFFIXES, serverTableRegistry } = await import('../lib/tableRegistry.js?t=' + Date.now());
         serverTableRegistry.clear();
 
@@ -37,17 +37,18 @@ describe('WO-P5-03 Step 2.1 — derived suffixes', () => {
         // Set-equal: same members, regardless of order.
         expect(new Set(derived)).toEqual(new Set(builtin));
         // Same count (guards against a hidden duplicate).
-        // Factions ledger appended `.factions.json`, taking the built-in set from 21 to 22.
-        expect(derived.length).toBe(22);
-        expect(builtin.length).toBe(22);
+        // Inventory ledger appended `.items.json`, taking the built-in set from 22 to 23.
+        expect(derived.length).toBe(23);
+        expect(builtin.length).toBe(23);
     });
 
-    it('campaignFileNames produces the 22 filenames in built-in order with empty registry', async () => {
+    it('campaignFileNames produces the 23 filenames in built-in order with empty registry', async () => {
         const { campaignFileNames } = await import('../lib/fileStore.js?t=' + Date.now());
         const names = campaignFileNames('camp1');
-        expect(names.length).toBe(22);
+        expect(names.length).toBe(23);
         expect(names).toContain('camp1.migrations.json');
         expect(names).toContain('camp1.factions.json');
+        expect(names).toContain('camp1.items.json');
         expect(names[0]).toBe('camp1.json');
         expect(names).toContain('camp1.state.json');
         expect(names).toContain('camp1.divergence.json');
@@ -60,11 +61,11 @@ describe('WO-P5-03 Step 2.1 — derived suffixes', () => {
 
         const derived = getCampaignFileSuffixes(reg);
         expect(derived).toContain('.fixture.json');
-        // All 22 built-ins still present.
-        for (const s of ['.json', '.state.json', '.lore.json', '.divergence.json', '.factions.json']) {
+        // All 23 built-ins still present.
+        for (const s of ['.json', '.state.json', '.lore.json', '.divergence.json', '.factions.json', '.items.json']) {
             expect(derived).toContain(s);
         }
-        expect(derived.length).toBe(23);
+        expect(derived.length).toBe(24);
     });
 });
 
@@ -86,7 +87,7 @@ describe('WO-P5-03 Step 2.4 — isCampaignMetaFile positive filter', () => {
         const suffixed = [
             'camp1.state.json', 'camp1.lore.json', 'camp1.npcs.json', 'camp1.enemies.json',
             'camp1.enemy-instances.json', 'camp1.enemy-encounters.json', 'camp1.enemy-resolutions.json',
-            'camp1.enemy-combat.json', 'camp1.locations.json', 'camp1.factions.json', 'camp1.archive.index.json',
+            'camp1.enemy-combat.json', 'camp1.locations.json', 'camp1.factions.json', 'camp1.items.json', 'camp1.archive.index.json',
             'camp1.archive.chapters.json', 'camp1.timeline.json', 'camp1.entities.json',
             'camp1.facts.json', 'camp1.overworld.json', 'camp1.divergence.json',
         ];

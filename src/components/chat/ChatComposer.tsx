@@ -27,10 +27,12 @@ export function ChatComposer({
 }) {
     const settings = useAppStore(s => s.settings);
     const deepArmed = useAppStore(s => s.deepArmed);
+    const showPresetPicker = settings.presets.length > 1;
 
     return (
-        <div className="px-2 sm:px-4 pb-3 sm:pb-4 pt-3 sm:pt-4">
+        <div className="px-2 sm:px-4 pt-3 sm:pt-4 pb-2">
             <div className="flex gap-1 border border-border bg-void focus-within:border-terminal transition-colors items-end p-1 rounded-sm">
+                {showPresetPicker && (
                 <div className="relative shrink-0 mb-[4px] ml-1">
                     <select
                         value={settings.activePresetId}
@@ -44,6 +46,7 @@ export function ChatComposer({
                     </select>
                     <svg className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-text-dim pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
+                )}
                 {deepArmed && (
                     <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-amber-500/15 text-amber-400 border border-amber-500/40 rounded animate-pulse">
                         Deep

@@ -10,8 +10,11 @@ import { parseNPCsFromLore } from './lore/loreNPCParser';
 import { parseLocationsFromLore } from './lore/loreLocationParser';
 import { locationTableDescriptor, loadLocationTable } from './tables/locationTable';
 import { factionTableDescriptor, loadFactionTable } from './tables/factionTable';
+import { itemTableDescriptor, loadItemTable } from './tables/itemTable';
 import { parseFactionsFromLore } from './lore/loreFactionParser';
 import { resolveFaction } from './faction/resolveFaction';
+import { resolveItem } from './item/resolveItem';
+import { loadLotmItemCatalog } from '../worldpacks/lotmItemCatalog';
 import { genericSave } from './tables/genericAccessor';
 import { resolvePlace } from './locationParser';
 import {
@@ -22,7 +25,9 @@ import {
 import { dedupeNPCLedger } from '../store/slices/campaignSlice';
 import { loadLootTree } from './lore/lootTreeLoader';
 import { attachLotmPortraitsToNpcs, findTingenLocationId } from './lotm/lotmVisualMatcher';
-import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
+import { attachLotmPathwaysToNpcs } from '../worldpacks/lotmPathways';
+import { characterIdentityFromPlayerCharacter, characterProfileFromPlayerCharacter } from './character/profileFromPc';
+import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
 
 
 export const DEFAULT_CONTEXT = {
@@ -120,6 +125,19 @@ export async function initializeCampaignState(params: {
         seeds = extractEngineSeeds(chunks);
     }
 
+    if (attachLotmVisuals) {
+        const catalog = loadLotmItemCatalog();
+        if (catalog.length > 0) {
+            const existingItems = await loadItemTable(campaignId);
+            const additions = catalog.filter(item =>
+                !resolveItem(item.code || item.name, existingItems) && !resolveItem(item.name, existingItems)
+            );
+            if (additions.length > 0) {
+                await genericSave(itemTableDescriptor as never, campaignId, [...existingItems, ...additions]);
+            }
+        }
+    }
+
     let lootTree: LootTree | null = null;
     if (lootFile) {
         try {
@@ -143,19 +161,14 @@ export async function initializeCampaignState(params: {
             const seededPc = attachLotmPathwaysToNpcs([playerCharacter])[0];
             ctx.playerCharacter = seededPc;
             ctx.characterProfileActive = true;
-            const pathwayLabel = formatLotmPathwayLabel(seededPc.signatureKit?.pathway, seededPc.signatureKit?.sequence);
-            ctx.characterProfileData = {
-                ...ctx.characterProfileData,
-                name: seededPc.name || ctx.characterProfileData.name,
-                race: seededPc.visualProfile?.race || ctx.characterProfileData.race,
-                class: pathwayLabel || seededPc.pcMeta?.archetype || seededPc.signatureKit?.element || ctx.characterProfileData.class,
-                level: typeof seededPc.signatureKit?.sequence === 'number'
-                    ? seededPc.signatureKit.sequence
-                    : (typeof seededPc.skillRung === 'number' ? Math.max(0, 9 - seededPc.skillRung) : ctx.characterProfileData.level),
-                abilities: seededPc.signatureKit?.abilities?.length
-                    ? seededPc.signatureKit.abilities
-                    : ctx.characterProfileData.abilities,
+            ctx.characterProfileData = characterProfileFromPlayerCharacter(seededPc, ctx.characterProfileData);
+            const identity = characterIdentityFromPlayerCharacter(seededPc, ctx.characterProfileData);
+            ctx.characterProfile = {
+                ...ctx.characterProfile,
+                identity: { ...ctx.characterProfile.identity, ...identity },
+                stats: ctx.characterProfileData.stats,
             };
+            ctx.inventoryItems = seedInventoryIfEmpty(ctx.inventoryItems, seededPc);
         }
         if (attachLotmVisuals && !ctx.currentPlaceId) {
             const locations = await loadLocationTable(campaignId);

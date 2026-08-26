@@ -33,7 +33,7 @@ export function ChatNavFabs({
     };
 
     return (
-        <div className="absolute right-3 bottom-[145px] flex flex-col gap-1.5 z-30 pointer-events-auto">
+        <div className="absolute right-3 bottom-[170px] flex flex-col gap-1.5 z-30 pointer-events-auto">
             <button
                 onClick={handlePrevMessage}
                 className="chat-nav-fab flex items-center justify-center w-9 h-9 rounded-full bg-void-darker border border-text-dim/30 hover:border-text-dim text-text-dim hover:text-text-primary shadow-lg transition-all hover:bg-text-dim/10"

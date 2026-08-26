@@ -18,7 +18,7 @@ export function LotmStage({ portraits }: { portraits: LotmPortraitHit[] }) {
         <div className="lotm-stage relative z-10 flex-1 flex items-end justify-center gap-6 px-6 min-h-0 pointer-events-none">
             {portraits.length === 0 ? (
                 <div className="lotm-stage-empty mb-8 text-center">
-                    <p className="lotm-stage-empty-label">The fog has not yet named anyone.</p>
+                    <p className="lotm-stage-empty-label"></p>
                 </div>
             ) : portraits.map((p, i) => (
                 <figure

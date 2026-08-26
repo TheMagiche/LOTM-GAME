@@ -99,6 +99,9 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     { id: 'cattleya', aliases: ['cattleya', 'the hermit'], portrait: 'image/characters/cattleya.webp' },
     { id: 'emlyn-white', aliases: ['emlyn white', 'emlyn', 'the moon'], portrait: 'image/characters/emlyn_white.webp' },
     { id: 'derrick-berg', aliases: ['derrick berg', 'derrick', 'the sun'], portrait: 'image/characters/derrick_berg.webp' },
+    // Public church title — not the spoiler true-name (Aucuses). Keep these
+    // aliases longer than Derrick's tarot code "the sun" so longest-match wins.
+    { id: 'eternal-blazing-sun', aliases: ['the eternal blazing sun', 'eternal blazing sun', 'the sun god', 'sun god'], portrait: 'image/characters/aucuses.webp' },
     { id: 'sharron', aliases: ['sharron'], portrait: 'image/characters/sharron.webp' },
     { id: 'danitz', aliases: ['danitz dubois', 'danitz'], portrait: 'image/characters/danitz_dubois.webp' },
     { id: 'edwina', aliases: ['edwina edwards', 'edwina'], portrait: 'image/characters/edwina_edwards.webp' },

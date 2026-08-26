@@ -6,13 +6,28 @@ import loreMd from '../../Example_Setup/World_compendium/Lord of the Mysteries/w
 import rulesMd from '../../Example_Setup/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
 import lootJson from '../../Example_Setup/World_compendium/Lord of the Mysteries/loot.json?raw';
 import starterMd from '../../Example_Setup/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md?raw';
-import claraJson from '../../Example_Setup/World_compendium/Lord of the Mysteries/lotm_pc_clara_whitlock.json?raw';
-import type { CampaignUiSkin } from '../types';
+import type { CampaignUiSkin, PlayerCharacter } from '../types';
+import { formatLotmPathwayLabel } from './lotmPathways';
+
+const peopleRaw = import.meta.glob(
+    '../../Example_Setup/World_compendium/Lord of the Mysteries/people/lotm_pc_*.json',
+    { eager: true, query: '?raw', import: 'default' },
+) as Record<string, string>;
 
 export interface WorldPackFile {
     name: string;
     contents: string;
 }
+
+export type PlayablePcOption = {
+    id: string;
+    name: string;
+    pathway: string;
+    sequence: number;
+    subtitle: string;
+    region?: string;
+    file: WorldPackFile;
+};
 
 export interface WorldPack {
     id: string;
@@ -25,6 +40,9 @@ export interface WorldPack {
     rules: WorldPackFile;
     loot: WorldPackFile;
     starter?: WorldPackFile;
+    /** Sequence 9 starter roster (one per pathway). */
+    playablePcs?: PlayablePcOption[];
+    /** Fallback / default starter PC (Clara). */
     defaultPc?: WorldPackFile;
     uiSkin?: CampaignUiSkin;
     coverAssetPath?: string;
@@ -33,6 +51,50 @@ export interface WorldPack {
 export function worldPackToFile(file: WorldPackFile): File {
     return new File([file.contents], file.name, { type: 'text/plain' });
 }
+
+export function parsePlayablePc(raw: string): PlayerCharacter | null {
+    try {
+        const parsed = JSON.parse(raw) as unknown;
+        const row = Array.isArray(parsed) ? parsed[0] : parsed;
+        if (!row || typeof row !== 'object') return null;
+        return row as PlayerCharacter;
+    } catch {
+        return null;
+    }
+}
+
+function fileNameFromPath(path: string): string {
+    return path.split('/').pop() || 'pc.json';
+}
+
+function buildPlayablePcs(files: Record<string, string>): PlayablePcOption[] {
+    const out: PlayablePcOption[] = [];
+    for (const [path, contents] of Object.entries(files)) {
+        const row = parsePlayablePc(contents);
+        if (!row?.name) continue;
+        const pathway = row.signatureKit?.pathway ?? '';
+        const sequence = typeof row.signatureKit?.sequence === 'number' ? row.signatureKit.sequence : 9;
+        out.push({
+            id: row.id || fileNameFromPath(path).replace(/\.json$/, ''),
+            name: row.name,
+            pathway,
+            sequence,
+            subtitle: formatLotmPathwayLabel(pathway, sequence) || row.pcMeta?.archetype || '',
+            region: row.region,
+            file: { name: fileNameFromPath(path), contents },
+        });
+    }
+    return out.sort((a, b) => a.subtitle.localeCompare(b.subtitle) || a.name.localeCompare(b.name));
+}
+
+export const LOTM_PLAYABLE_PCS: PlayablePcOption[] = buildPlayablePcs(peopleRaw);
+
+export const DEFAULT_PLAYABLE_PC_ID =
+    LOTM_PLAYABLE_PCS.find(pc => pc.pathway === 'fool')?.id
+    ?? LOTM_PLAYABLE_PCS[0]?.id
+    ?? '';
+
+const claraFile = LOTM_PLAYABLE_PCS.find(pc => pc.id === DEFAULT_PLAYABLE_PC_ID)?.file;
 
 export const LORD_OF_THE_MYSTERIES_PACK: WorldPack = {
     id: 'lord-of-the-mysteries',
@@ -57,10 +119,8 @@ export const LORD_OF_THE_MYSTERIES_PACK: WorldPack = {
         name: 'lotm_starterPrompt.md',
         contents: starterMd,
     },
-    defaultPc: {
-        name: 'lotm_pc_clara_whitlock.json',
-        contents: claraJson,
-    },
+    playablePcs: LOTM_PLAYABLE_PCS,
+    defaultPc: claraFile,
 };
 
 /** Registry consumed by the New Campaign modal's Quick Start section. */

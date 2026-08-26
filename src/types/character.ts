@@ -23,7 +23,7 @@ export type InventoryItem = {
 export type InventoryProposal = {
     name: string;
     op: 'grant' | 'remove' | 'equip' | 'relocate';
-    kind: 'weapon' | 'armor' | 'consumable' | 'misc';
+    kind: 'weapon' | 'armor' | 'consumable' | 'currency' | 'misc';
     quality: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
     scalingStat: 'PWR' | 'SPD' | 'WIL';
     range: 'Close' | 'Reach' | 'Ranged';
@@ -46,6 +46,8 @@ export type CharacterProfile = {
     abilities: string[];
     traits: string[];
     notes: string;
+    /** Wanted price on the PC (churches/police). Hunt posters do not live here. */
+    bounty?: string;
 };
 
 // ── Structured PC profile (WO-G — scene-tagged smart injection) ──
@@ -226,7 +228,20 @@ export type NPCEntry = {
         archetype?: string;
         combatTier?: string;           // Phase 7 wiring; display-only today
         stats?: Record<string, number>;
+        /** Starting Loen purse. Seeded into inventory as currency rows when the PC is attached. */
+        purse?: { pounds?: number; soli?: number; pence?: number };
+        /** Wanted bounty on this PC. Seeded onto the live sheet; hunt posters are inventory jobs. */
+        bounty?: {
+            amountPounds?: number;
+            issuer?: string;
+            status?: 'none' | 'active' | 'removed';
+        };
     };
+    /**
+     * Optional pre-authored Stats-tab sheet (`characterProfileData`).
+     * Seeded onto `context.characterProfileData` when this row is the PC.
+     */
+    characterProfile?: CharacterProfile;
     traits?: string[];            // <=5, controlled vocab (see services/npc/agencyPools.ts)
     region?: string;              // coarse location: 'academy' | 'Ryuten' | ...
     haunt?: string;               // flavor only, for reports ('the garden')

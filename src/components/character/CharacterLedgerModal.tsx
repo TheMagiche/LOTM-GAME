@@ -14,6 +14,7 @@ import { toast } from '../Toast';
 import { ScreenLightbox } from '../ScreenLightbox';
 import { uid } from '../../utils/uid';
 import type { NPCEntry, PlayerCharacter } from '../../types';
+import { seedInventoryIfEmpty } from '../../worldpacks/lotmPurse';
 
 type LedgerTab = 'sheet' | 'record' | 'inventory' | 'stats';
 
@@ -45,6 +46,8 @@ export function CharacterLedgerModal() {
     const togglePCPanel = useAppStore((s) => s.togglePCPanel);
     const playerCharacter = useAppStore((s) => s.playerCharacter);
     const setPlayerCharacter = useAppStore((s) => s.setPlayerCharacter);
+    const inventoryItems = useAppStore((s) => s.inventoryItems ?? s.context.inventoryItems ?? []);
+    const setInventoryItems = useAppStore((s) => s.setInventoryItems);
 
     const sheetRef = useRef<SheetTabHandle>(null);
     const [showUnsavedPrompt, setShowUnsavedPrompt] = useState(false);
@@ -144,6 +147,10 @@ export function CharacterLedgerModal() {
             return;
         }
         setPlayerCharacter(pc);
+        const seededInv = seedInventoryIfEmpty(inventoryItems, pc);
+        if (seededInv !== inventoryItems && seededInv.length > 0) {
+            setInventoryItems(seededInv);
+        }
         setPendingImport(null);
         toast.success(`Imported character "${pc.name}".`);
     };

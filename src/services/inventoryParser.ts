@@ -11,6 +11,7 @@ import { normalizeLocationTag, normalizeInventoryItem } from '../types';
 import { llmCall } from '../utils/llmCall';
 import { AI_CALL_TIMEOUT_MS } from './llm/timeouts';
 import type { ModelRequest, ModelResponse } from './turn/hostFacade';
+import { HUNT_BOUNTY_KEYWORD, looksLikeCurrencyName } from '../worldpacks/lotmPurse';
 
 export type InventoryOp =
     | { action: 'add'; name: string; qty: number; category?: string; keywords?: string[]; notes?: string; locationTag?: string }
@@ -39,7 +40,7 @@ export async function scanInventory(
         .map((m) => `[${m.role.toUpperCase()}]: ${m.content}`)
         .join('\n\n');
 
-    const prompt = `You are an AI inventory manager for an RPG. Review the recent chat and inventory below.\nIdentify items gained, lost, consumed, relocated/moved, equipped, or unequipped.\nItems carry a "loc" (locationTag, e.g. "inventory", "player base", "mom's house"). Default location is "inventory".\n\n=== CURRENT INVENTORY ===\n${buildInventoryJson(currentItems)}\n\n=== RECENT CHAT HISTORY ===\n${turns}\n\n=== INSTRUCTIONS ===\nReturn ONLY a valid JSON array of operations. No other text.\nEach operation is an object with an "action" field.\n\nActions:\n- add: {action:"add", name:"Torch", qty:3, category:"misc", keywords:["fire","light"], locationTag:"inventory"}\n- relocate: {action:"relocate", id:"ITEM_ID_HERE", locationTag:"player base"}\n- remove: {action:"remove", id:"ITEM_ID_HERE"}\n- update: {action:"update", id:"ITEM_ID_HERE", changes:{qty:2, locationTag:"player base"}}\n- consume: {action:"consume", id:"ITEM_ID_HERE", qty:1}\n- equip: {action:"equip", id:"ITEM_ID_HERE"}\n- unequip: {action:"unequip", id:"ITEM_ID_HERE"}\n\nIf nothing changed, return: []`;
+    const prompt = `You are an AI inventory manager for an RPG. Review the recent chat and inventory below.\nIdentify items gained, lost, consumed, relocated/moved, equipped, or unequipped.\nItems carry a "loc" (locationTag, e.g. "inventory", "player base", "mom's house"). Default location is "inventory".\n\n=== CURRENT INVENTORY ===\n${buildInventoryJson(currentItems)}\n\n=== RECENT CHAT HISTORY ===\n${turns}\n\n=== INSTRUCTIONS ===\nReturn ONLY a valid JSON array of operations. No other text.\nEach operation is an object with an "action" field.\n\nActions:\n- add: {action:"add", name:"Torch", qty:3, category:"misc", keywords:["fire","light"], locationTag:"inventory"}\n- relocate: {action:"relocate", id:"ITEM_ID_HERE", locationTag:"player base"}\n- remove: {action:"remove", id:"ITEM_ID_HERE"}\n- update: {action:"update", id:"ITEM_ID_HERE", changes:{qty:2, locationTag:"player base"}}\n- consume: {action:"consume", id:"ITEM_ID_HERE", qty:1}\n- equip: {action:"equip", id:"ITEM_ID_HERE"}\n- unequip: {action:"unequip", id:"ITEM_ID_HERE"}\n\nCurrency (gold pounds, soli, pence, coins) MUST use category "currency". Merge into an existing row of the same unit when the player gains or spends money; do not invent a second purse. Hunt posters whose name starts with "BOUNTY:" are contracts, category "key", keywords ["hunt-bounty"] — they are NOT the player's wanted bounty.\nIf nothing changed, return: []`;
 
     try {
         const result = modelCall
@@ -83,8 +84,8 @@ export function applyOps(items: InventoryItem[], ops: InventoryOp[]): InventoryI
                     id: `inv_${sceneId}_${Math.random().toString(36).slice(2, 7)}`,
                     name: op.name,
                     qty: op.qty || 1,
-                    category: (op.category as InventoryItemCategory) || 'misc',
-                    keywords: op.keywords || op.name.toLowerCase().split(/\s+/).filter(w => w.length > 2),
+                    category: inferInventoryCategory(op.name, op.category),
+                    keywords: inferInventoryKeywords(op.name, op.keywords),
                     equipped: false,
                     lastUsedScene: sceneId,
                     importance: 5,
@@ -133,4 +134,25 @@ export function applyOps(items: InventoryItem[], ops: InventoryOp[]): InventoryI
     }
 
     return next.map(normalizeInventoryItem);
+}
+
+const VALID_CATEGORIES = new Set<InventoryItemCategory>(['weapon', 'armor', 'consumable', 'currency', 'key', 'misc', 'equipped']);
+
+function inferInventoryCategory(name: string, explicit?: string): InventoryItemCategory {
+    if (explicit && VALID_CATEGORIES.has(explicit as InventoryItemCategory)) {
+        return explicit as InventoryItemCategory;
+    }
+    if (/^BOUNTY:/i.test(name.trim())) return 'key';
+    if (looksLikeCurrencyName(name)) return 'currency';
+    return 'misc';
+}
+
+function inferInventoryKeywords(name: string, explicit?: string[]): string[] {
+    const base = explicit && explicit.length
+        ? explicit
+        : name.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+    if (/^BOUNTY:/i.test(name.trim()) && !base.includes(HUNT_BOUNTY_KEYWORD)) {
+        return [...base, HUNT_BOUNTY_KEYWORD];
+    }
+    return base;
 }

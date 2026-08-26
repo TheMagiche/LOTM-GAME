@@ -7,6 +7,7 @@ import { parseLocationsFromLore } from '../loreLocationParser';
 import { parseFactionsFromLore } from '../loreFactionParser';
 import { extractEngineSeeds } from '../loreEngineSeeder';
 import { loadLootTree } from '../lootTreeLoader';
+import { resolveLootDrop } from '../../engine/lootEngine';
 
 // The shipped Lord of the Mysteries world pack is a fixture like any other
 // Example_Setup compendium — these tests keep its machine-parsed format honest.
@@ -148,8 +149,60 @@ describe('LOTM world pack — faction ledger seeding', () => {
 
 describe('LOTM world pack — loot tree', () => {
     const loot = JSON.parse(readFileSync(resolve(LOTM_DIR, 'loot.json'), 'utf-8'));
+    const tree = loadLootTree(loot);
 
     it('loads as a valid LootTree', () => {
-        expect(loadLootTree(loot)).not.toBeNull();
+        expect(tree).not.toBeNull();
+    });
+
+    it('composes currency drops with a unit, including gold pounds', () => {
+        expect(tree).not.toBeNull();
+        const zeroOthers = {
+            currency: 100,
+            mundane: 0,
+            medicine: 0,
+            named: 0,
+            uncanny: 0,
+            artifact: 0,
+            bounty: 0,
+            formula: 0,
+        };
+        const res = resolveLootDrop(tree!, {
+            rolls: 12,
+            profile: { reweight: { root: zeroOthers } },
+            rng: () => 0.5,
+        });
+        expect(res.items.length).toBeGreaterThan(0);
+        for (const item of res.items) {
+            expect(item.label).toMatch(/\d+\s+(pence|soli|gold pounds)$/);
+        }
+    });
+
+    it('keys bounty posters by crew / admiral / king so filterBy stays in-tier', () => {
+        expect(tree).not.toBeNull();
+        const pool = tree!.pools.bountyLedgerPool as Record<string, { text: string }[]>;
+        expect(Object.keys(pool).sort()).toEqual(['admiral', 'crew', 'king']);
+        expect(pool.king.every(e => /king of|queen mystic/i.test(e.text))).toBe(true);
+        expect(pool.admiral.every(e => /admiral|queen of (stars|ailment)|gehrman sparrow/i.test(e.text))).toBe(true);
+
+        const res = resolveLootDrop(tree!, {
+            rolls: 8,
+            profile: {
+                reweight: {
+                    root: {
+                        currency: 0, mundane: 0, medicine: 0, named: 0,
+                        uncanny: 0, artifact: 0, bounty: 100, formula: 0,
+                    },
+                    bountyTierPick: { crew: 100, admiral: 0, king: 0 },
+                },
+            },
+            rng: () => 0.1,
+        });
+        expect(res.items.length).toBeGreaterThan(0);
+        const crewNames = pool.crew.map(e => e.text);
+        for (const item of res.items) {
+            expect(crewNames.some(text => item.label.startsWith(text))).toBe(true);
+            expect(item.label).not.toMatch(/King of the Five Seas/);
+        }
     });
 });

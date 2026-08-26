@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_sabine_vex",
+    "name": "Sabine Vex",
+    "aliases": "\"Madame Indulgence\"",
+    "appearance": "A lush woman of thirty-three dressed in burgundy and gold, dark curls escaping their pins, and a smile that offers everything and prices it privately. Her beauty is real but worked at — the potion polished what nature supplied. She smells of wine, incense, and something underneath that makes animals nervous.",
+    "visualProfile": {
+      "race": "Human (Intis)",
+      "gender": "Female",
+      "ageRange": "Early thirties",
+      "build": "Voluptuous, languid, deceptively strong",
+      "symmetry": "Potion-polished beauty; too perfect when she stops moving",
+      "hairStyle": "Dark curls, artfully escaping",
+      "eyeColor": "Wine-dark brown, flecked red in certain light",
+      "skinTone": "Warm olive, candlelit glow",
+      "gait": "Swaying, unhurried, arriving like perfume",
+      "distinctMarks": "Red-flecked eyes; animals grow quiet around her",
+      "clothing": "Burgundy and gold silks, jeweled rings on every finger, hidden knife in her hair",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Rose School of Thought (cell member, temperance-leaning — mostly)",
+    "storyRelevance": "Sabine took the Pleasure potion to escape poverty's arithmetic — the formula came free with her first Rose School salon invitation, and the price only became clear later. The pathway grants command of desire itself: rooms warm when she wants, resolve melts on schedule, and her touch can make saints confess. But the Abyss collects indulgence like interest, and Sabine has watched two cell-mates dissolve into appetites that ate them. She keeps a ledger of pleasures refused and reads it nightly — the closest thing her pathway has to prayer.",
+    "goals": "Enjoy everything without becoming consumed by anything. Climb the Rose School's ranks before they climb her. Discover whether temperance within indulgence is wisdom or just slower ruin.",
+    "disposition": "Magnetic, indulgent, startlingly self-aware. Treats desire as currency and addiction as bad accounting. Laughs easily; weeps only when alone and counts it in the ledger.",
+    "status": "Alive",
+    "voice": "Honeyed Intis purr, intimate across any distance. Invitations and warnings share the same warmth.",
+    "personality": "The Pleasure creed demands she indulge fully and rule her desires rather than serve them — a paradox she navigates with ledgers and ritual. Her danger is the interest rate: the Abyss lends generously and collects in identity, and every pleasure deferred is noted somewhere below.",
+    "exampleOutput": "[**Sabine**]: \"You want to say yes. Everyone wants to say yes — that's not special, darling, that's Tuesday.\" She refills his glass without asking. \"What's special is watching you decide not to. That's the only show in town worth tickets.\" A smile with edges. \"So. Are you going to be interesting tonight?\"",
+    "affinity": 45,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "backlund",
+    "haunt": "Her salon above the Velvet Curtain and the Rose School's masked gatherings",
+    "drives": {
+      "coreWant": "To taste everything the world offers and still recognize herself in the morning",
+      "sessionWant": "Climb the cell hierarchy and keep her name out of the dissolution reports",
+      "sceneWant": "Read everyone's desires accurately — including the ones they hide from themselves"
+    },
+    "wants": {
+      "short": [
+        "Host Thursday's salon (three recruits, one watcher)",
+        "Add tonight's refused temptation to the ledger",
+        "Check on Marielle — third week since her last ledger entry"
+      ],
+      "medium": [
+        "Learn what happened to the cell-mates who dissolved",
+        "Master Desire Manipulation without becoming its subject",
+        "Advance toward Lust or Consensualist — deliberately chosen"
+      ],
+      "long": "Retire wealthy, whole, and human — proof the Abyss's arithmetic can be beaten."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 1,
+      "boldness": 2,
+      "warmth": 1,
+      "empathy": 1,
+      "composure": 1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Ledger of pleasures refused (her true bible)",
+        "Jeweled rings (three are weapons, one is a focus)",
+        "Hair-knife, pearl-handled",
+        "Salon kit: wines, incenses, confessional seating chart",
+        "Marielle's returned ledger, unopened"
+      ],
+      "abilities": [
+        "Desire Manipulation",
+        "Enhanced Charm",
+        "Pleasure Aura",
+        "Ritual Magic",
+        "Appetite Sense"
+      ],
+      "pathway": "abyss",
+      "sequence": 9
+    },
+    "traits": [
+      "indulgent",
+      "self-aware",
+      "magnetic",
+      "disciplined",
+      "damned-adjacent"
+    ],
+    "pcMeta": {
+      "archetype": "Pleasure — Sequence 9 (Abyss Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 5,
+        "Reasoning": 6
+      },
+      "purse": { "soli": 25, "pence": 6 }
+    },
+    "characterProfile": {
+      "name": "Sabine Vex",
+      "race": "Human (Loen)",
+      "class": "Pleasure — Sequence 9 (Abyss Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 6 },
+      "skills": [
+        "Desire Manipulation — shape what a room finds irresistible",
+        "Pleasure Aura — make her presence feel like indulgence",
+        "Appetite Sense — taste every hunger in the company she keeps"
+      ],
+      "abilities": ["Desire Manipulation", "Enhanced Charm", "Pleasure Aura", "Ritual Magic", "Appetite Sense"],
+      "traits": ["indulgent", "self-aware", "magnetic", "disciplined", "damned-adjacent"],
+      "notes": "Abyss pathway Pleasure who uses charm and discipline to keep predatory appetites from choosing for her."
+    }
+  }
+]
