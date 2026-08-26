@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 5,
         "Reasoning": 6
-      }
+      },
+      "purse": { "soli": 2, "pence": 10 }
+    },
+    "characterProfile": {
+      "name": "Theo Vance",
+      "race": "Human (Loen)",
+      "class": "Gambler — Sequence 9 (Wheel of Fortune Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 6 },
+      "skills": ["Read probability at a glance", "Stake luck against danger", "Recognize favorable turns"],
+      "abilities": ["Probability Manipulation", "Card Sharp Mastery", "Enhanced Reflexes", "Spirituality", "Luck Sense"],
+      "traits": ["charming", "reckless", "clever", "superstitious", "restless"],
+      "notes": "Wheel of Fortune Gambler who keeps surviving impossible odds, though each favorable turn seems to demand another wager."
     }
   }
 ]

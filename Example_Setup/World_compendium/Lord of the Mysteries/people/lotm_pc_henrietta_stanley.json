@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 5,
         "Reasoning": 7
-      }
+      },
+      "purse": { "soli": 14, "pence": 6 }
+    },
+    "characterProfile": {
+      "name": "Henrietta Stanley",
+      "race": "Human (Loen)",
+      "class": "Arbiter — Sequence 9 (Justiciar Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 7 },
+      "skills": ["Bind agreements with words", "Detect lies in testimony", "Pass judgment with authority"],
+      "abilities": ["Binding Words", "Authority Presence", "Legal Mastery", "Lie Detection", "Judgment Strike"],
+      "traits": ["principled", "severe", "articulate", "incorruptible", "unforgiving"],
+      "notes": "Arbiter who left the courts after discovering that spoken judgments can bind oaths and halt the guilty."
     }
   }
 ]

@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 5,
         "Reasoning": 6
-      }
+      },
+      "purse": { "soli": 6, "pence": 1 }
+    },
+    "characterProfile": {
+      "name": "Vivienne Noir",
+      "race": "Human (Loen)",
+      "class": "Assassin — Sequence 9 (Demoness Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 6 },
+      "skills": ["Approach without notice", "Prepare precise poisons", "Exploit an opening in combat"],
+      "abilities": ["Enhanced Agility", "Stealth", "Assassination Arts", "Poison Craft", "Charm"],
+      "traits": ["charming", "ruthless", "disciplined", "vain", "principled"],
+      "notes": "Demoness pathway Assassin whose elegance, poisons, and discipline conceal a life built around controlled danger."
     }
   }
 ]

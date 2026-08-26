@@ -93,7 +93,21 @@
         "Spirituality": 7,
         "Physique": 6,
         "Reasoning": 4
-      }
+      },
+      "purse": { "soli": 7, "pence": 5 }
+    },
+    "characterProfile": {
+      "name": "Margaret O'Dell",
+      "race": "Human (Loen)",
+      "class": "Corpse Collector — Sequence 9 (Death Pathway)",
+      "level": 9,
+      "hp": { "current": 26, "max": 26 },
+      "mp": { "current": 14, "max": 14 },
+      "stats": { "Spirituality": 7, "Physique": 6, "Reasoning": 4 },
+      "skills": ["Handle the dead without fear", "Sense lingering death", "Preserve and identify remains"],
+      "abilities": ["Spirit Communication", "Corpse Puppetry (basic)", "Enhanced Strength", "Death Affinity", "Fearlessness"],
+      "traits": ["fearless", "compassionate", "stubborn", "practical", "loyal"],
+      "notes": "Death pathway Corpse Collector who can read the last traces left on the dead and the spaces around them."
     }
   }
 ]

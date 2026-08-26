@@ -93,7 +93,21 @@
         "Spirituality": 5,
         "Physique": 8,
         "Reasoning": 4
-      }
+      },
+      "purse": { "soli": 9, "pence": 3 }
+    },
+    "characterProfile": {
+      "name": "Thomas Reiner",
+      "race": "Human (Loen)",
+      "class": "Barbarian — Sequence 9 (Twilight Giant Pathway)",
+      "level": 9,
+      "hp": { "current": 30, "max": 30 },
+      "mp": { "current": 10, "max": 10 },
+      "stats": { "Spirituality": 5, "Physique": 8, "Reasoning": 4 },
+      "skills": ["Break through physical obstacles", "Protect companions in close combat", "Endure exhaustion and injury"],
+      "abilities": ["Enhanced Strength", "Toughness", "Weapon Mastery (improvised)", "Intimidation", "Heat Resistance"],
+      "traits": ["protective", "honest", "strong", "hot-tempered", "loyal"],
+      "notes": "Twilight Giant pathway Barbarian whose formidable strength is tempered by a stubborn instinct to shield others."
     }
   }
 ]

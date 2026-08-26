@@ -93,7 +93,21 @@
         "Spirituality": 5,
         "Physique": 5,
         "Reasoning": 8
-      }
+      },
+      "purse": { "soli": 18, "pence": 2 }
+    },
+    "characterProfile": {
+      "name": "Delphine Roche",
+      "race": "Human (Loen)",
+      "class": "Craftsman — Sequence 9 (Paragon Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 10, "max": 10 },
+      "stats": { "Spirituality": 5, "Physique": 5, "Reasoning": 8 },
+      "skills": ["Build impossible mechanisms", "Read machines by touch", "Empower crafted devices"],
+      "abilities": ["Craftsmanship Mastery", "Enhanced Dexterity", "Mechanical Intuition", "Spirituality", "Device Empowerment"],
+      "traits": ["brilliant", "enthusiastic", "reckless", "inventive", "stubborn"],
+      "notes": "Trier inventor and Craftsman whose clockwork creations now operate beyond their blueprints."
     }
   }
 ]

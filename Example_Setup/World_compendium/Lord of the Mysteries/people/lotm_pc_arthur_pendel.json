@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 6,
         "Reasoning": 5
-      }
+      },
+      "purse": { "soli": 7, "pence": 3 }
+    },
+    "characterProfile": {
+      "name": "Arthur Pendel",
+      "race": "Human (Loen)",
+      "class": "Sleepless — Sequence 9 (Darkness Pathway)",
+      "level": 9,
+      "hp": { "current": 26, "max": 26 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 6, "Reasoning": 5 },
+      "skills": ["Keep watch without sleep", "Read nocturnal spiritual traces", "Enforce order under pressure"],
+      "abilities": ["Sleeplessness", "Enhanced Vigilance", "Spirit Vision", "Combat Proficiency", "Night Perception"],
+      "traits": ["vigilant", "dutiful", "stubborn", "righteous", "insomniac"],
+      "notes": "Backlund constable and unregistered Sleepless. Reopening the Harrow Lane case while learning what follows him through the night."
     }
   }
 ]

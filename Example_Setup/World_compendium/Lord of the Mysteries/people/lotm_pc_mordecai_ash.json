@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 5,
         "Reasoning": 7
-      }
+      },
+      "purse": { "soli": 20, "pence": 3 }
+    },
+    "characterProfile": {
+      "name": "Mordecai Ash",
+      "race": "Human (Loen)",
+      "class": "Baron of Corruption — Sequence 9 (Black Emperor Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 7 },
+      "skills": ["Exploit rules and institutions", "Distort order through corruption", "Turn authority against itself"],
+      "abilities": ["Corruption Direction", "Binding Contracts", "Enhanced Influence", "Spirituality", "Decay Sense"],
+      "traits": ["imperial", "patient", "calculating", "principled", "ambitious"],
+      "notes": "Black Emperor pathway Beyonder who treats law, hierarchy, and etiquette as structures waiting to be bent."
     }
   }
 ]

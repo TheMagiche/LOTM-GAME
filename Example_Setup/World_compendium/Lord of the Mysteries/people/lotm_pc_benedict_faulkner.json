@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 3,
         "Reasoning": 8
-      }
+      },
+      "purse": { "soli": 15, "pence": 4 }
+    },
+    "characterProfile": {
+      "name": "Benedict Faulkner",
+      "race": "Human (Loen)",
+      "class": "Scholar — Sequence 9 (Hermit Pathway)",
+      "level": 9,
+      "hp": { "current": 20, "max": 20 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 3, "Reasoning": 8 },
+      "skills": ["Recall every text studied", "Interpret occult languages", "Research forbidden history"],
+      "abilities": ["Enhanced Memory", "Language Comprehension", "Spirituality", "Research Mastery", "Whisper Discernment"],
+      "traits": ["erudite", "reckless", "ironic", "patient", "secretive"],
+      "notes": "Scholar of the Hermit Pathway whose Fourth Epoch research has begun whispering interpretations of its own."
     }
   }
 ]

@@ -93,7 +93,21 @@
         "Spirituality": 7,
         "Physique": 6,
         "Reasoning": 4
-      }
+      },
+      "purse": { "soli": 16, "pence": 9 }
+    },
+    "characterProfile": {
+      "name": "Samuel Bright",
+      "race": "Human (Loen)",
+      "class": "Sun-Blessed — Sequence 9 (Sun Pathway)",
+      "level": 9,
+      "hp": { "current": 26, "max": 26 },
+      "mp": { "current": 14, "max": 14 },
+      "stats": { "Spirituality": 7, "Physique": 6, "Reasoning": 4 },
+      "skills": ["Bring light into darkness", "Bolster allies with faith", "Burn away corruption"],
+      "abilities": ["Light of Purification", "Enhanced Healing", "Spirituality", "Bane Against Evil", "Courage Aura"],
+      "traits": ["devout", "compassionate", "courageous", "conflicted", "stubborn"],
+      "notes": "Sun pathway Sun-Blessed whose radiance strengthens allies and makes hidden corruption difficult to conceal."
     }
   }
 ]

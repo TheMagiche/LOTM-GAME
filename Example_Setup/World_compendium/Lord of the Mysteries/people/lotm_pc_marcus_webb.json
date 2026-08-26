@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 7,
         "Reasoning": 4
-      }
+      },
+      "purse": { "soli": 5, "pence": 2 }
+    },
+    "characterProfile": {
+      "name": "Marcus Webb",
+      "race": "Human (Loen)",
+      "class": "Prisoner — Sequence 9 (Chained Pathway)",
+      "level": 9,
+      "hp": { "current": 28, "max": 28 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 7, "Reasoning": 4 },
+      "skills": ["Endure pain and confinement", "Resist physical and spiritual control", "Turn restraints into leverage"],
+      "abilities": ["Confinement Authority", "Enhanced Endurance", "Pain Resistance", "Lock Dominion", "Containment Aura"],
+      "traits": ["steadfast", "taciturn", "disciplined", "fair", "unbreakable"],
+      "notes": "Chained pathway survivor whose strength is built from endurance, restraint, and refusal to be owned again."
     }
   }
 ]

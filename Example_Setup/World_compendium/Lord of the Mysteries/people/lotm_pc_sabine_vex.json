@@ -93,7 +93,21 @@
         "Spirituality": 6,
         "Physique": 5,
         "Reasoning": 6
-      }
+      },
+      "purse": { "soli": 25, "pence": 6 }
+    },
+    "characterProfile": {
+      "name": "Sabine Vex",
+      "race": "Human (Loen)",
+      "class": "Pleasure — Sequence 9 (Abyss Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 5, "Reasoning": 6 },
+      "skills": ["Read and amplify desire", "Resist corruption through discipline", "Move through decadent social circles"],
+      "abilities": ["Desire Manipulation", "Enhanced Charm", "Pleasure Aura", "Ritual Magic", "Appetite Sense"],
+      "traits": ["indulgent", "self-aware", "magnetic", "disciplined", "damned-adjacent"],
+      "notes": "Abyss pathway Pleasure who uses charm and discipline to keep predatory appetites from choosing for her."
     }
   }
 ]
