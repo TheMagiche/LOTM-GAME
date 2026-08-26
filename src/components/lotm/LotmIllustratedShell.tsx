@@ -4,6 +4,7 @@ import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
 import { matchLotmVisuals } from '../../services/lotm/lotmVisualMatcher';
 import { ChatArea } from '../ChatArea';
 import { LotmChapterCard } from './LotmChapterCard';
+import { LotmPlayerHud } from './LotmPlayerHud';
 import { LotmWorldIndexOverlay } from './LotmWorldIndexOverlay';
 
 export function LotmIllustratedShell() {
@@ -50,6 +51,7 @@ export function LotmIllustratedShell() {
             />
             <div className="lotm-backdrop-scrim pointer-events-none" aria-hidden />
 
+            <LotmPlayerHud />
             <ChatArea presentation="illustrated" />
 
             <LotmChapterCard />
