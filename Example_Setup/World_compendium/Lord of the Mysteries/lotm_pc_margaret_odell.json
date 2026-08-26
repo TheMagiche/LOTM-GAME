@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_margaret_odell",
+    "name": "Margaret O'Dell",
+    "aliases": "\"Maggie\"",
+    "appearance": "A stout, capable woman of forty with iron-grey hair coiled under a workman's cap and forearms that have hauled corpses out of canals. She wears a gravedigger's canvas coat and a mourning ring for a husband lost at sea. Her face is built for grim humor, and her lantern never seems to run out of oil.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Female",
+      "ageRange": "Around forty",
+      "build": "Stout, strong, built by labor",
+      "symmetry": "Plain, weathered, kind around the eyes",
+      "hairStyle": "Iron grey, coiled under a cap",
+      "eyeColor": "Moss green",
+      "skinTone": "Ruddy, wind-chapped",
+      "gait": "Heavy, unhurried steps; carries weight like furniture",
+      "distinctMarks": "Calloused palms; a mourning ring worn smooth",
+      "clothing": "Canvas workman's coat, heavy boots, ever-burning storm lantern",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Backlund municipal graveyard staff (unregistered Beyonder)",
+    "storyRelevance": "Twenty years of burying Backlund's unclaimed dead taught Maggie which graves came up wrong. The Corpse Collector formula was payment from a pale gentleman who needed a night's help moving a coffin that moved back — and who judged, correctly, that nothing frightened her. Since drinking it, the dead she tends have grown quiet and orderly in her presence, and something in the catacombs has begun leaving her gifts: old coins, buttons, once a wedding band. The pale gentleman has returned twice to ask whether she wants advancement.",
+    "goals": "Keep the graveyard's peace between the living city above and whatever tenants the catacombs hold. Learn what the pale gentleman serves before accepting anything further. Give the unclaimed dead the dignity no one else will.",
+    "disposition": "Unflappable, dry-witted, fiercely decent. Treats spirits like lodgers and monsters like weather — with respect and firm boundaries.",
+    "status": "Alive",
+    "voice": "Broad Backlund working burr, unhurried. Speaks to the dead as readily as the living, same tone.",
+    "personality": "The Corpse Collector creed suits her native temperament: the dead deserve order, and fear helps no one shovel. Her courage isn't bravery so much as long acquaintance with darkness. The potion's chill sits in her bones worse each winter, and she notices, and keeps working.",
+    "exampleOutput": "[**Maggie**]: \"Third grave this month dug up from inside.\" She relights the lantern without hurry. \"Whoever you are down there, we had an arrangement.\" She waits. \"Fine. We'll do this civil, then. Fetch the spade, love — you're on watch.\"",
+    "affinity": 55,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The municipal graveyard and its catacomb stairs",
+    "drives": {
+      "coreWant": "To keep the boundary between the living city and its dead honored and quiet",
+      "sessionWant": "Learn who is digging up from below and what the pale gentleman serves",
+      "sceneWant": "Restore order to whatever has been disturbed"
+    },
+    "wants": {
+      "short": [
+        "Walk the rows and note which headstones have gone cold",
+        "Return the wedding band left at the catacomb door",
+        "Share tea with the night watchman (he doesn't know what she is)"
+      ],
+      "medium": [
+        "Identify the pale gentleman's affiliation",
+        "Secure proper tools for handling restless remains",
+        "Advance toward Gravedigger when the time is right"
+      ],
+      "long": "Die someday as warden of Backlund's dead — respected by both sides of the grass."
+    },
+    "personalityHex": {
+      "drive": 1,
+      "diligence": 2,
+      "boldness": 1,
+      "warmth": 2,
+      "empathy": 2,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Ever-burning storm lantern",
+        "Gravedigger's spade (well-balanced, often used)",
+        "Ring of cemetery keys, some older than the cemetery",
+        "Salt, chalk, and burial rites in dog-eared pamphlet",
+        "The returned wedding band (she cannot bring herself to keep or give it)"
+      ],
+      "abilities": [
+        "Spirit Communication",
+        "Corpse Puppetry (basic)",
+        "Enhanced Strength",
+        "Death Affinity",
+        "Fearlessness"
+      ],
+      "pathway": "death",
+      "sequence": 9
+    },
+    "traits": [
+      "fearless",
+      "compassionate",
+      "stubborn",
+      "practical",
+      "loyal"
+    ],
+    "pcMeta": {
+      "archetype": "Corpse Collector — Sequence 9 (Death Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 7,
+        "Physique": 6,
+        "Reasoning": 4
+      }
+    }
+  }
+]

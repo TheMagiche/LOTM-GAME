@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pc_lotm_mordecai_ash",
+    "name": "Mordecai Ash",
+    "aliases": "\"The Quiet Partner\"",
+    "appearance": "A composed man of forty-four with silver-streaked black hair swept straight back, a magistrate's bearing, and eyes that weigh everything — including the person weighing back. He wears impeccable charcoal suits and a signet ring he never explains. When he enters a room, conversations lower their voices as if someone important had died.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Mid forties",
+      "build": "Tall, lean, impeccably tailored",
+      "symmetry": "Aristocratic, coldly handsome; memorable in the wrong way",
+      "hairStyle": "Black, silver-streaked, swept straight back",
+      "eyeColor": "Dark grey, weighing",
+      "skinTone": "Pale, powder-finished",
+      "gait": "Measured, unhurried, doors opened ahead of him",
+      "distinctMarks": "Unexplained signet ring; shadow that seems denser than it should be",
+      "clothing": "Impeccable charcoal suits, silver watch chain, unexplained signet ring",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated (Backlund moneylender and 'problem solver'; Solomon family descendant — concealed)",
+    "storyRelevance": "Mordecai took the Baron of Corruption potion as the family inheritance it was: his grandmother's effects included the formula, a warning, and a list of debts owed to their extinct house. The potion grants dominion over corruption itself — contracts bind deeper, decay obeys direction, and institutions rot where he wills it. But the Black Emperor pathway collects thrones: his ambitions have begun outgrowing his intentions, and last month he caught himself pricing the mayor's office like an acquisition. The Augustus family's Justiciar agents have started attending his loan signings.",
+    "goals": "Reclaim what the Solomon name is owed without waking what the Solomon name summons. Master corruption before it masters his ambitions. Learn which of his clients are royal watchers before the trap closes.",
+    "disposition": "Courteous, patient, quietly imperial. Treats every interaction as a negotiation he has already won on paper. Genuinely keeps his word — terms and conditions apply.",
+    "status": "Alive",
+    "voice": "Low, precise, contract-drafting cadence. Compliments sound like clauses.",
+    "personality": "The Baron's creed demands order through dominion, which Mordecai practices as finance: every empire is just a ledger waiting for a better accountant. His danger is the throne's appetite — each acquisition makes the next feel inevitable, and inevitability is how Black Emperors are made.",
+    "exampleOutput": "[**Mordecai**]: \"Your debt is settled.\" He slides the paper across without touching it. \"My fee is not money. When I call — and I will call once — you will open one door, ask no questions, and forget my name by morning.\" A pause. \"Refuse now if this troubles you. Most find, afterward, that it shouldn't have.\"",
+    "affinity": 40,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "backlund",
+    "haunt": "His private lending office above the Cornerstone Bank's side entrance",
+    "drives": {
+      "coreWant": "To restore his house's standing without inheriting its curse of crowns",
+      "sessionWant": "Identify the royal watchers among his clients and collect three old debts",
+      "sceneWant": "Leave every negotiation holding more leverage than he brought"
+    },
+    "wants": {
+      "short": [
+        "Review today's loan signatures for royal-family handwriting",
+        "Collect the Hartwell debt (favor form, due Thursday)",
+        "Burn one ambition before it roots (weekly discipline)"
+      ],
+      "medium": [
+        "Reclaim the family's seized estates through proxies",
+        "Master Corruption's direction before his ambitions choose for him",
+        "Advance toward Earl of the Fallen without ceremony or witnesses"
+      ],
+      "long": "Restore House Solomon to respectability — or die proving a Black Emperor can want nothing."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 2,
+      "boldness": 1,
+      "warmth": -1,
+      "empathy": 0,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Grandmother's formula book with debt ledger interleaved",
+        "Signet ring of a house officially extinct",
+        "Contract portfolio that binds deeper than ink",
+        "List of debts owed to House Solomon, four generations deep",
+        "Charcoal suits in triplicate (one always being 'repaired')"
+      ],
+      "abilities": [
+        "Corruption Direction",
+        "Binding Contracts",
+        "Enhanced Influence",
+        "Spirituality",
+        "Decay Sense"
+      ],
+      "pathway": "black_emperor",
+      "sequence": 9
+    },
+    "traits": [
+      "imperial",
+      "patient",
+      "calculating",
+      "principled",
+      "ambitious"
+    ],
+    "pcMeta": {
+      "archetype": "Baron of Corruption — Sequence 9 (Black Emperor Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 5,
+        "Reasoning": 7
+      }
+    }
+  }
+]
