@@ -311,8 +311,8 @@ function ClassicCampaignHub() {
                     setLootName={form.setLootName}
                     applyWorldPack={form.applyWorldPack}
                     appliedPack={form.appliedPack}
-                    playAsClara={form.playAsClara}
-                    setPlayAsClara={form.setPlayAsClara}
+                    selectedPcId={form.selectedPcId}
+                    setSelectedPcId={form.setSelectedPcId}
                     handleSave={form.handleSave}
                     resetForm={form.resetForm}
                     onClose={() => setModalOpen(false)}

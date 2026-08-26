@@ -979,6 +979,7 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-title-hub-nameform input,
+.lotm-title-hub-nameform select,
 .lotm-title-hub-save-edit input {
   width: 100%;
   box-sizing: border-box;
@@ -991,7 +992,13 @@ html[style*="--lang-font-stack"] {
   outline: none;
 }
 
+.lotm-title-hub-nameform select {
+  cursor: pointer;
+  color-scheme: dark;
+}
+
 .lotm-title-hub-nameform input:focus,
+.lotm-title-hub-nameform select:focus,
 .lotm-title-hub-save-edit input:focus {
   border-color: #c9a227;
 }

@@ -7,7 +7,7 @@ import { backgroundQueue } from '../../services/infrastructure/backgroundQueue';
 import { createLotmCampaign } from '../../services/lotm/createLotmCampaign';
 import { filterLoadableCampaigns, pickContinueCampaign } from '../../services/lotm/lotmExclusiveUi';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
-import { LORD_OF_THE_MYSTERIES_PACK } from '../../worldpacks/lordOfTheMysteries';
+import { LORD_OF_THE_MYSTERIES_PACK, DEFAULT_PLAYABLE_PC_ID } from '../../worldpacks/lordOfTheMysteries';
 import type { Campaign } from '../../types';
 import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
@@ -38,6 +38,7 @@ export function LotmTitleHub() {
     const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
     const [namingNew, setNamingNew] = useState(false);
     const [newName, setNewName] = useState(DEFAULT_CHRONICLE_NAME);
+    const [selectedPcId, setSelectedPcId] = useState(DEFAULT_PLAYABLE_PC_ID);
     const [renamingId, setRenamingId] = useState<string | null>(null);
     const [renameDraft, setRenameDraft] = useState('');
     const cover = lotmAssetUrl(LORD_OF_THE_MYSTERIES_PACK.coverAssetPath ?? 'image/cover.webp');
@@ -65,6 +66,7 @@ export function LotmTitleHub() {
         if (busy) return;
         setRenamingId(null);
         setNewName(DEFAULT_CHRONICLE_NAME);
+        setSelectedPcId(DEFAULT_PLAYABLE_PC_ID);
         setNamingNew(true);
     };
 
@@ -73,7 +75,7 @@ export function LotmTitleHub() {
         const name = newName.trim() || DEFAULT_CHRONICLE_NAME;
         setBusy(true);
         try {
-            const created = await createLotmCampaign({ playAsClara: true, name });
+            const created = await createLotmCampaign({ pcId: selectedPcId, name });
             await enterCampaign(created);
         } catch (e) {
             console.error('[LotmTitleHub] begin failed', e);
@@ -163,6 +165,20 @@ export function LotmTitleHub() {
                             disabled={busy}
                             maxLength={80}
                         />
+                        <label htmlFor="lotm-new-chronicle-pc">Starting character</label>
+                        <select
+                            id="lotm-new-chronicle-pc"
+                            value={selectedPcId}
+                            onChange={e => setSelectedPcId(e.target.value)}
+                            disabled={busy}
+                        >
+                            <option value="">Create my own (interview)</option>
+                            {(LORD_OF_THE_MYSTERIES_PACK.playablePcs ?? []).map(pc => (
+                                <option key={pc.id} value={pc.id}>
+                                    {pc.name} — {pc.subtitle}
+                                </option>
+                            ))}
+                        </select>
                         <button type="submit" className="lotm-title-hub-primary" disabled={busy}>
                             {busy ? <Loader2 size={16} className="animate-spin" /> : null}
                             Begin

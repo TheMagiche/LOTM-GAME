@@ -25,7 +25,8 @@ import {
 import { dedupeNPCLedger } from '../store/slices/campaignSlice';
 import { loadLootTree } from './lore/lootTreeLoader';
 import { attachLotmPortraitsToNpcs, findTingenLocationId } from './lotm/lotmVisualMatcher';
-import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
+import { attachLotmPathwaysToNpcs } from '../worldpacks/lotmPathways';
+import { characterIdentityFromPlayerCharacter, characterProfileFromPlayerCharacter } from './character/profileFromPc';
 
 
 export const DEFAULT_CONTEXT = {
@@ -159,18 +160,12 @@ export async function initializeCampaignState(params: {
             const seededPc = attachLotmPathwaysToNpcs([playerCharacter])[0];
             ctx.playerCharacter = seededPc;
             ctx.characterProfileActive = true;
-            const pathwayLabel = formatLotmPathwayLabel(seededPc.signatureKit?.pathway, seededPc.signatureKit?.sequence);
-            ctx.characterProfileData = {
-                ...ctx.characterProfileData,
-                name: seededPc.name || ctx.characterProfileData.name,
-                race: seededPc.visualProfile?.race || ctx.characterProfileData.race,
-                class: pathwayLabel || seededPc.pcMeta?.archetype || seededPc.signatureKit?.element || ctx.characterProfileData.class,
-                level: typeof seededPc.signatureKit?.sequence === 'number'
-                    ? seededPc.signatureKit.sequence
-                    : (typeof seededPc.skillRung === 'number' ? Math.max(0, 9 - seededPc.skillRung) : ctx.characterProfileData.level),
-                abilities: seededPc.signatureKit?.abilities?.length
-                    ? seededPc.signatureKit.abilities
-                    : ctx.characterProfileData.abilities,
+            ctx.characterProfileData = characterProfileFromPlayerCharacter(seededPc, ctx.characterProfileData);
+            const identity = characterIdentityFromPlayerCharacter(seededPc, ctx.characterProfileData);
+            ctx.characterProfile = {
+                ...ctx.characterProfile,
+                identity: { ...ctx.characterProfile.identity, ...identity },
+                stats: ctx.characterProfileData.stats,
             };
         }
         if (attachLotmVisuals && !ctx.currentPlaceId) {

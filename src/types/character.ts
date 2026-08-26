@@ -227,6 +227,11 @@ export type NPCEntry = {
         combatTier?: string;           // Phase 7 wiring; display-only today
         stats?: Record<string, number>;
     };
+    /**
+     * Optional pre-authored Stats-tab sheet (`characterProfileData`).
+     * Seeded onto `context.characterProfileData` when this row is the PC.
+     */
+    characterProfile?: CharacterProfile;
     traits?: string[];            // <=5, controlled vocab (see services/npc/agencyPools.ts)
     region?: string;              // coarse location: 'academy' | 'Ryuten' | ...
     haunt?: string;               // flavor only, for reports ('the garden')
