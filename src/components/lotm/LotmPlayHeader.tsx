@@ -6,6 +6,7 @@ export function LotmPlayHeader() {
     const drawerOpen = useAppStore(s => s.drawerOpen);
     const toggleDrawer = useAppStore(s => s.toggleDrawer);
     const campaignName = useAppStore(s => s.activeCampaignMeta?.name);
+    const indexing = useAppStore(s => !!s.lotmWorldIndexLock?.campaignId);
 
     return (
         <header className="lotm-play-header">
@@ -13,8 +14,9 @@ export function LotmPlayHeader() {
                 type="button"
                 className="lotm-play-header-menu"
                 onClick={toggleDrawer}
-                title={drawerOpen ? 'Close menu' : 'Open menu'}
-                aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
+                disabled={indexing}
+                title={indexing ? 'Indexing the world' : drawerOpen ? 'Close menu' : 'Open menu'}
+                aria-label={indexing ? 'Open menu unavailable while indexing' : drawerOpen ? 'Close menu' : 'Open menu'}
             >
                 {drawerOpen ? <PanelLeftClose size={15} /> : <PanelLeftOpen size={15} />}
             </button>
@@ -47,5 +49,6 @@ export async function exitLotmCampaign(): Promise<void> {
             }
         }
     }
+    useAppStore.getState().endLotmWorldIndex();
     setActiveCampaign(null);
 }

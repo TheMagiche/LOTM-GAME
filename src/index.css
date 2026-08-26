@@ -578,8 +578,8 @@ html[style*="--lang-font-stack"] {
 .lotm-chat {
   background: transparent;
   z-index: 3;
-  flex: 0 0 auto;
-  max-height: 48%;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .lotm-chat-chronicle {
@@ -591,6 +591,10 @@ html[style*="--lang-font-stack"] {
   background: rgba(12, 10, 14, 0.72);
   border-top-color: rgba(201, 162, 39, 0.28);
   backdrop-filter: blur(8px);
+}
+
+.lotm-chat .lotm-plate-slot .lotm-plate {
+  max-height: 100%;
 }
 
 .lotm-chronicle-bar {
@@ -864,10 +868,10 @@ html[style*="--lang-font-stack"] {
     radial-gradient(ellipse at 50% 80%, rgba(20, 16, 28, 0.35), transparent 60%);
 }
 
-.lotm-title-hub-gear {
+.lotm-title-hub-gear,
+.lotm-title-hub-back {
   position: absolute;
   top: 20px;
-  right: 20px;
   z-index: 4;
   width: 36px;
   height: 36px;
@@ -881,14 +885,28 @@ html[style*="--lang-font-stack"] {
   cursor: pointer;
 }
 
-.lotm-title-hub-gear:hover {
+.lotm-title-hub-gear {
+  right: 20px;
+}
+
+.lotm-title-hub-back {
+  left: 20px;
+}
+
+.lotm-title-hub-gear:hover:not(:disabled),
+.lotm-title-hub-back:hover:not(:disabled) {
   color: #e0c36a;
   border-color: rgba(201, 162, 39, 0.65);
 }
 
+.lotm-title-hub-gear:disabled,
+.lotm-title-hub-back:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .lotm-title-hub-copy,
-.lotm-title-hub-actions,
-.lotm-title-hub-saves-wrap {
+.lotm-title-hub-actions {
   position: relative;
   z-index: 2;
   text-align: center;
@@ -929,6 +947,19 @@ html[style*="--lang-font-stack"] {
   margin-top: 36px;
 }
 
+.lotm-title-hub-action-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lotm-title-hub-action-row .lotm-title-hub-ghost {
+  padding: 12px 28px;
+}
+
 .lotm-title-hub-primary,
 .lotm-title-hub-ghost {
   font-family: 'Cinzel', serif;
@@ -961,25 +992,201 @@ html[style*="--lang-font-stack"] {
   padding: 8px 18px;
 }
 
-.lotm-title-hub-nameform {
+.lotm-title-hub.is-picking {
+  justify-content: flex-start;
+  padding-top: 56px;
+}
+
+.lotm-title-hub.is-picking .lotm-title-hub-scrim {
+  background:
+    linear-gradient(to top, rgba(8, 7, 10, 0.97) 0%, rgba(8, 7, 10, 0.78) 48%, rgba(8, 7, 10, 0.62) 100%),
+    radial-gradient(ellipse at 50% 70%, rgba(20, 16, 28, 0.4), transparent 60%);
+}
+
+.lotm-title-hub.is-picking .lotm-title-hub-actions {
+  width: min(1100px, 100%);
+  margin-top: 8px;
+  gap: 18px;
+}
+
+.lotm-tarot {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 12px;
-  width: min(360px, 100%);
+  align-items: center;
 }
 
-.lotm-title-hub-nameform label {
+.lotm-tarot-kicker {
   font-family: 'Cinzel', serif;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c9a227;
+  margin: 0 0 8px;
+}
+
+.lotm-tarot-stage {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+.lotm-tarot-fan {
+  position: relative;
+  width: 240px;
+  height: 380px;
+  transform-style: preserve-3d;
+}
+
+.lotm-tarot-nav {
+  position: relative;
+  z-index: 120;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin: 0 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: rgba(12, 10, 14, 0.7);
+  color: #e0c36a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lotm-tarot-nav:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.lotm-tarot-nav:hover:not(:disabled) {
+  border-color: #c9a227;
+  color: #f3ead8;
+}
+
+.lotm-tarot-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 16px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  background:
+    linear-gradient(180deg, rgba(42, 32, 22, 0.55) 0%, rgba(14, 11, 16, 0.92) 38%, #0d0b10 100%),
+    radial-gradient(ellipse at 50% 28%, rgba(201, 162, 39, 0.12), transparent 55%);
+  box-shadow:
+    inset 0 0 0 4px rgba(18, 14, 20, 0.9),
+    inset 0 0 0 5px rgba(201, 162, 39, 0.35),
+    0 18px 40px rgba(0, 0, 0, 0.45);
+  color: #f3ead8;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: transform 0.38s ease, opacity 0.38s ease, filter 0.38s ease, box-shadow 0.38s ease;
+  overflow: hidden;
+}
+
+.lotm-tarot-card.is-active {
+  border-color: #e0c36a;
+  box-shadow:
+    inset 0 0 0 4px rgba(18, 14, 20, 0.9),
+    inset 0 0 0 5px rgba(224, 195, 106, 0.55),
+    0 22px 48px rgba(0, 0, 0, 0.55),
+    0 0 32px rgba(201, 162, 39, 0.18);
+}
+
+.lotm-tarot-card-arcana {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: 10px;
   color: #c9a227;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.lotm-title-hub-nameform input,
-.lotm-title-hub-nameform select,
+.lotm-tarot-card-emblem {
+  flex: 1;
+  width: 78%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.lotm-tarot-card-emblem img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+}
+
+.lotm-tarot-card-name {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+.lotm-tarot-card-pathway,
+.lotm-tarot-card-sequence {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lotm-tarot-card-pathway {
+  font-size: 10px;
+  color: rgba(224, 195, 106, 0.88);
+  margin-top: 8px;
+}
+
+.lotm-tarot-card-sequence {
+  font-size: 9px;
+  color: rgba(232, 224, 208, 0.62);
+  margin-top: 4px;
+}
+
+.lotm-tarot-caption {
+  font-family: 'EB Garamond', Georgia, serif;
+  color: #f3ead8;
+  font-size: 18px;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lotm-tarot-caption span {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.85);
+}
+
+.lotm-tarot-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.lotm-tarot-actions .lotm-title-hub-primary {
+  justify-content: center;
+  min-width: 180px;
+}
+
 .lotm-title-hub-save-edit input {
   width: 100%;
   box-sizing: border-box;
@@ -992,28 +1199,35 @@ html[style*="--lang-font-stack"] {
   outline: none;
 }
 
-.lotm-title-hub-nameform select {
-  cursor: pointer;
-  color-scheme: dark;
-}
-
-.lotm-title-hub-nameform input:focus,
-.lotm-title-hub-nameform select:focus,
 .lotm-title-hub-save-edit input:focus {
   border-color: #c9a227;
 }
 
-.lotm-title-hub-nameform .lotm-title-hub-primary {
-  justify-content: center;
+@media (max-width: 720px) {
+  .lotm-tarot-stage {
+    height: 360px;
+  }
+
+  .lotm-tarot-fan {
+    width: 190px;
+    height: 310px;
+  }
+
+  .lotm-tarot-nav {
+    display: none;
+  }
 }
 
-.lotm-title-hub-nameform .lotm-title-hub-ghost {
-  align-self: center;
-}
-
-.lotm-title-hub-saves-wrap {
-  margin-top: 28px;
-  width: min(420px, 100%);
+.lotm-title-hub-chronicles-modal {
+  background: #161218;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 6px;
+  padding: 28px 24px 20px;
+  width: min(480px, 100%);
+  max-height: min(70vh, 560px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
 }
 
 .lotm-title-hub-saves-label {
@@ -1021,16 +1235,17 @@ html[style*="--lang-font-stack"] {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: 10px;
-  color: rgba(201, 162, 39, 0.7);
-  margin: 0 0 10px;
+  color: #c9a227;
+  margin: 0 0 16px;
+  text-align: center;
 }
 
 .lotm-title-hub-saves {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 36vh;
   overflow-y: auto;
+  min-height: 0;
 }
 
 .lotm-title-hub-saves li {
@@ -1080,6 +1295,9 @@ html[style*="--lang-font-stack"] {
   flex-shrink: 0;
   font-size: 12px;
   color: rgba(232, 224, 208, 0.45);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .lotm-title-hub-save-rename,
@@ -1134,6 +1352,11 @@ html[style*="--lang-font-stack"] {
   cursor: pointer;
 }
 
+.lotm-play-header-menu:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .lotm-play-header-titles {
   min-width: 0;
 }
@@ -1160,4 +1383,86 @@ html[style*="--lang-font-stack"] {
 .lotm-play-drawer {
   background: #120f16 !important;
   border-right-color: rgba(201, 162, 39, 0.22) !important;
+}
+
+.lotm-world-index-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 6, 10, 0.82);
+  backdrop-filter: blur(10px);
+  cursor: wait;
+  outline: none;
+}
+
+.lotm-world-index-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  max-width: 360px;
+  text-align: center;
+}
+
+.lotm-world-index-emblem-wrap {
+  width: 148px;
+  height: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lotm-world-index-pulse 2.2s ease-in-out infinite;
+}
+
+.lotm-world-index-emblem {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.lotm-world-index-emblem.is-fallback {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 162, 39, 0.55);
+  width: 72px;
+  height: 72px;
+}
+
+@keyframes lotm-world-index-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.18)); }
+  50% { filter: drop-shadow(0 0 32px rgba(201, 162, 39, 0.8)); }
+}
+
+.lotm-world-index-title {
+  margin: 8px 0 0;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #e0c36a;
+}
+
+.lotm-world-index-progress {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  color: #f3ead8;
+}
+
+.lotm-world-index-bar {
+  width: 220px;
+  height: 3px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.18);
+  overflow: hidden;
+}
+
+.lotm-world-index-bar-fill {
+  height: 100%;
+  background: #c9a227;
+  transition: width 0.4s ease;
 }
