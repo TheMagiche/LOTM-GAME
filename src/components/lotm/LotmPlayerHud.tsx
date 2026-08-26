@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildLotmPlayerHudModel } from './lotmPlayerHudModel';
+import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
 
 const SEQUENCE_LADDER = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] as const;
 
@@ -61,6 +62,9 @@ export function LotmPlayerHud() {
         inventory: inventoryItems,
         locationName: currentPlace?.name || null,
         locationFeature: currentFeature || null,
+        bounty: characterProfileData?.bounty
+            || formatLotmBountyLine(playerCharacter?.pcMeta?.bounty)
+            || null,
     });
     if (!model.present) return null;
 

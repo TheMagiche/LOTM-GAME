@@ -1,7 +1,8 @@
-import type { PlayerCharacter, CharacterCreationDraft, NPCVisualProfile, InventoryItem, CharacterProfileState } from '../../types';
-import { DEFAULT_VISUAL_PROFILE } from '../../types';
+import type { PlayerCharacter, CharacterCreationDraft, NPCVisualProfile, InventoryItem, CharacterProfileState, InventoryItemCategory } from '../../types';
+import { DEFAULT_VISUAL_PROFILE, normalizeInventoryItem } from '../../types';
 import { uid } from '../../utils/uid';
 import { applyLotmPathwayToNpc, getLotmPathway, resolveLotmPathway } from '../../worldpacks/lotmPathways';
+import { kitAndPurseInventory, looksLikeCurrencyName, purseToInventoryItems, defaultPurseForPc } from '../../worldpacks/lotmPurse';
 
 /**
  * WO-A2 §2.8 — commit the assembled draft into the live store.
@@ -109,18 +110,26 @@ export function parseStartingInventory(raw: string): InventoryItem[] {
         .map(s => s.trim())
         .filter(Boolean)
         .slice(0, 30);
-    return names.map((name, i) => ({
-        id: `pc_start_${Date.now()}_${i}_${Math.random().toString(36).slice(2, 6)}`,
-        name,
-        qty: 1,
-        category: 'misc' as const,
-        keywords: [],
-        equipped: false,
-        lastUsedScene: '000',
-        importance: 5,
-        notes: '',
-        locationTag: 'inventory',
-    }));
+    return names.map((rawName, i) => {
+        const qtyMatch = rawName.match(/^(\d+)\s+(?:x\s*)?(.+)$/i);
+        const qty = qtyMatch ? parseInt(qtyMatch[1], 10) : 1;
+        const name = (qtyMatch ? qtyMatch[2] : rawName).trim();
+        const category: InventoryItemCategory = looksLikeCurrencyName(name) || looksLikeCurrencyName(rawName)
+            ? 'currency'
+            : 'misc';
+        return normalizeInventoryItem({
+            id: `pc_start_${Date.now()}_${i}_${Math.random().toString(36).slice(2, 6)}`,
+            name,
+            qty: Number.isFinite(qty) && qty > 0 ? qty : 1,
+            category,
+            keywords: name.toLowerCase().split(/\s+/).filter(w => w.length > 2),
+            equipped: false,
+            lastUsedScene: '000',
+            importance: 5,
+            notes: '',
+            locationTag: 'inventory',
+        });
+    });
 }
 
 /**
@@ -147,7 +156,12 @@ export function commitCharacterDraft(inputs: CommitInputs, deps: CommitDeps): vo
     });
 
     const startItems = parseStartingInventory(inputs.draft.answers?.[8] || '');
-    if (startItems.length > 0) deps.setInventoryItems(startItems);
+    const inventory = startItems.length > 0
+        ? (startItems.some(item => item.category === 'currency')
+            ? startItems
+            : [...startItems, ...purseToInventoryItems(defaultPurseForPc(pc))])
+        : kitAndPurseInventory(pc);
+    if (inventory.length > 0) deps.setInventoryItems(inventory);
 
     const profile: CharacterProfileState = (deps as { context?: { characterProfile?: CharacterProfileState } }).context?.characterProfile
         ?? { identity: {}, activeTraits: [] };

@@ -23,6 +23,7 @@ import { safeSceneNum } from '../utils/helpers';
 import type { ArcRecord } from '../types/arc';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
 import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
+import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
 
 /**
  * WO-P5-12 §7 Step 1 — migrate Arc's state from `context.arcs` to the
@@ -365,6 +366,11 @@ export async function hydrateCampaign(campaignId: string) {
                             : finalContext.characterProfileData.abilities,
                     },
                 };
+                lotmPcBackfilled = true;
+            }
+            const seededInv = seedInventoryIfEmpty(finalContext.inventoryItems, finalContext.playerCharacter);
+            if (seededInv !== (finalContext.inventoryItems ?? []) && seededInv.length > 0) {
+                finalContext = { ...finalContext, inventoryItems: seededInv };
                 lotmPcBackfilled = true;
             }
         }

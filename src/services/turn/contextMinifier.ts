@@ -269,6 +269,7 @@ export function minifySelectedProfile(
     if (want('abilities') && profile.abilities.length > 0) parts.push(`AB:${profile.abilities.join(',')}`);
     if (want('traits') && profile.traits.length > 0) parts.push(`TR:${profile.traits.join(',')}`);
     if (want('notes') && profile.notes) parts.push(`NT:${profile.notes.slice(0, 80)}`);
+    if (want('bounty') && profile.bounty) parts.push(`BOUNTY:${profile.bounty}`);
     return parts.join(' | ');
 }
 
@@ -284,6 +285,7 @@ export function minifyBookkeepingStub(
         .map(i => `${i.qty}${i.name}`)
         .join(',');
     if (currency) parts.push(`CR:${currency}`);
+    if (profile.bounty) parts.push(`BOUNTY:${profile.bounty}`);
     const equipped = items
         .filter(i => i.equipped)
         .map(i => `${i.name}${i.qty > 1 ? `x${i.qty}` : ''}`)

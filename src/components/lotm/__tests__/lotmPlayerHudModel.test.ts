@@ -134,11 +134,100 @@ describe('buildLotmPlayerHudModel', () => {
         );
 
         expect(model.location).toBe('Tingen · Dorge docks');
-        expect(model.currency).toBe('Loen gold pound ×4');
+        expect(model.currency).toBe('4 pounds');
         expect(model.bounty).toBe('Church of the Evernight — 30 pounds');
         expect(model.items).toEqual([
             expect.objectContaining({ name: 'Loen gold pound', qty: 4, category: 'currency' }),
             expect.objectContaining({ name: 'Composing stick', equipped: true }),
         ]);
+    });
+
+    it('does not treat a hunt poster in inventory as the PC wanted bounty', () => {
+        const model = buildLotmPlayerHudModel(
+            {
+                id: 'pc-1',
+                name: 'Clara Whitlock',
+                aliases: '',
+                appearance: '',
+                faction: '',
+                storyRelevance: '',
+                disposition: '',
+                status: '',
+                goals: '',
+                voice: '',
+                personality: '',
+                exampleOutput: '',
+                affinity: 0,
+            },
+            { ...DEFAULT_CHARACTER_PROFILE, name: 'Clara Whitlock' },
+            {
+                inventory: [
+                    {
+                        id: 'b1',
+                        name: 'BOUNTY: Cattleya "Queen of Stars" flagship The Future — reward 37,000 gold pounds (status: active)',
+                        qty: 1,
+                        category: 'key',
+                        keywords: ['hunt-bounty'],
+                        equipped: false,
+                        lastUsedScene: '',
+                        importance: 6,
+                        notes: '',
+                    },
+                ],
+            },
+        );
+        expect(model.bounty).toBe('—');
+        expect(model.items[0].name).toMatch(/^BOUNTY:/);
+    });
+
+    it('formats a seeded Loen purse and an authored wanted bounty', () => {
+        const model = buildLotmPlayerHudModel(
+            {
+                id: 'pc-1',
+                name: 'Clara Whitlock',
+                aliases: '',
+                appearance: '',
+                faction: '',
+                storyRelevance: '',
+                disposition: '',
+                status: '',
+                goals: '',
+                voice: '',
+                personality: '',
+                exampleOutput: '',
+                affinity: 0,
+                pcMeta: { bounty: { amountPounds: 30, issuer: 'Church of the Evernight', status: 'active' } },
+            },
+            { ...DEFAULT_CHARACTER_PROFILE, name: 'Clara Whitlock', bounty: 'Church of the Evernight — 30 pounds' },
+            {
+                inventory: [
+                    {
+                        id: 'c1',
+                        name: 'soli',
+                        qty: 4,
+                        category: 'currency',
+                        keywords: [],
+                        equipped: false,
+                        lastUsedScene: '',
+                        importance: 1,
+                        notes: '',
+                    },
+                    {
+                        id: 'c2',
+                        name: 'pence',
+                        qty: 6,
+                        category: 'currency',
+                        keywords: [],
+                        equipped: false,
+                        lastUsedScene: '',
+                        importance: 1,
+                        notes: '',
+                    },
+                ],
+                bounty: 'Church of the Evernight — 30 pounds',
+            },
+        );
+        expect(model.currency).toBe('4 soli · 6 pence');
+        expect(model.bounty).toBe('Church of the Evernight — 30 pounds');
     });
 });

@@ -161,7 +161,7 @@
   },
   "penceCompose": {
    "kind": "compose",
-   "template": "{pence}"
+   "template": "{pence} pence"
   },
   "soliSmallAmount": {
    "kind": "amount",
@@ -186,25 +186,25 @@
   },
   "soliCompose": {
    "kind": "compose",
-   "template": "{soli}"
+   "template": "{soli} soli"
   },
   "poundMidAmount": {
    "kind": "amount",
-   "unit": "gold pounds",
+   "unit": "pounds",
    "min": 1,
    "max": 5,
    "next": "poundCompose"
   },
   "poundLargeAmount": {
    "kind": "amount",
-   "unit": "gold pounds",
+   "unit": "pounds",
    "min": 5,
    "max": 40,
    "next": "poundCompose"
   },
   "poundCompose": {
    "kind": "compose",
-   "template": "{gold pounds}"
+   "template": "{pounds} gold pounds"
   },
   "mundaneSubtypePick": {
    "kind": "pick",
@@ -1457,196 +1457,202 @@
     "tier": 9
    }
   ],
-  "bountyLedgerPool": [
-   {
-    "text": "BOUNTY: Nast Solomon \"King of the Five Seas\" flagship The Black Emperor — reward 800,000 gold pounds (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Bernadette Gustav \"Queen Mystic\" flagship The Dawn — reward 650,000 gold pounds (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Barros Hopkins \"King of the Black Throne\" — reward negotiable (status: deceased)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Agalito \"King of Immortality\" flagship The Death Announcer — reward 100,000 gold pounds (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Cattleya \"Queen of Stars\" flagship The Future (Stars Pirates) — reward 37,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Ludwell \"Admiral Hell\" flagship The Black Tulip — reward 55,000 gold pounds (status: deceased)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Senor \"Admiral of Blood\" flagship Tree of Flesh and Blood — reward 42,000 gold pounds (status: deceased)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Qilangos \"Vice Admiral Hurricane\" flagship The Black Death — reward 30,000 gold pounds (status: unknown)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Edwina Edwards \"Vice Admiral Iceberg\" flagship The Golden Dream — reward 26,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Howl Constantine \"Admiral Deep Sea (formerly Vice Admiral Deep Sea)\" flagship The Newins — reward negotiable (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Bird Mustang \"Horror Viscount\" of The Black Emperor — reward 10,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Danitz \"Blazing\" of The Golden Dream — reward 10,000 gold pounds (status: removed)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Kircheis \"Slaughterer\" of The Death Announcer — reward 9,500 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Heath Doyle of Stars Pirates — reward 7,600 gold pounds (status: active)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Frank Lee of Stars Pirates — reward 7,000 gold pounds (status: active)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Bru Walls \"Gourmet\" of The Golden Dream — reward 6,200 gold pounds (status: active)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Maveti \"Steel\" of Tree of Flesh and Blood — reward 6,000 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Orpheus \"Singer\" of The Golden Dream — reward 5,500 gold pounds (status: active)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Mithor King of The Black Death — reward 5,400 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Jodeson \"Flowery Bow Tie\" of The Golden Dream — reward 5,200 gold pounds (status: active)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Hendry \"Blood Brambles\" of Tree of Flesh and Blood — reward 3,800 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Nina of Stars Pirates — reward 3,600 gold pounds (status: active)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Connors Viktor \"Crazy Captain\" of Single-eyed Skull — reward 3,300 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Calm Squall of Tree of Flesh and Blood — reward 1,500 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Jonson \"Sea Wolf\" of Red Skull — reward 900 gold pounds (status: active)",
-    "tier": 2
-   },
-   {
-    "text": "BOUNTY: Anderson \"One-Eyed\" of Red Skull — reward 500 gold pounds (status: active)",
-    "tier": 2
-   },
-   {
-    "text": "BOUNTY: Goltadt — reward 950 gold pounds (status: active)",
-    "tier": 2
-   },
-   {
-    "text": "BOUNTY: Lanevus — reward 100 gold pounds (status: deceased)",
-    "tier": 2
-   },
-   {
-    "text": "BOUNTY: Jason Beria — reward 3,000 gold pounds (status: deceased)",
-    "tier": 3
-   },
-   {
-    "text": "BOUNTY: Gehrman Sparrow — reward 90,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Azik Eggers — reward 150 gold pounds (status: active)",
-    "tier": 2
-   },
-   {
-    "text": "BOUNTY: Nast Solomon \"King of the Five Seas\" flagship The Black Emperor — reward 20,000,000 gold pounds (status: active)",
-    "tier": 7
-   },
-   {
-    "text": "BOUNTY: Bernadette Gustav \"Queen Mystic\" flagship The Dawn — reward 100,000,000 gold pounds (status: active)",
-    "tier": 8
-   },
-   {
-    "text": "BOUNTY: Barros Hopkins \"King of the Black Throne\" — reward negotiable (status: deceased)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Agalito \"King of Immortality\" flagship The Death Announcer — reward 4,000,000 gold pounds (status: active)",
-    "tier": 6
-   },
-   {
-    "text": "BOUNTY: Cattleya \"Queen of Stars\" flagship The Future (Stars Pirates) — reward 11,000,000 gold pounds (status: active)",
-    "tier": 7
-   },
-   {
-    "text": "BOUNTY: Tracy \"Queen of Ailment\" flagship The Black Death — reward 3,000,000 gold pounds (status: active)",
-    "tier": 6
-   },
-   {
-    "text": "BOUNTY: Bulatov Ivan \"King of Dusk\" — reward 2,600,000 gold pounds (status: active)",
-    "tier": 6
-   },
-   {
-    "text": "BOUNTY: Holle Sassen \"Vice Admiral Black Tide\" — reward 700,000 gold pounds (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Basil \"Bone Splitter\" of Black Octopus — reward 250,000 gold pounds (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Khizi \"Baronet Black Class\" of Golden Nepos — reward 65,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Burman — reward 600,000 gold pounds (status: active)",
-    "tier": 5
-   },
-   {
-    "text": "BOUNTY: Hisoka — reward 70,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Bram Andariel — reward 50,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Guillaume Bénet — reward 20,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Pualis de Roquefort — reward 20,000 gold pounds (status: active)",
-    "tier": 4
-   },
-   {
-    "text": "BOUNTY: Lumian Lee — reward 50,000 gold pounds (status: active)",
-    "tier": 4
-   }
-  ],
+  "bountyLedgerPool": {
+   "crew": [
+    {
+     "text": "BOUNTY: Bird Mustang \"Horror Viscount\" of The Black Emperor — reward 10,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Danitz \"Blazing\" of The Golden Dream — reward 10,000 gold pounds (status: removed)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Kircheis \"Slaughterer\" of The Death Announcer — reward 9,500 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Heath Doyle of Stars Pirates — reward 7,600 gold pounds (status: active)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Frank Lee of Stars Pirates — reward 7,000 gold pounds (status: active)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Bru Walls \"Gourmet\" of The Golden Dream — reward 6,200 gold pounds (status: active)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Maveti \"Steel\" of Tree of Flesh and Blood — reward 6,000 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Orpheus \"Singer\" of The Golden Dream — reward 5,500 gold pounds (status: active)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Jodeson \"Flowery Bow Tie\" of The Golden Dream — reward 5,200 gold pounds (status: active)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Hendry \"Blood Brambles\" of Tree of Flesh and Blood — reward 3,800 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Nina of Stars Pirates — reward 3,600 gold pounds (status: active)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Connors Viktor \"Crazy Captain\" of Single-eyed Skull — reward 3,300 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Calm Squall of Tree of Flesh and Blood — reward 1,500 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Jonson \"Sea Wolf\" of Red Skull — reward 900 gold pounds (status: active)",
+     "tier": 2
+    },
+    {
+     "text": "BOUNTY: Anderson \"One-Eyed\" of Red Skull — reward 500 gold pounds (status: active)",
+     "tier": 2
+    },
+    {
+     "text": "BOUNTY: Goltadt — reward 950 gold pounds (status: active)",
+     "tier": 2
+    },
+    {
+     "text": "BOUNTY: Lanevus — reward 100 gold pounds (status: deceased)",
+     "tier": 2
+    },
+    {
+     "text": "BOUNTY: Jason Beria — reward 3,000 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Azik Eggers — reward 150 gold pounds (status: active)",
+     "tier": 2
+    },
+    {
+     "text": "BOUNTY: Basil \"Bone Splitter\" of Black Octopus — reward 250,000 gold pounds (status: active)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Khizi \"Baronet Black Class\" of Golden Nepos — reward 65,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Burman — reward 600,000 gold pounds (status: active)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Hisoka — reward 70,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Bram Andariel — reward 50,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Guillaume Bénet — reward 20,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Pualis de Roquefort — reward 20,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Lumian Lee — reward 50,000 gold pounds (status: active)",
+     "tier": 4
+    }
+   ],
+   "admiral": [
+    {
+     "text": "BOUNTY: Cattleya \"Queen of Stars\" flagship The Future (Stars Pirates) — reward 37,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Ludwell \"Admiral Hell\" flagship The Black Tulip — reward 55,000 gold pounds (status: deceased)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Senor \"Admiral of Blood\" flagship Tree of Flesh and Blood — reward 42,000 gold pounds (status: deceased)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Qilangos \"Vice Admiral Hurricane\" flagship The Black Death — reward 30,000 gold pounds (status: unknown)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Edwina Edwards \"Vice Admiral Iceberg\" flagship The Golden Dream — reward 26,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Howl Constantine \"Admiral Deep Sea (formerly Vice Admiral Deep Sea)\" flagship The Newins — reward negotiable (status: active)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Gehrman Sparrow — reward 90,000 gold pounds (status: active)",
+     "tier": 4
+    },
+    {
+     "text": "BOUNTY: Cattleya \"Queen of Stars\" flagship The Future (Stars Pirates) — reward 11,000,000 gold pounds (status: active)",
+     "tier": 7
+    },
+    {
+     "text": "BOUNTY: Tracy \"Queen of Ailment\" flagship The Black Death — reward 3,000,000 gold pounds (status: active)",
+     "tier": 6
+    },
+    {
+     "text": "BOUNTY: Holle Sassen \"Vice Admiral Black Tide\" — reward 700,000 gold pounds (status: active)",
+     "tier": 5
+    }
+   ],
+   "king": [
+    {
+     "text": "BOUNTY: Nast Solomon \"King of the Five Seas\" flagship The Black Emperor — reward 800,000 gold pounds (status: active)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Bernadette Gustav \"Queen Mystic\" flagship The Dawn — reward 650,000 gold pounds (status: active)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Barros Hopkins \"King of the Black Throne\" — reward negotiable (status: deceased)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Agalito \"King of Immortality\" flagship The Death Announcer — reward 100,000 gold pounds (status: active)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Mithor King of The Black Death — reward 5,400 gold pounds (status: deceased)",
+     "tier": 3
+    },
+    {
+     "text": "BOUNTY: Nast Solomon \"King of the Five Seas\" flagship The Black Emperor — reward 20,000,000 gold pounds (status: active)",
+     "tier": 7
+    },
+    {
+     "text": "BOUNTY: Bernadette Gustav \"Queen Mystic\" flagship The Dawn — reward 100,000,000 gold pounds (status: active)",
+     "tier": 8
+    },
+    {
+     "text": "BOUNTY: Barros Hopkins \"King of the Black Throne\" — reward negotiable (status: deceased)",
+     "tier": 5
+    },
+    {
+     "text": "BOUNTY: Agalito \"King of Immortality\" flagship The Death Announcer — reward 4,000,000 gold pounds (status: active)",
+     "tier": 6
+    },
+    {
+     "text": "BOUNTY: Bulatov Ivan \"King of Dusk\" — reward 2,600,000 gold pounds (status: active)",
+     "tier": 6
+    }
+   ]
+  },
   "ingredientPool": [
    {
     "text": "(Note: All of the ingredients above can be replaced with ones of higher quality)",

@@ -92,7 +92,7 @@ RULES:
 {"npcs": ["Name1"], "lore": ["id1"], "inventoryCategories": ["equipped"], "profileFields": ["name"]}
 
 Valid inventoryCategories: equipped, weapon, armor, consumable, key, currency, misc.
-Valid profileFields: name, race, class, level, hp, mp, stats, skills, abilities, traits, notes.
+Valid profileFields: name, race, class, level, hp, mp, stats, skills, abilities, traits, notes, bounty.
 If nothing is relevant, return: {"npcs": [], "lore": [], "inventoryCategories": [], "profileFields": []}`;
 
 /**
@@ -145,7 +145,7 @@ export async function recommendContext(
     }
 
     const validCats = new Set(['equipped', 'weapon', 'armor', 'consumable', 'key', 'currency', 'misc']);
-    const validFields = new Set(['name', 'race', 'class', 'level', 'hp', 'mp', 'stats', 'skills', 'abilities', 'traits', 'notes']);
+    const validFields = new Set(['name', 'race', 'class', 'level', 'hp', 'mp', 'stats', 'skills', 'abilities', 'traits', 'notes', 'bounty']);
 
     const result: RecommenderResult = {
         relevantNPCNames: Array.isArray(parsed.npcs) ? parsed.npcs.filter((n: unknown) => typeof n === 'string') : [],

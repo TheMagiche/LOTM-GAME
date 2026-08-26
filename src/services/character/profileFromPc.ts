@@ -1,5 +1,6 @@
 import type { CharacterProfile, CharacterProfileState, PlayerCharacter } from '../../types';
 import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
+import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
 
 function nonEmptyList(value: string[] | undefined): string[] | undefined {
     return value && value.length > 0 ? value : undefined;
@@ -33,6 +34,7 @@ export function characterProfileFromPlayerCharacter(
         hp: sheet?.hp ?? existing.hp,
         mp: sheet?.mp ?? existing.mp,
         stats: nonEmptyStats(sheet?.stats) ?? nonEmptyStats(pc.pcMeta?.stats) ?? existing.stats,
+        bounty: sheet?.bounty || formatLotmBountyLine(pc.pcMeta?.bounty) || existing.bounty,
         skills: nonEmptyList(sheet?.skills) ?? existing.skills,
         abilities: nonEmptyList(sheet?.abilities)
             ?? nonEmptyList(pc.signatureKit?.abilities)

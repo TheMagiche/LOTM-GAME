@@ -1,4 +1,5 @@
 import type { CharacterProfile, InventoryItem, PlayerCharacter } from '../../types';
+import { formatLotmBountyLine, formatLotmPurseLine } from '../../worldpacks/lotmPurse';
 import {
     abilitiesForLotmSequence,
     formatLotmSequenceName,
@@ -36,7 +37,7 @@ export type LotmHudWorld = {
     inventory?: InventoryItem[];
     locationName?: string | null;
     locationFeature?: string | null;
-    /** Explicit bounty line when a dedicated tracker exists. */
+    /** Wanted bounty on the PC. Hunt posters never belong here. */
     bounty?: string | null;
 };
 
@@ -94,18 +95,11 @@ function resolveStats(
 }
 
 function currencyLine(inventory: InventoryItem[]): string {
-    const coins = inventory.filter(item => item.category === 'currency' && item.name.trim());
-    if (!coins.length) return '—';
-    return coins.map(item => item.qty > 1 ? `${item.name} ×${item.qty}` : item.name).join(' · ');
+    return formatLotmPurseLine(inventory) || '—';
 }
 
-function bountyLine(inventory: InventoryItem[], explicit?: string | null): string {
-    if (explicit != null && explicit.trim()) return explicit.trim();
-    const hit = inventory.find(item =>
-        /bounty/i.test(item.name) || (item.keywords ?? []).some(k => /bounty/i.test(k))
-    );
-    if (!hit) return '—';
-    return hit.qty > 1 ? `${hit.name} ×${hit.qty}` : hit.name;
+function bountyLine(explicit?: string | null): string {
+    return formatLotmBountyLine(explicit) || '—';
 }
 
 function locationLine(
@@ -191,7 +185,7 @@ export function buildLotmPlayerHudModel(
             : null,
         location: locationLine(pc, world),
         currency: currencyLine(inventory),
-        bounty: bountyLine(inventory, world?.bounty),
+        bounty: bountyLine(world?.bounty),
         items: carryItems(inventory, kit?.equipment),
     };
 }
