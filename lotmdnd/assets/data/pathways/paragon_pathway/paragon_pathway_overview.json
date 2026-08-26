@@ -77,9 +77,9 @@
     "description": "The official symbol of the Paragon Pathway. It represents creation, craftsmanship, and the transformation of raw materials into completed works."
   },
   "corresponding_tarot_card": {
-    "card": "The Magician",
-    "card_number": "I",
-    "description": "The Magician (I) is the first card of the Major Arcana. It represents manifestation, resourcefulness, and the power to transform ideas into reality. The Magician has all the tools at his disposal to create and manifest his will into the physical world, symbolizing the creative and inventive nature of the Paragon Pathway."
+    "card": "The High Priestess",
+    "card_number": "II",
+    "description": "The High Priestess (II) is the second card of the Major Arcana. She sits between two pillars with a scroll of hidden knowledge, representing mystery, craft, and the quiet mastery of what has already been learned. For the Paragon Pathway this is the artisan's inner archive: the unseen principles behind steam, mechanism, and making."
   },
   "god": [
     {

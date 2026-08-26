@@ -9,6 +9,7 @@ import {
     worldPackToFile,
     type WorldPack,
 } from '../../worldpacks/lordOfTheMysteries';
+import { lotmChronicleName } from '../../worldpacks/lotmPathways';
 import { lotmAssetUrl } from './lotmAssetUrl';
 
 export function resolvePlayablePc(
@@ -24,21 +25,23 @@ export function resolvePlayablePc(
 
 export async function createLotmCampaign(options?: {
     name?: string;
-    /** Playable PC id, or `''` for the three-segment interview. Omitted = Clara. */
+    /** Playable PC id. Omitted = Clara. */
     pcId?: string | null;
 }): Promise<Campaign> {
     const pack = LORD_OF_THE_MYSTERIES_PACK;
+    const playerCharacter = resolvePlayablePc(pack, options?.pcId);
+    const autoName = playerCharacter
+        ? lotmChronicleName(playerCharacter.name, playerCharacter.signatureKit?.pathway)
+        : pack.suggestedName;
     const campaign: Campaign = {
         id: uid(),
-        name: options?.name?.trim() || pack.suggestedName,
+        name: options?.name?.trim() || autoName,
         coverImage: pack.coverAssetPath ? lotmAssetUrl(pack.coverAssetPath) : '',
         createdAt: Date.now(),
         lastPlayedAt: Date.now(),
         worldPackId: pack.id,
         uiSkin: 'lotm-illustrated',
     };
-
-    const playerCharacter = resolvePlayablePc(pack, options?.pcId);
 
     await saveCampaign(campaign);
     await initializeCampaignState({

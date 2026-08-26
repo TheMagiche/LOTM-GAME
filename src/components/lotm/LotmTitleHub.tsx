@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Check, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
+import { ArrowLeft, Check, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { deleteCampaign, listCampaigns, saveCampaign } from '../../store/campaignStore';
 import { hydrateCampaign } from '../../store/campaignHydrator';
@@ -8,11 +8,11 @@ import { createLotmCampaign } from '../../services/lotm/createLotmCampaign';
 import { filterLoadableCampaigns, pickContinueCampaign } from '../../services/lotm/lotmExclusiveUi';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
 import { LORD_OF_THE_MYSTERIES_PACK, DEFAULT_PLAYABLE_PC_ID } from '../../worldpacks/lordOfTheMysteries';
+import { lotmChronicleName } from '../../worldpacks/lotmPathways';
 import type { Campaign } from '../../types';
 import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
-
-const DEFAULT_CHRONICLE_NAME = LORD_OF_THE_MYSTERIES_PACK.suggestedName;
+import { LotmTarotSelect } from './LotmTarotSelect';
 
 function timeAgo(ts: number | undefined): string {
     if (!ts) return 'Unplayed';
@@ -36,12 +36,14 @@ export function LotmTitleHub() {
     const [campaigns, setCampaigns] = useState<Campaign[]>([]);
     const [busy, setBusy] = useState(false);
     const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
-    const [namingNew, setNamingNew] = useState(false);
-    const [newName, setNewName] = useState(DEFAULT_CHRONICLE_NAME);
+    const [pickingPc, setPickingPc] = useState(false);
     const [selectedPcId, setSelectedPcId] = useState(DEFAULT_PLAYABLE_PC_ID);
     const [renamingId, setRenamingId] = useState<string | null>(null);
     const [renameDraft, setRenameDraft] = useState('');
+    const [pickingChronicle, setPickingChronicle] = useState(false);
+    const [enteringId, setEnteringId] = useState<string | null>(null);
     const cover = lotmAssetUrl(LORD_OF_THE_MYSTERIES_PACK.coverAssetPath ?? 'image/cover.webp');
+    const playablePcs = LORD_OF_THE_MYSTERIES_PACK.playablePcs ?? [];
 
     const refresh = useCallback(async () => {
         const list = await listCampaigns();
@@ -57,25 +59,41 @@ export function LotmTitleHub() {
         return () => { mounted = false; };
     }, []);
 
+    useEffect(() => {
+        if (!pickingPc) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && !busy) setPickingPc(false);
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [pickingPc, busy]);
+
     const continueCampaign = pickContinueCampaign(campaigns);
     const sortedCampaigns = campaigns
         .slice()
         .sort((a, b) => (b.lastPlayedAt ?? 0) - (a.lastPlayedAt ?? 0));
 
+    const closeChroniclePicker = () => {
+        setPickingChronicle(false);
+        setRenamingId(null);
+        setRenameDraft('');
+    };
+
     const openNewChronicle = () => {
         if (busy) return;
-        setRenamingId(null);
-        setNewName(DEFAULT_CHRONICLE_NAME);
+        closeChroniclePicker();
         setSelectedPcId(DEFAULT_PLAYABLE_PC_ID);
-        setNamingNew(true);
+        setPickingPc(true);
     };
 
     const begin = async () => {
         if (busy) return;
-        const name = newName.trim() || DEFAULT_CHRONICLE_NAME;
+        const pcId = selectedPcId || DEFAULT_PLAYABLE_PC_ID;
+        const pc = playablePcs.find(option => option.id === pcId);
+        const name = pc ? lotmChronicleName(pc.name, pc.pathway) : undefined;
         setBusy(true);
         try {
-            const created = await createLotmCampaign({ pcId: selectedPcId, name });
+            const created = await createLotmCampaign({ pcId, name });
             await enterCampaign(created);
         } catch (e) {
             console.error('[LotmTitleHub] begin failed', e);
@@ -87,17 +105,19 @@ export function LotmTitleHub() {
         if (busy) return;
         setRenamingId(null);
         setBusy(true);
+        setEnteringId(campaign.id);
         try {
             await enterCampaign(campaign);
         } catch (e) {
             console.error('[LotmTitleHub] continue failed', e);
             setBusy(false);
+            setEnteringId(null);
         }
     };
 
     const startRename = (campaign: Campaign) => {
         if (busy) return;
-        setNamingNew(false);
+        setPickingPc(false);
         setRenamingId(campaign.id);
         setRenameDraft(campaign.name);
     };
@@ -121,13 +141,29 @@ export function LotmTitleHub() {
         await deleteCampaign(id);
         setConfirmDelete(null);
         if (renamingId === id) cancelRename();
-        refresh();
+        const list = await listCampaigns();
+        const next = filterLoadableCampaigns(list.filter(c => c && c.id && c.name && c.id !== 'undefined'));
+        setCampaigns(next);
+        if (next.length === 0) closeChroniclePicker();
     };
 
     return (
-        <div className="lotm-title-hub">
+        <div className={`lotm-title-hub${pickingPc ? ' is-picking' : ''}`}>
             <div className="lotm-title-hub-art" style={{ backgroundImage: `url("${cover}")` }} aria-hidden />
             <div className="lotm-title-hub-scrim" aria-hidden />
+
+            {pickingPc && (
+                <button
+                    type="button"
+                    className="lotm-title-hub-back"
+                    title="Go back"
+                    aria-label="Go back"
+                    disabled={busy}
+                    onClick={() => setPickingPc(false)}
+                >
+                    <ArrowLeft size={16} />
+                </button>
+            )}
 
             <button
                 type="button"
@@ -139,71 +175,52 @@ export function LotmTitleHub() {
                 <Settings size={15} />
             </button>
 
-            <div className="lotm-title-hub-copy">
-                <p className="lotm-title-hub-kicker">Fifth Epoch</p>
-                <h1>Lord of the Mysteries</h1>
-                <p className="lotm-title-hub-sub">A Victorian occult chronicle. Beyonders, potions, and the fog above Tingen.</p>
-            </div>
+            {!pickingPc && (
+                <div className="lotm-title-hub-copy">
+                    <p className="lotm-title-hub-kicker">Dungeon Master</p>
+                    <h1>Lord of the Mysteries</h1>
+                    <p className="lotm-title-hub-sub">A Victorian occult chronicle. Join the world of beyonders.</p>
+                </div>
+            )}
 
             <div className="lotm-title-hub-actions">
-                {namingNew ? (
-                    <form
-                        className="lotm-title-hub-nameform"
-                        onSubmit={e => {
-                            e.preventDefault();
-                            begin();
-                        }}
-                    >
-                        <label htmlFor="lotm-new-chronicle-name">Chronicle name</label>
-                        <input
-                            id="lotm-new-chronicle-name"
-                            type="text"
-                            value={newName}
-                            onChange={e => setNewName(e.target.value)}
-                            placeholder={DEFAULT_CHRONICLE_NAME}
-                            autoFocus
-                            disabled={busy}
-                            maxLength={80}
-                        />
-                        <label htmlFor="lotm-new-chronicle-pc">Starting character</label>
-                        <select
-                            id="lotm-new-chronicle-pc"
-                            value={selectedPcId}
-                            onChange={e => setSelectedPcId(e.target.value)}
-                            disabled={busy}
-                        >
-                            <option value="">Create my own (interview)</option>
-                            {(LORD_OF_THE_MYSTERIES_PACK.playablePcs ?? []).map(pc => (
-                                <option key={pc.id} value={pc.id}>
-                                    {pc.name} — {pc.subtitle}
-                                </option>
-                            ))}
-                        </select>
-                        <button type="submit" className="lotm-title-hub-primary" disabled={busy}>
-                            {busy ? <Loader2 size={16} className="animate-spin" /> : null}
-                            Begin
-                        </button>
-                        <button
-                            type="button"
-                            className="lotm-title-hub-ghost"
-                            disabled={busy}
-                            onClick={() => setNamingNew(false)}
-                        >
-                            Cancel
-                        </button>
-                    </form>
-                ) : (
+                {pickingPc ? (
                     <>
-                        {continueCampaign ? (
-                            <button
-                                type="button"
-                                className="lotm-title-hub-primary"
-                                disabled={busy}
-                                onClick={() => continuePlay(continueCampaign)}
-                            >
+                        <LotmTarotSelect
+                            pcs={playablePcs}
+                            selectedId={selectedPcId}
+                            onSelect={setSelectedPcId}
+                            onConfirm={() => { void begin(); }}
+                            disabled={busy}
+                        />
+                        <div className="lotm-tarot-actions">
+                            <button type="button" className="lotm-title-hub-primary" disabled={busy} onClick={() => { void begin(); }}>
                                 {busy ? <Loader2 size={16} className="animate-spin" /> : null}
-                                Continue
+                                Begin
                             </button>
+                        </div>
+                    </>
+                ) : (
+                    <div className="lotm-title-hub-action-row">
+                        {continueCampaign ? (
+                            <>
+                                <button
+                                    type="button"
+                                    className="lotm-title-hub-primary"
+                                    disabled={busy}
+                                    onClick={() => setPickingChronicle(true)}
+                                >
+                                    Continue
+                                </button>
+                                <button
+                                    type="button"
+                                    className="lotm-title-hub-ghost"
+                                    disabled={busy}
+                                    onClick={openNewChronicle}
+                                >
+                                    New chronicle
+                                </button>
+                            </>
                         ) : (
                             <button
                                 type="button"
@@ -214,102 +231,100 @@ export function LotmTitleHub() {
                                 Begin
                             </button>
                         )}
-
-                        {continueCampaign && (
-                            <button
-                                type="button"
-                                className="lotm-title-hub-ghost"
-                                disabled={busy}
-                                onClick={openNewChronicle}
-                            >
-                                New chronicle
-                            </button>
-                        )}
-                    </>
+                    </div>
                 )}
             </div>
 
-            {sortedCampaigns.length > 0 && (
-                <div className="lotm-title-hub-saves-wrap">
-                    <p className="lotm-title-hub-saves-label">Choose a chronicle</p>
-                    <ul className="lotm-title-hub-saves">
-                        {sortedCampaigns.map(c => (
-                            <li key={c.id}>
-                                {renamingId === c.id ? (
-                                    <>
-                                        <form
-                                            className="lotm-title-hub-save-edit"
-                                            onSubmit={e => {
-                                                e.preventDefault();
-                                                commitRename(c);
-                                            }}
-                                        >
-                                            <input
-                                                type="text"
-                                                value={renameDraft}
-                                                onChange={e => setRenameDraft(e.target.value)}
-                                                onKeyDown={e => {
-                                                    if (e.key === 'Escape') {
-                                                        e.preventDefault();
-                                                        cancelRename();
-                                                    }
+            {pickingChronicle && sortedCampaigns.length > 0 && (
+                <Backdrop onClick={closeChroniclePicker}>
+                    <div
+                        className="lotm-title-hub-chronicles-modal"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="lotm-chronicles-title"
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <p id="lotm-chronicles-title" className="lotm-title-hub-saves-label">Choose a chronicle</p>
+                        <ul className="lotm-title-hub-saves">
+                            {sortedCampaigns.map(c => (
+                                <li key={c.id}>
+                                    {renamingId === c.id ? (
+                                        <>
+                                            <form
+                                                className="lotm-title-hub-save-edit"
+                                                onSubmit={e => {
+                                                    e.preventDefault();
+                                                    commitRename(c);
                                                 }}
-                                                aria-label={`Rename ${c.name}`}
-                                                autoFocus
-                                                disabled={busy}
-                                                maxLength={80}
-                                            />
-                                        </form>
+                                            >
+                                                <input
+                                                    type="text"
+                                                    value={renameDraft}
+                                                    onChange={e => setRenameDraft(e.target.value)}
+                                                    onKeyDown={e => {
+                                                        if (e.key === 'Escape') {
+                                                            e.preventDefault();
+                                                            cancelRename();
+                                                        }
+                                                    }}
+                                                    aria-label={`Rename ${c.name}`}
+                                                    autoFocus
+                                                    disabled={busy}
+                                                    maxLength={80}
+                                                />
+                                            </form>
+                                            <button
+                                                type="button"
+                                                className="lotm-title-hub-save-rename"
+                                                title="Save name"
+                                                aria-label={`Save name for ${c.name}`}
+                                                disabled={busy || !renameDraft.trim()}
+                                                onClick={() => commitRename(c)}
+                                            >
+                                                <Check size={13} />
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <button
+                                            type="button"
+                                            className="lotm-title-hub-save"
+                                            disabled={busy}
+                                            onClick={() => continuePlay(c)}
+                                        >
+                                            <span>{c.name}</span>
+                                            <span>
+                                                {enteringId === c.id ? <Loader2 size={13} className="animate-spin" /> : null}
+                                                {c.id === continueCampaign?.id ? 'Latest · ' : ''}
+                                                {timeAgo(c.lastPlayedAt)}
+                                            </span>
+                                        </button>
+                                    )}
+                                    {renamingId !== c.id && (
                                         <button
                                             type="button"
                                             className="lotm-title-hub-save-rename"
-                                            title="Save name"
-                                            aria-label={`Save name for ${c.name}`}
-                                            disabled={busy || !renameDraft.trim()}
-                                            onClick={() => commitRename(c)}
+                                            title="Rename chronicle"
+                                            aria-label={`Rename ${c.name}`}
+                                            disabled={busy}
+                                            onClick={() => startRename(c)}
                                         >
-                                            <Check size={13} />
+                                            <Pencil size={13} />
                                         </button>
-                                    </>
-                                ) : (
+                                    )}
                                     <button
                                         type="button"
-                                        className="lotm-title-hub-save"
-                                        disabled={busy}
-                                        onClick={() => continuePlay(c)}
+                                        className="lotm-title-hub-save-delete"
+                                        title="Delete chronicle"
+                                        aria-label={`Delete ${c.name}`}
+                                        onClick={() => setConfirmDelete(c.id)}
                                     >
-                                        <span>{c.name}</span>
-                                        <span>
-                                            {c.id === continueCampaign?.id ? 'Latest · ' : ''}
-                                            {timeAgo(c.lastPlayedAt)}
-                                        </span>
+                                        <Trash2 size={13} />
                                     </button>
-                                )}
-                                {renamingId !== c.id && (
-                                    <button
-                                        type="button"
-                                        className="lotm-title-hub-save-rename"
-                                        title="Rename chronicle"
-                                        aria-label={`Rename ${c.name}`}
-                                        disabled={busy}
-                                        onClick={() => startRename(c)}
-                                    >
-                                        <Pencil size={13} />
-                                    </button>
-                                )}
-                                <button
-                                    type="button"
-                                    className="lotm-title-hub-save-delete"
-                                    title="Delete chronicle"
-                                    aria-label={`Delete ${c.name}`}
-                                    onClick={() => setConfirmDelete(c.id)}
-                                >
-                                    <Trash2 size={13} />
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </Backdrop>
             )}
 
             {confirmDelete && (

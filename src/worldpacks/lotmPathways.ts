@@ -14,6 +14,10 @@ type RawAbilityFile = {
 type RawOverviewFile = {
     pathway_name?: string;
     aliases?: string[];
+    corresponding_tarot_card?: {
+        card?: string;
+        card_number?: string;
+    };
 };
 
 const abilityFiles = import.meta.glob(
@@ -25,6 +29,17 @@ const overviewFiles = import.meta.glob(
     '../../lotmdnd/assets/data/pathways/**/*pathway_overview.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawOverviewFile>;
+
+const emblemFiles = import.meta.glob(
+    '../../lotmdnd/assets/data/pathways/**/*Symbol2.webp',
+    { eager: true, query: '?url', import: 'default' },
+) as Record<string, string>;
+
+const TAROT_ORDER: Record<string, number> = {
+    '0': 0, I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10,
+    XI: 11, XII: 12, XIII: 13, XIV: 14, XV: 15, XVI: 16, XVII: 17, XVIII: 18, XIX: 19,
+    XX: 20, XXI: 21, XXII: 22,
+};
 
 export type LotmSequenceInfo = {
     sequence: number;
@@ -38,6 +53,12 @@ export type LotmPathwayDef = {
     name: string;
     aliases: string[];
     sequences: LotmSequenceInfo[];
+    /** Path relative to `lotmdnd/` for the pathway emblem. */
+    emblemPath: string;
+    /** Vite-resolved URL for the emblem image. */
+    emblemSrc: string;
+    tarotCard: string;
+    tarotNumber: string;
 };
 
 function folderIdFromPath(path: string): string {
@@ -65,6 +86,19 @@ function titleCaseId(id: string): string {
     return id.split('_').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
 }
 
+function emblemFromGlob(id: string): { path: string; src: string } {
+    const needle = `/pathways/${id}_pathway/`;
+    const entry = Object.entries(emblemFiles).find(([p]) => p.includes(needle));
+    if (!entry) return { path: '', src: '' };
+    const [path, src] = entry;
+    const idx = path.indexOf('assets/data/pathways');
+    return { path: idx >= 0 ? path.slice(idx) : '', src };
+}
+
+function primaryTarotNumber(raw: string): string {
+    return raw.split(/\s+or\s+/i)[0]?.trim() ?? '';
+}
+
 function buildCatalog(): LotmPathwayDef[] {
     const byId = new Map<string, LotmPathwayDef>();
 
@@ -87,11 +121,16 @@ function buildCatalog(): LotmPathwayDef[] {
             .filter((row): row is LotmSequenceInfo => row !== null)
             .sort((a, b) => b.sequence - a.sequence);
 
+        const emblem = emblemFromGlob(id);
         byId.set(id, {
             id,
             name: String(raw.pathway || `${titleCaseId(id)} Pathway`).trim(),
             aliases: [],
             sequences,
+            emblemPath: emblem.path,
+            emblemSrc: emblem.src,
+            tarotCard: '',
+            tarotNumber: '',
         });
     }
 
@@ -101,6 +140,13 @@ function buildCatalog(): LotmPathwayDef[] {
         if (!def || !raw) continue;
         if (raw.pathway_name) def.name = raw.pathway_name.trim();
         def.aliases = (raw.aliases ?? []).map(a => String(a).trim()).filter(Boolean);
+        def.tarotCard = String(raw.corresponding_tarot_card?.card ?? '').trim();
+        def.tarotNumber = String(raw.corresponding_tarot_card?.card_number ?? '').trim();
+        if (!def.emblemPath || !def.emblemSrc) {
+            const emblem = emblemFromGlob(id);
+            def.emblemPath = def.emblemPath || emblem.path;
+            def.emblemSrc = def.emblemSrc || emblem.src;
+        }
     }
 
     return [...byId.values()].sort((a, b) => a.name.localeCompare(b.name));
@@ -125,12 +171,17 @@ export function resolveLotmPathway(text: string | undefined | null): LotmPathway
     if (direct) return direct;
     const key = normalizeLotmKey(text.replace(/pathway/gi, ''));
     if (!key) return undefined;
+
+    const namesOf = (pathway: LotmPathwayDef) =>
+        [pathway.id.replace(/_/g, ' '), pathway.name, ...pathway.aliases, ...pathway.sequences.map(s => s.name)]
+            .map(name => normalizeLotmKey(name.replace(/pathway/gi, '')))
+            .filter(Boolean);
+
     for (const pathway of LOTM_PATHWAYS) {
-        const names = [pathway.id.replace(/_/g, ' '), pathway.name, ...pathway.aliases, ...pathway.sequences.map(s => s.name)];
-        if (names.some(name => {
-            const n = normalizeLotmKey(name.replace(/pathway/gi, ''));
-            return n === key || key.includes(n) || n.includes(key);
-        })) return pathway;
+        if (namesOf(pathway).some(n => n === key)) return pathway;
+    }
+    for (const pathway of LOTM_PATHWAYS) {
+        if (namesOf(pathway).some(n => n.includes(key) || key.includes(n))) return pathway;
     }
     return undefined;
 }
@@ -157,6 +208,32 @@ export function formatLotmPathwayLabel(pathwayId: string | undefined, sequence: 
     const seq = getLotmSequence(pathway, sequence);
     if (!seq) return pathway.name;
     return `${pathway.name} · Seq ${seq.sequence} ${seq.name}`;
+}
+
+export function formatLotmSequenceName(pathwayId: string | undefined, sequence: number | undefined): string {
+    const pathway = getLotmPathway(pathwayId) ?? resolveLotmPathway(pathwayId);
+    const seq = getLotmSequence(pathway, sequence);
+    if (!seq) return typeof sequence === 'number' ? `Sequence ${sequence}` : '';
+    return `Sequence ${seq.sequence} · ${seq.name}`;
+}
+
+export function formatLotmTarotKicker(pathway: LotmPathwayDef | undefined): string {
+    if (!pathway?.tarotCard) return '';
+    const num = primaryTarotNumber(pathway.tarotNumber);
+    return num ? `${num} · ${pathway.tarotCard}` : pathway.tarotCard;
+}
+
+export function lotmTarotOrder(pathway: LotmPathwayDef | undefined): number {
+    const raw = primaryTarotNumber(pathway?.tarotNumber ?? '');
+    if (raw in TAROT_ORDER) return TAROT_ORDER[raw];
+    return 99;
+}
+
+/** Campaign title: character name and their pathway. */
+export function lotmChronicleName(characterName: string, pathwayId: string | undefined): string {
+    const pathway = getLotmPathway(pathwayId) ?? resolveLotmPathway(pathwayId);
+    const pathwayName = pathway?.name || pathwayId || 'Unknown Pathway';
+    return `${characterName} — ${pathwayName}`;
 }
 
 export function kitFromLotmPathway(

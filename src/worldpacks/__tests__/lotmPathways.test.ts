@@ -4,8 +4,12 @@ import {
     abilitiesForLotmSequence,
     applyLotmPathwayToNpc,
     formatLotmPathwayLabel,
+    formatLotmSequenceName,
+    formatLotmTarotKicker,
     getLotmPathway,
     lookupCanonPathway,
+    lotmChronicleName,
+    lotmTarotOrder,
     nextLotmSequence,
     resolveLotmPathway,
 } from '../lotmPathways';
@@ -38,6 +42,22 @@ describe('LOTM pathway catalog', () => {
         expect(nextLotmSequence(1)).toBe(0);
         expect(nextLotmSequence(0)).toBeUndefined();
         expect(formatLotmPathwayLabel('fool', 9)).toMatch(/Seq 9 Seer/);
+        expect(formatLotmSequenceName('fool', 9)).toBe('Sequence 9 · Seer');
+        expect(lotmChronicleName('Clara Whitlock', 'fool')).toBe('Clara Whitlock — Fool Pathway');
+        expect(formatLotmTarotKicker(getLotmPathway('fool'))).toMatch(/The Fool/);
+        expect(lotmTarotOrder(getLotmPathway('fool'))).toBe(0);
+    });
+
+    it('attaches a pathway emblem and tarot card to every pathway', () => {
+        expect(LOTM_PATHWAYS.every(p => p.emblemPath.endsWith('_Symbol2.webp'))).toBe(true);
+        expect(LOTM_PATHWAYS.every(p => p.tarotCard.length > 0)).toBe(true);
+        expect(getLotmPathway('fool')?.emblemPath).toContain('fool_pathway');
+        expect(getLotmPathway('fool')?.emblemSrc).toBeTruthy();
+        expect(getLotmPathway('wheel_of_fortune')?.emblemPath).toContain('Wheel_of_Fortune_Symbol2.webp');
+        expect(resolveLotmPathway('hunter')?.id).toBe('red_priest');
+        expect(getLotmPathway('paragon')?.tarotCard).toBe('The High Priestess');
+        expect(lotmTarotOrder(getLotmPathway('paragon'))).toBe(2);
+        expect(getLotmPathway('door')?.tarotCard).toBe('The Magician');
     });
 
     it('assigns distinct canon pathways to Clara vs the Tingen / Tarot roster', () => {
