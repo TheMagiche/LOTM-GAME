@@ -20,7 +20,7 @@
 import type { GatheredContext } from './contextGatherer';
 import type { ElevatedScene } from '../archive-memory/dynamicElevation';
 import type { SlottedRagSnippet } from '../archive-memory/slottedRag';
-import type { LocationEntry, NPCEntry, FactionEntry } from '../../types';
+import type { LocationEntry, NPCEntry, FactionEntry, ItemLedgerEntry } from '../../types';
 import type { OpenAIMessage } from '../llm/llmService';
 import type { PayloadTrace, DebugSection } from '../../types';
 import type { PromptInterceptionResult } from '../mods/interceptors';
@@ -79,6 +79,8 @@ export type TurnContext = {
     locationLedger: LocationEntry[];
     /** Faction ledger snapshot at turn start. */
     factionLedger: FactionEntry[];
+    /** Inventory ledger snapshot at turn start (Sealed Artifacts, medicines, etc.). */
+    itemLedger: ItemLedgerEntry[];
     /** NPC ledger snapshot at turn start (also on TurnState, mirrored here so
      *  buildPayload options read from a single source). */
     npcLedger: NPCEntry[];
@@ -161,6 +163,7 @@ export function createTurnContext(args: {
     locationLedger: LocationEntry[];
     npcLedger: NPCEntry[];
     factionLedger?: FactionEntry[];
+    itemLedger?: ItemLedgerEntry[];
 }): TurnContext {
     return {
         turnId: `turn_${++turnCounter}`,
@@ -168,6 +171,7 @@ export function createTurnContext(args: {
         displayInput: args.displayInput,
         locationLedger: args.locationLedger,
         factionLedger: args.factionLedger ?? [],
+        itemLedger: args.itemLedger ?? [],
         npcLedger: args.npcLedger,
         finalInput: args.input,
         displayInputFinal: args.displayInput,

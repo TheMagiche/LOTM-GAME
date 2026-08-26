@@ -164,7 +164,7 @@ describe('WO-P5-05 Step 2 — registration into the server registry', () => {
 // built-ins. This is the prime directive: the base app, run with no mods, is
 // byte-identical to today.
 describe('WO-P5-05 — golden test: no mods = the built-in suffixes', () => {
-    it('with no mods installed, the derived suffix set is exactly the 22 built-ins', async () => {
+    it('with no mods installed, the derived suffix set is exactly the 23 built-ins', async () => {
         const { serverTableRegistry, getCampaignFileSuffixes } = await import('../lib/tableRegistry.js?t=' + Date.now());
         const { registerModTables } = await import('../lib/modTableRegistry.js?t=' + Date.now());
         const { BUILTIN_CAMPAIGN_FILE_SUFFIXES } = await import('../lib/fileStore.js?t=' + Date.now());
@@ -183,11 +183,11 @@ describe('WO-P5-05 — golden test: no mods = the built-in suffixes', () => {
         // built-in set from 18 to 21. The number is spelled out rather than
         // derived on purpose: it is a guard against a suffix appearing by
         // accident, so it must be changed deliberately when one is added.
-        expect(derived.length).toBe(22);
-        expect(builtin.length).toBe(22);
+        expect(derived.length).toBe(23);
+        expect(builtin.length).toBe(23);
     });
 
-    it('an empty mods directory produces the 22 built-ins through the full route', async () => {
+    it('an empty mods directory produces the 23 built-ins through the full route', async () => {
         const { createModsRouter } = await import('../routes/mods.js?t=' + Date.now());
         const { serverTableRegistry, getCampaignFileSuffixes } = await import('../lib/tableRegistry.js?t=' + Date.now());
         const { BUILTIN_CAMPAIGN_FILE_SUFFIXES } = await import('../lib/fileStore.js?t=' + Date.now());
@@ -201,6 +201,6 @@ describe('WO-P5-05 — golden test: no mods = the built-in suffixes', () => {
 
         const derived = getCampaignFileSuffixes(serverTableRegistry);
         expect(new Set(derived)).toEqual(new Set([...BUILTIN_CAMPAIGN_FILE_SUFFIXES]));
-        expect(derived.length).toBe(22);
+        expect(derived.length).toBe(23);
     });
 });

@@ -1,4 +1,5 @@
-import type { ChatMessage, LocationEntry, NPCEntry, SemanticFact, FactionEntry } from '../../types';
+import type { ChatMessage, LocationEntry, NPCEntry, SemanticFact, FactionEntry, ItemLedgerEntry } from '../../types';
+import { ITEM_KIND_LABELS } from '../../types';
 import { relationBand } from '../npc/agency/agencyBands';
 import { oocSections } from './sections';
 import type { OocCampaignSnapshot, OocSource } from './types';
@@ -7,6 +8,7 @@ import type { OocCampaignSnapshot, OocSource } from './types';
 const MAX_NPCS = 6;
 const MAX_PLACES = 4;
 const MAX_FACTIONS = 4;
+const MAX_ITEMS = 6;
 const MAX_PC_TRAITS = 8;
 
 const excerpt = (value: string, max = 500) => value.trim().replace(/\s+/g, ' ').slice(0, max);
@@ -120,6 +122,27 @@ function selectFactions(ledger: FactionEntry[], question: string): FactionEntry[
     return ledger.filter(faction => namedIn(question, faction.name, faction.aliases)).slice(0, MAX_FACTIONS);
 }
 
+function itemLine(item: ItemLedgerEntry): string {
+    const bits: string[] = [];
+    bits.push(ITEM_KIND_LABELS[item.kind] ?? item.kind);
+    if (item.code?.trim()) bits.push(`code ${excerpt(item.code, 40)}`);
+    if (item.possessed) bits.push(item.holder ? `held by ${excerpt(item.holder, 60)}` : 'in party possession');
+    else if (item.holder?.trim()) bits.push(`holder: ${excerpt(item.holder, 60)}`);
+    if (item.status?.trim()) bits.push(`status: ${excerpt(item.status, 80)}`);
+    if (item.function?.trim()) bits.push(excerpt(item.function, 180));
+    if (item.downside?.trim()) bits.push(`cost: ${excerpt(item.downside, 120)}`);
+    return bits.join('; ');
+}
+
+function selectItems(ledger: ItemLedgerEntry[], question: string): ItemLedgerEntry[] {
+    const named = ledger.filter(item => namedIn(question, item.name, [item.aliases, item.code].filter(Boolean).join(',')));
+    const asksAboutItems = /\b(inventory|artefact|artifact|medicine|potion|sealed|relic|item)\b/i.test(question);
+    const possessed = asksAboutItems
+        ? ledger.filter(item => item.possessed && !named.includes(item))
+        : [];
+    return [...named, ...possessed].slice(0, MAX_ITEMS);
+}
+
 /**
  * Produces a compact, data-only snapshot. This intentionally does not use the story
  * prompt, payload builder, or TurnState: OOC has no reason to inherit GM instructions.
@@ -231,6 +254,17 @@ export function buildOocContext(snapshot: OocCampaignSnapshot, question: string)
             const line = `${faction.name}${details ? ` - ${details}` : ''}`;
             parts.push(`- ${line}`);
             sources.push({ kind: 'faction', id: faction.id, label: `Faction: ${faction.name}`, excerpt: excerpt(line, 500) });
+        }
+    }
+
+    const items = selectItems(snapshot.itemLedger ?? [], question);
+    if (items.length > 0) {
+        parts.push('Known items (inventory ledger):');
+        for (const item of items) {
+            const details = itemLine(item);
+            const line = `${item.name}${details ? ` - ${details}` : ''}`;
+            parts.push(`- ${line}`);
+            sources.push({ kind: 'item', id: item.id, label: `Item: ${item.name}`, excerpt: excerpt(line, 500) });
         }
     }
 

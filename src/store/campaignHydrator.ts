@@ -7,12 +7,13 @@ import {
 } from './campaignStore';
 import { loadRelationshipMemories } from './relationshipMemoryStore';
 import { DEFAULT_CONTEXT, DEFAULT_CONDENSER } from '../services/campaignInit';
-import { migrateLegacyContext } from '../types';
+import { migrateLegacyContext, normalizeItemLedgerEntry } from '../types';
 import type { GameContext, ArchiveChapter, ArchiveIndexEntry, DivergenceRegister, DivergenceEntry, ChatMessage } from '../types';
 import { migrateV1ToV2 } from '../services/campaign-state/divergenceRegister';
 import { migratePCIntoContext } from '../services/character/migratePC';
 import { loadLocationTable } from '../services/tables/locationTable';
 import { factionTableDescriptor, loadFactionTable } from '../services/tables/factionTable';
+import { loadItemTable } from '../services/tables/itemTable';
 import { parseFactionsFromLore } from '../services/lore/loreFactionParser';
 import { genericSave } from '../services/tables/genericAccessor';
 import { hydrateModTables, saveModTable } from '../services/mods/modTables';
@@ -274,12 +275,13 @@ async function loadCampaignMeta(campaignId: string) {
 }
 
 export async function hydrateCampaign(campaignId: string) {
-    const [state, chunks, npcs, locations, factions, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
+    const [state, chunks, npcs, locations, factions, items, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
         loadCampaignState(campaignId),
         getLoreChunks(campaignId),
         getNPCLedger(campaignId),
         loadLocationTable(campaignId),
         loadFactionTable(campaignId),
+        loadItemTable(campaignId),
         loadArchiveIndex(campaignId),
         loadTimeline(campaignId),
         loadChapters(campaignId),
@@ -435,6 +437,7 @@ export async function hydrateCampaign(campaignId: string) {
         npcLedger: finalNpcLedger,
         locationLedger: locations ?? [],
         factionLedger,
+        itemLedger: Array.isArray(items) ? items.map(normalizeItemLedgerEntry) : [],
         archiveIndex: archiveIndex ?? [],
         timeline: timeline ?? [],
         chapters: backfilled,

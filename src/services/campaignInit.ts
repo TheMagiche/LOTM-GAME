@@ -10,8 +10,11 @@ import { parseNPCsFromLore } from './lore/loreNPCParser';
 import { parseLocationsFromLore } from './lore/loreLocationParser';
 import { locationTableDescriptor, loadLocationTable } from './tables/locationTable';
 import { factionTableDescriptor, loadFactionTable } from './tables/factionTable';
+import { itemTableDescriptor, loadItemTable } from './tables/itemTable';
 import { parseFactionsFromLore } from './lore/loreFactionParser';
 import { resolveFaction } from './faction/resolveFaction';
+import { resolveItem } from './item/resolveItem';
+import { loadLotmItemCatalog } from '../worldpacks/lotmItemCatalog';
 import { genericSave } from './tables/genericAccessor';
 import { resolvePlace } from './locationParser';
 import {
@@ -118,6 +121,19 @@ export async function initializeCampaignState(params: {
         }
 
         seeds = extractEngineSeeds(chunks);
+    }
+
+    if (attachLotmVisuals) {
+        const catalog = loadLotmItemCatalog();
+        if (catalog.length > 0) {
+            const existingItems = await loadItemTable(campaignId);
+            const additions = catalog.filter(item =>
+                !resolveItem(item.code || item.name, existingItems) && !resolveItem(item.name, existingItems)
+            );
+            if (additions.length > 0) {
+                await genericSave(itemTableDescriptor as never, campaignId, [...existingItems, ...additions]);
+            }
+        }
     }
 
     let lootTree: LootTree | null = null;
