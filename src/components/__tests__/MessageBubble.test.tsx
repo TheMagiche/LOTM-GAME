@@ -31,6 +31,7 @@ vi.mock('../../services/tts/ttsClient', () => ({
     generateTts: vi.fn(async () => new Blob(['audio'])),
     loadCachedTts: vi.fn(async () => null),
     checkCachedChunks: vi.fn(async (chunks: string[]) => chunks.map(() => false)),
+    isEngineReady: (status: { modelReady?: boolean } | null) => !!status?.modelReady,
 }));
 
 vi.mock('../../services/turn/pendingCommit', () => ({
