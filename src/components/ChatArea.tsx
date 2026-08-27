@@ -12,6 +12,7 @@ import { ChatActionStrip } from './chat/ChatActionStrip';
 import { ChatComposer } from './chat/ChatComposer';
 import { ChatNavFabs } from './chat/ChatNavFabs';
 import { ChatMessageList } from './chat/ChatMessageList';
+import { LotmDialoguePlate } from './lotm/LotmDialoguePlate';
 import { useSwipeVariants } from './hooks/useSwipeVariants';
 import { useSceneContinue } from './hooks/useSceneContinue';
 import { useRetryStoryAI } from './hooks/useRetryStoryAI';
@@ -30,8 +31,10 @@ import { ArmedAskGmNote } from './ooc/ArmedAskGmNote';
 
 export function ChatArea({
     presentation = 'classic',
+    chronicleOpen = false,
 }: {
     presentation?: 'classic' | 'illustrated';
+    chronicleOpen?: boolean;
 }) {
     const messages = useAppStore(s => s.messages);
     const condenser = useAppStore(s => s.condenser);
@@ -193,8 +196,10 @@ export function ChatArea({
         resizeToContent();
     };
 
+    const showTranscript = presentation === 'classic' || chronicleOpen;
+
     return (
-        <div className={`flex-1 flex flex-col min-w-0 overflow-hidden relative ${presentation === 'illustrated' ? 'lotm-chat lotm-chat-chronicle' : ''}`}>
+        <div className={`flex-1 flex flex-col min-w-0 overflow-hidden relative ${presentation === 'illustrated' ? `lotm-chat${chronicleOpen ? ' lotm-chat-chronicle' : ''}` : ''}`}>
             {context.sceneNoteActive && (
                 <div className="absolute top-0 left-0 right-0 z-20 px-4 py-1.5 bg-amber/90 backdrop-blur-sm border-b border-amber/40 flex items-center justify-between text-[10px] text-void-dark font-bold uppercase tracking-widest animate-in slide-in-from-top duration-300">
                     <div className="flex items-center gap-2">
@@ -213,6 +218,7 @@ export function ChatArea({
 
             <SelectionActionsMenu />
 
+            {showTranscript && (
             <ChatMessageList
                 scrollContainerRef={scrollContainerRef}
                 bottomRef={bottomRef}
@@ -235,6 +241,21 @@ export function ChatArea({
                 onOpenSwipeSheet={setSwipeSheetMessageId}
                 onRetry={retry.retryStoryAI}
             />
+            )}
+
+            {presentation === 'illustrated' && !chronicleOpen && (
+                <LotmDialoguePlate
+                    messages={messages}
+                    isStreaming={isStreaming}
+                    onCreateCharacter={() => useAppStore.getState().togglePCPanel()}
+                    editor={editor}
+                    pendingMessageId={pendingMessageId}
+                    swipe={swipe}
+                    sceneContinue={sceneContinue}
+                    onOpenSwipeSheet={setSwipeSheetMessageId}
+                    onRetry={retry.retryStoryAI}
+                />
+            )}
 
             <div className="chat-composer-bar flex-shrink-0 bg-void border-t border-border">
                 <IndexingBanner campaignId={activeCampaignId} />
@@ -301,7 +322,9 @@ export function ChatArea({
                 />
             )}
 
-            <ChatNavFabs scrollContainerRef={scrollContainerRef} bottomRef={bottomRef} />
+            {showTranscript && (
+                <ChatNavFabs scrollContainerRef={scrollContainerRef} bottomRef={bottomRef} />
+            )}
 
             <LootRollModal />
             <DiceRollModal />

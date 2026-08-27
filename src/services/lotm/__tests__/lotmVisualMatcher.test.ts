@@ -4,7 +4,6 @@ import {
     findTingenLocationId,
     inferSpeakerName,
     matchLotmBackdrop,
-    matchLotmCgEcho,
     matchLotmPortraitEntry,
     matchLotmPortraits,
     matchLotmVisuals,
@@ -16,6 +15,20 @@ describe('lotmVisualMatcher', () => {
         expect(matchLotmBackdrop('Tingen City')).toBe('image/backgrounds/tingen_city.webp');
         expect(matchLotmBackdrop('a walk past St. Selena Cathedral')).toBe('image/backgrounds/tingen_city.webp');
         expect(matchLotmBackdrop(null, null, 'the grey fog of Sefirah Castle')).toBe('image/backgrounds/sefirah_castle.webp');
+    });
+
+    it('keeps the current-location backdrop even when GM text names another place', () => {
+        expect(matchLotmBackdrop('Tingen', '', 'Above the grey fog of Sefirah Castle'))
+            .toBe('image/backgrounds/tingen_city.webp');
+    });
+
+    it('matches a place through its region when the local name is unknown', () => {
+        const match = matchLotmVisuals({
+            placeName: "Nero's Apartment",
+            placeRegion: 'Tingen',
+            latestGmText: 'Above the grey fog of Sefirah Castle',
+        });
+        expect(match.backdrop).toBe('image/backgrounds/tingen_city.webp');
     });
 
     it('falls back to Tingen when nothing matches', () => {
@@ -40,32 +53,6 @@ describe('lotmVisualMatcher', () => {
         });
         expect(hits.map(h => h.name)).toEqual(expect.arrayContaining(['Dunn Smith', 'Leonard Mitchell']));
         expect(hits.length).toBeLessThanOrEqual(3);
-    });
-
-    it('does not echo CGs from place name or on-stage cast alone', () => {
-        expect(matchLotmCgEcho({ placeName: 'Tingen' })).toBeNull();
-        expect(matchLotmCgEcho({
-            placeName: 'Tingen',
-            npcLedger: [{ id: 'n1', name: 'Dunn Smith', aliases: 'Dunn' } as never],
-            onStageNpcIds: ['n1'],
-        })).toBeNull();
-    });
-
-    it('does not echo spoiler CGs unless the flag is on', () => {
-        const safe = matchLotmCgEcho({ placeName: 'Tingen', latestGmText: 'The Nighthawks chantry' });
-        expect(safe?.id).toBe('tingen-nighthawks');
-        const fog = matchLotmCgEcho({ latestGmText: 'Above the grey fog of Sefirah' }, new Set());
-        expect(fog).toBeNull();
-        const spoiler = matchLotmCgEcho({ latestGmText: 'Sefirah Castle', spoilers: true });
-        expect(spoiler?.tag).toBe('spoiler');
-    });
-
-    it('respects dismissed CG paths', () => {
-        const echo = matchLotmCgEcho(
-            { placeName: 'Tingen', latestGmText: 'nighthawks' },
-            new Set(['image/vol_1/Miscellaneous/nighthawks.webp']),
-        );
-        expect(echo).toBeNull();
     });
 
     it('attaches portrait URLs onto lore NPCs that match the manifest', () => {

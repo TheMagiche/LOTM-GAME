@@ -44,6 +44,7 @@ export function MessageActionRail({
     onSpeak,
     onPauseResume,
     onDelete,
+    variant = 'rail',
 }: {
     msg: ChatMessage;
     isEditing?: boolean;
@@ -60,9 +61,15 @@ export function MessageActionRail({
     onSpeak: () => void;
     onPauseResume: () => void;
     onDelete: (id: string) => void;
+    /** `bar` stays visible in a horizontal row (illustrated plate). */
+    variant?: 'rail' | 'bar';
 }) {
+    const bar = variant === 'bar';
     return (
-        <div className="message-action-rail flex flex-col gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity bg-void-darker border border-border p-1 rounded-md self-start sticky top-1/2 -translate-y-1/2 z-10">
+        <div className={bar
+            ? 'lotm-plate-actions'
+            : 'message-action-rail flex flex-col gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity bg-void-darker border border-border p-1 rounded-md self-start sticky top-1/2 -translate-y-1/2 z-10'
+        }>
             {isEditing ? (
                 <>
                     <button title="Save edit (Enter)" onClick={() => onInlineSubmit?.()} className="text-terminal hover:text-terminal p-1.5 bg-void-lighter rounded">
