@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Images } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Images, MapPin } from 'lucide-react';
 import { MessageMarkdown } from '../message/MessageMarkdown';
 import { ChatEmptyState } from '../chat/ChatEmptyState';
 import { useAppStore } from '../../store/useAppStore';
-import { matchLotmVisuals } from '../../services/lotm/lotmVisualMatcher';
+import { formatLotmPlaceLabel, matchLotmVisuals } from '../../services/lotm/lotmVisualMatcher';
 import type { ChatMessage } from '../../types';
 import { LotmSceneModal } from './LotmSceneModal';
 
@@ -51,20 +51,24 @@ export function LotmDialoguePlate({
     const viewingLatest = !!message && message.id === lastId;
     const gmText = message?.displayContent || message?.content || '';
 
+    const currentFeature = context.currentFeature || null;
     const currentPlace = context.currentPlaceId
         ? locationLedger.find(place => place.id === context.currentPlaceId)
         : undefined;
+    const locationLabel = formatLotmPlaceLabel(currentPlace?.name, currentFeature);
 
     const match = useMemo(() => matchLotmVisuals({
         placeName: currentPlace?.name,
         placeAliases: currentPlace?.aliases,
+        placeRegion: currentPlace?.broadLocation,
+        placeFeature: currentFeature,
         latestGmText: gmText,
         npcLedger,
         onStageNpcIds,
         playerCharacter,
         spoilers,
     }), [
-        currentPlace?.name, currentPlace?.aliases, gmText,
+        currentPlace?.name, currentPlace?.aliases, currentPlace?.broadLocation, currentFeature, gmText,
         npcLedger, onStageNpcIds, playerCharacter, spoilers,
     ]);
 
@@ -109,7 +113,7 @@ export function LotmDialoguePlate({
                             className="lotm-plate-scene"
                             onClick={() => setSceneOpen(true)}
                             aria-label="Open scene illustration"
-                            title="View scene backdrop and portraits"
+                            title={locationLabel ? `View scene: ${locationLabel}` : 'View scene backdrop and portraits'}
                         >
                             <Images size={13} />
                             <span>Scene</span>
@@ -127,6 +131,10 @@ export function LotmDialoguePlate({
                         )}
                     </div>
                 </div>
+                <p className="lotm-plate-location" aria-label="Current location">
+                    <MapPin size={12} aria-hidden />
+                    <span>{locationLabel || 'Location unknown'}</span>
+                </p>
                 {message ? (
                     <div className="lotm-plate-body gm-prose">
                         <MessageMarkdown content={gmText} />
@@ -140,6 +148,7 @@ export function LotmDialoguePlate({
                     backdrop={match.backdrop}
                     portraits={match.portraits}
                     speakerName={message ? match.speakerName : 'Scene'}
+                    locationLabel={locationLabel}
                     beatLabel={beatLabel}
                     canPrev={canPrev}
                     canNext={canNext}

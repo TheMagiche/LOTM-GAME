@@ -17,6 +17,20 @@ describe('lotmVisualMatcher', () => {
         expect(matchLotmBackdrop(null, null, 'the grey fog of Sefirah Castle')).toBe('image/backgrounds/sefirah_castle.webp');
     });
 
+    it('keeps the current-location backdrop even when GM text names another place', () => {
+        expect(matchLotmBackdrop('Tingen', '', 'Above the grey fog of Sefirah Castle'))
+            .toBe('image/backgrounds/tingen_city.webp');
+    });
+
+    it('matches a place through its region when the local name is unknown', () => {
+        const match = matchLotmVisuals({
+            placeName: "Nero's Apartment",
+            placeRegion: 'Tingen',
+            latestGmText: 'Above the grey fog of Sefirah Castle',
+        });
+        expect(match.backdrop).toBe('image/backgrounds/tingen_city.webp');
+    });
+
     it('falls back to Tingen when nothing matches', () => {
         expect(matchLotmBackdrop('a nameless alley')).toBe(LOTM_DEFAULT_BACKDROP);
     });

@@ -9,6 +9,7 @@ export function LotmSceneModal({
     backdrop,
     portraits,
     speakerName,
+    locationLabel,
     beatLabel,
     canPrev,
     canNext,
@@ -19,6 +20,7 @@ export function LotmSceneModal({
     backdrop: string;
     portraits: LotmPortraitHit[];
     speakerName: string;
+    locationLabel?: string;
     beatLabel: string;
     canPrev: boolean;
     canNext: boolean;
@@ -59,7 +61,7 @@ export function LotmSceneModal({
             <div className="lotm-scene-modal-frame" onClick={e => e.stopPropagation()}>
                 <header className="lotm-scene-modal-header">
                     <div>
-                        <p className="lotm-scene-modal-kicker">Scene</p>
+                        <p className="lotm-scene-modal-kicker">{locationLabel || 'Scene'}</p>
                         <h2 id="lotm-scene-title">{speakerName}</h2>
                     </div>
                     <button type="button" className="lotm-scene-modal-close" onClick={onClose} aria-label="Close scene">

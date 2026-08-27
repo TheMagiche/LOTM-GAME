@@ -667,6 +667,22 @@ html[style*="--lang-font-stack"] {
   flex-shrink: 0;
 }
 
+.lotm-plate-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: -2px 0 10px;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.72);
+  flex-shrink: 0;
+}
+
+.lotm-plate-location svg {
+  flex-shrink: 0;
+  color: #c9a227;
+}
+
 .lotm-plate-streaming {
   font-size: 9px;
   letter-spacing: 0.18em;

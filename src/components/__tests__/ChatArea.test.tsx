@@ -34,6 +34,8 @@ vi.mock('../../store/useAppStore', async () => {
             worldVibe: '',
             notebook: [], notebookActive: false,
             pcPromptDismissed: true,
+            currentPlaceId: null,
+            currentFeature: null,
         } as unknown as GameContext,
         activeCampaignId: 'test-campaign',
         settings: {
@@ -218,6 +220,9 @@ describe('ChatArea', () => {
         state.chapters = [];
         state.pipelinePhase = 'idle';
         state.askGmOpen = false;
+        state.locationLedger = [];
+        (state.context as GameContext).currentPlaceId = null;
+        (state.context as GameContext).currentFeature = null;
         (mockSummarizeAskGmConversation as ReturnType<typeof vi.fn>).mockResolvedValue('Keep the gate scene tense.');
         (mockAnswerOocQuestion as ReturnType<typeof vi.fn>).mockResolvedValue({ text: 'Ask GM answer', sources: [], archiveSearched: false });
     });
@@ -412,6 +417,29 @@ describe('ChatArea', () => {
         const askGm = screen.getByTitle('Open Ask GM side chat');
         expect(input.compareDocumentPosition(saveBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
         expect(input.compareDocumentPosition(askGm) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+
+    it('shows the current location on illustrated play', () => {
+        const state = useAppStore.getState();
+        (state.context as GameContext).currentPlaceId = 'loc-tingen';
+        (state.context as GameContext).currentFeature = 'Dorge docks';
+        state.locationLedger = [{
+            id: 'loc-tingen',
+            name: 'Tingen',
+            aliases: '',
+            broadLocation: 'Loen Kingdom',
+            features: ['Dorge docks'],
+            connections: [],
+            description: '',
+            firstSeenScene: '',
+            lastSeenScene: '',
+            source: 'manual',
+        }];
+        state.messages = [
+            makeMessage({ role: 'assistant', content: 'The gas lamps hiss above the grey fog of Sefirah.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.getByLabelText('Current location')).toHaveTextContent('Tingen · Dorge docks');
     });
 
     it('navigates through GM text in illustrated play', async () => {

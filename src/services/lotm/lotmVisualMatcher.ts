@@ -72,6 +72,8 @@ function resolvePortraitSrc(stored: string | undefined, hit: LotmPortraitVisual 
 export type LotmMatchInput = {
     placeName?: string | null;
     placeAliases?: string | null;
+    placeRegion?: string | null;
+    placeFeature?: string | null;
     latestGmText?: string | null;
     npcLedger?: NPCEntry[];
     onStageNpcIds?: string[];
@@ -95,9 +97,8 @@ function haystack(parts: Array<string | null | undefined>): string {
     return normalizeAlias(parts.filter(Boolean).join(' '));
 }
 
-export function matchLotmBackdrop(placeName?: string | null, placeAliases?: string | null, gmText?: string | null): string {
-    const text = haystack([placeName, placeAliases, gmText]);
-    if (!text) return LOTM_DEFAULT_BACKDROP;
+function pickBestBackdrop(text: string): string | null {
+    if (!text) return null;
     let best: { id: string; backdrop: string; len: number } | null = null;
     for (const place of LOTM_PLACES) {
         for (const alias of place.aliases) {
@@ -107,7 +108,24 @@ export function matchLotmBackdrop(placeName?: string | null, placeAliases?: stri
             }
         }
     }
-    return best?.backdrop ?? LOTM_DEFAULT_BACKDROP;
+    return best?.backdrop ?? null;
+}
+
+/**
+ * Scene art follows the current place. GM text is only used when no location
+ * is known yet, so a mention of another city does not steal the backdrop.
+ */
+export function matchLotmBackdrop(placeName?: string | null, placeAliases?: string | null, gmText?: string | null): string {
+    const locationText = haystack([placeName, placeAliases]);
+    if (locationText) return pickBestBackdrop(locationText) ?? LOTM_DEFAULT_BACKDROP;
+    return pickBestBackdrop(haystack([gmText])) ?? LOTM_DEFAULT_BACKDROP;
+}
+
+export function formatLotmPlaceLabel(
+    name?: string | null,
+    feature?: string | null,
+): string {
+    return [name, feature].map(part => (part ?? '').trim()).filter(Boolean).join(' · ');
 }
 
 export function matchLotmPortraitEntry(name: string, spoilers: boolean): LotmPortraitVisual | null {
@@ -208,8 +226,16 @@ export function inferSpeakerName(gmText: string | null | undefined, portraits: L
 
 export function matchLotmVisuals(input: LotmMatchInput): LotmVisualMatch {
     const portraits = matchLotmPortraits(input);
+    const locationAliases = [input.placeAliases, input.placeRegion, input.placeFeature]
+        .map(part => (part ?? '').trim())
+        .filter(Boolean)
+        .join(', ');
     return {
-        backdrop: matchLotmBackdrop(input.placeName, input.placeAliases, input.latestGmText),
+        backdrop: matchLotmBackdrop(
+            input.placeName,
+            locationAliases || null,
+            input.placeName ? null : input.latestGmText,
+        ),
         portraits,
         speakerName: inferSpeakerName(input.latestGmText, portraits),
     };
