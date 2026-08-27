@@ -1,12 +1,10 @@
 import type { LocationEntry, NPCEntry } from '../../types';
 import { PROPER_NOUN_STOP_WORDS } from '../../utils/stopWords';
 import {
-    LOTM_CG_ECHOES,
     LOTM_DEFAULT_BACKDROP,
     LOTM_PLACES,
     LOTM_PORTRAITS,
     normalizeAlias,
-    type LotmCgEcho,
     type LotmPortraitVisual,
 } from '../../worldpacks/lotmVisualManifest';
 
@@ -90,7 +88,6 @@ export type LotmPortraitHit = {
 export type LotmVisualMatch = {
     backdrop: string;
     portraits: LotmPortraitHit[];
-    cgEcho: LotmCgEcho | null;
     speakerName: string;
 };
 
@@ -199,24 +196,6 @@ export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
     return suppressNestedAliasHits(ranked).slice(0, 3).map(({ matchedAlias: _a, locked: _l, ...hit }) => hit);
 }
 
-export function matchLotmCgEcho(input: LotmMatchInput, dismissed: ReadonlySet<string> = new Set()): LotmCgEcho | null {
-    const spoilers = !!input.spoilers;
-    const text = haystack([input.latestGmText]);
-    if (!text) return null;
-    let best: { echo: LotmCgEcho; len: number } | null = null;
-    for (const echo of LOTM_CG_ECHOES) {
-        if (echo.tag === 'spoiler' && !spoilers) continue;
-        if (dismissed.has(echo.image)) continue;
-        for (const alias of echo.aliases) {
-            const a = normalizeAlias(alias);
-            if (a && !isWeakAlias(a) && phraseContained(text, a) && a.length >= (best?.len ?? 0)) {
-                best = { echo, len: a.length };
-            }
-        }
-    }
-    return best?.echo ?? null;
-}
-
 export function inferSpeakerName(gmText: string | null | undefined, portraits: LotmPortraitHit[]): string {
     const text = gmText ?? '';
     const bracket = text.match(/\[\*{0,2}\s*([A-Za-z][A-Za-z0-9 _.'-]{1,40})\s*\*{0,2}\]/);
@@ -227,12 +206,11 @@ export function inferSpeakerName(gmText: string | null | undefined, portraits: L
     return 'Narration';
 }
 
-export function matchLotmVisuals(input: LotmMatchInput, dismissedCgs: ReadonlySet<string> = new Set()): LotmVisualMatch {
+export function matchLotmVisuals(input: LotmMatchInput): LotmVisualMatch {
     const portraits = matchLotmPortraits(input);
     return {
         backdrop: matchLotmBackdrop(input.placeName, input.placeAliases, input.latestGmText),
         portraits,
-        cgEcho: matchLotmCgEcho(input, dismissedCgs),
         speakerName: inferSpeakerName(input.latestGmText, portraits),
     };
 }

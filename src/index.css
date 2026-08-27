@@ -807,40 +807,6 @@ html[style*="--lang-font-stack"] {
   flex-shrink: 0;
 }
 
-.lotm-cg-echo {
-  position: absolute;
-  inset: 8% 12%;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lotm-cg-echo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border: 1px solid rgba(201, 162, 39, 0.4);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
-}
-
-.lotm-cg-dismiss {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  z-index: 1;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid rgba(201, 162, 39, 0.5);
-  background: rgba(12, 10, 14, 0.9);
-  color: #e8e0d0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .lotm-world-map-view {
   position: relative;
   width: 100%;

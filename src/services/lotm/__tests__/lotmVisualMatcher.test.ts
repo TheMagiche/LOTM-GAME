@@ -4,7 +4,6 @@ import {
     findTingenLocationId,
     inferSpeakerName,
     matchLotmBackdrop,
-    matchLotmCgEcho,
     matchLotmPortraitEntry,
     matchLotmPortraits,
     matchLotmVisuals,
@@ -40,32 +39,6 @@ describe('lotmVisualMatcher', () => {
         });
         expect(hits.map(h => h.name)).toEqual(expect.arrayContaining(['Dunn Smith', 'Leonard Mitchell']));
         expect(hits.length).toBeLessThanOrEqual(3);
-    });
-
-    it('does not echo CGs from place name or on-stage cast alone', () => {
-        expect(matchLotmCgEcho({ placeName: 'Tingen' })).toBeNull();
-        expect(matchLotmCgEcho({
-            placeName: 'Tingen',
-            npcLedger: [{ id: 'n1', name: 'Dunn Smith', aliases: 'Dunn' } as never],
-            onStageNpcIds: ['n1'],
-        })).toBeNull();
-    });
-
-    it('does not echo spoiler CGs unless the flag is on', () => {
-        const safe = matchLotmCgEcho({ placeName: 'Tingen', latestGmText: 'The Nighthawks chantry' });
-        expect(safe?.id).toBe('tingen-nighthawks');
-        const fog = matchLotmCgEcho({ latestGmText: 'Above the grey fog of Sefirah' }, new Set());
-        expect(fog).toBeNull();
-        const spoiler = matchLotmCgEcho({ latestGmText: 'Sefirah Castle', spoilers: true });
-        expect(spoiler?.tag).toBe('spoiler');
-    });
-
-    it('respects dismissed CG paths', () => {
-        const echo = matchLotmCgEcho(
-            { placeName: 'Tingen', latestGmText: 'nighthawks' },
-            new Set(['image/vol_1/Miscellaneous/nighthawks.webp']),
-        );
-        expect(echo).toBeNull();
     });
 
     it('attaches portrait URLs onto lore NPCs that match the manifest', () => {

@@ -24,7 +24,6 @@ export function LotmDialoguePlate({
     const lastId = beats.at(-1)?.id ?? null;
     const [index, setIndex] = useState(() => Math.max(0, beats.length - 1));
     const [sceneOpen, setSceneOpen] = useState(false);
-    const [dismissedCgs, setDismissedCgs] = useState<Set<string>>(() => new Set());
     const lastIdRef = useRef(lastId);
 
     useEffect(() => {
@@ -38,7 +37,6 @@ export function LotmDialoguePlate({
 
     const campaignId = useAppStore(s => s.activeCampaignId);
     useEffect(() => {
-        setDismissedCgs(new Set());
         setSceneOpen(false);
     }, [campaignId]);
 
@@ -65,9 +63,9 @@ export function LotmDialoguePlate({
         onStageNpcIds,
         playerCharacter,
         spoilers,
-    }, dismissedCgs), [
+    }), [
         currentPlace?.name, currentPlace?.aliases, gmText,
-        npcLedger, onStageNpcIds, playerCharacter, spoilers, dismissedCgs,
+        npcLedger, onStageNpcIds, playerCharacter, spoilers,
     ]);
 
     const canPrev = index > 0;
@@ -141,17 +139,12 @@ export function LotmDialoguePlate({
                 <LotmSceneModal
                     backdrop={match.backdrop}
                     portraits={match.portraits}
-                    cgEcho={match.cgEcho}
                     speakerName={message ? match.speakerName : 'Scene'}
                     beatLabel={beatLabel}
                     canPrev={canPrev}
                     canNext={canNext}
                     onPrev={goPrev}
                     onNext={goNext}
-                    onDismissCg={() => {
-                        if (!match.cgEcho) return;
-                        setDismissedCgs(prev => new Set(prev).add(match.cgEcho!.image));
-                    }}
                     onClose={() => setSceneOpen(false)}
                 />
             )}

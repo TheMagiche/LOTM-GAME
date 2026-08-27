@@ -2,34 +2,28 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
-import type { LotmCgEcho } from '../../worldpacks/lotmVisualManifest';
 import type { LotmPortraitHit } from '../../services/lotm/lotmVisualMatcher';
-import { LotmCgEcho as LotmCgEchoOverlay } from './LotmCgEcho';
 import { LotmStage } from './LotmStage';
 
 export function LotmSceneModal({
     backdrop,
     portraits,
-    cgEcho,
     speakerName,
     beatLabel,
     canPrev,
     canNext,
     onPrev,
     onNext,
-    onDismissCg,
     onClose,
 }: {
     backdrop: string;
     portraits: LotmPortraitHit[];
-    cgEcho: LotmCgEcho | null;
     speakerName: string;
     beatLabel: string;
     canPrev: boolean;
     canNext: boolean;
     onPrev: () => void;
     onNext: () => void;
-    onDismissCg: () => void;
     onClose: () => void;
 }) {
     useEffect(() => {
@@ -81,9 +75,6 @@ export function LotmSceneModal({
                     />
                     <div className="lotm-backdrop-scrim" aria-hidden />
                     <LotmStage portraits={portraits} />
-                    {cgEcho && (
-                        <LotmCgEchoOverlay image={cgEcho.image} onDismiss={onDismissCg} />
-                    )}
                 </div>
 
                 <footer className="lotm-scene-modal-nav">

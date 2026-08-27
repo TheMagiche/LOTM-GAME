@@ -2,8 +2,6 @@
  * Curated LOTM visual index for in-play matching.
  */
 
-export type LotmSpoilerTag = 'safe' | 'spoiler';
-
 export type LotmPlaceVisual = {
     id: string;
     aliases: string[];
@@ -15,13 +13,6 @@ export type LotmPortraitVisual = {
     aliases: string[];
     portrait: string;
     spoiler?: boolean;
-};
-
-export type LotmCgEcho = {
-    id: string;
-    aliases: string[];
-    image: string;
-    tag: LotmSpoilerTag;
 };
 
 export const LOTM_DEFAULT_BACKDROP = 'image/backgrounds/tingen_city.webp';
@@ -124,52 +115,6 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     { id: 'leodero', aliases: ['leodero'], portrait: 'image/characters/spoiler_characters/leodero.webp', spoiler: true },
     { id: 'herabergen', aliases: ['herabergen'], portrait: 'image/characters/spoiler_characters/herabergen.webp', spoiler: true },
     { id: 'medici', aliases: ['sauron einhorn medici', 'medici'], portrait: 'image/characters/spoiler_characters/sauron_einhorn_medici.webp', spoiler: true },
-];
-
-/** Conservative in-play echoes — location or NPC, never an auto-plot of Klein's volumes. */
-export const LOTM_CG_ECHOES: LotmCgEcho[] = [
-    {
-        id: 'tingen-nighthawks',
-        aliases: ['tingen', 'nighthawk', 'nighthawks', 'st. selena', 'st selena'],
-        image: 'image/vol_1/Miscellaneous/nighthawks.webp',
-        tag: 'safe',
-    },
-    {
-        id: 'dunn-office',
-        aliases: ['dunn smith', 'dunn'],
-        image: 'image/vol_1/0184_please_come_in_dunn_smith.webp',
-        tag: 'safe',
-    },
-    {
-        id: 'leonard-early',
-        aliases: ['leonard mitchell', 'leonard'],
-        image: 'image/vol_1/0017_you_don_t_know_leonard_di.webp',
-        tag: 'safe',
-    },
-    {
-        id: 'audrey-susie',
-        aliases: ['audrey hall', 'audrey', 'susie'],
-        image: 'image/vol_1/Miscellaneous/audrey_hall_and_susie.webp',
-        tag: 'safe',
-    },
-    {
-        id: 'divination-club-echo',
-        aliases: ['divination club'],
-        image: 'image/backgrounds/divination_club.webp',
-        tag: 'safe',
-    },
-    {
-        id: 'sefirah-echo',
-        aliases: ['sefirah', 'grey fog', 'the fool'],
-        image: 'image/backgrounds/sefirah_castle.webp',
-        tag: 'spoiler',
-    },
-    {
-        id: 'city-of-silver-echo',
-        aliases: ['city of silver', 'derrick berg'],
-        image: 'image/backgrounds/city_of_silver.webp',
-        tag: 'spoiler',
-    },
 ];
 
 export const LOTM_PATHWAY_SYMBOLS: Record<string, string> = {
