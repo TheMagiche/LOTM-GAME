@@ -248,6 +248,12 @@ export function ChatArea({
                     messages={messages}
                     isStreaming={isStreaming}
                     onCreateCharacter={() => useAppStore.getState().togglePCPanel()}
+                    editor={editor}
+                    pendingMessageId={pendingMessageId}
+                    swipe={swipe}
+                    sceneContinue={sceneContinue}
+                    onOpenSwipeSheet={setSwipeSheetMessageId}
+                    onRetry={retry.retryStoryAI}
                 />
             )}
 

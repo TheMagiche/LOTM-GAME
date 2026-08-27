@@ -442,6 +442,32 @@ describe('ChatArea', () => {
         expect(screen.getByLabelText('Current location')).toHaveTextContent('Tingen · Dorge docks');
     });
 
+    it('exposes chronicle GM controls on illustrated play', async () => {
+        const user = userEvent.setup();
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ role: 'assistant', content: 'The gas lamps hiss.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.getByTitle('Edit')).toBeInTheDocument();
+        expect(screen.getByTitle('Delete')).toBeInTheDocument();
+        expect(screen.getByTitle(/Rewind to here/)).toBeInTheDocument();
+        await user.click(screen.getByTitle('Edit'));
+        expect(screen.getByPlaceholderText('Edit message...')).toBeInTheDocument();
+        expect(screen.queryByTitle('Edit')).not.toBeInTheDocument();
+        expect(screen.getByTitle('Save edit (Enter)')).toBeInTheDocument();
+    });
+
+    it('deletes the viewed GM beat from illustrated play', async () => {
+        const user = userEvent.setup();
+        const state = useAppStore.getState();
+        const gm = makeMessage({ id: 'gm-illustrated-1', role: 'assistant', content: 'The gas lamps hiss.' });
+        state.messages = [gm];
+        render(<ChatArea presentation="illustrated" />);
+        await user.click(screen.getByTitle('Delete'));
+        expect(state.deleteMessage).toHaveBeenCalledWith('gm-illustrated-1');
+    });
+
     it('navigates through GM text in illustrated play', async () => {
         const user = userEvent.setup();
         const state = useAppStore.getState();

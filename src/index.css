@@ -681,6 +681,33 @@ html[style*="--lang-font-stack"] {
   color: #c9a227;
 }
 
+.lotm-plate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 10px;
+  flex-shrink: 0;
+}
+
+.lotm-plate-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+  padding: 0;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: transparent;
+  color: #e8e0d0;
+  cursor: pointer;
+}
+
+.lotm-plate-actions button:hover {
+  color: #e0c36a;
+  border-color: rgba(201, 162, 39, 0.5);
+}
+
 .lotm-plate-streaming {
   font-size: 9px;
   letter-spacing: 0.18em;

@@ -1,10 +1,21 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Images, MapPin } from 'lucide-react';
+import { AlertCircle, ChevronLeft, ChevronRight, Images, MapPin, RotateCw } from 'lucide-react';
 import { MessageMarkdown } from '../message/MessageMarkdown';
 import { ChatEmptyState } from '../chat/ChatEmptyState';
 import { useAppStore } from '../../store/useAppStore';
 import { formatLotmPlaceLabel, matchLotmVisuals } from '../../services/lotm/lotmVisualMatcher';
+import { proseForTTS } from '../../services/tts/proseStripper';
+import { hasSwipeSet } from '../../services/turn/pendingCommit';
 import type { ChatMessage } from '../../types';
+import { useTtsPlayback } from '../hooks/useTtsPlayback';
+import { useMessageEditor } from '../hooks/useMessageEditor';
+import { useSwipeVariants } from '../hooks/useSwipeVariants';
+import { useSceneContinue } from '../hooks/useSceneContinue';
+import { TtsPlaybackPanel } from '../tts/TtsPlaybackPanel';
+import { InlineMessageEditor } from '../message/InlineMessageEditor';
+import { MessageActionRail } from '../message/MessageActionRail';
+import { MessageBelowSlots } from '../message/MessageBelowSlots';
+import { SwipeIndicator, ContinueButton } from '../message/SwipeIndicator';
 import { LotmSceneModal } from './LotmSceneModal';
 
 function gmBeats(messages: ChatMessage[]): ChatMessage[] {
@@ -15,10 +26,22 @@ export function LotmDialoguePlate({
     messages,
     isStreaming,
     onCreateCharacter,
+    editor,
+    pendingMessageId,
+    swipe,
+    sceneContinue,
+    onOpenSwipeSheet,
+    onRetry,
 }: {
     messages: ChatMessage[];
     isStreaming: boolean;
     onCreateCharacter: () => void;
+    editor: ReturnType<typeof useMessageEditor>;
+    pendingMessageId: string | null;
+    swipe: ReturnType<typeof useSwipeVariants>;
+    sceneContinue: ReturnType<typeof useSceneContinue>;
+    onOpenSwipeSheet: (messageId: string) => void;
+    onRetry?: (messageId: string) => void;
 }) {
     const beats = useMemo(() => gmBeats(messages), [messages]);
     const lastId = beats.at(-1)?.id ?? null;
@@ -75,6 +98,7 @@ export function LotmDialoguePlate({
     const canPrev = index > 0;
     const canNext = index < beats.length - 1;
     const beatLabel = beats.length === 0 ? '0 / 0' : `${index + 1} / ${beats.length}`;
+    const editing = !!message && editor.editingMessageId === message.id;
 
     const goPrev = useCallback(() => {
         setIndex(current => Math.max(0, current - 1));
@@ -84,7 +108,7 @@ export function LotmDialoguePlate({
     }, [beats.length]);
 
     useEffect(() => {
-        if (sceneOpen) return;
+        if (sceneOpen || editing) return;
         const onKey = (event: KeyboardEvent) => {
             const target = event.target as HTMLElement | null;
             if (target && (target.tagName === 'TEXTAREA' || target.tagName === 'INPUT' || target.isContentEditable)) return;
@@ -99,7 +123,7 @@ export function LotmDialoguePlate({
         };
         document.addEventListener('keydown', onKey);
         return () => document.removeEventListener('keydown', onKey);
-    }, [sceneOpen, index, beats.length, goPrev, goNext]);
+    }, [sceneOpen, editing, index, beats.length, goPrev, goNext]);
 
     return (
         <>
@@ -136,9 +160,19 @@ export function LotmDialoguePlate({
                     <span>{locationLabel || 'Location unknown'}</span>
                 </p>
                 {message ? (
-                    <div className="lotm-plate-body gm-prose">
-                        <MessageMarkdown content={gmText} />
-                    </div>
+                    <LotmPlateGmBody
+                        key={message.id}
+                        message={message}
+                        gmText={gmText}
+                        isStreaming={isStreaming}
+                        editing={editing}
+                        editor={editor}
+                        pendingMessageId={pendingMessageId}
+                        swipe={swipe}
+                        sceneContinue={sceneContinue}
+                        onOpenSwipeSheet={onOpenSwipeSheet}
+                        onRetry={onRetry}
+                    />
                 ) : (
                     <ChatEmptyState onCreateCharacter={onCreateCharacter} />
                 )}
@@ -156,6 +190,125 @@ export function LotmDialoguePlate({
                     onNext={goNext}
                     onClose={() => setSceneOpen(false)}
                 />
+            )}
+        </>
+    );
+}
+
+function LotmPlateGmBody({
+    message,
+    gmText,
+    isStreaming,
+    editing,
+    editor,
+    pendingMessageId,
+    swipe,
+    sceneContinue,
+    onOpenSwipeSheet,
+    onRetry,
+}: {
+    message: ChatMessage;
+    gmText: string;
+    isStreaming: boolean;
+    editing: boolean;
+    editor: ReturnType<typeof useMessageEditor>;
+    pendingMessageId: string | null;
+    swipe: ReturnType<typeof useSwipeVariants>;
+    sceneContinue: ReturnType<typeof useSceneContinue>;
+    onOpenSwipeSheet: (messageId: string) => void;
+    onRetry?: (messageId: string) => void;
+}) {
+    const markdownContent = gmText.replace(/^Scene\s*#\d+\s*\|?\s*/i, '');
+    const tts = useTtsPlayback(message, markdownContent);
+    const canSpeak = !editing && tts.ttsReady && !!markdownContent.trim();
+    const pending = message.id === pendingMessageId;
+
+    return (
+        <>
+            {!editing && (
+                <MessageActionRail
+                    variant="bar"
+                    msg={message}
+                    isEditing={false}
+                    canSpeak={canSpeak}
+                    ttsLoading={tts.ttsLoading}
+                    ttsPlaying={tts.ttsPlaying}
+                    ttsPaused={tts.ttsPaused}
+                    ttsFinished={tts.ttsFinished}
+                    onStartEdit={editor.startEditing}
+                    onOpenSwipeSheet={onOpenSwipeSheet}
+                    onRegenerate={editor.handleRegenerate}
+                    onSpeak={tts.handleSpeak}
+                    onPauseResume={tts.handlePauseResume}
+                    onDelete={(id) => editor.handleDeleteOutput(id)}
+                />
+            )}
+            <div className="lotm-plate-body gm-prose">
+                {editing ? (
+                    <InlineMessageEditor
+                        draft={editor.inlineDraft}
+                        onDraftChange={editor.setInlineDraft}
+                        onSubmit={editor.handleEditSubmit}
+                        onCancel={editor.cancelEditing}
+                    />
+                ) : (
+                    <>
+                        {(tts.ttsPlaying || tts.ttsLoading || tts.ttsFinished || tts.hasCache) && (
+                            <TtsPlaybackPanel
+                                prose={proseForTTS(markdownContent)}
+                                ttsLoading={tts.ttsLoading}
+                                ttsPaused={tts.ttsPaused}
+                                ttsPlaying={tts.ttsPlaying}
+                                ttsFinished={tts.ttsFinished}
+                                activeSentenceIdx={tts.activeSentenceIdx}
+                                activeWordIdx={tts.activeWordIdx}
+                                playbackRate={tts.playbackRate}
+                                totalChunks={tts.totalChunks}
+                                generatedChunks={tts.generatedChunks}
+                                onPauseResume={tts.handlePauseResume}
+                                onSpeedChange={tts.handleSpeedChange}
+                                onSpeak={tts.handleSpeak}
+                                onWipe={tts.handleWipeTts}
+                                onSentenceClick={tts.jumpToSentence}
+                            />
+                        )}
+                        <MessageMarkdown content={markdownContent} />
+                    </>
+                )}
+            </div>
+            <MessageBelowSlots message={{ id: message.id, role: message.role, sceneId: message.sceneId ?? null }} />
+            {message.retryable && !isStreaming && onRetry && (
+                <div className="mt-2 mb-1 flex items-center gap-2 py-2 px-3 bg-void-darker border border-amber-500/30 rounded">
+                    <AlertCircle size={12} className="text-amber-400 shrink-0" />
+                    <span className="text-[11px] text-amber-400/80 truncate flex-1">Story AI halted — context preserved</span>
+                    <button
+                        type="button"
+                        onClick={() => onRetry(message.id)}
+                        className="text-[10px] uppercase tracking-wider text-text-dim hover:text-amber-300 shrink-0 flex items-center gap-1"
+                    >
+                        <RotateCw size={10} />
+                        Retry
+                    </button>
+                </div>
+            )}
+            {hasSwipeSet(message) && (
+                <div className="mt-2 flex items-center justify-center gap-3 select-none">
+                    <SwipeIndicator
+                        msg={message}
+                        onPrev={() => pending && swipe.prevSwipe()}
+                        onNext={() => pending && swipe.nextSwipe()}
+                    />
+                    <ContinueButton
+                        loading={!!sceneContinue.continueLoading}
+                        disabled={
+                            !!sceneContinue.continueLoading
+                            || !!swipe.swipeGenLoading
+                            || isStreaming
+                            || message.swipeSet?.[message.swipeActiveIndex ?? 0]?.streaming === true
+                        }
+                        onClick={() => pending && sceneContinue.runSceneContinue()}
+                    />
+                </div>
             )}
         </>
     );
