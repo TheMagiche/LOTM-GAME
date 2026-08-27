@@ -1,9 +1,11 @@
 /**
  * Chatterbox-Nano sidecar lifecycle manager.
  *
- * Owns the Python venv under data/.tts_cache/chatterbox-venv/, the pip install,
- * the spawned sidecar process, and its health. The provider (chatterboxNano.js)
- * calls ensureRunning() before every generate; everything else is lazy.
+ * Owns the Python venv (user data dir by default, overridable via
+ * CHATTERBOX_VENV_DIR), the pip install, the spawned sidecar process, and its
+ * health. The provider (chatterboxNano.js) calls ensureRunning() before every
+ * generate; everything else is lazy. Model weights go to CHATTERBOX_HF_HOME
+ * (same user-data root) rather than the project's data/ folder.
  *
  * Setup stages are reported through onStage so the UI can show real progress
  * ("Creating Python environment", "Installing dependencies", "Loading model")
@@ -25,16 +27,26 @@ import fs from 'fs';
 import net from 'net';
 import { fileURLToPath } from 'url';
 import { CACHE_DIR, ensureCacheDir } from './cache.js';
+import {
+    isInstalledAt,
+    projectVenvDir,
+    resolveHfHome,
+    resolveVenvDir,
+    venvPythonAt,
+} from './chatterboxPaths.js';
 
 const __sidecarDir = path.dirname(fileURLToPath(import.meta.url));
 const SIDECAR_SCRIPT = path.join(__sidecarDir, '..', '..', 'tts_sidecar', 'chatterbox_server.py');
-const VENV_DIR = process.env.CHATTERBOX_VENV_DIR || path.join(CACHE_DIR, 'chatterbox-venv');
 const VOICES_DIR = path.join(CACHE_DIR, 'chatterbox', 'voices');
 const DEFAULT_PORT = 3117;
 
-/** Written only after a fully successful install, so a half-finished venv is
- *  never mistaken for a usable one. */
-const INSTALL_MARKER = path.join(VENV_DIR, '.chatterbox-install.json');
+function getVenvDir() {
+    return resolveVenvDir();
+}
+
+function installMarker() {
+    return path.join(getVenvDir(), '.chatterbox-install.json');
+}
 
 const CHATTERBOX_GIT = process.env.CHATTERBOX_GIT_URL
     || 'git+https://github.com/resemble-ai/chatterbox.git';
@@ -82,6 +94,8 @@ let proc = null;
 let port = null;
 let setupPromise = null;
 let lastError = null;
+/** True only after /health reports the model loaded — port-bound is not enough. */
+let sidecarHealthy = false;
 /** Ring buffer of recent sidecar stdout/stderr, for error messages. */
 let recentOutput = [];
 
@@ -91,10 +105,7 @@ function noteOutput(line) {
 }
 
 function venvPython() {
-    // Windows venv layout differs from POSIX.
-    return process.platform === 'win32'
-        ? path.join(VENV_DIR, 'Scripts', 'python.exe')
-        : path.join(VENV_DIR, 'bin', 'python');
+    return venvPythonAt(getVenvDir());
 }
 
 export function getVoicesDir() {
@@ -119,7 +130,11 @@ export function listVoiceClips() {
  * "ready to attempt startup".
  */
 export function isSidecarInstalled() {
-    return fs.existsSync(venvPython()) && fs.existsSync(INSTALL_MARKER);
+    return isInstalledAt(getVenvDir());
+}
+
+export function isSidecarHealthy() {
+    return sidecarHealthy && !!proc && !!port;
 }
 
 export function getSetupError() {
@@ -294,14 +309,16 @@ async function createVenv(python, onStage) {
     // Always rebuild when the install marker is missing. A leftover 3.9 venv
     // from a failed first attempt would otherwise be reused (venv/bin/python
     // exists, so the old "if exists, skip" path kept pip-installing into it).
-    if (fs.existsSync(VENV_DIR)) {
+    const venvDir = getVenvDir();
+    if (fs.existsSync(venvDir)) {
         const existing = pyVersion(venvPython());
         onStage?.(`Replacing Python ${existing ? existing.join('.') : 'incomplete'} environment...`);
-        fs.rmSync(VENV_DIR, { recursive: true, force: true });
+        fs.rmSync(venvDir, { recursive: true, force: true });
     }
     onStage?.('Creating Python environment...');
     ensureCacheDir();
-    await run(python, ['-m', 'venv', '--clear', VENV_DIR], l => onStage?.(l));
+    fs.mkdirSync(path.dirname(venvDir), { recursive: true });
+    await run(python, ['-m', 'venv', '--clear', venvDir], l => onStage?.(l));
     const created = pyVersion(venvPython());
     if (!created || !inRange(created)) {
         throw setupError(
@@ -376,15 +393,33 @@ function spawnSidecar(onLine) {
     return new Promise((resolve, reject) => {
         findFreePort(DEFAULT_PORT).then((p) => {
             recentOutput = [];
+            const hfHome = resolveHfHome();
+            fs.mkdirSync(hfHome, { recursive: true });
+            sidecarHealthy = false;
             proc = spawn(venvPython(), [
                 SIDECAR_SCRIPT,
                 '--port', String(p),
                 '--voices-dir', VOICES_DIR,
             ], {
                 stdio: ['ignore', 'pipe', 'pipe'],
-                // Keep model weights beside the rest of the TTS cache so they
-                // live in the user data dir, not a read-only packaged path.
-                env: { ...pythonEnv(), HF_HOME: CACHE_DIR },
+                // Own process group so SIGKILL on shutdown reaps HF download
+                // worker threads instead of leaving a zombie on :3117.
+                detached: true,
+                // Weights live in the user-level HF cache (not data/.tts_cache)
+                // so a project wipe does not force a re-download. Kokoro sets
+                // HF_HOME / XDG_CACHE_HOME on this process — override them here
+                // or the sidecar would inherit the in-project path.
+                env: {
+                    ...pythonEnv(),
+                    HF_HOME: hfHome,
+                    HF_HUB_CACHE: path.join(hfHome, 'hub'),
+                    TRANSFORMERS_CACHE: hfHome,
+                    XDG_CACHE_HOME: hfHome,
+                    // Xet downloads have hung on this platform; chatterbox
+                    // already falls back after a thrown error, but a stuck
+                    // Xet transfer never throws. Force HTTP/LFS.
+                    HF_HUB_DISABLE_XET: '1',
+                },
             });
 
             const feed = (stream) => {
@@ -407,9 +442,13 @@ function spawnSidecar(onLine) {
 
             proc.on('error', (err) => {
                 proc = null;
+                sidecarHealthy = false;
                 reject(err);
             });
-            proc.on('exit', () => { proc = null; });
+            proc.on('exit', () => {
+                proc = null;
+                sidecarHealthy = false;
+            });
 
             port = p;
             resolve(p);
@@ -480,17 +519,26 @@ export async function ensureRunning(onStage) {
                 await createVenv(exe, onStage);
                 const profile = await pipInstall(onStage);
                 await verifyImport(onStage);
-                fs.writeFileSync(INSTALL_MARKER, JSON.stringify({
+                fs.writeFileSync(installMarker(), JSON.stringify({
                     profile,
                     python: version,
                     platform: `${process.platform}-${process.arch}`,
                     completedAt: new Date().toISOString(),
+                    venvDir: getVenvDir(),
+                    hfHome: resolveHfHome(),
                 }, null, 2));
+            }
+            console.log(`[TTS] Chatterbox-Nano venv: ${getVenvDir()}`);
+            console.log(`[TTS] Chatterbox-Nano HF cache: ${resolveHfHome()}`);
+            if (!process.env.DATA_DIR && !process.env.CHATTERBOX_VENV_DIR
+                && getVenvDir() === projectVenvDir()) {
+                console.log('[TTS] Using legacy project venv. Delete data/.tts_cache/chatterbox-venv to reinstall into the user data folder.');
             }
             onStage?.('Starting sidecar...');
             await spawnSidecar(l => onStage?.(l));
             onStage?.('Loading Chatterbox-Nano model (first run downloads weights)...');
             await waitForHealth();
+            sidecarHealthy = true;
             lastError = null;
             console.log('[TTS] Chatterbox-Nano sidecar ready');
         } catch (err) {
@@ -508,10 +556,16 @@ export async function ensureRunning(onStage) {
 
 export function killSidecar() {
     if (proc) {
-        try { proc.kill(); } catch { /* already dead */ }
+        const pid = proc.pid;
+        try { proc.kill('SIGTERM'); } catch { /* already dead */ }
+        if (pid) {
+            try { process.kill(-pid, 'SIGKILL'); } catch { /* group already gone */ }
+            try { process.kill(pid, 'SIGKILL'); } catch { /* already dead */ }
+        }
         proc = null;
     }
     port = null;
+    sidecarHealthy = false;
 }
 
 export function getSidecarPort() {

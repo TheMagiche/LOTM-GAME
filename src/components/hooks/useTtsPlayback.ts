@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import type { ChatMessage } from '../../types';
 import { useTtsStatus } from '../../services/tts/useTtsStatus';
+import { isEngineReady } from '../../services/tts/ttsClient';
 import { KokoroBuffer } from '../../services/tts/kokoroBuffer';
 import { useAppStore } from '../../store/useAppStore';
 
@@ -49,8 +50,12 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
     }, []);
 
     // Preload disk-cached chunks on mount / voice or engine change.
+    // Wipe in-memory audio first so a Kokoro/Chatterbox switch cannot replay
+    // the previous engine's blobs from this bubble's buffer.
     useEffect(() => {
-        if (!ttsEnabled || msg.role !== 'assistant') return;
+        if (msg.role !== 'assistant') return;
+        buffer.wipe();
+        if (!ttsEnabled) return;
         return buffer.preloadFromDisk(markdownContent, ttsVoice ?? 'af_heart', ttsProvider);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ttsEnabled, ttsVoice, ttsProvider, msg.id]);
@@ -72,7 +77,7 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
         }
     };
 
-    const ttsReady = !!ttsStatus?.modelReady && !!ttsEnabled;
+    const ttsReady = isEngineReady(ttsStatus, ttsProvider) && !!ttsEnabled;
 
     return {
         ttsReady,

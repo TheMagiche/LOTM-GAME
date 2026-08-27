@@ -15,3 +15,4 @@ export {
     setActiveProvider,
     listProviders,
 } from './tts/index.js';
+export { killSidecar } from './tts/sidecarManager.js';

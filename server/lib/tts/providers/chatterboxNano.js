@@ -6,6 +6,10 @@
  * reference audio clip. Clips live in data/.tts_cache/chatterbox/voices/ and
  * the "voice" parameter is the clip's filename. A missing/unknown clip falls
  * back to the model's default speaker.
+ *
+ * The Python venv and HuggingFace weights install into a user-level folder
+ * (see chatterboxPaths.js), not the project, so wiping data/ does not force a
+ * re-download. Override with CHATTERBOX_VENV_DIR / CHATTERBOX_HF_HOME.
  */
 import fs from 'fs';
 import path from 'path';
@@ -13,6 +17,7 @@ import { isAudioCached, loadCachedAudio, saveCachedAudio } from '../cache.js';
 import {
     ensureRunning,
     isSidecarInstalled,
+    isSidecarHealthy,
     getSidecarPort,
     getVoicesDir,
     getSetupError,
@@ -57,7 +62,7 @@ export default {
     },
 
     isReady() {
-        return !!getSidecarPort();
+        return isSidecarHealthy();
     },
 
     async init(onStage) {

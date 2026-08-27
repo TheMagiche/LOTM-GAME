@@ -158,9 +158,18 @@ class Handler(BaseHTTPRequestHandler):
         try:
             wav = model.generate(text, audio_prompt_path=voice_path)
             buf = io.BytesIO()
+            import torch
             import torchaudio as ta
 
-            ta.save(buf, wav, model.sr, format="wav")
+            # Browsers (Safari / <audio>) often refuse IEEE-float WAV (format 3).
+            # Convert to 16-bit PCM so Settings preview and GM playback work.
+            wav = wav.detach().cpu()
+            if wav.ndim == 1:
+                wav = wav.unsqueeze(0)
+            if wav.dtype != torch.int16:
+                wav = wav.to(torch.float32).clamp(-1.0, 1.0)
+                wav = (wav * 32767.0).to(torch.int16)
+            ta.save(buf, wav, model.sr, format="wav", encoding="PCM_S", bits_per_sample=16)
             audio = buf.getvalue()
         except Exception as e:  # noqa: BLE001
             self._json(500, {"error": f"Generation failed: {e}"})

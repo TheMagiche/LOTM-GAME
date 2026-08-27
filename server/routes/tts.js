@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { wrapAsync } from '../lib/asyncHandler.js';
-import { initTts, generateSpeech, isTtsReady, getTtsStatus, listVoices, isAudioCached, loadCachedAudio } from '../lib/tts.js';
+import { initTts, generateSpeech, isTtsReady, getTtsStatus, listVoices, isAudioCached, loadCachedAudio, listProviders } from '../lib/tts.js';
 
 export function createTtsRouter() {
     const router = Router();
@@ -65,8 +65,14 @@ export function createTtsRouter() {
         }
         // Readiness is per-engine: checking the active provider here would let a
         // request for a different engine through (or wrongly reject one).
+        // Installed but sidecar is down — generate() calls init() and starts it.
+        // A hard 503 here is why Settings preview failed after a restart:
+        // the engine was cached, the sidecar was not yet healthy.
         if (!isTtsReady(provider)) {
-            return res.status(503).json({ error: 'TTS model not ready. Download it first from Settings → Advanced.' });
+            const info = listProviders().find(p => p.id === (provider || 'kokoro'));
+            if (!info?.cached) {
+                return res.status(503).json({ error: 'TTS model not ready. Download it first from Settings → Advanced.' });
+            }
         }
         const buf = await generateSpeech(text, voice, provider);
         res.setHeader('Content-Type', 'audio/wav');

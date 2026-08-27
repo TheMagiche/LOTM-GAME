@@ -46,6 +46,11 @@ export function AdvancedTab() {
         { id: 'bf_emma', label: 'Emma (F, British)' },
         { id: 'bm_george', label: 'George (M, British)' },
     ];
+    const KOKORO_VOICE_IDS = TTS_VOICES.map(v => v.id);
+    const lastVoiceByEngine = useRef({
+        kokoro: KOKORO_VOICE_IDS.includes(settings.ttsVoice ?? '') ? (settings.ttsVoice ?? 'af_heart') : 'af_heart',
+        'chatterbox-nano': /\.(wav|mp3|flac)$/i.test(settings.ttsVoice ?? '') ? (settings.ttsVoice ?? '') : '',
+    });
     // Chatterbox-Nano voices are reference clips the user drops into
     // data/.tts_cache/chatterbox/voices/ — listed by the server.
     const [chatterboxVoices, setChatterboxVoices] = useState<string[]>([]);
@@ -134,7 +139,16 @@ export function AdvancedTab() {
             .then(data => { if (!cancelled && data?.voices) setChatterboxVoices(data.voices); })
             .catch(() => { /* best-effort */ });
         return () => { cancelled = true; };
-    }, [selectedProvider, ttsStatus?.modelReady]);
+    }, [selectedProvider, ttsStatus?.modelReady, ttsStatus?.providers]);
+
+    // Persist the clip the dropdown is showing. Preview already falls back to
+    // voices[0]; play-dashboard Speak used settings.ttsVoice (often still af_heart).
+    useEffect(() => {
+        if (selectedProvider !== 'chatterbox-nano') return;
+        if (chatterboxVoices.length === 0) return;
+        if (settings.ttsVoice && chatterboxVoices.includes(settings.ttsVoice)) return;
+        updateSettings({ ttsVoice: chatterboxVoices[0] });
+    }, [selectedProvider, chatterboxVoices, settings.ttsVoice, updateSettings]);
 
     const stopTtsPolling = () => {
         if (ttsPollTimer.current) clearInterval(ttsPollTimer.current);
@@ -170,6 +184,19 @@ export function AdvancedTab() {
         ttsPreviewAudio.current = null;
         if (url) URL.revokeObjectURL(url);
         setTtsPreviewing(false);
+    };
+
+    const handleEngineChange = (next: 'kokoro' | 'chatterbox-nano') => {
+        stopTtsPreview();
+        lastVoiceByEngine.current[selectedProvider] = settings.ttsVoice
+            ?? lastVoiceByEngine.current[selectedProvider];
+        let ttsVoice = lastVoiceByEngine.current[next];
+        if (next === 'kokoro' && !KOKORO_VOICE_IDS.includes(ttsVoice)) ttsVoice = 'af_heart';
+        if (next === 'chatterbox-nano' && chatterboxVoices.length > 0
+            && !chatterboxVoices.includes(ttsVoice)) {
+            ttsVoice = chatterboxVoices[0];
+        }
+        updateSettings({ ttsProvider: next, ttsVoice });
     };
 
     useEffect(() => {
@@ -225,7 +252,10 @@ export function AdvancedTab() {
                 URL.revokeObjectURL(url);
             };
             audio.onended = finish;
-            audio.onerror = finish;
+            audio.onerror = () => {
+                finish();
+                toast.error('Voice preview failed: the browser could not play the generated audio');
+            };
             await audio.play();
         } catch (err) {
             setTtsPreviewing(false);
@@ -249,6 +279,8 @@ export function AdvancedTab() {
                     <p className="text-[9px] text-text-dim max-w-[320px] leading-tight">
                         Local neural TTS for GM narration, runs fully offline after a one-time download.
                         Not bundled — opt in per engine. A speaker icon appears on GM messages once ready.
+                        Chatterbox stores its Python env and model weights in your user data folder
+                        (outside the repo) so wiping data/ does not re-download them.
                     </p>
                 </div>
 
@@ -257,7 +289,7 @@ export function AdvancedTab() {
                     <label className="block text-[9px] text-text-dim uppercase tracking-wider mb-1">Engine</label>
                     <select
                         value={selectedProvider}
-                        onChange={e => updateSettings({ ttsProvider: e.target.value as 'kokoro' | 'chatterbox-nano' })}
+                        onChange={e => handleEngineChange(e.target.value as 'kokoro' | 'chatterbox-nano')}
                         className="bg-void-darker border border-border text-text-primary text-[11px] px-2 py-1 rounded outline-none focus:border-terminal w-full"
                     >
                         <option value="kokoro">Kokoro-82M (~90MB, in-app)</option>
@@ -288,7 +320,12 @@ export function AdvancedTab() {
                     </span>
                 </div>
 
-                {/* Download / init button — shown until ready */}
+                {!ttsReady && ttsCached && selectedProvider === 'chatterbox-nano' && (
+                    <p className="text-[9px] text-text-dim leading-tight">
+                        Installed, but the sidecar is not running yet. Click Warm Up Model — first load
+                        downloads remaining weights and can take several minutes.
+                    </p>
+                )}
                 {!ttsReady && (
                     <button
                         disabled={ttsIniting || ttsPolling}
@@ -343,6 +380,7 @@ export function AdvancedTab() {
                                     <p className="text-[9px] text-text-dim leading-tight">
                                         No reference clips found. Drop a ~10s WAV of the voice you want into
                                         data/.tts_cache/chatterbox/voices/ — Nano clones speech from it.
+                                        Voice clips stay in the project; the model itself does not.
                                     </p>
                                 )}
                             </div>

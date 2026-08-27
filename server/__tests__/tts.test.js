@@ -5,18 +5,28 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 let tmpDir;
 let originalDataDir;
+let originalVenvDir;
+let originalHfHome;
 
 describe('TTS persisted model status', () => {
     beforeEach(() => {
         tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ne-tts-test-'));
         originalDataDir = process.env.DATA_DIR;
+        originalVenvDir = process.env.CHATTERBOX_VENV_DIR;
+        originalHfHome = process.env.CHATTERBOX_HF_HOME;
         process.env.DATA_DIR = tmpDir;
+        delete process.env.CHATTERBOX_VENV_DIR;
+        delete process.env.CHATTERBOX_HF_HOME;
         vi.resetModules();
     });
 
     afterEach(() => {
         if (originalDataDir) process.env.DATA_DIR = originalDataDir;
         else delete process.env.DATA_DIR;
+        if (originalVenvDir) process.env.CHATTERBOX_VENV_DIR = originalVenvDir;
+        else delete process.env.CHATTERBOX_VENV_DIR;
+        if (originalHfHome) process.env.CHATTERBOX_HF_HOME = originalHfHome;
+        else delete process.env.CHATTERBOX_HF_HOME;
         fs.rmSync(tmpDir, { recursive: true, force: true });
         vi.restoreAllMocks();
     });
@@ -81,7 +91,10 @@ describe('TTS persisted model status', () => {
         fs.writeFileSync(path.join(venvDir, '.chatterbox-install.json'), '{"profile":"legacy"}');
 
         const { listProviders } = await import('../lib/tts.js');
-        expect(listProviders().find(p => p.id === 'chatterbox-nano').cached).toBe(true);
+        const nano = listProviders().find(p => p.id === 'chatterbox-nano');
+        expect(nano.cached).toBe(true);
+        // Port-bound is not ready — the model must pass /health first.
+        expect(nano.ready).toBe(false);
     });
 
     it('keys the audio cache by provider so engines never collide', async () => {
@@ -91,5 +104,6 @@ describe('TTS persisted model status', () => {
         expect(a).not.toBe(b);
         // Same inputs → same key (stable).
         expect(audioCacheHash('kokoro', 'hello', 'af_heart')).toBe(a);
+        expect(audioCacheHash('chatterbox-nano', 'hello', 'af_heart')).toBe(b);
     });
 });

@@ -27,8 +27,11 @@ export function ensureCacheDir() {
  * engines never read each other's audio (different voices, sample rates).
  */
 export function audioCacheHash(providerId, text, voice) {
+    // chatterbox used to write IEEE-float WAVs that <audio> cannot play;
+    // '|pcm16' busts that cache so new 16-bit files are generated.
+    const extra = providerId === 'chatterbox-nano' ? '|pcm16' : '';
     return crypto.createHash('sha256')
-        .update(`${providerId}|${voice || ''}|${text}`)
+        .update(`${providerId}|${voice || ''}|${text}${extra}`)
         .digest('hex').slice(0, 24);
 }
 

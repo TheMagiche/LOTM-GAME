@@ -27,6 +27,16 @@ export async function getTtsStatus(): Promise<TtsStatus> {
     return res.json();
 }
 
+/** Ready flag for the engine the user actually selected — not the server default (Kokoro). */
+export function isEngineReady(status: TtsStatus | null | undefined, providerId?: string): boolean {
+    if (!status) return false;
+    const id = providerId || 'kokoro';
+    const listed = status.providers?.find(p => p.id === id);
+    if (listed) return !!listed.ready;
+    if (status.providers && status.providers.length > 0) return false;
+    return !!status.modelReady;
+}
+
 /** Pull the server's `{ error }` message out of a failed response. */
 async function errorMessage(res: Response): Promise<string> {
     const body = await res.text();
@@ -44,6 +54,7 @@ async function errorMessage(res: Response): Promise<string> {
  * The caller should poll getTtsStatus() to show progress.
  * For 'chatterbox-nano' the first call creates a Python venv, installs
  * dependencies, and starts the sidecar — this can take several minutes.
+ * The venv and model weights live in the user data folder (not the project).
  */
 export async function initTtsModel(provider?: string): Promise<TtsStatus> {
     const res = await fetch(`${API}/tts/init`, {
