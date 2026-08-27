@@ -29,7 +29,7 @@ import { registerFactionTable } from './server/lib/factionTable.js';
 import { registerItemTable } from './server/lib/itemTable.js';
 import { initDb } from './server/lib/vectorStore.js';
 import { warmup as warmupEmbedder } from './server/lib/embedder.js';
-import { warmupTts } from './server/lib/tts.js';
+import { warmupTts, killSidecar } from './server/lib/tts.js';
 import { serverError } from './server/lib/serverError.js';
 
 const app = express();
@@ -156,3 +156,11 @@ app.listen(PORT, BIND_HOST, () => {
     console.log(`[GM-Cockpit API] ✓ Running on http://${BIND_HOST}:${PORT}`);
     console.log(`[GM-Cockpit API]   Data dir: ${DATA_DIR}`);
 });
+
+function shutdown(code) {
+    killSidecar();
+    process.exit(code);
+}
+process.on('exit', () => { killSidecar(); });
+process.on('SIGINT', () => shutdown(130));
+process.on('SIGTERM', () => shutdown(143));

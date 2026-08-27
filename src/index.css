@@ -587,10 +587,8 @@ html[style*="--lang-font-stack"] {
   max-height: none;
 }
 
-.lotm-chat .chat-composer-bar {
-  background: rgba(12, 10, 14, 0.72);
-  border-top-color: rgba(201, 162, 39, 0.28);
-  backdrop-filter: blur(8px);
+.lotm-chat .message-action-rail {
+  opacity: 1;
 }
 
 .lotm-chat .lotm-plate-slot .lotm-plate {

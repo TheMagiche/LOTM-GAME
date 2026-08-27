@@ -134,7 +134,7 @@ export class KokoroBuffer {
         if (this.audio) this.audio.playbackRate = newRate;
     }
 
-    async speak(markdownContent: string, voice: string) {
+    async speak(markdownContent: string, voice: string, provider?: string) {
         // If currently playing or loading, stop (keep cache).
         if (this.playing || this.loading) {
             this.stop();
@@ -182,7 +182,7 @@ export class KokoroBuffer {
                     continue;
                 }
                 try {
-                    const blob = await generateTts(chunks[i], voice);
+                    const blob = await generateTts(chunks[i], voice, provider);
                     if (this.chunkAbort) return;
                     const entry = { blob, url: URL.createObjectURL(blob), words: chunkWords[i] };
                     this.cache.set(i, entry);
@@ -347,9 +347,9 @@ export class KokoroBuffer {
     // ── Preload disk-cached chunks ──
     // If this GM message was read before (audio generated + saved to disk by the
     // server), load all cached chunks into the cache so the speaker button works
-    // instantly with no Kokoro calls. This survives server restarts + campaign switches.
+    // instantly with no generation calls. This survives server restarts + campaign switches.
     // Returns a cancel function for the caller's effect cleanup.
-    preloadFromDisk(markdownContent: string, voice: string): () => void {
+    preloadFromDisk(markdownContent: string, voice: string, provider?: string): () => void {
         let cancelled = false;
         const clean = proseForTTS(markdownContent);
         if (!clean) return () => { cancelled = true; };
@@ -358,7 +358,7 @@ export class KokoroBuffer {
 
         (async () => {
             try {
-                const cachedFlags = await checkCachedChunks(chunks, voice);
+                const cachedFlags = await checkCachedChunks(chunks, voice, provider);
                 if (cancelled) return;
                 const cachedCount = cachedFlags.filter(Boolean).length;
                 if (cachedCount === 0) return;
@@ -366,7 +366,7 @@ export class KokoroBuffer {
                 // Load all cached WAVs from disk in parallel.
                 const loadPromises = chunks.map(async (text, i) => {
                     if (!cachedFlags[i]) return null;
-                    const blob = await loadCachedTts(text, voice);
+                    const blob = await loadCachedTts(text, voice, provider);
                     if (!blob || cancelled) return null;
                     return { idx: i, blob };
                 });

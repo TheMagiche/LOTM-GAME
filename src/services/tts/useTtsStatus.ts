@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { getTtsStatus, type TtsStatus } from './ttsClient';
+import { useAppStore } from '../../store/useAppStore';
+import { getTtsStatus, isEngineReady, type TtsStatus } from './ttsClient';
 
 /**
- * Tracks Kokoro model readiness. Polls /api/tts/status while the model is still
- * initializing; stops once modelReady && !initializing to avoid pointless
- * background traffic. Restarts polling if init is triggered again later.
+ * Tracks the selected TTS engine's readiness. Polls /api/tts/status while that
+ * engine is still warming; stops once it is ready. Uses providers[] so Chatterbox
+ * being ready is not hidden behind the Kokoro-default top-level modelReady flag.
  *
  * The speaker button in MessageBubble uses this to decide whether to render.
  */
 export function useTtsStatus(pollMs = 3000) {
+    const ttsProvider = useAppStore(s => s.settings.ttsProvider) ?? 'kokoro';
     const [status, setStatus] = useState<TtsStatus | null>(null);
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -25,14 +27,11 @@ export function useTtsStatus(pollMs = 3000) {
                 const s = await getTtsStatus();
                 if (cancelled) return;
                 setStatus(s);
-                // Stop polling once the model is ready and no longer initializing.
-                // A later /api/tts/init will flip initializing back on; the component
-                // re-mounts / re-runs this effect on key interactions, restarting polls.
-                if (s.modelReady && !s.initializing) return;
+                if (isEngineReady(s, ttsProvider) && !s.initializing) return;
                 schedule(pollMs);
             } catch {
                 if (cancelled) return;
-                schedule(pollMs); // transient failure → retry, don't spam tight
+                schedule(pollMs);
             }
         };
 
@@ -41,7 +40,7 @@ export function useTtsStatus(pollMs = 3000) {
             cancelled = true;
             if (timerRef.current) clearTimeout(timerRef.current);
         };
-    }, [pollMs]);
+    }, [pollMs, ttsProvider]);
 
     return status;
 }
