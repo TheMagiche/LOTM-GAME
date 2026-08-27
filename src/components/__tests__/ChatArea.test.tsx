@@ -49,6 +49,7 @@ vi.mock('../../store/useAppStore', async () => {
         loreChunks: [],
         npcLedger: [],
         locationLedger: [],
+        onStageNpcIds: [],
         factionLedger: [],
         itemLedger: [],
         archiveIndex: [],
@@ -72,6 +73,9 @@ vi.mock('../../store/useAppStore', async () => {
         updateLastAssistantMessage: vi.fn(),
         updateNPC: vi.fn(),
         addNPC: vi.fn(),
+        togglePCPanel: vi.fn(),
+        playerCharacter: null,
+        activeCampaignMeta: null,
         setLastPayloadTrace: vi.fn(),
         setActivePreset: vi.fn(),
         clearPinnedChapters: vi.fn(),
@@ -173,6 +177,7 @@ vi.mock('../../services/llm/apiClient', () => ({
 
 vi.mock('../../lib/apiBase', () => ({
     API_BASE: 'http://localhost:3001',
+    ASSET_BASE: '',
 }));
 
 vi.mock('idb-keyval', () => ({
@@ -392,22 +397,66 @@ describe('ChatArea', () => {
         await user.click(saveBtn);
     });
 
-    it('shows the chronicle transcript and composer actions below the input', () => {
+    it('shows illustrated dialogue and composer actions below the input', () => {
         const state = useAppStore.getState();
         state.messages = [
             makeMessage({ role: 'user', content: 'I walk into the fog' }),
             makeMessage({ role: 'assistant', content: 'The gas lamps hiss.' }),
         ];
         render(<ChatArea presentation="illustrated" />);
-        expect(screen.queryByText('Illustrated play')).not.toBeInTheDocument();
         expect(screen.queryByRole('button', { name: /chronicle/i })).not.toBeInTheDocument();
-        expect(screen.getByText('I walk into the fog')).toBeInTheDocument();
+        expect(screen.queryByText('I walk into the fog')).not.toBeInTheDocument();
         expect(screen.getByText('The gas lamps hiss.')).toBeInTheDocument();
         const input = screen.getByPlaceholderText('What do you do?');
         const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
         const askGm = screen.getByTitle('Open Ask GM side chat');
         expect(input.compareDocumentPosition(saveBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
         expect(input.compareDocumentPosition(askGm) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+
+    it('navigates through GM text in illustrated play', async () => {
+        const user = userEvent.setup();
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ role: 'assistant', content: 'First gas lamp.' }),
+            makeMessage({ role: 'assistant', content: 'The fog thickens.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.getByText('The fog thickens.')).toBeInTheDocument();
+        expect(screen.queryByText('First gas lamp.')).not.toBeInTheDocument();
+        expect(screen.getByText('2 / 2')).toBeInTheDocument();
+        await user.click(screen.getByRole('button', { name: 'Previous GM text' }));
+        expect(screen.getByText('First gas lamp.')).toBeInTheDocument();
+        expect(screen.queryByText('The fog thickens.')).not.toBeInTheDocument();
+        await user.click(screen.getByRole('button', { name: 'Next GM text' }));
+        expect(screen.getByText('The fog thickens.')).toBeInTheDocument();
+    });
+
+    it('opens a scene modal for backdrop and portraits', async () => {
+        const user = userEvent.setup();
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ role: 'assistant', content: 'The gas lamps hiss.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        await user.click(screen.getByRole('button', { name: 'Open scene illustration' }));
+        expect(screen.getByRole('dialog', { name: /narration|scene/i })).toBeInTheDocument();
+        await user.click(screen.getByRole('button', { name: 'Close scene' }));
+        expect(screen.queryByRole('dialog', { name: /narration|scene/i })).not.toBeInTheDocument();
+    });
+
+    it('shows the chronicle transcript when chronicle view is open', () => {
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ role: 'user', content: 'I walk into the fog' }),
+            makeMessage({ role: 'assistant', content: 'The gas lamps hiss.' }),
+        ];
+        render(<ChatArea presentation="illustrated" chronicleOpen />);
+        expect(screen.getByText('I walk into the fog')).toBeInTheDocument();
+        expect(screen.getByText('The gas lamps hiss.')).toBeInTheDocument();
+        const input = screen.getByPlaceholderText('What do you do?');
+        const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
+        expect(input.compareDocumentPosition(saveBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     });
 
     it('shows load more button when messages exceed visibleCount', () => {

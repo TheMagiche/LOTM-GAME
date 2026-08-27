@@ -112,6 +112,10 @@ export type UISlice = {
     lotmWorldIndexLock: LotmWorldIndexLock | null;
     beginLotmWorldIndex: (lock: LotmWorldIndexLock) => void;
     endLotmWorldIndex: () => void;
+    /** LOTM play dashboard: false = illustrated stage, true = full chronicle transcript. */
+    lotmChronicleOpen: boolean;
+    setLotmChronicleOpen: (open: boolean) => void;
+    toggleLotmChronicle: () => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -205,4 +209,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     lotmWorldIndexLock: null,
     beginLotmWorldIndex: (lock) => set({ lotmWorldIndexLock: lock }),
     endLotmWorldIndex: () => set({ lotmWorldIndexLock: null }),
+    lotmChronicleOpen: false,
+    setLotmChronicleOpen: (open) => set({ lotmChronicleOpen: open }),
+    toggleLotmChronicle: () => set((s) => ({ lotmChronicleOpen: !s.lotmChronicleOpen })),
 });

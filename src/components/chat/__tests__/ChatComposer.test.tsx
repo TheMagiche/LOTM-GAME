@@ -10,8 +10,10 @@ afterEach(() => {
     useAppStore.getState().endLotmWorldIndex();
     useAppStore.setState({
         drawerOpen: false,
+        lotmChronicleOpen: false,
         settings: {
             ...useAppStore.getState().settings,
+            aiTier: 'pro',
             presets: useAppStore.getState().settings.presets.slice(0, 1),
         },
     });
@@ -78,5 +80,36 @@ describe('LotmPlayHeader menu during indexing', () => {
         expect(menu).toBeDisabled();
         fireEvent.click(menu);
         expect(useAppStore.getState().drawerOpen).toBe(false);
+    });
+});
+
+describe('LotmPlayHeader play controls', () => {
+    it('toggles illustrated and chronicle views from the top menu', () => {
+        render(<LotmPlayHeader />);
+
+        const illustrated = screen.getByRole('button', { name: 'Illustrated' });
+        const chronicle = screen.getByRole('button', { name: 'Chronicle' });
+        expect(illustrated).toHaveAttribute('aria-pressed', 'true');
+        expect(chronicle).toHaveAttribute('aria-pressed', 'false');
+
+        fireEvent.click(chronicle);
+        expect(useAppStore.getState().lotmChronicleOpen).toBe(true);
+        expect(illustrated).toHaveAttribute('aria-pressed', 'false');
+        expect(chronicle).toHaveAttribute('aria-pressed', 'true');
+
+        fireEvent.click(illustrated);
+        expect(useAppStore.getState().lotmChronicleOpen).toBe(false);
+    });
+
+    it('cycles AI tier from the top menu', () => {
+        render(<LotmPlayHeader />);
+
+        const tier = screen.getByRole('button', { name: /AI Tier: pro/i });
+        expect(tier).toHaveTextContent('pro');
+        fireEvent.click(tier);
+        expect(useAppStore.getState().settings.aiTier).toBe('max');
+        expect(screen.getByRole('button', { name: /AI Tier: max/i })).toBeInTheDocument();
+        fireEvent.click(screen.getByRole('button', { name: /AI Tier: max/i }));
+        expect(useAppStore.getState().settings.aiTier).toBe('lite');
     });
 });
