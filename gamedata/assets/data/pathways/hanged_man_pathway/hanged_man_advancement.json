@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Secrets Suppliant",
       "potion_overview": "A sacred black liquid intermittently bubbling with a bitter taste.",
+      "beyonder_characteristic_appearance": "A semi-illusory black lip that seems to emit whispers",
       "formula": {
         "main_ingredients": [
           "Singing Black Mushroom",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Listener (Whispered)",
       "potion_overview": "A hallucinogenic, multicolored liquid with a dark core; induces spiritual euphoria upon consumption.",
+      "beyonder_characteristic_appearance": "A darkened, sinister ear",
       "formula": {
         "main_ingredients": [
           "Ear of a Black Cat of Misfortune",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Shadow Ascetic",
       "potion_overview": "A gray-black liquid reflecting countless faces of the drinker; cold, bitter, and stinging.",
+      "beyonder_characteristic_appearance": "A cluster of gray-black shadows",
       "formula": {
         "main_ingredients": [
           "Shadow Worm",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Rose Bishop",
       "potion_overview": "Blood soaked with pale flesh chunks; induces excruciating pain akin to skin peeling and flesh disintegration.",
+      "beyonder_characteristic_appearance": "A putrid mass of bloody flesh with visible tendons and blood vessels",
       "formula": {
         "main_ingredients": [
           "Immortal Flesh Fungus",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Shepherd",
       "potion_overview": "A gray-white liquid with fleeting, bloated visages; tears the soul upon consumption.",
+      "beyonder_characteristic_appearance": "A translucent gray-white hand",
       "formula": {
         "main_ingredients": [
           "Crystallized Bloody Scarecrow",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Black Knight",
       "potion_overview": "Viscous liquid resembling a black gemstone; ingestion causes the body to collapse anew.",
+      "beyonder_characteristic_appearance": "A segment of translucent black hand bone",
       "formula": {
         "main_ingredients": [
           "Remnant Curtain of a Shadow Knight",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Trinity Templar",
       "potion_overview": "Resembles a tranquil nocturnal lake with storms raging beneath; ingestion inflicts soul-splitting pain into three parts.",
+      "beyonder_characteristic_appearance": "A blood-tinted skull adorned with multiple pairs of eyes",
       "formula": {
         "main_ingredients": [
           "Skull of a Herd Sovereign",
@@ -151,6 +158,7 @@
       "sequence": 2,
       "name": "Profane Presbyter",
       "potion_overview": "Filthy, repulsive liquid resembling sewer waste; taste matches its appearance.",
+      "beyonder_characteristic_appearance": "A paper-thin, semi-illusory shadow suffused with foulness",
       "formula": {
         "main_ingredients": [
           "Pus of the Shadow King",
@@ -173,6 +181,7 @@
       "sequence": 1,
       "name": "Dark Angel",
       "potion_overview": "Pure black liquid with intermittent glimmers of light.",
+      "beyonder_characteristic_appearance": "A crimson flesh sphere sprouting black feathers",
       "formula": {
         "main_ingredients": [
           "The Shadow of Sasrir OR The Two Hands of Sasrir"
@@ -192,6 +201,7 @@
       "sequence": 0,
       "name": "Hanged Man",
       "potion_overview": "A shadow of absolute darkness that isolates all surrounding light.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Hanged Man Uniqueness",

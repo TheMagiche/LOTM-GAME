@@ -1,5 +1,5 @@
-import type { NPCEntry, LocationEntry, FactionEntry, ItemLedgerEntry, ItemLedgerKind } from '../types';
-import { ITEM_KIND_LABELS } from '../types';
+import type { NPCEntry, LocationEntry, FactionEntry, ItemLedgerEntry, ItemLedgerKind, ItemLedgerGrade } from '../types';
+import { ITEM_GRADE_LABELS, ITEM_KIND_LABELS } from '../types';
 
 export type SortOrder = 'none' | 'az' | 'za';
 
@@ -57,7 +57,47 @@ export function filterFactions(factions: FactionEntry[], query: string): Faction
     return [...list].sort((a, b) => a.name.localeCompare(b.name));
 }
 
-export type ItemLedgerFilter = ItemLedgerKind | 'all' | 'possessed';
+export type ItemLedgerFilter =
+    | ItemLedgerKind
+    | 'all'
+    | 'possessed'
+    | 'grade-0'
+    | 'grade-1'
+    | 'grade-2'
+    | 'grade-3'
+    | 'grade-unique';
+
+export const ITEM_LEDGER_FILTERS: ItemLedgerFilter[] = [
+    'all',
+    'possessed',
+    'beyonder-weapon',
+    'medicine',
+    'mystical-item',
+    'grade-0',
+    'grade-1',
+    'grade-2',
+    'grade-3',
+    'grade-unique',
+    'other',
+];
+
+const GRADE_FILTERS: Record<string, ItemLedgerGrade> = {
+    'grade-0': '0',
+    'grade-1': '1',
+    'grade-2': '2',
+    'grade-3': '3',
+    'grade-unique': 'unique',
+};
+
+const OTHER_KINDS = new Set<ItemLedgerKind>(['ingredient', 'characteristic', 'other']);
+
+export function itemLedgerFilterLabel(filter: ItemLedgerFilter): string {
+    if (filter === 'all') return 'All';
+    if (filter === 'possessed') return 'Possessed';
+    if (filter === 'grade-unique') return 'Unique';
+    if (filter.startsWith('grade-')) return ITEM_GRADE_LABELS[GRADE_FILTERS[filter] as Exclude<ItemLedgerGrade, ''>] ?? filter;
+    return ITEM_KIND_LABELS[filter as ItemLedgerKind] ?? filter;
+}
 
 export function filterItems(
     items: ItemLedgerEntry[],
@@ -67,6 +107,11 @@ export function filterItems(
     let list = items;
     if (kind === 'possessed') {
         list = list.filter(item => item.possessed);
+    } else if (kind === 'other') {
+        list = list.filter(item => OTHER_KINDS.has(item.kind));
+    } else if (kind in GRADE_FILTERS) {
+        const grade = GRADE_FILTERS[kind];
+        list = list.filter(item => item.kind === 'sealed-artefact' && item.grade === grade);
     } else if (kind !== 'all') {
         list = list.filter(item => item.kind === kind);
     }

@@ -445,11 +445,20 @@ export function normalizeLocationTag(raw?: unknown): string {
     return cleaned.slice(0, 60);
 }
 
+const INVENTORY_CATEGORIES = new Set<string>([
+    'beyonder-weapon', 'medicine', 'mystical-item', 'sealed-artefact',
+    'weapon', 'armor', 'consumable', 'currency', 'key', 'misc', 'equipped',
+]);
+
 export function normalizeInventoryItem(item: InventoryItem): InventoryItem {
     const locationTag = normalizeLocationTag(item.locationTag);
     const equipped = locationTag === 'inventory' ? Boolean(item.equipped) : false;
+    const category = INVENTORY_CATEGORIES.has(item.category) ? item.category : 'misc';
+    const grade = item.grade && ['3', '2', '1', '0', 'unique'].includes(item.grade) ? item.grade : undefined;
     return {
         ...item,
+        category,
+        grade,
         locationTag,
         equipped,
     };

@@ -1,6 +1,19 @@
 // ─── Character / NPC Types ────────────────────────────────────────────────
 
-export type InventoryItemCategory = 'weapon' | 'armor' | 'consumable' | 'currency' | 'key' | 'misc' | 'equipped';
+import type { ItemLedgerGrade } from './item';
+
+export type InventoryItemCategory =
+    | 'beyonder-weapon'
+    | 'medicine'
+    | 'mystical-item'
+    | 'sealed-artefact'
+    | 'weapon'
+    | 'armor'
+    | 'consumable'
+    | 'currency'
+    | 'key'
+    | 'misc'
+    | 'equipped';
 
 export type InventoryItem = {
     id: string;
@@ -14,6 +27,8 @@ export type InventoryItem = {
     notes: string;
     status?: string;
     locationTag?: string;
+    /** Sealed Artifact grade when category is sealed-artefact. */
+    grade?: ItemLedgerGrade;
 };
 
 // Staged inventory change proposed by the GM via the `propose_inventory_change`
@@ -23,7 +38,7 @@ export type InventoryItem = {
 export type InventoryProposal = {
     name: string;
     op: 'grant' | 'remove' | 'equip' | 'relocate';
-    kind: 'weapon' | 'armor' | 'consumable' | 'currency' | 'misc';
+    kind: 'beyonder-weapon' | 'medicine' | 'mystical-item' | 'sealed-artefact' | 'currency' | 'misc';
     quality: 'ordinary' | 'mystical' | 'grade-3' | 'grade-2' | 'grade-1' | 'grade-0' | 'unique';
     scalingStat: 'PWR' | 'SPD' | 'WIL';
     range: 'Close' | 'Reach' | 'Ranged';

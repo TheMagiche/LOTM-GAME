@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Assassin",
       "potion_overview": "Dull, inconspicuous liquid that inexplicably induces thirst.",
+      "beyonder_characteristic_appearance": "A shadowy mass seemingly covered in sharp spikes",
       "formula": {
         "main_ingredients": [
           "Root tendrils of the Shadow Poison Flower",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Instigator",
       "potion_overview": "An obsidian potion fizzing with tiny bubbles, as though harboring hidden desires and ill intent.",
+      "beyonder_characteristic_appearance": "A sculpture of delicate, moist pink lips in two perfect halves",
       "formula": {
         "main_ingredients": [
           "A Demon Throat Honeyguide's Heart",
@@ -46,6 +48,7 @@
       "sequence": 7,
       "name": "Witch",
       "potion_overview": "A dark-red potion with concealed shadows. It tasted icy, and illusory, like melting frost. Dreamlike, romantic rose-colored liquid.",
+      "beyonder_characteristic_appearance": "A ghostly-blue gem that resembled a vertical eye on the table. The gem's exterior had thread-like patterns. The gem made the things around it appear mild, and it accentuated their beauty",
       "formula": {
         "main_ingredients": [
           "Every drop of an Abyss Demonic Fish Blood",
@@ -66,6 +69,7 @@
       "sequence": 6,
       "name": "Pleasure (Demoness of Pleasure)",
       "potion_overview": "Potion emitting strands of pinkish blood hue.",
+      "beyonder_characteristic_appearance": "A pink gem with countless entangled threads inside",
       "formula": {
         "main_ingredients": [
           "A pair of Succubus Eyes",
@@ -87,6 +91,7 @@
       "sequence": 5,
       "name": "Affliction (Demoness of Affliction, Lady of Diseases)",
       "potion_overview": "Dark red near-black blood rapidly turning completely black with occasional disgusting green bubbles - resembles a collection of pathogens.",
+      "beyonder_characteristic_appearance": "A beautiful eye",
       "formula": {
         "main_ingredients": [
           "A head of a Flower-Faced Bat",
@@ -109,6 +114,7 @@
       "sequence": 4,
       "name": "Despair (Demoness of Despair)",
       "potion_overview": "A dark purple potion shimmering with a rosy light.",
+      "beyonder_characteristic_appearance": "A shrunken, withered, blackened, translucent heart",
       "formula": {
         "main_ingredients": [
           "Plague Mother Serpent's Venom Sac",
@@ -131,6 +137,7 @@
       "sequence": 3,
       "name": "Unaging (Demoness of Unaging)",
       "potion_overview": "A grayish-white liquid clearly reflecting the surrounding Mirror World. It has the taste of soil and stone.",
+      "beyonder_characteristic_appearance": "A fist-sized spring-like crystal",
       "formula": {
         "main_ingredients": [
           "1 Heart of a Mirror God",
@@ -153,6 +160,7 @@
       "sequence": 2,
       "name": "Catastrophe (Demoness of Catastrophe)",
       "potion_overview": "As if the pre-storm sky was bottled whole.",
+      "beyonder_characteristic_appearance": "Transparent crystal ball composed of various disaster scenes",
       "formula": {
         "main_ingredients": [
           "Lilith's hair. (Before the Fourth Epoch, Lilith's hair existed as an item, later obtained by Cheek)"
@@ -174,6 +182,7 @@
       "sequence": 1,
       "name": "Apocalypse (Demoness of Apocalypse)",
       "potion_overview": "Deep black liquid filled with destruction.",
+      "beyonder_characteristic_appearance": "A dark orb",
       "formula": {
         "main_ingredients": [
           "An Apocalypse Beyonder Characteristic"
@@ -194,6 +203,7 @@
       "sequence": 0,
       "name": "Demoness (Chaos Demoness, Primordial Demoness)",
       "potion_overview": "An exquisitely charming female human skin.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Demoness Uniqueness",

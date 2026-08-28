@@ -617,7 +617,7 @@ function BookkeepingBudgetSection() {
 
     const profile = characterProfileData as CharacterProfile;
     const stub = countTokens(minifyBookkeepingStub(profile, inventoryItems));
-    const full = countTokens(minifySelectedInventory(inventoryItems, ['weapon', 'armor', 'consumable', 'currency', 'key', 'misc', 'equipped']) + '\n' + minifySelectedProfile(profile, ALL_PROFILE_FIELDS));
+    const full = countTokens(minifySelectedInventory(inventoryItems, ['beyonder-weapon', 'medicine', 'mystical-item', 'sealed-artefact', 'weapon', 'armor', 'consumable', 'currency', 'key', 'misc', 'equipped']) + '\n' + minifySelectedProfile(profile, ALL_PROFILE_FIELDS));
 
     return (
         <div className="space-y-2">

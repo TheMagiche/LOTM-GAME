@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Spectator",
       "potion_overview": "A sticky silver liquid filled with countless bubbles, creating a serene atmosphere.",
+      "beyonder_characteristic_appearance": "A silver-white vertical eye",
       "formula": {
         "main_ingredients": [
           "A Matured Manhal Fish's Eyeball",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Telepathist",
       "potion_overview": "A liquid exhibiting constantly changing lusters capable of shining into the depths of everyone's hearts.",
+      "beyonder_characteristic_appearance": "Transparent, dreamlike eyes",
       "formula": {
         "main_ingredients": [
           "Rainbow Salamander (Phantom Netherdrake)'s complete pituitary gland",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Psychiatrist (Psyche Analyst)",
       "potion_overview": "The slightly golden liquid rippled like a deformed, gigantic pupil, its gaze seeming to penetrate into the depths of anyone's heart. It tastes cool and refreshing, like enjoying delicious ice cream.",
+      "beyonder_characteristic_appearance": "A huge golden iris that could expose the thoughts of everyone's hearts",
       "formula": {
         "main_ingredients": [
           "The fruit of the Tree of Elders",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Hypnotist",
       "potion_overview": "A translucent, colorless, sticky liquid that resembles a mirror when still, perfectly reflecting its surroundings. When disturbed, tiny whirlpools silently spin beneath its surface. It may bring about brief chill on consumption.",
+      "beyonder_characteristic_appearance": "The transparent, colorless mucus had lost its binding substance, leaving it only able to condense independently, eventually forming a sticky grayish-white colloid. From a distance, this colloid resembled an unfixed mirror, capable of reflecting everything around it. Minuscule transparent bubbles deep within the colloid. They caught and refracted sunlight from various angles, displaying an array of colors. The colorless colloid with numerous bubbles",
       "formula": {
         "main_ingredients": [
           "The complete pituitary gland of an adolescent Mind Dragon OR 60 milliliters of a Black-hunting Giant Lizard's spinal fluid",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Dreamwalker",
       "potion_overview": "The potion appears to be a liquid dotted with darkened points of grayish-white light. The potion tastes a little sour, a little sweet, a little bitter, a little surreal, and a little stimulating, like a wild dream one could let themselves loose in.",
+      "beyonder_characteristic_appearance": "A large amount of grayish-white matter that had been purged. It flowed freely, forming a heart-shaped object the size of a child's fist. Not only were there wrinkles on it, but there were also cracks that resembled eyes. As for the complicated, three-dimensional, illusory patterns, labels, and symbols that extended into the void",
       "formula": {
         "main_ingredients": [
           "An adult mind dragon's complete brain OR A Dream Catcher's Heart",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Manipulator",
       "potion_overview": "Countless points of light float within the potion, resembling the manifestation of the Sea of Collective Subconscious. When advancing, one couldn't even process the taste, or feel the potion being gulped down before feeling the backlash.",
+      "beyonder_characteristic_appearance": "ist-sized object resembled a heart and brain, adorned with grayish-white wrinkles and intricate symbols. It connected to an unseen realm, embodying a child-sized, grayish-white, wrinkled 'heart.'",
       "formula": {
         "main_ingredients": [
           "A complete brain of an Elderly Mind Dragon OR Crystalline heart of a Tree Mentor"
@@ -127,6 +133,7 @@
       "sequence": 3,
       "name": "Dream Weaver",
       "potion_overview": "Dark, mist-like liquid shifting constantly.",
+      "beyonder_characteristic_appearance": "Formed from thin mist, seemingly an ,unreal, grayish-white brain from a dream",
       "formula": {
         "main_ingredients": [
           "The crystalline heart of the Treant King OR The complete brain of a Dream Dragon"
@@ -148,6 +155,7 @@
       "sequence": 2,
       "name": "Discerner",
       "potion_overview": "A ghastly pale liquid in which illusory vertical eyes repeatedly open and close.",
+      "beyonder_characteristic_appearance": "A pale heart riddled with holes, inlaid with numerous vertical eyes",
       "formula": {
         "main_ingredients": [
           "The Pale heart of Ariehogg OR The Pale heart of another Ancient Mind Dragon"
@@ -169,6 +177,7 @@
       "sequence": 1,
       "name": "Author",
       "potion_overview": "A transparent liquid in which countless images of fate and projections of various concepts are precipitated, appearing as tiny points of starlight.",
+      "beyonder_characteristic_appearance": "A crystal-clear finger bone resembling a pen",
       "formula": {
         "main_ingredients": [
           "The Quill of Alzuhod"
@@ -190,6 +199,7 @@
       "sequence": 0,
       "name": "Visionary",
       "potion_overview": "A golden potion that seems to contain a fantasy world within.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Visionary Uniqueness",

@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Corpse Collector",
       "potion_overview": "Blackish corpse fluid reeking of decay.",
+      "beyonder_characteristic_appearance": "Pale leather covered in rotting black spots",
       "formula": {
         "main_ingredients": [
           "A desiccated mature Black-spotted Frog",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Gravedigger",
       "potion_overview": "Dark green liquid streaked with blood.",
+      "beyonder_characteristic_appearance": "A blood-stained eye",
       "formula": {
         "main_ingredients": [
           "Death-Calling Crow's eyeball",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Spirit Medium",
       "potion_overview": "Transparent liquid with psychedelic hues.",
+      "beyonder_characteristic_appearance": "Semi-real semi-illusory mirror surface concealing indescribable entities",
       "formula": {
         "main_ingredients": [
           "Phantom Cat's forepaw",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Spirit Guide",
       "potion_overview": "Yellowish-green liquid with intense corpse stench.",
+      "beyonder_characteristic_appearance": "Pale stone encircled by numerous shadows.",
       "formula": {
         "main_ingredients": [
           "Shadow of Death",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Gatekeeper",
       "potion_overview": "Illusory liquid with dark vortices extending to the bottle's bottom.",
+      "beyonder_characteristic_appearance": "A shattered skull, housing a dangerously illusory gate",
       "formula": {
         "main_ingredients": [
           "Skull of an Underworld Wanderer",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Undying",
       "potion_overview": "A pale potion that remains perfectly still—no ripples, even when exposed to wind or shaken.",
+      "beyonder_characteristic_appearance": "Hollow, blackened, and greenish serpent skin",
       "formula": {
         "main_ingredients": [
           "Gallbladder of a Decaying Feathered Serpent",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Ferryman",
       "potion_overview": "Dark and deep; even falling dust sinks swiftly into the liquid and vanishes.",
+      "beyonder_characteristic_appearance": "A core-like object stained with pale yellow grease, containing a dim, pus-like essence",
       "formula": {
         "main_ingredients": [
           "Pus Core of a Styx Servant OR The brain of an adult Feathered Serpent"
@@ -150,6 +157,7 @@
       "sequence": 2,
       "name": "Death Consul",
       "potion_overview": "A deep black liquid formed from the condensed aura of death, radiating an overwhelming presence, with countless numb faces protruding from it.",
+      "beyonder_characteristic_appearance": "A crown made of black bones",
       "formula": {
         "main_ingredients": [
           "Skull of an Ancient Feathered Serpent"
@@ -171,6 +179,7 @@
       "sequence": 1,
       "name": "Pale Emperor",
       "potion_overview": "Absolute paleness, absolute silence—no other color, no other trace.",
+      "beyonder_characteristic_appearance": "A throne formed from pale bones",
       "formula": {
         "main_ingredients": [
           "The left claw of Gregrace OR The right eye of Salinger"
@@ -191,6 +200,7 @@
       "sequence": 0,
       "name": "Death (Eternal Sleeper)",
       "potion_overview": "Illusory scepter woven from grease-stained feathers and entwined serpents.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Death Uniqueness",

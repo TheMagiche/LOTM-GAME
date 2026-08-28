@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Reader",
       "potion_overview": "A white liquid with noticeable dust suspended in its particles.",
+      "beyonder_characteristic_appearance": "A short white rope that resembles tree roots",
       "formula": {
         "main_ingredients": [
           "1 Worm of Book Biting",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Student of Ratiocination",
       "potion_overview": "A transparent liquid without any ripples, similar to a mirror, containing multiple blood red patches.",
+      "beyonder_characteristic_appearance": "A pale white skeleton covered in brass folds",
       "formula": {
         "main_ingredients": [
           "The brain of a Naga Priest",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Detective (Knowledge Keeper)",
       "potion_overview": "A pale red liquid with interwoven copper wires.",
+      "beyonder_characteristic_appearance": "Palm-sized thick 'paper' like material with copper-colored vein-like patterns.",
       "formula": {
         "main_ingredients": [
           "The Liver of a six-armed Naga",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Polymath",
       "potion_overview": "A blood-red liquid in which various strange characters appear and disappear, disappear and appear repeatedly.",
+      "beyonder_characteristic_appearance": "A pouch made of blood-red leather, covered in slime",
       "formula": {
         "main_ingredients": [
           "The Scalp of a Deep Sea Naga",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Mysticism Magister",
       "potion_overview": "A dark red liquid with brass colored scales rising and sinking.",
+      "beyonder_characteristic_appearance": "A translucent, curved 'blood sausage'",
       "formula": {
         "main_ingredients": [
           "The brain fluid of a young Brass Dragon or Brass Giant Lizard",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Prophet",
       "potion_overview": "A brass-colored liquid with multiple silver-mercury-like whirlpools.",
+      "beyonder_characteristic_appearance": "Cold and detached eyes gazing out between brass-colored scales",
       "formula": {
         "main_ingredients": [
           "The heart scales of an adult Brass Dragon",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Cognizer",
       "potion_overview": "A brass-colored sanguine liquid that looks as if a miniature spirit world is concealed within.",
+      "beyonder_characteristic_appearance": "A miniature tree formed by clusters of white, pointed bones, with blood-red brains hanging from its branches and numerous brass-colored eyes opening on its trunk",
       "formula": {
         "main_ingredients": [
           "The Eyes from a Greatwood of Written Doom",
@@ -151,6 +158,7 @@
       "sequence": 2,
       "name": "Wisdom Angel",
       "potion_overview": "A viscous, grayish-white liquid with wrinkles everywhere; multiple brass eyes are concealed within the wrinkles.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Beyonder Characteristic of the 'Dragon of Wisdom' OR The Beyonder Characteristic of the Knowledge Dragon (a certain being from the Second Epoch)"
@@ -172,6 +180,7 @@
       "sequence": 1,
       "name": "Omniscient Eye",
       "potion_overview": "A brass-colored liquid that swirls wildly, forming a vortex that resembles a giant eye.",
+      "beyonder_characteristic_appearance": "A grayish-white brain with densely packed brass-colored eyes and a blood-red tinge",
       "formula": {
         "main_ingredients": [
           "An Omniscient Eye Beyonder Characteristic"
@@ -193,6 +202,7 @@
       "sequence": 0,
       "name": "White Tower",
       "potion_overview": "Glimmering white light points that spiral into a giant tower reaching to infinity, each light point seems to contain a book.",
+      "beyonder_characteristic_appearance": "A giant brass eye reflecting the illusory White Tower, which seemed to be built from countless books",
       "formula": {
         "main_ingredients": [
           "The White Tower Uniqueness",

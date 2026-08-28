@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Planter",
       "potion_overview": "It resembles golden oatmeal porridge",
+      "beyonder_characteristic_appearance": "A green gem filled with an aura of vitality",
       "formula": {
         "main_ingredients": [
           "The Brain of a Harvest Giant scholar",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Doctor (Healing Pastor)",
       "potion_overview": "A pale green liquid with a hint of blue, crystal clear, with an alluring aroma",
+      "beyonder_characteristic_appearance": "A branch-like object with a bluish-green hue and glistening water droplets",
       "formula": {
         "main_ingredients": [
           "The green bark of the Blessed Poplar",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Harvest Priest",
       "potion_overview": "A golden liquid brimming with white foam, similar to beer.",
+      "beyonder_characteristic_appearance": "Golden liquid with abundant white foam, strongly resembling beer",
       "formula": {
         "main_ingredients": [
           "Kidney of a common Harvest Giant",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Biologist",
       "potion_overview": "A brownish liquid containing countless greenish-blue specks",
+      "beyonder_characteristic_appearance": "A tan leather covered with wrinkles and unusual patterns",
       "formula": {
         "main_ingredients": [
           "The Brain of a Harvest Giant scholar",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Druid",
       "potion_overview": "A brownish liquid containing countless greenish-blue specks",
+      "beyonder_characteristic_appearance": "Brown soil-like Beyonder characteristic",
       "formula": {
         "main_ingredients": [
           "Head of a Harvest Giant Guardian",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Ancient Alchemist",
       "potion_overview": "A clear liquid, like the source of life, tinged with a dreamy pale red",
+      "beyonder_characteristic_appearance": "A bright red crystal that shimmers with the luster of life.",
       "formula": {
         "main_ingredients": [
           "Life Crystal of a Desolate Servant",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Pallbearer",
       "potion_overview": "A dark liquid concealing numerous illusory figures",
+      "beyonder_characteristic_appearance": "A shadowy, unusually indistinct figure that appears like it is weightless",
       "formula": {
         "main_ingredients": [
           "Heart of the Dark Treant",
@@ -151,6 +158,7 @@
       "sequence": 2,
       "name": "Desolate Matriarch",
       "potion_overview": "A brownish-yellow liquid resembling the residue of rotting flesh, causing abnormal nausea.",
+      "beyonder_characteristic_appearance": "A clump of brown soil covered with grass, grains, and vines",
       "formula": {
         "main_ingredients": [
           "Reproductive organs of a Child of Harvest",
@@ -173,6 +181,7 @@
       "sequence": 1,
       "name": "Naturewalker",
       "potion_overview": "A rich, grassy liquid brimming with vitality",
+      "beyonder_characteristic_appearance": "Crystal clusters composed of five colors: red, green, gold, black, and brown",
       "formula": {
         "main_ingredients": ["A Naturewalker Beyonder Characteristic"],
         "supplementary_ingredients": [
@@ -192,6 +201,7 @@
       "sequence": 0,
       "name": "Mother",
       "potion_overview": "A blood-red, bird's nest-like object covered in a translucent amniotic membrane, nurturing a phantom infant",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Mother Uniqueness",

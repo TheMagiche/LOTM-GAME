@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Monster",
       "potion_overview": "A transparent liquid seemingly imbued with iridescent aurora.",
+      "beyonder_characteristic_appearance": "A silver, petal-shaped object covered in scales",
       "formula": {
         "main_ingredients": [
           "Tail of a Colorful Carp",
@@ -26,6 +27,7 @@
       "sequence": 8,
       "name": "Robot",
       "potion_overview": "A cold, gray liquid that seems almost solidified.",
+      "beyonder_characteristic_appearance": "A crystal-clear, cold gray stone",
       "formula": {
         "main_ingredients": [
           "One piece of Orange-glow Stone",
@@ -47,6 +49,7 @@
       "sequence": 7,
       "name": "Lucky One",
       "potion_overview": "A mercury-colored liquid with suspended bubbles, as if eyes are opening within it.",
+      "beyonder_characteristic_appearance": "A mercury-colored eyeball, swiveling left and right as if it were alive. Once released from the boxing glove, its was stored as a mercury eyeball in a glass jar",
       "formula": {
         "main_ingredients": [
           "One flower of good fortune",
@@ -67,6 +70,7 @@
       "sequence": 6,
       "name": "Calamity Priest",
       "potion_overview": "A silver liquid covered in a black-green layer, emitting a foul and nauseating odor.",
+      "beyonder_characteristic_appearance": "A fist-sized heart covered in mercury-colored scales",
       "formula": {
         "main_ingredients": [
           "Heart of a Blue-spotted Firebird",
@@ -88,6 +92,7 @@
       "sequence": 5,
       "name": "Winner",
       "potion_overview": "A golden, radiant liquid that evokes joy.",
+      "beyonder_characteristic_appearance": "A 'golden' stone emitting red fiery light",
       "formula": {
         "main_ingredients": [
           "One piece of Divine-blessed Crystal",
@@ -111,6 +116,7 @@
       "sequence": 4,
       "name": "Misfortune Mage",
       "potion_overview": "A black liquid streaked with streams of grey-white.",
+      "beyonder_characteristic_appearance": "Sharp, deep black horn-like object with countless grey-white wrinkles",
       "formula": {
         "main_ingredients": [
           "Brain of a Four-eared Giant Ape",
@@ -133,6 +139,7 @@
       "sequence": 3,
       "name": "Chaoswalker",
       "potion_overview": "An exceptionally chaotic liquid churning with cold tones of silver, grey, black, green, etc.",
+      "beyonder_characteristic_appearance": "A silver-grey patterned gelatinous substance that causes mental confusion and seems to interfere with fate itself",
       "formula": {
         "main_ingredients": [
           "Crystal Core of a Calamity Phoenix",
@@ -155,6 +162,7 @@
       "sequence": 2,
       "name": "Soothsayer",
       "potion_overview": "A pure, viscous mass of mercury covered in countless tiny symbols and patterns.",
+      "beyonder_characteristic_appearance": "Either a scale-covered horn, a wood-grained heart, or a cracked turtle shell, all in a mercury silver color",
       "formula": {
         "main_ingredients": [
           "Horn of a Fate Grey Tiger OR The Heart of a Scale-covered Treant Elder"
@@ -176,6 +184,7 @@
       "sequence": 1,
       "name": "Snake of Mercury (Giant Serpent, Snake of Fate, Tail-Devouring Serpent of Fate)",
       "potion_overview": "A head-to-tail mercury-colored small serpent (more like a flow of water) encased in a semi-transparent shell.",
+      "beyonder_characteristic_appearance": "A mercury ring with countless cyclic symbols",
       "formula": {
         "main_ingredients": [
           "The Crystal Core of a Mercury Phoenix OR The Crystal Core of a Mercury Giant Serpent"
@@ -196,6 +205,7 @@
       "sequence": 0,
       "name": "Wheel of Fortune",
       "potion_overview": "A slowly rotating, semi-illusory, semi-substantial wheel filled with mysterious meaning and symbol.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Wheel of Fortune Uniqueness",

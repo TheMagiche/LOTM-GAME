@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Hunter",
       "potion_overview": "A deep red liquid, bubbling as if blood is staining the entire glass. It has a pungent odor of blood that would fill their nostrils.",
+      "beyonder_characteristic_appearance": "The crimson object resembled a jelly-like substance. Its surface was incredibly slippery, lightweight, and possessed a unique texture and elasticity, smooth like glass. However, holding it evoked feelings of irritability and hostility in the holder",
       "formula": {
         "main_ingredients": [
           "1 Blood Red Chestnut",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Provoker",
       "potion_overview": "A pitch-black, viscous liquor with a nauseating taste and a pungent stench. Just seeing this potion evokes an urge to throw it away and stomp on it. It is foul and pungent.",
+      "beyonder_characteristic_appearance": "The black stone, about half the size of a fist, had a liquid-like surface and emitted a potent odor. It was a repulsive 'stone' with its dark, flowing liquid surface",
       "formula": {
         "main_ingredients": [
           "The Rootstock of an Evil Corpse Lily Cluster",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Pyromaniac (Fire Mage)",
       "potion_overview": "A yellowish liquid with red bubbles floating on it, with a 'heart' at its center surrounded by a mist of blood. When drinking it, it burns from their mouth, down their esophagus, into their stomach, and sears into their heart.",
+      "beyonder_characteristic_appearance": "A scarlet object resembling a heart. The 'heart' pulsed, its surface pocked with countless tiny holes, from which indistinct flames seeped",
       "formula": {
         "main_ingredients": [
           "A Fire Salamander Gland",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Conspirer",
       "potion_overview": "Iron-black, with a large amount of reddish rust floating on it. The potion has a strong rusty taste, cold like a serpent slithering in the darkness, slippery and icy.",
+      "beyonder_characteristic_appearance": "A filthy, brain-like object, covered in rust and eyes",
       "formula": {
         "main_ingredients": [
           "A Black Hunting Spider Composite Eyes",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Reaper",
       "potion_overview": "Fresh red blood with specks of black, iron-fillings-like matter floating in it, as though an iron weapon had shattered inside. It has a pungent smell of blood. There is an unfamiliar taste of rust. And there's burning sensation that instantly fills their mouth and pierces their brain on consumption.",
+      "beyonder_characteristic_appearance": "A finger, creating an unusually sharp, bone-blade emitting an icy glint. The holder needed to be cautious to avoid accidental injury",
       "formula": {
         "main_ingredients": [
           "Gray Demonic Wolf's Front Claws",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Iron-blooded Knight",
       "potion_overview": "Like molten iron, blazing red, high temperature, and vivid.",
+      "beyonder_characteristic_appearance": "Usually fuses with an arm bone, forming an iron-black sword-shaped object, heavy, solid, and burning in its own flames",
       "formula": {
         "main_ingredients": [
           "A Magma Giant's core",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "War Bishop",
       "potion_overview": "Half red, half black, with light constantly flickering between the two.",
+      "beyonder_characteristic_appearance": "A phantom core intertwined with red flames and black metal",
       "formula": {
         "main_ingredients": [
           "Heart of a Bipolar Centaur",
@@ -151,6 +158,7 @@
       "sequence": 2,
       "name": "Weather Warlock",
       "potion_overview": "A formed, purplish liquid that burns.",
+      "beyonder_characteristic_appearance": "A palm-sized, crystalline and porous pillar. The various holes in the pillar contained mists, hall, rainwater, lightning, and other meteorological phenomena, sometimes diffusing outwards. sometimes receding back inside",
       "formula": {
         "main_ingredients": [
           "Skull of a Weather Giant",
@@ -174,6 +182,7 @@
       "sequence": 1,
       "name": "Conqueror",
       "potion_overview": "A dazzling, blazing purple sphere of light in the shape of a crown.",
+      "beyonder_characteristic_appearance": "A strange crown covered in rust and blood. A blood-stained iron crown, formed by the broken skull in hand",
       "formula": {
         "main_ingredients": [
           "A Conqueror Beyonder Characteristic"
@@ -194,6 +203,7 @@
       "sequence": 0,
       "name": "Red Priest",
       "potion_overview": "A crimson pillar wreathed in formless flames.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Red Priest Uniqueness",

@@ -5,6 +5,7 @@
         "sequence": 9,
         "name": "Seer",
         "potion_overview": "A dark-blue gelatinous liquid. The smell of the potion is faint and seemingly ethereal. A cool and smooth feeling on their oral cavity upon drinking it.",
+      "beyonder_characteristic_appearance": "Blood as blue as the sky, creating illusory bubbles as if linked to the spiritual realm. A pure soft gelatinous crystal that reflects bits of lights seeming to contain a resplendent void of stars within",
         "formula": {
           "main_ingredients": [
             "10 milliliters Lavos Squid's Blood",
@@ -26,6 +27,7 @@
         "sequence": 8,
         "name": "Clown",
         "potion_overview": "A liquid displaying a mix of gold, yellow, and red, with distinctly separate colors at their boundaries. Bubbles churn and fizz within the liquid. It tastes extremely bitter and horrible.",
+      "beyonder_characteristic_appearance": "A spherical blob of blood which had tint of blue. The spherical blob of blood was the size of a thumb. It floated in midair silently in defiance of the laws of physics",
         "formula": {
           "main_ingredients": [
             "A crystal of a matured Hornacis Gray Mountain Goat Horn",
@@ -47,6 +49,7 @@
         "sequence": 7,
         "name": "Magician",
         "potion_overview": "A unique liquid resembling a constant display of fireworks, with colors of red, orange, yellow, green, and others continuously scattering, disappearing, and reappearing. It feels ice-cold. When drinking it, at every moment, it would feel like countless bubbles were bursting.",
+      "beyonder_characteristic_appearance": "It was a grayish-white item about the size of a fist. Its surface was filled with gullies and it looked soft but ductile. It looked like a brain that had been extracted out of a living being. When touched, it becomes a gray-white sticky liquid",
         "formula": {
           "main_ingredients": [
             "1 True Root of a Mist Treant",
@@ -67,6 +70,7 @@
         "sequence": 6,
         "name": "Faceless",
         "potion_overview": "Blackish-green in color. It occasionally produces eye-sized bubbles that emit a life-like burping sound every few seconds. When the bubbles reaches the surface, the bubbles burst, reflecting light in a myriad of colors that form random combinations resembling different faces. Upon drinking, slightly tingling sensation would swish in their mouth and oesophagus, and finally, it fermented into a numbing sensation.",
+      "beyonder_characteristic_appearance": "A jelly-like translucent dark-green object. In the dark green background, from time to time, there were different faces emerging, like shadows hidden behind dark curtains",
         "formula": {
           "main_ingredients": [
             "A Mutated pituitary gland of a Thousand-faced Hunter",
@@ -87,6 +91,7 @@
         "sequence": 5,
         "name": "Marionettist",
         "potion_overview": "It is a completely black liquid containing countless tiny worms that squirm about unseen by the naked eye. A somewhat bitter potion with a mustiness when surging down their throat, gullet, and stomach.",
+      "beyonder_characteristic_appearance": "A black, pupil-less eye.",
         "formula": {
           "main_ingredients": [
             "Dust of Ancient Wraiths",
@@ -109,6 +114,7 @@
         "sequence": 4,
         "name": "Bizarro Sorcerer",
         "potion_overview": "Formed by intertwining strands of black mist resembling both human faces and various animals, these mists alternately vanish and reappear in an extremely bizarre manner. It is ice-cold. Upon drinking, it brings one numbness, one that reaches deep into their soul.",
+      "beyonder_characteristic_appearance": "A ghostly blue single eye. A palm-sized human-shaped object. Filled with a transparent liquid, from time to time it bubbled, emanating a black glow. There appeared to be maggots circling the object",
         "formula": {
           "main_ingredients": [
             "A Bizarro Bane's Main Eye",
@@ -132,6 +138,7 @@
         "sequence": 3,
         "name": "Scholar of Yore",
         "potion_overview": "A substance that exists simultaneously as both a liquid and a gas, dark red in color, nearly the size of a baby's head. On consumption, the potion would transform and extend into their mouth, making them feel like devouring a dark red glow. The transparent maggots would swarm back into their body, tearing down the parts of the potion and swallowing them.",
+      "beyonder_characteristic_appearance": "Dark-red burning flames eyeballs. A peculiar heart composed of wisps of white mist",
         "formula": {
           "main_ingredients": [
             "Hound of Fulgrim (also known as Sefirah Castle Keeper) pair of eyes",
@@ -153,6 +160,7 @@
         "sequence": 2,
         "name": "Miracle Invoker",
         "potion_overview": "A deep black, reddish, dim liquid. The surface is transparent and clear, while whirlpools surge in the depths. It seems as if countless eyes are opening simultaneously within.",
+      "beyonder_characteristic_appearance": "It resembled a heart, transparent like a crystal, but there were tiny bubbles emerging from time to time. Every bubble seemed to contain an illusion",
         "formula": {
           "main_ingredients": [
             "1 Heart of a Dark Demonic Wolf"
@@ -173,6 +181,7 @@
         "sequence": 1,
         "name": "Attendant of Mysteries",
         "potion_overview": "A potion that was as dark as the night sea and light as air.",
+      "beyonder_characteristic_appearance": "A translucent black velvet 'curtain', madly absorbing all the light around it. The 'curtain' becomed more and more transparent and illusory until it reached a point where one couldn't see it with the naked eye",
         "formula": {
           "main_ingredients": [
             "A Attendant of Mysteries Beyonder Characteristic"
@@ -190,6 +199,7 @@
         "sequence": 0,
         "name": "Fool",
         "potion_overview": "A black, shapeless, dark liquid without a fixed form. This blob of liquid stretched out as though it was forming a strange, translucent hooded cloak or a person whose internal organs and flesh were emptied out.",
+      "beyonder_characteristic_appearance": "No data available",
         "formula": {
           "main_ingredients": [
             "The Fool Uniqueness",

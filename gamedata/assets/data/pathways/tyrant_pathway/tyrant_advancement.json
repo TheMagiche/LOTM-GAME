@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Sailor (Keeper of the Seas)",
       "potion_overview": "A stirred, black-green, slimy substance filled with fishy stench.",
+      "beyonder_characteristic_appearance": "A twisted, black-green, semi-transparent sac-like object",
       "formula": {
         "main_ingredients": [
           "Murloc's Bladder",
@@ -26,6 +27,7 @@
       "sequence": 8,
       "name": "Folk of Rage (Guardian of the Windstorm)",
       "potion_overview": "A bubbling, blood-red liquid, as if already boiled.",
+      "beyonder_characteristic_appearance": "Enormous gelatinous bubbles covered in blood-red hues",
       "formula": {
         "main_ingredients": [
           "Deep-diver's alveoli",
@@ -46,6 +48,7 @@
       "sequence": 7,
       "name": "Seafarer (Windstorm Priest)",
       "potion_overview": "A calm, gem-like blue liquid, reflecting twinkling starlight.",
+      "beyonder_characteristic_appearance": "A fist-sized, icy-blue object covered in strange lines and black dots",
       "formula": {
         "main_ingredients": [
           "Pituitary gland of a Black-Scaled Shark",
@@ -67,6 +70,7 @@
       "sequence": 6,
       "name": "Wind-blessed",
       "potion_overview": "A fist-sized, half-real half-illusory entity formed by intertwining threads of turquoise silk.",
+      "beyonder_characteristic_appearance": "A huge feather formed from pale blue/cyan wind, bearing patterns resembling eyes on its surface",
       "formula": {
         "main_ingredients": [
           "6 crystalline feathers of a Blue Shadow Falcon",
@@ -88,6 +92,7 @@
       "sequence": 5,
       "name": "Ocean Songster",
       "potion_overview": "The liquid is dark, akin to the ocean before a storm, devoid of ripples or bubbles. The liquid is cold as it brings about a numbness that slides down their gullet and into their stomach. It then spread throughout his body cells at an unimaginable speed.",
+      "beyonder_characteristic_appearance": "A translucent jellyfish contained azure-blue seawater, with occasional swirling vortices and flashes of silver lightning",
       "formula": {
         "main_ingredients": [
           "Siren's throat",
@@ -111,6 +116,7 @@
       "sequence": 4,
       "name": "Cataclysmic Interrer",
       "potion_overview": "A dark blue, nearly black liquid, ceaselessly surging with violent 'wind and waves'.",
+      "beyonder_characteristic_appearance": "A dark blue crystalline coral. On the coral branches, silver bolts of lightning flashed, illuminating the surroundings",
       "formula": {
         "main_ingredients": [
           "Stomach of the Whale of Punishment",
@@ -134,6 +140,7 @@
       "sequence": 3,
       "name": "Sea King",
       "potion_overview": "Like a massive sea-blue gem, reflecting the depths of an ocean region.",
+      "beyonder_characteristic_appearance": "A sea-blue crystal pillar with countless reflections",
       "formula": {
         "main_ingredients": [
           "Skull of a deep-sea python",
@@ -157,6 +164,7 @@
       "sequence": 2,
       "name": "Calamity",
       "potion_overview": "Like a tornado compressed and sealed inside a bottle, accompanied by silver-white lightning.",
+      "beyonder_characteristic_appearance": "A dark, dangerous cloud mass brewing with terror",
       "formula": {
         "main_ingredients": [
           "The Beyonder Characteristic of Queen of Calamity Cohinem (Note: Cohinem is not a pure Sequence 2 Angel of the Tyrant Pathway) OR The Beyonder Characteristic of the 'King of the Deep Sea'"
@@ -178,6 +186,7 @@
       "sequence": 1,
       "name": "Thunder God",
       "potion_overview": "Water of thunder formed by intertwining flashes of multicolored lightning.",
+      "beyonder_characteristic_appearance": "A 'scepter' woven of lightning",
       "formula": {
         "main_ingredients": [
           "A Thunder God Beyonder Characteristic"
@@ -197,6 +206,7 @@
       "sequence": 0,
       "name": "Tyrant",
       "potion_overview": "A massive humanoid form condensed from lightning and storms.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Tyrant Uniqueness",

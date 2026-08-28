@@ -12,6 +12,14 @@ import { llmCall } from '../utils/llmCall';
 import { AI_CALL_TIMEOUT_MS } from './llm/timeouts';
 import type { ModelRequest, ModelResponse } from './turn/hostFacade';
 import { HUNT_BOUNTY_KEYWORD, looksLikeCurrencyName } from '../worldpacks/lotmPurse';
+import { loadLotmItemCatalog } from '../worldpacks/lotmItemCatalog';
+import { resolveItem } from './item/resolveItem';
+import {
+    INVENTORY_CATEGORY_SET,
+    inventoryNotesFromLedger,
+    ledgerKindToInventoryCategory,
+    normalizeInventoryCategory,
+} from '../worldpacks/lotmItemKinds';
 
 export type InventoryOp =
     | { action: 'add'; name: string; qty: number; category?: string; keywords?: string[]; notes?: string; locationTag?: string }
@@ -40,7 +48,7 @@ export async function scanInventory(
         .map((m) => `[${m.role.toUpperCase()}]: ${m.content}`)
         .join('\n\n');
 
-    const prompt = `You are an AI inventory manager for a Lord of the Mysteries chronicle. Review the recent chat and inventory below.\nIdentify items gained, lost, consumed, relocated/moved, equipped, or unequipped.\nItems carry a "loc" (locationTag, e.g. "inventory", "player base", "mom's house"). Default location is "inventory".\n\n=== CURRENT INVENTORY ===\n${buildInventoryJson(currentItems)}\n\n=== RECENT CHAT HISTORY ===\n${turns}\n\n=== INSTRUCTIONS ===\nReturn ONLY a valid JSON array of operations. No other text.\nEach operation is an object with an "action" field.\n\nActions:\n- add: {action:"add", name:"Torch", qty:3, category:"misc", keywords:["fire","light"], locationTag:"inventory"}\n- relocate: {action:"relocate", id:"ITEM_ID_HERE", locationTag:"player base"}\n- remove: {action:"remove", id:"ITEM_ID_HERE"}\n- update: {action:"update", id:"ITEM_ID_HERE", changes:{qty:2, locationTag:"player base"}}\n- consume: {action:"consume", id:"ITEM_ID_HERE", qty:1}\n- equip: {action:"equip", id:"ITEM_ID_HERE"}\n- unequip: {action:"unequip", id:"ITEM_ID_HERE"}\n\nCurrency (gold pounds, soli, pence, coins) MUST use category "currency". Merge into an existing row of the same unit when the player gains or spends money; do not invent a second purse. Hunt posters whose name starts with "BOUNTY:" are contracts, category "key", keywords ["hunt-bounty"] — they are NOT the player's wanted bounty.\nIf nothing changed, return: []`;
+    const prompt = `You are an AI inventory manager for a Lord of the Mysteries chronicle. Review the recent chat and inventory below.\nIdentify items gained, lost, consumed, relocated/moved, equipped, or unequipped.\nItems carry a "loc" (locationTag, e.g. "inventory", "player base", "mom's house"). Default location is "inventory".\n\n=== CURRENT INVENTORY ===\n${buildInventoryJson(currentItems)}\n\n=== RECENT CHAT HISTORY ===\n${turns}\n\n=== INSTRUCTIONS ===\nReturn ONLY a valid JSON array of operations. No other text.\nEach operation is an object with an "action" field.\n\nActions:\n- add: {action:"add", name:"Torch", qty:3, category:"misc", keywords:["fire","light"], locationTag:"inventory"}\n- relocate: {action:"relocate", id:"ITEM_ID_HERE", locationTag:"player base"}\n- remove: {action:"remove", id:"ITEM_ID_HERE"}\n- update: {action:"update", id:"ITEM_ID_HERE", changes:{qty:2, locationTag:"player base"}}\n- consume: {action:"consume", id:"ITEM_ID_HERE", qty:1}\n- equip: {action:"equip", id:"ITEM_ID_HERE"}\n- unequip: {action:"unequip", id:"ITEM_ID_HERE"}\n\nCategories: beyonder-weapon, medicine, mystical-item, sealed-artefact, currency, misc, key.\nCurrency (gold pounds, soli, pence, coins) MUST use category "currency". Merge into an existing row of the same unit when the player gains or spends money; do not invent a second purse. Hunt posters whose name starts with "BOUNTY:" are contracts, category "key", keywords ["hunt-bounty"] — they are NOT the player's wanted bounty.\nIf nothing changed, return: []`;
 
     try {
         const result = modelCall
@@ -80,6 +88,7 @@ export function applyOps(items: InventoryItem[], ops: InventoryOp[]): InventoryI
             if (existing) {
                 existing.qty += op.qty || 1;
             } else {
+                const catalogHit = resolveItem(op.name, loadLotmItemCatalog());
                 next.push(normalizeInventoryItem({
                     id: `inv_${sceneId}_${Math.random().toString(36).slice(2, 7)}`,
                     name: op.name,
@@ -88,9 +97,10 @@ export function applyOps(items: InventoryItem[], ops: InventoryOp[]): InventoryI
                     keywords: inferInventoryKeywords(op.name, op.keywords),
                     equipped: false,
                     lastUsedScene: sceneId,
-                    importance: 5,
-                    notes: op.notes || '',
+                    importance: catalogHit?.kind === 'sealed-artefact' ? 9 : 5,
+                    notes: op.notes || (catalogHit ? inventoryNotesFromLedger(catalogHit) : ''),
                     locationTag: targetLoc,
+                    grade: catalogHit?.kind === 'sealed-artefact' ? catalogHit.grade : undefined,
                 }));
             }
         } else if (op.action === 'relocate') {
@@ -107,7 +117,7 @@ export function applyOps(items: InventoryItem[], ops: InventoryOp[]): InventoryI
             if (!f) continue;
             if (op.changes.name !== undefined) f.item.name = op.changes.name;
             if (op.changes.qty !== undefined) f.item.qty = Math.max(0, op.changes.qty);
-            if (op.changes.category !== undefined) f.item.category = op.changes.category as InventoryItemCategory;
+            if (op.changes.category !== undefined) f.item.category = normalizeInventoryCategory(op.changes.category);
             if (op.changes.keywords !== undefined) f.item.keywords = op.changes.keywords;
             if (op.changes.notes !== undefined) f.item.notes = op.changes.notes;
             if (op.changes.locationTag !== undefined) f.item.locationTag = normalizeLocationTag(op.changes.locationTag);
@@ -136,14 +146,14 @@ export function applyOps(items: InventoryItem[], ops: InventoryOp[]): InventoryI
     return next.map(normalizeInventoryItem);
 }
 
-const VALID_CATEGORIES = new Set<InventoryItemCategory>(['weapon', 'armor', 'consumable', 'currency', 'key', 'misc', 'equipped']);
-
 function inferInventoryCategory(name: string, explicit?: string): InventoryItemCategory {
-    if (explicit && VALID_CATEGORIES.has(explicit as InventoryItemCategory)) {
+    if (explicit && INVENTORY_CATEGORY_SET.has(explicit)) {
         return explicit as InventoryItemCategory;
     }
     if (/^BOUNTY:/i.test(name.trim())) return 'key';
     if (looksLikeCurrencyName(name)) return 'currency';
+    const catalogHit = resolveItem(name, loadLotmItemCatalog());
+    if (catalogHit) return ledgerKindToInventoryCategory(catalogHit.kind);
     return 'misc';
 }
 

@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Bard",
       "potion_overview": "A constantly churning crimson liquid.",
+      "beyonder_characteristic_appearance": "A crimson crystal that sings.",
       "formula": {
         "main_ingredients": [
           "Choose one of: A Crystal Sunflower, An Adult Flint Bird's Tail Feather, or A Fire Bird's Tail Feather",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Light Suppliant",
       "potion_overview": "Blazing white magma.",
+      "beyonder_characteristic_appearance": "Semi-solidified magma radiating a blazing white light",
       "formula": {
         "main_ingredients": [
           "Choose one of: A piece of Brilliance Rock, or The Powder of Dazzling Soul",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Solar High Priest",
       "potion_overview": "Golden in color and scorching hot in temperature.",
+      "beyonder_characteristic_appearance": "A golden sphere with faint red streaks",
       "formula": {
         "main_ingredients": [
           "A red comb of a Dawn Rooster",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Notary",
       "potion_overview": "A dark golden liquid, crystal clear and translucent, seemingly able to reflect one's inner heart.",
+      "beyonder_characteristic_appearance": "A dark golden object resembling a book page",
       "formula": {
         "main_ingredients": [
           "1 set of crystalized roots of the Tree of Elders",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Priest of Light",
       "potion_overview": "A hot, golden liquid that emits light.",
+      "beyonder_characteristic_appearance": "The glowing crystal, a pure and bright manifestation of holiness, emanated pure light from its translucent form",
       "formula": {
         "main_ingredients": [
           "The red comb of a King of Dawn Roosters",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Unshadowed",
       "potion_overview": "A golden concoction without any impurities. A hot, violent liquid.",
+      "beyonder_characteristic_appearance": "A drop of blazing, terrifying, golden, and divine blood",
       "formula": {
         "main_ingredients": [
           "A drop of golden blood from Sequence 0: Sun OR 3 adult Sun Divine Bird's tail feathers",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Justice Mentor",
       "potion_overview": "Intertwined yet distinct strands of dark golden light.",
+      "beyonder_characteristic_appearance": "A heart or brain condensed from pure radiance",
       "formula": {
         "main_ingredients": [
           "Head of a Radiant Giant OR A deep black tail feather of the Sun Divine Bird King",
@@ -151,6 +158,7 @@
       "sequence": 2,
       "name": "Lightseeker (Sun Chaser)",
       "potion_overview": "A liquid composed of converging streams of pure light.",
+      "beyonder_characteristic_appearance": "A cluster of darkness whose core contains light that cannot escape",
       "formula": {
         "main_ingredients": [
           "Heart of the Radiant Giant Leader"
@@ -172,6 +180,7 @@
       "sequence": 1,
       "name": "White Angel",
       "potion_overview": "A pure white, flawless, scorching liquid.",
+      "beyonder_characteristic_appearance": "A pure white human silhouette or a holy rib",
       "formula": {
         "main_ingredients": [
           "A rib of Aucuses"
@@ -193,6 +202,7 @@
       "sequence": 0,
       "name": "Sun",
       "potion_overview": "A star appearing to erupt in a storm.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Sun Uniqueness",

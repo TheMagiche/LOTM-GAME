@@ -13,8 +13,8 @@ import { factionTableDescriptor, loadFactionTable } from './tables/factionTable'
 import { itemTableDescriptor, loadItemTable } from './tables/itemTable';
 import { parseFactionsFromLore } from './lore/loreFactionParser';
 import { resolveFaction } from './faction/resolveFaction';
-import { resolveItem } from './item/resolveItem';
 import { loadLotmItemCatalog } from '../worldpacks/lotmItemCatalog';
+import { catalogAlreadySeeded } from '../worldpacks/lotmItemKinds';
 import { mergeLotmChurches } from '../worldpacks/lotmChurches';
 import { mergeLotmGeography } from '../worldpacks/lotmGeography';
 import { loadLotmAbilityCompendium } from '../worldpacks/lotmAbilityCompendium';
@@ -134,9 +134,7 @@ export async function initializeCampaignState(params: {
         const catalog = loadLotmItemCatalog();
         if (catalog.length > 0) {
             const existingItems = await loadItemTable(campaignId);
-            const additions = catalog.filter(item =>
-                !resolveItem(item.code || item.name, existingItems) && !resolveItem(item.name, existingItems)
-            );
+            const additions = catalog.filter(item => !catalogAlreadySeeded(item, existingItems));
             if (additions.length > 0) {
                 await genericSave(itemTableDescriptor as never, campaignId, [...existingItems, ...additions]);
             }

@@ -5,6 +5,7 @@
         "sequence": 9,
         "name": "Marauder",
         "potion_overview": "Deep blue-black, bitter taste.",
+      "beyonder_characteristic_appearance": "A translucent black severed finger",
         "formula": {
           "main_ingredients": [
             "1 Blood-Speckled Black Mosquito",
@@ -25,6 +26,7 @@
         "sequence": 8,
         "name": "Swindler",
         "potion_overview": "A dreamlike liquid bubbling with crimson foam; sweet yet agonizingly painful.",
+      "beyonder_characteristic_appearance": "A red, transparent lip‑shaped crystal",
         "formula": {
           "main_ingredients": [
             "1 Human-Faced Pitcher Plant",
@@ -45,6 +47,7 @@
         "sequence": 7,
         "name": "Cryptologist",
         "potion_overview": "Mist-like with glimmering specks; induces scalp-piercing pain akin to skin peeling.",
+      "beyonder_characteristic_appearance": "A colorless crystal emitting mist",
         "formula": {
           "main_ingredients": [
             "1 Sphinx's Brain",
@@ -66,6 +69,7 @@
         "sequence": 6,
         "name": "Prometheus",
         "potion_overview": "Red-yellow, mesmerizing liquid with illusory flames swirling inside; akin to drinking fire.",
+      "beyonder_characteristic_appearance": "A miniature unlit crystal torch",
         "formula": {
           "main_ingredients": [
             "1 Crystal Threadworm",
@@ -87,6 +91,7 @@
         "sequence": 5,
         "name": "Dream Stealer",
         "potion_overview": "Dark, murky, binding all thought; induces lethal suffocation upon ingestion.",
+      "beyonder_characteristic_appearance": "A small, pale, shadow‑tinted infant's hand",
         "formula": {
           "main_ingredients": [
             "1 Heart of a Dream-Eating Rat",
@@ -110,6 +115,7 @@
         "sequence": 4,
         "name": "Parasite",
         "potion_overview": "Like yellow-green liquid squeezed from insects, along with floating insect carcasses; triggers the sensation of one's soul being possessed and skin being peeled layer by layer. Failed promotion, if not dead or having lost control, results in the drinker becoming a carrier of the potion, being Parasitized by it.",
+      "beyonder_characteristic_appearance": "A diamond with translucent worms wriggling inside",
         "formula": {
           "main_ingredients": [
             "1 Soul-Snatcher's Postmortem Crystal",
@@ -133,6 +139,7 @@
         "sequence": 3,
         "name": "Mentor of Deceit",
         "potion_overview": "Emerald, crystalline, deceptively ordinary; causes bodily and spiritual fragmentation.",
+      "beyonder_characteristic_appearance": "A colorless fungal drape, like a curtain",
         "formula": {
           "main_ingredients": [
             "1 pair of Swamp Giant's Palms",
@@ -156,6 +163,7 @@
         "sequence": 2,
         "name": "Trojan Horse of Destiny (Fate Stealer)",
         "potion_overview": "Mercury-colored, with many looping symbols that form worm-like shadows; It carries various tastes, bringing the sensation of drowning as though sinking into the River of Fate.",
+      "beyonder_characteristic_appearance": "A crystal with multiple mirror-like facets, reflecting different identities",
         "formula": {
           "main_ingredients": [
             "1 Postmortem Crystal of a Giant King's Court Priest",
@@ -178,6 +186,7 @@
         "sequence": 1,
         "name": "Worm of Time",
         "potion_overview": "Ethereal, shimmering, cyan-black, tasteless; drinking it subjects one to be eroded and cut by time.",
+      "beyonder_characteristic_appearance": "A crystalline pillar of light and shadow, housing swiftly swimming 12‑segmented Worms of Time. Everything nearby seems frozen",
         "formula": {
           "main_ingredients": [
             "Aurmir's Right Eye"
@@ -198,6 +207,7 @@
         "sequence": 0,
         "name": "Error (Bug)",
         "potion_overview": "Liquid formed by overlapping layers of segmented worms.",
+      "beyonder_characteristic_appearance": "No data available",
         "formula": {
           "main_ingredients": [
             "The Error Uniqueness",

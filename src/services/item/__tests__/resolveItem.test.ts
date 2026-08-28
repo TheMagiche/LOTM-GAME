@@ -38,4 +38,11 @@ describe('filterItems', () => {
         expect(filterItems(ledger, '', 'medicine').map(item => item.id)).toEqual(['itm_2']);
         expect(filterItems(ledger, '1328').map(item => item.id)).toEqual(['itm_1']);
     });
+
+    it('filters sealed artefacts by grade', () => {
+        const ledger = [crystal, salts];
+        expect(filterItems(ledger, '', 'grade-3').map(item => item.id)).toEqual(['itm_1']);
+        expect(filterItems(ledger, '', 'grade-0')).toEqual([]);
+        expect(filterItems(ledger, '', 'other')).toEqual([]);
+    });
 });

@@ -2,9 +2,16 @@ import { Package, Check, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { toast } from '../Toast';
 import { uid } from '../../utils/uid';
-import type { InventoryProposal, InventoryItem, InventoryItemCategory } from '../../types';
+import type { InventoryProposal, InventoryItem } from '../../types';
 
 import { normalizeLocationTag } from '../../types';
+import { loadLotmItemCatalog } from '../../worldpacks/lotmItemCatalog';
+import { resolveItem } from '../../services/item/resolveItem';
+import {
+    inventoryNotesFromLedger,
+    proposalKindToInventoryCategory,
+    qualityToGrade,
+} from '../../worldpacks/lotmItemKinds';
 
 /**
  * Phase 6: GM-proposed inventory change awaiting user confirmation.
@@ -52,11 +59,16 @@ export function InventoryStagingBar({
             if (target) { store.updateInventoryItem(target.id, { equipped: true, locationTag: 'inventory' }); toast.success(`Equipped ${p.name}`); }
             else toast.warning(`"${p.name}" not found to equip`);
         } else {
-            const category: InventoryItemCategory = p.kind === 'weapon' ? 'weapon'
-                : p.kind === 'armor' ? 'armor'
-                : p.kind === 'consumable' ? 'consumable'
-                : p.kind === 'currency' ? 'currency'
-                : 'misc';
+            const catalogHit = resolveItem(p.name, [...store.itemLedger, ...loadLotmItemCatalog()]);
+            const category = proposalKindToInventoryCategory(p.kind);
+            const grade = p.kind === 'sealed-artefact'
+                ? (qualityToGrade(p.quality) ?? catalogHit?.grade)
+                : undefined;
+            const notes = [
+                p.description,
+                p.properties.length ? `(${p.properties.join(', ')})` : '',
+                catalogHit && !p.description ? inventoryNotesFromLedger(catalogHit) : '',
+            ].filter(Boolean).join(' ');
             const newItem: InventoryItem = {
                 id: uid(),
                 name: p.name,
@@ -65,9 +77,10 @@ export function InventoryStagingBar({
                 keywords: p.name.toLowerCase().split(/\s+/).filter(w => w.length > 2),
                 equipped: p.equip,
                 lastUsedScene: lastScene,
-                importance: 5,
-                notes: [p.description, p.properties.length ? `(${p.properties.join(', ')})` : ''].filter(Boolean).join(' '),
+                importance: category === 'sealed-artefact' ? 9 : 5,
+                notes,
                 locationTag: normalizeLocationTag(p.locationTag),
+                grade,
             };
             store.addInventoryItem(newItem);
             toast.success(`Added ${p.name}`);

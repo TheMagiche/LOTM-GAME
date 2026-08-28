@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Savant",
       "potion_overview": "Appears to be a very delicious and very sweet looking icy blue liquid.",
+      "beyonder_characteristic_appearance": "An icy blue, transparent, brain shaped object",
       "formula": {
         "main_ingredients": [
           "The Brain core of a High Mountain Snowman",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Archaeologist",
       "potion_overview": "Resembles rotten, yellowish-green pus.",
+      "beyonder_characteristic_appearance": "A transparent crystal that emits a musty, old aura",
       "formula": {
         "main_ingredients": [
           "The Crystallization of an Ancient Tomb Shadow",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Appraiser",
       "potion_overview": "A liquid of intertwining black and white.",
+      "beyonder_characteristic_appearance": "A pair of black and white eyes, bearing numerous strange symbols",
       "formula": {
         "main_ingredients": [
           "1 Spirit World Evil Eye",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Artisan (Machinery Specialist)",
       "potion_overview": "It is as if composed of crimson flames, yet various iron-black objects float within.",
+      "beyonder_characteristic_appearance": "A fist sized, wrinkled, oval shaped object ablaze with crimson flames",
       "formula": {
         "main_ingredients": [
           "The Cerebrum of a Four-Armed Madman",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Astronomer (Astromancer)",
       "potion_overview": "A liquid reflecting a dreamy starry sky.",
+      "beyonder_characteristic_appearance": "A thin piece of crystal, covered with mysterious cracks and brilliant specks of starlight",
       "formula": {
         "main_ingredients": [
           "The Eyes of a Star marked Elephant Man",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Alchemist",
       "potion_overview": "A viscous black liquid divided into several parts with no parts connecting. It's like frozen black porridge that had been cut by a blade.",
+      "beyonder_characteristic_appearance": "An iron-black 'mechanism' formed by the interlocking of various unique configurations",
       "formula": {
         "main_ingredients": [
           "1 Heart of a Soul Eater (a humanoid creature)",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Arcane Scholar (Demon of Arcana)",
       "potion_overview": "A transparent liquid in which sparks unceasingly appear and vanish.",
+      "beyonder_characteristic_appearance": "An illusory, flame-shaped flower containing boundless knowledge",
       "formula": {
         "main_ingredients": [
           "1 Spirit World Meteor",
@@ -151,6 +158,7 @@
       "sequence": 2,
       "name": "Knowledge Magister (Master)",
       "potion_overview": "An icy liquid stretched into a distorted humanoid shape.",
+      "beyonder_characteristic_appearance": "A semi-illusory, semi-real book composed of a diversity of knowledge",
       "formula": {
         "main_ingredients": [
           "1 'Otherworldly Brain' (a brain-like creature capable of creating a realm with physical rules that differ from reality)"
@@ -172,6 +180,7 @@
       "sequence": 1,
       "name": "Illuminator (Civilization Enlightener, Light of Darkness)",
       "potion_overview": "A pool of black liquid with a faint but clear radiance shining from within.",
+      "beyonder_characteristic_appearance": "A weighty yet ethereal picture scroll of a civilization",
       "formula": {
         "main_ingredients": [
           "An Illuminator Beyonder Characteristic"
@@ -192,6 +201,7 @@
       "sequence": 0,
       "name": "Paragon",
       "potion_overview": "A flawless, ethereal humanoid form emitting a faint glow.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Paragon Uniqueness",

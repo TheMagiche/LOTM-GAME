@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Warrior",
       "potion_overview": "A blood-red liquid that has a strong, fishy smell.",
+      "beyonder_characteristic_appearance": "A tangled mass of flesh that slowly writhes",
       "formula": {
         "main_ingredients": [
           "One Giant Warrior's Muscle Core OR A Mutant Black Bear's eyes",
@@ -25,6 +26,7 @@
       "sequence": 8,
       "name": "Pugilist (Gladiator)",
       "potion_overview": "Pure white pus stained with streaks of blood.",
+      "beyonder_characteristic_appearance": "A pure spherical light, comparable in size to a baby's fist, radiated its brilliance. It resembled a golden-red ball akin to the hues of morning clouds and sunset, adorned with a faint flickering light that danced gracefully within. A fist-sized sphere resembling the morning clouds and the evening sun",
       "formula": {
         "main_ingredients": [
           "The metacarpal bone of a Giant Squire OR The heart of a Giant Black Bear",
@@ -45,6 +47,7 @@
       "sequence": 7,
       "name": "Weapon Master",
       "potion_overview": "A black liquid with rust floating on it. It tastes like swallowing a handful of fine needles.",
+      "beyonder_characteristic_appearance": "A cold, blood-stained spine resembling a Longsword",
       "formula": {
         "main_ingredients": [
           "One Spine of a Blue Giant OR The left Paw of an Iron Bear",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Dawn Paladin",
       "potion_overview": "A transparent liquid, as if illuminated by the morning Sun.",
+      "beyonder_characteristic_appearance": "Crystals formed by the convergence of specks of Morning Light and Flowing Water",
       "formula": {
         "main_ingredients": [
           "The Blood Crystal of a Dawn Giant OR The Breastbone of a Dawn Bird",
@@ -85,6 +89,7 @@
       "sequence": 5,
       "name": "Guardian",
       "potion_overview": "Pale Blood enveloped in a substantial Ray of Dawn.",
+      "beyonder_characteristic_appearance": "The size of a fist resembling a Heart; it is covered with holes as it shimmers with a Light of Dawn",
       "formula": {
         "main_ingredients": [
           "The Heart of a Gray Giant OR The Core of the Stone Giant",
@@ -107,6 +112,7 @@
       "sequence": 4,
       "name": "Demon Hunter",
       "potion_overview": "A dark green liquid.",
+      "beyonder_characteristic_appearance": "A vertical eye-shaped item interwoven with dark green symbols",
       "formula": {
         "main_ingredients": [
           "The Eye of a Divine Giant OR The Heart of a Dragon-Eater",
@@ -129,6 +135,7 @@
       "sequence": 3,
       "name": "Silver Knight",
       "potion_overview": "It looks like as if chunks of Mercury were scattered throughout the pale white liquid.",
+      "beyonder_characteristic_appearance": "A mass of silvery-white luster that resembled a heart-like miniature sun",
       "formula": {
         "main_ingredients": [
           "The essence of Aurmir's blood OR The Heart of a 'King's Court Chaser' (a type of giant) OR The heart of a 'King's Court Watchman' (another type of giant)"
@@ -150,6 +157,7 @@
       "sequence": 2,
       "name": "Glory",
       "potion_overview": "A liquid formed from pure, holy, and profound light.",
+      "beyonder_characteristic_appearance": "A pure square stone that radiates divine light",
       "formula": {
         "main_ingredients": [
           "The Crystallization of a Glorious Giant (e.g: The One Eye of Bladel) OR The Crown of Aurmir"
@@ -171,6 +179,7 @@
       "sequence": 1,
       "name": "Hand of God",
       "potion_overview": "A bluish-black liquid tinged with the colors of Dusk/Twilight, containing numerous transparent faces.",
+      "beyonder_characteristic_appearance": "A translucent bluish-black giant hand with various divine patterns",
       "formula": {
         "main_ingredients": [
           "One of the Hands of Aurmir (content on the First Blasphemy Slate) OR One of the Hands of Badheil (content on the Second Blasphemy Slate)"
@@ -192,6 +201,7 @@
       "sequence": 0,
       "name": "Twilight Giant",
       "potion_overview": "A huge, orange-red phantom, as if dragging a Shadow of Twilight.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Twilight Giant Uniqueness",
