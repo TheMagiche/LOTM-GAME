@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { ContextNavigationDrawer as ContextDrawer } from './components/ContextNavigationDrawer';
 import { ChatArea } from './components/ChatArea';
 import { LotmIllustratedShell } from './components/lotm/LotmIllustratedShell';
+import { LotmGrimoire } from './components/lotm/LotmGrimoire';
 import { SettingsModal } from './components/SettingsModal';
 import { ChatRightRail } from './components/ChatRightRail';
 import { WindowManager } from './components/WindowManager';
@@ -210,6 +211,7 @@ export default function App() {
       <ErrorBoundary>
         <CampaignHub />
         <SettingsModal />
+        {LOTM_EXCLUSIVE_UI && <LotmGrimoire />}
         {!LOTM_EXCLUSIVE_UI && <BackupModal />}
         <ToastContainer />
       </ErrorBoundary>
@@ -231,6 +233,7 @@ export default function App() {
       <WindowManager />
       {/* <MapPanel /> */}
       <SettingsModal />
+      {LOTM_EXCLUSIVE_UI && <LotmGrimoire />}
       <NPCLedgerModal />
       <CharacterLedgerModal />
       <LocationLedgerModal />

@@ -116,6 +116,11 @@ export type UISlice = {
     lotmChronicleOpen: boolean;
     setLotmChronicleOpen: (open: boolean) => void;
     toggleLotmChronicle: () => void;
+    /** Player-facing LOTM lore encyclopedia overlay. */
+    grimoireOpen: boolean;
+    openGrimoire: () => void;
+    closeGrimoire: () => void;
+    toggleGrimoire: () => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -212,4 +217,8 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     lotmChronicleOpen: false,
     setLotmChronicleOpen: (open) => set({ lotmChronicleOpen: open }),
     toggleLotmChronicle: () => set((s) => ({ lotmChronicleOpen: !s.lotmChronicleOpen })),
+    grimoireOpen: false,
+    openGrimoire: () => set({ grimoireOpen: true }),
+    closeGrimoire: () => set({ grimoireOpen: false }),
+    toggleGrimoire: () => set((s) => ({ grimoireOpen: !s.grimoireOpen })),
 });
