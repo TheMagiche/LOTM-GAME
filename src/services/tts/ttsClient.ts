@@ -107,3 +107,15 @@ export async function loadCachedTts(text: string, voice?: string, provider?: str
     if (!res.ok) return null;
     return res.blob();
 }
+
+/**
+ * Delete disk-cached WAVs for these chunks. Used by the karaoke panel trash
+ * button so switching Illustrated ↔ Chronicle cannot reload deleted audio.
+ */
+export async function wipeCachedTts(chunks: string[], voice?: string, provider?: string): Promise<void> {
+    await fetch(`${API}/tts/wipe-cache`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chunks: chunks.map(text => ({ text })), voice, provider }),
+    });
+}

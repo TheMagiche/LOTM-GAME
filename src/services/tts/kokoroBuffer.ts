@@ -1,4 +1,4 @@
-import { generateTts, loadCachedTts, checkCachedChunks } from './ttsClient';
+import { generateTts, loadCachedTts, checkCachedChunks, wipeCachedTts } from './ttsClient';
 import { proseForTTS, chunkSentencesForTTS, splitWords } from './proseStripper';
 
 /**
@@ -103,7 +103,8 @@ export class KokoroBuffer {
         this.cb.setActiveWordIdx(-1);
     }
 
-    // Full wipe — only called by the trash button on the TTS panel.
+    // In-memory wipe — used when the engine/voice changes so this bubble
+    // cannot replay the previous engine's blobs. Does not touch disk.
     wipe() {
         this.stop();
         for (const [, c] of this.cache) URL.revokeObjectURL(c.url);
@@ -111,6 +112,21 @@ export class KokoroBuffer {
         this.cb.setGeneratedChunks(0);
         this.cb.setTotalChunks(0);
         this.cb.setHasCache(false);
+    }
+
+    // Trash button: drop in-memory blobs and delete this message's WAVs on disk
+    // so a remount (Illustrated ↔ Chronicle) cannot resurrect the panel.
+    async wipePersisted(markdownContent: string, voice: string, provider?: string) {
+        this.wipe();
+        const clean = proseForTTS(markdownContent);
+        if (!clean) return;
+        const chunks = chunkSentencesForTTS(clean);
+        if (!chunks.length) return;
+        try {
+            await wipeCachedTts(chunks, voice, provider);
+        } catch {
+            // best-effort — memory is already gone even if the server is down.
+        }
     }
 
     // Pause / resume the current audio.

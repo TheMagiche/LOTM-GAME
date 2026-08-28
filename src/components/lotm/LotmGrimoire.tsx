@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, CircleHelp, Search, X } from 'lucide-react';
+import { ArrowLeft, BookOpen, CircleHelp, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import {
     GRIMOIRE_SECTIONS,
@@ -88,9 +88,12 @@ export function LotmGrimoire() {
         >
             <div className="lotm-grimoire-frame" onClick={event => event.stopPropagation()}>
                 <header className="lotm-grimoire-header">
-                    <div className="lotm-grimoire-titles">
-                        <p className="lotm-grimoire-kicker">Lord of the Mysteries</p>
-                        <h2 id="lotm-grimoire-title">Grimoire</h2>
+                    <div className="lotm-grimoire-brand">
+                        <BookOpen size={16} aria-hidden />
+                        <div className="lotm-grimoire-titles">
+                            <p className="lotm-grimoire-kicker">Lord of the Mysteries</p>
+                            <h2 id="lotm-grimoire-title">Grimoire</h2>
+                        </div>
                     </div>
                     <div className="lotm-grimoire-header-actions">
                         <div className={`lotm-grimoire-search${searchExpanded ? ' is-open' : ''}`}>

@@ -2092,9 +2092,17 @@ html[style*="--lang-font-stack"] {
   flex-shrink: 0;
 }
 
-.lotm-grimoire-titles {
+.lotm-grimoire-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   min-width: 0;
   flex: 1 1 auto;
+  color: #e0c36a;
+}
+
+.lotm-grimoire-titles {
+  min-width: 0;
 }
 
 .lotm-grimoire-kicker {

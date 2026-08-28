@@ -106,4 +106,14 @@ describe('TTS persisted model status', () => {
         expect(audioCacheHash('kokoro', 'hello', 'af_heart')).toBe(a);
         expect(audioCacheHash('chatterbox-nano', 'hello', 'af_heart')).toBe(b);
     });
+
+    it('deletes a cached WAV so it cannot be reloaded after wipe', async () => {
+        const { saveCachedAudio, isAudioCached, loadCachedAudio, deleteCachedAudio } = await import('../lib/tts/cache.js');
+        saveCachedAudio('kokoro', 'hello there', 'af_heart', Buffer.from('RIFF'));
+        expect(isAudioCached('kokoro', 'hello there', 'af_heart')).toBe(true);
+        expect(deleteCachedAudio('kokoro', 'hello there', 'af_heart')).toBe(true);
+        expect(isAudioCached('kokoro', 'hello there', 'af_heart')).toBe(false);
+        expect(loadCachedAudio('kokoro', 'hello there', 'af_heart')).toBeNull();
+        expect(deleteCachedAudio('kokoro', 'hello there', 'af_heart')).toBe(false);
+    });
 });

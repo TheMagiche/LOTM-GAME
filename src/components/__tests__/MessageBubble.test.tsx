@@ -31,7 +31,8 @@ vi.mock('../../services/tts/ttsClient', () => ({
     generateTts: vi.fn(async () => new Blob(['audio'])),
     loadCachedTts: vi.fn(async () => null),
     checkCachedChunks: vi.fn(async (chunks: string[]) => chunks.map(() => false)),
-    isEngineReady: (status: { modelReady?: boolean } | null) => !!status?.modelReady,
+    wipeCachedTts: vi.fn(async () => {}),
+    isEngineReady: vi.fn((status: { modelReady?: boolean } | null) => !!status?.modelReady),
 }));
 
 vi.mock('../../services/turn/pendingCommit', () => ({
@@ -44,7 +45,7 @@ vi.mock('../../services/turn/swipeGeneration', () => ({
     MAX_SWIPES: 5,
 }));
 
-import { checkCachedChunks, loadCachedTts } from '../../services/tts/ttsClient';
+import { checkCachedChunks, loadCachedTts, isEngineReady, wipeCachedTts } from '../../services/tts/ttsClient';
 
 function makeMessage(overrides: Partial<ChatMessage> = {}): ChatMessage {
     return {
@@ -209,6 +210,13 @@ describe('MessageBubble', () => {
     });
 
     describe('TTS playback panel', () => {
+        beforeEach(() => {
+            vi.mocked(isEngineReady).mockReset();
+            (checkCachedChunks as ReturnType<typeof vi.fn>).mockReset();
+            (loadCachedTts as ReturnType<typeof vi.fn>).mockReset();
+            (wipeCachedTts as ReturnType<typeof vi.fn>).mockReset();
+        });
+
         it('shows the Read aloud button for assistant messages when TTS is ready', () => {
             renderBubble(makeMessage());
             expect(screen.getByTitle('Read aloud')).toBeInTheDocument();
@@ -226,6 +234,32 @@ describe('MessageBubble', () => {
             (loadCachedTts as ReturnType<typeof vi.fn>).mockResolvedValue(new Blob(['wav']));
             renderBubble(makeMessage({ content: 'One sentence. Another sentence.' }));
             expect(await screen.findByText('click a sentence to jump')).toBeInTheDocument();
+        });
+
+        it('does not show the playback panel when the TTS engine is not ready', async () => {
+            vi.mocked(isEngineReady).mockReturnValue(false);
+            (checkCachedChunks as ReturnType<typeof vi.fn>).mockImplementation(
+                async (chunks: string[]) => chunks.map(() => true)
+            );
+            (loadCachedTts as ReturnType<typeof vi.fn>).mockResolvedValue(new Blob(['wav']));
+            renderBubble(makeMessage({ content: 'One sentence. Another sentence.' }));
+            await Promise.resolve();
+            expect(checkCachedChunks).not.toHaveBeenCalled();
+            expect(screen.queryByText('click a sentence to jump')).not.toBeInTheDocument();
+            expect(screen.queryByTitle('Read aloud')).not.toBeInTheDocument();
+        });
+
+        it('hides the playback panel after deleting generated audio', async () => {
+            const user = userEvent.setup();
+            (checkCachedChunks as ReturnType<typeof vi.fn>).mockImplementation(
+                async (chunks: string[]) => chunks.map(() => true)
+            );
+            (loadCachedTts as ReturnType<typeof vi.fn>).mockResolvedValue(new Blob(['wav']));
+            renderBubble(makeMessage({ content: 'One sentence. Another sentence.' }));
+            expect(await screen.findByText('click a sentence to jump')).toBeInTheDocument();
+            await user.click(screen.getByTitle('Delete generated audio'));
+            expect(screen.queryByText('click a sentence to jump')).not.toBeInTheDocument();
+            expect(wipeCachedTts).toHaveBeenCalled();
         });
     });
 

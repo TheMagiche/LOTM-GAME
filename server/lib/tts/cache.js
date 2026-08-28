@@ -61,6 +61,19 @@ export function saveCachedAudio(providerId, text, voice, buf) {
     }
 }
 
+/** Delete a cached WAV so the karaoke panel cannot resurrect it after trash. */
+export function deleteCachedAudio(providerId, text, voice) {
+    const p = audioCachePath(providerId, text, voice);
+    try {
+        if (!fs.existsSync(p)) return false;
+        fs.unlinkSync(p);
+        return true;
+    } catch (e) {
+        console.warn('[TTS] Failed to delete cached audio:', e.message);
+        return false;
+    }
+}
+
 /**
  * kokoro-js v1.2.1 bundles its own nested @huggingface/transformers that ignores
  * the `cache_dir` option and writes to `<kokoro-js>/node_modules/.cache/...`.
