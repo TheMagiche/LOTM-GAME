@@ -33,7 +33,7 @@ const TABS: { key: LedgerTab; Icon: typeof FileText; label: string }[] = [
  * `togglePCPanel`), same Escape handling, plus a 4-tab bar:
  *
  *   Sheet     — user authors (PCEditForm: identity, kit, hex, wants, portrait)
- *   Record    — engine writes, user curates (active traits, superseded, bonds, events)
+ *   Record    — engine writes, user curates (active traits, superseded, standing, events)
  *   Inventory — engine scans, user edits (the inventory grid)
  *   Stats     — engine scans, user edits (characterProfileData: hp/level/skills)
  *

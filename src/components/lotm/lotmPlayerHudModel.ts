@@ -8,6 +8,15 @@ import {
     nextLotmSequence,
     resolveLotmPathway,
 } from '../../worldpacks/lotmPathways';
+import {
+    LOC_STAGE_LABELS,
+    formatSequenceAdvantageLine,
+    readDigestion,
+    readLossOfControl,
+    resolveSequenceAdvantage,
+    type LossOfControlStage,
+    type SequenceAdvantageResult,
+} from '../../worldpacks/lotmBeyonderState';
 
 export type LotmHudMeter = {
     current: number;
@@ -23,6 +32,8 @@ export type LotmHudStat = {
 export type LotmHudNextSequence = {
     sequenceLabel: string;
     abilities: string[];
+    potionSrc: string;
+    formula: string;
 };
 
 export type LotmHudCarryItem = {
@@ -39,11 +50,13 @@ export type LotmHudWorld = {
     locationFeature?: string | null;
     /** Wanted bounty on the PC. Hunt posters never belong here. */
     bounty?: string | null;
+    opponents?: Array<{ signatureKit?: { sequence?: number }; archived?: boolean; isPC?: boolean }>;
 };
 
 export type LotmPlayerHudModel = {
     present: boolean;
     name: string;
+    pathwayId: string;
     pathwayName: string;
     sequenceLabel: string;
     sequenceNumber: number | undefined;
@@ -57,6 +70,15 @@ export type LotmPlayerHudModel = {
     currency: string;
     bounty: string;
     items: LotmHudCarryItem[];
+    digestion: number;
+    locStage: LossOfControlStage;
+    locLabel: string;
+    sequenceBand: SequenceAdvantageResult | null;
+    sequenceBandLine: string;
+    actingMethod: string;
+    formula: string;
+    potionSrc: string;
+    canDrink: boolean;
 };
 
 const PREFERRED_STATS = ['Spirituality', 'Physique', 'Reasoning'] as const;
@@ -163,17 +185,24 @@ export function buildLotmPlayerHudModel(
     const fromCatalog = abilitiesForLotmSequence(pathway?.id, sequence);
     const abilities = fromProfile.length ? fromProfile : (fromKit.length ? fromKit : fromCatalog);
     const nextSeq = nextLotmSequence(sequence);
+    const seqInfo = getLotmSequence(pathway, sequence);
     const nextInfo = getLotmSequence(pathway, nextSeq);
     const inventory = world?.inventory ?? [];
+    const digestion = readDigestion(pc);
+    const locStage = readLossOfControl(pc);
+    const sequenceBand = resolveSequenceAdvantage(pc, profile ?? undefined, world?.opponents);
+    const actingMethod = (seqInfo?.actingMethod || (profile?.skills ?? []).join('; ')).trim();
+    const formula = seqInfo?.formula?.main.length ? seqInfo.formula.main.join('; ') : '';
 
     return {
         present: Boolean(name || pathway),
         name: name || 'Unnamed',
+        pathwayId: pathway?.id ?? '',
         pathwayName: pathway?.name ?? '',
         sequenceLabel: formatLotmSequenceName(pathway?.id, sequence),
         sequenceNumber: sequence,
         emblemSrc: pathway?.emblemSrc ?? '',
-        hp: toLotmHudMeter(profile?.hp),
+        hp: null,
         spirituality: toLotmHudMeter(profile?.mp),
         stats: resolveStats(profile, pc),
         abilities,
@@ -181,11 +210,22 @@ export function buildLotmPlayerHudModel(
             ? {
                 sequenceLabel: formatLotmSequenceName(pathway?.id, nextSeq),
                 abilities: abilitiesForLotmSequence(pathway?.id, nextSeq),
+                potionSrc: nextInfo.potionSrc ?? '',
+                formula: nextInfo.formula?.main.length ? nextInfo.formula.main.join('; ') : '',
             }
             : null,
         location: locationLine(pc, world),
         currency: currencyLine(inventory),
         bounty: bountyLine(world?.bounty),
         items: carryItems(inventory, kit?.equipment),
+        digestion,
+        locStage,
+        locLabel: LOC_STAGE_LABELS[locStage],
+        sequenceBand,
+        sequenceBandLine: formatSequenceAdvantageLine(sequenceBand),
+        actingMethod,
+        formula,
+        potionSrc: seqInfo?.potionSrc ?? '',
+        canDrink: digestion >= 100 && Boolean(nextInfo),
     };
 }

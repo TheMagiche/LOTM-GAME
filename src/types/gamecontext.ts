@@ -467,8 +467,7 @@ function parsePlainInventory(text: string): InventoryItem[] {
         const qty = qtyMatch ? parseInt(qtyMatch[1] || qtyMatch[2], 10) : 1;
         const lower = name.toLowerCase();
         let category: InventoryItemCategory = 'misc';
-        if (lower.includes('gold') || lower.includes('coin') || lower.includes('silver') || lower.includes('copper')
-            || /\b(pound|pence|soli)s?\b/.test(lower)) category = 'currency';
+        if (/\b(pence|soli|pounds?|verl d['']or|coppet|hoern|risot)\b/.test(lower) || /gold\s*pounds?/.test(lower) || /loen gold pound/.test(lower)) category = 'currency';
         else if (lower.includes('potion') || lower.includes('elixir') || lower.includes('antidote')) category = 'consumable';
         else if (lower.includes('sword') || lower.includes('dagger') || lower.includes('bow') || lower.includes('axe') || lower.includes('mace') || lower.includes('staff') || lower.includes('blade')) category = 'weapon';
         else if (lower.includes('armor') || lower.includes('shield') || lower.includes('helm') || lower.includes('gauntlet') || lower.includes('boot') || lower.includes('plate')) category = 'armor';

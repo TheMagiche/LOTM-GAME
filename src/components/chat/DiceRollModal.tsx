@@ -3,6 +3,9 @@ import { X, Dices } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildDefaultDiceSystem } from '../../types';
 import type { RollDefinition, RollModifier, RollAggregation, ManualRollRequest } from '../../types';
+import { LOTM_EXCLUSIVE_UI } from '../../services/lotm/lotmFlags';
+import { isLotmCampaign } from '../../services/lotm/lotmSkin';
+import { formatSequenceAdvantageLine, resolveSequenceAdvantage } from '../../worldpacks/lotmBeyonderState';
 
 /**
  * Dice "dice me" modal — 3-gate configurator. Opens BEFORE the roll. The player
@@ -18,6 +21,10 @@ export function DiceRollModal() {
     const onClose = useAppStore(s => s.closeDiceRollModal);
     const setArmedRoll = useAppStore(s => s.setArmedRoll);
     const context = useAppStore(s => s.context);
+    const playerCharacter = useAppStore(s => s.playerCharacter);
+    const npcLedger = useAppStore(s => s.npcLedger);
+    const onStageNpcIds = useAppStore(s => s.onStageNpcIds);
+    const lotm = LOTM_EXCLUSIVE_UI || isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
 
     const diceSystem = context.diceSystem ?? buildDefaultDiceSystem();
 
@@ -53,6 +60,15 @@ export function DiceRollModal() {
 
     const selectedDie = diceSystem.dieTypes.find(d => d.id === dieTypeId);
     const isTotalAll = rollDef.aggregation === 'total_all';
+    const onStage = new Set(onStageNpcIds ?? []);
+    const sequenceBand = lotm
+        ? resolveSequenceAdvantage(
+            playerCharacter,
+            context.characterProfileData,
+            onStage.size === 0 ? [] : npcLedger.filter(npc => onStage.has(npc.id)),
+        )
+        : null;
+    const sequenceBandLine = formatSequenceAdvantageLine(sequenceBand);
 
     const preview = (() => {
         if (!selectedDie) return '—';
@@ -146,6 +162,12 @@ export function DiceRollModal() {
                     <div className="text-[11px] text-terminal font-mono bg-terminal/10 rounded px-2 py-1.5 text-center">
                         {preview}
                     </div>
+
+                    {sequenceBandLine && (
+                        <p className="text-[10px] text-text-dim leading-relaxed" aria-label="Sequence band">
+                            Sequence band (engine): {sequenceBandLine}
+                        </p>
+                    )}
 
                     <p className="text-[10px] text-text-dim/70 leading-relaxed">
                         Confirm to arm the roll. On your next send, the engine rolls real dice and the GM narrates the outcome as fact.

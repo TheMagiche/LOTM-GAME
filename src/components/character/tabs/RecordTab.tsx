@@ -23,7 +23,7 @@ const CATEGORY_COLORS: Record<DivergenceCategory, string> = {
  *
  * Owner: engine writes, user curates. Hosts the CharacterProfileEditor
  * (identity fields, active traits, superseded history, the injection
- * ON/OFF toggle), the Bonds section (read-only pcRelation summary), and the
+ * ON/OFF toggle), the Standing section (read-only pcRelation summary), and the
  * established-events list for this PC. Moved here from the old ContextDrawer
  * `pc` tab (CharacterProfileEditor.tsx) + PCPanelModal's Bonds section +
  * PCEditForm's inline established-events block.
@@ -204,10 +204,10 @@ export function RecordTab() {
                 )}
             </div>
 
-            {/* ── Bonds (read-only — engine-owned pcRelation on NPC rows) ─────── */}
+            {/* ── Standing (read-only — engine-owned pcRelation on NPC rows) ─────── */}
             <div className="border-t border-border/30 pt-3">
                 <h3 className="text-[10px] uppercase tracking-widest text-terminal/70 border-b border-border/50 pb-1 mb-3">
-                    Bonds <span className="text-text-dim/50 normal-case tracking-normal">({relationshipMemoryEnabled ? 'historical — use memories' : 'read-only — engine-owned'})</span>
+                    Standing <span className="text-text-dim/50 normal-case tracking-normal">({relationshipMemoryEnabled ? 'historical — use memories' : 'read-only — engine-owned'})</span>
                 </h3>
                 {bonds.length === 0 ? (
                     <p className="text-[10px] text-text-dim italic">No established relationships yet.</p>

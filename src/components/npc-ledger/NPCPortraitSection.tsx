@@ -98,7 +98,7 @@ export function NPCPortraitSection({
 
             <div className="grid grid-cols-2 gap-3">
                 {[
-                    { k: 'race', l: 'Race / Species' },
+                    { k: 'race', l: 'Origin' },
                     { k: 'gender', l: 'Gender' },
                     { k: 'ageRange', l: 'Age Range' },
                     { k: 'build', l: 'Build / Body Type' },

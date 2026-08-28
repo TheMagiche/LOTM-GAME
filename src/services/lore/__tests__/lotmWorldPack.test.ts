@@ -165,10 +165,10 @@ describe('LOTM world pack — loot tree', () => {
         expect(tree).not.toBeNull();
         const zeroOthers = {
             currency: 100,
-            mundane: 0,
+            ordinary: 0,
             medicine: 0,
-            named: 0,
-            uncanny: 0,
+            mystical: 0,
+            characteristics: 0,
             artifact: 0,
             bounty: 0,
             formula: 0,
@@ -196,8 +196,8 @@ describe('LOTM world pack — loot tree', () => {
             profile: {
                 reweight: {
                     root: {
-                        currency: 0, mundane: 0, medicine: 0, named: 0,
-                        uncanny: 0, artifact: 0, bounty: 100, formula: 0,
+                        currency: 0, ordinary: 0, medicine: 0, mystical: 0,
+                        characteristics: 0, artifact: 0, bounty: 100, formula: 0,
                     },
                     bountyTierPick: { crew: 100, admiral: 0, king: 0 },
                 },

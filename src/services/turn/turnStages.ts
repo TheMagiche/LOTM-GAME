@@ -27,6 +27,7 @@ import { resolveLootDrop } from '../engine/lootEngine';
 import { mergeLootIntoInventory } from '../engine/lootToInventory';
 import { buildOneShotDirective } from '../oneshot/oneShotEvents';
 import { toast } from '../../components/Toast';
+import { useAppStore } from '../../store/useAppStore';
 import { sanitizePayloadForApi } from '../lib/payloadSanitizer';
 import { getToolDefinitions } from './toolHandlers';
 import { resolveToolHandler } from './toolRegistry';
@@ -46,6 +47,8 @@ import { runPromptInterceptors } from '../mods/interceptors';
 import { runFactPublishers } from '../mods/facts';
 import { blockTokenCap } from './blockEnablement';
 import { BUILTIN_IDS, getBuiltinTokenCap } from '../payload/contributions/builtins';
+import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+import { applySequenceAdvantageToDiceOutcomes, applySpiritualityDelta, bumpLossOfControl, formatLotmBeyonderEngineBlock, readLossOfControl, readSpirituality, resolveSequenceAdvantage } from '../../worldpacks/lotmBeyonderState';
 
 const MAX_TOOL_CALLS_PER_TURN = 5;
 
@@ -118,6 +121,38 @@ export function resolveEngineRolls(
         ctx.finalInput += rollDiceFairness(context);
     }
 
+    if (LOTM_EXCLUSIVE_UI) {
+        const onStage = new Set(state.onStageNpcIds ?? []);
+        const opponents = onStage.size === 0
+            ? []
+            : (state.npcLedger ?? []).filter(n => onStage.has(n.id));
+        const seqAdv = resolveSequenceAdvantage(context.playerCharacter, context.characterProfileData, opponents);
+        if (seqAdv && ctx.finalInput.includes('[DICE OUTCOMES:')) {
+            ctx.finalInput = applySequenceAdvantageToDiceOutcomes(ctx.finalInput, seqAdv.band);
+            ctx.finalInput += `\n[SEQUENCE AS TIER: ${seqAdv.band} — ${seqAdv.reason}. This band is engine-owned; do not pick another.]`;
+        }
+        const beyonder = formatLotmBeyonderEngineBlock(context.playerCharacter, context.characterProfileData);
+        if (beyonder) ctx.finalInput += `\n${beyonder}`;
+        if (armed) {
+            const spent = applySpiritualityDelta(context.characterProfileData, -1);
+            if (spent !== context.characterProfileData) {
+                callbacks.setCharacterProfileData(spent);
+                callbacks.updateContext({ characterProfileData: spent });
+                const spi = readSpirituality(spent, context.playerCharacter);
+                if (spi && spi.current <= 0 && context.playerCharacter) {
+                    const loc = readLossOfControl(context.playerCharacter);
+                    if (loc < 3) {
+                        const next = bumpLossOfControl(context.playerCharacter, (loc + 1) as 1 | 2 | 3);
+                        callbacks.updateContext({ playerCharacter: next });
+                        if (next.pcMeta?.lossOfControl === 3) {
+                            ctx.finalInput += '\n[WORLD_EVENT: Church of the Evernight Nighthawks deploy a containment team after a Loss of Control rampage in Tingen because an unregistered Beyonder fully lost control]';
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // Loot Engine WO-05: player-armed loot drop. Mirrors the dice block above —
     // the engine returns a BARE `[LOOT DROP: ...]` tag and the orchestrator adds
     // the fact-assertion wrapper. The caller (ChatArea) clears `armedLoot`
@@ -138,7 +173,14 @@ export function resolveEngineRolls(
                 ` — this loot DROPPED. Narrate the player finding it as fact; ` +
                 `do NOT change its identity, inflate it, or add items beyond this list.]`;
             // Player-facing reveal — shows the drop on their own turn bubble.
-            ctx.displayInputFinal += `\n\n💰 Loot drop armed (${armedLoot.rolls})`;
+            const names = (loot.items ?? []).map(item => item.label.trim()).filter(Boolean);
+            ctx.displayInputFinal += names.length
+                ? `\n\n💰 ${names.join(', ')}`
+                : `\n\n💰 Loot drop armed (${armedLoot.rolls})`;
+            if (names.length) {
+                useAppStore.getState().setLastLootReceipt({ names, at: Date.now() });
+                toast.info(`Loot: ${names.join(', ')}`);
+            }
             const merged = mergeLootIntoInventory(context.inventoryItems ?? [], loot.items ?? []);
             if (merged !== context.inventoryItems) {
                 callbacks.setInventoryItems(merged);

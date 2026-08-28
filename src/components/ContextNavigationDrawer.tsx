@@ -37,7 +37,7 @@ interface NavLeaf {
 // into System Context as the [Write | Retrieval] segmented control. The nav
 // drawer's screen map and the ContextScreenId type no longer carry it.
 const CONTEXT_LEAVES: Record<ContextScreenId, Omit<NavLeaf, 'onSelect'>> = {
-    sys: { id: 'sys', label: 'System Context', icon: ScrollText },
+    sys: { id: 'sys', label: LOTM_EXCLUSIVE_UI ? 'Rules' : 'System Context', icon: ScrollText },
     world: { id: 'world', label: 'Lore', icon: Database },
     eng: { id: 'eng', label: 'Engine Tuning', icon: Sparkles },
     chpt: { id: 'chpt', label: 'Chapters', icon: BookOpen },
@@ -117,6 +117,7 @@ export function ContextNavigationDrawer() {
     const exclusiveLeaves: Record<GroupId, NavLeaf[]> = {
         play: [
             { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
+            { id: 'grimoire', label: 'Grimoire', icon: BookOpen, onSelect: () => useAppStore.getState().openGrimoire() },
             { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
             { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
             { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },

@@ -16,6 +16,7 @@ import { InlineMessageEditor } from '../message/InlineMessageEditor';
 import { MessageActionRail } from '../message/MessageActionRail';
 import { MessageBelowSlots } from '../message/MessageBelowSlots';
 import { SwipeIndicator, ContinueButton } from '../message/SwipeIndicator';
+import { standingWordForName, standingWordForNpc } from './lotmStanding';
 import { LotmSceneModal } from './LotmSceneModal';
 
 function gmBeats(messages: ChatMessage[]): ChatMessage[] {
@@ -95,6 +96,23 @@ export function LotmDialoguePlate({
         npcLedger, onStageNpcIds, playerCharacter, spoilers,
     ]);
 
+    const portraits = useMemo(() => {
+        const onStage = new Set(onStageNpcIds ?? []);
+        return match.portraits.map(portrait => {
+            if (portrait.isPc) return portrait;
+            const npc = npcLedger.find(entry => onStage.has(entry.id) && entry.name === portrait.name);
+            const standing = standingWordForNpc(npc);
+            return standing ? { ...portrait, standing } : portrait;
+        });
+    }, [match.portraits, npcLedger, onStageNpcIds]);
+
+    const speakerStanding = standingWordForName(
+        match.speakerName,
+        npcLedger,
+        onStageNpcIds,
+        playerCharacter?.name,
+    );
+
     const canPrev = index > 0;
     const canNext = index < beats.length - 1;
     const beatLabel = beats.length === 0 ? '0 / 0' : `${index + 1} / ${beats.length}`;
@@ -129,7 +147,10 @@ export function LotmDialoguePlate({
         <>
             <div className="lotm-plate relative z-10 mx-3 mb-1">
                 <div className="lotm-plate-nameplate">
-                    <span>{message ? match.speakerName : 'Narration'}</span>
+                    <span>
+                        {message ? match.speakerName : 'Narration'}
+                        {speakerStanding && <span className="lotm-plate-standing">{speakerStanding}</span>}
+                    </span>
                     <div className="lotm-plate-controls">
                         {isStreaming && viewingLatest && <span className="lotm-plate-streaming">writing</span>}
                         <button
@@ -180,7 +201,7 @@ export function LotmDialoguePlate({
             {sceneOpen && (
                 <LotmSceneModal
                     backdrop={match.backdrop}
-                    portraits={match.portraits}
+                    portraits={portraits}
                     speakerName={message ? match.speakerName : 'Scene'}
                     locationLabel={locationLabel}
                     beatLabel={beatLabel}

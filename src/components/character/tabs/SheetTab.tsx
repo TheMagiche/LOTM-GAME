@@ -29,7 +29,7 @@ export interface SheetTabHandle {
  *  - No PC → create mode (empty draft) → `setPlayerCharacter` on save.
  *  - PC exists → view mode with an Edit toggle → `updatePlayerCharacter` on save.
  *
- * The read-only Bonds section + established-events list live in the Record tab;
+ * The read-only Standing section + established-events list live in the Record tab;
  * the inventory grid lives in the Inventory tab; the stat block lives in the
  * Stats tab. This is the user-authored mechanical sheet only.
  *

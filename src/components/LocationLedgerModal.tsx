@@ -39,6 +39,8 @@ export function LocationLedgerModal() {
         setLocationLedger,
         context,
         updateContext,
+        locationLedgerFocusId,
+        clearLocationLedgerFocus,
     } = useAppStore();
 
     const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -66,6 +68,25 @@ export function LocationLedgerModal() {
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
     }, [locationLedgerOpen, toggleLocationLedger]);
+
+    useEffect(() => {
+        if (!locationLedgerOpen || !locationLedgerFocusId) return;
+        const needle = locationLedgerFocusId.trim();
+        const byId = locationLedger.find(loc => loc.id === needle);
+        const byName = byId
+            ?? resolvePlace(needle, locationLedger)
+            ?? locationLedger.find(loc => loc.name.toLowerCase() === needle.toLowerCase());
+        if (byName) {
+            setSelectedId(byName.id);
+            setForm({ ...byName });
+            setFeaturesDraft(byName.features.join(', '));
+            setNewConnectionTo('');
+            setNewConnectionBand('local');
+            setNewConnectionNote('');
+            setIsEditing(false);
+        }
+        clearLocationLedgerFocus();
+    }, [locationLedgerOpen, locationLedgerFocusId, locationLedger, clearLocationLedgerFocus]);
 
     if (!locationLedgerOpen) return null;
 

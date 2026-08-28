@@ -50,7 +50,7 @@ export function LotmPathwayKitFields({ kit, isEditing, onChange }: Props) {
                         onChange={e => setPathway(e.target.value)}
                         className="w-full bg-surface border border-border rounded px-3 py-2 text-sm text-text-primary disabled:opacity-70 disabled:bg-void disabled:border-transparent outline-none focus:border-amber-300"
                     >
-                        <option value="">Mundane (no pathway)</option>
+                        <option value="">No pathway</option>
                         {LOTM_PATHWAYS.map(p => (
                             <option key={p.id} value={p.id}>{p.name}</option>
                         ))}

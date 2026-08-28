@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { X, Package } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import type { LootTree, LootPickNode } from '../../types';
+import { labelLotmLootCategory } from '../../worldpacks/lotmLootLabels';
 
 /**
  * Loot Engine WO-05 — pre-roll modal. Opens BEFORE the loot walk. The player
@@ -112,7 +113,7 @@ export function LootRollModal() {
                                             onChange={() => toggle(opt)}
                                             className="accent-terminal"
                                         />
-                                        <span className="flex-1">{opt}</span>
+                                        <span className="flex-1">{labelLotmLootCategory(opt)}</span>
                                         <span className="text-[10px] text-text-dim">w{rootPick.weights[opt]}</span>
                                     </label>
                                 ))}

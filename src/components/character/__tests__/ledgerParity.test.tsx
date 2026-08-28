@@ -43,11 +43,24 @@ describe('WO-A2 §4.1 — ledger parity (source files preserved + ContextDrawer 
         expect(s).toMatch(/Populate Profile/);
     });
 
-    it('the RecordTab still has the Identity ON/OFF toggle and Bonds section', () => {
+    it('the RecordTab still has the Identity ON/OFF toggle and Standing section', () => {
         const s = src('src/components/character/tabs/RecordTab.tsx');
         expect(s).toMatch(/characterProfileActive/);
-        expect(s).toMatch(/Bonds/);
+        expect(s).toMatch(/Standing/);
         expect(s).toMatch(/selectPcBonds/);
+    });
+
+    it('Illustrated LOTM surfaces do not say Race, Class, HP, or Bonds', () => {
+        const files = [
+            'src/components/lotm/LotmPlayerHud.tsx',
+            'src/components/lotm/LotmPathwayKitFields.tsx',
+            'src/components/lotm/LotmPlayHeader.tsx',
+            'src/components/lotm/LotmDialoguePlate.tsx',
+        ];
+        for (const file of files) {
+            expect(src(file)).not.toMatch(/\bRace\b|\bClass\b|\bHP\b|\bBonds\b/);
+        }
+        expect(src('src/components/lotm/LotmPathwayKitFields.tsx')).not.toMatch(/Mundane/);
     });
 
     it('the EnginesTab absorbed TokenGauge + Smart Injection + auto-update', () => {

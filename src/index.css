@@ -571,6 +571,21 @@ html[style*="--lang-font-stack"] {
   color: #e8e0d0;
 }
 
+.lotm-portrait-standing {
+  display: block;
+  margin-top: 2px;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #c9a227;
+}
+
+.lotm-plate-standing {
+  margin-left: 8px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: rgba(232, 224, 208, 0.72);
+}
+
 .lotm-portrait-pc {
   width: min(32vw, 250px);
 }
@@ -1536,12 +1551,34 @@ html[style*="--lang-font-stack"] {
   min-width: 0;
 }
 
+.lotm-player-hud-identity-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 180px;
+}
+
+.lotm-player-hud-emblem-btn {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lotm-player-hud-emblem-btn:hover,
+.lotm-player-hud-emblem-btn:focus-visible {
+  border-color: rgba(201, 162, 39, 0.45);
+}
+
 .lotm-player-hud-identity-btn {
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 0;
-  flex: 1 1 180px;
+  flex: 1 1 auto;
   margin: 0;
   padding: 2px 6px 2px 2px;
   border: 1px solid transparent;
@@ -1654,6 +1691,111 @@ html[style*="--lang-font-stack"] {
 
 .lotm-player-hud-meter.is-spi .lotm-player-hud-meter-track > span {
   background: linear-gradient(90deg, #4a3a72, #c9b6e4);
+}
+
+.lotm-player-hud-meter.is-dig .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #3d5a2e, #c9a227);
+}
+
+.lotm-player-hud-loc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 64px;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(232, 224, 208, 0.7);
+}
+
+.lotm-player-hud-loc strong {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #e8e0d0;
+}
+
+.lotm-player-hud-loc.is-tells strong { color: #d4a017; }
+.lotm-player-hud-loc.is-slippage strong { color: #e07a3d; }
+.lotm-player-hud-loc.is-rampage strong { color: #d4534a; }
+
+.lotm-player-hud-band,
+.lotm-player-hud-acting,
+.lotm-player-hud-loot {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.78);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotm-player-hud-band.is-advantage { color: #e0c36a; }
+.lotm-player-hud-band.is-disadvantage { color: #d4534a; }
+
+.lotm-player-hud-loot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: normal;
+}
+
+.lotm-player-hud-loot button {
+  border: 0;
+  background: transparent;
+  color: rgba(243, 234, 216, 0.55);
+  cursor: pointer;
+}
+
+.lotm-player-hud-ability-btn {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.lotm-player-hud-ability-detail {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: rgba(243, 234, 216, 0.7);
+  white-space: normal;
+}
+
+.lotm-player-hud-potions {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.lotm-player-hud-potions img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.lotm-player-hud-drink {
+  margin-top: 8px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: transparent;
+  color: #e8e0d0;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lotm-player-hud-drink:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .lotm-player-hud-actions {
@@ -1947,7 +2089,8 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-play-header-tier,
-.lotm-play-header-grimoire {
+.lotm-play-header-grimoire,
+.lotm-play-header-askgm {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1965,6 +2108,7 @@ html[style*="--lang-font-stack"] {
 
 .lotm-play-header-tier:hover,
 .lotm-play-header-grimoire:hover,
+.lotm-play-header-askgm:hover,
 .lotm-play-header-view button:hover {
   color: #e0c36a;
   border-color: rgba(201, 162, 39, 0.5);
@@ -2259,6 +2403,62 @@ html[style*="--lang-font-stack"] {
   min-width: 0;
   overflow: auto;
   padding: 16px 18px 22px;
+}
+
+.lotm-grimoire-chronicle {
+  margin: 0 18px 0;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.lotm-grimoire-chronicle p {
+  margin: 0;
+  min-width: 0;
+}
+
+.lotm-grimoire-chronicle dt,
+.lotm-grimoire-chronicle-kicker {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.8);
+}
+
+.lotm-grimoire-chronicle dd,
+.lotm-grimoire-chronicle-value {
+  margin: 2px 0 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 14px;
+  color: #f3ead8;
+}
+
+.lotm-grimoire-chronicle button {
+  border: 0;
+  background: transparent;
+  color: #e0c36a;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+}
+
+.lotm-grimoire-map-btn {
+  margin-top: 8px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: transparent;
+  color: #e8e0d0;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .lotm-grimoire-stack {

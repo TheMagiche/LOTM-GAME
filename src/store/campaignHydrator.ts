@@ -11,7 +11,7 @@ import { migrateLegacyContext, normalizeItemLedgerEntry } from '../types';
 import type { GameContext, ArchiveChapter, ArchiveIndexEntry, DivergenceRegister, DivergenceEntry, ChatMessage } from '../types';
 import { migrateV1ToV2 } from '../services/campaign-state/divergenceRegister';
 import { migratePCIntoContext } from '../services/character/migratePC';
-import { loadLocationTable } from '../services/tables/locationTable';
+import { loadLocationTable, locationTableDescriptor } from '../services/tables/locationTable';
 import { factionTableDescriptor, loadFactionTable } from '../services/tables/factionTable';
 import { loadItemTable } from '../services/tables/itemTable';
 import { parseFactionsFromLore } from '../services/lore/loreFactionParser';
@@ -22,9 +22,13 @@ import { emitCoreEvent } from '../services/mods/events';
 import { safeSceneNum } from '../utils/helpers';
 import type { ArcRecord } from '../types/arc';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
+import { isLotmCampaign } from '../services/lotm/lotmSkin';
 import { attachLotmPathwaysToNpcs, formatLotmPathwayLabel } from '../worldpacks/lotmPathways';
 import { attachLotmPortraitsToNpcs } from '../services/lotm/lotmVisualMatcher';
 import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
+import { mergeLotmChurches } from '../worldpacks/lotmChurches';
+import { mergeLotmGeography } from '../worldpacks/lotmGeography';
+import { warmupLotmAbilityCompendium } from '../worldpacks/lotmAbilityCompendium';
 
 /**
  * WO-P5-12 §7 Step 1 — migrate Arc's state from `context.arcs` to the
@@ -277,7 +281,7 @@ async function loadCampaignMeta(campaignId: string) {
 }
 
 export async function hydrateCampaign(campaignId: string) {
-    const [state, chunks, npcs, locations, factions, items, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
+    const [state, chunks, npcs, loadedLocations, factions, items, archiveIndex, timeline, chapters, entities, divReg, modTables] = await Promise.all([
         loadCampaignState(campaignId),
         getLoreChunks(campaignId),
         getNPCLedger(campaignId),
@@ -298,6 +302,7 @@ export async function hydrateCampaign(campaignId: string) {
         hydrateModTablesFromServer(campaignId),
     ]);
     const relationshipMemories = state?.context?.relationshipMemory === true ? await loadRelationshipMemories(campaignId) : { npcToMc: [], npcToNpc: [] };
+    let locationLedger = Array.isArray(loadedLocations) ? loadedLocations : [];
 
     const rawContext: GameContext = { ...DEFAULT_CONTEXT, ...(state?.context ?? {}) } as GameContext;
     const migratedContext = migrateLegacyContext(rawContext);
@@ -444,6 +449,27 @@ export async function hydrateCampaign(campaignId: string) {
             }
         }
     }
+    if (isLotmCampaign(await loadCampaignMeta(campaignId))) {
+        const churchMerged = mergeLotmChurches(factionLedger);
+        if (churchMerged.length > factionLedger.length) {
+            factionLedger = churchMerged;
+            try {
+                await genericSave(factionTableDescriptor as never, campaignId, churchMerged);
+            } catch (e) {
+                console.warn('[Hydrator] Failed to persist gamedata churches:', e);
+            }
+        }
+        const geoMerged = mergeLotmGeography(locationLedger);
+        if (geoMerged.length > locationLedger.length) {
+            try {
+                await genericSave(locationTableDescriptor as never, campaignId, geoMerged);
+            } catch (e) {
+                console.warn('[Hydrator] Failed to persist gamedata geography:', e);
+            }
+            locationLedger = geoMerged;
+        }
+        warmupLotmAbilityCompendium();
+    }
 
     useAppStore.setState({
         context: finalContext,
@@ -451,7 +477,7 @@ export async function hydrateCampaign(campaignId: string) {
         condenser: { ...(state?.condenser ?? DEFAULT_CONDENSER) },
         loreChunks: chunks,
         npcLedger: finalNpcLedger,
-        locationLedger: locations ?? [],
+        locationLedger,
         factionLedger,
         itemLedger: Array.isArray(items) ? items.map(normalizeItemLedgerEntry) : [],
         archiveIndex: archiveIndex ?? [],

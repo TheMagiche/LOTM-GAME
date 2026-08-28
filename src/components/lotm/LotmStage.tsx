@@ -26,7 +26,10 @@ export function LotmStage({ portraits }: { portraits: LotmPortraitHit[] }) {
                     className={`lotm-portrait ${p.isPc ? 'lotm-portrait-pc' : ''}`}
                 >
                     <img src={portraitSrc(p.src)} alt={p.name} />
-                    <figcaption>{p.name}</figcaption>
+                    <figcaption>
+                        {p.name}
+                        {p.standing && <span className="lotm-portrait-standing">{p.standing}</span>}
+                    </figcaption>
                 </figure>
             ))}
         </div>

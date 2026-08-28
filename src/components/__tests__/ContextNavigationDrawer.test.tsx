@@ -18,8 +18,10 @@ describe('ContextNavigationDrawer', () => {
 
         expect(screen.getByRole('navigation', { name: 'Context navigation' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Character' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Grimoire' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: 'System Context' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Rules' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Backups' })).toBeNull();
         expect(screen.getByRole('button', { name: 'Leave chronicle' })).toBeInTheDocument();
     });
@@ -28,13 +30,13 @@ describe('ContextNavigationDrawer', () => {
         render(<ContextNavigationDrawer />);
         fireEvent.click(screen.getByRole('button', { name: 'Engine' }));
 
-        expect(screen.getByRole('button', { name: 'System Context' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Rules' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Backups' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Settings' })).toBeInTheDocument();
 
-        fireEvent.click(screen.getByRole('button', { name: 'System Context' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Rules' }));
         expect(useAppStore.getState().contextScreen).toBe('sys');
-        expect(screen.getByRole('dialog', { name: 'System Context' })).toBeInTheDocument();
+        expect(screen.getByRole('dialog', { name: 'Rules' })).toBeInTheDocument();
     });
 
     it('can collapse Play without hiding Engine', () => {
