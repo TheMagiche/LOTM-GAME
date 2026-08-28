@@ -21,7 +21,7 @@ export const PUBLIC_ASSETS_DIR = process.env.NODE_ENV === 'production'
  * `/assets/lotm` so campaigns do not copy hundreds of webps into their
  * own folders. Overridable for tests via LOTM_ASSETS_DIR.
  */
-export const LOTM_ASSETS_DIR = process.env.LOTM_ASSETS_DIR || path.join(__projectRoot, 'lotmdnd');
+export const LOTM_ASSETS_DIR = process.env.LOTM_ASSETS_DIR || path.join(__projectRoot, 'gamedata');
 
 /**
  * Installed mods (Project 2 / WO-P2-04). Deliberately a SIBLING of `data/` rather than a child:

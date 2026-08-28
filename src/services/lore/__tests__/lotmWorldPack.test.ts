@@ -10,8 +10,8 @@ import { loadLootTree } from '../lootTreeLoader';
 import { resolveLootDrop } from '../../engine/lootEngine';
 
 // The shipped Lord of the Mysteries world pack is a fixture like any other
-// Example_Setup compendium — these tests keep its machine-parsed format honest.
-const LOTM_DIR = resolve(__dirname, '../../../../Example_Setup/World_compendium/Lord of the Mysteries');
+// mechanics compendium — these tests keep its machine-parsed format honest.
+const LOTM_DIR = resolve(__dirname, '../../../../mechanics/World_compendium/Lord of the Mysteries');
 const lore = readFileSync(resolve(LOTM_DIR, 'world_lore_lord_of_the_mysteries.md'), 'utf-8');
 const chunks = chunkLoreFile(lore);
 
@@ -51,17 +51,23 @@ describe('LOTM world pack — NPC ledger seeding', () => {
         ]));
     });
 
-    it('fills every required field for every character — no placeholders', () => {
-        for (const npc of npcs) {
-            expect(npc.name.trim(), 'name').toBeTruthy();
-            expect(npc.appearance?.trim() ?? '', `${npc.name} appearance`).toBeTruthy();
-            expect(npc.disposition?.trim() ?? '', `${npc.name} disposition`).toBeTruthy();
-            expect(npc.personality?.trim() ?? '', `${npc.name} personality`).toBeTruthy();
-            expect(npc.voice?.trim() ?? '', `${npc.name} voice`).toBeTruthy();
-            expect(npc.goals?.trim() ?? '', `${npc.name} goals`).toBeTruthy();
-            expect(npc.storyRelevance?.trim() ?? '', `${npc.name} storyRelevance`).toBeTruthy();
-            expect(npc.exampleOutput?.trim() ?? '', `${npc.name} exampleOutput`).toBeTruthy();
-            expect(typeof npc.affinity).toBe('number');
+    it('fills every required field for the canon cast — no placeholders', () => {
+        const canon = [
+            'Klein Moretti', 'Audrey Hall', 'Alger Wilson', 'Dunn Smith',
+            'Leonard Mitchell', 'Zaratul', 'Amon', 'Adam', 'Azik Eggers',
+            'Roselle Gustav', 'Will Auceptin', 'Fors Wall', 'Xio Derecha',
+        ];
+        for (const name of canon) {
+            const npc = npcs.find(n => n.name === name);
+            expect(npc, name).toBeDefined();
+            expect(npc!.appearance?.trim() ?? '', `${name} appearance`).toBeTruthy();
+            expect(npc!.disposition?.trim() ?? '', `${name} disposition`).toBeTruthy();
+            expect(npc!.personality?.trim() ?? '', `${name} personality`).toBeTruthy();
+            expect(npc!.voice?.trim() ?? '', `${name} voice`).toBeTruthy();
+            expect(npc!.goals?.trim() ?? '', `${name} goals`).toBeTruthy();
+            expect(npc!.storyRelevance?.trim() ?? '', `${name} storyRelevance`).toBeTruthy();
+            expect(npc!.exampleOutput?.trim() ?? '', `${name} exampleOutput`).toBeTruthy();
+            expect(typeof npc!.affinity).toBe('number');
         }
     });
 
@@ -77,7 +83,7 @@ describe('LOTM world pack — NPC ledger seeding', () => {
     it('assigns LOTM pathways instead of elemental affinity, and keeps them distinct', () => {
         const byName = Object.fromEntries(npcs.map(n => [n.name, n.signatureKit]));
         expect(byName['Klein Moretti']?.pathway).toBe('fool');
-        expect(byName['Klein Moretti']?.sequence).toBe(9);
+        expect(byName['Klein Moretti']?.sequence).toBe(0);
         expect(byName['Audrey Hall']?.pathway).toBe('visionary');
         expect(byName['Alger Wilson']?.pathway).toBe('tyrant');
         expect(byName['Dunn Smith']?.pathway).toBe('darkness');

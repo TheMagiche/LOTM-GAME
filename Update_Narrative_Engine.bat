@@ -232,7 +232,7 @@ echo   - Files inside the "data" folder
 echo     (your saved campaigns and settings)
 echo     These are NOT tracked by Git and will
 echo     never be touched by the update.
-echo   - Files inside the "Example_Setup" folder
+echo   - Files inside the "mechanics" folder
 echo     that you copied and renamed
 echo.
 echo If the only changes listed below are inside

@@ -1,6 +1,6 @@
 /**
  * Player-facing LOTM lore catalog for the Grimoire overlay.
- * Loads novel reference JSON from lotmdnd/assets/data — not abilities,
+ * Loads novel reference JSON from gamedata/assets/data — not abilities,
  * potion formulas, items, or pricing (those are game mechanics).
  *
  * Volume files currently live in `grimoire/` (the `volumes/` rename has not landed).
@@ -191,32 +191,32 @@ type RawChurchFile = { churches?: RawChurch[] };
 type RawCreature = { name?: string; description?: string; pathway?: string | null };
 
 const volumeFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/grimoire/lotm_vol_*.json',
+    '../../gamedata/assets/data/grimoire/lotm_vol_*.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawVolumeFile>;
 
 const timelineFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/grimoire/Lotm_timeline.json',
+    '../../gamedata/assets/data/grimoire/Lotm_timeline.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawTimelineFile>;
 
 const overviewFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/pathways/**/*pathway_overview.json',
+    '../../gamedata/assets/data/pathways/**/*pathway_overview.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawOverviewFile>;
 
 const emblemFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/pathways/**/*Symbol2.webp',
+    '../../gamedata/assets/data/pathways/**/*Symbol2.webp',
     { eager: true, query: '?url', import: 'default' },
 ) as Record<string, string>;
 
 const churchFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/churches/orthodox_churches.json',
+    '../../gamedata/assets/data/churches/orthodox_churches.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawChurchFile>;
 
 const worldFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/world/**/*.json',
+    '../../gamedata/assets/data/world/**/*.json',
     { eager: true, import: 'default' },
 ) as Record<string, unknown>;
 

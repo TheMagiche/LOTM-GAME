@@ -21,5 +21,5 @@ Prerequisites are descriptive guidance. The module does not forbid assignments o
 enforce class, species, or ruleset eligibility.
 
 Example compendiums and the original-magic-system template are in
-`Example_Setup/Ability Compendium` at the repository root. The D&D example is the
-SRD-compatible reference only; the non-SRD full rules compendium is not published.
+`mechanics/_Templates` at the repository root. The Lord of the Mysteries
+pathway catalog lives in `mechanics/Ability Compendium`.

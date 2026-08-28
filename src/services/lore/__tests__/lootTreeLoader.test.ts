@@ -123,14 +123,14 @@ describe('Loot Tree Loader (loadLootTree)', () => {
         expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('has invalid shape'));
     });
 
-    it('should load and validate the real Class Scroll World loot.json database', () => {
-        const jsonPath = path.resolve(__dirname, '../../../../Example_Setup/World_compendium/Class Scroll World/loot.json');
+    it('should load and validate the shipped Lord of the Mysteries loot.json', () => {
+        const jsonPath = path.resolve(__dirname, '../../../../mechanics/World_compendium/Lord of the Mysteries/loot.json');
         const rawJson = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
         const result = loadLootTree(rawJson);
         expect(result).not.toBeNull();
-        expect(result?.root).toBe('categoryPick');
-        expect(result?.nodes['categoryPick']?.kind).toBe('pick');
+        expect(result?.root).toBe('root');
+        expect(result?.nodes['root']?.kind).toBe('pick');
         expect(warnSpy).not.toHaveBeenCalled();
     });
 });

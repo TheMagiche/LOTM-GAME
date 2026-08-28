@@ -9,12 +9,12 @@ import type { LoreChunk, LocationEntry, LocationConnection } from '../../types';
  * geography already known, instead of discovering it one estimator guess at a
  * time.
  *
- * Format (matches the shipped compendiums, e.g. Aethelgard):
+ * Format (matches the shipped Lord of the Mysteries compendium):
  *
- *   ### LOCATION -- Caldera City (Caldera)
+ *   ### LOCATION -- Backlund (Loen Kingdom)
  *   **Type:** Capital city
  *   **Status:** Flourishing, politically tense
- *   The seat of the Calderan Crown. A walled city of stone and timber ...
+ *   The City of Cities. Fog, factories, and seven churches ...
  *
  * The header's trailing parenthetical is the broad location ("Caldera"); every
  * non-bullet line is the description prose. Optional author-authoritative

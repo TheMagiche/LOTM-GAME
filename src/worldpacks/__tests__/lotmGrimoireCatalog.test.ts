@@ -13,7 +13,7 @@ import {
 } from '../lotmGrimoireCatalog';
 
 describe('LOTM grimoire catalog', () => {
-    it('loads eight novel volumes from lotmdnd/assets/data/grimoire', () => {
+    it('loads eight novel volumes from gamedata/assets/data/grimoire', () => {
         expect(LOTM_GRIMOIRE_VOLUMES).toHaveLength(8);
         expect(LOTM_GRIMOIRE_VOLUMES.map(v => v.number)).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
         expect(LOTM_GRIMOIRE_VOLUMES[0]?.title).toBe('Clown');

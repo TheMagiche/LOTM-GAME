@@ -1,34 +1,34 @@
 // generate-lotm-gameplay.mjs
 //
-// Rewrites three gameplay data files from the lotmdnd datasets so that
+// Rewrites three gameplay data files from the gamedata datasets so that
 // progression follows Lord of the Mysteries lore: climbing a Beyonder pathway
 // by gathering potion ingredients, bounties, mystical items, and Sealed
 // Artifacts — not by XP.
 //
 // Inputs (read-only):
-//   lotmdnd/assets/data/pathways/*/*_abilities*.json   — per-sequence abilities
-//   lotmdnd/assets/data/pathways/*/*_advancement.json  — potion formulas + Acting Methods
-//   lotmdnd/assets/data/pathways/*/*_pathway_overview.json — names/aliases/authority
-//   lotmdnd/assets/data/items/*.json                   — weapons, mystical items,
+//   gamedata/assets/data/pathways/*/*_abilities*.json   — per-sequence abilities
+//   gamedata/assets/data/pathways/*/*_advancement.json  — potion formulas + Acting Methods
+//   gamedata/assets/data/pathways/*/*_pathway_overview.json — names/aliases/authority
+//   gamedata/assets/data/items/*.json                   — weapons, mystical items,
 //                                                        Sealed Artifacts (grades 0–3 + unique), medicines
-//   lotmdnd/assets/data/characters/Bounties/lotm_bounties.json — canon bounty amounts
+//   gamedata/assets/data/characters/Bounties/lotm_bounties.json — canon bounty amounts
 //
 // Outputs:
-//   Example_Setup/Ability Compendium/lotm_beyonder_pathways_compendium.json
-//   Example_Setup/World_compendium/Lord of the Mysteries/loot.json
-//   Example_Setup/World_compendium/Lord of the Mysteries/item_catalog.json
+//   mechanics/Ability Compendium/lotm_beyonder_pathways_compendium.json
+//   mechanics/World_compendium/Lord of the Mysteries/loot.json
+//   mechanics/World_compendium/Lord of the Mysteries/item_catalog.json
 
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const PATHWAYS_DIR = join(ROOT, 'lotmdnd/assets/data/pathways');
-const ITEMS_DIR = join(ROOT, 'lotmdnd/assets/data/items');
-const BOUNTIES_PATH = join(ROOT, 'lotmdnd/assets/data/characters/Bounties/lotm_bounties.json');
-const COMPENDIUM_OUT = join(ROOT, 'Example_Setup/Ability Compendium/lotm_beyonder_pathways_compendium.json');
-const LOOT_OUT = join(ROOT, 'Example_Setup/World_compendium/Lord of the Mysteries/loot.json');
-const CATALOG_OUT = join(ROOT, 'Example_Setup/World_compendium/Lord of the Mysteries/item_catalog.json');
+const PATHWAYS_DIR = join(ROOT, 'gamedata/assets/data/pathways');
+const ITEMS_DIR = join(ROOT, 'gamedata/assets/data/items');
+const BOUNTIES_PATH = join(ROOT, 'gamedata/assets/data/characters/Bounties/lotm_bounties.json');
+const COMPENDIUM_OUT = join(ROOT, 'mechanics/Ability Compendium/lotm_beyonder_pathways_compendium.json');
+const LOOT_OUT = join(ROOT, 'mechanics/World_compendium/Lord of the Mysteries/loot.json');
+const CATALOG_OUT = join(ROOT, 'mechanics/World_compendium/Lord of the Mysteries/item_catalog.json');
 
 const readJson = p => JSON.parse(readFileSync(p, 'utf-8'));
 
@@ -190,7 +190,7 @@ function abilityEntry(pathway, seq, abilityText, index) {
         inventoryRequiresEquipped: false,
         loreCheckRequired: false,
         loreStatus: 'verified',
-        loreCheckNotes: 'Generated from lotmdnd canonical dataset.',
+        loreCheckNotes: 'Generated from gamedata canonical dataset.',
         loreCheckedAt: Date.now(),
         masteryLadder: [],
         upgradeNodes: [],
@@ -245,7 +245,7 @@ function foundationEntry(pathways) {
         inventoryRequiresEquipped: false,
         loreCheckRequired: false,
         loreStatus: 'verified',
-        loreCheckNotes: 'Generated from lotmdnd canonical dataset.',
+        loreCheckNotes: 'Generated from gamedata canonical dataset.',
         loreCheckedAt: Date.now(),
         masteryLadder: [
             {

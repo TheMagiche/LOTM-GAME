@@ -41,6 +41,7 @@ export function createLotmAssetsRouter() {
             });
         }
 
+        // image/book and image/vol_* were removed from gamedata; these stay empty.
         const volumes = {};
         for (let i = 1; i <= 8; i++) {
             volumes[`vol_${i}`] = listWebpRecursive(`image/vol_${i}`);
@@ -49,7 +50,6 @@ export function createLotmAssetsRouter() {
         res.json({
             backgrounds: listWebp('image/backgrounds'),
             characters: listWebp('image/characters'),
-            spoilerCharacters: listWebp('image/characters/spoiler_characters'),
             book: listWebp('image/book'),
             volumes,
             pathways: listWebpRecursive('assets/data/pathways').filter(p =>

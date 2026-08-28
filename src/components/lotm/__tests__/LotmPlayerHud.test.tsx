@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import claraJson from '../../../../Example_Setup/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
+import claraJson from '../../../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
 import { DEFAULT_CHARACTER_PROFILE } from '../../../types';
 import type { PlayerCharacter } from '../../../types';
 import { characterProfileFromPlayerCharacter } from '../../../services/character/profileFromPc';

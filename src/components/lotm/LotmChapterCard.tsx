@@ -32,7 +32,7 @@ export function LotmChapterCard() {
             onClick={() => setCard(null)}
             aria-label={`Chapter sealed: ${card.title}`}
         >
-            <img src={lotmAssetUrl('image/book/0001.webp')} alt="" />
+            <img src={lotmAssetUrl('image/cover.webp')} alt="" />
             <div className="lotm-chapter-card-copy">
                 <span className="lotm-chapter-card-kicker">{card.id}</span>
                 <h2>{card.title}</h2>
