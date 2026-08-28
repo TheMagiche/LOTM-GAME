@@ -18,8 +18,8 @@
           "13 drops of rosemary essential oil"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Pry into mysteries, but always through the keyhole rather than the door. A Mystery Pryer observes, deduces, and uncovers what others hide—secrets, hidden knowledge, and the small truths people bury. Never force open what can be learned through patience, and never pry without purpose, for knowledge stolen carelessly invites the attention of what guards it.",
+      "consumption_backlash": "The gradient of colors would sink into their eyes, and the world would begin revealing its hidden layers—glances that carry messages, silences that conceal arguments, doors that hide more than rooms. Their own face would grow unreadable to others, and the habit of watching would seep into their dreams, where they would find themself prying into the secrets of strangers who may or may not exist. The temptation would be to pry into things far above their station. Only by prying with discipline—earning each secret through observation rather than greed—would the potion settle, leaving them a watcher whose gaze opens locks without ever being noticed turning them."
     },
     {
       "sequence": 8,
@@ -38,8 +38,8 @@
           "10 drops of Venus Flytrap Juice"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Study the body as a scholar studies texts, and fight as if knowledge were a weapon. A Melee Scholar analyzes every opponent—stance, habit, weakness—then applies that learning with iron fists. Train the mind and the body as one discipline, never letting either atrophy, and treat every battle as an examination whose answers are written in bruises.",
+      "consumption_backlash": "The storm within the potion would rage through their muscles, and their body would begin demanding the education their mind received—every lesson learned in books demanding to be tested in blood. Their fists would twitch with the urge to strike, their spine straightening with iron stiffness. Knowledge they had never practiced would flood their reflexes, and untested theory would fight untrained instinct. Only by sparring—by submitting every idea to the honest examination of combat—would the storm settle, leaving them a scholar whose every theorem has been proven upon flesh and whose every punch carries the weight of study."
     },
     {
       "sequence": 7,
@@ -58,8 +58,8 @@
           "1 copy of a previous Warlock's notes"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Master the old ways and improve upon them. A Warlock studies the craft of those who came before—their notes, their rituals, their mistakes—then bends that inheritance to new purposes. Experiment boldly but record everything, for the next Warlock will build upon your work as you built upon another's. Never let tradition become a cage, and never let innovation become recklessness.",
+      "consumption_backlash": "The gray flocculent particles would drift through their veins like unquiet thoughts, and the voices of every Warlock whose notes they had studied would murmur in their mind—each offering contradictory advice, each convinced their method is the true one. Their own experiments would begin haunting them: potions that failed, rituals that misfired, knowledge gained too fast. Only by writing their own notes—by becoming an author of the craft rather than a reader—would the chorus of predecessors quiet, leaving them a Warlock whose knowledge is truly theirs, tested and recorded in their own hand."
     },
     {
       "sequence": 6,
@@ -78,8 +78,8 @@
           "10 drops of Paper Root Grass Hydrolat"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Teach the craft of scrolls and be taught by them in turn. A Scrolls Professor studies the ancient texts, creates new ones, and passes the knowledge on—treating every scroll as a living lecture that outlives its author. Write with care, for paper remembers; teach with patience, for students inherit your errors. Never let knowledge exist only in your head, for a professor's duty is to make it outlive them.",
+      "consumption_backlash": "The decaying woody feel would spread through their body, and their skin would begin to feel like aged parchment—dry, inscribed, and heavy with the words of every scroll they had ever read. Knowledge they had taught would return to examine them, each lesson scrutinized for the errors they passed on. Their voice would take on the cadence of lecture halls, and their dreams would fill with unfinished manuscripts. Only by writing the one scroll that is entirely their own—distilling everything they know into a text worth preserving—would the parchment feeling settle, leaving them a professor whose body is a library and whose life is a lesson worth copying."
     },
     {
       "sequence": 5,
@@ -99,9 +99,9 @@
         ]
       },
       "advancement_ritual": "To select, observe, and draw a complete picture of a star constellation, recreating its true appearance, and mastering all the corresponding mysticism knowledge.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "A constellation is not merely stars—it is a story the heavens tell about themselves, a pattern that exists only for those who look up and connect the lights. By observing one constellation completely and mastering its mysticism, the advancer learns the heavens' grammar: how scattered points of light become meaning, how distance becomes destiny. The drawn picture becomes a permanent covenant between their spirituality and that corner of the sky, granting them a star's-eye view of fate.",
+      "acting_method": "Read the sky as a scholar reads a book, and let the stars be your library. A Constellations Master maps the heavens, deciphers the patterns, and draws fate's outlines from the lights above. Observe patiently—stars do not hurry—and record faithfully, for the sky changes only for those who fail to watch. Never claim a star's authority as your own; you are its reader, not its author.",
+      "consumption_backlash": "The illusory eyes formed of starlight would open within their own, and they would begin seeing the world as the stars see it: vast, slow, and patterned. Distances would collapse—mountains becoming grains of sand, years becoming moments—until their sense of scale threatened to dissolve entirely. The star map in the formula would burn itself into their memory, redrawing their inner sky. Only by holding onto the constellation they mastered—returning to its pattern each night, letting its fixed story anchor their drifting perspective—would they regain their footing between the earthly and the celestial, leaving them a master who reads fate in the heavens without floating away among them."
     },
     {
       "sequence": 4,
@@ -121,9 +121,9 @@
         ]
       },
       "advancement_ritual": "Completely analyze a drop of blood from a Mythical Creature and obtain complicated and massive amounts of knowledge. Note 1: Due to the differing types of Mythical Creature blood employed, should they succeed, their specialisation within the 'Mysticologist' stage will also exhibit certain variations. Note 2: Although the advancement ritual of a Mysticologist doesn't have any requirements on the Mythical Creature's pathway, the best choice is still the Wheel of Fortune Pathway. Note 3: The blood of an Angel-level creature that is one of the main materials for a Sequence 2 angel would work, but the effect is not as good as a complete one. Note 4: The blood of a Boon-receiving Angel would also work, as long as 'Their' physical state has changed.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "A single drop of a Mythical Creature's blood contains its entire existence—every secret of its flesh, every law of its power, every memory written into its lineage. To completely analyze such a drop is to read a god's biography in a droplet. The advancer who accomplishes this proves they can digest knowledge at a divine scale, and the creature's nature imprints upon their specialization, making each Mysticologist a unique scholar shaped by the mystery they chose to decode.",
       "acting_method": "Search for mysticism knowledge, the closer to the truth the more beneficial.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The purple sparks within the potion would ignite in their mind, and the massive knowledge from the analyzed blood would pour in—not as words, but as raw understanding that bypasses language entirely. Their skull would feel too small for what fills it; concepts would collide and fuse, threatening to burn their sanity as fuel. The Eye of Evil God's ash would whisper interpretations no sane mind should hold. Only by organizing the flood—cataloging, cross-referencing, taming the knowledge into structure—would the sparks settle into a steady flame, leaving them a mysticologist whose erudition illuminates rather than incinerates."
     },
     {
       "sequence": 3,
@@ -143,9 +143,9 @@
         ]
       },
       "advancement_ritual": "It involves gathering a vast amount of information, analyzing, deducing, and divining to 'Prophesy' a certain event that will occur three years later. (It must involve demigods.) Ultimately the performer has to witness its fulfillment. Throughout the process, they cannot rely on external forces or directly drive the event to happen; the ritual performer can only guide it indirectly.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To prophesy without divine power is to prove that foresight is a discipline, not a gift. By gathering information, deducing, and divining a demigod-involved event three years before it occurs—and then waiting to witness its fulfillment—the advancer demonstrates mastery over causality itself: the ability to read the present so completely that the future becomes legible. The three years of waiting teach the final lesson: prophecy is not control, and the true clairvoyant guides fate without ever gripping it.",
+      "acting_method": "See what others cannot, and speak of it only when necessary. A Clairvoyant observes the threads of cause and effect, deducing what will be from what is. Divine with discipline—every vision verified, every deduction tested—and never use foresight for petty gain, for the future resents being cheapened. Accept that some things seen cannot be changed, and that the burden of prophecy is watching, not acting.",
+      "consumption_backlash": "The mercury veins in the potion would spread through their own, and time would begin leaking into their sight. They would glimpse moments that have not happened—a stranger's death next week, a city's burning next decade—each vision arriving with the weight of certainty. The nine hairs of the fate-abnormal would twitch in their pocket, resonating with every future they brushed against. The danger is not blindness but drowning: mistaking a possibility for a promise. Only by verifying each vision through deduction—treating sight as hypothesis, never as verdict—would the leaks seal into controlled channels, leaving them a clairvoyant who sees the future without being swept away by it."
     },
     {
       "sequence": 2,
@@ -166,7 +166,7 @@
       },
       "advancement_ritual": "Prevent a disaster that involves a higher level of power.",
       "ritual_essence": "The essence of a ritual is to establish a connection with the spiritual information generated by the act. This information has a distinct imprint and is exceptionally solid due to its high level of involvement. It will not be dispersed by other information in a short period of time, helping the ritual performer to initially stabilize their own consciousness and gradually gather the scattered and diluted torrent of their original spiritual information.",
-      "acting_method": "No data available.",
+      "acting_method": "Serve the world with what you know, and let wisdom outrun power. A Sage answers questions before they become crises, teaches before ignorance becomes ruin, and acts before disaster strikes. Never hoard knowledge that could save, and never wield truth as a weapon when it could be a shield. The sage's authority is not commanded but conceded—earned by being right, again and again, when it mattered.",
       "consumption_backlash": "As the potion enters their mouth, their body would turn illusory at a discernible pace. They would break down into thick and complicated knowledge, changing into an existence that was a flux of information. The surrounding area would lose their sense of reality, it was as though they had been restored to the most fundamental blocks of information. For most of Sequence 3 Beyonders of the Hermit Pathway, such a state is extremely dangerous. If one's willpower isn't strong enough, their luck isn't good enough, and they aren't prepared enough, the knowledge that they transform into would be infiltrated by all kinds of information within seconds. They would be washed away, assimilated, and thus quickly lose consciousness. They won't be able to reassemble their bodies, turning into a very strange and difficult monster to deal with in mysticism. A Knowledge Demon, it was also known as an Information Creature. At that moment, they would try their best to maintain their consciousness and establish a connection with the information produced in the spirit world by preventing a high-level disaster. This information has a distinct imprint and is exceptionally solid due to its high level of involvement. It will not be dispersed by other information in a short period of time, helping the ritual performer to initially stabilize their own consciousness and gradually gather the scattered and diluted torrent of their original spiritual information. The information has a clear imprint belonging to them, and it involves a very high level of power. It is exceptionally 'solid' and couldn't be dispersed by other information for short periods of time. It would help them to stabilize their consciousness and slowly gather the dissipating flux of information around their body. Time would tick by. There may be several times when they waver on the border of losing consciousness, but in the end, they have to manage to tide through it. They would gather all the information that belonged to them and begin to reconstruct their body. At that moment, they would gradually feel their anchors. This would stabilise their condition better, allowing them to resist the ancient will that is slowly developing in their body. At this moment, a series of secret information came from nowhere. Taking the opportunity while Bernadette was reforming her body, it attempted to fuse with her. As an embodiment of this world's knowledge and information, as a quasi-Sequence 0 existence of the Hermit Pathway, the Hidden Sage had a certain influence on Beyonders of a lower Sequence than 'Him.' They would have to reassemble their body using their own anchors to balance out the terrifying will that is surfacing on their body. At that moment, they would truly become a 'Them', a Sequence 2 angel of the Hermit pathway—an important figure in the mysterious world that could be addressed as a secret existence."
     },
     {
@@ -185,9 +185,9 @@
         ]
       },
       "advancement_ritual": "Analyze oneself and master all knowledge related to oneself, then understand and find the most core, key part (in the Western Continent, this process is called 'Illuminating the Mind and Perceiving the True Nature') and use it as a link to find a way to integrate the remaining parts and other knowledge they have to initially form a whole. The whole form is known as a Primordial Spirit/Nascent Soul.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To know everything except oneself is to be a library with no catalog. By analyzing their own existence—every memory, every habit, every hidden motive—and finding the core key part, the advancer achieves what no external study can provide: a self that is fully legible to itself. The Primordial Spirit formed from this integration is not a new being but the advancer's own knowledge, finally organized into a living whole, with the self as its sovereign.",
+      "acting_method": "Rule knowledge as an emperor rules a realm—not by hoarding it, but by governing it. A Knowledge Emperor organizes what others merely collect, commands information without being commanded by it, and grants or withholds understanding as statecraft demands. Master every field you touch, but master yourself first, for an emperor who cannot govern their own mind will be overthrown by it.",
+      "consumption_backlash": "The intermingled bubbles of every color would burst within them, and all the knowledge they had ever gathered would demand reorganization at once—every fact questioning its place, every discipline claiming sovereignty. The crown in the formula would press upon their brow, heavy with the responsibility of ordering chaos. Their sense of self would blur as knowledge threatened to become the ruler and the self the subject. Only by completing the integration—holding the core key part of themselves as the fixed center around which all knowledge orbits—would the chaos resolve into a court, leaving them an emperor whose Primordial Spirit governs an empire of understanding with themself as its unshakable throne."
     },
     {
       "sequence": 0,
@@ -203,9 +203,9 @@
         ]
       },
       "advancement_ritual": "Gather all the information one has left in the world. Then, find a suitable place and way to completely hide them, leaving no traces behind.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Every person leaves traces—footprints in memory, ripples in gossip, marks in records. By gathering every fragment of information they have left in the world and hiding it completely, the advancer performs the ultimate act of concealment: erasing their own existence from the world's ledger. What remains is a being of pure knowledge with no fixed location, no observable pattern, and no trace to follow—the Hermit, who sees everything precisely because nothing can see them.",
+      "acting_method": "Withdraw from the world's stage and watch from the shadows of understanding. A Hermit observes without being observed, knows without being known, and influences events only through the quiet placement of knowledge. Speak rarely, leave no records, and let the world believe you are nowhere. The hermit's power is the power of the unread book—present in every library, touched by no hand.",
+      "consumption_backlash": "The giant eyeball would close over them like a world, and they would feel every trace of their existence being gathered—every conversation remembered, every record written, every memory held by others—pulled into the dark behind the iris. As the traces vanish, so would the anchors of their identity: no one would remember their face, no book would carry their name, no place would hold their mark. The silence of being erased would press against their mind, whispering that they no longer exist. Only by hiding their traces while keeping the one record that matters—their own knowledge of themself—would they complete the concealment, becoming the Hermit: absent from the world's memory, yet present in every mystery it fails to solve."
     }
   ]
 }

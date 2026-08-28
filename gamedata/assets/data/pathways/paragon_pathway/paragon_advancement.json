@@ -18,8 +18,8 @@
           "1 piece of a Carnelian"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Learn relentlessly and teach freely. A Savant devours knowledge of every kind—science, craft, history, art—and connects what others keep separate. Master the fundamentals before chasing the profound, and never look down on basic learning, for every towering insight is built from simple bricks.",
+      "consumption_backlash": "The icy blue sweetness would melt into their mind, and an unquenchable curiosity would take root—every unanswered question would itch, every unsolved puzzle would glow. Their thoughts would race through subjects faster than they could study them, threatening to leave a hundred half-learned fields in their wake. Only by grounding themself in fundamentals—returning to the basic textbook, mastering one thing fully before leaping to the next—would the hunger become disciplined, leaving them a savant whose breadth rests on genuine depth."
     },
     {
       "sequence": 8,
@@ -38,8 +38,8 @@
           "1 ancient item with a little mystical power (Choosing the wrong one could be very dangerous)"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Dig where others walk past, and read what time has buried. An Archaeologist excavates ruins, deciphers dead languages, and reconstructs vanished lives from pottery shards and bone. Record every find precisely, disturb every site respectfully, and remember that you are not taking from the past—you are giving it back its voice.",
+      "consumption_backlash": "The rotten pus of the potion would carry the dust of ages into their spirit, and they would begin dreaming in the past—waking with words of dead languages on their tongue, griefs of forgotten peoples in their chest. The tomb shadows would whisper their unfinished business, and the weight of every collapsed civilization would press on their shoulders. The danger is living among ruins rather than studying them. Only by treating each relic as a story to be told—not a self to be inhabited—would the dust settle, leaving them an archaeologist who carries history's memory without being buried by it."
     },
     {
       "sequence": 7,
@@ -58,8 +58,8 @@
           "9 drops of mint essential oil"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Judge the true worth of all things—object, art, or artifact—with an eye that neither flatters nor scorns. An Appraiser studies the genuine until the false cannot deceive them, and prices value without being priced by it. Never appraise what you desire too much, and never let a client's hope bend your verdict, for one dishonest valuation ruins a lifetime of credibility.",
+      "consumption_backlash": "The intertwining black and white would seep into their vision, and every object they saw would split into two judgments—authentic and counterfeit, valuable and worthless—overlapping until they could no longer trust their own eye. The Evil Eye's tears would make them weep at the sight of masterful fakes, and the scroll's blood would whisper the true histories of every item they touched. Only by calibrating their judgment against verified truth—appraising, comparing, correcting, again and again—would the two streams merge into one clear verdict, leaving them an appraiser whose eye cannot be fooled because it has first learned to doubt itself."
     },
     {
       "sequence": 6,
@@ -78,8 +78,8 @@
           "1 newly conceived mechanical design drawing, free from major errors"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Build, break, and build again. An Artisan works metal and mechanism with hands and mind united—designing what does not yet exist and perfecting what does. Respect the materials, respect the craft, and never ship what you would not use yourself. The machine is honest; it fails exactly where you erred.",
+      "consumption_backlash": "The crimson flames would ignite in their veins while the iron-black objects settled into their joints, and their body would begin thinking like a machine—measuring, calculating, optimizing. Sleep would feel like downtime, emotions like friction to be engineered away. The Carnivorous Furnace's tinder would whisper that flesh is just a poorly designed mechanism. Only by remembering what machines cannot do—to wonder, to err beautifully, to create without purpose—would they keep the flame human, leaving them an artisan whose hands build wonders their heart still understands."
     },
     {
       "sequence": 5,
@@ -99,9 +99,9 @@
         ]
       },
       "advancement_ritual": "Discover and name an astronomical phenomenon or a celestial body.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To name a thing in the heavens is to enter it into the world's great ledger of knowledge—a covenant between the discoverer and the cosmos. The named star or phenomenon becomes permanently linked to the advancer's spirituality, a fixed point of celestial recognition that anchors their consciousness when the potion's dreamy starry sky threatens to dissolve them into it.",
+      "acting_method": "Observe the heavens with instruments and imagination alike. An Astronomer charts the skies, measures the movements, and reads the universe's mechanics written in light. Calculate rigorously, but never stop wondering—the greatest discoveries come to those who look where the equations said not to. Accept that the cosmos owes you no answers; the privilege is in the asking.",
+      "consumption_backlash": "The dreamy starry sky within the potion would unfold behind their eyes, and they would feel the true scale of the cosmos pressing against their mind—light-years collapsing into moments, their body shrinking to less than a speck against the vault of heaven. The stars would seem to watch back, indifferent and eternal. The vertigo of insignificance would threaten to empty them of all earthly concern. Only by holding onto the celestial body they named—the one star that knows their name in return—would they find their footing between dust and infinity, leaving them an astronomer who walks the earth while their heart keeps a residence among the stars."
     },
     {
       "sequence": 4,
@@ -121,9 +121,9 @@
         ]
       },
       "advancement_ritual": "Extract all life force within a designated area; causing the soil to desertify, and the lakes to dry up.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Life force is the currency of the Mother's domain, and to extract it entirely from a region is to hold in one's hands the vitality of every living thing that grew there. The desertified soil and dried lakes are the receipt of this transaction—a permanent mark of what the advancer commands. This stolen vitality becomes the raw material of their alchemy, and the memory of the dead land becomes the price they carry.",
+      "acting_method": "Transmute life itself. An Alchemist works with the deepest materials—flesh, soul, and vitality—refining and combining them beyond nature's intentions. Every experiment must be justified, every sacrifice accounted for, for you work with the currency of living things. Create wonders, but never forget the weight of what you spend to make them.",
+      "consumption_backlash": "The frozen black porridge would spread through their body in disconnected sections, and they would feel the extracted life force of the dead land coursing through them—the vitality of every tree, fish, and blade of grass that withered for their advancement. Their own flesh would feel borrowed, their heartbeat like an engine running on stolen fuel. The piece of their own flesh and blood in the formula would ache, reminding them that they, too, are made of what they spend. Only by honoring the sacrifice—using their alchemy to give life as well as take it—would the debt settle, leaving them an alchemist whose power is tempered by the memory of the desert they made."
     },
     {
       "sequence": 3,
@@ -143,9 +143,9 @@
         ]
       },
       "advancement_ritual": "Select a certain special Spirit World knowledge and find a way to establish a close connection with it, achieving integration at the spiritual level. Note: 'Certain special Spirit World knowledge' refers to knowledge that can contaminate you, lock onto you, or knowledge that has come to life.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Most scholars read knowledge; the Arcane Scholar must marry it. By selecting a living, contaminating, or locking knowledge and integrating with it at the spiritual level, the advancer proves they can embrace what would destroy others—absorbing the dangerous truth without being consumed by it. The integration makes the knowledge a part of their soul, and its power becomes theirs to wield, at the price of never being free of it again.",
+      "acting_method": "Pursue the knowledge that pursues you back. An Arcane Scholar studies what others flee—cursed texts, living ideas, truths that bite—and learns to handle them as a handler manages venomous things: with respect, preparation, and steady nerves. Never study carelessly, and never pretend the danger is not real; the scholar who forgets the venom becomes the specimen.",
+      "consumption_backlash": "The sparks within the potion would ignite across their spirit, and the integrated knowledge would begin speaking with its own voice—whispering its alien logic, its inhuman perspective, its contempt for mortal boundaries. Their thoughts would occasionally arrive in someone else's grammar, and their reflection would sometimes smile a fraction too late. The radioactive material in the formula would hum in their bones. Only by maintaining the scholar's discipline—observing the knowledge within them as a subject of study rather than surrendering to it as a master—would the integration remain a union rather than a possession, leaving them a demon of arcana who wears the dangerous truth as a garment rather than being devoured by it."
     },
     {
       "sequence": 2,
@@ -164,9 +164,9 @@
         ]
       },
       "advancement_ritual": "Make a groundbreaking and systematically outstanding contribution in any existing field.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "A groundbreaking contribution is not merely new knowledge—it is a new architecture for knowledge that already exists, a reorganization that changes how every future mind will think within the field. By achieving this, the advancer inscribes their name into the field's foundation itself: every person who builds upon the work unknowingly stands on the advancer's shoulders. This citation by ten thousand successors becomes a spiritual anchor of extraordinary solidity.",
+      "acting_method": "Master a field so completely that you can see its flaws, then mend them. A Knowledge Magister teaches, researches, and systematizes—turning scattered discoveries into ordered disciplines. Accept students generously, credit others honestly, and build systematically rather than brilliantly; a thousand correct bricks outlast one flashy arch.",
+      "consumption_backlash": "The icy humanoid shape would stretch through their body, and the weight of their own contribution would descend upon them—every citation, every student, every mind their work had shaped, all suddenly present as a vast responsibility. Their thoughts would run along the grooves of their own system, threatening to make them a prisoner of their own framework, unable to see beyond the architecture they built. The thousand tokens of gratitude would warm them, but also bind them. Only by remembering that all systems are provisional—their own included—would they remain a master of knowledge rather than its servant, leaving them a magister whose framework serves the truth and not the reverse."
     },
     {
       "sequence": 1,
@@ -184,9 +184,9 @@
         ]
       },
       "advancement_ritual": "Popularize new knowledge to promote the civilizational renewal of at least one country.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Knowledge locked in a scholar's tower changes nothing; knowledge spread among the people changes everything. By popularizing new knowledge until an entire country renews itself, the advancer becomes the light that ends an age of darkness—the one who carried the flame from the few to the many. The souls of those who perished in the old civilization's decline become the measure of what was saved, and the twelve idols of worshipful students become the first stones of the new era's foundation.",
+      "acting_method": "Be the light in the darkness, and teach until the darkness learns to see. An Illuminator carries knowledge to those denied it—peasant and prince alike—breaking monopolies of understanding and igniting minds by the thousand. Expect resistance from those who profit from ignorance, endure it patiently, and never let the light become a brand to brandish; illuminate, and let others do the shining.",
+      "consumption_backlash": "The faint radiance within the black liquid would spread through them, and they would feel the full weight of the civilization they renewed—every mind opened, every tradition broken, every soul that could not make the crossing from the old era to the new. The 100,000 souls of the decline would whisper their unfinished farewells, and the history book would flip its pages to the chapters still unwritten. The temptation would be to control the renewal, to dictate what the people should become. Only by trusting the light to the people—letting knowledge spread beyond their grasp, uncontrolled and alive—would the radiance stabilize, leaving them an illuminator whose light outlives their hand."
     },
     {
       "sequence": 0,
@@ -202,9 +202,9 @@
         ]
       },
       "advancement_ritual": "Nurture a Civilization, witnessing and recording its entire process from enlightenment, development and prosperity to decline, demise or replacement. Note: A regional civilization is sufficient. The main point is the long duration, and it cannot be interrupted.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To witness a civilization's entire arc—from first fire to final dusk—is to hold the complete anatomy of human greatness and failure in a single gaze. The advancer who records it all becomes civilization's biographer, understanding not just how societies rise but why they fall. This complete knowledge, uninterrupted across generations, fuses with their spirituality until they embody the pattern itself: the Paragon, in whom every civilization that ever was finds its mirror.",
+      "acting_method": "You are the Paragon—the exemplar of what knowledge can make of a being. Embody the perfection you study: wise without arrogance, skilled without vanity, and humane without weakness. Let your life be the proof of your learning, for the world believes what it sees over what it reads. When you teach, teach by being; when you lead, lead by example; and when the age calls for a model of what is possible, let it find one in you.",
+      "consumption_backlash": "The flawless humanoid form would settle over them like a second skin, and every civilization they had witnessed would live through them in sequence—first fire, first wheel, first empire, first collapse—each era leaving its sediment in their soul. They would feel the full cycle in their bones: the pride of prosperity and the shame of decline, the hope of enlightenment and the grief of demise. The knowledge of the Great Old Ones would press at the edges, whispering that all civilizations are brief flickers in a cosmos that does not care. Only by accepting the whole pattern—loving civilizations knowing they must die, as a parent loves a child knowing they will leave—would the cycles settle into wisdom, leaving them the Paragon: the flawless form that is flawless precisely because it has held every flaw and was not broken by them."
     }
   ]
 }

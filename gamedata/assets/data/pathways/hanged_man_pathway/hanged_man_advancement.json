@@ -19,7 +19,7 @@
         ]
       },
       "acting_method": "A Secrets Suppliant's ability is based around praying and secrets. Therefore their acting is based on receiving secret knowledge through prayers or 'pleading' for it. The more dangerous the secret knowledge they receive is, the more they can digest their potion.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The bitter potion would settle into them like a prayer left unanswered. Their ears would begin catching fragments of secrets not meant for them—whispers through walls, confessions mumbled in sleep, the mutterings of the guilty. Each secret would press against their mind, begging to be spoken, and the burden of knowing would grow heavier with every truth overheard. Only by treating each secret as sacred—receiving it through prayer, holding it in silence, never letting it slip—would the whispers become orderly, leaving them a vessel that sacred knowledge trusts enough to fill."
     },
     {
       "sequence": 8,
@@ -39,7 +39,7 @@
         ]
       },
       "acting_method": "Listeners are like priests in a church, listening to the sins of others. Their primary goal is to avoid being influenced by those whispers they hear. It is a state of listening without being corrupted by it, and if used good enough, it will eventually help them in advancing to a Profane Presbyter in the future.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The spiritual euphoria would curdle into a flood of voices—every sin whispered near them, every corrupted thought that ever brushed their mind, all speaking at once. The whispers would know their name, their doubts, their secret shames, and would offer each back to them in a seductive voice. The danger is not deafness but agreement: the moment they answer a whisper, it takes root. Only by listening as a priest listens—attentive, compassionate, and unmoved—would the voices lose their grip, leaving them able to hear the world's corruption without tasting it."
     },
     {
       "sequence": 7,
@@ -59,7 +59,7 @@
         ]
       },
       "acting_method": "It involves unity, preaching, and serving their 'god'. It encompasses meanings such as 'practising in seclusion', 'cultivating in the shadows' as well as 'acting within the shadows to uphold the doctrine'.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The countless faces reflected in the potion would surface on their own skin, each one a version of them that could have been—the believer they abandoned, the heretic they might have become, the ascetic they failed to be. Their shadow would grow heavy and independent, lagging behind their movements or moving ahead of them. In the cold and the stinging, they would feel their faith being weighed. Only by embracing the ascetic's discipline—denying the false faces, serving in seclusion, letting the shadow do its work in darkness—would the reflections merge back into one, leaving them whole in their devotion and sovereign of their own shadow."
     },
     {
       "sequence": 6,
@@ -79,7 +79,7 @@
         ]
       },
       "acting_method": "By Chinese definition, Roses symbolize Love, Friendship, Peace and signify Blood. A Rose Bishop is the leader of an Ascetic community/group who will spare no effort to spread their Love and Peace, even if it is radical and involves bloodshed.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The excruciating pain would arrive as promised—skin peeling, flesh disintegrating—and beneath it, something stranger: every act of love they had ever witnessed would bloom in their mind like roses made of blood. Devotion and cruelty would blur, until they could no longer tell where tenderness ended and violence began. Their own blood would feel like an offering, their pain like a sermon. Only by holding fast to the distinction the roses teach—that love which gives and love which takes are not the same—would they emerge with their heart intact, able to spread their doctrine of love and peace without being consumed by the blood it demands."
     },
     {
       "sequence": 5,
@@ -99,9 +99,9 @@
         ]
       },
       "advancement_ritual": "Extract one's soul from the body. Influence the soulless body to consume the potion. Reintegrate the soul to complete the ascension.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "The soulless body is a hollow flock without a shepherd—and by watching it act, drink, and live without them, the advancer learns the true weight of the bond between soul and flesh. Reintegrating means choosing to return, claiming the body not as a given but as a duty. This chosen reunion teaches them to guide others' souls as firmly as they guided their own, for no one understands shepherding better than one who has briefly lost their own flock.",
       "acting_method": "A Shepherd is both a guide for people and a leader of lost souls, preventing those from straying from the 'herd', guiding them onto the right path.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The bloated visages in the potion would surface as their soul reintegrated—every soul they had ever touched or gathered would press against the seam where spirit rejoins flesh. Their body would feel crowded, a fold too full, with whispers of the gathered souls bleeding into their thoughts. The whip in the formula would flex in their grip, urging them to drive the flock with cruelty. Only by shepherding rather than driving—guiding each soul with patience, keeping the herd whole without breaking any of it—would the crowd within them settle into order, leaving them a leader whose flock follows out of trust rather than terror."
     },
     {
       "sequence": 4,
@@ -121,9 +121,9 @@
         ]
       },
       "advancement_ritual": "Induce the complete degeneration of over 10,000 individuals without using violence. The higher the sequence of the degenerate individuals, the better the ritual effect. The more concentrated the transformation from normalcy to degeneracy in time, the more effective the ritual becomes.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "Degeneration without violence is corruption in its purest form—not forced, but invited; not imposed, but chosen. By guiding ten thousand souls into willing ruin, the advancer proves that the fall requires no push, only an open door and a gentle voice. The accumulated weight of ten thousand chosen degenerations settles into their spirituality as authority over the fall itself, making them a knight who commands the very gravity of sin.",
       "acting_method": "Carrying out divine will in the darkness, they are a knight willing to bear the Sins for their God's will.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The black gemstone potion would collapse their body anew, and with it, the ten thousand degenerations they orchestrated would collapse onto their soul. Each fall they had guided would replay as their own—every temptation offered, every virtue abandoned, every soul that chose ruin at their whisper. The weight would be crushing, a mountain of borrowed sin. Only by bearing it as a knight bears armor—accepting each sin as their burden, carried for their god's will rather than their own desire—would the mountain become their strength, leaving them armored in darkness no blade of virtue can pierce."
     },
     {
       "sequence": 3,
@@ -143,9 +143,9 @@
         ]
       },
       "advancement_ritual": "Use various methods to induce a controlled personality split without losing control. Note: If the personality split already exists from previous Sequences, ascending will result in immediate loss of control.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "The Holy Trinity is one essence in three persons—and to induce a controlled split is to enact that mystery upon one's own soul. The advancer becomes three while remaining one, each personality distinct yet harmonized, each carrying a portion of their will without claiming the whole. This voluntary division, mastered rather than suffered, grants them the sacred authority of differentiation: the power to be many without ceasing to be themselves.",
       "acting_method": "A Trinity Templar embodies the sacred meaning of the 'Holy Trinity' and represents the differentiation in both, the personality and ability.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The soul-splitting pain would arrive as three voices in one skull, each personality demanding its own name, its own memories, its own life. The storms beneath the tranquil lake would surge, and the three would begin to compete for the throne of the self. The Soul-Sealed Stone's hundred trapped spirits would add their whispers to the quarrel. Only by governing the three as a templar governs an order—with shared purpose, mutual respect, and one sacred mission—would the personalities align, leaving them a trinity that acts as one blade in three hands."
     },
     {
       "sequence": 2,
@@ -165,9 +165,9 @@
         ]
       },
       "advancement_ritual": "Separate, defeat, and fully control one's own shadow. Enter the Shadow World, confront dangers, and establish a personal 'domain' within it. The Shadow World is an alternate dimension intersecting with the Mirror World.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "The shadow is everything the self refuses to acknowledge—every suppressed desire, every hidden sin, every truth too dark to face. By separating, defeating, and controlling it, the advancer achieves what few dare: complete knowledge of their own darkness. Establishing a domain in the Shadow World formalizes this mastery, for one who rules territory in the realm of shadows has proven their darkness serves them rather than the reverse.",
       "acting_method": "'They' are the prophets and punishers of heretics for the God 'They' serve. Being an evolved form of a shepherd 'They' guide people with revelations. A Profane Presbyter has to have the willingness to become corrupted for the sake of punishment.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The filthy liquid would taste of every corruption it embodies, and their own shadow—now defeated but not destroyed—would rise within them, whispering that the difference between punishing heretics and becoming one is thinner than a shadow's edge. The century-old legend of degeneracy in the formula would rewrite their instincts, urging them toward the very sins they are meant to punish. Only by walking willingly into corruption while keeping their purpose nailed to their soul—becoming profane in appearance, sacred in essence—would they master the filth, leaving them a presbyter whose darkness is a weapon forged for their god's hand."
     },
     {
       "sequence": 1,
@@ -184,9 +184,9 @@
         ]
       },
       "advancement_ritual": "Fly toward the mystically conceptualized Sun. Endure for 15 minutes to merge with the shadow of light.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "Light casts shadow, and the brighter the light, the darker the shadow it creates. By flying toward the conceptualized Sun and enduring its full radiance, the advancer stands where shadow is born—the one place in existence where darkness is at its most absolute, directly behind the light itself. Merging with the shadow of light grants them the authority of that relationship: they become the darkness that light inevitably produces, inseparable from radiance yet defined by it.",
       "acting_method": "'They' are the Shadow of the Sun, the Darkness of Light, where there exists Light there is Shadow. Dark Angels are Angels who willingly fell from grace and bore the consequences of their sins. 'They' embody the Degenerate Nature, carrying the heavy burden of some kind of other sin.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The glimmers of light within the pure black potion would burn like the Sun they flew toward, searing their wings with holy fire even as the darkness claimed them. They would feel the fall in full—every grace relinquished, every consequence accepted, every sin settling onto their shoulders like a second pair of wings made of lead. The flesh of sun and tyrant angels in the formula would whisper of the light they abandoned. Only by embracing the fall completely—accepting that their darkness exists because light exists, that their sin is the shadow of a grace they once held—would they stabilize as the Shadow of the Sun: a fallen angel whose darkness is not the absence of light, but its inevitable companion."
     },
     {
       "sequence": 0,
@@ -202,9 +202,9 @@
         ]
       },
       "advancement_ritual": "Walk upon the Chaos Sea, dissolve one's shadow into it while ensuring: The body does not sink. The mind does not fall. Meeting the requirement entails the body not fully sinking and the spirit not fully descending into degeneracy.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The Chaos Sea dissolves everything—form, identity, sanity, and shadow alike. To walk upon it is to stand on the boundary between existence and dissolution; to give one's shadow to it while keeping body and mind intact is to pay the sea its price without surrendering the self. The advancer who succeeds becomes the Hanged Man: suspended between all extremes, belonging to the depths yet never claimed by them, hanging above the chaos as its eternal witness and master.",
+      "acting_method": "You are the Hanged Man—suspended between heaven and the abyss, seeing truth from the one angle no one else can: upside down. Do not climb toward light nor descend into darkness; hang in the space between, where all things are visible and nothing can reach you. Sacrifice what must be sacrificed, bear what must be borne, and understand that your suspension is not a prison but a perspective—the vantage from which the world's true nature is finally legible.",
+      "consumption_backlash": "The absolute darkness would swallow them the moment they drank, and they would feel the Chaos Sea rising to meet them—the same sea they once walked upon, now pulling from within. Their dissolved shadow would return, but changed: carrying fragments of everything the sea had consumed, every identity dissolved, every mind that fell. Their body would grow heavy with the sea's weight while their mind would feel the pull of degeneracy like a current beneath ice. Only by holding the exact balance of the ritual—body not sinking, mind not falling, suspended in perfect tension—would they master the potion, becoming the Hanged Man who hangs above all chaos, forever falling and never landing."
     }
   ]
 }

@@ -18,8 +18,8 @@
           "1 used burial shroud"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Handle the dead with respect and the living with honesty. A Corpse Collector gathers what death leaves behind—bodies, remnants, and the stories they tell—without revulsion or greed. Treat every corpse as someone who once lived, learn from what killed them, and never profit from the manner of a person's death.",
+      "consumption_backlash": "The reek of decay would follow them home, sinking into their skin no matter how they washed. Their senses would sharpen toward death—smelling sickness before symptoms showed, hearing the rattle in a dying breath from rooms away. Food would taste of ash, and the warmth of the living would feel distant, as though separated by a pane of glass. Only by sitting with the dead each night—cleaning them, speaking to them, honoring them—would the chill recede, leaving them fluent in the language of corpses and comfortable in the company of the dead."
     },
     {
       "sequence": 8,
@@ -38,8 +38,8 @@
           "9 drops of Corpse-scented essential oil"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Dig graves for the dead and dig truth from the past for the living. A Gravedigger treats burial as sacred work—every grave dug properly, every body laid to rest with dignity. Bury the past completely: what is interred should stay interred, and what is dug up should be examined, understood, and laid back down without fear.",
+      "consumption_backlash": "The blood-streaked potion would settle into their hands, and they would feel every grave they had ever dug—or would ever dig—etched into their palms. At night, the soil would whisper: names, regrets, last words swallowed by the earth. Their dreams would fill with funerals, each one demanding their presence. Only by attending every dream-funeral and paying final respects would the whispers quiet, leaving them able to sense what lies buried and to quiet the restless dead with a handful of properly turned earth."
     },
     {
       "sequence": 7,
@@ -58,8 +58,8 @@
           "1 leaf blessed by a natural spirit"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Serve as the bridge between the living and the dead, but belong to neither side. A Spirit Medium listens to what spirits say and speaks what the living need to hear—never deceiving either realm for profit. Deliver last words faithfully, relay messages without distortion, and always close the conversation properly, for a door left open between worlds invites things that should not cross.",
+      "consumption_backlash": "The psychedelic hues of the potion would bloom behind their eyes, and the boundary between the world of the living and the realm of spirits would thin to gossamer. Spirits would no longer wait to be summoned—they would simply be there, sitting in empty chairs, standing in doorways, murmuring half-finished conversations. The dead would mistake them for one of their own, and the living would find their presence strangely cold. Only by mastering the art of turning the sight on and off—treating the spirit realm as a place visited, not a place lived—would they keep their footing in both worlds without being claimed by either."
     },
     {
       "sequence": 6,
@@ -78,8 +78,8 @@
           "1 lingering Wraith"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Guide the lost to where they must go, and never let pity delay the journey. A Spirit Guide walks beside the dead on their final road—comforting the frightened, restraining the malicious, and pointing every soul toward its proper destination. Never grow attached to those you guide, and never take a detour for their sake; the road exists for a reason, and every soul must walk it to its end.",
+      "consumption_backlash": "The corpse-stench of the potion would become the scent of their own soul. They would feel the pull of every unfinished journey—the dead who never found their way, circling them like moths. Their own path through life would grow dim and uncertain, as though they had already left the world of the living and were merely lingering. Only by walking the spirit roads themselves—following each wraith to its destination, refusing to stop until every last one arrived—would they learn the way so completely that being lost becomes impossible, for a guide who knows every road can never truly stray."
     },
     {
       "sequence": 5,
@@ -99,9 +99,9 @@
         ]
       },
       "advancement_ritual": "Find a place where the aura of the Underworld leaks through, make contact, and survive.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The Underworld's aura is the breath of the final destination—the stillness from which no traveler returns unchanged. By seeking out a leak and surviving its touch, the advancer receives the Underworld's acknowledgment: their soul has been weighed against death itself and found fit to stand at its threshold. From that moment, the gates recognize them, and they may open, close, and guard what was never meant to be opened by the living.",
+      "acting_method": "Guard the threshold between life and death, and let nothing cross without right. A Gatekeeper stands at the door that all must eventually pass—admitting the dead with dignity, barring the dead who would return, and refusing the living who would trespass. Never open the gate out of curiosity, and never leave your post, for a gate unwatched is a wound through which the Underworld bleeds into the world.",
+      "consumption_backlash": "The dark vortices within the potion would open in their chest, and they would feel the full weight of the Underworld pressing against the other side of their skin—an entire realm of the dead leaning on one mortal door. Cold would seep into their bones, and every shadow would seem to lead downward. Their heartbeat would slow, and the world of the living would grow muffled and far away. Only by standing firm—refusing to open, refusing to flee, holding the door as their body forgets warmth—would the pressure ease, leaving them the door's master rather than its seal."
     },
     {
       "sequence": 4,
@@ -121,9 +121,9 @@
         ]
       },
       "advancement_ritual": "Locate an underground river tainted by death. Hold a genuine funeral by its banks, then bury yourself and the potion there for sixty days. If you fail to survive or retain sufficient sanity after sixty days, the ritual fails. Note 1: Failure invariably results in the birth of a dangerous Corpse King. Note 2: Many Western Continent cultivators misunderstand this ritual's true purpose. Lacking Beyonder characteristics, they instead focus on the 'failure' outcome, believing it to be the true success—a chance to refine terrifying Jiangshi. Note 3: Some cultivators have modified this ritual, creating Xian Ascension Techniques akin to Supreme Yin Body Refinement. The 'Supreme Yin' essence represents the moon's purity, the water's brilliance, the far north's intent, winter's zenith, and the duality of yin and yang. The flaws and root causes of this method's issues… well, I don't need to elaborate further, do I?",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "A funeral is a rite of ending—and by holding one for themself, the advancer formally declares their old life finished. Buried beside the death-tainted river for sixty days, they experience the stillness of the grave while still breathing, learning that death is not an event but a state one can inhabit and leave. The potion, buried with them, absorbs the funeral's finality; when they rise, they rise as something the grave cannot hold twice.",
+      "acting_method": "Refuse to die, not out of fear, but out of unfinished purpose. An Undying endures what should end them—wounds, poison, decay, and time itself—because something within them refuses to stop. Never waste the lives you are given, and never chase death recklessly simply because it cannot keep you; even an Undying can be buried, sealed, or made to wish for an ending that will not come.",
+      "consumption_backlash": "The perfectly still potion would still them in turn. Their heart would slow to near silence, their breath would shallow to almost nothing, and their flesh would cool to the temperature of the grave they had left. For sixty days' worth of moments, they would lie within themself—aware, unable to move, feeling decay's first whispers at their edges. The temptation would be to simply stop. Only by holding onto the purpose that made them refuse death—recalling it with every flicker of fading will—would they rise from the stillness, their body now carrying the grave's patience without its surrender."
     },
     {
       "sequence": 3,
@@ -142,9 +142,9 @@
         ]
       },
       "advancement_ritual": "Step through a self-summoned Door to the Underworld, ingest the potion, and die within. Note 1: From then on, the Ferryman becomes part of the Underworld and death itself. Note 2: Before the Phoenix Ancestor established the Underworld and before the First Blasphemy Slate appeared, this ritual didn't exist. Note 3: In the Western Continent, whether it's the Haoli Land, the Yellow Springs, or the Netherworld, each serves the same effect as the Underworld.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To die within the Underworld by one's own hand and door is to make death a passage rather than an ending. The advancer's death is real—yet because it occurs inside the realm of the dead, their soul does not scatter but is absorbed into the Underworld's own current, becoming one of its channels. From then on, they are not a visitor to death but a part of its machinery: a ferry that must always have a ferryman.",
+      "acting_method": "Carry the dead across, and never look back at the shore they left. A Ferryman rows the river of the dead, collecting the toll of memories, sins, and regrets that each soul must surrender before crossing. Treat every passenger the same—king or beggar, saint or sinner—for the river does not distinguish, and neither should its ferryman. Never make the crossing for yourself, and never let a soul persuade you to turn the boat around.",
+      "consumption_backlash": "The potion would pull them under as the Underworld pulled them in during the ritual—dust sinking swiftly into dark water. They would relive their own death from the inside, over and over, each iteration stripping away another attachment to the living world: the taste of food, the warmth of touch, the sound of their own name spoken by someone who loved them. The temptation would be to cling to these memories until they tore. Only by releasing them willingly—one by one, paying their own toll—would they surface as the Ferryman complete: a being with nothing left to lose on either shore, belonging entirely to the crossing."
     },
     {
       "sequence": 2,
@@ -163,9 +163,9 @@
         ]
       },
       "advancement_ritual": "Become the ruler of one layer of the Underworld or transform an entire nation into a land of the dead, then anchor the Door to the Underworld within it. Note 1: For descendants acknowledged by the God of Death, the first method is straightforward. Note 2: Death Consuls hold authority to judge the dead. In the Western Continent, figures like the Ten Yama Kings and Five Ghost Emperors share similar duties. Note 3: The Western Continent's Netherworld also holds authority over reincarnation. Note 4: Before the Underworld was created by the Phoenix Ancestor, one can only advance to Sequence 2 by luck.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Authority over the dead cannot be seized—it must be given, either by inheritance or by the dead themselves. By ruling a layer of the Underworld or shepherding an entire nation into death, the advancer accumulates the acknowledgment of countless souls who accept their judgment. Anchoring the Door within their domain completes the transformation: they are no longer a servant of death's realm but one of its governors, their will woven into the laws that govern the dead.",
+      "acting_method": "Judge the dead with impartiality and rule the dead with patience. A Death Consul weighs every soul without favoritism, administers the Underworld's laws without corruption, and remembers that even the dead deserve order. Never let power over death make you forget what life was worth, and never grow so cold that mercy becomes impossible—for a judge without mercy becomes a tyrant, and tyrants of the Underworld are remembered poorly by the living.",
+      "consumption_backlash": "The countless numb faces within the potion would press against their skin from within, each one a soul awaiting their judgment. They would hear every plea, every denial, every grievance of the dead in their domain simultaneously—an ocean of voices demanding to be weighed. The crown of their ritual would grow heavier with each verdict, and the temptation would be to judge carelessly, to let the voices blur into noise. Only by judging each soul as if it were the only one—giving every face its moment of true attention—would the chorus resolve into order, leaving them a ruler whose authority rests on the trust of the dead themselves."
     },
     {
       "sequence": 1,
@@ -183,9 +183,9 @@
         ]
       },
       "advancement_ritual": "Ensure your name becomes synonymous with death and the afterlife, remembered and recited by most sentient beings in your domain. Note 1: Due to the Barrier, the Northern and Southern Continents are isolated from the outside world, and are therefore treated as a separate domain in mysticism—otherwise, completing this ritual would be far harder. Without the Barrier, the range required for this ritual is a Star System. Note 2: The same applies to the Western Continent. Note 3: The same applies to the Forsaken Land of the Gods. Note 4: In the Western Continent, figures like the Great Emperor of Fengdu and the Buddhist Ksitigarbha possess comparable authority and status. Note 5: Since the God of Death is still widely regarded as the embodiment of death in the Northern and Southern Continents, 'His' descendants can borrow 'His' name to shape themselves and complete the ritual. The drawback? They grow increasingly similar to the God of Death—until they become 'Him'.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Names have power, and no name carries more than one spoken at every deathbed. When most sentient beings in a domain invoke the same name at the moment of dying, that name becomes a vessel for death's authority itself. By filling this vessel—whether through their own deeds or by borrowing a god's name—the advancer lets the collective belief of the living pour the concept of death into them, reshaping their spirituality into the pale silhouette every mortal imagines at their final hour.",
+      "acting_method": "Be present at every ending, and be remembered by none of them. A Pale Emperor walks the final hours of kings and beggars alike, silent and impartial, collecting no gratitude and leaving no debts. Rule death as an emperor rules a quiet province—rarely seen, always obeyed. Never announce your authority, for death needs no herald; simply be there, as inevitable and as pale as the last light leaving a dying eye.",
+      "consumption_backlash": "The absolute paleness of the potion would drain every color from their existence—first from their reflection, then from their memories, then from the way others perceived them. Joy would fade to contentment, contentment to calm, calm to a stillness indistinguishable from death. They would feel themself becoming the figure others imagined at deathbeds: silent, impartial, inevitable. The danger is not losing themself to darkness, but to perfect, colorless peace. Only by preserving one memory saturated with color—one moment of life so vivid it refuses to fade—would they remain an emperor who wears death's paleness rather than being dissolved by it."
     },
     {
       "sequence": 0,
@@ -201,9 +201,9 @@
         ]
       },
       "advancement_ritual": "Create or merge with a true final destination for the dead, ensuring all deaths in the domain lead there.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Every death needs somewhere to go, and every river of the dead needs a sea. By creating or merging with the true final destination—the place where all crossings end—the advancer completes the circuit of death itself. No longer a ferryman, gatekeeper, or even emperor, they become the destination: the stillness at the center that every soul, every river, and every ending has been flowing toward since the first thing died.",
+      "acting_method": "You are the Eternal Sleeper—the rest at the end of every road, the final destination that needs no gate. Do not chase the dying; simply be there when they arrive, as certain as the ground beneath a falling body. Let every ending find its completion in you, and never wake what you have gathered, for the sleep you offer is not loss but the last, most perfect peace.",
+      "consumption_backlash": "The illusory scepter would dissolve as they drank, and every death in their domain would pass through them at once—not as voices now, but as weight: the accumulated stillness of every ending since the beginning. They would feel themself becoming the bedrock beneath the river of the dead, patient and immovable, while their individual self—the small, warm, living thing they once were—settled into the deepest sleep it had ever known. The temptation is absolute: to simply rest, forever, as the destination they have become. Only by choosing to remain aware within that eternal rest—keeping one thread of consciousness awake as a lighthouse keeps its lamp burning in the dark—would they complete the fusion as Death itself: the Eternal Sleeper who never wakes, yet never stops watching over those who sleep."
     }
   ]
 }

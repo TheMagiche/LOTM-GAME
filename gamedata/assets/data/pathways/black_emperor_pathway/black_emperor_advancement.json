@@ -22,7 +22,7 @@
         ]
       },
       "acting_method": "The purpose of a lawyer is always to follow existing rules and systems, and find ways to win lawsuits.",
-      "backlash": "No data"
+      "consumption_backlash": "The sticky black potion would coat their throat like ink, and the law would begin speaking through them—every loophole they had ever exploited surfacing as an itch, every unjust rule they had ever used demanding to be used again. Their words would take on a lawyer's precision whether they wished it or not, twisting casual conversations into cross-examinations. The three tongues of the characteristic would taste the air for disputes. Only by arguing within the rules—winning cases honestly won, exploiting loopholes only when justice permits—would the compulsion settle into craft, leaving them a lawyer whose tongue is a weapon that serves the system it wields."
     },
     {
       "sequence": 8,
@@ -45,7 +45,7 @@
         ]
       },
       "acting_method": "For every system that imposes order, there must be other systems that resist that order and adhere to their own rules. Sometimes, the best way to deal with these heterogeneous systems is not to impose your order on them, but to meet them head-on.",
-      "backlash": "No data"
+      "consumption_backlash": "The translucent potion's miniature organs would churn within their own, and a barbaric vitality would surge through them—the urge to meet every problem head-on, to answer subtlety with force, to test every system's strength with their own. Their muscles would swell with the memory of every battle fought without guile. The Grass of Madness would whisper that cleverness is cowardice. Only by honoring the barbarian's code—direct confrontation when confrontation is due, honest strength when strength is the answer—would the surge settle into power, leaving them a barbarian whose simplicity is a philosophy and whose strength is a system of one."
     },
     {
       "sequence": 7,
@@ -68,7 +68,7 @@
         ]
       },
       "acting_method": "Every person, organization, or system has a pivot point that can be pressured to force change. A briber doesn't waste energy fighting the whole system, bribing everyone, or using overly luxurious bribes to buy off top figures. Instead, they find that one person – who, due to their personal desires, fears, or needs, naturally becomes a key hub – and then make that person understand that serving the briber actually serves themselves.",
-      "backlash": "No data"
+      "consumption_backlash": "The bubbling black potion would taste delicious and corrupt in equal measure, and they would begin seeing the pivot point of everyone they met—the desire that could be bought, the fear that could be leveraged, the need that could be filled for a price. Their smile would sharpen into an offer, their gifts would grow heavier with implication. The Weeping Infant Flower would whisper of innocence traded. Only by bribing with discipline—choosing targets whose corruption serves a purpose, never buying what should be earned—would the sight become a tool, leaving them a briber whose every transaction appears to be the other party's own idea."
     },
     {
       "sequence": 6,
@@ -91,7 +91,7 @@
         ]
       },
       "acting_method": "Infiltrate an existing system (like the mafia, a family, an army) and subtly corrupt its rules and order from within, causing it to artificially lean in your favor and serve you.",
-      "backlash": "No data"
+      "consumption_backlash": "The sweet aroma of the potion would follow their breath, and corruption would begin leaking from their presence—rules bending where they walked, oaths loosening, loyalties softening into opportunities. Their own nose would rot first, the price of smelling every system's decay. They would feel the organizations they had infiltrated as extensions of their body, each one a limb they could move. The temptation would be to corrupt everything, everywhere, until nothing clean remained. Only by corrupting with purpose—bending systems toward their design while leaving enough order for the systems to function—would the rot become governance, leaving them a baron whose empire is built from other people's rules."
     },
     {
       "sequence": 5,
@@ -114,9 +114,9 @@
         ]
       },
       "advancement_ritual": "Become the dominant force in a city's underground order, causing the city's crime rate to increase more than tenfold; this state must last for at least three months.",
-      "ritual_essence": "No data",
+      "ritual_essence": "Disorder, sustained and dominated, becomes a system of its own—and by ruling a city's underworld while its crime multiplies tenfold, the advancer proves that chaos is not the absence of order but a rival order, darker and more honest about its appetites. Three months of dominion over that rival order teaches them its grammar, and the potion recognizes them as fluent.",
       "acting_method": "Mainly focuses on destroying order, teaching others to create disorder.",
-      "backlash": "No data"
+      "consumption_backlash": "The jet-black vortexes would spin through their spirit, and every rule they had ever broken would return as a lesson to teach—every system they had toppled demanding a successor, every traitor's ear in the formula whispering the methods of betrayal. Their own order would begin to crack: habits dissolving, loyalties questioning themselves. The Fairy Spark would flicker with self-aware mischief. Only by teaching the disorder deliberately—passing the craft of collapse to chosen students while keeping their own inner system intact—would the vortex become a classroom, leaving them a mentor whose chaos is curriculum and whose own core remains stubbornly, deliberately whole."
     },
     {
       "sequence": 4,
@@ -139,9 +139,9 @@
         ]
       },
       "advancement_ritual": "Become a mid-to-high-level official in a country, win over and corrupt seven individuals at the same level, forming a community of interests with them, and promote the implementation of a national policy that benefits the ritual performer but is detrimental to the people.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "A nation is corrupted not by armies but by signatures—seven officials who share interests become a cancer within the state's own body. By weaving this community of corruption and passing a policy that feeds them all, the advancer demonstrates mastery of the Black Emperor's fundamental truth: the most complete conquest is the one where the conquered system believes it is functioning normally.",
+      "acting_method": "Fall gracefully, and bring others down with elegance. An Earl of the Fallen corrupts from within positions of trust, turning honor into leverage and duty into debt. Cultivate your community of interests patiently, reward loyalty generously, and never let your corruption look like corruption; the fallen noble's art is making decay feel like progress.",
+      "consumption_backlash": "The rotten pus would seep from their own eyes, and the thirteen hairs of degenerates would whisper their falls—each one a story of honor traded gradually, compromise by compromise. Their own reflection would begin showing the black figure with its eyes and tongue. The policy they passed would return as faces: the people it harmed, the suffering it normalized. Only by accepting each face without flinching—acknowledging that they chose this path with open eyes and will answer for it—would the pus become authority, leaving them an Earl whose fallen state is not a disguise but a genuine, self-known descent."
     },
     {
       "sequence": 3,
@@ -164,9 +164,9 @@
         ]
       },
       "advancement_ritual": "Select three rituals that involve at least angel-level powers, modify the key descriptions of them in a way that is beyond the ritual performer's own knowledge and purely by intuition, and then perform them one by one, ultimately surviving.",
-      "ritual_essence": "To come into contact with near-loss-of-control madness in advance. Survive within madness. It also depends on the ability to deal with random issues.",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "Rituals are the grammar of power—and by modifying three angel-level rituals beyond their own knowledge, guided purely by intuition, the advancer proves they can speak that grammar natively, improvising in a language others need decades to read. Surviving the three performances means surviving contact with near-loss-of-control madness, and the intuition that guided the modifications becomes a permanent faculty: the ability to handle the random, the unscripted, and the insane.",
+      "acting_method": "Embrace the frenzy as a source of power, and master it as a mage masters fire. A Frenzied Mage casts through madness—spells fueled by chaos, rituals warped by instinct, power drawn from the edge of control. Cultivate your madness deliberately, learn its rhythms, and never let it cast through you; the mage who commands frenzy stands beside it, not beneath it.",
+      "consumption_backlash": "The crimson magma would divide their soul into three unequal parts, and the madness of the three modified rituals would return at once—each one replaying with its angel-level consequences, each intuition's gamble showing what it might have cost. The nine facial skins of those who died from ritual mutations would press against their own face, demanding to know why they survived. Only by answering honestly—that survival was intuition, luck, and nerve, not righteousness—would the magma settle into a controllable burn, leaving them a Frenzied Mage whose madness is a chosen companion and whose survival is a debt they acknowledge daily."
     },
     {
       "sequence": 2,
@@ -188,9 +188,9 @@
         ]
       },
       "advancement_ritual": "Drive a nation of at least 10 million people to gradually collapse from within without direct external intervention. The more powerful the beyonder inhabitants are, the fewer people are needed.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "Entropy is the universe's default direction—all order decays unless force maintains it. By driving a nation to collapse from within, the advancer proves they can accelerate that universal tendency at will, becoming an agent of the second law of thermodynamics applied to civilizations. The crown of black symbols in the potion is the emblem of this authority: rule not by building but by un-building.",
+      "acting_method": "Let systems fail, and help them fail efficiently. A Duke of Entropy identifies the load-bearing illusions of any order—the myths, habits, and assumptions that keep it standing—and removes them one by one. Work indirectly, let the collapse appear natural, and never take credit; entropy's power lies in being invisible until the structure is already falling.",
+      "consumption_backlash": "The black characters would crawl across their vision, and the nation they collapsed would replay its dying in their mind—every institution failing in sequence, every citizen's dawning realization that no one was coming to help. The luminous gem would darken as it absorbed the entropy released. Their own inner order would begin to feel optional: habits loosening, principles questioning their own necessity. Only by maintaining one deliberately preserved structure within themselves—the single system they refuse to let decay—would they remain a duke rather than a ruin, leaving them a Duke of Entropy who commands collapse because they alone know what must never collapse."
     },
     {
       "sequence": 1,
@@ -210,15 +210,15 @@
         ]
       },
       "advancement_ritual": "While not being the strongest within an empire, replace a portion of the original order with a new hidden order and maintain it for three years.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "The Prince of Abolition rules from beside the throne, not upon it—replacing the empire's visible order with a hidden one that serves them while the true king remains a figurehead. Three years of maintaining this dual order proves the substitution is not a coup but a permanent architecture: two systems running in the same space, the hidden one stronger. The section of original law in the formula is the receipt of what was replaced.",
+      "acting_method": "Abolish what deserves abolition, and build the hidden order that replaces it. A Prince of Abolition works from within empires—identifying the laws that serve only decay, dissolving them, and weaving new rules in their place that answer to a different throne. Stay in the shadows of the official structure, let the old order believe it still rules, and never claim the visible crown; the prince's power is in what has quietly stopped being true.",
+      "consumption_backlash": "The nine-sectioned scepter would divide their spirit into nine hidden courts, and the true king's blood in the formula would remind them of the throne they chose not to take. The fallen god's corpse fluid would whisper of what happens to those who abolish too much. Their own hidden order would demand maintenance—every replaced rule needing enforcement, every secret structure needing silence. Only by ruling the hidden order with discipline—maintaining it as carefully as any visible crown—would the nine sections fuse into a single scepter, leaving them a Prince whose abolition is complete and whose hidden empire answers to them alone."
     },
     {
       "sequence": 0,
       "name": "Black Emperor",
       "potion_properties": "The reflection of a collapsing world.",
-      "beyonder_characteristic_appearance": "No data",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Black Emperor Uniqueness.",
@@ -230,9 +230,9 @@
         ]
       },
       "advancement_ritual": "Possess your own country, linking your name to the title of Emperor and making it common knowledge among the populace. Establish a set of strict and complicated rules that defy normality, including architectural styles. Spur your citizens to secretly establish nine mausoleums in the style of pyramids. Enter one of the mausoleums. Drink the Sequence 0 potion while a large majority of the citizens are scattered across different cities in the corresponding sacrificial rituals involved.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "The Black Emperor's apotheosis is a paradox made real: an emperor crowned by rules that defy reason, worshipped through secret rituals his citizens perform without understanding why. The nine mausoleums are the anchors of a dead order waiting to be born, and the potion drunk in one of them—while the nation performs its unknowing liturgy—completes the transformation of absurdity into divinity. The collapsing world in the potion is the old order, and the Emperor is what rises when it falls.",
+      "acting_method": "You are the Black Emperor—the sovereign of collapsed order, the ruler whose laws are chains and whose chains are law. Rule through rules that serve you alone, twist every system until it feeds your design, and let your absurdity be your strength: no one can predict a throne built on deliberate nonsense. Corrupt what resists, abolish what obstructs, and remember that your empire is not a nation but a principle—the principle that all order exists to be owned.",
+      "consumption_backlash": "The reflection of the collapsing world would pour into them, and every rule they had ever twisted would return as a pillar of their new throne—every corrupted official, every abolished law, every hidden order, all assembling into the architecture of a dark crown. The citizens' secret rituals would resonate through their soul, nine mausoleums humming in nine cities. They would feel the old orders of the world recognizing them as their ending. Only by accepting the crown's full absurdity—ruling through rules that make no sense because sense was never the point—would the collapse complete its inversion, leaving them the Black Emperor: the god of twisted order, before whom every system in the world feels, suddenly and horribly, negotiable."
     }
   ]
 }

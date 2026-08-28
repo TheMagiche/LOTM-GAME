@@ -18,8 +18,8 @@
           "A blade of Elf Dark Leaf"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Sing of the light, and mean it. A Bard travels with song and story, lifting spirits, spreading hope, and preserving tales worth remembering. Perform with genuine warmth rather than mere skill, praise courage wherever you find it, and never let your songs serve despair—for a bard's voice is a small sun, and it should shine accordingly.",
+      "consumption_backlash": "The churning crimson liquid would set their blood to the same rhythm, and their heart would begin beating in meter—every pulse a drumbeat demanding expression. Words would rise unbidden to their tongue, rhymes surfacing from nowhere, and silence would become physically uncomfortable, like a held breath. The urge to perform would grow until it bordered on compulsion. Only by singing honestly—giving voice to real feeling rather than performing empty flourish—would the rhythm settle into their nature, leaving them a bard whose music flows as naturally as blood and warms as surely as wine."
     },
     {
       "sequence": 8,
@@ -38,8 +38,8 @@
           "An item of Sun Worship"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Pray toward the light, and let prayer be practice. A Light Suppliant pleads for radiance as a starving man pleads for bread—with humility, persistence, and total sincerity. Kneel before dawn, praise what is good, and ask not for power but for the grace to reflect it. The light answers those who genuinely want it for what it can give others, not what it can grant themselves.",
+      "consumption_backlash": "The blazing white magma would pour down their throat like liquid dawn, and every shadow within them would scream as it burned—every hidden resentment, every cherished grudge, every comfort taken in darkness. Their eyes would become unbearable to look into, and their presence would cast no shade. The purification would feel like losing parts of themselves, because it was. Only by willingly surrendering each darkness—releasing the grudges and shadows they had nursed—would the burning become warmth, leaving them a suppliant whose soul is a clean window through which light passes freely."
     },
     {
       "sequence": 7,
@@ -58,7 +58,7 @@
           "5 grams of Solidified Magma"
         ]
       },
-      "acting_method": "No data available.",
+      "acting_method": "Lead the rites of the sun with authority and warmth. A Solar High Priest conducts ceremonies, blesses the faithful, and channels solar power for protection and healing. Carry yourself with the dignity of one who stands between the divine and the congregation—stern in doctrine, generous in mercy, and radiant in conduct.",
       "consumption_backlash": "They would feel a burning sensation in their throat. Their eyes light up suddenly as they grow brighter like there were two miniature suns hidden in them. Their body would radiate concentric ripples of pure light as their exposed skin protrude to form black patterns that are visible to the naked eye. At the same time, their body hair grew longer, as though they were changing into feathers that were swirling with golden flames. This would bring them to the brink of losing control but they must manage to persevere through it. After a while, everything abnormal about them will return to normal. However, the air they exhale is mixed with the warmth of the sun. They would feel that their body had become stronger again, and they had some considerable resistance against ailments and treacherous environments."
     },
     {
@@ -78,8 +78,8 @@
           "5 drops of the Aqua Fern Juice"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Witness truth and make it official. A Notary verifies oaths, certifies documents, and seals agreements with the weight of the sun's own constancy. Examine every claim with a clear eye, never certify what you have not verified, and remember that your seal is a promise—the sun does not sign falsehoods, and neither should you.",
+      "consumption_backlash": "The crystal-clear liquid would fill them with an unbearable clarity—they would see through every lie told in their presence, every deception in every document, every hidden motive in every handshake. The truth would become a weight: impossible to unsee, exhausting to carry. Their own past falsehoods would surface for judgment. Only by committing fully to honesty—confessing what needed confessing, committing to never certifying a lie—would the clarity become an instrument rather than a burden, leaving them a notary whose word is trusted because it has never once been bent."
     },
     {
       "sequence": 5,
@@ -99,7 +99,7 @@
         ]
       },
       "advancement_ritual": "In pure darkness, bury your entire body in ice that usually doesn't melt, before consuming the potion.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "Light is only meaningful against darkness—and by burying themselves in unmelting ice within absolute black, the advancer experiences the complete absence of everything the Sun represents. The potion consumed in that darkness does not merely empower them; it defines them, carving into their soul the memory of what light means to those who have none. From then on, their radiance carries the weight of that testimony.",
       "acting_method": "Dispel the darkness and Praise the sun.",
       "consumption_backlash": "To the outsider, they will see a radiant light emerge from the pile of blue ice. They scatter pure light, with a burning intensity, warmth, brightness, and vitality that is different from the surrounding lightning in the Forsaken Land of the Gods."
     },
@@ -121,8 +121,8 @@
         ]
       },
       "advancement_ritual": "Extract the strongest emotions that one is most unwilling to abandon before consuming the potion. Inject these emotions back again during this process.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
+      "ritual_essence": "The Sun's purity does not tolerate the murky weight of unexamined emotion—yet a being without emotion is merely a lamp, not a light. By extracting their strongest emotions and then reinjecting them during the transformation, the advancer proves that their humanity can survive the potion's cleansing fire. The emotions return not as burdens but as foundations, becoming the bedrock of their mind world upon which the Unshadowed's purity is built.",
+      "acting_method": "Live in pure light, but never become pure emptiness. An Unshadowed casts no shade because they hide nothing—act with such honesty that darkness finds no purchase in you. Purify your intentions daily, and hold your reinjected emotions as sacred foundations rather than weaknesses; they are what make your light human rather than merely bright.",
       "consumption_backlash": "The potion instantly fills their entire body and occupies their soul. Rays of bright sunlight burst out from their body, washing away the remnants of their body's corruption and the heaviness of their soul. Their body becomes purer and clearer, like a holy spirit formed from pure light. Their self-awareness and emotions are being purified and repelled. It wouldn't take long for them to only have the instinct to praise the Sun. Beams of light rose up and enveloped the entire area. The noon descending for a brief moment. At this moment, whoever is responsible to inject their emotions back, no longer let the strong emotions that that person had stripped from the advancer's remain detached from them. They guided them back towards the advancer. One scene after another surfaced in their mind, causing them to experience abnormally complicated emotions. They would once again experience various emotions—their strongest emotions. This would drill deep into them, becoming a foundation of their mind world. It is very sturdy and very reliable, allowing them to withstand the last few rounds of the potion's cleansing forces. Finally, when they open their eyes—it would be pure white."
     },
     {
@@ -143,9 +143,9 @@
         ]
       },
       "advancement_ritual": "Clearly define what your justice is and uphold it for three years without the slightest violation or doing anything in conflict with that justice.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Justice undefined is justice abandoned at the first hard choice. By writing down their justice and upholding it without exception for three years, the advancer transforms an ideal into an iron constitution of the soul. Every day of unbroken adherence deposits weight into their spirituality, until the notebook recording their justice becomes a covenant as binding as divine law—and their sense of right and wrong becomes a faculty as reliable as sight.",
+      "acting_method": "Teach justice by living it, visibly and without exception. A Justice Mentor defines right and wrong clearly, judges disputes fairly, and defends the wronged regardless of their station. Never bend your principles for convenience, never punish without understanding, and remember that a mentor's justice is copied by every student who watches them—be worth copying.",
+      "consumption_backlash": "The intertwined strands of dark golden light would weave through their soul, and every choice they made in three years would return for review—each judgment weighed, each exception examined, each moment of temptation replayed. The notebook of their justice would burn itself into their memory, every page legible at a glance. Where they had upheld their principles, warmth; where they had merely complied, cold. Only by facing the audit honestly—affirming the true choices and correcting the hollow ones—would the strands fuse into a single golden thread, leaving them a mentor whose justice is not a doctrine they teach but a spine they live by."
     },
     {
       "sequence": 2,
@@ -165,7 +165,7 @@
       },
       "advancement_ritual": "Find an item with at least an Angel-rank authority and a deep connection to the Sun in mysticism. Bind your most important memory—closely tied to your core justice—to this item, and place it before yourself.",
       "ritual_essence": "The item of the ritual serves as a beacon for Beyonders consuming the Lightseeker potion, providing a mystical connection that would be the last to melt, helping them maintain their direction, clarity of consciousness, and determination to persist through the transformation process.",
-      "acting_method": "No data available.",
+      "acting_method": "Chase the light, and let the chase define you. A Lightseeker pursues the Sun not as a destination but as a direction—always moving toward greater radiance, greater truth, greater warmth. Bind yourself to what is brightest in your memory, measure every choice against your core justice, and never stop moving; the moment a sun chaser stands still, they begin to cool.",
       "consumption_backlash": "In an instant, it feels as though they have approached the true sun, their entire body igniting and showing signs of melting. They would not retreat. They would continue running toward the light, the sun, sensed in their core. Their bodies quickly melting like heated metal-first dripping liquid, then softening and flowing toward the ground like water. Their bones melted, his organs melted, his brain melted, and even his spirit and consciousness began to dissipate rapidly. But they would never stop. Supported by the justice deep in their core, they would struggle and wriggle forward, being guided by the faint light of the sun in their blurry consciousness. At that moment, they would seem to return to their most important memory, to what would represent their core justice. Dragging their melted body and soul, fueled by a belief that abandoned everything for the light, they still continue their pursuit with difficulty but unwavering determination. The light grows closer, and their spirit merges with the burning heat, leaving only a sliver of residual consciousness. Finally, they would see a pair of grand double doors, sensing the sun and light he longed for beyond them. Their blurred consciousness collided with the doors, pushing them ajar. A sea of golden light enters their vision, and a sun of intertwining blazing white and gold rises steadily, illuminating all and dispelling the crimson and darkness. They could stop at the entrance, immediately sensing their spirit, soul, and body flowing back together, merging into one. The door they saw quickly becomes illusory, while the sun gradually loses its color and form, revealing its true nature—whatever object they used for the ritual."
     },
     {
@@ -185,9 +185,9 @@
         ]
       },
       "advancement_ritual": "Receive sincere and exclusive praise and worship from 1,000,000 humans, including oneself — The higher the status, the fewer believers are needed, but oneself must be included and one must not lose their sense of self in the process.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "A million sincere prayers are a million threads of faith, each one pulling the advancer toward divinity—and the ritual's true test is that the advancer must be one of the believers. To worship oneself without losing oneself requires perfect self-knowledge: knowing one is worthy of the faith while remaining the humble servant of it. The million threads, gathered and held without dissolving the self, weave the White Angel's wings.",
+      "acting_method": "Be the guardian angel your believers believe you to be. A White Angel protects, heals, and intercedes—answering prayers with action and faith with faithfulness. Remain among your people rather than above them, include yourself in every mercy you grant, and never let worship inflate you; the angel who forgets they were human once becomes a false god, and false gods fall.",
+      "consumption_backlash": "The pure white liquid would ignite in their soul, and a million voices of praise would flood their mind at once—every prayer, every hymn, every whispered hope directed at them, all arriving simultaneously. The tide of faith would swell until their individual self seemed like a grain of sand before it, begging to dissolve into the white radiance and become merely an instrument. The scorching purity would burn away pretense, leaving only what is genuinely theirs. Only by holding their own voice among the million—praising alongside their believers rather than above them—would they keep their selfhood intact, emerging as a White Angel: divine in radiance, human in heart."
     },
     {
       "sequence": 0,
@@ -203,9 +203,9 @@
         ]
       },
       "advancement_ritual": "Consume the potion in either the darkness that's the destination of all things or in the all-encompassing color of the Chaos Sea. Note 1: The Ancient Sun God emerged by fulfilling the latter condition. Aucuses leveraged the power of the Evernight Goddess during the divine war of that time. Note 2: Falling into the darkness that's the destination of all things is extremely dangerous and may result in immediate death—even if the one unleashing that power is your ally.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Light is born from darkness, and the greatest radiance is kindled in the deepest night. By consuming the potion in the darkness that ends all things—or in the Chaos Sea's all-encompassing color—the advancer performs the cosmos's oldest act: the kindling of a sun within the void. The darkness does not merely fail to destroy them; it becomes the crucible that forges their authority, proving that their light can exist even where light was never meant to be.",
+      "acting_method": "You are the Sun—the source of radiance, warmth, and life for all who dwell beneath you. Shine without asking permission, warm without demanding gratitude, and give light equally to the worthy and the wicked, as the true sun does. Burn away corruption wherever you find it, stand eternal against the dark, and never dim yourself for the comfort of shadows; the sun that sets is trusted because it always rises again.",
+      "consumption_backlash": "The erupting star would ignite within them, and they would feel the full violence of solar birth—fusion, expansion, the furious conversion of darkness into light. Every shadow in their soul would be incinerated at once, and the void they consumed the potion in would resist them with the full weight of its eternity, pressing to snuff them out as it has snuffed countless lights before. Their consciousness would flare and gutter at the boundary of being. Only by burning with the patience of a true star—steady, self-sustained, needing no permission to shine—would they outlast the darkness's resistance, emerging as the Sun: the eternal radiance that the void itself must acknowledge, the light that dawn brings to every world that has ever known night."
     }
   ]
 }

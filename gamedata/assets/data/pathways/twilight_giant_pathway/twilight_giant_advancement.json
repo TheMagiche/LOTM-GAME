@@ -19,7 +19,7 @@
         ]
       },
       "acting_method": "Your physical abilities are above the common creature. A Warrior is proficient with many weapons and armors. Yourself are a natural combatant in various situations.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The blood-red potion would set every muscle in their body ablaze at once, as if they had fought a hundred battles in a single breath. Their arms would swell and ache, their bones would hum with the memory of blows never taken, and their fists would clench involuntarily, seeking a weapon that was not there. The fishy scent would flood their senses, whispering of the hunt. Only by training through the fire—swinging weapons until the ache becomes strength—would the potion settle, leaving them a warrior whose body is always ready for the battle their mind has not yet seen."
     },
     {
       "sequence": 8,
@@ -39,7 +39,7 @@
         ]
       },
       "acting_method": "Enter people's sights and fight with the extraordinary. Become an expert in combat, mainly through the physique.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The white pus would course through their body like molten iron poured into a mold, and their fists would grow heavy with the weight of every fight they had ever won—or lost. Their knuckles would harden to stone, and their stance would settle into permanence, knees bent, weight forward, ready. The enemy's eyeball in the formula would stare from within, demanding they prove themselves again. Only by stepping into the arena—facing real opponents, taking real hits—would the heaviness become power, leaving them a pugilist whose body is a weapon that never rusts."
     },
     {
       "sequence": 7,
@@ -59,7 +59,7 @@
         ]
       },
       "acting_method": "Master weapons with your superhuman physical attributes. Use, control and master dangerous weapons to exhibit one's specialty, the riskier, the higher the mastery, notably the Sealed Artifact.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The fine needles of the potion would prick every nerve, and every weapon they had ever wielded would press its memory into their hands—the sword's balance, the spear's reach, the axe's bite. Their palms would blister and callus in seconds, cycling through years of training. The rust on the potion would flake into their blood, whispering of blades that hunger for use. The temptation would be to grasp every weapon at once. Only by mastering one weapon at a time—giving each its due before moving to the next—would the needles settle into precision, leaving them a master whose hands know every weapon as intimately as their own fingers."
     },
     {
       "sequence": 6,
@@ -78,8 +78,8 @@
           "One Purified Item"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Ride at dawn, and be the light that meets the dark. A Dawn Paladin upholds oaths with unwavering resolve, defends the innocent with holy vigor, and strikes evil with the certainty of morning breaking. Keep your armor and your conscience equally bright, and never let a night pass without asking whether you have earned your dawn.",
+      "consumption_backlash": "The morning-lit potion would fill them with the certainty of first light, and every shadow in their life—every compromise, every convenient lie—would stand exposed like objects in a room at dawn. Their oath would weigh upon them physically, a palpable pressure across their shoulders. The purified item in the formula would hum against their chest, judging. Only by re-affirming their oaths aloud—naming each duty and accepting it—would the light settle into them, leaving them a paladin whose presence alone makes evil flinch and the fearful hope."
     },
     {
       "sequence": 5,
@@ -99,9 +99,9 @@
         ]
       },
       "advancement_ritual": "Find a Person or Group you want to protect and dedicate yourself to, protecting them for at least a year.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Strength without something to protect is merely violence. By dedicating a full year to guarding a person or group, the advancer learns the true weight of protection: it is not a single heroic moment but ten thousand unremarkable days of vigilance. The year of watchfulness becomes a permanent orientation of their soul—no longer a giant that fights, but a giant that stands between.",
+      "acting_method": "Stand between danger and the protected, and let nothing pass. A Guardian watches, anticipates, and absorbs—placing their body where the blow would land and their will where the fear would spread. Never leave your post for glory, and never mistake stillness for idleness; the guardian's vigilance is a weapon drawn at all times.",
+      "consumption_backlash": "The pale blood wrapped in dawn's ray would settle into them as a second skin, and they would feel every threat to their charges as a physical pull—heads turning toward distant dangers, sleep lightening at the sound of unfamiliar footsteps. The weight of a year's vigilance would compress their shoulders. The temptation would be to guard everything, everywhere, until exhaustion hollowed them. Only by trusting the strength they have built—knowing that their presence itself is the shield—would the vigilance become calm mastery, leaving them a guardian whose watch is unbroken but whose spirit is never worn thin."
     },
     {
       "sequence": 4,
@@ -121,9 +121,9 @@
         ]
       },
       "advancement_ritual": "Resolve a problem or disaster caused by a powerful Demon or Evil Creature. Note: Powerful is defined as possessing godhood.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To hunt what possesses godhood is to declare that divinity does not grant impunity. By resolving a disaster caused by such a being, the advancer proves that preparation, will, and the hunter's craft can bring down what armies cannot. The forty-nine materials in the formula are the ledger of this craft—each one a lesson from a previous hunt—and the victory over a godhood-bearing evil becomes the keystone of their identity: the hunter before whom no monster is safe.",
+      "acting_method": "Track, study, and terminate. A Demon Hunter learns everything about their prey—habits, weaknesses, the nature of its evil—before ever drawing a weapon. Hunt with purpose rather than hatred, end suffering rather than spread it, and never become the monster you pursue; the line between hunter and horror is crossed one careless kill at a time.",
+      "consumption_backlash": "The dark green potion would spread through them like a forest at dusk, and every evil they had ever slain would surface in their mind—each demon's final scream, each curse hurled with its dying breath, each malevolent will that had marked them in defeat. Their shadow would grow long and wrong-shaped, and the vertical eye in the formula would open within their own reflection. Only by accepting each mark as a hunter's medal—wearing the curses without answering them—would the darkness settle into experience, leaving them a demon hunter whose soul is a trophy hall that no evil dares enter."
     },
     {
       "sequence": 3,
@@ -143,7 +143,7 @@
       },
       "advancement_ritual": "Arrange a complex altar and place the remains of six powerful creatures that were hunted by oneself in the correct order and receive the blessing of a God (Angel-level at minimum). The six creatures shouldn't necessarily be monsters, six Demigod-level Beyonders would also suffice.",
       "ritual_essence": "As a Sequence 4 Demon Hunter, the hunting of every powerful creature was a battle of intense mental catharsis. It would leave a deep impression in their life. With these powerful mental imprints, they are able to locate themself after consuming the potion, and not be lost in pain and madness. This too is a type of Anchor. As this wasn't the level of an Angel, an Anchor didn't necessarily need to be a believer. It could be replaced by other things, such as the clear marks in one's life that had meaning in mysticism.",
-      "acting_method": "No data available.",
+      "acting_method": "Serve with honor, and let honor be your armor. A Silver Knight upholds chivalric virtue—courage in battle, mercy in victory, loyalty in service, and justice in judgment. Fight for causes worth dying for, protect those who cannot protect themselves, and never tarnish the silver with a dishonorable act; a knight's worth is measured by what they refuse to do.",
       "consumption_backlash": "Without a sound, the Demon Hunter's body swells up, turning into a grayish-blue giant with bluish-black veins covering them. They stand several meters tall, with black cracks on their forehead. Every inch of this giant contained the indescribable power of mystery and terror. Apart from their head which still retained the appearance of a human (if they were human), the rest of their body was akin to a Mythical Creature that exerted a strange mental influence. In the next second, the skull underlying their head seems to soften as it sinks inwards. With the black crack as its core, their head slowly squirms, as though it is forming a nebulous vortex. Such pain would make them, who likely had killed many powerful creatures, unable to restrain themself. They would let out a series of howling cries that could make the minds of ordinary creatures split apart. The remains of the six powerful living creatures that were situated in different spots floats up under the invisible power of the ritual, circling the mutated them, using some sort of mysterious connection to awaken some of the memories of this peerless Demon Hunter. These manifestations appeared like painting on an altar. Sometimes, they would be integrated into them, and sometimes they would be extracted from them, helping them define themself. They would maintain a certain level of clarity during the extreme pain and changes. In the memories that had been awakened, they can slowly regain their self-awareness. They would feel their body again and grasp its changes. Right on the heels of that, a layer of wings formed from illusory light extended out from behind them. They fuse with the surrounding 'paintings' as they constantly shrink inwards. The surface of their body collapses into a silver armor that are firm and beautiful, but doesn't possess any weight to it."
     },
     {
@@ -163,9 +163,9 @@
         ]
       },
       "advancement_ritual": "Fight an Angel or a Creature of equal power on your own (using Beyonder items is allowed). Or Kill enough Enemies or Blasphemers on behalf of the God who blessed you.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "Glory is not given—it is witnessed. By facing an Angel alone, or by slaying blasphemers in their god's name, the advancer creates a moment of such brilliance that it cannot be denied: a deed that echoes through the spirit world and fixes their name among the honored. The poem praising them, recited for ten years, becomes the vessel that carries this glory forward, and the potion's holy light recognizes them as one who has already shone.",
       "acting_method": "There are two directions to act as a Sequence 2: Glory similar to the ritual, although the acting method is not bound to the ritual done, but the direction one wishes to take. The Glorious: Gain glory for yourself. The Glorifier: One who glorifies others.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The pure, holy light would pour through them, and every deed they had ever done would be weighed on glory's scales—each act of courage shining brighter, each act of cowardice burning darker. The thousand-year-old corpse in the formula would whisper that all glory ends in the grave, and the darkness-eroded item would remind them what falls from grace looks like. They would feel the pull of both paths: to seize glory for themselves, or to give glory to others. Only by choosing their direction consciously—and living it without regret—would the light settle, leaving them either the Glorious, whose name is a banner, or the Glorifier, whose light makes everyone around them shine."
     },
     {
       "sequence": 1,
@@ -184,9 +184,9 @@
         ]
       },
       "advancement_ritual": "Swear allegiance to a certain god or become a Servant of the River Styx. Any tributary of the River of Eternal Darkness suffices to become a Servant.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The Hand of God is not a title but a bond—an arm extended by divinity through a mortal vessel. By swearing true allegiance, the advancer offers their strength to something greater, and in return, their hand becomes an instrument of divine will. The transparent faces in the potion are the previous hands that served before, and the flower from the Divine Kingdom is the god's acknowledgment: this hand is now mine.",
+      "acting_method": "Act as the limb of your god—precise, obedient, and powerful. A Hand of God executes divine will without hesitation, interprets doctrine without distortion, and wields borrowed authority without claiming it as their own. Serve with the understanding that a hand does not question the mind that moves it, but neither does it strike without purpose.",
+      "consumption_backlash": "The bluish-black potion would flow into their arm first, and they would feel their right hand—whether literal or metaphorical—being claimed by something vast. The transparent faces would press close, each one a former Hand showing them what service costs: autonomy, doubt, the comfort of acting for oneself. The River Styx water would chill their blood with the memory of every oath ever sworn. Only by completing the surrender willingly—extending their hand in genuine offering rather than reluctant duty—would the bond seal cleanly, leaving them the Hand of God: an arm of divinity that moves with mortal grace and divine certainty."
     },
     {
       "sequence": 0,
@@ -202,9 +202,9 @@
         ]
       },
       "advancement_ritual": "Witness and participate in the entire process of a race or continent from its rise to its decline and eventual extinction.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The Twilight Giant stands at the boundary between day and night, between glory and ending. By witnessing a civilization's complete arc—its rise, its flourishing, its decline, and its final extinction—the advancer holds within them the full weight of mortality at a scale few beings ever comprehend. The remains of a True God in the formula remind them that even divinity ends; what they carry forward is not the power to prevent twilight, but the authority to stand within it, unbroken.",
+      "acting_method": "You are the Twilight Giant—the colossus that straddles the boundary between light and dark, glory and ending. Stand firm as eras pass, bearing witness without despair and without denial. Protect what can still be protected, honor what has already fallen, and face every ending with the dignity of one who knows that twilight is not the opposite of glory but its final, most beautiful expression.",
+      "consumption_backlash": "The orange-red phantom would rise around them like a second body, dragging its shadow of twilight across their soul. Every ending they had witnessed would return at once—every civilization's last day, every race's final member, every light they had watched go out. The remains of the True God would whisper that even gods join the twilight eventually. The weight of all endings would press down, tempting them to kneel, to despair, to let the shadow swallow them. Only by standing—as they stood through every decline they witnessed, unbowed and present—would they master the potion, becoming the Twilight Giant: the being at the edge of night whose silhouette is the last thing glory sees, and the first thing hope recognizes on the far side."
     }
   ]
 }
