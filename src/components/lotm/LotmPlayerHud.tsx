@@ -270,6 +270,7 @@ export function LotmPlayerHud() {
                                 {model.items.map(item => (
                                     <li key={item.id}>
                                         <span>{item.name}</span>
+                                        {item.badge && <span className="lotm-player-hud-qty">{item.badge}</span>}
                                         {item.qty > 1 && <span className="lotm-player-hud-qty">×{item.qty}</span>}
                                         {item.equipped && <span className="lotm-player-hud-equipped">equipped</span>}
                                     </li>

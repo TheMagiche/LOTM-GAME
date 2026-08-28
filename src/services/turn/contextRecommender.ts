@@ -83,7 +83,7 @@ const RECOMMENDER_PROMPT = `You are a context selector for a tabletop RPG game e
 RULES:
 1. An NPC is relevant if they are: mentioned by name/alias, physically present in the scene, directly referenced, or their faction/goals are materially involved.
 2. A lore entry is relevant if: its subject matter relates to the current location, active quest, mentioned organizations, or ongoing conflict.
-3. Inventory categories: Return categories that matter this turn. Combat/trading/crafting/environmental = weapon/armor/equipped/consumable. Travel/exploration = misc. Thievery/investigation = key. Default to equipped only if nothing stands out.
+3. Inventory categories: Return categories that matter this turn. Combat = beyonder-weapon/sealed-artefact/equipped. Medicine/healing = medicine. Mystical items = mystical-item. Currency/trade = currency. Travel/exploration = misc. Hunt posters = key. Default to equipped only if nothing stands out.
 4. Profile fields: Return fields relevant this turn. Combat = hp, stats, abilities. Social = name, race, class, skills, traits. Default to name only if nothing stands out.
 5. DM-PINNED CHAPTERS are manually flagged as important by the DM. Strongly favor NPCs and lore entries mentioned in pinned chapters.
 6. Be SELECTIVE — only include truly relevant entries.
@@ -91,7 +91,7 @@ RULES:
 
 {"npcs": ["Name1"], "lore": ["id1"], "inventoryCategories": ["equipped"], "profileFields": ["name"]}
 
-Valid inventoryCategories: equipped, weapon, armor, consumable, key, currency, misc.
+Valid inventoryCategories: equipped, beyonder-weapon, medicine, mystical-item, sealed-artefact, currency, misc, key, weapon, armor, consumable.
 Valid profileFields: name, race, class, level, hp, mp, stats, skills, abilities, traits, notes, bounty.
 If nothing is relevant, return: {"npcs": [], "lore": [], "inventoryCategories": [], "profileFields": []}`;
 
@@ -144,7 +144,7 @@ export async function recommendContext(
         throw new Error('No valid JSON in recommender response');
     }
 
-    const validCats = new Set(['equipped', 'weapon', 'armor', 'consumable', 'key', 'currency', 'misc']);
+    const validCats = new Set(['equipped', 'beyonder-weapon', 'medicine', 'mystical-item', 'sealed-artefact', 'currency', 'misc', 'key', 'weapon', 'armor', 'consumable']);
     const validFields = new Set(['name', 'race', 'class', 'level', 'hp', 'mp', 'stats', 'skills', 'abilities', 'traits', 'notes', 'bounty']);
 
     const result: RecommenderResult = {

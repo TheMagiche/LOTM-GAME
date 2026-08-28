@@ -9,8 +9,10 @@
  */
 
 import type { LoreChunk, NPCEntry, InventoryItem, InventoryItemCategory, CharacterProfile } from '../../types';
+import { ITEM_GRADE_LABELS } from '../../types';
 import { readPcAffinity } from '../npc/affinityAccess';
 import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+import { expandInventoryCategories } from '../../worldpacks/lotmItemKinds';
 
 /**
  * Strip markdown formatting from a block of text.
@@ -176,10 +178,32 @@ export function minifyNPCBlock(npcs: NPCEntry[]): string {
     return `[NPC_CTX]\n${lines}\n[/NPC_CTX]`;
 }
 
-const CATEGORY_ORDER: InventoryItemCategory[] = ['equipped', 'weapon', 'armor', 'consumable', 'key', 'currency', 'misc'];
+const CATEGORY_ORDER: InventoryItemCategory[] = [
+    'equipped',
+    'beyonder-weapon',
+    'weapon',
+    'medicine',
+    'consumable',
+    'mystical-item',
+    'sealed-artefact',
+    'armor',
+    'key',
+    'currency',
+    'misc',
+];
 
 const CATEGORY_LABELS: Record<string, string> = {
-    equipped: 'EQP', weapon: 'WPN', armor: 'ARM', consumable: 'CON', key: 'KEY', currency: 'CR', misc: 'MSC',
+    equipped: 'EQP',
+    'beyonder-weapon': 'WPN',
+    weapon: 'WPN',
+    medicine: 'MED',
+    consumable: 'CON',
+    'mystical-item': 'MYS',
+    'sealed-artefact': 'SA',
+    armor: 'ARM',
+    key: 'KEY',
+    currency: 'CR',
+    misc: 'MSC',
 };
 
 function groupByCategory(items: InventoryItem[]): Map<string, InventoryItem[]> {
@@ -201,6 +225,9 @@ export function buildInventoryIndex(items: InventoryItem[]): string {
         if (!group || group.length === 0) continue;
         const entries = group.map(i => {
             let s = i.qty > 1 ? `${i.name} (x${i.qty})` : i.name;
+            if (i.category === 'sealed-artefact' && i.grade) {
+                s += ` [${ITEM_GRADE_LABELS[i.grade as Exclude<typeof i.grade, ''>] ?? i.grade}]`;
+            }
             if (i.locationTag && i.locationTag !== 'inventory') s += ` [at: ${i.locationTag}]`;
             if (i.keywords.length > 0) s += ` (${i.keywords.slice(0, 4).join(',')})`;
             return s;
@@ -238,7 +265,7 @@ export function minifySelectedInventory(
     selectedCategories: (InventoryItemCategory | 'equipped')[]
 ): string {
     if (items.length === 0) return '';
-    const selectedSet = new Set(selectedCategories);
+    const selectedSet = expandInventoryCategories(selectedCategories);
     const grouped = groupByCategory(items);
     const blocks: string[] = [];
     for (const cat of CATEGORY_ORDER) {

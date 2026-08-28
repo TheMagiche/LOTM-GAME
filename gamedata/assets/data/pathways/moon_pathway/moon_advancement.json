@@ -21,8 +21,8 @@
           "10 grams of the Rhizome of Black Henbane."
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Brew, blend, and heal with potions—and never poison without cause. An Apothecary masters the art of extraction and mixture, turning herbs, venoms, and essences into medicines and tools. Study every ingredient's nature before using it, test your creations responsibly, and remember that the same skill that cures can kill; the apothecary's honor lies in choosing cure.",
+      "consumption_backlash": "The seven-colored liquid would decompose in the light of their veins, and every venom they had ever handled would bloom in their blood at once—bitter, burning, and strangely sweet. Their senses would sharpen to a painful degree: smells overwhelming, tastes vivid, touch electric. The Royal Jellyfish's sting would echo in their nerves. Only by brewing through the torment—preparing antidotes for their own symptoms, applying their craft to their own body—would the toxins settle into expertise, leaving them an apothecary whose body is a living pharmacopoeia and whose touch can neutralize any poison."
     },
     {
       "sequence": 8,
@@ -45,7 +45,7 @@
         ]
       },
       "acting_method": "Tame the beast, the higher the lifeform, the greater the challenge.",
-      "backlash": "No data"
+      "consumption_backlash": "The rose-red potion would awaken the beast within their own blood—instincts surfacing unbidden: the urge to mark territory, to bare teeth at rivals, to hunt at the moon's rising. Their senses would reorganize around scent and sound, and human speech would feel clumsy compared to the direct honesty of growls. The mosquitoes drawn to the potion would whisper of the wild's impatience with civilization. Only by taming the beast within as patiently as they tame beasts without—acknowledging each instinct, directing rather than suppressing it—would the wildness settle into partnership, leaving them a tamer whose authority over animals is rooted in the animal they themselves carry."
     },
     {
       "sequence": 7,
@@ -68,8 +68,8 @@
           "10 drops of Osmanthus Flower pure water."
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Embrace the night and its elegant hungers. A Vampire moves through high society and dark alleys with equal grace, charming prey and cultivating mystery. Feed with restraint—take what sustains, never what destroys—and honor the old courtesies of the blood; the vampire who feeds like a beast becomes one.",
+      "consumption_backlash": "The bright red potion would ignite a thirst unlike any hunger they had known—a craving for warmth, for vitality, for the red life in other veins. Their canines would ache as they sharpened, their skin would cool, and mirrors would begin to feel like accusations. The fishy taste would linger, teaching what blood truly is. The danger is not the thirst itself but the excuse: the belief that hunger justifies anything. Only by establishing their feeding discipline immediately—limits, rules, and respect for the prey—would the thirst become manageable, leaving them a vampire whose elegance is genuine because their hunger is governed."
     },
     {
       "sequence": 6,
@@ -92,8 +92,8 @@
           "A potion invented by oneself."
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Invent, refine, and teach the potion-maker's art. A Potions Professor pushes beyond known recipes—experimenting with new combinations, documenting results meticulously, and training the next generation of brewers. Every failed potion is data; every success, a legacy. Never sell an untested brew, and never let a student learn safety from an accident.",
+      "consumption_backlash": "The crimson moonlight in the potion would bloom behind their eyes, and every potion they had ever brewed would replay on their tongue—successes sweet, failures corrosive. Their blood would itch with the urge to experiment, their hands twitching toward ingredients at all hours. The irritation of the potion would scrape their throat raw, teaching the brewer's first lesson: what we make, we drink. Only by inventing through the discomfort—creating the one potion the formula demands, testing it on themselves first—would the irritation become authority, leaving them a professor whose every recipe carries their own blood's endorsement."
     },
     {
       "sequence": 5,
@@ -117,9 +117,9 @@
         ]
       },
       "advancement_ritual": "Gather different gems, metals and Beyonder Creature blood that represent different moon phases. Drink the potion under the illumination of full moon.",
-      "ritual_essence": "No data",
+      "ritual_essence": "The moon's phases are a cycle of becoming—waxing, full, waning, and dark—and the ritual's gathered materials bind each phase's nature into the potion. By drinking under the full moon, the advancer aligns their transformation with the cycle's peak, borrowing the Crimson Moon's own authority over tides of flesh and spirit. The scholar who emerges carries the moon's rhythm within them, their power waxing and waning with the sky.",
       "acting_method": "Sincerity to the moon, worship the moon, and study the moon.",
-      "backlash": "No data"
+      "consumption_backlash": "The nearly solidified crimson would slow their blood to the moon's pace, and the paradox would take hold—profound sedation wrapped around vivid hallucination. They would see the moon's memories: every tide pulled, every werewolf's transformation, every prayer whispered to the night. Their body would grow heavy as if filled with moonlight congealed. Only by studying the visions as a scholar studies texts—cataloging, questioning, understanding—would the hallucinations resolve into knowledge, leaving them a scholar whose sedation is calm and whose visions are citations."
     },
     {
       "sequence": 4,
@@ -143,9 +143,9 @@
         ]
       },
       "advancement_ritual": "Truly gain the recognition of the 'Moon'. Note: Some 'Moons' are always dangerous, some 'Moons' are dangerous at certain moments, and some 'Moons' are in your own heart.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "The Moon's recognition cannot be seized—it must be earned through devotion, understanding, or shared nature. Whether the 'Moon' is a deity, a place, or the darkness within one's own heart, gaining its acknowledgment means the advancer's spirit has been accepted as kin by something vast and cold. This recognition becomes the shamanic bridge: the Moon speaks through them, and they speak to it.",
+      "acting_method": "Walk between worlds as the moon walks the sky—present in darkness, faithful in cycles. A Shaman King communes with spirits, guides the dead, and channels the Moon's authority through ritual and vision. Honor every spirit you summon, keep every bargain you strike, and never call what you cannot send back; the shaman who treats spirits as tools becomes a spirit's tool.",
+      "consumption_backlash": "The golden and red potion would tear through body and mind as promised, and the Moon's recognition would arrive as a weight—a vast, cold attention settling on their soul, examining them as the moon examines the night. Their shadow would deepen, their dreams would fill with lunar landscapes, and the dark creature's embryo in the formula would stir within their flesh. Only by standing steady under that attention—accepting the Moon's gaze as a blessing rather than fleeing it—would the tearing cease, leaving them a Shaman King whose every summoning carries the Moon's own authority."
     },
     {
       "sequence": 3,
@@ -167,9 +167,9 @@
         ]
       },
       "advancement_ritual": "Find a special piece of information in the depths of the Spirit World that is closely related to one's past, present, and future, which is deeply intertwined with the 'Moon'. Then hold a ceremony to define it as one's 'True Name' for various mystical purposes. Note: if you choose the wrong one, or find an incorrect one, you will become a slave of the 'Moon'.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "A True Name is the anchor of self in the sea of spirits—and by finding theirs in the Moon's depths, the advancer binds their identity to the lunar concept itself. The name intertwines past, present, and future into a single thread, and the Moon acknowledges it: this soul belongs to the night's silver order. The danger is absolute—choose wrongly, and the Moon claims them as property rather than kin.",
+      "acting_method": "Summon with authority, and command with courtesy. A High Summoner calls spirits, constructs, and lunar powers from the Spirit World, binding them with true names and precise rites. Know every entity you call before calling it, honor the hierarchy of the Spirit World, and never summon what you cannot dismiss; the summoner's power is measured by their control, not their courage.",
+      "consumption_backlash": "The pale red potion would dissolve them into the illusory Spirit World it reflects, and they would drift through its depths searching for their own name among a billion whispers. The Gray Fog's corruption in the formula would blur every identity they touched, and the Moon Paper Substitute would flutter in their pocket, reminding them that a name once claimed can never be unclaimed. The temptation would be to take the first name that glows. Only by discerning truly—testing each candidate name against their past, present, and future—would they find the one that fits like a key, leaving them a High Summoner whose True Name is both their anchor and their crown."
     },
     {
       "sequence": 2,
@@ -192,8 +192,8 @@
       },
       "advancement_ritual": "Divide oneself into five parts, destroy and seal oneself in different places, then before completely dying, have the part of the body containing the heart take the potion. Note: There are two main difficulties in this ritual. One is how to ensure that one does not die immediately in that state, and the other is how to take the potion in a sealed state. Theoretically, cutting fingers is considered as dividing the body, but considering that one of the ritual's purposes is to lower one's life force and enter a near-death, sealed state to restrain the growth, the reproduction urge, and the spread of madness, doing this essentially nullifies the ritual's effect.",
       "ritual_essence": "One of the ritual's purposes is to lower one's life force and enter a near-death, sealed state to restrain the growth, the reproduction urge, and the spread of madness.",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Give life, and govern what you give. A Life-Giver creates offspring of flesh, spirit, or concept—and each creation carries a fragment of their will. Nurture your creations with responsibility, restrain the urge to multiply without purpose, and remember that the power to generate life is matched only by the duty to guide it; the giver who creates carelessly floods the world with monsters.",
+      "consumption_backlash": "The blood-colored bubbles would rise within their flesh, and the sealed fragments of their divided body would call to each other—each piece yearning to regrow, to reproduce, to spread. The mother's amulet would warm against their chest, anchoring them to the one who gave them life as they learned to give life themselves. The reproduction urge would swell like a tide. Only by holding the near-death stillness the ritual taught—restraining growth, sealing madness, letting the heart's fragment lead—would the urge subside into mastery, leaving them a Life-Giver whose creations obey because their creator first learned to obey themselves."
     },
     {
       "sequence": 1,
@@ -216,14 +216,14 @@
       },
       "advancement_ritual": "Use the 'Moon Paper Substitute' to make a substitute, allowing it to act for a long time without being exposed, and be remembered by a large number of creatures, the more the better. The person themselves will lie in a coffin, buried deep underground for at least three hundred years, and finally the original body will take the potion.",
       "ritual_essence": "The ritual is meant to resist the Beauty and combat narcissism.",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Embody beauty without being consumed by it. A Beauty Goddess inspires art, kindles desire, and elevates the world's aesthetics—but never mistakes the mirror for the self. Cultivate beauty in others as much as in yourself, judge art with honesty rather than vanity, and remember that true beauty includes the courage to age, to err, and to be unseen.",
+      "consumption_backlash": "The blood-stained liquid would stretch into the beautiful figure within their own reflection, and they would fall in love with what they saw—the beginning of the narcissism the ritual was built to combat. Three hundred years of burial would echo in their bones, the coffin's darkness reminding them what awaits those who worship only themselves. The shadows of countless admirers would press close, each one a mirror angled toward their face. Only by turning the beauty outward—creating art, inspiring others, loving what is not themselves—would the narcissistic pull break, leaving them a Beauty Goddess whose loveliness is a gift given rather than a prison inhabited."
     },
     {
       "sequence": 0,
       "name": "Moon",
       "potion_properties": "An illusory liquid surface reflecting the most beautiful Crimson Moon",
-      "beyonder_characteristic_appearance": "No data",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Moon Uniqueness.",
@@ -234,10 +234,10 @@
           "Blood of an offspring of a Great Old One, or an offspring of a Sefirah."
         ]
       },
-      "advancement_ritual": "Find a way to enter the Astral World, occupy the concept representing the 'Moon' or engrave your true name within this concept. Note 1: The concept of the 'moon' is not unique to the barrier. Note 2: Since the concept of the 'Moon' in the Astral World was jointly occupied by the Mother Goddess of Depravity and the Brood Hive, it was impossible to complete the ritual for Sequence 0 of the Moon Pathway. Therefore, there has been no true Moon ever appearing in history.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "advancement_ritual": "Find a way to enter the Astral World, occupy the concept representing the 'Moon' or engrave your true name within this concept. Note 1: The concept of the 'moon' is not unique to the barrier. Note 2: Since the concept of the 'Moon' in the Astral World was jointly occupied by the Mother Goddess of Depravity and the Brood Hive, it was impossible to complete the ritual for Sequence 0 of the Moon Pathway. Therefore, there has never been a true Moon in history.",
+      "ritual_essence": "To occupy the Moon's concept in the Astral World is to claim a place among the cosmos's fundamental symbols—the light that governs tides, transformations, and the hidden face of night. The advancer who engraves their true name within that concept becomes the Moon itself: present in every reflection, every tide, and every transformation the night sky witnesses. That no one has ever completed this ritual is the measure of its difficulty—and the measure of what awaits whoever finally does.",
+      "acting_method": "You are the Moon—the silver sovereign of the night, the mirror that never lies, the tide that pulls at every hidden thing. Wax and wane with grace, showing the world only the face you choose while keeping your dark side forever your own. Govern transformation, bless the creatures of the night, and let your light be gentle but inescapable; everything hidden eventually reflects in you.",
+      "consumption_backlash": "The illusory liquid surface would rise within them like a tide, and they would feel the Crimson Moon's full nature flooding their soul—every transformation it governs, every secret it reflects, every creature that howls at its light. The blood of the Great Old One's offspring would carry alien memories: the Brood Hive's hunger, the Mother Goddess of Depravity's claim. They would feel the concept they are trying to occupy resisting, already inhabited by two vast wills. Only by engraving their true name deeper than those wills can reach—rooting their identity in the concept itself, becoming inseparable from the Moon's nature—would the occupation succeed, leaving them the Moon: the true sovereign of the night that history has never seen, the silver answer to a question the cosmos has asked since the first tide."
     }
   ]
 }

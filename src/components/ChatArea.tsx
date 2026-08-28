@@ -28,6 +28,7 @@ import { InventoryStagingBar } from './inventory/InventoryStagingBar';
 import { IndexingBanner } from './IndexingBanner';
 import { AskGmPanel } from './ooc/AskGmPanel';
 import { ArmedAskGmNote } from './ooc/ArmedAskGmNote';
+import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
 
 export function ChatArea({
     presentation = 'classic',
@@ -257,7 +258,7 @@ export function ChatArea({
                 />
             )}
 
-            <div className="chat-composer-bar flex-shrink-0 bg-void border-t border-border">
+            <div className={`chat-composer-bar flex-shrink-0 bg-void border-t border-border ${LOTM_EXCLUSIVE_UI ? 'pb-2 sm:pb-3' : ''}`}>
                 <IndexingBanner campaignId={activeCampaignId} />
                 {armedAskGmBrief?.campaignId === activeCampaignId && (
                     <ArmedAskGmNote
@@ -283,15 +284,17 @@ export function ChatArea({
                     onSend={() => handleSend()}
                     onStop={handleStop}
                 />
-                <ChatActionStrip
-                    isStreaming={isStreaming}
-                    isSaving={isSaving}
-                    messagesCount={messages.length}
-                    onForceSave={handleForceSave}
-                    onTrim={triggerCondense}
-                    onOpenOoc={openAskGm}
-                    onOpenArchive={handleOpenArchive}
-                />
+                {!LOTM_EXCLUSIVE_UI && (
+                    <ChatActionStrip
+                        isStreaming={isStreaming}
+                        isSaving={isSaving}
+                        messagesCount={messages.length}
+                        onForceSave={handleForceSave}
+                        onTrim={triggerCondense}
+                        onOpenOoc={openAskGm}
+                        onOpenArchive={handleOpenArchive}
+                    />
+                )}
             </div>
 
             {oocOpen && (

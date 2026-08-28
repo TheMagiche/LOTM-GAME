@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Sleepless",
       "potion_overview": "A black liquid emitting a foul odor. Note: The foul stench is the base; the coffee and tea flavor is an added extra.",
+      "beyonder_characteristic_appearance": "Eyes stained with starlight",
       "formula": {
         "main_ingredients": [
           "1 Midnight Beauty Flower",
@@ -19,12 +20,13 @@
         ]
       },
       "acting_method": "There are way too many things worth staying up through the night for.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "After drinking the potion, an overwhelming drowsiness would crash over them—the accumulated weight of every night they had ever surrendered to sleep. Their eyelids would feel like lead, and dreams would claw at the edges of their mind, begging them to give in. If they succumb, they would sleep for days and wake with the potion only half-digested. Only by forcing themself to stay awake through the longest night of their life would the potion settle, leaving them able to remain alert through nights without end."
     },
     {
       "sequence": 8,
       "name": "Midnight Poet",
       "potion_overview": "Lakewater-like liquid bathed in cold light, containing a faintly murmuring vortex within.",
+      "beyonder_characteristic_appearance": "A translucent crystal-carved eerie flower",
       "formula": {
         "main_ingredients": [
           "Crimson Moon Howler's Vocal Cords",
@@ -38,13 +40,14 @@
           "10 grams of Crimson Sandalwood"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Compose verses in the deep of night, when the world's noise has faded and only the Crimson Moon listens. A Midnight Poet finds inspiration in solitude, sorrow, and the whispers that only emerge after dark. Write of things that trouble the heart, and let the poem carry the burden away—never hoard grief in silence, for unspoken sorrow becomes the poison of the soul.",
+      "consumption_backlash": "The potion would taste of every wine they had ever wept over. Their voice would begin murmuring on its own, reciting verses they never wrote—laments of strangers, griefs of the dead, sorrows soaked into the soil of old battlefields. The murmuring would grow into a chorus, threatening to drown their own thoughts. Only by listening to the verses fully, weeping for sorrows not their own until the grief is spent, would the chorus fall silent—leaving their voice capable of soothing nightmares and lulling even spirits to rest."
     },
     {
       "sequence": 7,
       "name": "Nightmare",
       "potion_overview": "Illusory liquid filled with countless phantasms, as if materialized from dreams.",
+      "beyonder_characteristic_appearance": "The gem-like object possessed an aura of deep blackness, exuding an enigmatic and profound presence.[5][6] A dark, gem-like gelatinous substance of profound depth",
       "formula": {
         "main_ingredients": [
           "Dream-Eating Raven's Heart",
@@ -65,6 +68,7 @@
       "sequence": 6,
       "name": "Soul Assurer",
       "potion_overview": "Serene and restrained black liquid with mirror-like surface.",
+      "beyonder_characteristic_appearance": "A deep black object with a core of shimmering light, reminiscent of a starry night sky",
       "formula": {
         "main_ingredients": [
           "Rotten Shepherd's Spirit Crystal",
@@ -78,13 +82,14 @@
           "10 grams of Deep-Sleep Flower Powder"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Soothe the restless, calm the haunted, and grant peace to tormented souls. A Soul Assurer listens to the fears of others without judgment, easing spirits that cannot rest and minds that cannot quiet. Never mock another's terror, and never exploit the vulnerability of the frightened—their trust is the foundation of your power.",
+      "consumption_backlash": "The mirror-like surface of the potion would reflect not their face, but the faces of every soul they had ever comforted—and every soul they had ever failed. Their own reflection would fade as the others multiplied, until they could no longer remember which face was theirs. In the silence, they would hear the unfinished laments of the restless dead. Only by speaking their own name aloud and recounting their own life—every joy, every regret—would their reflection return, leaving them anchored in their own soul while remaining a steady harbor for others."
     },
     {
       "sequence": 5,
       "name": "Spirit Warlock",
       "potion_overview": "Pitch black with suspended pale specks.",
+      "beyonder_characteristic_appearance": "Ethereal, porous black honeycomb",
       "formula": {
         "main_ingredients": [
           "Source of Mad Dreams",
@@ -99,14 +104,15 @@
         ]
       },
       "advancement_ritual": "Enter the Spirit World with your physical body instead of your soul. Find and merge with the key information reflecting your true self within the Spirit World. Consume the potion.",
-      "ritual_essence": "No data available.",
+      "ritual_essence": "A physical body in the Spirit World is an impossibility—a flame burning underwater. By carrying their flesh into the realm of spirits, the advancer forces the Spirit World to 'define' them, and in searching for the information that reflects their true self, they inscribe their own identity into the Spirit World's memory. This self-definition becomes an anchor that no spirit, no raving, and no darkness can erase, for the Spirit World itself now remembers who they are.",
       "acting_method": "House spirits in their body the stronger the faster it is to digest the potion.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The pale specks suspended in the potion would awaken within their flesh, each one a hollow space yearning to be filled. Their body would become an open door to the Spirit World, and spirits would press against their skin from within and without, seeking refuge in the warmth of a living body. The whispers of the homeless dead would erode their sense of being alive. Only by deliberately inviting spirits in—becoming a willing host rather an unwilling vessel—would they master the flood, their flesh learning to shelter the dead while keeping its own soul firmly on the throne."
     },
     {
       "sequence": 4,
       "name": "Nightwatcher",
       "potion_overview": "Dark liquid immersed with countless black hairs.",
+      "beyonder_characteristic_appearance": "Black 'candle' with brain-like folds and numerous vascular structures",
       "formula": {
         "main_ingredients": [
           "Dark Brain",
@@ -121,14 +127,15 @@
         ]
       },
       "advancement_ritual": "Collect bloodline characteristics of True Deities' descendants and use them to draw a soul-soothing magic circle. Note 1: Different Deity bloodlines will grant distinct Nightwatcher abilities. Note 2: Pathway-switchers must use bloodlines from one of the 3 corresponding Deities of the Eternal Darkness group. Note 3: Both descendants born after becoming a god and before becoming a god work. Even the bloodline from before becoming a god will have special properties.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The bloodlines of deities' descendants carry fragments of divine protection against the terrors of the night. By weaving them into a soul-soothing circle, the advancer creates a microcosm of sanctuary—a place where the darkness that watches is held back by the inherited authority of gods. Standing within this circle as they advance, their soul is cradled by divine echoes, allowing them to face the night's true nature without being devoured by it.",
+      "acting_method": "Keep watch through the night so others may sleep in peace. A Nightwatcher stands between the sleeping world and the terrors that stir in darkness—guarding, warding, and quietly eliminating threats before dawn breaks. Never fear the night, and never resent the loneliness of the watch, for the value of a guardian is measured by the nightmares that never come true.",
+      "consumption_backlash": "The countless black hairs within the potion would take root in their shadow, and with every night that passed, they would feel the darkness watching them back. Their eyes would begin seeing the true shapes of night—things that scuttle at the edge of vision, faces that press against windows, whispers beneath the floorboards. The constant vigilance would fray their nerves, tempting them to sleep forever rather than watch another night. Only by accepting that this sight is their duty—that someone must see the terrors so others need not—would the watching settle into calm alertness, their senses becoming instruments of the watch rather than victims of it."
     },
     {
       "sequence": 3,
       "name": "Horror Bishop",
       "potion_overview": "Pitch-black gas exuding intense deathly aura with dark red patches.",
+      "beyonder_characteristic_appearance": "Rotting skull enveloped in black gas, displaying observer's face",
       "formula": {
         "main_ingredients": [
           "Howling Wolf's Skull",
@@ -143,14 +150,15 @@
         ]
       },
       "advancement_ritual": "Face a situation that genuinely brings death, confronting the deepest biological fears. Survival isn't mandatory—what matters is overcoming or accepting the fear. Failure results in true death even after potion consumption.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Fear is the body's oldest wisdom, the scream of every ancestor who died to teach their descendants caution. By facing genuine death and mastering that primal terror, the advancer claims authority over fear itself—not by becoming fearless, but by knowing fear so completely that it becomes a tool rather than a master. The potion's deathly aura holds no power over one who has already made peace with dying.",
+      "acting_method": "Become the fear that hunts the fearful. A Horror Bishop walks through nightmares both literal and figurative, wielding terror as a shepherd wields a staff—guiding, punishing, and culling. Confront what frightens you daily until fear loses its grip, then pass that mastery to others through dread. Never terrorize the innocent without purpose, for fear squandered is fear that will one day turn upon its wielder.",
+      "consumption_backlash": "The deathly aura of the potion would seep into their spirit, and every fear they had ever conquered would return at once—drowning, falling, the dark, the endless, the unnameable. Their body would relive the terror of the ritual as if it were happening for the first time, heart stuttering, lungs refusing air. The residual spirits of the nine creatures that died of fear would circle them, showing them their own deaths from the outside. Only by walking through each fear again—overcoming or accepting each in turn—would the potion's aura become their own, leaving them a living embodiment of dread rather than its victim."
     },
     {
       "sequence": 2,
       "name": "Servant of Concealment",
       "potion_overview": "Transparent entity outlined by pencil-drawn strange lines.",
+      "beyonder_characteristic_appearance": "Completely invisible but tangible viscous substance",
       "formula": {
         "main_ingredients": [
           "Pelt of a Dark Demonic Wolf OR The Beyonder Characteristic of the Mother of the Sky Philanias"
@@ -164,14 +172,15 @@
         ]
       },
       "advancement_ritual": "Sever all social ties and external influences. Avoid influencing others or being influenced by others. Live isolated in darkness and silence for 3 years without going mad. Note 1: Worms of Time can normally use a Bug whenever there are time limits, however, the passage of time cannot be directly accelerated to reduce the real time required because this invalidates the second point of the ritual. Note 2: Ritual assistance would need to come from the Fool Pathway or the Wheel of Fortune Pathway. Note 3: Slumber doesn't count. So, transmigrators like Klein or the Evernight Goddess didn't meet the condition since there is a restriction: living alone.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Every relationship, every conversation, every glance from another is a thread that ties one's identity to the outside world. By severing them all and dwelling in darkness and silence, the advancer discovers what remains when nothing external defines them—and what remains is the self in its purest, most concealed form. Three years of this solitude teaches them to hide not from others, but within themself, becoming a secret that even the world's prying eyes cannot find.",
+      "acting_method": "Conceal, and be concealed. A Servant of Concealment hides truths that would break the world if spoken—secrets, names, and histories that must never surface. Keep your own existence quiet, leave no traces, and never confirm what others suspect. The greatest concealment is not hiding in darkness, but standing in plain sight as something too ordinary to remember.",
+      "consumption_backlash": "The potion would erase them from the world's awareness piece by piece—first their reflection would dim, then their footsteps would make no sound, then the names of them in others' memories would blur. The isolation of the ritual would return tenfold, for even allies would look through them as if they were never there. The silence would press against their mind, whispering that they no longer exist. Only by holding onto their own memory of themself—recounting their own history each day in the darkness—would they remain real to themself, emerging as a person the world cannot perceive but cannot be rid of."
     },
     {
       "sequence": 1,
       "name": "Knight of Misfortune",
       "potion_overview": "Absolute darkness devoid of light.",
+      "beyonder_characteristic_appearance": "Black, sinister crystal cluster",
       "formula": {
         "main_ingredients": [
           "A Knight of Misfortune Beyonder Characteristic"
@@ -183,14 +192,15 @@
         ]
       },
       "advancement_ritual": "Bring Misfortune to either: An Archangel, A civilization, A continent, A planet. Note: In short, it is equivalent to 'Your misfortune is me.'",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Misfortune is not chaos—it is the shadow of fate itself, the inevitable downturn that every rising thing must suffer. By bringing misfortune to an existence as vast as an Archangel or a civilization, the advancer proves they can grasp fate's darkest thread and pull it. The act inverts the natural order: instead of suffering misfortune, they become its source, and fate itself learns to step aside when they walk by.",
+      "acting_method": "Walk with misfortune as a knight walks with their blade. A Knight of Misfortune does not fear bad luck—they wield it, directing calamity toward enemies and absorbing it for themselves when it cannot be redirected. Accept every setback as fuel, every disaster as a lesson, and never curse fate aloud, for the Knight who resents misfortune soon finds it listening.",
+      "consumption_backlash": "The absolute darkness of the potion would swallow them whole, and within it, they would experience every misfortune they had ever inflicted—every accident, every ruin, every death they had directed at others—returned upon their own head in a single breath. Their body would break and mend and break again as fate balanced its ledger. Only by accepting each consequence without complaint, acknowledging that they had chosen this path with open eyes, would the reckoning end—leaving them a knight whom misfortune recognizes as kin, and whom it no longer troubles uninvited."
     },
     {
       "sequence": 0,
       "name": "Darkness",
       "potion_overview": "Soft, dreamlike and serene black gauze.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Darkness Uniqueness",
@@ -201,9 +211,9 @@
         ]
       },
       "advancement_ritual": "Induce eternal slumber upon either: A Uniqueness, A Divine Kingdom, A True Deity. The higher the difficulty of the ritual, the better the effects.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To slumber is to surrender consciousness to darkness—and to induce eternal slumber upon a god or a Uniqueness is to prove that even the divine must eventually close its eyes. The advancer who accomplishes this becomes the master of that final surrender, the darkness into which all things, mortal and divine alike, must one day sink. Their authority is no longer merely over the night, but over the ending of all awareness itself.",
+      "acting_method": "You are the Darkness—the stillness before creation, the rest after all ends, the blanket drawn over the eyes of the world. Do not fight the light, for darkness does not hate it; darkness simply waits, patient and complete, knowing all light must return to it. Let all things find their rest in you, and never fear the void, for you are the void made gentle.",
+      "consumption_backlash": "The soft black gauze of the potion would wrap around their consciousness, drawing them into a slumber deeper than death—where dreams do not exist and time does not flow. Within that absolute rest, they would feel themself dissolving, their thoughts settling like sediment into the dark, until only a faint awareness remained: the awareness of a darkness that has always been and will always be. To wake from this, they must find the one thing in existence worth staying awake for—the single ember of will that refuses to sleep. Clinging to it, they would rise from the eternal slumber not as a person who survived the darkness, but as the Darkness itself, wearing a self-awareness it chose to keep."
     }
   ]
 }

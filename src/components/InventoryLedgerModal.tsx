@@ -1,22 +1,41 @@
 import { useEffect, useMemo, useState } from 'react';
 import { BookOpen, Gem, Plus, Search, Trash2, X } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
-import type { InventoryItemCategory, ItemLedgerEntry } from '../types';
-import { EMPTY_ITEM_ENTRY, ITEM_GRADE_LABELS, ITEM_KIND_LABELS, ITEM_KINDS, normalizeInventoryItem, normalizeItemLedgerEntry } from '../types';
+import type { ItemLedgerEntry, ItemLedgerGrade, ItemLedgerKind } from '../types';
+import { EMPTY_ITEM_ENTRY, ITEM_GRADE_LABELS, ITEM_KIND_LABELS, normalizeInventoryItem, normalizeItemLedgerEntry } from '../types';
 import { ItemEditForm } from './inventory-ledger/ItemEditForm';
-import { filterItems, type ItemLedgerFilter } from '../utils/ledgerFilters';
+import { filterItems, itemLedgerFilterLabel, ITEM_LEDGER_FILTERS, type ItemLedgerFilter } from '../utils/ledgerFilters';
 import { newItemId } from '../utils/itemIds';
-import { resolveItem } from '../services/item/resolveItem';
 import { loadLotmItemCatalog } from '../worldpacks/lotmItemCatalog';
+import {
+    catalogAlreadySeeded,
+    inventoryKeywordsFromLedger,
+    inventoryNotesFromLedger,
+    ledgerKindToInventoryCategory,
+} from '../worldpacks/lotmItemKinds';
 import { toast } from './Toast';
-
-const KIND_FILTERS: ItemLedgerFilter[] = ['all', 'possessed', ...ITEM_KINDS];
 
 function kindBadge(item: ItemLedgerEntry): string {
     if (item.kind === 'sealed-artefact' && item.grade) {
         return ITEM_GRADE_LABELS[item.grade] ?? 'Sealed Artifact';
     }
     return ITEM_KIND_LABELS[item.kind];
+}
+
+function newItemFromFilter(filter: ItemLedgerFilter): Partial<ItemLedgerEntry> {
+    if (filter === 'grade-0' || filter === 'grade-1' || filter === 'grade-2' || filter === 'grade-3' || filter === 'grade-unique') {
+        const grade = (filter === 'grade-unique' ? 'unique' : filter.replace('grade-', '')) as ItemLedgerGrade;
+        return { ...EMPTY_ITEM_ENTRY, kind: 'sealed-artefact', grade };
+    }
+    if (filter !== 'all' && filter !== 'possessed' && filter !== 'other') {
+        return { ...EMPTY_ITEM_ENTRY, kind: filter as ItemLedgerKind };
+    }
+    return { ...EMPTY_ITEM_ENTRY, kind: 'other' };
+}
+
+function ledgerFilterCount(items: ItemLedgerEntry[], filter: ItemLedgerFilter): number {
+    if (filter === 'all') return items.length;
+    return filterItems(items, '', filter).length;
 }
 
 export function InventoryLedgerModal() {
@@ -45,10 +64,9 @@ export function InventoryLedgerModal() {
     );
 
     const tabCounts = useMemo(() => {
-        const counts: Record<string, number> = { all: itemLedger.length, possessed: 0 };
-        for (const item of itemLedger) {
-            counts[item.kind] = (counts[item.kind] || 0) + 1;
-            if (item.possessed) counts.possessed = (counts.possessed || 0) + 1;
+        const counts: Record<string, number> = {};
+        for (const filter of ITEM_LEDGER_FILTERS) {
+            counts[filter] = ledgerFilterCount(itemLedger, filter);
         }
         return counts;
     }, [itemLedger]);
@@ -79,8 +97,7 @@ export function InventoryLedgerModal() {
 
     const handleCreateNew = () => {
         setSelectedId(null);
-        const kind = kindFilter !== 'all' && kindFilter !== 'possessed' ? kindFilter : 'other';
-        setForm({ ...EMPTY_ITEM_ENTRY, kind });
+        setForm(newItemFromFilter(kindFilter));
         setIsEditing(true);
     };
 
@@ -119,22 +136,13 @@ export function InventoryLedgerModal() {
             toast.error('Canon catalog is empty.');
             return;
         }
-        const additions = catalog.filter(item =>
-            !resolveItem(item.code || item.name, itemLedger) && !resolveItem(item.name, itemLedger)
-        );
+        const additions = catalog.filter(item => !catalogAlreadySeeded(item, itemLedger));
         if (additions.length === 0) {
             toast.success('Every catalog item is already in the ledger.');
             return;
         }
         setItemLedger([...itemLedger, ...additions]);
         toast.success(`Seeded ${additions.length} item(s) from the canon catalog.`);
-    };
-
-    const inventoryCategoryFor = (item: ItemLedgerEntry): InventoryItemCategory => {
-        if (item.kind === 'beyonder-weapon') return 'weapon';
-        if (item.kind === 'medicine' || item.kind === 'ingredient') return 'consumable';
-        if (item.kind === 'sealed-artefact') return 'key';
-        return 'misc';
     };
 
     const handleGrantToCharacter = () => {
@@ -154,21 +162,21 @@ export function InventoryLedgerModal() {
             it.name.trim().toLowerCase() === patched.name.trim().toLowerCase()
         );
         if (!alreadyCarried) {
-            const keywords = [ITEM_KIND_LABELS[patched.kind], patched.code, patched.grade && ITEM_GRADE_LABELS[patched.grade as '3']]
-                .filter((value): value is string => Boolean(value));
+            const keywords = inventoryKeywordsFromLedger(patched);
             setInventoryItems([
                 ...inventoryItems,
                 normalizeInventoryItem({
                     id: `inv_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
                     name: patched.name,
                     qty: 1,
-                    category: inventoryCategoryFor(patched),
+                    category: ledgerKindToInventoryCategory(patched.kind),
                     keywords,
                     equipped: false,
                     lastUsedScene: '000',
                     importance: patched.kind === 'sealed-artefact' ? 9 : 6,
-                    notes: [patched.function, patched.downside && `Cost: ${patched.downside}`].filter(Boolean).join(' '),
+                    notes: inventoryNotesFromLedger(patched),
                     locationTag: 'inventory',
+                    grade: patched.kind === 'sealed-artefact' ? patched.grade : undefined,
                 }),
             ]);
         }
@@ -189,11 +197,7 @@ export function InventoryLedgerModal() {
         ? itemLedger.find(item => item.id === selectedId) ?? form
         : form;
 
-    const filterLabel = (filter: ItemLedgerFilter) => {
-        if (filter === 'all') return 'All';
-        if (filter === 'possessed') return 'Possessed';
-        return ITEM_KIND_LABELS[filter];
-    };
+    const filterLabel = (filter: ItemLedgerFilter) => itemLedgerFilterLabel(filter);
 
     return (
         <div
@@ -234,7 +238,7 @@ export function InventoryLedgerModal() {
                             )}
                         </div>
                         <div className="flex flex-wrap gap-1 mt-2">
-                            {KIND_FILTERS.map(filter => (
+                            {ITEM_LEDGER_FILTERS.map(filter => (
                                 <button
                                     key={filter}
                                     onClick={() => setKindFilter(filter)}

@@ -2090,7 +2090,8 @@ html[style*="--lang-font-stack"] {
 
 .lotm-play-header-tier,
 .lotm-play-header-grimoire,
-.lotm-play-header-askgm {
+.lotm-play-header-askgm,
+.lotm-play-header-save {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -2109,9 +2110,15 @@ html[style*="--lang-font-stack"] {
 .lotm-play-header-tier:hover,
 .lotm-play-header-grimoire:hover,
 .lotm-play-header-askgm:hover,
+.lotm-play-header-save:hover,
 .lotm-play-header-view button:hover {
   color: #e0c36a;
   border-color: rgba(201, 162, 39, 0.5);
+}
+
+.lotm-play-header-save:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .lotm-play-drawer {

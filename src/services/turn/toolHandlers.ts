@@ -111,19 +111,20 @@ const ROLL_DICE_TOOL = {
 } as const;
 
 import { normalizeLocationTag } from '../../types';
+import { normalizeProposalKind } from '../../worldpacks/lotmItemKinds';
 
 const PROPOSE_INVENTORY_TOOL = {
     type: 'function' as const,
     function: {
         name: 'propose_inventory_change',
         description:
-            "Propose adding, removing, equipping, or relocating an item in the player's inventory when the fiction materially changes their gear (loot found, a weapon gifted/bought/broken, gear stashed at base or retrieved). This only *proposes* — the player must confirm before anything changes. Supply bounded labels ONLY; the engine sets all numbers. NEVER output damageDice, bonus, hp, or AC. Default quality to 'ordinary'. Default location tag to 'inventory'.",
+            "Propose adding, removing, equipping, or relocating an item in the player's inventory when the fiction materially changes their gear (loot found, a weapon gifted/bought/broken, a Sealed Artifact recovered, medicine used). This only *proposes* — the player must confirm before anything changes. Supply bounded labels ONLY; the engine sets all numbers. NEVER output damageDice, bonus, hp, or AC. Default quality to 'ordinary'. Default location tag to 'inventory'.",
         parameters: {
             type: 'object' as const,
             properties: {
                 name:            { type: 'string' as const, description: 'Item name.' },
                 op:              { type: 'string' as const, enum: ['grant', 'remove', 'equip', 'relocate'], description: "Operation. Default 'grant'." },
-                kind:            { type: 'string' as const, enum: ['weapon', 'armor', 'consumable', 'currency', 'misc'], description: "Item kind. Default 'misc'. Use 'currency' for coins, pounds, soli, or pence." },
+                kind:            { type: 'string' as const, enum: ['beyonder-weapon', 'medicine', 'mystical-item', 'sealed-artefact', 'currency', 'misc'], description: "Item kind. Default 'misc'. Use 'currency' for coins, pounds, soli, or pence. Use 'sealed-artefact' with quality grade-3→grade-0 or unique." },
                 quality:         { type: 'string' as const, enum: ['ordinary', 'mystical', 'grade-3', 'grade-2', 'grade-1', 'grade-0', 'unique'], description: "LOTM quality: ordinary goods, mystical item, or Sealed Artifact grade 3→0. Default 'ordinary'." },
                 scalingStat:     { type: 'string' as const, enum: ['PWR', 'SPD', 'WIL'], description: "Scaling stat for weapons. Default 'PWR'." },
                 range:           { type: 'string' as const, enum: ['Close', 'Reach', 'Ranged'], description: "Weapon range. Default 'Close'." },
@@ -207,7 +208,6 @@ export function handleNotebookTool(
 }
 
 const VALID_OPS = new Set<string>(['grant', 'remove', 'equip', 'relocate']);
-const VALID_KINDS = new Set<string>(['weapon', 'armor', 'consumable', 'currency', 'misc']);
 const VALID_QUALITIES = new Set<string>(['ordinary', 'mystical', 'grade-3', 'grade-2', 'grade-1', 'grade-0', 'unique']);
 const LEGACY_QUALITY: Record<string, InventoryProposal['quality']> = {
     common: 'ordinary', uncommon: 'ordinary', rare: 'mystical', epic: 'grade-3', legendary: 'unique',
@@ -234,7 +234,7 @@ export function handleProposeInventoryTool(
     const op: InventoryProposal['op'] = VALID_OPS.has(rawOp) ? (rawOp as InventoryProposal['op']) : 'grant';
 
     const rawKind = typeof args.kind === 'string' ? args.kind : '';
-    const kind: InventoryProposal['kind'] = VALID_KINDS.has(rawKind) ? (rawKind as InventoryProposal['kind']) : 'misc';
+    const kind: InventoryProposal['kind'] = rawKind ? normalizeProposalKind(rawKind) : 'misc';
 
     const rawQuality = typeof args.quality === 'string' ? args.quality : '';
     const quality: InventoryProposal['quality'] = VALID_QUALITIES.has(rawQuality)

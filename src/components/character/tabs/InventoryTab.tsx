@@ -2,22 +2,43 @@ import { useState, useMemo } from 'react';
 import { useAppStore } from '../../../store/useAppStore';
 import { scanInventory } from '../../../services/inventoryParser';
 import { toast } from '../../Toast';
-import type { EndpointConfig, ProviderConfig, InventoryItemCategory, InventoryItem } from '../../../types';
-import { normalizeInventoryItem } from '../../../types';
+import type { EndpointConfig, ProviderConfig, InventoryItemCategory, InventoryItem, ItemLedgerGrade } from '../../../types';
+import { ITEM_GRADE_LABELS, normalizeInventoryItem } from '../../../types';
 import { isLotmCampaign } from '../../../services/lotm/lotmSkin';
 import { LOTM_EXCLUSIVE_UI } from '../../../services/lotm/lotmFlags';
 import { formatLotmPurseLine } from '../../../worldpacks/lotmPurse';
+import { inventoryItemMatchesTab } from '../../../worldpacks/lotmItemKinds';
 
-const ALL_CATS: (InventoryItemCategory | 'all' | 'equipped')[] = ['all', 'equipped', 'weapon', 'armor', 'consumable', 'currency', 'key', 'misc'];
+const GENERIC_CATS: (InventoryItemCategory | 'all' | 'equipped')[] = ['all', 'equipped', 'weapon', 'armor', 'consumable', 'currency', 'key', 'misc'];
+const LOTM_CATS: (InventoryItemCategory | 'all' | 'equipped')[] = ['all', 'equipped', 'beyonder-weapon', 'medicine', 'mystical-item', 'sealed-artefact', 'currency', 'misc'];
+const SEALED_GRADES: Array<ItemLedgerGrade | 'all'> = ['all', '0', '1', '2', '3', 'unique'];
 const DISPLAY_LABEL: Record<string, string> = {
     all: 'All',
     equipped: 'Equipped',
     weapon: 'Weapon',
     armor: 'Armor',
     consumable: 'Consumable',
+    'beyonder-weapon': 'Weapons',
+    medicine: 'Medicines',
+    'mystical-item': 'Mystical',
+    'sealed-artefact': 'Sealed',
     currency: 'Currency',
     key: 'Key',
     misc: 'Misc',
+};
+const LOTM_ROW_CATS: InventoryItemCategory[] = ['beyonder-weapon', 'medicine', 'mystical-item', 'sealed-artefact', 'currency', 'misc', 'key'];
+const GENERIC_ROW_CATS: InventoryItemCategory[] = ['weapon', 'armor', 'consumable', 'currency', 'key', 'misc'];
+const ROW_CAT_LABEL: Record<string, string> = {
+    'beyonder-weapon': 'Weapon',
+    medicine: 'Medicine',
+    'mystical-item': 'Mystical',
+    'sealed-artefact': 'Sealed',
+    currency: 'Currency',
+    misc: 'Misc',
+    key: 'Key',
+    weapon: 'Weapon',
+    armor: 'Armor',
+    consumable: 'Consumable',
 };
 
 function SceneTag({ lastScene }: { lastScene: string }) {
@@ -29,14 +50,18 @@ function SceneTag({ lastScene }: { lastScene: string }) {
 
 function InventoryRow({
     it,
+    lotm,
     onUpdate,
     onRemove,
 }: {
     it: InventoryItem;
+    lotm: boolean;
     onUpdate: (id: string, patch: Partial<InventoryItem>) => void;
     onRemove: (id: string) => void;
 }) {
     const [expanded, setExpanded] = useState(false);
+    const cats = lotm ? LOTM_ROW_CATS : GENERIC_ROW_CATS;
+    const selectCats = cats.includes(it.category) ? cats : [it.category, ...cats];
     return (
         <div className="border border-border/30 rounded hover:border-border/60 transition-colors">
             <div className="flex items-center gap-2 px-2 py-1 text-[10px]">
@@ -72,8 +97,8 @@ function InventoryRow({
                     value={it.category}
                     onChange={(e) => onUpdate(it.id, { category: e.target.value as InventoryItemCategory })}
                 >
-                    {(['weapon', 'armor', 'consumable', 'currency', 'key', 'misc'] as InventoryItemCategory[]).map((c) => (
-                        <option key={c} value={c}>{c[0].toUpperCase()}{c.slice(1)}</option>
+                    {selectCats.map((c) => (
+                        <option key={c} value={c}>{ROW_CAT_LABEL[c] ?? c}</option>
                     ))}
                 </select>
                 <button onClick={() => onRemove(it.id)} className="text-ember/60 hover:text-ember px-1">×</button>
@@ -116,6 +141,21 @@ function InventoryRow({
                             onChange={(e) => onUpdate(it.id, { importance: Math.max(1, Math.min(10, Number(e.target.value))) })}
                         />
                     </div>
+                    {lotm && it.category === 'sealed-artefact' && (
+                        <div className="flex items-center gap-2">
+                            <span className="text-[9px] text-text-dim/50 w-14">Grade</span>
+                            <select
+                                className="bg-void border border-border/30 rounded text-[10px] px-1 outline-none focus:border-terminal"
+                                value={it.grade || ''}
+                                onChange={(e) => onUpdate(it.id, { grade: (e.target.value || undefined) as ItemLedgerGrade | undefined })}
+                            >
+                                <option value="">—</option>
+                                {(['0', '1', '2', '3', 'unique'] as ItemLedgerGrade[]).map(g => (
+                                    <option key={g} value={g}>{ITEM_GRADE_LABELS[g as Exclude<ItemLedgerGrade, ''>]}</option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
                 </div>
             )}
         </div>
@@ -142,6 +182,7 @@ export function InventoryTab() {
     const purseLine = lotm ? formatLotmPurseLine(inventoryItems) : '';
 
     const [activeTab, setActiveTab] = useState<InventoryItemCategory | 'all' | 'equipped'>('all');
+    const [gradeFilter, setGradeFilter] = useState<ItemLedgerGrade | 'all'>('all');
     const [search, setSearch] = useState('');
     const [rawEdit, setRawEdit] = useState(false);
     const [isScanningInventory, setIsScanningInventory] = useState(false);
@@ -186,6 +227,7 @@ export function InventoryTab() {
             importance: 5,
             notes: '',
             locationTag: 'inventory',
+            grade: cat === 'sealed-artefact' && gradeFilter !== 'all' ? gradeFilter : undefined,
         });
         setInventoryItems([...inventoryItems, newItem]);
     };
@@ -193,24 +235,21 @@ export function InventoryTab() {
         setInventoryItems(inventoryItems.filter((it) => it.id !== id));
     };
 
+    const tabSet = lotm ? LOTM_CATS : GENERIC_CATS;
+
     const tabCounts = useMemo(() => {
         const counts: Record<string, number> = { all: inventoryItems.length };
-        for (const it of inventoryItems) {
-            counts[it.category] = (counts[it.category] || 0) + 1;
-            if (it.equipped) counts.equipped = (counts.equipped || 0) + 1;
+        for (const cat of tabSet) {
+            if (cat === 'all') continue;
+            counts[cat] = inventoryItems.filter(it => inventoryItemMatchesTab(it, cat)).length;
         }
         return counts;
-    }, [inventoryItems]);
+    }, [inventoryItems, tabSet]);
 
     const filteredItems = useMemo(() => {
-        let list = inventoryItems;
-        if (activeTab !== 'all') {
-            if (activeTab === 'equipped') {
-                list = list.filter((it) => it.equipped);
-            } else {
-                list = list.filter((it) => it.category === activeTab);
-            }
-        }
+        let list = inventoryItems.filter(it =>
+            inventoryItemMatchesTab(it, activeTab, lotm && activeTab === 'sealed-artefact' ? gradeFilter : 'all'),
+        );
         if (search.trim()) {
             const q = search.toLowerCase();
             list = list.filter((it) =>
@@ -220,7 +259,7 @@ export function InventoryTab() {
             );
         }
         return list.slice().sort((a, b) => a.name.localeCompare(b.name));
-    }, [inventoryItems, activeTab, search]);
+    }, [inventoryItems, activeTab, search, lotm, gradeFilter]);
 
     return (
         <div className="px-4 py-4 space-y-4">
@@ -275,7 +314,7 @@ export function InventoryTab() {
 
                         {/* Tabs */}
                         <div className="flex flex-wrap gap-1 mb-2">
-                            {ALL_CATS.map((cat) => (
+                            {tabSet.map((cat) => (
                                 <button
                                     key={cat}
                                     onClick={() => setActiveTab(cat)}
@@ -289,6 +328,23 @@ export function InventoryTab() {
                                 </button>
                             ))}
                         </div>
+                        {lotm && activeTab === 'sealed-artefact' && (
+                            <div className="flex flex-wrap gap-1 mb-2">
+                                {SEALED_GRADES.map(grade => (
+                                    <button
+                                        key={grade}
+                                        onClick={() => setGradeFilter(grade)}
+                                        className={`px-2 py-0.5 text-[9px] uppercase tracking-wider rounded border transition-colors ${
+                                            gradeFilter === grade
+                                                ? 'bg-terminal/10 border-terminal text-terminal'
+                                                : 'bg-void border-border/50 text-text-dim/60 hover:text-text-dim hover:border-border'
+                                        }`}
+                                    >
+                                        {grade === 'all' ? 'All grades' : ITEM_GRADE_LABELS[grade as Exclude<ItemLedgerGrade, ''>]}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
 
                         {/* List */}
                         <div className="space-y-1 max-h-[300px] overflow-y-auto pr-1 custom-scrollbar">
@@ -296,6 +352,7 @@ export function InventoryTab() {
                                 <InventoryRow
                                     key={it.id}
                                     it={it}
+                                    lotm={lotm}
                                     onUpdate={updateItem}
                                     onRemove={removeItem}
                                 />

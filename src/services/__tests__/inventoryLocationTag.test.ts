@@ -191,6 +191,31 @@ describe('Inventory Location Tag Subsystem', () => {
             expect(proposal.kind).toBe('currency');
             expect(proposal.name).toBe('soli');
         });
+
+        it('maps LOTM kinds and aliases legacy weapon/consumable', () => {
+            const sealed = handleProposeInventoryTool(JSON.stringify({
+                name: 'Eye of Crystal',
+                op: 'grant',
+                kind: 'sealed-artefact',
+                quality: 'grade-3',
+            })).proposal;
+            expect(sealed.kind).toBe('sealed-artefact');
+            expect(sealed.quality).toBe('grade-3');
+
+            const weapon = handleProposeInventoryTool(JSON.stringify({
+                name: 'Axe of Hurricane',
+                op: 'grant',
+                kind: 'weapon',
+            })).proposal;
+            expect(weapon.kind).toBe('beyonder-weapon');
+
+            const medicine = handleProposeInventoryTool(JSON.stringify({
+                name: 'Healing Agent',
+                op: 'grant',
+                kind: 'consumable',
+            })).proposal;
+            expect(medicine.kind).toBe('medicine');
+        });
     });
 
     describe('Context Minification & OOC Support', () => {

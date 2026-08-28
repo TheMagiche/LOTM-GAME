@@ -17,6 +17,7 @@ import {
     type LossOfControlStage,
     type SequenceAdvantageResult,
 } from '../../worldpacks/lotmBeyonderState';
+import { inventoryBadgeFor } from '../../worldpacks/lotmItemKinds';
 
 export type LotmHudMeter = {
     current: number;
@@ -42,6 +43,7 @@ export type LotmHudCarryItem = {
     qty: number;
     category: string;
     equipped: boolean;
+    badge?: string | null;
 };
 
 export type LotmHudWorld = {
@@ -149,6 +151,7 @@ function carryItems(
                 qty: Number.isFinite(item.qty) ? item.qty : 1,
                 category: item.category,
                 equipped: Boolean(item.equipped),
+                badge: inventoryBadgeFor(item),
             }));
     }
     return list(kitEquipment).map((name, index) => ({

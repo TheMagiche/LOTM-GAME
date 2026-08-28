@@ -106,7 +106,7 @@ function loadPathways() {
 
 function loadItems() {
     const weapons = readJson(join(ITEMS_DIR, 'beyonder_weapons.json')).items ?? [];
-    const mysticalA = readJson(join(ITEMS_DIR, 'list_mystical_items..json')).items ?? [];
+    const mysticalA = readJson(join(ITEMS_DIR, 'list_mystical_items.json')).items ?? [];
     const medicines = readJson(join(ITEMS_DIR, 'list_medicines.json')).items ?? [];
     const grades = {};
     for (const g of ['3', '2', '1', '0', 'unique']) {

@@ -85,5 +85,8 @@ describe('InventoryLedgerModal', () => {
         expect(useAppStore.getState().itemLedger[0].possessed).toBe(true);
         expect(useAppStore.getState().itemLedger[0].holder).toBe('Klein');
         expect(useAppStore.getState().inventoryItems.some(item => item.name === 'Eye of Crystal')).toBe(true);
+        const granted = useAppStore.getState().inventoryItems.find(item => item.name === 'Eye of Crystal');
+        expect(granted?.category).toBe('sealed-artefact');
+        expect(granted?.grade).toBe('3');
     });
 });

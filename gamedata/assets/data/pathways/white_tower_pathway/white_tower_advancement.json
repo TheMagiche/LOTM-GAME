@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Reader",
       "potion_overview": "A white liquid with noticeable dust suspended in its particles.",
+      "beyonder_characteristic_appearance": "A short white rope that resembles tree roots",
       "formula": {
         "main_ingredients": [
           "1 Worm of Book Biting",
@@ -18,13 +19,14 @@
           "1 notebook used for personal study (must be filled with knowledge)"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Read everything, and read it properly. A Reader devours books with discipline—taking notes, questioning claims, connecting ideas across pages. Read widely beyond your comfort, revisit the classics, and never let a book pass through you without leaving something behind; the notebook filled with knowledge is the proof of a mind that reads to grow, not to escape.",
+      "consumption_backlash": "The white potion with its suspended dust would settle into their mind like sediment into still water, and an unquenchable hunger to read would take hold—words swimming before their eyes even in darkness, every surface of text demanding to be consumed. Books would call to them from shelves they passed, and unfinished pages would itch in their dreams. The danger is reading without digesting, hoarding words like the Worm of Book Biting devours paper. Only by reading with method—summarizing, questioning, teaching what was learned—would the hunger become nourishment, leaving them a Reader whose mind is a well-ordered library rather than a landfill of half-remembered pages."
     },
     {
       "sequence": 8,
       "name": "Student of Ratiocination",
       "potion_overview": "A transparent liquid without any ripples, similar to a mirror, containing multiple blood red patches.",
+      "beyonder_characteristic_appearance": "A pale white skeleton covered in brass folds",
       "formula": {
         "main_ingredients": [
           "The brain of a Naga Priest",
@@ -38,13 +40,14 @@
           "10 drops of a hydrolat that bring peace and focus"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Reason from evidence to conclusion, and never the reverse. A Student of Ratiocination practices logic daily—constructing arguments, testing deductions, and admitting when the evidence does not support the desired answer. Study the great reasonings, break down fallacies wherever you find them, and treat every mystery as an exercise whose solution must be earned step by honest step.",
+      "consumption_backlash": "The mirror-still potion would turn their mind into a courtroom, and every observation would demand a verdict—every face analyzed, every word weighed for deception, every coincidence suspected of design. The blood-red patches would pulse at the edge of their vision whenever logic conflicted with hope. They would find themselves deducing strangers' secrets from their shoes, their friends' moods from their handwriting. Only by learning the student's restraint—holding conclusions until the evidence is complete, accepting 'unknown' as a valid answer—would the analysis become a tool rather than a compulsion, leaving them a reasoner whose mind is sharp but whose judgments remain humble."
     },
     {
       "sequence": 7,
       "name": "Detective (Knowledge Keeper)",
       "potion_overview": "A pale red liquid with interwoven copper wires.",
+      "beyonder_characteristic_appearance": "Palm-sized thick 'paper' like material with copper-colored vein-like patterns.",
       "formula": {
         "main_ingredients": [
           "The Liver of a six-armed Naga",
@@ -58,13 +61,14 @@
           "10 drops of red or black ink"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Observe, deduce, and keep what you learn. A Detective gathers knowledge the way others gather treasure—every case solved is a lesson stored, every criminal's method understood is a method countered. Protect your clients' secrets absolutely, follow the evidence even when it leads somewhere uncomfortable, and never let a case go unsolved for lack of effort; the Knowledge Keeper's archive grows one truth at a time.",
+      "consumption_backlash": "The copper wires in the potion would thread through their thoughts, connecting everything to everything—every clue linking to every case, every face matching a memory of a wanted poster seen years ago. Their mind would become an archive that never closes, cataloging details involuntarily: license numbers, handwriting samples, the smell of specific tobacco. Sleep would fill with unsolved cases demanding attention. Only by organizing the archive—indexing what is stored, closing what is finished—would the wires carry current instead of chaos, leaving them a detective whose accumulated knowledge is a weapon that grows sharper with every case."
     },
     {
       "sequence": 6,
       "name": "Polymath",
       "potion_overview": "A blood-red liquid in which various strange characters appear and disappear, disappear and appear repeatedly.",
+      "beyonder_characteristic_appearance": "A pouch made of blood-red leather, covered in slime",
       "formula": {
         "main_ingredients": [
           "The Scalp of a Deep Sea Naga",
@@ -78,13 +82,14 @@
           "A piece of new knowledge discovered from ruins, ancient tombs, foreign libraries, etc."
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Master many fields, and let each strengthen the others. A Polymath studies mathematics beside music, chemistry beside history, finding the connections that specialists miss. Read the thousand books, then read beyond them; learn every discipline well enough to ask its experts a question worth answering. Never mock a field you have not studied—every domain of knowledge is deeper than it looks from outside.",
+      "consumption_backlash": "The strange characters appearing and disappearing in the potion would surface across their mind, and knowledge from every field they had touched would begin talking over each other—equations interrupting poetry, anatomy contradicting philosophy. Their concentration would fracture across a dozen disciplines, each demanding equal attention. The certificate of a thousand books would weigh on them: proof of breadth, accusation of possible shallowness. Only by finding the connections—showing how each field illuminates the others, building a web rather than a pile—would the voices harmonize, leaving them a polymath whose knowledge is one great, interconnected understanding wearing many masks."
     },
     {
       "sequence": 5,
       "name": "Mysticism Magister",
       "potion_overview": "A dark red liquid with brass colored scales rising and sinking.",
+      "beyonder_characteristic_appearance": "A translucent, curved 'blood sausage'",
       "formula": {
         "main_ingredients": [
           "The brain fluid of a young Brass Dragon or Brass Giant Lizard",
@@ -99,14 +104,15 @@
         ]
       },
       "advancement_ritual": "Train at least 50 Erudites or 5 Mid Sequence Beyonders who have independently comprehended the Acting Method. The former is the all-rounder polymath direction. The latter is about which pathways of knowledge one is more proficient in depending on which pathways the Beyonders you taught are from.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Knowledge hoarded is knowledge halved; knowledge taught is knowledge multiplied. By training fifty Erudites or five Mid Sequence Beyonders to independent comprehension, the advancer proves their mastery is transferable—that what they know can live in other minds without distortion. Each student who comprehends the Acting Method on their own is a living proof of the teacher's depth, and the collective achievement of the students becomes the foundation upon which the Magister's own ascension stands.",
+      "acting_method": "Teach as the highest form of learning, and learn as the preparation for teaching. A Mysticism Magister guides students through the labyrinth of mystical knowledge—correcting errors patiently, praising progress honestly, and never hoarding the insights that could save a student from a mistake. Master the theory, verify the practice, and remember that a teacher's reputation is written in their students' successes.",
+      "consumption_backlash": "The brass scales rising and sinking in the potion would surface across their skin, and every lesson they had ever taught would return for examination—each student's comprehension weighed, each error in their instruction magnified. They would feel the minds of fifty students as fifty mirrors, each reflecting back their teaching with brutal honesty. The unverified spell in the formula would itch at them, demanding completion. Only by accepting the teacher's burden—revising their own understanding where students exposed its gaps—would the scales settle into armor, leaving them a Magister whose authority rests on the demonstrated growth of those they raised."
     },
     {
       "sequence": 4,
       "name": "Prophet",
       "potion_overview": "A brass-colored liquid with multiple silver-mercury-like whirlpools.",
+      "beyonder_characteristic_appearance": "Cold and detached eyes gazing out between brass-colored scales",
       "formula": {
         "main_ingredients": [
           "The heart scales of an adult Brass Dragon",
@@ -121,14 +127,15 @@
         ]
       },
       "advancement_ritual": "Find fragments of information about one's own future in the chaotic, overlapping spacetime of the Spirit World and make them a reality.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The Spirit World's overlapping spacetime holds every future that might be—and by finding the fragments of their own and making them real, the advancer performs the Prophet's fundamental act: choosing a future from among the possibilities and pulling it into being. This is not passive prophecy but active authorship of destiny, and the partially confirmed book of prophecy in the formula becomes the record that their sight and their will are one.",
+      "acting_method": "See what will be, and speak it with responsibility. A Prophet's visions shape the decisions of those who hear them—deliver each prophecy with precision, distinguish clearly between what is certain and what is probable, and never use foreknowledge for petty advantage. Remember that the future you reveal changes those who hear of it; prophecy is a burden to be carried, not a toy to be displayed.",
+      "consumption_backlash": "The brass whirlpools would open in their mind like silver eyes, and every future they had glimpsed would compete for reality—futures branching and collapsing, each one demanding to be the one they pull into being. The River of Fate's corroded water would flow through their thoughts, showing them how fragile the boundary is between foreseeing and causing. They would feel the weight of every prophecy: to see a disaster is to become responsible for it. Only by choosing deliberately—which futures to manifest, which to let dissolve—would the whirlpools settle into a single clear current, leaving them a Prophet whose sight serves wisdom rather than fear."
     },
     {
       "sequence": 3,
       "name": "Cognizer",
       "potion_overview": "A brass-colored sanguine liquid that looks as if a miniature spirit world is concealed within.",
+      "beyonder_characteristic_appearance": "A miniature tree formed by clusters of white, pointed bones, with blood-red brains hanging from its branches and numerous brass-colored eyes opening on its trunk",
       "formula": {
         "main_ingredients": [
           "The Eyes from a Greatwood of Written Doom",
@@ -143,14 +150,15 @@
         ]
       },
       "advancement_ritual": "Analyze either the Flesh and Blood or the Beyonder Characteristics of an Angel from the Hermit Pathway or the Paragon Pathway and grasp at least one-third of the knowledge they contain. Or obtain the blessing of one of them. Can be substituted by a corresponding Sealed Artifact.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "An Angel's existence is a library written in flesh and divinity—and to analyze one and grasp a third of its knowledge is to read a scripture that was never meant for mortal eyes. The advancer who accomplishes this proves their cognition can operate at an angelic scale, digesting truths that would shatter lesser minds. The annihilation remnant in the formula reminds them of the price of knowledge pursued too far; the blessing, when given, is the acknowledgment that they have earned the right to know.",
+      "acting_method": "Know, and let knowing transform you. A Cognizer does not merely collect understanding—they become it, each truth absorbed reshaping their mind into something capable of holding the next. Pursue knowledge to its foundations, question even the answers you receive, and never mistake information for wisdom; the Cognizer's path is measured not by what they have learned but by what their learning has made of them.",
+      "consumption_backlash": "The miniature spirit world concealed in the potion would unfold within their cognition, and the angelic knowledge they had grasped would expand to fill every corner of their mind—truths pressing against the walls of mortal comprehension, demanding more room than a human skull can provide. Their thoughts would begin operating at inhuman speed, perceiving mortals as slow, simple, and briefly puzzling. The annihilation remnant would whisper that this is how knowledge consumes its keepers. Only by anchoring their humanity—holding onto the small truths of love, humor, and kindness with the same grip they hold on cosmic ones—would the expansion stabilize, leaving them a Cognizer whose vast understanding still remembers what it is like not to know."
     },
     {
       "sequence": 2,
       "name": "Wisdom Angel",
       "potion_overview": "A viscous, grayish-white liquid with wrinkles everywhere; multiple brass eyes are concealed within the wrinkles.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Beyonder Characteristic of the 'Dragon of Wisdom' OR The Beyonder Characteristic of the Knowledge Dragon (a certain being from the Second Epoch)"
@@ -165,13 +173,14 @@
       },
       "advancement_ritual": "Use intellect rather than strength to bring down an angel.",
       "ritual_essence": "It's about establishing a connection with the concept of wisdom in advance.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Wield wisdom as both weapon and shield. A Wisdom Angel resolves what armies cannot—outthinking enemies, outmaneuvering schemes, and dismantling threats through understanding rather than force. Counsel justly, judge fairly, and never let intellect curdle into arrogance; the wisest being in the room is the one still listening.",
+      "consumption_backlash": "The wrinkled grayish-white potion would settle over their mind like a second brain, and the ten thousand souls who had enlightened their wisdom would speak at once—every lesson, every perspective, every hard-won truth arriving simultaneously. The thousand titles of 'teacher' would ring in their ears, each one a claim on their guidance. Their intellect would sharpen until ordinary conversation felt like wading through honey. Only by honoring the sources of their wisdom—remembering that every insight was given by another, that the teacher is built from their students—would the chorus harmonize, leaving them a Wisdom Angel whose brilliance is inseparable from humility."
     },
     {
       "sequence": 1,
       "name": "Omniscient Eye",
       "potion_overview": "A brass-colored liquid that swirls wildly, forming a vortex that resembles a giant eye.",
+      "beyonder_characteristic_appearance": "A grayish-white brain with densely packed brass-colored eyes and a blood-red tinge",
       "formula": {
         "main_ingredients": [
           "An Omniscient Eye Beyonder Characteristic"
@@ -185,14 +194,15 @@
         ]
       },
       "advancement_ritual": "Briefly enter a semi-chaotic state, but retain basic consciousness and rationality, and take the potion in that state. The methods include, but are not limited to, the Chaos influence from Demoness, the corruption of the Chaos Sea, and so on.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Chaos is the state where all knowledge dissolves into possibility—and to retain consciousness and rationality within it is to prove that one's cognition can survive the dissolution of all structure. The Omniscient Eye that emerges from this ritual sees from within chaos itself: understanding all systems because it has watched them dissolve, comprehending all order because it has stood where order does not exist.",
+      "acting_method": "See everything, and judge nothing in haste. An Omniscient Eye perceives across pathways, through schemes, and into truths that others cannot even formulate questions about. Share knowledge with discretion, for omniscience without restraint is tyranny; observe more than you intervene, and remember that even the all-seeing eye must choose where to look.",
+      "consumption_backlash": "The brass vortex would open as a giant eye within their consciousness, and the four bloods in the formula—Dark Angel, Thunder God, Author, White Angel—would each show them their way of knowing: shadow's hidden truths, lightning's decisive clarity, story's woven fate, light's purifying sight. The semi-chaotic state of the ritual would return, threatening to dissolve their structured mind into pure perception without a perceiver. Only by holding the eye's center—remaining the one who sees rather than becoming what is seen—would the vortex stabilize around their will, leaving them the Omniscient Eye: the being that watches from the tower's peak, missing nothing, judging slowly, and revealing only what wisdom requires."
     },
     {
       "sequence": 0,
       "name": "White Tower",
       "potion_overview": "Glimmering white light points that spiral into a giant tower reaching to infinity, each light point seems to contain a book.",
+      "beyonder_characteristic_appearance": "A giant brass eye reflecting the illusory White Tower, which seemed to be built from countless books",
       "formula": {
         "main_ingredients": [
           "The White Tower Uniqueness",
@@ -203,9 +213,9 @@
         ]
       },
       "advancement_ritual": "Participate in a calamity brought by an existence beyond Sequence 0 and survive (the conditions are also met by a Sefirah if the ritual performer has the knowledge of the corresponding Sefirah's Great Old One). The principle behind the ritual is the symbolism of 'Knowledge leading to Calamity'.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The White Tower's final lesson is written in its own symbolism: knowledge pursued to its summit leads to calamity, and only the knower who survives that calamity is worthy to stand at the top. By participating in a catastrophe brought by an existence beyond Sequence 0—and surviving through what they know, not what they can destroy—the advancer completes the tower's architecture: every floor of learning crowned by the understanding that knowledge is both salvation and doom, and that the true master of knowledge is the one who carries it through the fire it inevitably ignites.",
+      "acting_method": "You are the White Tower—the repository of all knowledge, the light of understanding that stands against ignorance and madness alike. Guard what you hold, share what is needed, and conceal what would destroy the unready. Let your tower be a beacon for seekers and a fortress against the Great Old Ones' raving truths; stand tall through every calamity, for the tower that survives the storm becomes the proof that knowledge, rightly kept, outlasts even the chaos it attracts.",
+      "consumption_backlash": "The glimmering white light points would spiral upward through them, each one a book, each book a world of understanding—and the tower would build itself within their soul, floor upon floor, reaching toward infinity. The relics of the Great Old One in the formula would pulse at the foundation, whispering the raving truths that unmake minds. The calamity they survived would replay in every stone: the knowledge that led to it, the fire it ignited, the survival that justified it all. Their consciousness would expand to hold the tower's full height—and at the top, they would find the view that justifies every step: all knowledge, all understanding, all the light of comprehension gathered into a single standing structure. Only by accepting the tower's covenant—that they will carry the calamity-attracting weight of what they know, forever—would the spiral complete, leaving them the White Tower: the eternal repository whose light guides seekers, whose walls shield against madness, and whose foundation is built on the knowledge that even gods fear to hold."
     }
   ]
 }

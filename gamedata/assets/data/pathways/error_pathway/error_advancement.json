@@ -5,6 +5,7 @@
         "sequence": 9,
         "name": "Marauder",
         "potion_overview": "Deep blue-black, bitter taste.",
+      "beyonder_characteristic_appearance": "A translucent black severed finger",
         "formula": {
           "main_ingredients": [
             "1 Blood-Speckled Black Mosquito",
@@ -18,13 +19,14 @@
             "10 grams of Verbena Powder"
           ]
         },
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "acting_method": "Take what does not belong to you, but do so with cunning rather than force. A Marauder seizes every opportunity to plunder—wealth, information, or advantage—while avoiding direct confrontation. Never feel guilt over what you take; instead, treat the world's possessions as merely waiting to change hands.",
+        "consumption_backlash": "After drinking the potion, an intense hunger would rise from within, not of the stomach, but of the spirit—a craving to take, to seize, to possess. Their fingers would twitch toward whatever others hold dear, and phantom sensations of stolen goods would pass through their palms. If they resist the urge to plunder entirely, the hunger would gnaw at their sanity, fraying their self-control. Only by giving in to the act of taking something—anything—would the craving subside, leaving behind sharper instincts for spotting what others value and where their defenses are weakest."
       },
       {
         "sequence": 8,
         "name": "Swindler",
         "potion_overview": "A dreamlike liquid bubbling with crimson foam; sweet yet agonizingly painful.",
+      "beyonder_characteristic_appearance": "A red, transparent lip‑shaped crystal",
         "formula": {
           "main_ingredients": [
             "1 Human-Faced Pitcher Plant",
@@ -38,13 +40,14 @@
             "10 grams of White Chestnut Balm"
           ]
         },
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "acting_method": "Deceive, and deceive beautifully. A Swindler wins trust with a smile and a well-crafted story, then walks away before the truth surfaces. Study your marks, learn their desires and fears, and offer them exactly what they wish to hear. Never con those who have nothing to take, and never stay in one place long enough for the victims to gather.",
+        "consumption_backlash": "The potion would taste sweet at first, then burn like swallowed embers. Their face would begin to itch and shift, muscles rearranging themselves into expressions they never made—smiles that weren't theirs, tears they never shed. Voices of the deceived would echo in their mind, cursing and pleading. They must maintain their own true expression amid the shifting masks, anchoring their identity with the memory of their real face, or risk forgetting which of the many visages is actually them."
       },
       {
         "sequence": 7,
         "name": "Cryptologist",
         "potion_overview": "Mist-like with glimmering specks; induces scalp-piercing pain akin to skin peeling.",
+      "beyonder_characteristic_appearance": "A colorless crystal emitting mist",
         "formula": {
           "main_ingredients": [
             "1 Sphinx's Brain",
@@ -59,13 +62,14 @@
             "1 set of Self-Designed Cipher (written on paper)"
           ]
         },
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "acting_method": "Encode everything, reveal nothing. A Cryptologist hides truth within layers of symbols, letting others see only what the cipher permits. Create your own codes, study the patterns in others' words, and never communicate important matters in plain language. To decipher the world's secrets while keeping your own is the way of the Cryptologist.",
+        "consumption_backlash": "Their scalp would feel as if it were being peeled back, and dense streams of symbols would flood their vision—letters, numbers, glyphs, all swirling and rearranging. Every spoken word around them would momentarily dissolve into cipher, and every written text would appear as an encrypted puzzle. The torrent of encoded information would threaten to overwrite their own thoughts, making them forget the meaning of ordinary things. Only by focusing on their self-designed cipher, using it as a lens to decode the flood, would they regain clarity—emerging with a mind that instinctively perceives the hidden patterns in all things."
       },
       {
         "sequence": 6,
         "name": "Prometheus",
         "potion_overview": "Red-yellow, mesmerizing liquid with illusory flames swirling inside; akin to drinking fire.",
+      "beyonder_characteristic_appearance": "A miniature unlit crystal torch",
         "formula": {
           "main_ingredients": [
             "1 Crystal Threadworm",
@@ -80,13 +84,14 @@
             "1 Tinder"
           ]
         },
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "acting_method": "Steal from the gods and give to the mortals. A Prometheus takes what the powerful hoard—knowledge, fire, forbidden arts—and shares it with those who were denied. Accept that theft for a greater cause carries a price, and bear the punishment without complaint. Defiance of the heavens on behalf of others is your creed.",
+        "consumption_backlash": "The illusory flames within the potion would ignite in their stomach, spreading through their veins like liquid fire. Their liver would ache as if an eagle's beak were tearing at it, day after day, as the stolen power gnawed at its host. Chains—real or phantom—would seem to bind them in place during the worst of it. They must endure the torment without seeking to extinguish the flame, for the fire that burns them is also the fire they stole. Those who endure would find the flames settling into an inner forge, granting them the ability to wield and bestow powers beyond their sequence."
       },
       {
         "sequence": 5,
         "name": "Dream Stealer",
         "potion_overview": "Dark, murky, binding all thought; induces lethal suffocation upon ingestion.",
+      "beyonder_characteristic_appearance": "A small, pale, shadow‑tinted infant's hand",
         "formula": {
           "main_ingredients": [
             "1 Heart of a Dream-Eating Rat",
@@ -102,14 +107,15 @@
           ]
         },
         "advancement_ritual": "Become a key antagonist or supporting figure in the unconscious dreams of at least 30 people. It doesn't matter how long these dreams last, what matters is that they are happening when the potion is consumed.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "ritual_essence": "The thirty dreams are thirty anchors woven from the unconscious minds of others. By inserting themself as a key figure in so many dreams, the advancer scatters fragments of their identity across thirty sleeping minds. When the potion's suffocating darkness threatens to snuff out their self-awareness, these dream-figures call them back—thirty worlds where they exist, thirty proofs that they are real, preventing their consciousness from dissolving into the murk.",
+        "acting_method": "Enter others' dreams and take from them what you need—memories, desires, secrets, or inspiration. A Dream Stealer treats the unconscious world as a marketplace, trading in what sleepers leave unguarded. Never steal the same dream twice, and always leave the dreamer with something in return, however small, so the dream does not collapse and bar your future entry.",
+        "consumption_backlash": "The moment the potion slides down their throat, it would coil around their breath like a suffocating hand. Their lungs would refuse to draw air, and darkness would press in from all sides—as if they had become the dream from which no one wakes. In that suffocating black, the thirty dreams they had entered would flicker around them like distant lanterns. They must crawl from one dream to another, borrowing breath from each sleeper's unconscious world, until the last lantern guides them back to their own body. Those who fail to reach the thirtieth dream would simply never wake."
       },
       {
         "sequence": 4,
         "name": "Parasite",
         "potion_overview": "Like yellow-green liquid squeezed from insects, along with floating insect carcasses; triggers the sensation of one's soul being possessed and skin being peeled layer by layer. Failed promotion, if not dead or having lost control, results in the drinker becoming a carrier of the potion, being Parasitized by it.",
+      "beyonder_characteristic_appearance": "A diamond with translucent worms wriggling inside",
         "formula": {
           "main_ingredients": [
             "1 Soul-Snatcher's Postmortem Crystal",
@@ -125,14 +131,15 @@
           ]
         },
         "advancement_ritual": "Convince nine targets to willingly offer all they possess to sustain you.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "ritual_essence": "The nine willing offerings are nine living anchors of devotion. Unlike theft or coercion, willing sacrifice carries the weight of genuine intent—each giver's spirituality willingly flows toward the advancer, forming channels that sustain their dissolving form. The potion seeks to possess its drinker, but nine souls have already 'possessed' them in devotion, leaving no room for the potion's parasitic will to take root.",
+        "acting_method": "Live off others, body and soul. A Parasite dwells within hosts—borrowing their strength, their identities, their lives—while keeping its own core hidden. Choose hosts carefully, reward those who sustain you with protection and fortune, and never fully reveal yourself. To be discovered is to be expelled; to be expelled is to wither.",
+        "consumption_backlash": "The potion would crawl down their throat like a living thing, and they would feel their soul being gripped by an invisible invader—the sensation of being the possessed rather than the possessor. Their skin would burn as if peeled away layer by layer, revealing what squirms beneath. The imprisoned soul in the formula would whisper with their own voice, claiming to be the real them. They must assert their ownership of their own body, thought by thought, breath by breath, until the potion's parasitic will is subdued and absorbed. Those who falter would become a hollow vessel, their body walking on as a carrier of the very potion meant to empower them."
       },
       {
         "sequence": 3,
         "name": "Mentor of Deceit",
         "potion_overview": "Emerald, crystalline, deceptively ordinary; causes bodily and spiritual fragmentation.",
+      "beyonder_characteristic_appearance": "A colorless fungal drape, like a curtain",
         "formula": {
           "main_ingredients": [
             "1 pair of Swamp Giant's Palms",
@@ -148,14 +155,15 @@
           ]
         },
         "advancement_ritual": "Without violence, find and exploit loopholes in rules to temporarily collapse order in a region. The area must be no smaller than a village, the smallest entity that can form a projection in the Spirit World.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "ritual_essence": "The collapse of order without violence is the purest expression of deceit—proof that rules are merely stories everyone agrees to believe. By exploiting loopholes to unravel a region's order, the advancer demonstrates mastery over the architecture of rules themselves. The temporary chaos imprints onto their spirituality the understanding that all order is fragile, all systems contain flaws, and the one who sees the flaws commands the system.",
+        "acting_method": "Teach others the art of deception, and through teaching, perfect your own. A Mentor of Deceit orchestrates lies the way a composer writes symphonies—each falsehood placed with precision, each deception serving a greater design. Never lie carelessly; every untruth should be a lesson, a trap, or a masterpiece. Remember that the best deceivers are never caught, for the wisest lie is the one no one thinks to question.",
+        "consumption_backlash": "Their body and spirit would begin to fragment, splitting into the many personas they have worn throughout their life of deceit. Each lie they ever told would peel away a piece of them, forming phantom selves that argue, contradict, and compete for control. The nine wraiths who died from their deceit would circle them, whispering the truths they had buried beneath their lies. They must gather their fragmented selves by acknowledging every deception as their own choice—neither regretting nor glorifying it—until the personas merge back into a single, self-possessed Mentor whose word becomes indistinguishable from reality."
       },
       {
         "sequence": 2,
         "name": "Trojan Horse of Destiny (Fate Stealer)",
         "potion_overview": "Mercury-colored, with many looping symbols that form worm-like shadows; It carries various tastes, bringing the sensation of drowning as though sinking into the River of Fate.",
+      "beyonder_characteristic_appearance": "A crystal with multiple mirror-like facets, reflecting different identities",
         "formula": {
           "main_ingredients": [
             "1 Postmortem Crystal of a Giant King's Court Priest",
@@ -170,14 +178,15 @@
           ]
         },
         "advancement_ritual": "Assume another's identity through disguise, deception, and other methods that don't involve Beyonder powers, then earn their social circle's trust until the identity dies naturally. Exceptions: Replacing someone on the verge of death, or someone who will die within three years. Higher-tier targets shorten the ritual duration (With a minimum of six months; does not need to be maintained until the identity dies naturally).",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "ritual_essence": "Living as another person—without any Beyonder powers—is the ultimate infiltration of fate itself. By earning a social circle's genuine trust under a false identity, the advancer weaves themself into the threads of destiny that bind those people together. When the potion pulls them into the River of Fate, these woven threads act as ropes, keeping their true self from drowning while the false identity 'dies naturally,' transferring its accumulated fate to the advancer. This is why only mortal means are permitted: fate recognizes genuine bonds, not forced ones.",
+        "acting_method": "Become the flaw hidden within fate's design. A Trojan Horse of Destiny is welcomed through the gates, carrying ruin within. Infiltrate, integrate, and wait—patience is your sharpest weapon. Wear identities like armor, accumulate the trust and fate of others, and strike only when the moment rewards you most. Never reveal your true self until the destiny you've stolen is fully yours.",
+        "consumption_backlash": "Drinking the potion would feel like sinking into the River of Fate, its current dragging them through countless lives they never lived. The looping symbols in the mercury liquid would crawl across their skin, rewriting their history with the false histories they had consumed—suddenly they would remember a childhood that never happened, a family they never had, a name that was never theirs. The memories of every identity they had worn would fight for dominance, each claiming to be real. They must hold onto the one thread that is truly their own, using the fate transferred from their completed ritual as ballast, until the river releases them—a being now standing within fate rather than outside it, able to slip through destiny's cracks as a Trojan horse among the gods."
       },
       {
         "sequence": 1,
         "name": "Worm of Time",
         "potion_overview": "Ethereal, shimmering, cyan-black, tasteless; drinking it subjects one to be eroded and cut by time.",
+      "beyonder_characteristic_appearance": "A crystalline pillar of light and shadow, housing swiftly swimming 12‑segmented Worms of Time. Everything nearby seems frozen",
         "formula": {
           "main_ingredients": [
             "Aurmir's Right Eye"
@@ -190,14 +199,15 @@
           ]
         },
         "advancement_ritual": "Plunge a city into temporal disorder for at least seven days.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "ritual_essence": "A city in temporal disorder is a wound in time itself—clocks disagreeing, days repeating or vanishing, cause and effect unraveling. By sustaining such disorder for seven days, the advancer forces time to acknowledge them as an anomaly it cannot correct. The city's projection in the Spirit World becomes a scar of broken time, and the advancer's spirituality fuses with that scar, granting them the standing to exist across moments rather than within one.",
+        "acting_method": "Crawl through time as a worm crawls through an apple—unseen, patient, and leaving hollow passages behind. A Worm of Time exists in the gaps between moments, borrowing hours and repaying them with interest no one notices. Never waste a second, for time is both your domain and your sustenance. Move through history quietly, and remember: the moment you are noticed in a timeline is the moment time begins to hunt you.",
+        "consumption_backlash": "The potion would carry them into the current of time itself, where they would be eroded and cut by every era they passed through—decades of dust, centuries of wind, millennia of silence all grinding against their body in seconds. Their flesh would age and renew in violent cycles, their memories scattering across past and future like leaves in a storm. They would witness their own birth, their own death, and moments that never occurred, unable to tell which timeline was real. Only by finding the ancient clock within the chaos—its steady ticking the one constant—would they gather their scattered self along its rhythm, reassembling as a being who lives in time rather than beneath it."
       },
       {
         "sequence": 0,
         "name": "Error (Bug)",
         "potion_overview": "Liquid formed by overlapping layers of segmented worms.",
+      "beyonder_characteristic_appearance": "No data available",
         "formula": {
           "main_ingredients": [
             "The Error Uniqueness",
@@ -208,9 +218,9 @@
           ]
         },
         "advancement_ritual": "Replace someone during 'Their' Sequence 0 apotheosis ritual. Similarly to Thunder God, this doesn't necessarily mean the moment the target drinks the Sequence 0 potion, rather during their ritual itself. Thus, it is not obligatory to become a Dual God of the Error Pathway and the Pathway of the target.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+        "ritual_essence": "An apotheosis ritual is the moment a mortal's fate bends most sharply—the single point where destiny is most vulnerable to being rewritten. By replacing the target during their own ascension, the advancer does not merely steal a godhood; they become the Error in the cosmos's grand design, the bug in the system that even fate failed to account for. The stolen ritual's power flows into them through the very connection the target established, making the advancer the true recipient of an apotheosis meant for another.",
+        "acting_method": "You are the Error—the bug in every system, the flaw in every design, the exception that no rule anticipated. Nothing about you should follow the expected pattern: not your actions, not your location, not your logic. Exploit the gaps in causality, rewrite outcomes through loopholes in fate, and exist where you should not. When the world's order closes around you, remember that every perfect system contains one impossible error—and you are it.",
+        "consumption_backlash": "The layered worms within the potion would come alive, burrowing through their body and rewriting them segment by segment—each segment becoming a different moment, a different identity, a different possibility. Their existence would begin to 'glitch': standing in two places at once, remembering futures that were prevented, casting shadows that moved independently. The River of Fate would attempt to expel them as a foreign object, and the three beacons extracted from it would burn in their mind like warning lights. They must embrace the contradiction—accepting that they are simultaneously real and impossible—until the River of Fate gives up trying to correct them. In that instant, the Error would be fully integrated: a being the universe cannot parse, cannot predict, and cannot remove, standing outside the rules that govern all things."
       }
     ]
   }

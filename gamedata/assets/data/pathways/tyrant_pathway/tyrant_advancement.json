@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Sailor (Keeper of the Seas)",
       "potion_overview": "A stirred, black-green, slimy substance filled with fishy stench.",
+      "beyonder_characteristic_appearance": "A twisted, black-green, semi-transparent sac-like object",
       "formula": {
         "main_ingredients": [
           "Murloc's Bladder",
@@ -19,13 +20,14 @@
           "9 drops of one's own blood"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Live on the water and learn its moods. A Sailor reads tides, currents, and clouds, keeps the vessel sound, and respects the sea's power without fearing it. Work hard, drink hard, and hold your crew's lives in your hands as carefully as you hold the wheel—for the sea forgives nothing and forgets no one.",
+      "consumption_backlash": "The slimy black-green potion would slosh through them like a storm in a hull, and their land-legs would betray them—the floor would feel like a deck in rough swells, solid ground like a lie. Their skin would itch for salt spray, their lungs would crave the damp sea air, and the fishy stench would follow them like a loyal gull. Only by going to sea—working the ropes, riding the swells, letting the ocean's rhythm replace the land's—would the rolling settle, leaving them a sailor whose body finds its balance wherever water moves."
     },
     {
       "sequence": 8,
       "name": "Folk of Rage (Guardian of the Windstorm)",
       "potion_overview": "A bubbling, blood-red liquid, as if already boiled.",
+      "beyonder_characteristic_appearance": "Enormous gelatinous bubbles covered in blood-red hues",
       "formula": {
         "main_ingredients": [
           "Deep-diver's alveoli",
@@ -39,13 +41,14 @@
           "10 drops of red algae essential oil"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Rage like the storm—loud, honest, and over when it's over. A Folk of Rage guards their people with fury and ferocity, meeting violence with greater violence and threats with a war-cry that shakes the attacker's resolve. Let your anger burn hot and clean, aimed only at those who earn it, and never let it fester into cruelty; the storm that destroys everything destroys its own home.",
+      "consumption_backlash": "The already-boiling potion would bring their blood to the same fury—every frustration they had ever swallowed would surge up at once, demanding voice. Their face would flush, their fists would shake, and the war-cry would build in their chest like a scream seeking release. The temptation would be to unleash it on whoever stood nearest. Only by venting the rage properly—shouting against the storm, striking at targets that deserve it, burning the anger clean—would the boil subside, leaving them a guardian whose fury is a weapon drawn only when drawn justly."
     },
     {
       "sequence": 7,
       "name": "Seafarer (Windstorm Priest)",
       "potion_overview": "A calm, gem-like blue liquid, reflecting twinkling starlight.",
+      "beyonder_characteristic_appearance": "A fist-sized, icy-blue object covered in strange lines and black dots",
       "formula": {
         "main_ingredients": [
           "Pituitary gland of a Black-Scaled Shark",
@@ -61,12 +64,13 @@
         ]
       },
       "acting_method": "Wander the sea. Seek out new sea routes. Seek out undiscovered islands. The core principle involved being intimate with the sea, to masterfully grasp information regarding sea routes and the weather, as well as exploration and discovery.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The gem-like blue potion would fill them with the sea's vast memory—every route ever sailed, every shipwreck ever drowned, every island that rose and sank beyond the charts. Their sense of direction would spin as the sea's scale overwhelmed the land's: north, south, east, west becoming meaningless in the open water. The starlight reflected in the potion would pull their gaze seaward, always seaward. Only by sailing—by charting real routes, discovering real shores, and logging every finding with a navigator's discipline—would the vastness become knowledge, leaving them a seafarer who carries the ocean's map inside their skull."
     },
     {
       "sequence": 6,
       "name": "Wind-blessed",
       "potion_overview": "A fist-sized, half-real half-illusory entity formed by intertwining threads of turquoise silk.",
+      "beyonder_characteristic_appearance": "A huge feather formed from pale blue/cyan wind, bearing patterns resembling eyes on its surface",
       "formula": {
         "main_ingredients": [
           "6 crystalline feathers of a Blue Shadow Falcon",
@@ -82,12 +86,13 @@
         ]
       },
       "acting_method": "Make yourself like the wind, including being irritable from time to time.",
-      "consumption_backlash": "No data available."
+      "consumption_backlash": "The turquoise silk threads would unravel through their body, and the wind would claim them—thoughts scattering like leaves, attention gusting from one thing to another, patience fraying into sudden irritation. Their hair would move without wind, and doors would seem to open at their passing. The restlessness would be maddening: a need to move, to chase, to feel air rushing past. Only by yielding to the wind's nature—moving when it moves, resting when it rests, letting irritation pass like a gust—would they find the current's rhythm, leaving them wind-blessed: a being the gales carry and the storms recognize."
     },
     {
       "sequence": 5,
       "name": "Ocean Songster",
       "potion_overview": "The liquid is dark, akin to the ocean before a storm, devoid of ripples or bubbles. The liquid is cold as it brings about a numbness that slides down their gullet and into their stomach. It then spread throughout his body cells at an unimaginable speed.",
+      "beyonder_characteristic_appearance": "A translucent jellyfish contained azure-blue seawater, with occasional swirling vortices and flashes of silver lightning",
       "formula": {
         "main_ingredients": [
           "Siren's throat",
@@ -103,14 +108,15 @@
         ]
       },
       "advancement_ritual": "Take the potion in the belly of an Obninsk.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
+      "ritual_essence": "The Obninsk's stomach is the sea's own womb—dark, enclosed, and filled with the filtered voices of all life in the ocean. By taking the potion there, the advancer is shielded from the full crushing chorus of the deep while still being bathed in it, allowing their voice and soul to be molded by the sea's song without being shattered by it. The Obninsk's sticky stomach walls bounce the sound waves back, completing the molding—a birth within the sea itself.",
+      "acting_method": "Sing the sea's song, and let the sea sing back. An Ocean Songster commands sound as the ocean commands tides—luring, soothing, crushing, and calling. Learn every voice of the deep, from the whale's low bell to the siren's sweetest lie, and never sing carelessly; a songster's voice can calm a storm or cause one, and the sea remembers both.",
       "consumption_backlash": "In the instant they drank the potion, they would hear countless voices. They came from all life at sea. They would feel that their heart was beating violently as it spewed blood outwards. Their spirituality and the sound waves begin to mold their voice and soul. One may not help but open their mouth, letting out a loud sigh. Amidst the sigh, they would feel their Spirit Body being ripped slightly. As the sound waves spread outwards, they first turn into mottled scales on their skin before pulling out long flesh tendrils that appear like flailing tentacles. The sound wave continues to spread outwards with their Spirit Body fragments. The voices they heard at the start of the backlash from all life at sea would be blocked by Obninsk's body, leaving a relatively screened out version. The sound waves continue to spread forward, until making contact with the sticky liquid within the Obninsk's stomach, and they magically bounce back, infusing their body once again. They, who were on the brink of losing control, instantly feels better as they may seize the opportunity. Beginning to sing loudly in a bid to vent the invisible sound waves that would blast their body apart. The exact singing would depend on them. As the tunes spread outward, wave after wave, mixing with the numerous Spirit Body fragments before bouncing back on the Obninsk's sticky stomach walls. In this process, they are like an ingredient being baked in sound waves as they are being molded into form. Finally, they would regain control of their body, and grasp their spreading spirituality."
     },
     {
       "sequence": 4,
       "name": "Cataclysmic Interrer",
       "potion_overview": "A dark blue, nearly black liquid, ceaselessly surging with violent 'wind and waves'.",
+      "beyonder_characteristic_appearance": "A dark blue crystalline coral. On the coral branches, silver bolts of lightning flashed, illuminating the surroundings",
       "formula": {
         "main_ingredients": [
           "Stomach of the Whale of Punishment",
@@ -126,14 +132,15 @@
         ]
       },
       "advancement_ritual": "Cause an earthquake and tsunami, drink the potion amidst this environment until the ascension is over.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To bury is to command the earth's deepest violence—and to advance amidst one's own earthquake and tsunami is to stand at the eye of one's own catastrophe, unflinching. The advancer who completes this ritual has proven they can unleash the sea and the land's full fury and remain standing within it. The disaster becomes their coronation, and its memory becomes the foundation of their authority over all cataclysms.",
+      "acting_method": "Bury the old to make way for the new. A Cataclysmic Interrer commands earthquake and flood, sinking what must sink and sealing what must stay buried. Wield catastrophe with purpose—never for petty spite—and remember that the power to bury nations carries the duty to know when the earth should be left sleeping.",
+      "consumption_backlash": "The surging dark potion would erupt through them as their own disaster had erupted through the land—waves within waves, the ground of their self cracking and heaving. They would feel the whale's stomach churning around their spirit, the vortex pulling at their edges, and the shipwreck victim's hair would whisper of everyone the sea has taken. Their body would rock with aftershocks. Only by standing in the eye of their own inner cataclysm—as they stood in the ritual's—would the quakes settle, leaving them an interrer whose inner ground is unshakeable no matter what they bring down around them."
     },
     {
       "sequence": 3,
       "name": "Sea King",
       "potion_overview": "Like a massive sea-blue gem, reflecting the depths of an ocean region.",
+      "beyonder_characteristic_appearance": "A sea-blue crystal pillar with countless reflections",
       "formula": {
         "main_ingredients": [
           "Skull of a deep-sea python",
@@ -149,14 +156,15 @@
         ]
       },
       "advancement_ritual": "Select a sea region, build with your own power a stone tower on the seafloor reaching the surface, then subdue all powerful creatures within a 300-nautical-mile radius.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The tower is a declaration carved in stone: this sea has a king. By raising it from the seafloor with their own power, the advancer proves their strength is foundational—not borrowed, not seized, but built. Subduing every powerful creature in three hundred nautical miles completes the coronation, for a king is only a king where all rivals bow. The tower remains afterward as a permanent mystical anchor binding the advancer's authority to that stretch of ocean.",
+      "acting_method": "Rule the sea as the sea rules itself—with overwhelming force held in reserve and absolute patience in daily exercise. A Sea King knows every current of their domain, commands every creature that swims it, and protects their waters as a shepherd protects a fold. Be mighty but not wasteful, stern but not cruel, and remember that the sea dethrones kings as easily as it crowns them.",
+      "consumption_backlash": "The sea-blue gem would dissolve into them, and the entire subdued region would flood their senses—every creature's position, every current's turn, every storm gathering at the horizon, all present at once like a kingdom's worth of weight on a single throne. The idol of Sea God faith would pulse against their chest, reminding them whose authority they now share. Their gills would burn as they formed, their lungs learning to drink the sea. Only by ruling as the ritual taught—knowing every subject, answering every need—would the flood of awareness become command, leaving them a Sea King whose kingdom lives inside their mind as clearly as the tower stands in their sea."
     },
     {
       "sequence": 2,
       "name": "Calamity",
       "potion_overview": "Like a tornado compressed and sealed inside a bottle, accompanied by silver-white lightning.",
+      "beyonder_characteristic_appearance": "A dark, dangerous cloud mass brewing with terror",
       "formula": {
         "main_ingredients": [
           "The Beyonder Characteristic of Queen of Calamity Cohinem (Note: Cohinem is not a pure Sequence 2 Angel of the Tyrant Pathway) OR The Beyonder Characteristic of the 'King of the Deep Sea'"
@@ -170,14 +178,15 @@
         ]
       },
       "advancement_ritual": "With only your own strength, trigger a natural disaster affecting at least one million people. At the peak of their fear and despair, reveal yourself and halt the disaster—this stage must also rely solely on your own power.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The ritual's cruelty is its lesson: to be calamity and salvation in the same hour. By unleashing a disaster upon a million people and then halting it with the same hands, the advancer experiences both sides of the Tyrant's nature—destruction and dominion. The thousand strands of hair from those who died of fear bind the memory of what fear truly costs, ensuring the Calamity never forgets that their mercy and their wrath are the same power, differently aimed.",
+      "acting_method": "Be the storm that spares, and be feared for both your wrath and your mercy. A Calamity wields disaster as an extension of will—unleashing it when it must be unleashed, halting it when it has made its point. Never destroy without purpose, and never let mercy become predictability; the calamity that can always be reasoned with is no calamity at all.",
+      "consumption_backlash": "The compressed tornado would tear loose inside them, and the million fears they harvested would scream through their spirit—every cry from the disaster, every prayer whispered as the waves rose, every face turned toward them in the moment of revelation. Silver lightning would arc through their veins. They would feel themselves becoming the disaster entire: wind, wave, and terror fused into a single will. Only by holding both halves of the ritual—destroyer and savior, wrath and restraint—would the storm find its center, leaving them a Calamity whose mercy is feared precisely because their wrath is real."
     },
     {
       "sequence": 1,
       "name": "Thunder God",
       "potion_overview": "Water of thunder formed by intertwining flashes of multicolored lightning.",
+      "beyonder_characteristic_appearance": "A 'scepter' woven of lightning",
       "formula": {
         "main_ingredients": [
           "A Thunder God Beyonder Characteristic"
@@ -189,14 +198,15 @@
         ]
       },
       "advancement_ritual": "Find and harness lightning to disrupt at least three Sequence 2 Angels' advancement rituals to Sequence 1 (optimal if the angels belong to the Hanged Man, White Tower, Visionary, Sun, or Tyrant Pathways). Interrupting a ritual to Sequence 0 will count as completing it in one go. Interrupting a ritual isn't limited to drinking the potion but any part of the ritual, such as blowing up the marionette town of a Miracle Invoker that want to advance to Attendant of Mysteries.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Lightning is heaven's interruption—the bolt that arrives uninvited and unannounced. By disrupting three Angels' advancement rituals, the advancer proves they can harness that principle: the power to shatter the almost-complete, to break what fate has nearly finished. Each interrupted ritual leaves its broken momentum in the advancer's spirituality, and the accumulated frustration of three thwarted apotheoses becomes the raw voltage of their own ascension.",
+      "acting_method": "Strike like lightning—sudden, decisive, and gone before the thunder fades. A Thunder God does not linger, does not posture, and does not warn; they act, and the world rearranges itself around the act. Cultivate the bolt's virtues: speed, precision, and finality. When you choose to strike, let nothing be standing that should have fallen.",
+      "consumption_backlash": "The multicolored lightning would course through every nerve at once, and the three broken rituals would replay in their mind—the Angels' fury, their despair, their curses hurled at the storm that ruined their apotheosis. Their body would seize and spark, hair standing, eyes flashing with borrowed voltage. The depraved nature of the Hanged Man Angel would whisper that destruction is easier than creation. Only by owning each interruption—accepting the enmities earned, acknowledging that they built themselves on broken ascensions—would the voltage ground itself, leaving them a Thunder God whose bolt carries the weight of three ruined godhoods and answers for every one."
     },
     {
       "sequence": 0,
       "name": "Tyrant",
       "potion_overview": "A massive humanoid form condensed from lightning and storms.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Tyrant Uniqueness",
@@ -207,9 +217,9 @@
         ]
       },
       "advancement_ritual": "Gather over 100,000 followers. They must submit and believe in the person out of fear. Challenge a Sequence 0 True God and survive. After surviving the challenge, drink the potion under the watch of the fearful followers.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The Tyrant's throne is built on fear that has witnessed power. A hundred thousand fearful believers provide the collective will, but the ritual's true crucible is the challenge: to defy a True God and live. Surviving that defiance proves the advancer cannot be destroyed by the highest authority—and drinking the potion before the watching crowd seals their terror into permanent, living worship. Fear, fully earned, becomes the Tyrant's crown.",
+      "acting_method": "Rule through fear, and make the fear deserved. A Tyrant commands through the certainty of consequences—those who defy are broken, those who obey are spared, and all are watched. Never rage without cause, for meaningless cruelty breeds desperate assassins; let your wrath be rare, overwhelming, and precisely aimed, so that the memory of it governs in your absence.",
+      "consumption_backlash": "The storm-condensed humanoid would pour into them, and the fear of a hundred thousand believers would crash against their soul like a tidal wave—every nightmare they had inspired, every flinch at their shadow, every whispered prayer that they look elsewhere. The god's blood drenching the formula would remind them of the authority they defied and survived. Their body would crackle with storm-light, their voice gaining thunder's double-tone. Only by standing within the fear as its source rather than its victim—accepting that they chose this crown and its weight—would the storm settle into permanent dominion, leaving them the Tyrant: the living storm before whom a hundred thousand hearts beat faster, and who would have it no other way."
     }
   ]
 }

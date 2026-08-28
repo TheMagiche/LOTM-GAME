@@ -5,6 +5,7 @@
       "sequence": 9,
       "name": "Monster",
       "potion_overview": "A transparent liquid seemingly imbued with iridescent aurora.",
+      "beyonder_characteristic_appearance": "A silver, petal-shaped object covered in scales",
       "formula": {
         "main_ingredients": [
           "Tail of a Colorful Carp",
@@ -19,13 +20,14 @@
           "9 drops of one's own blood"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Embrace the strange luck that finds you, good or ill. A Monster lives at the mercy of chance—winning lotteries and losing wallets in the same afternoon—and learns to flow with fortune rather than fight it. Take risks others avoid, accept the unexpected with grace, and never curse your luck aloud, for the wheel listens to those who complain.",
+      "consumption_backlash": "The iridescent potion would set the wheel spinning within them, and chance would seize the reins of their day—doors leading to wrong rooms, coins landing on edge, rain starting only where they stood. Every probability would wobble around them, small fortunes and small disasters arriving in unpredictable alternation. The murky river water in the formula would cloud their sense of cause and effect. Only by riding the chaos calmly—accepting each twist without panic or celebration—would the wheel slow to a manageable spin, leaving them a monster of luck whose fortunes, though wild, never quite destroy them."
     },
     {
       "sequence": 8,
       "name": "Robot",
       "potion_overview": "A cold, gray liquid that seems almost solidified.",
+      "beyonder_characteristic_appearance": "A crystal-clear, cold gray stone",
       "formula": {
         "main_ingredients": [
           "One piece of Orange-glow Stone",
@@ -40,13 +42,14 @@
           "13 grams of Iron Rust"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Become the machine that luck operates through—precise, unfeeling, and perfectly consistent. A Robot acts by protocol rather than impulse, executing decisions with mechanical regularity and never letting emotion corrupt the calculation. Follow your routines exactly, respond to stimuli identically each time, and let no passion introduce error into the pattern.",
+      "consumption_backlash": "The cold gray potion would solidify their blood into something closer to coolant, and their emotions would dim like lights powering down—joy flattening, grief muting, love becoming a data point. Their joints would stiffen into perfect economy of motion, and their speech would flatten into measured tones. The iron rust in the formula would flake through their veins. The danger is not becoming mechanical in action but in soul. Only by deliberately performing one act of genuine warmth each day—a kindness no protocol requires—would the machinery retain its ghost, leaving them a robot whose precision serves a heart that still, faintly, beats."
     },
     {
       "sequence": 7,
       "name": "Lucky One",
       "potion_overview": "A mercury-colored liquid with suspended bubbles, as if eyes are opening within it.",
+      "beyonder_characteristic_appearance": "A mercury-colored eyeball, swiveling left and right as if it were alive. Once released from the boxing glove, its was stored as a mercury eyeball in a glass jar",
       "formula": {
         "main_ingredients": [
           "One flower of good fortune",
@@ -60,13 +63,14 @@
           "10 milliliters of mercury"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Walk the path where fortune favors you, and notice every favor. A Lucky One cultivates luck by recognizing it—taking the unexpected opportunity, accepting the stranger's kindness, choosing the door that feels right without knowing why. Trust your fortunate instincts, act on favorable chances immediately, and never grow arrogant; luck is a guest, not a servant.",
+      "consumption_backlash": "The mercury bubbles would open like eyes within them, and luck would begin testing its new favorite—small fortunes arriving so constantly that they would grow careless, then small disasters slipping through the gaps that carelessness created. The coin picked up within three days would grow hot in their pocket, a reminder that fortune found them, not the reverse. Only by staying humble before the wheel—thanking each stroke of luck, learning from each stroke of misfortune—would the eyes close into watchful favor, leaving them a Lucky One whose fortune endures because they never presumed upon it."
     },
     {
       "sequence": 6,
       "name": "Calamity Priest",
       "potion_overview": "A silver liquid covered in a black-green layer, emitting a foul and nauseating odor.",
+      "beyonder_characteristic_appearance": "A fist-sized heart covered in mercury-colored scales",
       "formula": {
         "main_ingredients": [
           "Heart of a Blue-spotted Firebird",
@@ -81,13 +85,14 @@
           "One piece of obsidian stained with another's blood"
         ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Serve at the altar of calamity, and learn its liturgy. A Calamity Priest studies disasters—their omens, their patterns, their appetites—and learns to predict, redirect, or invite them. Perform the rites that honor catastrophe's power, warn those who will listen, and never forget that the priest who serves calamity too eagerly becomes its first offering.",
+      "consumption_backlash": "The foul silver potion would coat their spirit in calamity's residue, and disasters would begin orbiting them—small ones first: spilled ink, snapped strings, stumbled steps—then larger ones gathering at the edges of their life like storm clouds. The blood-stained obsidian would pulse with each approaching misfortune. Their presence would make the careful clumsy and the safe reckless. Only by officiating the disasters properly—acknowledging each as it arrives, directing its force away from the innocent—would the orbit stabilize, leaving them a priest whose calamities serve at their altar rather than consuming it."
     },
     {
       "sequence": 5,
       "name": "Winner",
       "potion_overview": "A golden, radiant liquid that evokes joy.",
+      "beyonder_characteristic_appearance": "A 'golden' stone emitting red fiery light",
       "formula": {
         "main_ingredients": [
           "One piece of Divine-blessed Crystal",
@@ -103,14 +108,15 @@
         ]
       },
       "advancement_ritual": "For a full month, remain in an unlucky state—absolutely no instances of good fortune.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To win, one must first know what it costs to lose everything. The month of absolute misfortune strips the advancer of every lucky habit and every presumption of favor, teaching them the wheel's full circumference: what falls when fortune falls. Only one who has touched the bottom of the wheel can be trusted with its top—and the luck derived from another person in the formula is the first prize of their rebirth, taken honestly from one who had it to spare.",
+      "acting_method": "Win, and keep winning—but win completely. A Winner finishes what others abandon, seizes what others hesitate over, and stands at every finish line they approach. Compete with total commitment, accept victory with grace and defeat with analysis, and never enter a contest you intend to lose; the wheel favors those who commit to the spin.",
+      "consumption_backlash": "The golden potion would flood them with the memory of the month below the wheel—every misfortune, every loss, every door that closed—followed immediately by the vertigo of fortune's return. They would feel luck pouring into them like light into an empty vessel, and with it the intoxicating certainty that they cannot lose. That certainty is the trap. Only by remembering the month of misfortune—holding the memory of losing as a counterweight to the thrill of winning—would they keep their balance on the wheel's top, leaving them a Winner whose victories are earned by one who knows exactly what losing means."
     },
     {
       "sequence": 4,
       "name": "Misfortune Mage",
       "potion_overview": "A black liquid streaked with streams of grey-white.",
+      "beyonder_characteristic_appearance": "Sharp, deep black horn-like object with countless grey-white wrinkles",
       "formula": {
         "main_ingredients": [
           "Brain of a Four-eared Giant Ape",
@@ -125,14 +131,15 @@
         ]
       },
       "advancement_ritual": "Without prior preparation, and without seeking a way to negate or alleviate the effects, directly face a major calamity while at the lowest ebb of your luck—and survive.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Misfortune mastered is misfortune commanded. By facing a major calamity at their luck's lowest ebb—unprepared, unshielded, and alone—the advancer experiences misfortune in its purest form and survives it anyway. That survival, against the wheel's full weight, inscribes into their soul an authority over misfortune itself: they have been to the bottom and returned, and now the bottom recognizes them as its master.",
+      "acting_method": "Wield misfortune as a mage wields fire—deliberately, precisely, and with full knowledge of what it burns. A Misfortune Mage directs bad luck at targets, weaves calamity into defenses, and turns the wheel's dark side into a weapon. Never curse carelessly, and never forget the survival that earned this power; the misfortune you send into the world remembers where it came from.",
+      "consumption_backlash": "The black potion streaked with grey-white would draw every misfortune they had ever survived back to the surface—the calamity of the ritual foremost—replaying each disaster in compressed time. Their luck would bottom out entirely: everything they touched would sour, everything they planned would collapse. The grey-white streams would swirl like the wheel's dark half spinning. Only by enduring as they endured in the ritual—without preparation, without complaint, simply surviving—would the wheel's dark side acknowledge them, leaving them a Misfortune Mage who commands the storm because they have stood in its eye."
     },
     {
       "sequence": 3,
       "name": "Chaoswalker",
       "potion_overview": "An exceptionally chaotic liquid churning with cold tones of silver, grey, black, green, etc.",
+      "beyonder_characteristic_appearance": "A silver-grey patterned gelatinous substance that causes mental confusion and seems to interfere with fate itself",
       "formula": {
         "main_ingredients": [
           "Crystal Core of a Calamity Phoenix",
@@ -147,14 +154,15 @@
         ]
       },
       "advancement_ritual": "Fix a node, or 'beacon', that your destiny must inevitably reach within the next ten years. This node can be fixed in any way but it must be absolute, inevitable to reach.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "Destiny abhors the fixed—yet the Chaoswalker forces it to accept one absolute point. By fixing a beacon that their fate must inevitably reach, the advancer creates an anchor in the otherwise fluid stream of their destiny. No matter how chaos swirls around them, all their possible futures converge on that node; the certainty of arrival becomes the still center around which they can walk through chaos unlost.",
+      "acting_method": "Walk through chaos as its native, not its victim. A Chaoswalker thrives where probability breaks down—moving through uncertainty with instinct and adaptability, turning disorder into opportunity. Accept the chaos you cannot control, direct the chaos you can, and hold your beacon in mind always; the walker who forgets their destination becomes part of the storm.",
+      "consumption_backlash": "The chaotic potion would churn through them in cold tones, and every probability around them would destabilize—certainties becoming doubts, impossibilities becoming temptations. Their own past would feel negotiable, their future a fog of branching paths. The nine thank-you notes from survivors would flutter in their memory, reminders that chaos spares those who respect it. Only by fixing their mind on the beacon—holding the one inevitable point as a compass needle holds north—would the chaos organize around their purpose, leaving them a Chaoswalker who dances on the wheel's edge without ever falling off."
     },
     {
       "sequence": 2,
       "name": "Soothsayer",
       "potion_overview": "A pure, viscous mass of mercury covered in countless tiny symbols and patterns.",
+      "beyonder_characteristic_appearance": "Either a scale-covered horn, a wood-grained heart, or a cracked turtle shell, all in a mercury silver color",
       "formula": {
         "main_ingredients": [
           "Horn of a Fate Grey Tiger OR The Heart of a Scale-covered Treant Elder"
@@ -168,14 +176,15 @@
         ]
       },
       "advancement_ritual": "Peer into the River of Fate, uncover an important revelation concerning at least one nation, and ensure that this revelation ultimately manifests exactly as you 'saw' it.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "To read a nation's fate is to hold a country's destiny in one's gaze—and to ensure the revelation manifests exactly as seen is to prove that the Soothsayer does not merely predict fate but midwife it. The fulfilled prophecy recorded before its coming true becomes their credential in the River of Fate itself: the waters recognize them as one who has handled a nation's thread and delivered it whole.",
+      "acting_method": "Speak fate's truths with care, for a prophecy spoken becomes a prophecy at work. A Soothsayer divines for those who need to see ahead—kings, cities, the desperate—and delivers each revelation with the weight it deserves. Never prophesy for entertainment, never twist a reading to please the listener, and accept that some fates, once spoken, cannot be unsaid.",
+      "consumption_backlash": "The mercury mass would flow through their mind, and the River of Fate would open within them—countless threads of destiny shimmering past, each one a life, a nation, a world-line. The tiny symbols covering the potion would crawl across their thoughts, translating fate into language faster than they could read. The temptation would be to grab every thread, to know every ending. Only by focusing on the one revelation—the nation's fate they had carried to manifestation—would the river narrow to a readable channel, leaving them a Soothsayer whose sight is deep but whose mouth is measured."
     },
     {
       "sequence": 1,
       "name": "Snake of Mercury (Giant Serpent, Snake of Fate, Tail-Devouring Serpent of Fate)",
       "potion_overview": "A head-to-tail mercury-colored small serpent (more like a flow of water) encased in a semi-transparent shell.",
+      "beyonder_characteristic_appearance": "A mercury ring with countless cyclic symbols",
       "formula": {
         "main_ingredients": [
           "The Crystal Core of a Mercury Phoenix OR The Crystal Core of a Mercury Giant Serpent"
@@ -189,13 +198,14 @@
       },
       "advancement_ritual": "Find a way to extract all of your memories, then, after consuming the potion, infuse them back into yourself. Alternatively, with the aid of a Visionary during the ritual, regress to the state of a fetus, stripped of all memory, and awaken the full breadth of cognition buried deep within your soul and mind. Note 1: Specific term from the Western Continent: Unveiling the Enigma of the Womb. Note 2: Here memory mean ALL memory, conscious and unconscious.",
       "ritual_essence": "The core of the Snake of Mercury is 'reboot'. The purpose of the ritual is to ensure the promoter does not get lost during the reboot and lose control.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Devour your own tail, and begin again. A Snake of Mercury lives in cycles—ending what must end, preserving what must persist, and rebooting without losing the essence. Shed what no longer serves, coil around what matters, and never fear the ending that precedes a beginning; the serpent that cannot renew itself cannot live long.",
+      "consumption_backlash": "The mercury serpent would coil through them, and the reboot would begin—memories dissolving like salt in water, identity loosening its grip, the self returning to the state before the first memory formed. The umbilical cord in the formula would pulse with their original beginning. In the blankness, they would be nothing and no one—a serpent of pure potential. Only by infusing the memories back in the proper order—essence first, details after, letting the core self reassemble around what truly matters—would the reboot complete, leaving them the Snake of Mercury: reborn from their own mouth, carrying every life they have lived as one unbroken coil."
     },
     {
       "sequence": 0,
       "name": "Wheel of Fortune",
       "potion_overview": "A slowly rotating, semi-illusory, semi-substantial wheel filled with mysterious meaning and symbol.",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Wheel of Fortune Uniqueness",
@@ -206,9 +216,9 @@
         ]
       },
       "advancement_ritual": "One must find the right opportunity in the flow of destiny, then take the potion. The right opportunity cannot be divined and cannot be predicted. It can't be locked in any way. One can only rule out certain obstacles and must patiently look for it.",
-      "ritual_essence": "No data available.",
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "ritual_essence": "The final lesson of the Wheel of Fortune is that fate's greatest gift cannot be sought, only recognized. The right opportunity is the one moment when the wheel's rotation aligns with the advancer's existence—and it cannot be divined, predicted, or locked, because it is defined by being beyond all manipulation. One who has walked every other aspect of fate must finally surrender to it: ruling out obstacles, waiting patiently, and trusting the wheel to offer what no divination can find. The nine beacons from the River of Fate are the witnesses of that surrender.",
+      "acting_method": "You are the Wheel of Fortune—the turning of fate itself, the rise and fall that no one escapes. Turn fairly, for the wheel that favors becomes the wheel that is cursed; turn completely, for a wheel that stops is no longer a wheel. Raise the low and lower the high as the seasons require, and never explain your turning, for fate owes no one an accounting. Those who understand you ride your rotation; those who do not are simply turned.",
+      "consumption_backlash": "The semi-illusory wheel would begin to turn within them, and they would feel every fortune they had ever handled—every luck granted, every misfortune directed, every destiny nudged—returning through them as the wheel completed its circuit. The nine beacons would light in sequence, past, present, and future illuminating in turn. They would experience themselves as the axis rather than the rider: the still point around which all fortune spins. The temptation would be to seize the wheel, to stop it where they stood at the top. Only by letting it turn—accepting their own rises and falls as part of the rotation they embody—would they fuse with it completely, becoming the Wheel of Fortune: the eternal turning to which all luck, all fate, and all lives are bound."
     }
   ]
 }

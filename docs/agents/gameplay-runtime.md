@@ -95,7 +95,7 @@ When `attachLotmVisuals` is true:
 - Canon NPCs with Neutral Standing (`pcRelation: 0`; lore Affinity 50).
 - Orthodox churches JSON → faction ledger ([`lotmChurches.ts`](../../src/worldpacks/lotmChurches.ts)).
 - Geography JSON → location ledger ([`lotmGeography.ts`](../../src/worldpacks/lotmGeography.ts)).
-- Item catalog ([`lotmItemCatalog.ts`](../../src/worldpacks/lotmItemCatalog.ts)).
+- Item catalog from `gamedata/assets/data/items/` lists ([`lotmItemCatalog.ts`](../../src/worldpacks/lotmItemCatalog.ts)).
 - Chosen PC `signatureKit` (pathway + sequence + abilities), purse, `pcMeta.digestion = 0`, `lossOfControl = 0`.
 - `diceSystem = undefined` (3-band fairness pool).
 - Ability-compendium warmup (lazy 2.4MB JSON).

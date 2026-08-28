@@ -28,7 +28,7 @@ import { toast } from './Toast';
  * each time it opens, so its `useState` initializer reads the live armed id —
  * no reset effect needed (avoids the react-hooks/set-state-in-effect rule).
  */
-export function OneShotInjectorButton() {
+export function OneShotInjectorButton({ layout = 'strip' }: { layout?: 'strip' | 'nav' } = {}) {
     const pipelinePhase = useAppStore(s => s.pipelinePhase);
     const armedOneShot = useAppStore(s => s.armedOneShot);
     const setArmedOneShot = useAppStore(s => s.setArmedOneShot);
@@ -41,16 +41,33 @@ export function OneShotInjectorButton() {
         ? ONE_SHOT_EVENT_TYPES.find(t => t.id === armedOneShot) ?? null
         : null;
 
+    const title = armedOneShot
+        ? `Event armed (${armedType?.label ?? armedOneShot}) — click to change or disarm`
+        : 'Inject a one-shot event — fires on your next message';
+
     return (
         <>
+            {layout === 'nav' ? (
+                <button
+                    type="button"
+                    onClick={() => setModalOpen(true)}
+                    disabled={isStreaming}
+                    title={title}
+                    className="w-full flex items-center gap-2 px-4 py-2 text-left text-[11px] text-text-dim hover:text-terminal hover:bg-terminal/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                    <Zap size={14} className="shrink-0" />
+                    <span className="min-w-0 flex-1 truncate">Inject Event</span>
+                    {armedOneShot && (
+                        <span className="min-w-[18px] px-1.5 py-0.5 rounded-full bg-terminal/15 text-terminal text-[9px] font-mono text-center">
+                            Armed
+                        </span>
+                    )}
+                </button>
+            ) : (
             <button
                 onClick={() => setModalOpen(true)}
                 disabled={isStreaming}
-                title={
-                    armedOneShot
-                        ? `Event armed (${armedType?.label ?? armedOneShot}) — click to change or disarm`
-                        : 'Inject a one-shot event — fires on your next message'
-                }
+                title={title}
                 className={`shrink-0 flex items-center gap-1.5 bg-void border text-[10px] sm:text-[11px] uppercase tracking-wider px-3 h-[32px] rounded-sm transition-all disabled:cursor-not-allowed whitespace-nowrap ${
                     armedOneShot
                         ? 'border-violet-500 text-violet-400 bg-violet-500/10 hover:bg-violet-500/20 animate-pulse'
@@ -65,6 +82,7 @@ export function OneShotInjectorButton() {
                     {armedOneShot ? `ARMED` : 'EVENT'}
                 </span>
             </button>
+            )}
 
             {modalOpen && !isStreaming && (
                 <OneShotModal

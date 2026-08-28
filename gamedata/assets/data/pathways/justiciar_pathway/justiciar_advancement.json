@@ -21,8 +21,8 @@
           "1 gram of Gold"
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Judge fairly, decide firmly, and own every verdict. An Arbiter weighs disputes with an even hand—listening to all sides, applying the rules as written, and delivering judgments without favoritism or fear. Never let rank, wealth, or friendship bend your scale, and never avoid deciding; the arbiter who delays justice serves injustice.",
+      "consumption_backlash": "The black-spotted potion would settle into them like a gavel's weight, and every unfairness they had ever committed or ignored would return for judgment—their own past arraigned before their new standards. Their words would take on verdict-like finality, and casual decisions would feel like rulings. The slate's black lines would appear at the edge of their vision, measuring everything. Only by judging themselves first—sentencing their own past failures honestly—would the weight become authority, leaving them an arbiter whose judgments are clean because their own ledger has been balanced."
     },
     {
       "sequence": 8,
@@ -44,8 +44,8 @@
           "10 drops of Monkey Flower essential oil."
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Uphold the law on the ground, where it meets the dirt. A Sheriff patrols, investigates, and arrests—bringing the law's authority to every corner of their jurisdiction. Know your territory and its people, distinguish crime from desperation, and use force only when the law permits; the badge is a promise that order will come, even to the darkest alley.",
+      "consumption_backlash": "The three-colored potion would harden in their veins like iron, dark red, and silver, and every lawbreaker they had ever pursued would surface in their mind—each escape, each ambush, each moment they had chosen caution over action. Their body would itch for the chase, their hands for the irons. The designation letter in the formula would burn like a badge pinned to their soul. Only by patrolling with discipline—answering every call, filing every report, serving every warrant—would the restlessness become vigilance, leaving them a sheriff whose presence alone restores order to the streets they walk."
     },
     {
       "sequence": 7,
@@ -67,8 +67,8 @@
           "1 Tourmaline (typically black or blackish mineral that occurs as prismatic crystals in granitic and similar rocks. It consists of a boron aluminosilicate and has pyroelectric and piezoelectric properties)."
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Question with purpose, and never torture for pleasure. An Interrogator extracts truth through pressure—psychological, mystical, and moral—breaking down deception layer by layer. Know the law's limits on your methods and stay within them, distinguish the guilty from the merely frightened, and remember that a confession obtained wrongly poisons every case it touches.",
+      "consumption_backlash": "The silvery flashes would strike through their own mind, and they would feel what every subject they had ever questioned felt—the pressure, the fear, the slow unraveling of certainty. Their own secrets would surface for interrogation, each one examined by the same light they had turned on others. The lightning-scorched wood would smolder in their thoughts. Only by questioning themselves with the same rigor—extracting their own truths, admitting their own evasions—would the flashes become insight, leaving them an interrogator whose questions are unanswerable because they have first answered them to themselves."
     },
     {
       "sequence": 6,
@@ -90,8 +90,8 @@
           "1 yellow 'Amaranth'"
         ]
       },
-      "acting_method": "No data",
-      "backlash": "No data"
+      "acting_method": "Preside over judgment with gravity and impartiality. A Judge hears the evidence, weighs the law, and sentences with the full understanding that their word ends disputes and changes lives. Study precedent, question witnesses thoroughly, and never let the courtroom become a stage for your ego; the judge's authority is the law's authority, borrowed and must be returned unstained.",
+      "consumption_backlash": "The copper pillars would rise through their spine, and every verdict they had ever delivered would stand for review—each sentence weighed against the law, each mercy questioned, each severity examined. The gavel used for ten years would echo in their palm. They would feel the weight of every life their judgments had altered. Only by reviewing honestly—affirming the just verdicts, acknowledging the flawed ones, learning from both—would the pillars become their skeleton, leaving them a judge whose rulings stand because their own house has been put in order."
     },
     {
       "sequence": 5,
@@ -114,9 +114,9 @@
         ]
       },
       "advancement_ritual": "Select a wanted criminal of at least Sequence 5, determine their crimes, then track them down alone, lock them down and execute them.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "Discipline begins with the self, and the ritual's solitude is its point: no backup, no witnesses, no shared responsibility. By determining the crimes, tracking the criminal, and executing the sentence alone, the advancer proves they can carry the law's full weight without support—investigator, judge, and executioner in one disciplined body. The spike-covered heart in the formula is the emblem of this burden: justice that protects by wounding.",
+      "acting_method": "Enforce discipline first upon yourself, then upon others. A Disciplinary Paladin maintains order through personal example—punctual, rigorous, and incorruptible—then extends that standard to those they oversee. Punish violations promptly and proportionately, praise compliance honestly, and never ask of others a discipline you have not mastered yourself.",
+      "consumption_backlash": "The frozen black spikes would grow inward, and every criminal they had executed would stand in judgment of them—each one asking whether the sentence was just, whether the evidence was complete, whether the paladin's own heart was clean. The Black Lamb's tail would whisper of innocence sacrificed to order. Their own violations, however small, would surface for equal punishment. Only by accepting the spikes—letting justice wound them where it must, as it wounds others—would the discipline become genuine, leaving them a paladin whose order is built on a heart that has judged itself first."
     },
     {
       "sequence": 4,
@@ -139,9 +139,9 @@
         ]
       },
       "advancement_ritual": "Create a law that differs from, but does not exclude, existing laws, and have it promulgated and implemented through the current national legislative process. Once ten thousand people have violated this law and have been punished accordingly, consume the potion.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "To write law is to shape behavior at the scale of nations—and by creating a law, passing it legitimately, and watching ten thousand violators receive its punishment, the advancer proves their words carry the state's full coercive power. The law does not replace existing order but extends it, demonstrating the Imperative Mage's core principle: reality obeys properly constructed commands, and the mage's word is the beginning of that obedience.",
+      "acting_method": "Speak commands that deserve obedience. An Imperative Mage issues directives that reshape behavior—compelling truth, forbidding action, enforcing order through words backed by mystical weight. Craft your imperatives precisely, for a badly worded command binds you as surely as your target, and never command what you would not obey; the mage's authority rests on the reasonableness of their rule.",
+      "consumption_backlash": "The copper-capped potion would seal their words into law, and every command they had ever issued would return for enforcement—each imperative binding them as firmly as their targets, each imprecise wording now a trap sprung on its author. The legal code in the formula would weigh on their tongue. They would feel ten thousand violations humming in their blood, the law's power and its burden arriving together. Only by commanding with perfect precision—reviewing every word they might speak before speaking it—would the imperatives become instruments, leaving them a mage whose word is law because their law is worded without flaw."
     },
     {
       "sequence": 3,
@@ -164,9 +164,9 @@
         ]
       },
       "advancement_ritual": "Handling a mysticism event involving at least Angel level powers on their own, restoring normal order to the affected area. The less people and property is lost in the area, the better the ritual.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "Chaos is order's opposite and its test—and by resolving an angel-level mysticism event alone, restoring normality with minimal loss, the advancer proves they can hunt chaos itself. The gallows wood in the formula, bearing a thousand executions, represents the ultimate authority a Chaos Hunter carries: the power to end what cannot be reasoned with, exercised with the restraint that minimal loss demands.",
+      "acting_method": "Hunt chaos wherever it breeds, and restore what it breaks. A Chaos Hunter tracks disorder to its source—corrupted rituals, rampaging entities, unraveling spells—and terminates it with precision. Preserve life and property wherever possible, use overwhelming force only when necessary, and never let the hunt become pleasure; the hunter who enjoys chaos too much becomes its kin.",
+      "consumption_backlash": "The brass letters would swim through their vision, and every chaos they had ever hunted would replay in their mind—each entity's dying scream, each corrupted area's restoration, each moment they had chosen force over finesse. The demigod's remains in the formula would remind them of hunts that nearly failed. Their own inner order would feel fragile against the memory of what chaos can do. Only by reviewing each hunt honestly—celebrating the restraint, learning from the damage—would the letters settle into scripture, leaving them a hunter whose authority over chaos is written in the order they have restored."
     },
     {
       "sequence": 2,
@@ -189,9 +189,9 @@
         ]
       },
       "advancement_ritual": "End the disorder on a continent and bring about a balance among the various forces which can be maintained for at least a hundred years. The ritual does not require for one to be in a dominant position, but they must play a crucial role.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "Balance is not dominance—it is the architecture of equilibrium among rivals. By ending a continent's disorder and establishing a hundred-year balance without needing to rule it, the advancer proves they understand order's deepest truth: the strongest order is the one no single force controls, including themselves. The turtle shell's cracks are the map of this balance—imperfect, tested, and enduring.",
+      "acting_method": "Balance all forces, including your own. A Balancer weighs every faction, every power, every ambition—and adjusts the scales so none dominates. Intervene minimally but decisively, strengthen the weak only enough to resist, check the strong only enough to relent, and never let your own side of the scale grow heavy; the balancer who favors themself unbalances everything.",
+      "consumption_backlash": "The black and copper halves would divide their very soul, and every imbalance they had ever created would return for correction—every favor shown, every enemy crushed too completely, every scale they had tipped. The wisp of Abyssal temptation in the formula would whisper that true balance is achieved by eliminating the other side entirely. They would feel the continent's hundred-year equilibrium resting on their judgment. Only by holding the middle path—correcting their own excesses as rigorously as others'—would the halves fuse into a working whole, leaving them a Balancer whose order endures because it includes the orderer."
     },
     {
       "sequence": 1,
@@ -211,15 +211,15 @@
         ]
       },
       "advancement_ritual": "Equivalent Rituals: Establish a nation with a population of at least 10 million, making one's will the order and a strict system of rules within that nation. or Control a nation with a population of at least 50 million, making one's will the order and a strict system of rules within that nation. In both rituals, the more Beyonders and the higher their level among the citizens, the fewer people are required, but the minimum population cannot be less than 1 million.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "The Hand of Order does not merely enforce law—it is law's source, the fist from which a nation's entire legal architecture descends. By establishing or controlling a nation where their will is the constitution, the advancer proves that order can flow from a single point of perfect discipline. The 300-year-old code in the formula represents the ideal: law so well-made it outlives its maker, and the 9,000 portions of lawbreakers' blood are the price of that permanence.",
+      "acting_method": "Be the fist that order wears. A Hand of Order executes the law's will with absolute consistency—striking lawbreakers, upholding institutions, and never bending to plea or bribe. Strengthen the legal system in all you do, remove laws that violate normal circumstances, and remember that a fist is judged by what it builds as much as what it breaks.",
+      "consumption_backlash": "The pure brass potion would clench within them like a fist, and the 9,000 portions of lawbreakers' blood would cry out for judgment—every criminal they had ever punished, every law they had ever enforced, all weighing their fitness to be order's hand. The fallen god's contaminants would whisper that all order is temporary, all law eventually abolished. Their own will would test itself against the system they built. Only by holding the clenched discipline—serving the law even when the law's weight falls on them—would the fist become their own, leaving them the Hand of Order: the instrument through which justice grips the world, unyielding because it has first been gripped."
     },
     {
       "sequence": 0,
       "name": "Justiciar",
       "potion_properties": "A spherical, illusory world supported by massive brass pillars.",
-      "beyonder_characteristic_appearance": "No data",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
         "main_ingredients": [
           "The Justiciar Uniqueness.",
@@ -231,9 +231,9 @@
         ]
       },
       "advancement_ritual": "Hold a sufficiently just trial concerning a serious matter involving a True God, in accordance with the rules one has previously established and ensure that the judgment is truly carried out, then take the potion.",
-      "ritual_essence": "No data",
-      "acting_method": "No data",
-      "backlash": "No data"
+      "ritual_essence": "The final trial is the Justiciar's apotheosis: to judge a matter involving a True God—by rules of their own establishment—and to see the verdict carried out even against divine resistance. This proves that law transcends divinity: that a properly constructed order can weigh a god's actions and enforce the result. The alternate world in the formula, its rules fully replaced, is the evidence of this authority—a reality where their order is the only order.",
+      "acting_method": "You are the Justiciar—the embodiment of law above all, the order that even gods must answer to. Judge everything: mortal and divine, great and small, by the same unwavering standard. Let your rules be just, your trials fair, and your verdicts final; and when the powerful demand exemption, remind them that the pillars holding up your world were built to bear the weight of gods. Order is not cruelty and not mercy—order is the promise that all things are weighed.",
+      "consumption_backlash": "The spherical world would rise around them, supported by massive brass pillars, and every law they had ever established would become a pillar—every trial conducted, every verdict enforced, every rule written, all assembling into the architecture of a cosmos where their order is the only order. The True God they judged would stand at the trial's center, divine and defiant, as the verdict they rendered echoes through the structure. They would feel the weight of absolute authority: the power to weigh gods, and the burden of never being wrong. Only by accepting the Justiciar's covenant—that their rules must be just enough to bear divine scrutiny, their judgments clean enough to stand forever—would the pillars lock into place, leaving them the Justiciar: the living law before which all things, mortal and divine alike, stand equal in the scales."
     }
   ]
 }

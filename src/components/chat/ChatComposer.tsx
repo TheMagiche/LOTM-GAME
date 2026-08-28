@@ -27,6 +27,10 @@ export function ChatComposer({
 }) {
     const settings = useAppStore(s => s.settings);
     const deepArmed = useAppStore(s => s.deepArmed);
+    const armedRoll = useAppStore(s => s.armedRoll);
+    const armedLoot = useAppStore(s => s.armedLoot);
+    const armedOneShot = useAppStore(s => s.armedOneShot);
+    const armedAbsoluteCommand = useAppStore(s => s.armedAbsoluteCommand);
     const showPresetPicker = settings.presets.length > 1;
 
     return (
@@ -50,6 +54,26 @@ export function ChatComposer({
                 {deepArmed && (
                     <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-amber-500/15 text-amber-400 border border-amber-500/40 rounded animate-pulse">
                         Deep
+                    </div>
+                )}
+                {armedRoll && (
+                    <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-amber-500/15 text-amber-400 border border-amber-500/40 rounded animate-pulse">
+                        Dice
+                    </div>
+                )}
+                {armedLoot && (
+                    <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-amber-500/15 text-amber-400 border border-amber-500/40 rounded animate-pulse">
+                        Loot
+                    </div>
+                )}
+                {armedOneShot && (
+                    <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-violet-500/15 text-violet-400 border border-violet-500/40 rounded animate-pulse">
+                        Event
+                    </div>
+                )}
+                {armedAbsoluteCommand && (
+                    <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-command-fill text-command-label border border-command-accent/40 rounded animate-pulse">
+                        Absolute
                     </div>
                 )}
                 <textarea

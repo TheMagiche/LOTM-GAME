@@ -4,122 +4,217 @@
     {
       "sequence": 9,
       "name": "Planter",
-      "potion_overview": "No data available.",
+      "potion_overview": "It resembles golden oatmeal porridge",
+      "beyonder_characteristic_appearance": "A green gem filled with an aura of vitality",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "The Brain of a Harvest Giant scholar",
+          "The stomach of a poison bat"
+        ],
+        "alternative": "A Biologist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of blood from a poisonous bat",
+          "The tip of a tongue from a Harvest Giant Scholar",
+          "9 eggs or embryos from different organisms",
+          "3 different biological toxins"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Plant, tend, and nurture. A Planter puts seeds into soil and gives them what they need to grow—water, light, patience, and protection. Treat every living thing you cultivate as a responsibility rather than a possession, and learn the rhythms of growth: what to do daily, what to leave alone, and when to simply wait.",
+      "consumption_backlash": "After drinking the potion, they would feel roots sprouting in their own body—a restlessness that can only be eased by putting their hands into soil. Their skin would grow sensitive to seasons, their mood rising and falling with sun and rain. Nights would bring dreams of things growing in the dark, some welcome, some not. Only by tending living things daily—keeping a garden, however small—would the rooting settle, leaving them attuned to growth itself, able to coax life from earth with a touch."
     },
     {
       "sequence": 8,
       "name": "Doctor (Healing Pastor)",
-      "potion_overview": "No data available.",
+      "potion_overview": "A pale green liquid with a hint of blue, crystal clear, with an alluring aroma",
+      "beyonder_characteristic_appearance": "A branch-like object with a bluish-green hue and glistening water droplets",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "The green bark of the Blessed Poplar",
+          "The core of the Water of Life"
+        ],
+        "alternative": "A Doctor Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of Water of Life",
+          "5 leaves of the Blessed Populus",
+          "9 different kinds of herbs",
+          "100 milliliters of oatmeal or similar"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Heal the sick and comfort the suffering, treating every patient as a whole person rather than an ailment. A Doctor listens before diagnosing, treats without judgment, and accepts that some patients cannot be saved—the duty is to try, not to succeed always. Never play at godhood with life and death; simply serve it.",
+      "consumption_backlash": "The potion would make them feel every wound they had ever treated as if it were their own—the broken bones, the fevers, the last breaths. Their hands would ache with borrowed pain, and their sleep would fill with the faces of those they could not save. The temptation would be to harden, to stop feeling. Only by accepting each remembered pain as the price of the healing craft—grieving properly, then continuing to treat—would the ache settle into steady compassion, leaving them a healer whose hands stay warm no matter what they have witnessed."
     },
     {
       "sequence": 7,
       "name": "Harvest Priest",
-      "potion_overview": "No data available.",
+      "potion_overview": "A golden liquid brimming with white foam, similar to beer.",
+      "beyonder_characteristic_appearance": "Golden liquid with abundant white foam, strongly resembling beer",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "Kidney of a common Harvest Giant",
+          "A root crystal of the Oak of Life"
+        ],
+        "alternative": "A Harvest Priest Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of cow's milk, goat's milk, or other mammalian milk",
+          "The reproductive organs of a common Harvest Giant",
+          "One Fruit from an Oak of Life",
+          "One \"Alingga\" plant (It is an aquatic plant)"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Celebrate abundance and share it. A Harvest Priest blesses the fields at sowing, gives thanks at reaping, and ensures the harvest feeds the many rather than the few. Understand that a harvest is a covenant—earth gives, people tend, and both keep faith. Never let grain rot in a granary while hunger walks past its doors.",
+      "consumption_backlash": "The potion would fill them with the weight of every harvest—ripe wheat bending their spine, orchards heavy on their shoulders. They would dream of fields in every season, feeling the anxiety of drought and the joy of rain as their own. Hunger they had never known would visit them, teaching what famine means. Only by participating in the full cycle—sowing, tending, reaping, and giving thanks—would the weight become a rhythm, leaving them a priest whose blessings carry the genuine authority of one who has felt both feast and famine."
     },
     {
       "sequence": 6,
       "name": "Biologist",
-      "potion_overview": "No data available.",
+      "potion_overview": "A brownish liquid containing countless greenish-blue specks",
+      "beyonder_characteristic_appearance": "A tan leather covered with wrinkles and unusual patterns",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "The Brain of a Harvest Giant scholar",
+          "The stomach of a poison bat"
+        ],
+        "alternative": "A Biologist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "100 milliliters of blood from a poisonous bat",
+          "The tip of a tongue from a Harvest Giant Scholar",
+          "9 eggs or embryos from different organisms",
+          "3 different biological toxins"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "acting_method": "Study life in all its forms—cell, beast, and bloom—and let understanding deepen respect rather than replace it. A Biologist dissects to learn, observes to understand, and records so others may build upon the work. Never harm a living thing more than knowledge requires, and never forget that every specimen was alive.",
+      "consumption_backlash": "The potion would open their senses to the hidden architecture of life—they would see the pulse in trees, the chemistry of emotion, the quiet war of cells within every body. Their own biology would become loud to them: heartbeat, digestion, healing, all demanding attention. The flood of living detail would threaten to reduce beings to mechanisms. Only by holding wonder alongside understanding—letting each discovery deepen rather than deaden their awe—would the flood settle, leaving them a biologist who sees life's machinery and still calls it miraculous."
     },
     {
       "sequence": 5,
       "name": "Druid",
-      "potion_overview": "No data available.",
+      "potion_overview": "A brownish liquid containing countless greenish-blue specks",
+      "beyonder_characteristic_appearance": "Brown soil-like Beyonder characteristic",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "Head of a Harvest Giant Guardian",
+          "The Spine from a Blessed one of the Trees"
+        ],
+        "alternative": "A Druid Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "150 milliliters of the blood of the Harvest Giant Guardian",
+          "A piece of the pelt of a Tree's Chosen",
+          "A leaf from a 100-year-old oak tree",
+          "10 drops of animal-friendly perfume (A Potions Professor has the ability to develop this perfume)"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "advancementRitual": "Being aware of the behavior and physical structure of various ordinary animals and three kinds of extraordinary creatures. It may involve writing down this knowledge.",
+      "ritualEssence": "Keeping a record of the behavior and physical structure of various ordinary animals and three kinds of extraordinary creatures allows the advancer to understand the natural order and the balance of ecosystems. This knowledge is essential for a Druid, who must walk in harmony with nature and protect it from those who would exploit or harm it.",
+      "acting_method": "Live as part of nature, not apart from it. A Druid walks the old paths, speaks with growing things, and keeps the balance between civilization and wilderness. Take from nature only what nature can spare, defend it when others would exploit it, and remember that the forest was old before the first city and will outlast the last.",
+      "consumption_backlash": "The potion would pull them into nature's cycle whether they will it or not—bark rising beneath their skin, sap slowing their blood, seasons turning in their moods. In winter of the soul they would feel everything die; in spring, everything surge. The wild would call them away from human company, whispering that the forest understands better than people do. Only by walking both worlds—serving the balance rather than fleeing to either side—would the wildness settle into harmony, leaving them a druid whose humanity and nature are no longer at war."
     },
     {
       "sequence": 4,
       "name": "Ancient Alchemist",
-      "potion_overview": "No data available.",
+      "potion_overview": "A clear liquid, like the source of life, tinged with a dreamy pale red",
+      "beyonder_characteristic_appearance": "A bright red crystal that shimmers with the luster of life.",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "Life Crystal of a Desolate Servant",
+          "Heart of a Harvest Giant Priest"
+        ],
+        "alternative": "An Ancient Alchemist Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "200 milliliters of the blood of the Harvest Giant Priest",
+          "9 strands of hair from the Desolate Servant",
+          "1 fragment of a bewildered soul",
+          "100 grams of the flesh and blood of a runaway, lost control beyonder"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "advancementRitual": "Personally refine the Stone of Life. This ritual is a tribute to the Philosopher's Stone. The essence of the ritual is needing a large amount of life force to refine the stone.",
+      "ritualEssence": "The essence of the ritual is needing a large amount of life force to refine the stone.",
+      "acting_method": "Transform what is into what could be. An Ancient Alchemist studies the hidden correspondences of matter—herbs, metals, flesh, and spirit—and refines them toward perfection. Work with patience, for transmutation cannot be rushed; record everything, for failure teaches what success cannot; and never transmute what you do not understand, for matter remembers those who misuse it.",
+      "consumption_backlash": "The potion would begin transmuting them—their blood feeling like mercury, their bones like lead awaiting gold. Every imperfect thing they touched would itch at their perfectionist's soul, and their own body would feel like a flawed formula awaiting refinement. Dreams would fill with the Great Work, each night another stage of purification. Only by turning the art upon themself—refining their own flaws as patiently as they refine metals—would the transformation stabilize, leaving them an alchemist whose inner gold matches the gold in their crucibles."
     },
     {
       "sequence": 3,
       "name": "Pallbearer",
-      "potion_overview": "No data available.",
+      "potion_overview": "A dark liquid concealing numerous illusory figures",
+      "beyonder_characteristic_appearance": "A shadowy, unusually indistinct figure that appears like it is weightless",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "Heart of the Dark Treant",
+          "Skin of the Harvest Giant Elder"
+        ],
+        "alternative": "A Pallbearer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "200 milliliters of the blood of the Harvest Giant Elder",
+          "One fruit of the Dark Treant",
+          "One piece of rotten plank from a coffin in a tomb",
+          "One type of food already used for the sacrifice (a bouquet of flowers can also be used instead)"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "advancementRitual": "Personally bury a Sequence 3 of the Darkness, Death, or Twilight Giant pathways, witnessing their entire journey from birth to death and return to the earth. Or, bury a Mythical Creature of one of these three pathways, thus not needing to witness their Birth and Death.",
+      "ritualEssence": "The essence of the ritual is to witness the entire life cycle of a being, from birth to death and return to the earth. By personally burying a Sequence 3 of the Darkness, Death, or Twilight Giant pathways, or a Mythical Creature of one of these three pathways, the advancer gains a deep understanding of mortality and the weight of grief. This knowledge allows them to carry the burdens of others with empathy and strength.",
+      "acting_method": "Carry what others cannot bear. A Pallbearer shoulders the dead—literally and figuratively—bearing coffins, burdens, and griefs with steady strength. Serve the mourning with presence rather than words, and treat every death as deserving of dignity, no matter how the person lived. The weight is not yours to keep, only to carry.",
+      "consumption_backlash": "The potion would settle into their shoulders, and they would feel every coffin they had ever carried—and every one they ever would—as a permanent weight across their back. Griefs not their own would seep into their bones: the widow's numbness, the parent's scream, the child's confusion. Their spine would straighten under burdens invisible to others. Only by setting each weight down properly—completing every mourning, honoring every dead, then releasing the grief to those who own it—would the burden become bearable, leaving them strong enough to carry anything without being crushed by everything."
     },
     {
       "sequence": 2,
       "name": "Desolate Matriarch",
-      "potion_overview": "No data available.",
+      "potion_overview": "A brownish-yellow liquid resembling the residue of rotting flesh, causing abnormal nausea.",
+      "beyonder_characteristic_appearance": "A clump of brown soil covered with grass, grains, and vines",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "Reproductive organs of a Child of Harvest",
+          "Heart of a Daughter of Desolation"
+        ],
+        "alternative": "Desolate Matriarch Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "300 milliliters of blood from a Child of Harvest or Daughter of Desolation (other equivalents are also acceptable)",
+          "10,000 souls of creatures that died of starvation",
+          "One type of a desertified oasis remnant",
+          "A section of a creature's limb with vigorous vitality and extremely strong self-healing ability (such as Sanguines)"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "advancementRitual": "Conceive, reproduce, and nurture an entire race.",
+      "ritualEssence": "The essence of the ritual is to conceive, reproduce, and nurture an entire race. By doing so, the advancer demonstrates their ability to bring life to barren places, to create and sustain a lineage that can thrive even in desolation. This act of creation and care is the core of the Desolate Matriarch's power, embodying the principles of fertility, protection, and nurturing.",
+      "acting_method": "Mother the barren places. A Desolate Matriarch brings life to wastelands, order to chaos, and care to the abandoned—ruling desolation not with cruelty but with the stern love of one who makes dead things grow. Protect those under your care fiercely, and never mistake harshness for strength; even the desert blooms for those who know where to dig for water.",
+      "consumption_backlash": "The potion would make them feel the desolation they command—the thirst of cracked earth, the silence of places where nothing grows. Their warmth would draw inward, conserving itself like a well in drought, and tenderness would feel like a luxury they cannot afford. The temptation would be to let the barrenness spread, to stop feeling altogether. Only by making something grow in the desolation—one garden, one protégé, one kindness in a hard place—would the matriarch's heart keep its spring, leaving them stern without being barren, and strong without being cold."
     },
     {
       "sequence": 1,
       "name": "Naturewalker",
-      "potion_overview": "No data available.",
+      "potion_overview": "A rich, grassy liquid brimming with vitality",
+      "beyonder_characteristic_appearance": "Crystal clusters composed of five colors: red, green, gold, black, and brown",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": ["A Naturewalker Beyonder Characteristic"],
+        "supplementary_ingredients": [
+          "100 grams of soil blessed by one's own mother (note: either a real mother or a mystical mother is acceptable)",
+          "One spark of fire from the earth's core",
+          "One branch of a thousand-year-old oak tree",
+          "10 drops of Ichor",
+          "100 grams of newly born gold"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "advancementRitual": "Find a way to create a world that exists only as a concept, without nature or elements, and completely encompass it, then use it to enter the Astral World and consume the potion.",
+      "ritualEssence": "The essence of the ritual is to create a world that exists only as a concept, without nature or elements, and completely encompass it. By doing so, the advancer demonstrates their ability to navigate between the realms of civilization and nature, understanding both without being fully claimed by either. This act of conceptual creation allows them to enter the Astral World and consume the potion, solidifying their role as a Naturewalker who bridges the gap between two worlds.",
+      "acting_method": "Walk between the world of civilization and the world of nature, belonging fully to neither. A Naturewalker carries nature's authority into cities and civilization's questions into the wild, translating between two languages that have forgotten each other. Move lightly, mediate fairly, and never let either side claim you completely.",
+      "consumption_backlash": "The potion would dissolve the boundary within them—sometimes they would feel the forest's slow thoughts, sometimes the city's frantic pulse, and neither would feel like home. Their body would shift subtly with their surroundings: bark-textured in the wild, stone-still in crowds. The two worlds would pull at them like parents fighting over a child. Only by accepting their role as the threshold itself—neither fully wild nor fully tame, but the door between—would the pulling cease, leaving them a walker of both worlds whose feet are sure on every path."
     },
     {
       "sequence": 0,
       "name": "Mother",
-      "potion_overview": "No data available.",
+      "potion_overview": "A blood-red, bird's nest-like object covered in a translucent amniotic membrane, nurturing a phantom infant",
+      "beyonder_characteristic_appearance": "No data available",
       "formula": {
-        "main_ingredients": [],
-        "alternative": "",
-        "supplementary_ingredients": []
+        "main_ingredients": [
+          "The Mother Uniqueness",
+          "Three Naturewalker Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "A Divine Kingdom with a simple yet complete life cycle"
+        ]
       },
-      "acting_method": "No data available.",
-      "consumption_backlash": "No data available."
+      "advancementRitual": "Give actual birth to a Deity, or in mysticism the equivalent to the birth of a Deity. Giving birth to an activated Uniqueness barely counts as giving birth to a Deity.",
+      "ritualEssence": "The essence of the ritual is to give actual birth to a Deity, or in mysticism the equivalent to the birth of a Deity. By doing so, the advancer demonstrates their ability to bring forth a new divine being into existence, embodying the ultimate act of creation and nurturing. This act solidifies their role as the Mother, the origin of life and the source from which all growing things rise.",
+      "acting_method": "You are the Mother—the origin of life, the soil from which all growing things rise, the love that asks nothing back. Nurture without possessing, protect without caging, and give without counting. Let all living things find in you the safety of the womb and the freedom of the open field, and never let your vast love curdle into control, for even a mother's embrace can smother.",
+      "consumption_backlash": "The potion would open them to every birth and every growth in their domain—every seed cracking open, every child taking breath, every wound knitting closed—flooding them with the raw, overwhelming vitality of life itself. They would feel themselves becoming the source rather than a servant of it, and with that authority would come the temptation to command all growing things as a puppeteer commands strings. Only by holding to the mother's law—love that empowers rather than possesses—would they master the flood, becoming the true Mother: the origin that gives life and then, lovingly, lets it go."
     }
   ]
 }

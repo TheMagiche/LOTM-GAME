@@ -1,7 +1,8 @@
-import { useMemo, useState, useSyncExternalStore } from 'react';
+import { useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
-    Landmark, LogOut, MapPin, Package, Pin, ScrollText, Settings, Sparkles, UserCircle, Users, Workflow, Gem,
+    Landmark, LogOut, MapPin, Package, Pin, Scissors, Scroll, ScrollText, Search, Settings,
+    Sparkles, UserCircle, Users, Workflow, Gem, Zap,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -16,11 +17,18 @@ import {
     type RegisteredChromeEntry,
 } from '../services/mods/mounts/mountRegistry';
 import { resolveModText } from '../services/mods/mounts/chromeRenderers';
+import { COMPOSER_BUILTIN_ID_SET, registerComposerBuiltins } from '../services/mods/mounts/composerBuiltins';
 import { useTranslation } from '../i18n/useTranslation';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
 import { exitLotmCampaign } from './lotm/LotmPlayHeader';
 import { TokenGauge } from './TokenGauge';
+import { OneShotInjectorButton } from './OneShotInjectorButton';
+import { AbsoluteCommandButton } from './AbsoluteCommandButton';
+import { useChatPersistence } from '../hooks/useChatPersistence';
+import { useCondenser } from './hooks/useCondenser';
 import type { AiTier } from '../types/llm';
+
+registerComposerBuiltins();
 
 type GroupId = 'story' | 'world' | 'play' | 'mods' | 'engine';
 type NavIcon = typeof ScrollText;
@@ -29,8 +37,11 @@ interface NavLeaf {
     id: string;
     label: string;
     icon: NavIcon;
-    badge?: number;
+    badge?: number | string;
+    disabled?: boolean;
+    active?: boolean;
     onSelect: () => void;
+    render?: () => ReactNode;
 }
 
 // WO-screen-modernization §A-2 — `rules-mgr` is gone. Rules Manager merged
@@ -46,6 +57,7 @@ const CONTEXT_LEAVES: Record<ContextScreenId, Omit<NavLeaf, 'onSelect'>> = {
 
 const GROUPS: Array<{ id: GroupId; label: string; icon: NavIcon }> = LOTM_EXCLUSIVE_UI
     ? [
+        { id: 'world', label: 'World', icon: Database },
         { id: 'play', label: 'Play', icon: Sparkles },
         { id: 'engine', label: 'Engine', icon: Workflow },
         { id: 'mods', label: 'Mods', icon: Workflow },
@@ -67,13 +79,36 @@ function useHeaderEntries(): readonly RegisteredChromeEntry[] {
     );
 }
 
+function useComposerActions(): readonly RegisteredChromeEntry[] {
+    return useSyncExternalStore(
+        (listener) => subscribeToRegion('composer.actions', listener),
+        () => readRegion('composer.actions'),
+        () => readRegion('composer.actions'),
+    );
+}
+
+async function drainPendingCommit(): Promise<void> {
+    try {
+        const { commitPendingTurn } = await import('../services/turn/pendingCommit');
+        await commitPendingTurn().catch((e) => console.warn('[composer.actions] commit drain failed:', e));
+    } catch (e) {
+        console.warn('[composer.actions] commit drain import failed:', e);
+    }
+}
+
 function NavRow({ leaf }: { leaf: NavLeaf }) {
+    if (leaf.render) return <>{leaf.render()}</>;
     const Icon = leaf.icon;
     return (
         <button
             type="button"
             onClick={leaf.onSelect}
-            className="w-full flex items-center gap-2 px-4 py-2 text-left text-[11px] text-text-dim hover:text-terminal hover:bg-terminal/5 transition-colors"
+            disabled={leaf.disabled}
+            className={`w-full flex items-center gap-2 px-4 py-2 text-left text-[11px] transition-colors disabled:opacity-30 disabled:cursor-not-allowed ${
+                leaf.active
+                    ? 'text-terminal bg-terminal/10 hover:bg-terminal/15'
+                    : 'text-text-dim hover:text-terminal hover:bg-terminal/5'
+            }`}
         >
             <Icon size={14} className="shrink-0" />
             <span className="min-w-0 flex-1 truncate">{leaf.label}</span>
@@ -98,10 +133,28 @@ export function ContextNavigationDrawer() {
     const factionsCount = useAppStore((s) => s.factionLedger.length);
     const itemsCount = useAppStore((s) => s.itemLedger.length);
     const pinnedCount = useAppStore((s) => s.pinnedExcerpts.length);
+    const messages = useAppStore((s) => s.messages);
+    const condenser = useAppStore((s) => s.condenser);
+    const setCondensed = useAppStore((s) => s.setCondensed);
+    const settings = useAppStore((s) => s.settings);
+    const activeCampaignId = useAppStore((s) => s.activeCampaignId);
+    const pipelinePhase = useAppStore((s) => s.pipelinePhase);
+    const deepArmed = useAppStore((s) => s.deepArmed);
+    const setDeepArmed = useAppStore((s) => s.setDeepArmed);
+    const armedRoll = useAppStore((s) => s.armedRoll);
+    const armedLoot = useAppStore((s) => s.armedLoot);
     const headerEntries = useHeaderEntries();
+    const composerEntries = useComposerActions();
     const { t } = useTranslation();
+    const { handleOpenArchive } = useChatPersistence();
+    const { triggerCondense } = useCondenser({
+        messages,
+        condenser,
+        setCondensed,
+    });
+    const isStreaming = pipelinePhase !== 'idle';
     const [expanded, setExpanded] = useState<Record<GroupId, boolean>>(LOTM_EXCLUSIVE_UI
-        ? { play: true, engine: false, mods: false, story: false, world: false }
+        ? { play: true, engine: false, mods: false, story: false, world: true }
         : { story: true, world: true, play: true, mods: false, engine: false }
     );
 
@@ -114,18 +167,83 @@ export function ContextNavigationDrawer() {
 
     const aiTier = useAppStore(s => s.settings?.aiTier ?? 'pro') as AiTier;
 
+    const composerModLeaves: NavLeaf[] = composerEntries
+        .filter((entry) => entry.mod !== undefined && !COMPOSER_BUILTIN_ID_SET.has(entry.entryId))
+        .map((entry) => ({
+            id: entry.qualifiedId,
+            label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
+            icon: FileText,
+            onSelect: () => {
+                drainPendingCommit()
+                    .then(() => Promise.resolve(entry.entry.onSelect(entry.context)))
+                    .catch(() => undefined);
+            },
+        }));
+
     const exclusiveLeaves: Record<GroupId, NavLeaf[]> = {
         play: [
-            { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
-            { id: 'grimoire', label: 'Grimoire', icon: BookOpen, onSelect: () => useAppStore.getState().openGrimoire() },
-            { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
-            { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
-            { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },
-            { id: 'items', label: 'Inventory', icon: Gem, badge: itemsCount, onSelect: () => useAppStore.getState().toggleItemLedger() },
             { ...CONTEXT_LEAVES.chpt, badge: chaptersCount, onSelect: () => openContextScreen('chpt') },
             { id: 'askGm', label: 'Ask GM', icon: Sparkles, onSelect: () => useAppStore.getState().openAskGm() },
-            { id: 'dice', label: 'Dice', icon: Dices, onSelect: () => useAppStore.getState().openDiceRollModal() },
-            { id: 'loot', label: 'Loot', icon: Package, onSelect: () => useAppStore.getState().openLootRollModal() },
+            {
+                id: 'dice',
+                label: 'Dice',
+                icon: Dices,
+                badge: armedRoll ? 'Armed' : undefined,
+                active: !!armedRoll,
+                onSelect: () => {
+                    const state = useAppStore.getState();
+                    if (state.armedRoll) state.setArmedRoll(null);
+                    else state.openDiceRollModal();
+                },
+            },
+            {
+                id: 'loot',
+                label: 'Loot',
+                icon: Package,
+                badge: armedLoot ? armedLoot.rolls : undefined,
+                active: !!armedLoot,
+                onSelect: () => useAppStore.getState().openLootRollModal(),
+            },
+            {
+                id: 'oneShot',
+                label: 'Inject Event',
+                icon: Zap,
+                onSelect: () => undefined,
+                render: () => activeCampaignId ? <OneShotInjectorButton layout="nav" /> : null,
+            },
+            {
+                id: 'absoluteCommand',
+                label: 'Absolute Command',
+                icon: Sparkles,
+                onSelect: () => undefined,
+                render: () => activeCampaignId ? <AbsoluteCommandButton layout="nav" /> : null,
+            },
+            {
+                id: 'trim',
+                label: 'Trim',
+                icon: Scissors,
+                disabled: isStreaming || messages.length < 6,
+                onSelect: triggerCondense,
+            },
+            ...(settings?.deepContextSearch
+                ? [{
+                    id: 'deepSearch',
+                    label: deepArmed ? 'Deep search armed' : 'Deep search',
+                    icon: Search,
+                    badge: deepArmed ? 'Armed' : undefined,
+                    active: deepArmed,
+                    disabled: isStreaming || !activeCampaignId,
+                    onSelect: () => setDeepArmed(!deepArmed),
+                } satisfies NavLeaf]
+                : []),
+            {
+                id: 'archive',
+                label: 'Archive',
+                icon: Scroll,
+                disabled: !activeCampaignId,
+                onSelect: handleOpenArchive,
+            },
+            ...composerModLeaves,
         ],
         engine: [
             { ...CONTEXT_LEAVES.sys, onSelect: () => openContextScreen('sys') },
@@ -144,7 +262,13 @@ export function ContextNavigationDrawer() {
             },
         ],
         story: [],
-        world: [],
+        world: [
+            { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
+            { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
+            { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
+            { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },
+            { id: 'items', label: 'Inventory', icon: Gem, badge: itemsCount, onSelect: () => useAppStore.getState().toggleItemLedger() },
+        ],
         mods: modEntries.map((entry) => ({
             id: entry.qualifiedId,
             label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
@@ -207,7 +331,7 @@ export function ContextNavigationDrawer() {
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
                         {GROUPS.filter((group) => {
                             if (group.id === 'mods' && modCount === 0) return false;
-                            if (LOTM_EXCLUSIVE_UI && (group.id === 'story' || group.id === 'world')) return false;
+                            if (LOTM_EXCLUSIVE_UI && group.id === 'story') return false;
                             return true;
                         }).map((group) => {
                             const GroupIcon = group.icon;

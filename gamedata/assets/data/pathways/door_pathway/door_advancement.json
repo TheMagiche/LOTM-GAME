@@ -1,209 +1,219 @@
 {
-    "pathway": "Door Pathway",
-    "sequences": [
-      {
-        "sequence": 9,
-        "name": "Apprentice",
-        "potion_overview": "A black, viscous bubbling concoction resembling traditional herbal concoctions.",
-        "formula": {
-          "main_ingredients": [
-            "1 Gem-Devouring Worm",
-            "1 Illusion Crystal"
-          ],
-          "alternative": "An Apprentice Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "10 drops of Goat's Beard Hydrosol",
-            "90 milliliters of Ancient Well Water",
-            "1 Flower Grown from a Corpse",
-            "5 grams of Spirit World-Contaminated Soil"
-          ]
-        },
-        "acting_method": "One shouldn't flaunt one's superiority and be arrogant, and has to understand the insignificance of their own strength. One should still accept guidance and focus on studying.",
-        "consumption_backlash": "No data available."
+  "pathway": "Door Pathway",
+  "sequences": [
+    {
+      "sequence": 9,
+      "name": "Apprentice",
+      "potion_overview": "A black, viscous bubbling concoction resembling traditional herbal concoctions.",
+      "beyonder_characteristic_appearance": "A yellow-and-black stone shaped like a key",
+      "formula": {
+        "main_ingredients": [
+          "1 Gem-Devouring Worm",
+          "1 Illusion Crystal"
+        ],
+        "alternative": "An Apprentice Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "10 drops of Goat's Beard Hydrosol",
+          "90 milliliters of Ancient Well Water",
+          "1 Flower Grown from a Corpse",
+          "5 grams of Spirit World-Contaminated Soil"
+        ]
       },
-      {
-        "sequence": 8,
-        "name": "Trickmaster",
-        "potion_overview": "A vibrant, colorful liquid resembling poisonous mushrooms.",
-        "formula": {
-          "main_ingredients": [
-            "Stomach pouch of a Spirit Eater",
-            "20 milliliters of a Deep Sea Marlin's Blood"
-          ],
-          "alternative": "A Trickmaster Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "5 milliliters of essential oils made from Hornbeam",
-            "10 grams of String Grass Powder",
-            "A blossoming Red Chestnut Flower",
-            "80 milliliters of Purified Water"
-          ]
-        },
-        "acting_method": "The key is in performing, fooling others, and deception.",
-        "consumption_backlash": "No data available."
+      "acting_method": "One shouldn't flaunt one's superiority and be arrogant, and has to understand the insignificance of their own strength. One should still accept guidance and focus on studying.",
+      "consumption_backlash": "After drinking the potion, they would feel their body turn light and their senses briefly drift, as if a door had quietly opened somewhere far away. Faint ravings from the Spirit World would echo in their mind, and illusory doors would flicker at the edge of their vision, tempting them to step through. The disorientation would fade within minutes, leaving behind a heightened sensitivity to Spirit World creatures and an instinctive awareness of the distances and 'paths' around them."
+    },
+    {
+      "sequence": 8,
+      "name": "Trickmaster",
+      "potion_overview": "A vibrant, colorful liquid resembling poisonous mushrooms.",
+      "beyonder_characteristic_appearance": "A transparent crystal that refracts rainbow-colored light",
+      "formula": {
+        "main_ingredients": [
+          "Stomach pouch of a Spirit Eater",
+          "20 milliliters of a Deep Sea Marlin's Blood"
+        ],
+        "alternative": "A Trickmaster Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "5 milliliters of essential oils made from Hornbeam",
+          "10 grams of String Grass Powder",
+          "A blossoming Red Chestnut Flower",
+          "80 milliliters of Purified Water"
+        ]
       },
-      {
-        "sequence": 7,
-        "name": "Astrologer",
-        "potion_overview": "Transparent and nearly solidified.",
-        "formula": {
-          "main_ingredients": [
-            "60 grams of Meteorite Crystal",
-            "The Lavos Squid's Crystallized Blood"
-          ],
-          "alternative": "An Astrologer Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "10 grams of Clematis Powder",
-            "1 segment of Withered Grapevine",
-            "1 pair of any Octopus Eyeballs",
-            "80 milliliters of Strong Liquor"
-          ]
-        },
-        "acting_method": "Astrology is not all-powerful.",
-        "consumption_backlash": "No data available."
+      "acting_method": "The key is in performing, fooling others, and deception.",
+      "consumption_backlash": "The moment the potion takes effect, their body would feel as though it were a stage prop being rearranged by unseen hands. Their limbs would briefly move on their own, mimicking gestures they never made, and their voice would slip into tones that weren't theirs. Spectators in their mind—phantom audiences—would watch and murmur. Only by 'performing' along, accepting the act instead of resisting it, would they regain control. Once the backlash passes, they would find their expressions and voice far easier to manipulate than before."
+    },
+    {
+      "sequence": 7,
+      "name": "Astrologer",
+      "potion_overview": "Transparent and nearly solidified.",
+      "beyonder_characteristic_appearance": "A 'diamond' the size of an eye. External light was constantly refracted by the 'diamond', forming a scene as beautiful as the radiance of the stars",
+      "formula": {
+        "main_ingredients": [
+          "60 grams of Meteorite Crystal",
+          "The Lavos Squid's Crystallized Blood"
+        ],
+        "alternative": "An Astrologer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "10 grams of Clematis Powder",
+          "1 segment of Withered Grapevine",
+          "1 pair of any Octopus Eyeballs",
+          "80 milliliters of Strong Liquor"
+        ]
       },
-      {
-        "sequence": 6,
-        "name": "Scribe",
-        "potion_overview": "Transparent and nearly solidified.",
-        "formula": {
-          "main_ingredients": [
-            "1 complete brain of an Asmann",
-            "Cursed artifacts of an ancient wraith"
-          ],
-          "alternative": "A Scribe Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "3 Diary Pages over 22 Years Old",
-            "10 milliliters of Mercury",
-            "10 drops of Honeysuckle Essential Oil",
-            "30 milliliters of Seawater, Lake Water, Glacier Water each"
-          ]
-        },
-        "acting_method": "Record various Beyonder abilities. Record local customs and folklore in different places. There are many things in the world that we have yet to understand… This is what a Scribe should record.",
-        "consumption_backlash": "Their brain would rapidly start expanding. The grand folds and white matter rapidly increased as their body gradually blurred, separating into individual cells. Those cells would form a haloed 'door' that circled their brain. They would then hear ravings. But wouldn't significantly affect them in any way. The ravings would include Mr Door's. Especially for those that inherited the lineage of the Abraham Family. If an Abraham Family member this were during the full moon, they would certainly lose control immediately. After an unknown period of time, they would finally regain control over their brain and cells and could sense their body's existence. Almost at the same time, a large amount of knowledge would resonate in their mind, making them understand how to use the powers of a Scribe. The mutated 'brain' reproduced the Beyonder powers used by the target before driving a portion of the vitalized cells to form corresponding symbols, patterns, and labels for complete storage. This was 'I came, I saw, I record,' which used one's soul as a pen and one's Spirit Body as the paper."
+      "acting_method": "Astrology is not all-powerful.",
+      "consumption_backlash": "Upon consuming the potion, their consciousness would feel pulled upward, as if their spirit were rising through the atmosphere toward the sea of stars. The night sky would unfold in their mind, and countless starlights would pierce their spirituality, each carrying fragmented scenes of the past and future. The torrent of divinatory revelations would threaten to shatter their sense of the present, making them mistake prophecy for reality. They must anchor themselves by reciting what they truly see with their own eyes, distinguishing the real from the revealed, until the starlight settles and their spirituality learns to bear the weight of the heavens."
+    },
+    {
+      "sequence": 6,
+      "name": "Scribe",
+      "potion_overview": "Transparent and nearly solidified.",
+      "beyonder_characteristic_appearance": "A surreal, shimmering eye embedded with intricate gray-white patterns and flecks of starlight",
+      "formula": {
+        "main_ingredients": [
+          "1 complete brain of an Asmann",
+          "Cursed artifacts of an ancient wraith"
+        ],
+        "alternative": "A Scribe Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "3 Diary Pages over 22 Years Old",
+          "10 milliliters of Mercury",
+          "10 drops of Honeysuckle Essential Oil",
+          "30 milliliters of Seawater, Lake Water, Glacier Water each"
+        ]
       },
-      {
-        "sequence": 5,
-        "name": "Traveler",
-        "potion_overview": "Whitish yet transparent, resembling half-melted snowwater with occasional light green bubbles.",
-        "formula": {
-          "main_ingredients": [
-            "Siskun Demon Worm",
-            "Heart of a Shadowless Demonic Wolf"
-          ],
-          "alternative": "A Traveler Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "10 grams of Trapped Ghost Residue Powder",
-            "10 grams of Lemon Balm Powder",
-            "1 Star Chart Drawn with Spirit Blood",
-            "80 milliliters of Shadowless Demonic Wolf's Blood"
-          ]
-        },
-        "advancement_ritual": "Set up special coordinates in four completely different spots deep in the Spirit World which are all set up extremely far away from each other.",
-        "ritual_essence": "The four special coordinates aren't only used to help them find a way back after getting flung into the Spirit World, they can also effectively maintain their self-awareness.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "In the blink of an eye, they would feel their body and eyes light up one after another. They would blast around their body and open one illusory door after another. Their consciousness wouldn't be able to help but enter one of them. Their entire body would turn transparent and vanish. In such a chaotic state of mind, they nearly couldn't regain their sense of self-awareness. They could feel the four special coordinates in the Spirit World from time to time, helping them maintain their self-awareness. Finally, they would slowly come to their senses. After an unknown period of time, they would realise that they had already entered the depths of the Spirit World. It was difficult to tell her exact location, and she couldn't find her 'way' back. With the help of the four special coordinates, they can slowly 'traverse' back to a familiar spot, leaving the saturated, stacked colors and the thin fog before walking out of the Spirit World."
+      "acting_method": "Record various Beyonder abilities. Record local customs and folklore in different places. There are many things in the world that we have yet to understand… This is what a Scribe should record.",
+      "consumption_backlash": "Their brain would rapidly start expanding. The grand folds and white matter rapidly increased as their body gradually blurred, separating into individual cells. Those cells would form a haloed 'door' that circled their brain. They would then hear ravings. But wouldn't significantly affect them in any way. The ravings would include Mr Door's. Especially for those that inherited the lineage of the Abraham Family. If an Abraham Family member this were during the full moon, they would certainly lose control immediately. After an unknown period of time, they would finally regain control over their brain and cells and could sense their body's existence. Almost at the same time, a large amount of knowledge would resonate in their mind, making them understand how to use the powers of a Scribe. The mutated 'brain' reproduced the Beyonder powers used by the target before driving a portion of the vitalized cells to form corresponding symbols, patterns, and labels for complete storage. This was 'I came, I saw, I record,' which used one's soul as a pen and one's Spirit Body as the paper."
+    },
+    {
+      "sequence": 5,
+      "name": "Traveler",
+      "potion_overview": "Whitish yet transparent, resembling half-melted snowwater with occasional light green bubbles.",
+      "beyonder_characteristic_appearance": "A transparent, nearly illusory ethereal crystal",
+      "formula": {
+        "main_ingredients": [
+          "Siskun Demon Worm",
+          "Heart of a Shadowless Demonic Wolf"
+        ],
+        "alternative": "A Traveler Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "10 grams of Trapped Ghost Residue Powder",
+          "10 grams of Lemon Balm Powder",
+          "1 Star Chart Drawn with Spirit Blood",
+          "80 milliliters of Shadowless Demonic Wolf's Blood"
+        ]
       },
-      {
-        "sequence": 4,
-        "name": "Secrets Sorcerer",
-        "potion_overview": "Rippling with starlight, as if containing a miniature galaxy. The potion is like icy water that could hurt someone due to the extreme temperature.",
-        "formula": {
-          "main_ingredients": [
-            "Eye of a Golden Phoenix OR Siskun Demon Worm Leader",
-            "Ankh Gate's Foundation (Ankh Gate is a door with spirituality and a certain degree of intelligence)"
-          ],
-          "alternative": "A Secrets Sorcerer Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "Choose one of: Siskun Demon Worm's Nest, Ankh Gate's Ashes, or Golden Phoenix's Feather",
-            "1 Walnut",
-            "100 milliliters of Lake Water Freshly Reflecting the Cosmos"
-          ]
-        },
-        "advancement_ritual": "Seal a creature of demigod level, the creature must be hostile toward you, lesser outside help used, better will the ritual's result.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "All of their senses vanish in the areas that the potion passed, leaving only them with only still thoughts. It is inevitable that a person would hallucinate in extreme cold temperatures. In their vision, a night sky instantly appeared. It was dotted with countless stars that weaved together to form a dream-like river. Their body would begin reflecting bits of stellar radiance as if they came from their own body. The tiny bits of pure stellar radiance forms an invisible connection with the different stars in the night sky. As the light shimmered, they twisted and squirmed as insect-like creatures crawled out of their body. They want to seek refuge in the Milky Way formed by an array of embedded diamond shards. Each of them carried a portion of their own flesh and consciousness, as though they were uncontrollable avatars. Their thinking quickly turns chaotic, and they would fall into confusion. They almost couldn't control the urge to separate themself. At that moment, they would sense an illusory object. It is the seal that they had completed. It is being projected into the mysterious world created by the potion, forming an abstract, blurry mark. They wouldn't think any further as they instinctively extend a portion of their consciousness along with their spirituality, and intertwine with the abstract symbol. The mark wasn't exactly harmonious with them, as if it wasn't part of them, but it manages to barely merge with them. Suddenly, in their mind, the abstract symbol would become rather clear. It consists of a 'door' that is layered with mysterious symbols. This door hid them behind it, allowing them to isolate themself from the surrounding cosmos. At the same time, on the other side of the 'door,' the sealed creature seems to sense the aura of an enemy. Using its own godhood, it wildly corroded the illusory door. It happens to be able to reduce the influence the cosmos had on them. After maintaining it for more than ten seconds, the resplendent Milky Way's night sky slowly fades away. The stellar radiance then returned to their body fused with them. For those who are affected by Bethel Abraham: A deep darkness would appear in front of them. Deep in the darkness was a perpetual storm and occasionally flashing lightning. The next second, they hear a familiar voice. It stabbed into their head like steel nails stirring their brain matter. If they hadn't experienced such things over and over in the past, and had some level of resistance, as well as the fact that they are at the saint level, they would have likely lost control. It is a calling for help. It wasn't Jotun, Elvish or Ancient Hermes. Instead, it is a language that they may have never come into contact with before. However, they could understand it the moment they heard it. They would feel like it is the true source of many languages. A wispy voice that could pierce through Spirit Bodies would then enter their mind. They could proceed to have a normal conversation."
+      "advancement_ritual": "Set up special coordinates in four completely different spots deep in the Spirit World which are all set up extremely far away from each other.",
+      "ritual_essence": "The four special coordinates aren't only used to help them find a way back after getting flung into the Spirit World, they can also effectively maintain their self-awareness.",
+      "acting_method": "Travel far and wide, both in body and in spirit. Never linger too long in one place, and never treat any location as home. A Traveler passes through the world like wind through a doorway—observing, experiencing, and moving on. When flung into unknown places, remain calm and seek the way back instead of panicking.",
+      "consumption_backlash": "In the blink of an eye, they would feel their body and eyes light up one after another. They would blast around their body and open one illusory door after another. Their consciousness wouldn't be able to help but enter one of them. Their entire body would turn transparent and vanish. In such a chaotic state of mind, they nearly couldn't regain their sense of self-awareness. They could feel the four special coordinates in the Spirit World from time to time, helping them maintain their self-awareness. Finally, they would slowly come to their senses. After an unknown period of time, they would realise that they had already entered the depths of the Spirit World. It was difficult to tell her exact location, and she couldn't find her 'way' back. With the help of the four special coordinates, they can slowly 'traverse' back to a familiar spot, leaving the saturated, stacked colors and the thin fog before walking out of the Spirit World."
+    },
+    {
+      "sequence": 4,
+      "name": "Secrets Sorcerer",
+      "potion_overview": "Rippling with starlight, as if containing a miniature galaxy. The potion is like icy water that could hurt someone due to the extreme temperature.",
+      "beyonder_characteristic_appearance": "It looked like a crystal with countless rays of light refracted within it, forming illusory and resplendent doors. A magnificent and dreamy crystal-like appearance. It is a crystal ball formed from insects",
+      "formula": {
+        "main_ingredients": [
+          "Eye of a Golden Phoenix OR Siskun Demon Worm Leader",
+          "Ankh Gate's Foundation (Ankh Gate is a door with spirituality and a certain degree of intelligence)"
+        ],
+        "alternative": "A Secrets Sorcerer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "Choose one of: Siskun Demon Worm's Nest, Ankh Gate's Ashes, or Golden Phoenix's Feather",
+          "1 Walnut",
+          "100 milliliters of Lake Water Freshly Reflecting the Cosmos"
+        ]
       },
-      {
-        "sequence": 3,
-        "name": "Wanderer",
-        "potion_overview": "Deep black liquid filled with countless glittering specks.",
-        "formula": {
-          "main_ingredients": [
-            "Wandering Skin",
-            "Crystal Left by a Mist Watcher"
-          ],
-          "alternative": "A Wanderer Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "10 milliliters of Wandering Skin's Pus",
-            "Mist Watcher's Eyelid",
-            "9 White Mustard Seeds",
-            "90 milliliters of Star Water From the Ritual Site"
-          ]
-        },
-        "advancement_ritual": "Find three piece of Astral World information projected into the Spirit World, enter the dangerous scenarios derived from them, and record everything down in full detail and do not forget them.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+      "advancement_ritual": "Seal a creature of demigod level, the creature must be hostile toward you, lesser outside help used, better will the ritual's result.",
+      "ritual_essence": "The sealed demigod serves as a 'lock' upon the door of their own spirituality. By sealing a hostile creature of godhood, the advancer borrows its resistance to anchor their mutating body—the sealed creature's furious corrosion against the ritual's barrier mirrors and absorbs the potion's own corrosive rampage, buying the advancer's mind the time it needs to complete its metamorphosis.",
+      "acting_method": "Keep secrets, and never reveal what should not be known. Guard the mysteries entrusted to you, whether they are your own or others'. A Secrets Sorcerer is a vault with a door—things may be stored within, but nothing escapes without permission. Avoid prying into matters that do not concern you, and never speak of the sealed and the hidden in casual conversation.",
+      "consumption_backlash": "All of their senses vanish in the areas that the potion passed, leaving only them with only still thoughts. It is inevitable that a person would hallucinate in extreme cold temperatures. In their vision, a night sky instantly appeared. It was dotted with countless stars that weaved together to form a dream-like river. Their body would begin reflecting bits of stellar radiance as if they came from their own body. The tiny bits of pure stellar radiance forms an invisible connection with the different stars in the night sky. As the light shimmered, they twisted and squirmed as insect-like creatures crawled out of their body. They want to seek refuge in the Milky Way formed by an array of embedded diamond shards. Each of them carried a portion of their own flesh and consciousness, as though they were uncontrollable avatars. Their thinking quickly turns chaotic, and they would fall into confusion. They almost couldn't control the urge to separate themself. At that moment, they would sense an illusory object. It is the seal that they had completed. It is being projected into the mysterious world created by the potion, forming an abstract, blurry mark. They wouldn't think any further as they instinctively extend a portion of their consciousness along with their spirituality, and intertwine with the abstract symbol. The mark wasn't exactly harmonious with them, as if it wasn't part of them, but it manages to barely merge with them. Suddenly, in their mind, the abstract symbol would become rather clear. It consists of a 'door' that is layered with mysterious symbols. This door hid them behind it, allowing them to isolate themself from the surrounding cosmos. At the same time, on the other side of the 'door,' the sealed creature seems to sense the aura of an enemy. Using its own godhood, it wildly corroded the illusory door. It happens to be able to reduce the influence the cosmos had on them. After maintaining it for more than ten seconds, the resplendent Milky Way's night sky slowly fades away. The stellar radiance then returned to their body fused with them. For those who are affected by Bethel Abraham: A deep darkness would appear in front of them. Deep in the darkness was a perpetual storm and occasionally flashing lightning. The next second, they hear a familiar voice. It stabbed into their head like steel nails stirring their brain matter. If they hadn't experienced such things over and over in the past, and had some level of resistance, as well as the fact that they are at the saint level, they would have likely lost control. It is a calling for help. It wasn't Jotun, Elvish or Ancient Hermes. Instead, it is a language that they may have never come into contact with before. However, they could understand it the moment they heard it. They would feel like it is the true source of many languages. A wispy voice that could pierce through Spirit Bodies would then enter their mind. They could proceed to have a normal conversation."
+    },
+    {
+      "sequence": 3,
+      "name": "Wanderer",
+      "potion_overview": "Deep black liquid filled with countless glittering specks.",
+      "beyonder_characteristic_appearance": "A miniature door of starlight",
+      "formula": {
+        "main_ingredients": [
+          "Wandering Skin",
+          "Crystal Left by a Mist Watcher"
+        ],
+        "alternative": "A Wanderer Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "10 milliliters of Wandering Skin's Pus",
+          "Mist Watcher's Eyelid",
+          "9 White Mustard Seeds",
+          "90 milliliters of Star Water From the Ritual Site"
+        ]
       },
-      {
-        "sequence": 2,
-        "name": "Planeswalker",
-        "potion_overview": "Colorless liquid composed of countless illusory doors.",
-        "formula": {
-          "main_ingredients": [
-            "Purple Phoenix's Eye OR Active Void",
-            "Interdimensional Hunter's Brain"
-          ],
-          "alternative": "A Planeswalker Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "A Worm of Star",
-            "A Worm of Time",
-            "A Worm of Spirit"
-          ]
-        },
-        "advancement_ritual": "Leave legends about yourself at 9 different locations outside of this planet.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+      "advancement_ritual": "Find three piece of Astral World information projected into the Spirit World, enter the dangerous scenarios derived from them, and record everything down in full detail and do not forget them.",
+      "ritual_essence": "The three recorded scenarios act as fixed landmarks in the boundless Spirit World. By memorizing them in full detail, the advancer inscribes Astral World information onto their own spirituality, granting their wandering soul 'coordinates' that even the depths of the Spirit World cannot erase. Forgetting even one would leave their metamorphosis incomplete, forever drifting without a way back.",
+      "acting_method": "Wander without purpose, yet never without awareness. Visit unfamiliar lands, record what you see, and let no place claim your heart. A Wanderer's strength lies in experiencing everything while belonging to nothing—treat every journey as a lesson, every encounter as knowledge to be carried, and never allow comfort or attachment to root you in place.",
+      "consumption_backlash": "The instant the potion enters their body, their form would begin to blur, as if they were a sketch being erased and redrawn. Their senses would scatter across the Spirit World, experiencing countless distant locations simultaneously—winds of foreign lands, whispers of unknown creatures, scenes never witnessed before. The flood of travel would nearly tear their self-identity apart, making them forget who they are and where they came from. Only by recalling the three recorded scenarios, using them as anchors of memory, would their scattered consciousness regroup and their body re-condense, now capable of opening doors to the places they had passed through."
+    },
+    {
+      "sequence": 2,
+      "name": "Planeswalker",
+      "potion_overview": "Colorless liquid composed of countless illusory doors.",
+      "beyonder_characteristic_appearance": "A resplendent torch that burned slightly",
+      "formula": {
+        "main_ingredients": [
+          "Purple Phoenix's Eye OR Active Void",
+          "Interdimensional Hunter's Brain"
+        ],
+        "alternative": "A Planeswalker Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "A Worm of Star",
+          "A Worm of Time",
+          "A Worm of Spirit"
+        ]
       },
-      {
-        "sequence": 1,
-        "name": "Key of Stars",
-        "potion_overview": "Deep, lightless, yet attracting abundant starlight.",
-        "formula": {
-          "main_ingredients": [
-            "Gregrace's Left Claw"
-          ],
-          "alternative": "A Key of Stars Beyonder Characteristic",
-          "supplementary_ingredients": [
-            "1 Compass (or similar object) linked to the Astral World",
-            "Core of a Wandering Asteroid",
-            "1 portion of your favorite food or drink"
-          ]
-        },
-        "advancement_ritual": "Find a continuously rotating, signal-emitting heavy planet, approach it, land on it, and then find a way to establish sufficient mystical connections with it.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
+      "advancement_ritual": "Leave legends about yourself at 9 different locations outside of this planet.",
+      "ritual_essence": "The nine legends are nine anchors scattered across different worlds. Each legend carries a trace of the advancer's spirituality, forming a mystical network that spans the cosmos. When their body dissolves during the advancement, these anchors pull the fragments of their self back together, allowing them to reconstitute as a being that can walk between worlds rather than being lost in the void between the stars.",
+      "acting_method": "Walk between worlds and leave your mark wherever you go. A Planeswalker does not hide their passage—each world they visit should remember them, whether through deeds, stories, or legends. Adapt to each world's rules without being bound by them, and never stay long enough for any single world to claim ownership of your soul.",
+      "consumption_backlash": "Their body would instantly disintegrate into countless illusory doors, each door opening onto a different world where one of their legends resides. Their consciousness would be dragged through all nine doors at once, experiencing nine lives in parallel—nine bodies, nine identities, nine fates. The strain would nearly split their mind into nine independent selves. Only by recognizing that every legend, no matter how different, is a story about the same 'them' would the nine streams of experience converge, fusing back into a single Planeswalker whose every step opens a door to another world."
+    },
+    {
+      "sequence": 1,
+      "name": "Key of Stars",
+      "potion_overview": "Deep, lightless, yet attracting abundant starlight.",
+      "beyonder_characteristic_appearance": "A simple and unadorned key that seemed to be forged from pure starlight. A translucent, strange-looking key",
+      "formula": {
+        "main_ingredients": [
+          "Gregrace's Left Claw"
+        ],
+        "alternative": "A Key of Stars Beyonder Characteristic",
+        "supplementary_ingredients": [
+          "1 Compass (or similar object) linked to the Astral World",
+          "Core of a Wandering Asteroid",
+          "1 portion of your favorite food or drink"
+        ]
       },
-      {
-        "sequence": 0,
-        "name": "Door",
-        "potion_overview": "A spherical liquid seemingly containing entire worlds.",
-        "formula": {
-          "main_ingredients": [
-            "The Door Uniqueness",
-            "Three Key of Stars Beyonder Characteristics"
-          ],
-          "supplementary_ingredients": [
-            "Mastery of astronomical, geographical, and folkloric knowledge of at least three galactic systems"
-          ]
-        },
-        "advancement_ritual": "Break out of the seal or banishment of a True God.",
-        "ritual_essence": "No data available.",
-        "acting_method": "No data available.",
-        "consumption_backlash": "No data available."
-      }
-    ]
-  }
+      "advancement_ritual": "Find a continuously rotating, signal-emitting heavy planet, approach it, land on it, and then find a way to establish sufficient mystical connections with it.",
+      "ritual_essence": "The rotating, signal-emitting planet acts as a colossal beacon in the cosmos. By establishing a mystical connection with it, the advancer grafts their spirituality onto something vast, ancient, and enduring. When the potion dissolves their mortal form, the planet's ceaseless rotation and unending signal would keep their self-awareness 'transmitting,' preventing them from dissipating into the starry sky and allowing them to be reborn as the key that unlocks the doors among the stars.",
+      "acting_method": "Serve as the key that opens the doors among the stars, but never mistake yourself for the door itself. Unlock what must be unlocked, reveal what must be revealed, and guide others through passages they cannot find alone. Maintain your connection to the cosmos—listen to the signals of the heavens, and let the rotation of the stars be the rhythm that steadies your heart.",
+      "consumption_backlash": "The moment they consume the potion, their body would transform into a living key, every part of them twisting into grooves and wards of ancient design. Their consciousness would be drawn into the lock of the cosmos itself, forced to 'fit' into the grand mechanism of the starry sky. They would feel themselves turning, unlocking door after door—each opening revealing truths no mortal mind was meant to hold. The secrets would erode their sense of self, reducing them to a mere tool that opens but never enters. Only by holding onto the connection with their chosen planet, using its endless rotation as a heartbeat of their own, would they retain their identity and emerge as the master of the keys rather than a key that has been used."
+    },
+    {
+      "sequence": 0,
+      "name": "Door",
+      "potion_overview": "A spherical liquid seemingly containing entire worlds.",
+      "beyonder_characteristic_appearance": "No data available",
+      "formula": {
+        "main_ingredients": [
+          "The Door Uniqueness",
+          "Three Key of Stars Beyonder Characteristics"
+        ],
+        "supplementary_ingredients": [
+          "Mastery of astronomical, geographical, and folkloric knowledge of at least three galactic systems"
+        ]
+      },
+      "advancement_ritual": "Break out of the seal or banishment of a True God.",
+      "ritual_essence": "The seal or banishment of a True God represents the highest form of confinement in the cosmos. By breaking free of it, the advancer proves that no door in existence can hold them—their spirituality attains the concept of 'unobstructed passage.' This act transforms them into the embodiment of every door, every path, and every key, allowing them to inherit the Door Uniqueness and become the existence through which all things travel.",
+      "acting_method": "You are the Door—the origin of all paths and the passage through which all things travel. Nothing in existence can bar your way, and no seal can hold you. Yet a true Door does not force itself open; it simply exists, and all who seek passage must come to it. Let the worlds come to you, open what should be opened, and remain the unshakable threshold between all that is.",
+      "consumption_backlash": "Upon consuming the potion, their existence would scatter into every door that has ever existed—every gate, every threshold, every portal across countless worlds. They would simultaneously be the door that opens and the one who passes through it, experiencing all passages at once. The infinite perspectives would grind their self-awareness to nothing, leaving only the cold concept of 'passage' that neither belongs to this world nor any other. At the critical moment, the act of having broken a True God's seal would resonate within the fragments of their being—a proof that they were once the one who passed where even gods could not. Using this as the core of their identity, they would gather their scattered self back from every door in the cosmos, fusing with the Door Uniqueness and becoming the true Door that stands at the origin of all paths."
+    }
+  ]
+}

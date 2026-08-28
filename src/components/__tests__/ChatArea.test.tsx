@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ChatArea } from '../ChatArea';
 import type { ChatMessage, AppSettings, GameContext, CondenserState } from '../../types';
@@ -296,13 +296,12 @@ describe('ChatArea', () => {
         render(<ChatArea />);
     });
 
-    it('opens Ask GM without committing a pending turn or changing canonical story messages', async () => {
-        const user = userEvent.setup();
+    it('opens Ask GM without committing a pending turn or changing canonical story messages', () => {
         const state = useAppStore.getState();
         const storyMessages = [makeMessage({ role: 'assistant', content: 'A visible pending swipe', pendingCommit: true, swipeSet: [{ id: 'swipe-1', text: 'A visible pending swipe', sceneStakes: 'calm', tagPresent: false }] })];
         state.messages = storyMessages;
         render(<ChatArea />);
-        await user.click(screen.getByTitle('Open Ask GM side chat'));
+        act(() => { useAppStore.getState().openAskGm(); });
         expect(screen.getByRole('heading', { name: 'Ask GM' })).toBeInTheDocument();
         expect(commitPendingTurn).not.toHaveBeenCalled();
         expect(runTurn).not.toHaveBeenCalled();
@@ -319,7 +318,7 @@ describe('ChatArea', () => {
         render(<ChatArea />);
         const storyInput = screen.getByPlaceholderText('What do you do?');
         await user.type(storyInput, 'Advance the story');
-        await user.click(screen.getByTitle('Open Ask GM side chat'));
+        act(() => { useAppStore.getState().openAskGm(); });
         await user.type(screen.getByPlaceholderText('Ask the GM...'), 'Quick Ask GM question');
         await user.click(screen.getByTitle('Send Ask GM question'));
         await waitFor(() => expect(answerOocQuestion).toHaveBeenCalledTimes(1));
@@ -331,12 +330,11 @@ describe('ChatArea', () => {
         expect(state.messages[0].content).toBe('Canonical story');
     });
 
-    it('disables Ask GM input while story generation is active', async () => {
-        const user = userEvent.setup();
+    it('disables Ask GM input while story generation is active', () => {
         const state = useAppStore.getState();
         state.pipelinePhase = 'generating';
         render(<ChatArea />);
-        await user.click(screen.getByTitle('Open Ask GM side chat'));
+        act(() => { useAppStore.getState().openAskGm(); });
         expect(screen.getByPlaceholderText('Ask the GM...')).toBeDisabled();
     });
     it('requires an editable confirmation before arming a visible one-turn Story AI note', async () => {
@@ -345,7 +343,7 @@ describe('ChatArea', () => {
         const canonical = [makeMessage({ role: 'assistant', content: 'Canonical story' })];
         state.messages = canonical;
         render(<ChatArea />);
-        await user.click(screen.getByTitle('Open Ask GM side chat'));
+        act(() => { useAppStore.getState().openAskGm(); });
         await user.type(screen.getByPlaceholderText('Ask the GM...'), 'How should I approach the gate?');
         await user.click(screen.getByTitle('Send Ask GM question'));
         await waitFor(() => expect(screen.getByText('Pass to Story AI')).toBeInTheDocument());
@@ -395,14 +393,15 @@ describe('ChatArea', () => {
         await waitFor(() => expect(stopBtn.disabled).toBe(true));
     });
 
-    it('force save writes to IndexedDB', async () => {
-        const user = userEvent.setup();
+    it('does not keep campaign tools under the composer input', () => {
         render(<ChatArea />);
-        const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
-        await user.click(saveBtn);
+        expect(screen.getByPlaceholderText('What do you do?')).toBeInTheDocument();
+        expect(screen.queryByText(/SAVE CAMPAIGN/i)).not.toBeInTheDocument();
+        expect(screen.queryByTitle('Open Ask GM side chat')).not.toBeInTheDocument();
+        expect(screen.queryByText(/^Trim$/i)).not.toBeInTheDocument();
     });
 
-    it('shows illustrated dialogue and composer actions below the input', () => {
+    it('shows illustrated dialogue without composer actions below the input', () => {
         const state = useAppStore.getState();
         state.messages = [
             makeMessage({ role: 'user', content: 'I walk into the fog' }),
@@ -412,11 +411,10 @@ describe('ChatArea', () => {
         expect(screen.queryByRole('button', { name: /chronicle/i })).not.toBeInTheDocument();
         expect(screen.queryByText('I walk into the fog')).not.toBeInTheDocument();
         expect(screen.getByText('The gas lamps hiss.')).toBeInTheDocument();
-        const input = screen.getByPlaceholderText('What do you do?');
-        const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
-        const askGm = screen.getByTitle('Open Ask GM side chat');
-        expect(input.compareDocumentPosition(saveBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-        expect(input.compareDocumentPosition(askGm) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+        expect(screen.getByPlaceholderText('What do you do?')).toBeInTheDocument();
+        expect(screen.queryByText(/SAVE CAMPAIGN/i)).not.toBeInTheDocument();
+        expect(screen.queryByTitle('Open Ask GM side chat')).not.toBeInTheDocument();
+        expect(screen.queryByText(/Dice Me/i)).not.toBeInTheDocument();
     });
 
     it('shows the current location on illustrated play', () => {
@@ -508,9 +506,8 @@ describe('ChatArea', () => {
         render(<ChatArea presentation="illustrated" chronicleOpen />);
         expect(screen.getByText('I walk into the fog')).toBeInTheDocument();
         expect(screen.getByText('The gas lamps hiss.')).toBeInTheDocument();
-        const input = screen.getByPlaceholderText('What do you do?');
-        const saveBtn = screen.getByText(/SAVE CAMPAIGN/i).closest('button')!;
-        expect(input.compareDocumentPosition(saveBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+        expect(screen.getByPlaceholderText('What do you do?')).toBeInTheDocument();
+        expect(screen.queryByText(/SAVE CAMPAIGN/i)).not.toBeInTheDocument();
     });
 
     it('shows load more button when messages exceed visibleCount', () => {
