@@ -1,6 +1,6 @@
 import { ASSET_BASE } from '../../lib/apiBase';
 
-/** Prefix a path relative to `lotmdnd/` so it resolves in Vite proxy and Electron. */
+/** Prefix a path relative to `gamedata/` so it resolves in Vite proxy and Electron. */
 export function lotmAssetUrl(relativePath: string): string {
     const trimmed = relativePath.replace(/^\/+/, '');
     const prefix = ASSET_BASE || '';

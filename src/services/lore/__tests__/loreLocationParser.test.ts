@@ -1,8 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { parseLocationsFromLore, parseLocationHeaderName, trimToSentences } from '../loreLocationParser';
-import { chunkLoreFile } from '../loreChunker';
 import type { LoreChunk } from '../../../types';
 
 /** Build a minimal location-classified LoreChunk with the given header + body. */
@@ -162,49 +159,5 @@ describe('parseLocationsFromLore — connections', () => {
         const hub = locChunk('LOCATION -- Hub', `**ConnectedTo:** [${targets.map((_, i) => `P${i}`).join(', ')}]\nProse.`);
         const [parsedHub] = parseLocationsFromLore([hub, ...targets]);
         expect(parsedHub.connections).toHaveLength(8);
-    });
-});
-
-describe('parseLocationsFromLore — Aethelgard compendium (real file)', () => {
-    const lore = readFileSync(
-        resolve(
-            __dirname,
-            '../../../../Example_Setup/World_compendium/Original World/Aethelgard - Medieval Fire Emblem Fantasy/world_lore_aethelgard.md',
-        ),
-        'utf-8',
-    );
-    const locations = parseLocationsFromLore(chunkLoreFile(lore));
-
-    it('extracts all seven canon places with their regions', () => {
-        expect(locations.map(l => l.name)).toEqual([
-            'Caldera City',
-            'The Northern Marches',
-            'Veythar City',
-            'Karsos City',
-            'Ser Elenwin Academy',
-            'The Marrow Clans',
-            'The Drevat Bank Holdings',
-        ]);
-        expect(locations.find(l => l.name === 'Karsos City')?.broadLocation).toBe('Karsos');
-        expect(locations.find(l => l.name === 'Ser Elenwin Academy')?.broadLocation).toBe('Neutral Ground');
-    });
-
-    it('carries Status through to the ledger', () => {
-        expect(locations.find(l => l.name === 'The Northern Marches')?.status)
-            .toBe('Contested (perennial border raids)');
-    });
-
-    it('keeps every description inside the [LOCATION] block budget', () => {
-        // payload/volatile.ts caps the whole block at 400 chars and blind-slices
-        // as a last resort; a lore paragraph must not be what triggers that.
-        for (const loc of locations) {
-            expect(loc.description.length).toBeLessThanOrEqual(240);
-            expect(loc.description).not.toMatch(/\*\*/);
-        }
-    });
-
-    it('leads descriptions with the lore Type', () => {
-        expect(locations.find(l => l.name === 'Caldera City')?.description)
-            .toMatch(/^Capital city\. The seat of the Calderan Crown\./);
     });
 });

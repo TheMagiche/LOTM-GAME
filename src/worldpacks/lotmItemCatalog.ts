@@ -1,4 +1,4 @@
-import catalogJson from '../../Example_Setup/World_compendium/Lord of the Mysteries/item_catalog.json?raw';
+import catalogJson from '../../mechanics/World_compendium/Lord of the Mysteries/item_catalog.json?raw';
 import type { ItemLedgerEntry } from '../types';
 import { normalizeItemLedgerEntry } from '../types';
 

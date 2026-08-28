@@ -1,16 +1,16 @@
-// Bundled world packs. Files live in Example_Setup (the canonical, user-editable
+// Bundled world packs. Files live in mechanics (the canonical, user-editable
 // location) and are inlined at build time with Vite's ?raw imports, so the pack
 // works offline and needs no server route — the same bytes a manual file-pick
 // would supply, handed to the campaign form as File objects.
-import loreMd from '../../Example_Setup/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md?raw';
-import rulesMd from '../../Example_Setup/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
-import lootJson from '../../Example_Setup/World_compendium/Lord of the Mysteries/loot.json?raw';
-import starterMd from '../../Example_Setup/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md?raw';
+import loreMd from '../../mechanics/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md?raw';
+import rulesMd from '../../mechanics/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
+import lootJson from '../../mechanics/World_compendium/Lord of the Mysteries/loot.json?raw';
+import starterMd from '../../mechanics/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md?raw';
 import type { CampaignUiSkin, PlayerCharacter } from '../types';
 import { formatLotmPathwayLabel } from './lotmPathways';
 
 const peopleRaw = import.meta.glob(
-    '../../Example_Setup/World_compendium/Lord of the Mysteries/people/lotm_pc_*.json',
+    '../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_*.json',
     { eager: true, query: '?raw', import: 'default' },
 ) as Record<string, string>;
 

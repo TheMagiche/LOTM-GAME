@@ -56,12 +56,9 @@ compendium.
 
 The portable authoring template and guide live in:
 
-`Example_Setup/Ability Compendium/original_magic_system_ability_compendium_template.json`
-`Example_Setup/Ability Compendium/ORIGINAL_MAGIC_SYSTEM_TEMPLATE_GUIDE.md`
+`mechanics/_Templates/original_magic_system_ability_compendium_template.json`
+`mechanics/_Templates/ORIGINAL_MAGIC_SYSTEM_TEMPLATE_GUIDE.md`
 
-The SRD-compatible D&D structure reference lives in:
+The Lord of the Mysteries pathway catalog lives in:
 
-`Example_Setup/Ability Compendium/Dungeons and Dragons 5e 2024/srd_5_2_1_5e_compatible_ability_compendium.json`
-
-The separate full-reference D&D compendium is not a distributable project asset and must not be
-published.
+`mechanics/Ability Compendium/lotm_beyonder_pathways_compendium.json`

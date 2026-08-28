@@ -10,7 +10,7 @@ import {
     purseToInventoryItems,
     seedInventoryIfEmpty,
 } from '../lotmPurse';
-import claraJson from '../../../Example_Setup/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
+import claraJson from '../../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
 import { attachLotmPathwaysToNpcs } from '../lotmPathways';
 
 function barePc(extra: Partial<PlayerCharacter> = {}): PlayerCharacter {

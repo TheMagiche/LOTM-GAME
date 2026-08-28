@@ -15,7 +15,7 @@ import {
 } from '../lotmPathways';
 
 describe('LOTM pathway catalog', () => {
-    it('loads all 22 pathways from lotmdnd/assets/data', () => {
+    it('loads all 22 pathways from gamedata/assets/data', () => {
         expect(LOTM_PATHWAYS).toHaveLength(22);
         expect(getLotmPathway('fool')).toBeDefined();
         expect(getLotmPathway('darkness')).toBeDefined();

@@ -11,8 +11,8 @@ PR #40 is therefore a data/template recovery, not a second enemy runtime.
 | Contribution | Current destination | Disposition |
 |---|---|---|
 | Ability & Power Compendium | `mods/ability-compendium/` | Recovered as an optional Generation 1 mod. Tables and editor workflows are retained; old flat manifest, header launch, declarative lookup, raw context, and host capability calls are adapted to current tables, nested screens, and a native interceptor. |
-| Ability Compendium examples/guides | `Example_Setup/Ability Compendium/` | Recovered unchanged as Tier 0 authoring/reference data, with the non-SRD full reference excluded by `.gitignore`. |
-| Monster compendium template | `Example_Setup/World_compendium/monster_compendium_template.json` | Recovered as a Tier 0 data-only preset. No enemy-specific executable code is added. |
+| Ability Compendium examples/guides | `mechanics/_Templates/` | Recovered as Tier 0 authoring/reference data. The D&D 5e 2024 SRD example was later removed from this fork. |
+| Monster compendium template | `mechanics/_Templates/monster_compendium_template.json` | Recovered as a Tier 0 data-only preset. No enemy-specific executable code is added. |
 | Enemy runtime from PR #40 ancestry | `public/bundled-mods/enemies/` | Already accounted for by the authoritative Phase 8 bundled enemy mod. No duplicate runtime, store slice, payload block, or core UI was restored. |
 | Generic host support | Existing Generation 1 tables, isolated screens, native interceptor, lifecycle and mod context | Existing public API is sufficient. No feature-specific core capability was added. |
 
@@ -25,20 +25,20 @@ PR #40 is therefore a data/template recovery, not a second enemy runtime.
 | `mods/ability-compendium.screen.js` | feature UI | Re-homed and retained as an isolated table editor. Removed unsupported campaign/file capabilities; retained JSON import/export using browser APIs. The old automatic character-sheet import is explicitly superseded because Gen 1 does not expose arbitrary ability strings. |
 | `mods/ability-compendium.native.js` | feature runtime | New Gen 1 bridge. Replaces the old declarative `lookup` integration with a native interceptor over the module-owned `prompt-index` table. |
 | `mods/ABILITY_COMPENDIUM_MODULE.md` | documentation | Rewritten for folder-per-mod, nested screens, table persistence, Gen 1 limitations, and portability. Eric's workflow/data provenance is retained. |
-| `Example_Setup/Ability Compendium/Dungeons and Dragons 5e 2024/README.md` | documentation | Recovered. |
-| `Example_Setup/Ability Compendium/Dungeons and Dragons 5e 2024/srd_5_2_1_5e_compatible_ability_compendium.json` | Tier 0 reference data | Recovered; SRD-compatible reference only. |
-| `Example_Setup/Ability Compendium/ORIGINAL_MAGIC_SYSTEM_TEMPLATE_GUIDE.md` | Tier 0 documentation | Recovered. |
-| `Example_Setup/Ability Compendium/SIMULATION_ROOM_CROSS_SYSTEM_COMPENDIUM_NOTES.md` | Tier 0 documentation | Recovered. |
-| `Example_Setup/Ability Compendium/original_magic_system_ability_compendium_template.json` | Tier 0 preset | Recovered as portable authoring template. |
-| `Example_Setup/Ability Compendium/simulation_room_ability_compendium.json` | Tier 0 preset | Recovered. |
-| `Example_Setup/Ability Compendium/simulation_room_cross_system_ability_compendium.json` | Tier 0 preset | Recovered. |
+| `Example_Setup/Ability Compendium/Dungeons and Dragons 5e 2024/README.md` | documentation | Recovered, then removed from this fork. |
+| `Example_Setup/Ability Compendium/Dungeons and Dragons 5e 2024/srd_5_2_1_5e_compatible_ability_compendium.json` | Tier 0 reference data | Recovered, then removed from this fork. |
+| `mechanics/_Templates/ORIGINAL_MAGIC_SYSTEM_TEMPLATE_GUIDE.md` | Tier 0 documentation | Recovered; now under `_Templates`. |
+| `mechanics/_Templates/SIMULATION_ROOM_CROSS_SYSTEM_COMPENDIUM_NOTES.md` | Tier 0 documentation | Recovered; now under `_Templates`. |
+| `mechanics/_Templates/original_magic_system_ability_compendium_template.json` | Tier 0 preset | Recovered as portable authoring template. |
+| `mechanics/_Templates/simulation_room_ability_compendium.json` | Tier 0 preset | Recovered. |
+| `mechanics/_Templates/simulation_room_cross_system_ability_compendium.json` | Tier 0 preset | Recovered. |
 | `src/services/mods/__tests__/abilityCompendiumModule.test.js` | feature contract test | Rewritten for promoted Gen 1 context, native interceptor behavior, and disable teardown. |
 | `server/__tests__/abilityCompendiumContract.test.js` | feature contract test | Added. Covers real loader install/reload shape and clean absence after uninstall. |
-| `.gitignore` D&D full-reference hunk | provenance/security | Retained as a current `.gitignore` rule; the non-SRD full reference is not distributable. |
+| `.gitignore` D&D full-reference hunk | provenance/security | The non-SRD full reference was never distributable; the ignore rule was dropped after the D&D 5e 2024 example was removed from this fork. |
 
 ## Enemy / monster disposition
 
-`4ba0c7a` / PR #40 adds only `Example_Setup/World_compendium/monster_compendium_template.json`.
+`4ba0c7a` / PR #40 adds only `mechanics/_Templates/monster_compendium_template.json`.
 The template is data-only and uses the Phase 8 enemy schema fields. It is available without enabling
 an executable enemy feature.
 

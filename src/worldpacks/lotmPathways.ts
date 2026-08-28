@@ -21,17 +21,17 @@ type RawOverviewFile = {
 };
 
 const abilityFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/pathways/**/*abilities*.json',
+    '../../gamedata/assets/data/pathways/**/*abilities*.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawAbilityFile>;
 
 const overviewFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/pathways/**/*pathway_overview.json',
+    '../../gamedata/assets/data/pathways/**/*pathway_overview.json',
     { eager: true, import: 'default' },
 ) as Record<string, RawOverviewFile>;
 
 const emblemFiles = import.meta.glob(
-    '../../lotmdnd/assets/data/pathways/**/*Symbol2.webp',
+    '../../gamedata/assets/data/pathways/**/*Symbol2.webp',
     { eager: true, query: '?url', import: 'default' },
 ) as Record<string, string>;
 
@@ -53,7 +53,7 @@ export type LotmPathwayDef = {
     name: string;
     aliases: string[];
     sequences: LotmSequenceInfo[];
-    /** Path relative to `lotmdnd/` for the pathway emblem. */
+    /** Path relative to `gamedata/` for the pathway emblem. */
     emblemPath: string;
     /** Vite-resolved URL for the emblem image. */
     emblemSrc: string;

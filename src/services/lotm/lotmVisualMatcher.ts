@@ -53,7 +53,7 @@ function longestMatchingAlias(aliases: string[], text: string): string | null {
 }
 
 function isAutoLotmPortrait(src: string): boolean {
-    return /\/assets\/lotm\//.test(src) || src.startsWith('image/characters/') || src.startsWith('image/vol_');
+    return /\/assets\/lotm\//.test(src) || src.startsWith('image/characters/');
 }
 
 function manifestPortraitSrc(portrait: string): string {

@@ -96,19 +96,19 @@ Your dependency install was incomplete (a known [npm bug](https://github.com/npm
 
 ## Setting Up Your First Campaign
 
-The `Example_Setup/` folder contains ready-to-play campaigns across multiple genres — including a gritty survival fantasy (*Spirit Card World*), a *Naruto*-inspired setting, and more. Each comes with a world bible, a GM ruleset, and an opening prompt.
+The `mechanics/` folder ships the Lord of the Mysteries campaign — world lore, GM ruleset, item catalog, and starter prompt. Generic engine templates live in `mechanics/_Templates/`.
 
 ### Quick start with an example
 
-1. Create a new campaign
-2. Open **World Info (Lore)** and paste the contents of one of the lore files (e.g. `Spirit_Card_World_Lore.md`)
-3. Open **Campaign Settings** and paste the latest ruleset (`AI_GM_OS_v4.5 - Immersive Mode (Hybrid).md`) into the **System Prompt** field
-4. Start a new chat and paste the genre's start prompt as your first message
+1. Create a new campaign — or use **Quick Start** for Lord of the Mysteries
+2. Open **World Info (Lore)** and paste `mechanics/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md` if starting manually
+3. Open **Campaign Settings** and paste `mechanics/Ruleset/AI_GM_OS_LOTM_v1.md` into the **System Prompt** field
+4. Start a new chat and paste `mechanics/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md` as your first message
 5. The GM will walk you through character creation and then drop you into the world
 
 ### Writing your own setup
 
-- **Lore** — write your world in Markdown with `##` / `###` headers. Each section becomes a lore chunk the GM can recall. Use `[CHUNK: TYPE -- NAME]` prefixes to classify entries (`world_overview`, `faction`, `location`, `character`, `power_system`, `economy`, `event`, `rules`, `culture`, `misc`)
+- **Lore** — write your world in Markdown with `##` / `###` headers. Each section becomes a lore chunk the GM can recall. Use `[CHUNK: TYPE -- NAME]` prefixes to classify entries (`world_overview`, `faction`, `location`, `character`, `power_system`, `economy`, `event`, `rules`, `culture`, `misc`). See `mechanics/_Templates/lore_template.md` for the machine-parsed skeleton.
 - **System Prompt** — define how the GM behaves: tone, output format, NPC behaviour rules, dice resolution, event protocols. The engine handles memory and recall — you define the style
 - **First Message** — set the scene, ask for character creation, or simply say "begin"
 
