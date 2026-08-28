@@ -29,7 +29,7 @@ import { toast } from './Toast';
  * segment only, not the whole control — pulsing the label makes it hard to
  * read. See WO §3.2.
  */
-export function AbsoluteCommandButton() {
+export function AbsoluteCommandButton({ layout = 'strip' }: { layout?: 'strip' | 'nav' } = {}) {
     const pipelinePhase = useAppStore(s => s.pipelinePhase);
     const armedAbsoluteCommand = useAppStore(s => s.armedAbsoluteCommand);
     const setArmedAbsoluteCommand = useAppStore(s => s.setArmedAbsoluteCommand);
@@ -38,18 +38,34 @@ export function AbsoluteCommandButton() {
 
     const isStreaming = pipelinePhase !== 'idle';
     const armed = armedAbsoluteCommand !== null;
+    const title = armed
+        ? 'Absolute command armed — click to change or disarm'
+        : 'Issue a binding out-of-character instruction — fires on your next message';
 
     return (
         <>
+            {layout === 'nav' ? (
+                <button
+                    type="button"
+                    onClick={() => setModalOpen(true)}
+                    disabled={isStreaming}
+                    title={title}
+                    className="w-full flex items-center gap-2 px-4 py-2 text-left text-[11px] text-text-dim hover:text-terminal hover:bg-terminal/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                    <CommandSealIcon size={14} />
+                    <span className="min-w-0 flex-1 truncate">Absolute Command</span>
+                    {armed && (
+                        <span className="min-w-[18px] px-1.5 py-0.5 rounded-full bg-terminal/15 text-terminal text-[9px] font-mono text-center">
+                            Armed
+                        </span>
+                    )}
+                </button>
+            ) : (
             <div className="inline-flex shrink-0 h-[32px] whitespace-nowrap">
                 <button
                     onClick={() => setModalOpen(true)}
                     disabled={isStreaming}
-                    title={
-                        armed
-                            ? 'Absolute command armed — click to change or disarm'
-                            : 'Issue a binding out-of-character instruction — fires on your next message'
-                    }
+                    title={title}
                     className={`shrink-0 flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider px-3 h-[32px] transition-all disabled:cursor-not-allowed border ${
                         armed
                             ? 'rounded-l-sm rounded-r-none border-r-0 bg-command-fill text-command-label border-command-accent hover:bg-command-fill/90'
@@ -71,6 +87,7 @@ export function AbsoluteCommandButton() {
                     </button>
                 )}
             </div>
+            )}
 
             {modalOpen && !isStreaming && (
                 <AbsoluteCommandModal

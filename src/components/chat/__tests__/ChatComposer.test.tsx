@@ -11,6 +11,11 @@ afterEach(() => {
     useAppStore.setState({
         drawerOpen: false,
         lotmChronicleOpen: false,
+        deepArmed: false,
+        armedRoll: null,
+        armedLoot: null,
+        armedOneShot: null,
+        armedAbsoluteCommand: null,
         settings: {
             ...useAppStore.getState().settings,
             aiTier: 'pro',
@@ -111,5 +116,35 @@ describe('LotmPlayHeader play controls', () => {
         expect(screen.getByRole('button', { name: /AI Tier: max/i })).toBeInTheDocument();
         fireEvent.click(screen.getByRole('button', { name: /AI Tier: max/i }));
         expect(useAppStore.getState().settings.aiTier).toBe('lite');
+    });
+});
+
+describe('ChatComposer armed chips', () => {
+    it('shows compact armed status next to the input', () => {
+        useAppStore.setState({
+            deepArmed: true,
+            armedRoll: 'd20',
+            armedLoot: { rolls: 2 },
+            armedOneShot: 'combat',
+            armedAbsoluteCommand: 'Keep Elara friendly.',
+        });
+        render(
+            <ChatComposer
+                input=""
+                inputRef={createRef()}
+                isStreaming={false}
+                oocBusy={false}
+                onInputChange={() => {}}
+                onKeyDown={() => {}}
+                onSend={() => {}}
+                onStop={() => {}}
+            />,
+        );
+
+        expect(screen.getByText('Deep')).toBeInTheDocument();
+        expect(screen.getByText('Dice')).toBeInTheDocument();
+        expect(screen.getByText('Loot')).toBeInTheDocument();
+        expect(screen.getByText('Event')).toBeInTheDocument();
+        expect(screen.getByText('Absolute')).toBeInTheDocument();
     });
 });
