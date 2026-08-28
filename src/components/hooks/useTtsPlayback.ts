@@ -42,6 +42,7 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
         });
     }
     const buffer = bufferRef.current;
+    const ttsReady = isEngineReady(ttsStatus, ttsProvider) && !!ttsEnabled;
 
     // Cleanup on unmount
     useEffect(() => {
@@ -49,20 +50,22 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // Preload disk-cached chunks on mount / voice or engine change.
-    // Wipe in-memory audio first so a Kokoro/Chatterbox switch cannot replay
-    // the previous engine's blobs from this bubble's buffer.
+    // Preload disk-cached chunks on mount / voice or engine change — only when
+    // the selected engine is actually ready. Otherwise leftover WAVs would keep
+    // the karaoke panel visible after the model is deleted or TTS is turned off.
     useEffect(() => {
         if (msg.role !== 'assistant') return;
         buffer.wipe();
-        if (!ttsEnabled) return;
+        if (!ttsReady) return;
         return buffer.preloadFromDisk(markdownContent, ttsVoice ?? 'af_heart', ttsProvider);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ttsEnabled, ttsVoice, ttsProvider, msg.id]);
+    }, [ttsReady, ttsVoice, ttsProvider, msg.id]);
 
     const handleSpeak = () => { void buffer.speak(markdownContent, ttsVoice ?? 'af_heart', ttsProvider); };
     const handlePauseResume = () => buffer.pauseResume();
-    const handleWipeTts = () => buffer.wipe();
+    const handleWipeTts = () => {
+        void buffer.wipePersisted(markdownContent, ttsVoice ?? 'af_heart', ttsProvider);
+    };
     const handleSpeedChange = (delta: number) => buffer.changeSpeed(delta);
     const stopPlayback = () => buffer.stop();
 
@@ -77,10 +80,11 @@ export function useTtsPlayback(msg: ChatMessage, markdownContent: string) {
         }
     };
 
-    const ttsReady = isEngineReady(ttsStatus, ttsProvider) && !!ttsEnabled;
+    const showTtsPanel = ttsReady && (ttsPlaying || ttsLoading || ttsFinished || hasCache);
 
     return {
         ttsReady,
+        showTtsPanel,
         ttsLoading,
         ttsPlaying,
         ttsPaused,

@@ -1025,7 +1025,8 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-title-hub-gear,
-.lotm-title-hub-back {
+.lotm-title-hub-back,
+.lotm-title-hub-grimoire {
   position: absolute;
   top: 20px;
   z-index: 4;
@@ -1045,18 +1046,24 @@ html[style*="--lang-font-stack"] {
   right: 20px;
 }
 
-.lotm-title-hub-back {
+.lotm-title-hub-grimoire {
   left: 20px;
 }
 
+.lotm-title-hub-back {
+  left: 64px;
+}
+
 .lotm-title-hub-gear:hover:not(:disabled),
-.lotm-title-hub-back:hover:not(:disabled) {
+.lotm-title-hub-back:hover:not(:disabled),
+.lotm-title-hub-grimoire:hover:not(:disabled) {
   color: #e0c36a;
   border-color: rgba(201, 162, 39, 0.65);
 }
 
 .lotm-title-hub-gear:disabled,
-.lotm-title-hub-back:disabled {
+.lotm-title-hub-back:disabled,
+.lotm-title-hub-grimoire:disabled {
   opacity: 0.45;
   cursor: default;
 }
@@ -1146,6 +1153,14 @@ html[style*="--lang-font-stack"] {
   background: transparent;
   border: 1px solid rgba(201, 162, 39, 0.28);
   padding: 8px 18px;
+}
+
+.lotm-title-hub-grimoire-hint {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(243, 234, 216, 0.52);
 }
 
 .lotm-title-hub.is-picking {
@@ -1931,7 +1946,8 @@ html[style*="--lang-font-stack"] {
   color: #e0c36a;
 }
 
-.lotm-play-header-tier {
+.lotm-play-header-tier,
+.lotm-play-header-grimoire {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1948,6 +1964,7 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-play-header-tier:hover,
+.lotm-play-header-grimoire:hover,
 .lotm-play-header-view button:hover {
   color: #e0c36a;
   border-color: rgba(201, 162, 39, 0.5);
@@ -2038,4 +2055,456 @@ html[style*="--lang-font-stack"] {
   height: 100%;
   background: #c9a227;
   transition: width 0.4s ease;
+}
+
+.lotm-grimoire {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 6, 10, 0.78);
+}
+
+.lotm-grimoire-frame {
+  display: flex;
+  flex-direction: column;
+  width: min(1100px, 90vw);
+  height: min(820px, 85vh);
+  background:
+    linear-gradient(180deg, rgba(22, 18, 24, 0.98), rgba(11, 10, 13, 0.98));
+  border: 1px solid rgba(201, 162, 39, 0.38);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.72), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  color: #f3ead8;
+}
+
+.lotm-grimoire-header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  background: #0b0a0d;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  color: #f3ead8;
+  flex-shrink: 0;
+}
+
+.lotm-grimoire-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+  color: #e0c36a;
+}
+
+.lotm-grimoire-titles {
+  min-width: 0;
+}
+
+.lotm-grimoire-kicker {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-grimoire-header h2 {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f3ead8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotm-grimoire-detail h3 {
+  margin: 2px 0 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+}
+
+.lotm-grimoire-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.lotm-grimoire-search {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  color: #e8e0d0;
+  transition: width 0.18s ease;
+}
+
+.lotm-grimoire-search.is-open {
+  width: min(220px, 40vw);
+}
+
+.lotm-grimoire-search-toggle {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.lotm-grimoire-search input {
+  min-width: 0;
+  flex: 1 1 auto;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: #f3ead8;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 15px;
+  outline: none;
+  padding: 0 10px 0 0;
+}
+
+.lotm-grimoire-close,
+.lotm-grimoire-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: transparent;
+  color: #e8e0d0;
+  cursor: pointer;
+}
+
+.lotm-grimoire-close {
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.lotm-grimoire-back {
+  align-self: flex-start;
+  padding: 0 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lotm-grimoire-search:hover,
+.lotm-grimoire-close:hover,
+.lotm-grimoire-back:hover,
+.lotm-grimoire-rail button:hover,
+.lotm-grimoire-subtabs button:hover {
+  color: #e0c36a;
+  border-color: rgba(201, 162, 39, 0.55);
+}
+
+.lotm-grimoire-body {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.lotm-grimoire-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 148px;
+  flex-shrink: 0;
+  padding: 12px 10px;
+  border-right: 1px solid rgba(201, 162, 39, 0.18);
+}
+
+.lotm-grimoire-rail button,
+.lotm-grimoire-subtabs button {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(232, 224, 208, 0.62);
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lotm-grimoire-rail button.is-active,
+.lotm-grimoire-subtabs button.is-active {
+  color: #e0c36a;
+  background: rgba(201, 162, 39, 0.16);
+  border-color: rgba(201, 162, 39, 0.28);
+}
+
+.lotm-grimoire-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: auto;
+  padding: 16px 18px 22px;
+}
+
+.lotm-grimoire-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lotm-grimoire-group {
+  margin: 8px 0 0;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-grimoire-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lotm-grimoire-cards-compact {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.lotm-grimoire-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100%;
+  padding: 12px;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  background: rgba(16, 13, 18, 0.7);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lotm-grimoire-card.is-static {
+  cursor: default;
+}
+
+.lotm-grimoire-card.is-media {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lotm-grimoire-card.is-media > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.lotm-grimoire-card img,
+.lotm-grimoire-detail-hero img,
+.lotm-grimoire-unknown-emblem {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.25));
+}
+
+.lotm-grimoire-card.is-emblem {
+  align-items: center;
+  gap: 12px;
+  padding: 16px 14px 14px;
+}
+
+.lotm-grimoire-card.is-emblem img,
+.lotm-grimoire-card.is-emblem .lotm-grimoire-unknown-emblem {
+  width: 88px;
+  height: 88px;
+  filter: drop-shadow(0 0 16px rgba(201, 162, 39, 0.45));
+}
+
+.lotm-grimoire-card.is-emblem h4 {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.lotm-grimoire-detail-hero img,
+.lotm-grimoire-detail-hero .lotm-grimoire-unknown-emblem {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 0 14px rgba(201, 162, 39, 0.4));
+}
+
+.lotm-grimoire-unknown-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  color: rgba(232, 224, 208, 0.45);
+  filter: none;
+}
+
+.lotm-grimoire-card:hover:not(.is-static) {
+  border-color: rgba(201, 162, 39, 0.55);
+  background: rgba(28, 22, 18, 0.86);
+}
+
+.lotm-grimoire-card-kicker {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-grimoire-card h4 {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.lotm-grimoire-card-meta {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: rgba(232, 224, 208, 0.62);
+}
+
+.lotm-grimoire-card-body {
+  margin: 8px 0 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lotm-grimoire-card-body.is-full {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.lotm-grimoire-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 72ch;
+}
+
+.lotm-grimoire-detail h3 {
+  font-size: 28px;
+}
+
+.lotm-grimoire-detail h4 {
+  margin: 10px 0 0;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-grimoire-detail p {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.lotm-grimoire-detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lotm-grimoire-timeline,
+.lotm-grimoire-plain,
+.lotm-grimoire-ladder {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lotm-grimoire-timeline li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+}
+
+.lotm-grimoire-ladder li {
+  display: grid;
+  grid-template-columns: 4.5em 1fr auto;
+  gap: 10px;
+  align-items: baseline;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.lotm-grimoire-ladder span,
+.lotm-grimoire-ladder em {
+  font-size: 12px;
+  color: rgba(232, 224, 208, 0.55);
+  font-style: normal;
+}
+
+.lotm-grimoire-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.lotm-grimoire-empty {
+  margin: 24px 0;
+  color: rgba(232, 224, 208, 0.55);
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+@media (max-width: 720px) {
+  .lotm-grimoire {
+    padding: 0;
+  }
+
+  .lotm-grimoire-frame {
+    width: 100%;
+    height: 100%;
+  }
+
+  .lotm-grimoire-body {
+    flex-direction: column;
+  }
+
+  .lotm-grimoire-rail {
+    width: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+  }
 }

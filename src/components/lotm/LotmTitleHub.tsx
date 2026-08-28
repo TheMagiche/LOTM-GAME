@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ArrowLeft, Check, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
+import { ArrowLeft, BookOpen, Check, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { deleteCampaign, listCampaigns, saveCampaign } from '../../store/campaignStore';
 import { hydrateCampaign } from '../../store/campaignHydrator';
@@ -157,6 +157,17 @@ export function LotmTitleHub() {
             <div className="lotm-title-hub-art" style={{ backgroundImage: `url("${cover}")` }} aria-hidden />
             <div className="lotm-title-hub-scrim" aria-hidden />
 
+            <button
+                type="button"
+                className="lotm-title-hub-grimoire"
+                title="Grimoire"
+                aria-label="Open Grimoire"
+                disabled={busy}
+                onClick={() => useAppStore.getState().openGrimoire()}
+            >
+                <BookOpen size={15} />
+            </button>
+
             {pickingPc && (
                 <button
                     type="button"
@@ -207,37 +218,53 @@ export function LotmTitleHub() {
                         </div>
                     </>
                 ) : (
-                    <div className="lotm-title-hub-action-row">
-                        {continueCampaign ? (
-                            <>
-                                <button
-                                    type="button"
-                                    className="lotm-title-hub-primary"
-                                    disabled={busy}
-                                    onClick={() => setPickingChronicle(true)}
-                                >
-                                    Continue
-                                </button>
-                                <button
-                                    type="button"
-                                    className="lotm-title-hub-ghost"
-                                    disabled={busy}
-                                    onClick={openNewChronicle}
-                                >
-                                    New chronicle
-                                </button>
-                            </>
-                        ) : (
-                            <button
-                                type="button"
-                                className="lotm-title-hub-primary"
-                                disabled={busy}
-                                onClick={openNewChronicle}
-                            >
-                                Begin
-                            </button>
+                    <>
+                        <div className="lotm-title-hub-action-row">
+                            {continueCampaign ? (
+                                <>
+                                    <button
+                                        type="button"
+                                        className="lotm-title-hub-primary"
+                                        disabled={busy}
+                                        onClick={() => setPickingChronicle(true)}
+                                    >
+                                        Continue
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="lotm-title-hub-ghost"
+                                        disabled={busy}
+                                        onClick={openNewChronicle}
+                                    >
+                                        New chronicle
+                                    </button>
+                                </>
+                            ) : (
+                                <>
+                                    <button
+                                        type="button"
+                                        className="lotm-title-hub-primary"
+                                        disabled={busy}
+                                        onClick={openNewChronicle}
+                                    >
+                                        Begin
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="lotm-title-hub-ghost"
+                                        disabled={busy}
+                                        onClick={() => useAppStore.getState().openGrimoire()}
+                                    >
+                                        <BookOpen size={14} />
+                                        Grimoire
+                                    </button>
+                                </>
+                            )}
+                        </div>
+                        {!continueCampaign && (
+                            <p className="lotm-title-hub-grimoire-hint">New to the story? Open the Grimoire before you begin.</p>
                         )}
-                    </div>
+                    </>
                 )}
             </div>
 

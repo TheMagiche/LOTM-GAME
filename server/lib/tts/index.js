@@ -10,7 +10,7 @@
  * provider comes from the TTS_ACTIVE_PROVIDER env override or defaults to
  * kokoro until the client selects one per-request.
  */
-import { isAudioCached as cacheIsAudioCached, loadCachedAudio as cacheLoad } from './cache.js';
+import { isAudioCached as cacheIsAudioCached, loadCachedAudio as cacheLoad, deleteCachedAudio as cacheDelete } from './cache.js';
 import kokoro from './providers/kokoro.js';
 import chatterboxNano from './providers/chatterboxNano.js';
 
@@ -92,6 +92,11 @@ export function isAudioCached(text, voice, providerId) {
 export function loadCachedAudio(text, voice, providerId) {
     const p = getProvider(providerId);
     return cacheLoad(p.id, text, voice);
+}
+
+export function deleteCachedAudio(text, voice, providerId) {
+    const p = getProvider(providerId);
+    return cacheDelete(p.id, text, voice);
 }
 
 export function listVoices(providerId) {

@@ -10,6 +10,7 @@ export {
     generateSpeech,
     isAudioCached,
     loadCachedAudio,
+    deleteCachedAudio,
     listVoices,
     warmupTts,
     setActiveProvider,

@@ -221,7 +221,7 @@ export function MessageBubble({
                         />
                     ) : (
                         <>
-                            {(tts.ttsPlaying || tts.ttsLoading || tts.ttsFinished || tts.hasCache) && (
+                            {tts.showTtsPanel && (
                                 <TtsPlaybackPanel
                                     prose={proseForTTS(markdownContent)}
                                     ttsLoading={tts.ttsLoading}

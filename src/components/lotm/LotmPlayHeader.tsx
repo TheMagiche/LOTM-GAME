@@ -1,4 +1,4 @@
-import { Cpu, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { saveCampaignState } from '../../store/campaignStore';
 import type { AiTier } from '../../types/llm';
@@ -32,6 +32,16 @@ export function LotmPlayHeader() {
                 {campaignName && <h1>{campaignName}</h1>}
             </div>
             <div className="lotm-play-header-actions">
+                <button
+                    type="button"
+                    className="lotm-play-header-grimoire"
+                    onClick={() => useAppStore.getState().openGrimoire()}
+                    title="Open Grimoire"
+                    aria-label="Open Grimoire"
+                >
+                    <BookOpen size={13} />
+                    <span>Grimoire</span>
+                </button>
                 <div className="lotm-play-header-view" role="group" aria-label="Play view">
                     <button
                         type="button"
@@ -88,5 +98,6 @@ export async function exitLotmCampaign(): Promise<void> {
     }
     useAppStore.getState().endLotmWorldIndex();
     useAppStore.getState().setLotmChronicleOpen(false);
+    useAppStore.getState().closeGrimoire();
     setActiveCampaign(null);
 }

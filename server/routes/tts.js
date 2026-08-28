@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { wrapAsync } from '../lib/asyncHandler.js';
-import { initTts, generateSpeech, isTtsReady, getTtsStatus, listVoices, isAudioCached, loadCachedAudio, listProviders } from '../lib/tts.js';
+import { initTts, generateSpeech, isTtsReady, getTtsStatus, listVoices, isAudioCached, loadCachedAudio, deleteCachedAudio, listProviders } from '../lib/tts.js';
 
 export function createTtsRouter() {
     const router = Router();
@@ -36,6 +36,20 @@ export function createTtsRouter() {
         }
         const cached = chunks.map(c => isAudioCached(c.text, c.voice || voice, provider));
         return res.json({ cached });
+    }));
+
+    // Drop on-disk WAVs for these chunks so trash cannot be undone by a remount.
+    // POST body: { chunks: [{ text, voice? }, ...], voice?, provider? } -> { wiped: boolean[] }
+    router.post('/api/tts/wipe-cache', wrapAsync((req, res) => {
+        const { chunks, voice, provider } = req.body || {};
+        if (!Array.isArray(chunks)) {
+            return res.status(400).json({ error: 'Missing chunks array' });
+        }
+        const wiped = chunks.map(c => {
+            if (typeof c?.text !== 'string' || !c.text.trim()) return false;
+            return deleteCachedAudio(c.text, c.voice || voice, provider);
+        });
+        return res.json({ wiped });
     }));
 
     // Load a cached WAV from disk without generating.
