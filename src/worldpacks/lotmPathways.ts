@@ -19,6 +19,22 @@ type RawOverviewFile = {
         card_number?: string;
     };
 };
+type RawAdvancementSequence = {
+    sequence?: number;
+    name?: string;
+    potion_overview?: string;
+    acting_method?: string;
+    consumption_backlash?: string;
+    formula?: {
+        main_ingredients?: string[];
+        supplementary_ingredients?: string[];
+        alternative?: string;
+    };
+};
+type RawAdvancementFile = {
+    pathway?: string;
+    sequences?: RawAdvancementSequence[];
+};
 
 const abilityFiles = import.meta.glob(
     '../../gamedata/assets/data/pathways/**/*abilities*.json',
@@ -35,6 +51,11 @@ const emblemFiles = import.meta.glob(
     { eager: true, query: '?url', import: 'default' },
 ) as Record<string, string>;
 
+const advancementFiles = import.meta.glob(
+    '../../gamedata/assets/data/pathways/**/*_advancement.json',
+    { eager: true, import: 'default' },
+) as Record<string, RawAdvancementFile>;
+
 const TAROT_ORDER: Record<string, number> = {
     '0': 0, I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10,
     XI: 11, XII: 12, XIII: 13, XIV: 14, XV: 15, XVI: 16, XVII: 17, XVIII: 18, XIX: 19,
@@ -46,6 +67,14 @@ export type LotmSequenceInfo = {
     name: string;
     abilities: string[];
     shortAbilities: string[];
+    actingMethod?: string;
+    potionOverview?: string;
+    consumptionBacklash?: string;
+    formula?: {
+        main: string[];
+        supplementary: string[];
+        alternative?: string;
+    };
 };
 
 export type LotmPathwayDef = {
@@ -146,6 +175,29 @@ function buildCatalog(): LotmPathwayDef[] {
             const emblem = emblemFromGlob(id);
             def.emblemPath = def.emblemPath || emblem.path;
             def.emblemSrc = def.emblemSrc || emblem.src;
+        }
+    }
+
+    for (const [path, raw] of Object.entries(advancementFiles)) {
+        const id = folderIdFromPath(path);
+        const def = byId.get(id);
+        if (!def || !raw) continue;
+        for (const row of raw.sequences ?? []) {
+            const sequence = Number(row.sequence);
+            if (!Number.isInteger(sequence)) continue;
+            const target = def.sequences.find(s => s.sequence === sequence);
+            if (!target) continue;
+            if (row.acting_method) target.actingMethod = String(row.acting_method).trim();
+            if (row.potion_overview) target.potionOverview = String(row.potion_overview).trim();
+            if (row.consumption_backlash) target.consumptionBacklash = String(row.consumption_backlash).trim();
+            if (row.formula) {
+                target.formula = {
+                    main: (row.formula.main_ingredients ?? []).map(s => String(s).trim()).filter(Boolean),
+                    supplementary: (row.formula.supplementary_ingredients ?? []).map(s => String(s).trim()).filter(Boolean),
+                    alternative: row.formula.alternative ? String(row.formula.alternative).trim() : undefined,
+                };
+            }
+            if (row.name && !target.name) target.name = String(row.name).trim();
         }
     }
 

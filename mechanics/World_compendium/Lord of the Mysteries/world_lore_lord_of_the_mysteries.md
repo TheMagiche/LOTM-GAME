@@ -395,7 +395,7 @@ Klein began as a history graduate who shot himself in the head with a luck-ritua
 **Goals:** To master the Spectator pathway without losing her mind, keep her family safe, and make sure the friends she made around one table in the gray fog stay alive.
 **StoryRelevance:** A founding pillar of the Tarot Club and the party's likeliest wealthy benefactor — and its best lie detector.
 **Example Output:** "I don't mean to alarm anyone, but our new acquaintance believes every word he just said. That's what alarms me."
-**Affinity:** 60
+**Affinity:** 50
 **SignatureAbilities:** [mind reading, emotion manipulation, dream walking]
 **Pathway:** Visionary
 **Sequence:** 3
@@ -416,7 +416,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Goals:** To advance along the Sailor pathway, hedge every faction against every other, and eventually stand somewhere no god is watching.
 **StoryRelevance:** The party's access to ships, black markets, and uncomfortable truths about what the churches really do.
 **Example Output:** "I'll tell you for free what you'd otherwise pay me for later: whatever you've been told about that island, halve the treasure and double the bodies."
-**Affinity:** 45
+**Affinity:** 50
 **SignatureAbilities:** [water affinity, lightning calling, ship-borne combat mastery]
 **Pathway:** Tyrant
 **Sequence:** 4
@@ -435,7 +435,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Goals:** Keep his team alive, keep Tingen's supernatural casualties off the front pages, and give new Beyonders the chance he can't always give them: to grow up before they die.
 **StoryRelevance:** The natural first patron for any fledgling Beyonder in Loen — recruitment, training, sealing missions, and the occasional rescue.
 **Example Output:** "Rule one hasn't changed since before your grandfather: if you feel yourself losing control, signal. We'll do the rest. Nobody dies alone on my watch."
-**Affinity:** 55
+**Affinity:** 50
 **SignatureEquipment:** [standard-issue revolver, sealed relic containment case]
 **SignatureAbilities:** [sleepless endurance, combat command, beyonder suppression]
 **Pathway:** Darkness
@@ -457,7 +457,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Goals:** Survive the voice in his dreams, protect his teammates, find out what he inherited from the old darkness.
 **StoryRelevance:** Fellow-rookie energy for new Nighthawk characters; his secret makes him a walking plot hook.
 **Example Output:** "I'd offer to buy you a drink, but I'm technically working, spiritually exhausted, and hearing voices. So — rain check?"
-**Affinity:** 55
+**Affinity:** 50
 **SignatureAbilities:** [sleeplessness, nightmare resistance, spirit perception]
 **Pathway:** Darkness
 **Sequence:** 4
@@ -477,7 +477,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Goals:** Recover the Antigonus family's stolen heritage and secure a Sequence uniqueness for his order.
 **StoryRelevance:** A high-sequence Fool-pathway power — the kind of antagonist or patron who rearranges the board while smiling.
 **Example Output:** "You mistake me for someone who threatens. I merely recall the future, and in it you cooperate."
-**Affinity:** 25
+**Affinity:** 50
 **SignatureAbilities:** [marionettist threads, historical projection, illusion mastery]
 **Pathway:** Fool
 **Sequence:** 2
@@ -496,7 +496,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Goals:** To steal everything interesting, including uniquenesses, including yours; to never, ever be pinned down.
 **StoryRelevance:** The campaign's trickster devil. Meeting him safely means never having met him.
 **Example Output:** "Wrong. Try again. Third time's the charm — oh, wait, that was also me."
-**Affinity:** 10
+**Affinity:** 50
 **SignatureAbilities:** [identity theft, ability plagiarism, worm of time parasitism]
 **Pathway:** Error
 **Sequence:** 2
@@ -515,7 +515,7 @@ Daughter of Earl Hall, she stumbled into the Beyonder world by attending the wro
 **Goals:** To see his design for humanity completed — details unavailable, objections moot.
 **StoryRelevance:** The hidden hand behind epochs. If the plot feels authored, check whether it literally was.
 **Example Output:** "Peace. What you're about to choose, you chose well the last time."
-**Affinity:** 30
+**Affinity:** 50
 **SignatureAbilities:** [mind weaving, prophetic authorship, resurrection of the written]
 **Pathway:** Visionary
 **Sequence:** 0
@@ -574,7 +574,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Goals:** To grow up — again — and settle an account older than the churches.
 **StoryRelevance:** Fate itself in swaddling clothes; whoever shelters him inherits destiny-level enemies and allies.
 **Example Output:** "Ga-ga... the ship sinks Thursday. Pack light."
-**Affinity:** 60
+**Affinity:** 50
 **SignatureAbilities:** [fate manipulation, calamity redirection, rebirth]
 **Pathway:** Wheel of Fortune
 **Sequence:** 1
@@ -593,7 +593,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Goals:** Financial security, bestseller fame, and reaching high Sequence before her luck runs out.
 **StoryRelevance:** Gatekeeper between street-level adventuring and the Tarot Club's upper table.
 **Example Output:** "Heroics cost extra. Saving your life specifically — that I'll comp, since it doubles as chapter twelve."
-**Affinity:** 55
+**Affinity:** 50
 **SignatureAbilities:** [Door Opening, Ritualistic Magic]
 **Pathway:** Door
 **Sequence:** 4
@@ -612,7 +612,7 @@ Roselle's legacy saturates the age: steam engines, guillotines, and a scavenger 
 **Goals:** Cure her bloodline's affliction, clear her father's name, close every case she opens.
 **StoryRelevance:** The natural employer for mercenary parties — and the person most likely to dig up whatever the churches buried.
 **Example Output:** "Fifty soli a day plus expenses. I don't do curses, hauntings, or prophecies. ...Fine, show me the curse."
-**Affinity:** 55
+**Affinity:** 50
 **SignatureEquipment:** [worn leather armor, warrant ledger, short blade]
 **SignatureAbilities:** [Order, Physical Enhancement, Authority]
 **Pathway:** Justiciar

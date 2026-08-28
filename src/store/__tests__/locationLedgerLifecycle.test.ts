@@ -22,6 +22,7 @@ vi.mock('../campaignStore', () => ({
     saveChapters: vi.fn(),
     saveNPCLedger: vi.fn(),
     saveCampaignState: vi.fn(),
+    getCampaign: vi.fn().mockResolvedValue(undefined),
 }));
 
 const locations = [

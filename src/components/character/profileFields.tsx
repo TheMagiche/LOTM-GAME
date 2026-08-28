@@ -90,7 +90,7 @@ export function IdentityFields({ identity, onChange, disabled, hideLevel }: {
                 type="text"
                 value={identity.race || ''}
                 onChange={(e) => onChange({ race: e.target.value })}
-                placeholder="Race"
+                placeholder="Origin"
                 disabled={disabled}
                 className="bg-void-dark border border-border rounded px-2 py-1 text-[12px] text-text-bright disabled:opacity-70"
             />

@@ -18,13 +18,13 @@ export type InventoryItem = {
 
 // Staged inventory change proposed by the GM via the `propose_inventory_change`
 // tool. Bounded labels only — the engine (Phase 7) owns all numbers (damage dice,
-// bonus, AC). `quality` rarity is inlined here rather than referencing the Phase 7
-// `ItemDef['rarity']` so this type stays self-contained until combat lands.
+// bonus, AC). `quality` uses LOTM grades (ordinary / mystical / sealed 3→0)
+// rather than D&D common→legendary.
 export type InventoryProposal = {
     name: string;
     op: 'grant' | 'remove' | 'equip' | 'relocate';
     kind: 'weapon' | 'armor' | 'consumable' | 'currency' | 'misc';
-    quality: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
+    quality: 'ordinary' | 'mystical' | 'grade-3' | 'grade-2' | 'grade-1' | 'grade-0' | 'unique';
     scalingStat: 'PWR' | 'SPD' | 'WIL';
     range: 'Close' | 'Reach' | 'Ranged';
     properties: string[];
@@ -236,6 +236,12 @@ export type NPCEntry = {
             issuer?: string;
             status?: 'none' | 'active' | 'removed';
         };
+        /** Spirituality pool (mirrors characterProfile.mp). */
+        spirituality?: { current: number; max: number };
+        /** Potion digestion 0–100. Advancement stalls below 100. */
+        digestion?: number;
+        /** Loss of Control stage: 0 stable, 1 tells, 2 slippage, 3 rampage. */
+        lossOfControl?: 0 | 1 | 2 | 3;
     };
     /**
      * Optional pre-authored Stats-tab sheet (`characterProfileData`).

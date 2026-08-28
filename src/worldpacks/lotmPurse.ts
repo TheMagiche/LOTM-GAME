@@ -34,9 +34,8 @@ export function looksLikeCurrencyName(name: string): boolean {
     const lower = name.toLowerCase();
     return /\b(pence|soli|pounds?)\b/.test(lower)
         || /gold\s*pounds?/.test(lower)
-        || /\b(gold|silver|copper)\s+(coins?|pieces?)\b/.test(lower)
-        || /\b(coins?|sovereigns?)\b/.test(lower)
-        || /loen gold pound/.test(lower);
+        || /loen gold pound/.test(lower)
+        || /\b(verl d['']or|coppet|gold hoern|risot)\b/.test(lower);
 }
 
 function unitForCurrencyName(name: string): (typeof UNIT_ORDER)[number] | null {

@@ -43,10 +43,10 @@ describe('WO-A2 §4.1 — ledger parity (source files preserved + ContextDrawer 
         expect(s).toMatch(/Populate Profile/);
     });
 
-    it('the RecordTab still has the Identity ON/OFF toggle and Bonds section', () => {
+    it('the RecordTab still has the Identity ON/OFF toggle and Standing section', () => {
         const s = src('src/components/character/tabs/RecordTab.tsx');
         expect(s).toMatch(/characterProfileActive/);
-        expect(s).toMatch(/Bonds/);
+        expect(s).toMatch(/Standing/);
         expect(s).toMatch(/selectPcBonds/);
     });
 

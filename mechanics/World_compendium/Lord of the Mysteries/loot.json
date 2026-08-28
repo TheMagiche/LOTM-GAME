@@ -74,20 +74,20 @@
    "axis": "category",
    "weights": {
     "currency": 18,
-    "mundane": 22,
+    "ordinary": 22,
     "medicine": 8,
-    "named": 16,
-    "uncanny": 14,
+    "mystical": 16,
+    "characteristics": 14,
     "artifact": 12,
     "bounty": 6,
     "formula": 4
    },
    "branches": {
     "currency": "currencyRarityPick",
-    "mundane": "mundaneSubtypePick",
+    "ordinary": "ordinarySubtypePick",
     "medicine": "medicineDraw",
-    "named": "namedSubtypePick",
-    "uncanny": "uncannySubtypePick",
+    "mystical": "mysticalSubtypePick",
+    "characteristics": "characteristicsSubtypePick",
     "artifact": "artifactGradePick",
     "bounty": "bountyTierPick",
     "formula": "formulaIngredientDraw"
@@ -206,9 +206,9 @@
    "kind": "compose",
    "template": "{pounds} gold pounds"
   },
-  "mundaneSubtypePick": {
+  "ordinarySubtypePick": {
    "kind": "pick",
-   "axis": "mundaneSubtype",
+   "axis": "ordinarySubtype",
    "weights": {
     "street": 34,
     "provisions": 33,
@@ -268,9 +268,9 @@
    "kind": "compose",
    "template": "{item} (a prepared medicine or alchemical agent)"
   },
-  "namedSubtypePick": {
+  "mysticalSubtypePick": {
    "kind": "pick",
-   "axis": "namedSubtype",
+   "axis": "mysticalSubtype",
    "weights": {
     "weapon": 45,
     "item": 55
@@ -308,9 +308,9 @@
    "kind": "compose",
    "template": "{item} (a mystical item of uncertain provenance)"
   },
-  "uncannySubtypePick": {
+  "characteristicsSubtypePick": {
    "kind": "pick",
-   "axis": "uncannySubtype",
+   "axis": "characteristicsSubtype",
    "weights": {
     "ingredient": 62,
     "characteristic": 38

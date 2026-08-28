@@ -73,7 +73,7 @@ export function StatsTab() {
     const updatePlayerCharacter = useAppStore(s => s.updatePlayerCharacter);
     const identityFields = ([
         { k: 'name', label: 'Name' },
-        { k: 'race', label: 'Race' },
+        { k: 'race', label: lotm ? 'Origin' : 'Race' },
         { k: 'class', label: lotm ? 'Pathway' : 'Class' },
         { k: 'level', label: lotm ? 'Sequence' : 'Level', type: 'number' },
     ] as { k: keyof CharacterProfile; label: string; type?: string }[]);
@@ -165,7 +165,7 @@ export function StatsTab() {
                                             }
                                         }}
                                     >
-                                        <option value="">Mundane</option>
+                                        <option value="">Ordinary (non-Beyonder)</option>
                                         {LOTM_PATHWAYS.map(p => (
                                             <option key={p.id} value={p.id}>{p.name}</option>
                                         ))}
@@ -205,22 +205,63 @@ export function StatsTab() {
                                 </div>
                             </>
                         )}
-                        <div className="flex items-center gap-2">
-                            <label className="text-[9px] text-text-dim/60 w-12">HP</label>
-                            <input
-                                className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
-                                type="number"
-                                value={profile.hp?.current ?? 0}
-                                onChange={(e) => setCharacterProfileData({ ...profile, hp: { ...profile.hp, current: Number(e.target.value) } })}
-                            />
-                            <span className="text-text-dim/40">/</span>
-                            <input
-                                className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
-                                type="number"
-                                value={profile.hp?.max ?? 0}
-                                onChange={(e) => setCharacterProfileData({ ...profile, hp: { ...profile.hp, max: Number(e.target.value) } })}
-                            />
-                        </div>
+                        {lotm ? (
+                            <>
+                                <div className="flex items-center gap-2">
+                                    <label className="text-[9px] text-text-dim/60 w-12">Spirit</label>
+                                    <input
+                                        className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
+                                        type="number"
+                                        value={profile.mp?.current ?? 0}
+                                        onChange={(e) => setCharacterProfileData({
+                                            ...profile,
+                                            mp: { current: Number(e.target.value), max: profile.mp?.max ?? Number(e.target.value) },
+                                        })}
+                                    />
+                                    <span className="text-text-dim/40">/</span>
+                                    <input
+                                        className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
+                                        type="number"
+                                        value={profile.mp?.max ?? 0}
+                                        onChange={(e) => setCharacterProfileData({
+                                            ...profile,
+                                            mp: { current: profile.mp?.current ?? Number(e.target.value), max: Number(e.target.value) },
+                                        })}
+                                    />
+                                </div>
+                                {(['Spirituality', 'Physique', 'Reasoning'] as const).map((stat) => (
+                                    <div key={stat} className="flex items-center gap-2">
+                                        <label className="text-[9px] text-text-dim/60 w-12">{stat.slice(0, 6)}</label>
+                                        <input
+                                            className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
+                                            type="number"
+                                            value={profile.stats?.[stat] ?? 0}
+                                            onChange={(e) => setCharacterProfileData({
+                                                ...profile,
+                                                stats: { ...profile.stats, [stat]: Number(e.target.value) },
+                                            })}
+                                        />
+                                    </div>
+                                ))}
+                            </>
+                        ) : (
+                            <div className="flex items-center gap-2">
+                                <label className="text-[9px] text-text-dim/60 w-12">HP</label>
+                                <input
+                                    className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
+                                    type="number"
+                                    value={profile.hp?.current ?? 0}
+                                    onChange={(e) => setCharacterProfileData({ ...profile, hp: { ...profile.hp, current: Number(e.target.value) } })}
+                                />
+                                <span className="text-text-dim/40">/</span>
+                                <input
+                                    className="w-14 bg-transparent border-b border-border/50 hover:border-border focus:border-terminal outline-none text-text-primary text-[11px] px-1 text-center"
+                                    type="number"
+                                    value={profile.hp?.max ?? 0}
+                                    onChange={(e) => setCharacterProfileData({ ...profile, hp: { ...profile.hp, max: Number(e.target.value) } })}
+                                />
+                            </div>
+                        )}
                         {(['skills', 'abilities', 'traits'] as (keyof CharacterProfile)[]).map((k) => (
                             <div key={k}>
                                 <label className="text-[9px] text-text-dim/60">
@@ -237,12 +278,20 @@ export function StatsTab() {
                                 />
                             </div>
                         ))}
-                        {lotm && nextInfo && nextAbilities.length > 0 && (
+                        {lotm && nextInfo && (
                             <div className="bg-void border border-amber-300/20 rounded px-2 py-2">
                                 <p className="text-[9px] uppercase tracking-wider text-amber-300/80 mb-1">
                                     To advance · Seq {nextInfo.sequence} {nextInfo.name}
                                 </p>
-                                <p className="text-[11px] text-text-dim leading-relaxed">{nextAbilities.join(' · ')}</p>
+                                {nextInfo.actingMethod && (
+                                    <p className="text-[11px] text-text-dim leading-relaxed mb-1">Acting: {nextInfo.actingMethod}</p>
+                                )}
+                                {nextInfo.formula?.main.length ? (
+                                    <p className="text-[11px] text-text-dim leading-relaxed mb-1">Formula: {nextInfo.formula.main.join('; ')}</p>
+                                ) : null}
+                                {nextAbilities.length > 0 && (
+                                    <p className="text-[11px] text-text-dim leading-relaxed">{nextAbilities.join(' · ')}</p>
+                                )}
                             </div>
                         )}
                         <div>

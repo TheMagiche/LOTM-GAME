@@ -1,9 +1,14 @@
 // ─── PC Creation Script (desktop port) ──────────────────────────────────────
 // Point-buy math + archetype presets + creation questionnaire. Adapted from the
-// mobile app's services/engine/pcCreationScript.ts. Combat-engine dependencies
-// (combatEngine.ts) are inlined here so this module is self-contained on desktop;
-// the combat-stat block (VIT/PWR/RES/FOC/SPD/WIL) lives in CharacterProfile.stats,
-// NOT on NPCEntry (combat integration is Phase 7's domain).
+// mobile app's services/engine/pcCreationScript.ts.
+//
+// LOTM fork: this 5e point-buy / AC / proficiency path is NOT wired to desktop UI
+// (`LOTM_EXCLUSIVE_UI`). Keep the math for tests and mobile parity; do not call it
+// from campaign init or the character ledger.
+
+import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+
+export const PC_POINT_BUY_DISABLED = LOTM_EXCLUSIVE_UI;
 
 export type CombatTier = 'minion' | 'grunt' | 'elite' | 'boss' | 'legendary';
 export type Archetype = 'bulwark' | 'assassin' | 'caster' | 'skirmisher' | 'brute';

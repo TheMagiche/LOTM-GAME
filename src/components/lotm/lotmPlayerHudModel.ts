@@ -8,6 +8,7 @@ import {
     nextLotmSequence,
     resolveLotmPathway,
 } from '../../worldpacks/lotmPathways';
+import { readDigestion } from '../../worldpacks/lotmBeyonderState';
 
 export type LotmHudMeter = {
     current: number;
@@ -57,6 +58,7 @@ export type LotmPlayerHudModel = {
     currency: string;
     bounty: string;
     items: LotmHudCarryItem[];
+    digestion: number;
 };
 
 const PREFERRED_STATS = ['Spirituality', 'Physique', 'Reasoning'] as const;
@@ -173,7 +175,7 @@ export function buildLotmPlayerHudModel(
         sequenceLabel: formatLotmSequenceName(pathway?.id, sequence),
         sequenceNumber: sequence,
         emblemSrc: pathway?.emblemSrc ?? '',
-        hp: toLotmHudMeter(profile?.hp),
+        hp: null,
         spirituality: toLotmHudMeter(profile?.mp),
         stats: resolveStats(profile, pc),
         abilities,
@@ -187,5 +189,6 @@ export function buildLotmPlayerHudModel(
         currency: currencyLine(inventory),
         bounty: bountyLine(world?.bounty),
         items: carryItems(inventory, kit?.equipment),
+        digestion: readDigestion(pc),
     };
 }

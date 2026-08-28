@@ -1,9 +1,9 @@
 import type { NPCEntry } from '../../types';
 
 /**
- * Bonds selector (WO-A §6.3) — pure helper. Returns non-archived, non-PC NPCs
+ * Standing selector (WO-A §6.3) — pure helper. Returns non-archived, non-PC NPCs
  * with non-zero `pcRelation`, sorted by |pcRelation| desc. Engine-owned values
- * are read-only in the panel.
+ * are read-only in the panel. Displayed as "Standing", not D&D Background Bonds.
  */
 export function selectPcBonds(npcs: NPCEntry[]): NPCEntry[] {
     return npcs

@@ -46,6 +46,8 @@ import { runPromptInterceptors } from '../mods/interceptors';
 import { runFactPublishers } from '../mods/facts';
 import { blockTokenCap } from './blockEnablement';
 import { BUILTIN_IDS, getBuiltinTokenCap } from '../payload/contributions/builtins';
+import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+import { applySequenceAdvantageToDiceOutcomes, applySpiritualityDelta, bumpLossOfControl, formatLotmBeyonderEngineBlock, readLossOfControl, readSpirituality, resolveSequenceAdvantage } from '../../worldpacks/lotmBeyonderState';
 
 const MAX_TOOL_CALLS_PER_TURN = 5;
 
@@ -116,6 +118,38 @@ export function resolveEngineRolls(
         ctx.displayInputFinal += `\n\n🎲 ${r.detail} → ${tierLabel} (${r.faceValue})`;
     } else {
         ctx.finalInput += rollDiceFairness(context);
+    }
+
+    if (LOTM_EXCLUSIVE_UI) {
+        const onStage = new Set(state.onStageNpcIds ?? []);
+        const opponents = onStage.size === 0
+            ? []
+            : (state.npcLedger ?? []).filter(n => onStage.has(n.id));
+        const seqAdv = resolveSequenceAdvantage(context.playerCharacter, context.characterProfileData, opponents);
+        if (seqAdv && ctx.finalInput.includes('[DICE OUTCOMES:')) {
+            ctx.finalInput = applySequenceAdvantageToDiceOutcomes(ctx.finalInput, seqAdv.band);
+            ctx.finalInput += `\n[SEQUENCE AS TIER: ${seqAdv.band} — ${seqAdv.reason}. This band is engine-owned; do not pick another.]`;
+        }
+        const beyonder = formatLotmBeyonderEngineBlock(context.playerCharacter, context.characterProfileData);
+        if (beyonder) ctx.finalInput += `\n${beyonder}`;
+        if (armed) {
+            const spent = applySpiritualityDelta(context.characterProfileData, -1);
+            if (spent !== context.characterProfileData) {
+                callbacks.setCharacterProfileData(spent);
+                callbacks.updateContext({ characterProfileData: spent });
+                const spi = readSpirituality(spent, context.playerCharacter);
+                if (spi && spi.current <= 0 && context.playerCharacter) {
+                    const loc = readLossOfControl(context.playerCharacter);
+                    if (loc < 3) {
+                        const next = bumpLossOfControl(context.playerCharacter, (loc + 1) as 1 | 2 | 3);
+                        callbacks.updateContext({ playerCharacter: next });
+                        if (next.pcMeta?.lossOfControl === 3) {
+                            ctx.finalInput += '\n[WORLD_EVENT: Church of the Evernight Nighthawks deploy a containment team after a Loss of Control rampage in Tingen because an unregistered Beyonder fully lost control]';
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // Loot Engine WO-05: player-armed loot drop. Mirrors the dice block above —

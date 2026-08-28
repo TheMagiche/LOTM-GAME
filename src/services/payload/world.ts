@@ -13,6 +13,9 @@ import type { TraceCollector } from './traceCollector';
 import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 import { buildFactionBlock } from './factions';
 import { buildItemLedgerBlock } from './items';
+import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+import { formatLotmCurrencyBlock } from '../../worldpacks/lotmCurrency';
+import { formatLotmAbilityBlock } from '../../worldpacks/lotmAbilityCompendium';
 
 const RECENT_SCENE_WINDOW = 3;      // mobile used 2; desktop can see a touch deeper
 const SCENE_EVENTS_TOKEN_BUDGET = 350; // mobile rationed ~200; desktop has headroom
@@ -154,6 +157,8 @@ export function buildWorld(opts: {
     factionLedger?: FactionEntry[];
     itemLedger?: ItemLedgerEntry[];
     playerFaction?: string;
+    playerPathway?: string;
+    playerSequence?: number;
 }): { worldContent: string; currentWorldTokens: number; divergenceContent: string; divergenceTokens: number; plannerEventTypes: SceneEventType[]; relationsBlock: string } {
     const {
         history,
@@ -185,6 +190,8 @@ export function buildWorld(opts: {
         factionLedger,
         itemLedger,
         playerFaction,
+        playerPathway,
+        playerSequence,
     } = opts;
 
     // --- 3. Gather trimmable World Context (Medium Priority) ---
@@ -561,6 +568,29 @@ export function buildWorld(opts: {
             tokens: countTokens(itemBlock),
             reason: 'Possessed or mentioned artefacts from the inventory ledger',
         });
+    }
+
+    if (LOTM_EXCLUSIVE_UI) {
+        const currencyBlock = formatLotmCurrencyBlock();
+        if (currencyBlock) {
+            worldBlocks.push({
+                source: 'Currency',
+                content: currencyBlock,
+                tokens: countTokens(currencyBlock),
+                reason: 'Loen purse conversions from gamedata',
+            });
+        }
+        if (playerPathway) {
+            const abilityBlock = formatLotmAbilityBlock(playerPathway, playerSequence);
+            if (abilityBlock) {
+                worldBlocks.push({
+                    source: 'Beyonder abilities',
+                    content: abilityBlock,
+                    tokens: countTokens(abilityBlock),
+                    reason: 'Attached LOTM ability catalog for the PC Sequence',
+                });
+            }
+        }
     }
 
     // ── Phase 6: per-turn scoped-knowledge block (the cage) ──

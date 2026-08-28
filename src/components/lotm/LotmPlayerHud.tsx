@@ -100,7 +100,6 @@ export function LotmPlayerHud() {
                     </div>
                 </button>
                 <div className="lotm-player-hud-meters">
-                    {model.hp && <Meter label="HP" meter={model.hp} tone="hp" />}
                     {model.spirituality && <Meter label="Spirit" meter={model.spirituality} tone="spi" />}
                 </div>
                 <div className="lotm-player-hud-actions">
@@ -147,6 +146,7 @@ export function LotmPlayerHud() {
                         <Fact label="Location" value={model.location} />
                         <Fact label="Currency" value={model.currency} />
                         <Fact label="Bounty" value={model.bounty} />
+                        <Fact label="Digestion" value={`${model.digestion}%`} />
                     </dl>
                     {model.stats.length > 0 && (
                         <dl className="lotm-player-hud-stats">

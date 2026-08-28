@@ -35,8 +35,9 @@ describe('buildLotmPlayerHudModel', () => {
         expect(model.sequenceLabel).toMatch(/Seer/);
         expect(model.sequenceNumber).toBe(9);
         expect(model.emblemSrc).toBeTruthy();
-        expect(model.hp).toEqual({ current: 18, max: 18, pct: 100 });
+        expect(model.hp).toBeNull();
         expect(model.spirituality).toEqual({ current: 14, max: 14, pct: 100 });
+        expect(model.digestion).toBe(0);
         expect(model.stats.map(s => s.label)).toEqual(expect.arrayContaining(['Spirituality', 'Physique', 'Reasoning']));
         expect(model.abilities).toEqual(expect.arrayContaining(['Spirit Vision', 'Danger Intuition']));
         expect(model.next?.sequenceLabel).toMatch(/Sequence 8/);
@@ -49,7 +50,7 @@ describe('buildLotmPlayerHudModel', () => {
         ]));
     });
 
-    it('prefers live sheet HP and abilities over the kit snapshot', () => {
+    it('prefers live sheet abilities over the kit snapshot', () => {
         const model = buildLotmPlayerHudModel(
             {
                 id: 'pc-1',
@@ -80,7 +81,7 @@ describe('buildLotmPlayerHudModel', () => {
             },
         );
 
-        expect(model.hp).toEqual({ current: 7, max: 18, pct: 39 });
+        expect(model.hp).toBeNull();
         expect(model.abilities).toEqual(['Spirit Vision', 'Flaming Jump']);
     });
 

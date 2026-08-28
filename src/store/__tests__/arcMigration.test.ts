@@ -33,6 +33,7 @@ vi.mock('../campaignStore', () => ({
     saveChapters: vi.fn().mockResolvedValue(undefined),
     saveNPCLedger: vi.fn().mockResolvedValue(undefined),
     saveCampaignState: vi.fn().mockResolvedValue(undefined),
+    getCampaign: vi.fn().mockResolvedValue(undefined),
 }));
 
 // Mock the mod client so `hydrateModTablesFromServer` returns our canned modTables

@@ -280,6 +280,8 @@ export function parseNPCsFromLore(chunks: LoreChunk[]): NPCEntry[] {
             storyRelevance: get('StoryRelevance'),
             status: (get('Status') as NPCEntry['status']) || 'Alive',
             affinity: getNum('Affinity', 50),
+            // Seed Neutral standing — the PC has not earned bonds with canon NPCs yet.
+            pcRelation: 0,
             voice: getAny(['Voice', 'Speech Pattern', 'Voice & Speech Pattern']),
             personality: getAny(['Personality', 'Personality Traits']) || disposition,
             exampleOutput: getAny(['Example Output', 'Example Dialogue', 'Example Line']),

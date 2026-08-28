@@ -80,20 +80,20 @@ const ROLL_DICE_TOOL = {
     function: {
         name: 'roll_dice',
         description:
-            "Roll dice when the player attempts an action with an uncertain outcome — combat hits, ability/skill checks, saves, contested actions. Do NOT call for descriptive moments, dialogue, or trivial actions. Mundane actions resolve as plain success without a roll.\n\n" +
+            "Roll dice when the player attempts an action with an uncertain outcome — a Beyonder working, a contest, a stealth approach, a social probe. Do NOT call for descriptive moments, dialogue, or trivial actions. Ordinary actions resolve as plain success without a roll.\n\n" +
             "Call roll_dice BEFORE narrating the outcome, then use the returned `tier` to shape the narrative.\n\n" +
-            "Trigger: Player attempts an action with an uncertain outcome — combat hits, skill checks, saves, contested actions.\n" +
+            "Trigger: Player attempts an action with an uncertain outcome — combat, Spirit Vision, divination, stealth, social, contested actions.\n" +
             "1. Identify core intent of the player's action.\n" +
             "2. If the outcome depends on chance, CALL `roll_dice` BEFORE narrating. Do NOT narrate the outcome first.\n" +
             "   - `dice`: use the die type appropriate to the category (e.g. Combat→d20, Social→d6, Perception→d6). Use `NdM` form (e.g. 2d6, 1d100). Optionally add `+N` or `-N` modifier.\n" +
-            "   - `reason`: short label (e.g. \"Stealth check vs guard\", \"Longsword attack\")\n" +
+            "   - `reason`: short label (e.g. \"Spirit Vision on the alley\", \"revolver shot at the cultist\")\n" +
             "   - `category`: one of Combat / Stealth / Social / Perception / Movement / Knowledge / Mundane (used for d20 tier mapping only)\n" +
             "3. Use the returned `tier` (outcome band label, e.g. Catastrophe / Failure / Success / Triumph / Narrative Boon) to shape the narrative. If no tier is returned (non-d20 rolls without configured bands), interpret the raw `result` per the campaign's Action Resolution rules.\n" +
             "4. Do NOT call `roll_dice` for descriptive moments, dialogue, or trivial actions.\n\n" +
-            "Advantage: if the player explicitly leverages a known weakness or superior tool, call `roll_dice` twice and use the higher result. If explicitly impaired (blinded, wounded, overwhelmed), call twice and use the lower. Otherwise, single roll.\n\n" +
+            "Advantage: Sequence-as-tier is engine-owned — a lower Sequence number holds Advantage against a higher Sequence unless the weaker party prepared a counter, ritual, or Sealed Artifact. Against ordinary people, even Sequence 9 is decisive. If the player is spiritually drained, wounded, or mid-Loss-of-Control, use Disadvantage.\n\n" +
             "Outcome band semantics (when tier is returned):\n" +
-            "- Catastrophe: severe unexpected failure, consequences beyond simple loss.\n" +
-            "- Failure: fails. Damage, setback, or resource loss.\n" +
+            "- Catastrophe: severe unexpected failure (a ritual attracts what it summoned; the artifact wakes).\n" +
+            "- Failure: fails. Spirituality spent for nothing, setback, or the seal weakens.\n" +
             "- Success: succeeds exactly as intended.\n" +
             "- Triumph: succeeds with an unexpected additional benefit.\n" +
             "- Narrative Boon: flawless. Massive strategic or narrative advantage.\n" +
@@ -102,7 +102,7 @@ const ROLL_DICE_TOOL = {
             type: 'object' as const,
             properties: {
                 dice:     { type: 'string' as const, description: "Dice expression: '1d20', '2d6', '1d100', '1d4', optionally with '+N' or '-N' modifier. Use the die type matching the action's category." },
-                reason:   { type: 'string' as const, description: "Short label, e.g. 'Stealth check vs guard' or 'Longsword attack'" },
+                reason:   { type: 'string' as const, description: "Short label, e.g. 'Spirit Vision on the alley' or 'revolver shot at the cultist'" },
                 category: { type: 'string' as const, enum: ['Combat','Perception','Stealth','Social','Movement','Knowledge','Mundane'], description: 'Skill category for tier mapping (used for d20 only)' }
             },
             required: ['dice', 'reason']
@@ -117,14 +117,14 @@ const PROPOSE_INVENTORY_TOOL = {
     function: {
         name: 'propose_inventory_change',
         description:
-            "Propose adding, removing, equipping, or relocating an item in the player's inventory when the fiction materially changes their gear (loot found, a weapon gifted/bought/broken, gear stashed at base or retrieved). This only *proposes* — the player must confirm before anything changes. Supply bounded labels ONLY; the engine sets all numbers (damage dice, bonus, AC). NEVER output damageDice, bonus, hp, or AC. Default quality to 'common'. Default location tag to 'inventory'.",
+            "Propose adding, removing, equipping, or relocating an item in the player's inventory when the fiction materially changes their gear (loot found, a weapon gifted/bought/broken, gear stashed at base or retrieved). This only *proposes* — the player must confirm before anything changes. Supply bounded labels ONLY; the engine sets all numbers. NEVER output damageDice, bonus, hp, or AC. Default quality to 'ordinary'. Default location tag to 'inventory'.",
         parameters: {
             type: 'object' as const,
             properties: {
                 name:            { type: 'string' as const, description: 'Item name.' },
                 op:              { type: 'string' as const, enum: ['grant', 'remove', 'equip', 'relocate'], description: "Operation. Default 'grant'." },
                 kind:            { type: 'string' as const, enum: ['weapon', 'armor', 'consumable', 'currency', 'misc'], description: "Item kind. Default 'misc'. Use 'currency' for coins, pounds, soli, or pence." },
-                quality:         { type: 'string' as const, enum: ['common', 'uncommon', 'rare', 'epic', 'legendary'], description: "Rarity/quality tier. Default 'common'." },
+                quality:         { type: 'string' as const, enum: ['ordinary', 'mystical', 'grade-3', 'grade-2', 'grade-1', 'grade-0', 'unique'], description: "LOTM quality: ordinary goods, mystical item, or Sealed Artifact grade 3→0. Default 'ordinary'." },
                 scalingStat:     { type: 'string' as const, enum: ['PWR', 'SPD', 'WIL'], description: "Scaling stat for weapons. Default 'PWR'." },
                 range:           { type: 'string' as const, enum: ['Close', 'Reach', 'Ranged'], description: "Weapon range. Default 'Close'." },
                 properties:      { type: 'array' as const, items: { type: 'string' as const }, description: 'Flavor tags, e.g. ["fire","heavy"].' },
@@ -208,7 +208,10 @@ export function handleNotebookTool(
 
 const VALID_OPS = new Set<string>(['grant', 'remove', 'equip', 'relocate']);
 const VALID_KINDS = new Set<string>(['weapon', 'armor', 'consumable', 'currency', 'misc']);
-const VALID_QUALITIES = new Set<string>(['common', 'uncommon', 'rare', 'epic', 'legendary']);
+const VALID_QUALITIES = new Set<string>(['ordinary', 'mystical', 'grade-3', 'grade-2', 'grade-1', 'grade-0', 'unique']);
+const LEGACY_QUALITY: Record<string, InventoryProposal['quality']> = {
+    common: 'ordinary', uncommon: 'ordinary', rare: 'mystical', epic: 'grade-3', legendary: 'unique',
+};
 const VALID_SCALING_STATS = new Set<string>(['PWR', 'SPD', 'WIL']);
 const VALID_RANGES = new Set<string>(['Close', 'Reach', 'Ranged']);
 
@@ -234,7 +237,9 @@ export function handleProposeInventoryTool(
     const kind: InventoryProposal['kind'] = VALID_KINDS.has(rawKind) ? (rawKind as InventoryProposal['kind']) : 'misc';
 
     const rawQuality = typeof args.quality === 'string' ? args.quality : '';
-    const quality: InventoryProposal['quality'] = VALID_QUALITIES.has(rawQuality) ? (rawQuality as InventoryProposal['quality']) : 'common';
+    const quality: InventoryProposal['quality'] = VALID_QUALITIES.has(rawQuality)
+        ? (rawQuality as InventoryProposal['quality'])
+        : (LEGACY_QUALITY[rawQuality] ?? 'ordinary');
 
     const rawScalingStat = typeof args.scalingStat === 'string' ? args.scalingStat : '';
     const scalingStat: InventoryProposal['scalingStat'] = VALID_SCALING_STATS.has(rawScalingStat) ? (rawScalingStat as InventoryProposal['scalingStat']) : 'PWR';

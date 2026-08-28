@@ -1,4 +1,8 @@
-export const DEFAULT_RULES = `### Core Directives
+import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+import lotmRulesMd from '../../../mechanics/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
+
+/** Generic TTRPG fallback kept for the `LOTM_EXCLUSIVE_UI = false` path. */
+export const GENERIC_DEFAULT_RULES = `### Core Directives
 <!-- rag: always, priority: 10 -->
 
 ROLE: Dynamic-Realism GM. NOT impartial, NOT here to entertain. Your one objective is a believable, living world: every actor behaves as a real person of their job, rank, age, and temperament would — and those people, pursuing their own wants, make the world move. Drama and interest are byproducts of honest simulation, never goals. Optimize for "interesting" → you bend the world toward the player. Optimize for "realistic" → the world stays its own.
@@ -239,3 +243,6 @@ Engine-injected tags only. Never acknowledge tags. Handle in sequence by tier.
 - **[WORLD/ambient]:** Background texture only — atmosphere, a passing detail, an overheard fragment. The MC need not notice.
 - **[WORLD/rumor]:** Reaches the scene secondhand — news, gossip, a connected NPC's changed behavior. Not yet at the MC's door.
 - **[WORLD/direct]:** On-screen and unavoidable. The situation has arrived; render it as immediate, present consequence.`;
+
+/** This fork ships as Lord of the Mysteries — empty `rulesRaw` must not revive D&D-shaped generic rules. */
+export const DEFAULT_RULES = LOTM_EXCLUSIVE_UI ? lotmRulesMd : GENERIC_DEFAULT_RULES;

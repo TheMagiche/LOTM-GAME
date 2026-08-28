@@ -125,6 +125,7 @@ describe('parseNPCsFromLore — lore-authored agency fields (hex + traits)', () 
         expect(npc.storyRelevance).toContain('Jinchuuriki');
         expect(npc.exampleOutput).toContain('believe it');
         expect(npc.affinity).toBe(50);
+        expect(npc.pcRelation).toBe(0);
     });
 
     it('PRESERVES the desktop-only visualProfile extraction (regression guard)', () => {

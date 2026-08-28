@@ -10,6 +10,7 @@
 
 import type { LoreChunk, NPCEntry, InventoryItem, InventoryItemCategory, CharacterProfile } from '../../types';
 import { readPcAffinity } from '../npc/affinityAccess';
+import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
 
 /**
  * Strip markdown formatting from a block of text.
@@ -211,9 +212,14 @@ export function buildInventoryIndex(items: InventoryItem[]): string {
 
 export function buildProfileIndex(profile: CharacterProfile): string {
     const parts: string[] = [];
-    parts.push(`${profile.name || '???'} | ${profile.race || '?'} ${profile.class || '?'} Lv${profile.level}`);
-    if (profile.hp) parts.push(`HP:${profile.hp.current}/${profile.hp.max}`);
-    if (profile.mp) parts.push(`MP:${profile.mp.current}/${profile.mp.max}`);
+    if (LOTM_EXCLUSIVE_UI) {
+        parts.push(`${profile.name || '???'} | ${profile.race || '?'} ${profile.class || '?'} Seq${profile.level}`);
+        if (profile.mp) parts.push(`SPI:${profile.mp.current}/${profile.mp.max}`);
+    } else {
+        parts.push(`${profile.name || '???'} | ${profile.race || '?'} ${profile.class || '?'} Lv${profile.level}`);
+        if (profile.hp) parts.push(`HP:${profile.hp.current}/${profile.hp.max}`);
+        if (profile.mp) parts.push(`MP:${profile.mp.current}/${profile.mp.max}`);
+    }
     if (Object.keys(profile.stats).length > 0) {
         const stats = Object.entries(profile.stats)
             .filter(([, v]) => typeof v === 'number')
@@ -259,9 +265,9 @@ export function minifySelectedProfile(
     if (want('name')) parts.push(profile.name || '???');
     if (want('race')) parts.push(profile.race || '?');
     if (want('class')) parts.push(profile.class || '?');
-    if (want('level')) parts.push(`Lv${profile.level}`);
-    if (want('hp') && profile.hp) parts.push(`HP:${profile.hp.current}/${profile.hp.max}`);
-    if (want('mp') && profile.mp) parts.push(`MP:${profile.mp.current}/${profile.mp.max}`);
+    if (want('level')) parts.push(LOTM_EXCLUSIVE_UI ? `Seq${profile.level}` : `Lv${profile.level}`);
+    if (want('hp') && profile.hp && !LOTM_EXCLUSIVE_UI) parts.push(`HP:${profile.hp.current}/${profile.hp.max}`);
+    if (want('mp') && profile.mp) parts.push(LOTM_EXCLUSIVE_UI ? `SPI:${profile.mp.current}/${profile.mp.max}` : `MP:${profile.mp.current}/${profile.mp.max}`);
     if (want('stats') && Object.keys(profile.stats).length > 0) {
         parts.push(Object.entries(profile.stats).map(([k, v]) => `${k.slice(0, 3).toUpperCase()}:${v}`).join('|'));
     }
@@ -278,8 +284,14 @@ export function minifyBookkeepingStub(
     items: InventoryItem[]
 ): string {
     const parts: string[] = [];
-    parts.push(`CHAR:${profile.name || '???'}|${profile.race || '?'} ${profile.class || '?'}|Lv${profile.level}`);
-    if (profile.hp) parts.push(`HP:${profile.hp.current}/${profile.hp.max}`);
+    parts.push(LOTM_EXCLUSIVE_UI
+        ? `CHAR:${profile.name || '???'}|${profile.race || '?'} ${profile.class || '?'}|Seq${profile.level}`
+        : `CHAR:${profile.name || '???'}|${profile.race || '?'} ${profile.class || '?'}|Lv${profile.level}`);
+    if (LOTM_EXCLUSIVE_UI) {
+        if (profile.mp) parts.push(`SPI:${profile.mp.current}/${profile.mp.max}`);
+    } else if (profile.hp) {
+        parts.push(`HP:${profile.hp.current}/${profile.hp.max}`);
+    }
     const currency = items
         .filter(i => i.category === 'currency')
         .map(i => `${i.qty}${i.name}`)

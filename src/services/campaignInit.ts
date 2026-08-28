@@ -15,6 +15,9 @@ import { parseFactionsFromLore } from './lore/loreFactionParser';
 import { resolveFaction } from './faction/resolveFaction';
 import { resolveItem } from './item/resolveItem';
 import { loadLotmItemCatalog } from '../worldpacks/lotmItemCatalog';
+import { mergeLotmChurches } from '../worldpacks/lotmChurches';
+import { mergeLotmGeography } from '../worldpacks/lotmGeography';
+import { loadLotmAbilityCompendium } from '../worldpacks/lotmAbilityCompendium';
 import { genericSave } from './tables/genericAccessor';
 import { resolvePlace } from './locationParser';
 import {
@@ -104,22 +107,24 @@ export async function initializeCampaignState(params: {
         // Same deal for places. Dedupe against the existing ledger by name+alias
         // (resolvePlace is the ledger's own matcher) so re-importing a lore file
         // into a campaign in progress tops up rather than duplicating.
-        const parsedLocations = parseLocationsFromLore(chunks);
-        if (parsedLocations.length > 0) {
-            const existingLocations = await loadLocationTable(campaignId);
-            const additions = parsedLocations.filter(loc => !resolvePlace(loc.name, existingLocations));
-            if (additions.length > 0) {
-                await genericSave(locationTableDescriptor as never, campaignId, [...existingLocations, ...additions]);
-            }
+        const parsedFactions = parseFactionsFromLore(chunks);
+        const existingFactions = await loadFactionTable(campaignId);
+        const fromLore = parsedFactions.filter(fac => !resolveFaction(fac.name, existingFactions));
+        const mergedFactions = attachLotmVisuals
+            ? mergeLotmChurches([...existingFactions, ...fromLore])
+            : (fromLore.length > 0 ? [...existingFactions, ...fromLore] : existingFactions);
+        if (mergedFactions.length > existingFactions.length) {
+            await genericSave(factionTableDescriptor as never, campaignId, mergedFactions);
         }
 
-        const parsedFactions = parseFactionsFromLore(chunks);
-        if (parsedFactions.length > 0) {
-            const existingFactions = await loadFactionTable(campaignId);
-            const additions = parsedFactions.filter(fac => !resolveFaction(fac.name, existingFactions));
-            if (additions.length > 0) {
-                await genericSave(factionTableDescriptor as never, campaignId, [...existingFactions, ...additions]);
-            }
+        const parsedLocations = parseLocationsFromLore(chunks);
+        const existingLocations = await loadLocationTable(campaignId);
+        const fromLoreLoc = parsedLocations.filter(loc => !resolvePlace(loc.name, existingLocations));
+        const mergedLocations = attachLotmVisuals
+            ? mergeLotmGeography([...existingLocations, ...fromLoreLoc])
+            : (fromLoreLoc.length > 0 ? [...existingLocations, ...fromLoreLoc] : existingLocations);
+        if (mergedLocations.length > existingLocations.length) {
+            await genericSave(locationTableDescriptor as never, campaignId, mergedLocations);
         }
 
         seeds = extractEngineSeeds(chunks);
@@ -136,6 +141,17 @@ export async function initializeCampaignState(params: {
                 await genericSave(itemTableDescriptor as never, campaignId, [...existingItems, ...additions]);
             }
         }
+        const existingFactions = await loadFactionTable(campaignId);
+        const churchMerged = mergeLotmChurches(existingFactions);
+        if (churchMerged.length > existingFactions.length) {
+            await genericSave(factionTableDescriptor as never, campaignId, churchMerged);
+        }
+        const existingLocations = await loadLocationTable(campaignId);
+        const geoMerged = mergeLotmGeography(existingLocations);
+        if (geoMerged.length > existingLocations.length) {
+            await genericSave(locationTableDescriptor as never, campaignId, geoMerged);
+        }
+        void loadLotmAbilityCompendium();
     }
 
     let lootTree: LootTree | null = null;
@@ -169,11 +185,19 @@ export async function initializeCampaignState(params: {
                 stats: ctx.characterProfileData.stats,
             };
             ctx.inventoryItems = seedInventoryIfEmpty(ctx.inventoryItems, seededPc);
+            if (seededPc.pcMeta && seededPc.pcMeta.digestion === undefined) {
+                seededPc.pcMeta = { ...seededPc.pcMeta, digestion: 0, lossOfControl: 0 };
+                ctx.playerCharacter = seededPc;
+            }
         }
         if (attachLotmVisuals && !ctx.currentPlaceId) {
             const locations = await loadLocationTable(campaignId);
             const tingenId = findTingenLocationId(locations);
             if (tingenId) ctx.currentPlaceId = tingenId;
+        }
+        if (attachLotmVisuals) {
+            // 3-band Disadvantage/Normal/Advantage pool so Sequence-as-Advantage can pick a band.
+            ctx.diceSystem = undefined;
         }
         if (seeds) {
             ctx.surpriseConfig = {
