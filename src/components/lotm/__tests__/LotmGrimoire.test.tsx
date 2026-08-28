@@ -7,6 +7,12 @@ import { LotmPlayHeader } from '../LotmPlayHeader';
 afterEach(() => {
     cleanup();
     useAppStore.getState().closeGrimoire();
+    useAppStore.setState({
+        activeCampaignId: null,
+        playerCharacter: null,
+        locationLedger: [],
+        askGmOpen: false,
+    });
 });
 
 describe('LotmGrimoire overlay', () => {
@@ -88,6 +94,59 @@ describe('LotmGrimoire overlay', () => {
         expect(useAppStore.getState().grimoireOpen).toBe(false);
         expect(screen.queryByRole('dialog', { name: 'Grimoire' })).toBeNull();
     });
+
+    it('hides the chronicle strip without a campaign', () => {
+        useAppStore.getState().openGrimoire();
+        render(<LotmGrimoire />);
+        expect(screen.queryByLabelText('Your chronicle')).toBeNull();
+    });
+
+    it('shows live place and pathway acting in the chronicle strip', () => {
+        useAppStore.setState({
+            activeCampaignId: 'camp_test',
+            playerCharacter: {
+                id: 'pc-1',
+                name: 'Clara Whitlock',
+                aliases: '',
+                appearance: '',
+                faction: 'Unaffiliated civilian (unregistered Beyonder)',
+                storyRelevance: '',
+                disposition: '',
+                status: '',
+                goals: '',
+                voice: '',
+                personality: '',
+                exampleOutput: '',
+                affinity: 0,
+                signatureKit: { equipment: [], abilities: [], pathway: 'fool', sequence: 9 },
+            },
+            locationLedger: [{
+                id: 'loc_tingen',
+                name: 'Tingen',
+                aliases: '',
+                broadLocation: '',
+                features: [],
+                connections: [],
+                description: '',
+                firstSeenScene: '',
+                lastSeenScene: '',
+                source: 'manual',
+            }],
+            context: { ...useAppStore.getState().context, currentPlaceId: 'loc_tingen' },
+        });
+        useAppStore.getState().openGrimoire();
+        render(<LotmGrimoire />);
+        const strip = screen.getByLabelText('Your chronicle');
+        expect(strip).toHaveTextContent('Tingen');
+        expect(strip).toHaveTextContent(/Fool/i);
+        expect(strip.textContent).toMatch(/fate/i);
+    });
+
+    it('opens a pathway page from openGrimoire focus', () => {
+        useAppStore.getState().openGrimoire({ section: 'pathways', id: 'fool' });
+        render(<LotmGrimoire />);
+        expect(screen.getByRole('heading', { name: /Fool Pathway/i, level: 3 })).toBeInTheDocument();
+    });
 });
 
 describe('LotmPlayHeader Grimoire action', () => {
@@ -95,5 +154,11 @@ describe('LotmPlayHeader Grimoire action', () => {
         render(<LotmPlayHeader />);
         fireEvent.click(screen.getByRole('button', { name: 'Open Grimoire' }));
         expect(useAppStore.getState().grimoireOpen).toBe(true);
+    });
+
+    it('opens Ask GM from the top menu', () => {
+        render(<LotmPlayHeader />);
+        fireEvent.click(screen.getByRole('button', { name: 'Ask GM' }));
+        expect(useAppStore.getState().askGmOpen).toBe(true);
     });
 });

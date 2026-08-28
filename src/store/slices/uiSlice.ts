@@ -7,6 +7,16 @@ import type { OneShotEventId } from '../../services/oneshot/oneShotEvents';
 // drawer's screen map no longer carries a separate entry.
 export type ContextScreenId = 'sys' | 'world' | 'eng' | 'chpt' | 'mem';
 
+export type GrimoireFocus = {
+    section: 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches';
+    id?: string | null;
+};
+
+export type LastLootReceipt = {
+    names: string[];
+    at: number;
+};
+
 
 export type LotmWorldIndexLock = {
     campaignId: string | null;
@@ -21,6 +31,9 @@ export type UISlice = {
     npcLedgerOpen: boolean;
     pcPanelOpen: boolean;
     locationLedgerOpen: boolean;
+    locationLedgerFocusId: string | null;
+    openLocationLedgerAt: (idOrName: string) => void;
+    clearLocationLedgerFocus: () => void;
     factionLedgerOpen: boolean;
     itemLedgerOpen: boolean;
     blockViewOpen: boolean;
@@ -74,6 +87,8 @@ export type UISlice = {
     lootRollModalOpen: boolean;
     openLootRollModal: () => void;
     closeLootRollModal: () => void;
+    lastLootReceipt: LastLootReceipt | null;
+    setLastLootReceipt: (receipt: LastLootReceipt | null) => void;
     // One-Shot Event Injector v1: armed event id, appended to the next turn's
     // LLM input (after historyInput capture) and cleared by the caller. Mirrors
     // armedRoll/armedLoot — fires once, never persists in chat history.
@@ -118,9 +133,11 @@ export type UISlice = {
     toggleLotmChronicle: () => void;
     /** Player-facing LOTM lore encyclopedia overlay. */
     grimoireOpen: boolean;
-    openGrimoire: () => void;
+    grimoireFocus: GrimoireFocus | null;
+    openGrimoire: (focus?: GrimoireFocus) => void;
     closeGrimoire: () => void;
     toggleGrimoire: () => void;
+    clearGrimoireFocus: () => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -131,6 +148,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     npcLedgerOpen: false,
     pcPanelOpen: false,
     locationLedgerOpen: false,
+    locationLedgerFocusId: null,
     factionLedgerOpen: false,
     itemLedgerOpen: false,
     blockViewOpen: false,
@@ -148,6 +166,8 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     toggleNPCLedger: () => set((s) => ({ npcLedgerOpen: !s.npcLedgerOpen })),
     togglePCPanel: () => set((s) => ({ pcPanelOpen: !s.pcPanelOpen })),
     toggleLocationLedger: () => set((s) => ({ locationLedgerOpen: !s.locationLedgerOpen })),
+    openLocationLedgerAt: (idOrName) => set({ locationLedgerOpen: true, locationLedgerFocusId: idOrName }),
+    clearLocationLedgerFocus: () => set({ locationLedgerFocusId: null }),
     toggleFactionLedger: () => set((s) => ({ factionLedgerOpen: !s.factionLedgerOpen })),
     toggleItemLedger: () => set((s) => ({ itemLedgerOpen: !s.itemLedgerOpen })),
     toggleBlockView: () => set((s) => ({ blockViewOpen: !s.blockViewOpen })),
@@ -179,6 +199,8 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     lootRollModalOpen: false,
     openLootRollModal: () => set({ lootRollModalOpen: true }),
     closeLootRollModal: () => set({ lootRollModalOpen: false }),
+    lastLootReceipt: null,
+    setLastLootReceipt: (receipt) => set({ lastLootReceipt: receipt }),
     armedOneShot: null,
     setArmedOneShot: (id) => set({ armedOneShot: id }),
     armedAbsoluteCommand: null,
@@ -218,7 +240,9 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     setLotmChronicleOpen: (open) => set({ lotmChronicleOpen: open }),
     toggleLotmChronicle: () => set((s) => ({ lotmChronicleOpen: !s.lotmChronicleOpen })),
     grimoireOpen: false,
-    openGrimoire: () => set({ grimoireOpen: true }),
-    closeGrimoire: () => set({ grimoireOpen: false }),
-    toggleGrimoire: () => set((s) => ({ grimoireOpen: !s.grimoireOpen })),
+    grimoireFocus: null,
+    openGrimoire: (focus) => set({ grimoireOpen: true, grimoireFocus: focus ?? null }),
+    closeGrimoire: () => set({ grimoireOpen: false, grimoireFocus: null }),
+    toggleGrimoire: () => set((s) => ({ grimoireOpen: !s.grimoireOpen, grimoireFocus: s.grimoireOpen ? null : s.grimoireFocus })),
+    clearGrimoireFocus: () => set({ grimoireFocus: null }),
 });

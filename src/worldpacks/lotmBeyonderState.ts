@@ -1,8 +1,10 @@
 import type { CharacterProfile, PlayerCharacter } from '../types';
 import {
+    abilitiesForLotmSequence,
     formatLotmSequenceName,
     getLotmPathway,
     getLotmSequence,
+    nextLotmSequence,
     resolveLotmPathway,
 } from './lotmPathways';
 
@@ -63,6 +65,14 @@ export function bumpLossOfControl(pc: PlayerCharacter, to: LossOfControlStage): 
 
 export type SequenceAdvantageBand = 'Advantage' | 'Normal' | 'Disadvantage';
 
+export type SequenceAdvantageResult = { band: SequenceAdvantageBand; reason: string };
+
+/** Player-facing one-liner for a Sequence-as-Advantage result. */
+export function formatSequenceAdvantageLine(result: SequenceAdvantageResult | null | undefined): string {
+    if (!result) return '';
+    return `${result.band} · ${result.reason}`;
+}
+
 type SequenceOpponent = { signatureKit?: { sequence?: number }; archived?: boolean; isPC?: boolean };
 
 /**
@@ -75,7 +85,7 @@ export function resolveSequenceAdvantage(
     pc: PlayerCharacter | null | undefined,
     profile: CharacterProfile | undefined,
     opponents: SequenceOpponent[] | undefined,
-): { band: SequenceAdvantageBand; reason: string } | null {
+): SequenceAdvantageResult | null {
     const hasPathway = Boolean(pc?.signatureKit?.pathway);
     const sequence = typeof pc?.signatureKit?.sequence === 'number'
         ? pc.signatureKit.sequence
@@ -152,4 +162,61 @@ export function formatLotmBeyonderEngineBlock(
         lines.push(`NEXT FORMULA (Seq ${nextSeq} ${nextInfo.name}): main ${nextInfo.formula.main.join('; ')}`);
     }
     return `[BEYONDER]\n${lines.join('\n')}`;
+}
+
+export type LotmPotionDrinkResult =
+    | { ok: true; pc: PlayerCharacter; profile: CharacterProfile }
+    | { ok: false; error: string };
+
+/**
+ * Player drink/commit. Sequence promotion is gated on digestion 100%.
+ * Does not tick digestion and does not run inside the turn loop.
+ */
+export function applyLotmPotionDrink(
+    pc: PlayerCharacter | null | undefined,
+    profile: CharacterProfile,
+): LotmPotionDrinkResult {
+    if (!pc) return { ok: false, error: 'No character to advance.' };
+    const digestion = readDigestion(pc);
+    if (digestion < 100) {
+        return { ok: false, error: 'Acting Method is not fully digested — advancement stalls below 100%.' };
+    }
+    const kit = pc.signatureKit;
+    const pathway = getLotmPathway(kit?.pathway)
+        ?? resolveLotmPathway(kit?.pathway)
+        ?? resolveLotmPathway(profile.class);
+    const sequence = typeof kit?.sequence === 'number'
+        ? kit.sequence
+        : (typeof profile.level === 'number' && Number.isFinite(profile.level) ? profile.level : undefined);
+    const nextSeq = nextLotmSequence(sequence);
+    if (typeof nextSeq !== 'number') {
+        return { ok: false, error: 'There is no next Sequence to drink.' };
+    }
+    const nextInfo = getLotmSequence(pathway, nextSeq);
+    if (!nextInfo) {
+        return { ok: false, error: 'There is no next Sequence to drink.' };
+    }
+    const abilities = abilitiesForLotmSequence(pathway?.id, nextSeq);
+    const acting = (nextInfo.actingMethod ?? '').trim();
+    return {
+        ok: true,
+        pc: {
+            ...pc,
+            signatureKit: {
+                equipment: kit?.equipment ?? [],
+                abilities,
+                pathway: pathway?.id ?? kit?.pathway,
+                sequence: nextSeq,
+                element: kit?.element,
+            },
+            pcMeta: { ...pc.pcMeta, digestion: 0 },
+        },
+        profile: {
+            ...profile,
+            level: nextSeq,
+            class: pathway?.name ?? profile.class,
+            abilities,
+            skills: acting ? [acting] : profile.skills,
+        },
+    };
 }

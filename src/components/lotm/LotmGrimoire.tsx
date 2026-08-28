@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, BookOpen, CircleHelp, Search, X } from 'lucide-react';
+import { ArrowLeft, BookOpen, CircleHelp, MapPin, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import {
     GRIMOIRE_SECTIONS,
@@ -24,10 +24,13 @@ import {
     type GrimoireWorldEntry,
     type GrimoireWorldTabId,
 } from '../../worldpacks/lotmGrimoireCatalog';
+import { getLotmPathway, getLotmSequence, nextLotmSequence } from '../../worldpacks/lotmPathways';
 
 export function LotmGrimoire() {
     const open = useAppStore(s => s.grimoireOpen);
     const closeGrimoire = useAppStore(s => s.closeGrimoire);
+    const grimoireFocus = useAppStore(s => s.grimoireFocus);
+    const clearGrimoireFocus = useAppStore(s => s.clearGrimoireFocus);
     const [section, setSection] = useState<GrimoireSectionId>('volumes');
     const [worldTab, setWorldTab] = useState<GrimoireWorldTabId>('geography');
     const [query, setQuery] = useState('');
@@ -36,6 +39,14 @@ export function LotmGrimoire() {
     const searchRef = useRef<HTMLInputElement | null>(null);
     const restoreFocusRef = useRef<HTMLElement | null>(null);
     const searchExpanded = searchOpen || query.trim().length > 0;
+
+    useEffect(() => {
+        if (!open || !grimoireFocus) return;
+        setSection(grimoireFocus.section);
+        setSelectedId(grimoireFocus.id ?? null);
+        if (grimoireFocus.section === 'world') setWorldTab('geography');
+        clearGrimoireFocus();
+    }, [open, grimoireFocus, clearGrimoireFocus]);
 
     useEffect(() => {
         if (!open) return undefined;
@@ -140,7 +151,12 @@ export function LotmGrimoire() {
                         </button>
                     </div>
                 </header>
-
+                <ChronicleStrip
+                    onOpenPathway={(id) => {
+                        setSection('pathways');
+                        setSelectedId(id);
+                    }}
+                />
                 <div className="lotm-grimoire-body">
                     <nav className="lotm-grimoire-rail" aria-label="Grimoire sections">
                         {GRIMOIRE_SECTIONS.map(entry => (
@@ -185,6 +201,10 @@ export function LotmGrimoire() {
                                 query={query}
                                 worldTab={worldTab}
                                 onWorldTab={setWorldTab}
+                                onShowOnMap={(name) => {
+                                    closeGrimoire();
+                                    useAppStore.getState().openLocationLedgerAt(name);
+                                }}
                             />
                         )}
                         {section === 'churches' && (
@@ -199,6 +219,56 @@ export function LotmGrimoire() {
             </div>
         </div>,
         document.body,
+    );
+}
+
+function ChronicleStrip({ onOpenPathway }: { onOpenPathway: (id: string) => void }) {
+    const campaignId = useAppStore(s => s.activeCampaignId);
+    const playerCharacter = useAppStore(s => s.playerCharacter);
+    const currentPlaceId = useAppStore(s => s.context.currentPlaceId);
+    const locationLedger = useAppStore(s => s.locationLedger);
+    const factionLedger = useAppStore(s => s.factionLedger);
+
+    if (!campaignId) return null;
+
+    const place = currentPlaceId
+        ? locationLedger.find(entry => entry.id === currentPlaceId)
+        : undefined;
+    const factionRaw = (playerCharacter?.faction ?? '').trim();
+    const church = factionRaw
+        ? factionLedger.find(entry => {
+            const hay = `${entry.name} ${entry.aliases ?? ''}`.toLowerCase();
+            return hay.includes(factionRaw.toLowerCase()) || factionRaw.toLowerCase().includes(entry.name.toLowerCase());
+        })
+        : undefined;
+    const pathway = getLotmPathway(playerCharacter?.signatureKit?.pathway);
+    const sequence = playerCharacter?.signatureKit?.sequence;
+    const current = getLotmSequence(pathway, sequence);
+    const next = getLotmSequence(pathway, nextLotmSequence(sequence));
+    const acting = (current?.actingMethod ?? '').trim();
+    const formula = next?.formula?.main.length ? next.formula.main.join('; ') : '';
+
+    return (
+        <aside className="lotm-grimoire-chronicle" aria-label="Your chronicle">
+            <p>
+                <span className="lotm-grimoire-chronicle-kicker">Place</span>
+                <span className="lotm-grimoire-chronicle-value">{place?.name || '—'}</span>
+            </p>
+            <p>
+                <span className="lotm-grimoire-chronicle-kicker">Church</span>
+                <span className="lotm-grimoire-chronicle-value">{church?.name || factionRaw || '—'}</span>
+            </p>
+            {pathway && (
+                <p>
+                    <span className="lotm-grimoire-chronicle-kicker">Your pathway</span>
+                    <button type="button" className="lotm-grimoire-chronicle-value" onClick={() => onOpenPathway(pathway.id)}>
+                        {pathway.name}
+                        {acting ? ` · ${acting}` : ''}
+                    </button>
+                    {formula && <span className="lotm-grimoire-chronicle-value">Next formula: {formula}</span>}
+                </p>
+            )}
+        </aside>
     );
 }
 
@@ -491,10 +561,12 @@ function WorldPane({
     query,
     worldTab,
     onWorldTab,
+    onShowOnMap,
 }: {
     query: string;
     worldTab: GrimoireWorldTabId;
     onWorldTab: (id: GrimoireWorldTabId) => void;
+    onShowOnMap?: (name: string) => void;
 }) {
     const entries = useMemo(
         () => filterByGrimoireQuery(LOTM_GRIMOIRE_WORLD[worldTab], query, worldEntrySearchText),
@@ -521,7 +593,10 @@ function WorldPane({
                 <ul className="lotm-grimoire-cards">
                     {entries.map(entry => (
                         <li key={entry.id} className="lotm-grimoire-static-card">
-                            <WorldCard entry={entry} />
+                            <WorldCard
+                                entry={entry}
+                                showOnMap={worldTab === 'geography' ? onShowOnMap : undefined}
+                            />
                         </li>
                     ))}
                 </ul>
@@ -530,7 +605,7 @@ function WorldPane({
     );
 }
 
-function WorldCard({ entry }: { entry: GrimoireWorldEntry }) {
+function WorldCard({ entry, showOnMap }: { entry: GrimoireWorldEntry; showOnMap?: (name: string) => void }) {
     return (
         <article className="lotm-grimoire-card is-static">
             {entry.subtitle && <p className="lotm-grimoire-card-kicker">{entry.subtitle}</p>}
@@ -539,6 +614,15 @@ function WorldCard({ entry }: { entry: GrimoireWorldEntry }) {
             {entry.extra.map(line => (
                 <p key={line} className="lotm-grimoire-card-meta">{line}</p>
             ))}
+            {showOnMap && (
+                <button
+                    type="button"
+                    className="lotm-grimoire-map-btn"
+                    onClick={() => showOnMap(entry.name)}
+                >
+                    <MapPin size={11} /> Show on map
+                </button>
+            )}
         </article>
     );
 }

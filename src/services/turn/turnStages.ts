@@ -27,6 +27,7 @@ import { resolveLootDrop } from '../engine/lootEngine';
 import { mergeLootIntoInventory } from '../engine/lootToInventory';
 import { buildOneShotDirective } from '../oneshot/oneShotEvents';
 import { toast } from '../../components/Toast';
+import { useAppStore } from '../../store/useAppStore';
 import { sanitizePayloadForApi } from '../lib/payloadSanitizer';
 import { getToolDefinitions } from './toolHandlers';
 import { resolveToolHandler } from './toolRegistry';
@@ -172,7 +173,14 @@ export function resolveEngineRolls(
                 ` — this loot DROPPED. Narrate the player finding it as fact; ` +
                 `do NOT change its identity, inflate it, or add items beyond this list.]`;
             // Player-facing reveal — shows the drop on their own turn bubble.
-            ctx.displayInputFinal += `\n\n💰 Loot drop armed (${armedLoot.rolls})`;
+            const names = (loot.items ?? []).map(item => item.label.trim()).filter(Boolean);
+            ctx.displayInputFinal += names.length
+                ? `\n\n💰 ${names.join(', ')}`
+                : `\n\n💰 Loot drop armed (${armedLoot.rolls})`;
+            if (names.length) {
+                useAppStore.getState().setLastLootReceipt({ names, at: Date.now() });
+                toast.info(`Loot: ${names.join(', ')}`);
+            }
             const merged = mergeLootIntoInventory(context.inventoryItems ?? [], loot.items ?? []);
             if (merged !== context.inventoryItems) {
                 callbacks.setInventoryItems(merged);

@@ -94,6 +94,24 @@ export function formatLotmAbilityBlock(pathwayId: string | undefined, sequence: 
     return `[BEYONDER ABILITIES]\n${lines.join('\n')}`;
 }
 
+export function findLotmAbilityByName(
+    name: string,
+    pathwayId?: string,
+    sequence?: number,
+): LotmCompendiumAbility | undefined {
+    const needle = name.split(':')[0].trim().toLowerCase();
+    if (!needle) return undefined;
+    const all = getLotmAbilityCompendiumSync();
+    if (all.length === 0) return undefined;
+    const exact = all.filter(a => a.name.toLowerCase() === needle);
+    const pool = exact.length ? exact : all.filter(a => a.name.toLowerCase().includes(needle) || needle.includes(a.name.toLowerCase()));
+    const pathwayMatch = pathwayId ? pool.filter(a => a.pathwayId === pathwayId) : pool;
+    const seqMatch = typeof sequence === 'number'
+        ? pathwayMatch.filter(a => a.sequence === sequence || a.sequence == null)
+        : pathwayMatch;
+    return seqMatch[0] ?? pathwayMatch[0] ?? pool[0];
+}
+
 /** Fire-and-forget warmup so the first turn can inject the catalog. */
 export function warmupLotmAbilityCompendium(): void {
     void loadLotmAbilityCompendium();

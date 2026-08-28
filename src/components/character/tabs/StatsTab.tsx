@@ -17,6 +17,8 @@ import {
     nextLotmSequence,
     resolveLotmPathway,
 } from '../../../worldpacks/lotmPathways';
+import { commitLotmPotionDrink } from '../../lotm/lotmPotionDrink';
+import { readDigestion } from '../../../worldpacks/lotmBeyonderState';
 
 function SceneTag({ lastScene }: { lastScene: string }) {
     if (!lastScene || lastScene === 'Never') {
@@ -91,8 +93,10 @@ export function StatsTab() {
         ? Object.entries(LOTM_PATHWAY_SYMBOLS).find(([k]) => pathway.id.includes(k) || pathway.name.toLowerCase().includes(k))?.[1]
         : undefined;
     const nextSeq = nextLotmSequence(sequence);
+    const currentInfo = getLotmSequence(pathway, sequence);
     const nextInfo = getLotmSequence(pathway, nextSeq);
     const nextAbilities = abilitiesForLotmSequence(pathway?.id, nextSeq);
+    const canDrink = lotm && readDigestion(playerCharacter) >= 100 && Boolean(nextInfo);
 
     return (
         <div className="px-4 py-4 space-y-4">
@@ -283,6 +287,14 @@ export function StatsTab() {
                                 <p className="text-[9px] uppercase tracking-wider text-amber-300/80 mb-1">
                                     To advance · Seq {nextInfo.sequence} {nextInfo.name}
                                 </p>
+                                <div className="flex gap-2 mb-2">
+                                    {currentInfo?.potionSrc && (
+                                        <img src={currentInfo.potionSrc} alt="Current potion" className="h-12 w-12 object-contain" />
+                                    )}
+                                    {nextInfo.potionSrc && (
+                                        <img src={nextInfo.potionSrc} alt={`${nextInfo.name} potion`} className="h-12 w-12 object-contain" />
+                                    )}
+                                </div>
                                 {nextInfo.actingMethod && (
                                     <p className="text-[11px] text-text-dim leading-relaxed mb-1">Acting: {nextInfo.actingMethod}</p>
                                 )}
@@ -292,6 +304,15 @@ export function StatsTab() {
                                 {nextAbilities.length > 0 && (
                                     <p className="text-[11px] text-text-dim leading-relaxed">{nextAbilities.join(' · ')}</p>
                                 )}
+                                <button
+                                    type="button"
+                                    disabled={!canDrink}
+                                    title={canDrink ? `Drink the Sequence ${nextInfo.sequence} potion` : 'Digestion must reach 100% before drinking the next potion'}
+                                    onClick={() => commitLotmPotionDrink()}
+                                    className="mt-2 px-2 py-1 text-[9px] uppercase tracking-wider border border-amber-300/40 text-amber-200 rounded disabled:opacity-40"
+                                >
+                                    Drink next potion
+                                </button>
                             </div>
                         )}
                         <div>

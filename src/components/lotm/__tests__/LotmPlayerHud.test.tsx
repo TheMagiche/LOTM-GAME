@@ -27,16 +27,20 @@ afterEach(() => {
         playerCharacter: null,
         characterProfileData: DEFAULT_CHARACTER_PROFILE,
         pcPanelOpen: false,
+        grimoireOpen: false,
+        grimoireFocus: null,
     });
 });
 
 describe('LotmPlayerHud', () => {
     beforeEach(() => {
         useAppStore.setState({
-            playerCharacter: null,
-            characterProfileData: DEFAULT_CHARACTER_PROFILE,
-            pcPanelOpen: false,
-        });
+        playerCharacter: null,
+        characterProfileData: DEFAULT_CHARACTER_PROFILE,
+        pcPanelOpen: false,
+        grimoireOpen: false,
+        grimoireFocus: null,
+    });
     });
 
     it('renders nothing without a seeded character', () => {
@@ -44,7 +48,7 @@ describe('LotmPlayerHud', () => {
         expect(container).toBeEmptyDOMElement();
     });
 
-    it('shows name, sequence, emblem, HP, and abilities on the play HUD', () => {
+    it('shows name, sequence, emblem, Spirit, LoC, digestion, and abilities on the play HUD', () => {
         seedClara();
         render(<LotmPlayerHud />);
 
@@ -52,13 +56,17 @@ describe('LotmPlayerHud', () => {
         expect(hud).toBeInTheDocument();
         expect(screen.getByText('Clara Whitlock')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Open character sheet for Clara Whitlock' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Open Grimoire for Fool Pathway/i })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: /^Sheet$/i })).not.toBeInTheDocument();
         expect(screen.getByText(/Fool Pathway/i)).toBeInTheDocument();
         expect(screen.getByText(/Sequence 9/)).toBeInTheDocument();
-        expect(screen.getByText(/Seer/)).toBeInTheDocument();
+        expect(screen.getByText(/Fool Pathway · Sequence 9 · Seer/)).toBeInTheDocument();
         expect(hud.querySelector('img.lotm-player-hud-emblem')).toBeTruthy();
-        expect(screen.getByRole('meter', { name: 'HP' })).toHaveAttribute('aria-valuenow', '18');
+        expect(screen.queryByRole('meter', { name: 'HP' })).toBeNull();
         expect(screen.getByRole('meter', { name: 'Spirit' })).toHaveAttribute('aria-valuenow', '14');
+        expect(screen.getByRole('meter', { name: 'Digestion' })).toHaveAttribute('aria-valuenow', '0');
+        expect(screen.getByText('stable')).toBeInTheDocument();
+        expect(screen.getByLabelText('Sequence band')).toHaveTextContent(/Advantage/);
         expect(screen.getByLabelText(/Sequence ladder/i).querySelector('li.is-current')).toHaveTextContent('9');
         expect(screen.getByText(/Spirit Vision/)).toBeInTheDocument();
     });
@@ -79,14 +87,19 @@ describe('LotmPlayerHud', () => {
         expect(screen.getByText('Sequence abilities')).toBeInTheDocument();
         expect(screen.getByText(/Sequence 8 · Clown/)).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /inventory/i })).toHaveAttribute('aria-expanded', 'true');
+        expect(screen.getByRole('button', { name: /Drink next potion/i })).toBeDisabled();
     });
 
-    it('opens the character sheet from the emblem and name', async () => {
+    it('opens the character sheet from the name and the Grimoire from the emblem', async () => {
         const user = userEvent.setup();
         seedClara();
         render(<LotmPlayerHud />);
 
         await user.click(screen.getByRole('button', { name: 'Open character sheet for Clara Whitlock' }));
         expect(useAppStore.getState().pcPanelOpen).toBe(true);
+
+        await user.click(screen.getByRole('button', { name: /Open Grimoire for Fool Pathway/i }));
+        expect(useAppStore.getState().grimoireOpen).toBe(true);
+        expect(useAppStore.getState().grimoireFocus).toEqual({ section: 'pathways', id: 'fool' });
     });
 });

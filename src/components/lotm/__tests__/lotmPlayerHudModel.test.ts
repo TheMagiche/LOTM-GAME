@@ -38,6 +38,11 @@ describe('buildLotmPlayerHudModel', () => {
         expect(model.hp).toBeNull();
         expect(model.spirituality).toEqual({ current: 14, max: 14, pct: 100 });
         expect(model.digestion).toBe(0);
+        expect(model.locLabel).toBe('stable');
+        expect(model.canDrink).toBe(false);
+        expect(model.sequenceBandLine).toMatch(/Advantage/);
+        expect(model.actingMethod).toBeTruthy();
+        expect(model.pathwayId).toBe('fool');
         expect(model.stats.map(s => s.label)).toEqual(expect.arrayContaining(['Spirituality', 'Physique', 'Reasoning']));
         expect(model.abilities).toEqual(expect.arrayContaining(['Spirit Vision', 'Danger Intuition']));
         expect(model.next?.sequenceLabel).toMatch(/Sequence 8/);
@@ -230,5 +235,30 @@ describe('buildLotmPlayerHudModel', () => {
         );
         expect(model.currency).toBe('4 soli · 6 pence');
         expect(model.bounty).toBe('Church of the Evernight — 30 pounds');
+    });
+
+    it('shows Disadvantage when a stronger Sequence is on stage', () => {
+        const model = buildLotmPlayerHudModel(
+            {
+                id: 'pc-1',
+                name: 'Clara Whitlock',
+                aliases: '',
+                appearance: '',
+                faction: '',
+                storyRelevance: '',
+                disposition: '',
+                status: '',
+                goals: '',
+                voice: '',
+                personality: '',
+                exampleOutput: '',
+                affinity: 0,
+                signatureKit: { equipment: [], abilities: [], pathway: 'fool', sequence: 9 },
+            },
+            { ...DEFAULT_CHARACTER_PROFILE, name: 'Clara Whitlock', mp: { current: 14, max: 14 } },
+            { opponents: [{ signatureKit: { sequence: 7 } }] },
+        );
+        expect(model.sequenceBand?.band).toBe('Disadvantage');
+        expect(model.sequenceBandLine).toMatch(/Disadvantage/);
     });
 });

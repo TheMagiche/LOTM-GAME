@@ -51,6 +51,11 @@ const emblemFiles = import.meta.glob(
     { eager: true, query: '?url', import: 'default' },
 ) as Record<string, string>;
 
+const potionFiles = import.meta.glob(
+    '../../gamedata/assets/data/pathways/**/potions/*.webp',
+    { eager: true, query: '?url', import: 'default' },
+) as Record<string, string>;
+
 const advancementFiles = import.meta.glob(
     '../../gamedata/assets/data/pathways/**/*_advancement.json',
     { eager: true, import: 'default' },
@@ -75,6 +80,8 @@ export type LotmSequenceInfo = {
         supplementary: string[];
         alternative?: string;
     };
+    /** Vite-resolved URL for this Sequence's potion art, if present. */
+    potionSrc?: string;
 };
 
 export type LotmPathwayDef = {
@@ -124,6 +131,13 @@ function emblemFromGlob(id: string): { path: string; src: string } {
     return { path: idx >= 0 ? path.slice(idx) : '', src };
 }
 
+function potionFromGlob(id: string, sequence: number): string {
+    const needle = `/pathways/${id}_pathway/potions/`;
+    const seqNeedle = `_Sequence_${sequence}_`;
+    const entry = Object.entries(potionFiles).find(([p]) => p.includes(needle) && p.includes(seqNeedle));
+    return entry?.[1] ?? '';
+}
+
 function primaryTarotNumber(raw: string): string {
     return raw.split(/\s+or\s+/i)[0]?.trim() ?? '';
 }
@@ -145,6 +159,7 @@ function buildCatalog(): LotmPathwayDef[] {
                     name: String(seq.name ?? `Sequence ${sequence}`).trim(),
                     abilities,
                     shortAbilities,
+                    potionSrc: potionFromGlob(id, sequence),
                 };
             })
             .filter((row): row is LotmSequenceInfo => row !== null)

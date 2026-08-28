@@ -4,7 +4,7 @@ import { mergeLotmGeography, loadLotmGeography } from '../lotmGeography';
 import { formatLotmCurrencyBlock } from '../lotmCurrency';
 import { labelLotmLootCategory } from '../lotmLootLabels';
 import { getLotmPathway, getLotmSequence } from '../lotmPathways';
-import { formatLotmBeyonderEngineBlock, applySpiritualityDelta, readLossOfControl, resolveSequenceAdvantage, applySequenceAdvantageToDiceOutcomes } from '../lotmBeyonderState';
+import { formatLotmBeyonderEngineBlock, applySpiritualityDelta, readLossOfControl, resolveSequenceAdvantage, applySequenceAdvantageToDiceOutcomes, applyLotmPotionDrink } from '../lotmBeyonderState';
 import { DEFAULT_CHARACTER_PROFILE } from '../../types';
 import type { PlayerCharacter } from '../../types';
 
@@ -101,5 +101,41 @@ describe('LOTM gamedata wiring', () => {
         expect(applySequenceAdvantageToDiceOutcomes(pool, 'Advantage')).toBe(
             '\n[DICE OUTCOMES: COMBAT=(Advantage: Triumph) | MUNDANE=(Narrative Boon)]',
         );
+    });
+
+    it('attaches potion art on Fool Sequence 9', () => {
+        const fool = getLotmPathway('fool');
+        const seer = getLotmSequence(fool, 9);
+        expect(seer?.potionSrc).toMatch(/\.webp/i);
+    });
+
+    it('blocks Sequence promotion below 100% digestion and promotes at 100%', () => {
+        const base = {
+            id: 'pc-1',
+            name: 'Clara',
+            aliases: '',
+            appearance: '',
+            faction: '',
+            storyRelevance: '',
+            disposition: '',
+            status: '',
+            goals: '',
+            voice: '',
+            personality: '',
+            exampleOutput: '',
+            affinity: 50,
+            signatureKit: { equipment: [], abilities: ['Spirit Vision'], pathway: 'fool', sequence: 9 },
+            pcMeta: { digestion: 40, lossOfControl: 0 as const },
+        } as PlayerCharacter;
+        const profile = { ...DEFAULT_CHARACTER_PROFILE, level: 9, class: 'Fool Pathway', abilities: ['Spirit Vision'] };
+        expect(applyLotmPotionDrink(base, profile).ok).toBe(false);
+        const ready = { ...base, pcMeta: { ...base.pcMeta, digestion: 100 } };
+        const drunk = applyLotmPotionDrink(ready, profile);
+        expect(drunk.ok).toBe(true);
+        if (!drunk.ok) return;
+        expect(drunk.pc.signatureKit?.sequence).toBe(8);
+        expect(drunk.pc.pcMeta?.digestion).toBe(0);
+        expect(drunk.profile.level).toBe(8);
+        expect(drunk.profile.abilities.length).toBeGreaterThan(0);
     });
 });

@@ -1,4 +1,4 @@
-import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen, Sparkles } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { saveCampaignState } from '../../store/campaignStore';
 import type { AiTier } from '../../types/llm';
@@ -41,6 +41,16 @@ export function LotmPlayHeader() {
                 >
                     <BookOpen size={13} />
                     <span>Grimoire</span>
+                </button>
+                <button
+                    type="button"
+                    className="lotm-play-header-askgm"
+                    onClick={() => useAppStore.getState().openAskGm()}
+                    title="Ask GM"
+                    aria-label="Ask GM"
+                >
+                    <Sparkles size={13} />
+                    <span>Ask GM</span>
                 </button>
                 <div className="lotm-play-header-view" role="group" aria-label="Play view">
                     <button

@@ -4,6 +4,9 @@ import { scanInventory } from '../../../services/inventoryParser';
 import { toast } from '../../Toast';
 import type { EndpointConfig, ProviderConfig, InventoryItemCategory, InventoryItem } from '../../../types';
 import { normalizeInventoryItem } from '../../../types';
+import { isLotmCampaign } from '../../../services/lotm/lotmSkin';
+import { LOTM_EXCLUSIVE_UI } from '../../../services/lotm/lotmFlags';
+import { formatLotmPurseLine } from '../../../worldpacks/lotmPurse';
 
 const ALL_CATS: (InventoryItemCategory | 'all' | 'equipped')[] = ['all', 'equipped', 'weapon', 'armor', 'consumable', 'currency', 'key', 'misc'];
 const DISPLAY_LABEL: Record<string, string> = {
@@ -135,6 +138,8 @@ export function InventoryTab() {
     const inventoryItems = useAppStore((s) => s.inventoryItems ?? s.context.inventoryItems ?? []);
     const setInventoryItems = useAppStore((s) => s.setInventoryItems);
     const getActiveStoryEndpoint = useAppStore((s) => s.getActiveStoryEndpoint);
+    const lotm = LOTM_EXCLUSIVE_UI || isLotmCampaign(useAppStore(s => s.activeCampaignMeta));
+    const purseLine = lotm ? formatLotmPurseLine(inventoryItems) : '';
 
     const [activeTab, setActiveTab] = useState<InventoryItemCategory | 'all' | 'equipped'>('all');
     const [search, setSearch] = useState('');
@@ -240,6 +245,11 @@ export function InventoryTab() {
                         + Add
                     </button>
                 </div>
+                {purseLine && (
+                    <p className="text-[11px] text-amber-200/80 mb-2" aria-label="Loen purse">
+                        Purse · {purseLine}
+                    </p>
+                )}
 
                 {rawEdit ? (
                     <textarea
