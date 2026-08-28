@@ -1,6 +1,7 @@
-import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen, Sparkles } from 'lucide-react';
+import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen, Save, Sparkles } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { saveCampaignState } from '../../store/campaignStore';
+import { useChatPersistence } from '../../hooks/useChatPersistence';
 import type { AiTier } from '../../types/llm';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
@@ -14,6 +15,7 @@ export function LotmPlayHeader() {
     const setLotmChronicleOpen = useAppStore(s => s.setLotmChronicleOpen);
     const aiTier = (useAppStore(s => s.settings?.aiTier) ?? 'pro') as AiTier;
     const updateSettings = useAppStore(s => s.updateSettings);
+    const { isSaving, handleForceSave } = useChatPersistence();
 
     return (
         <header className="lotm-play-header">
@@ -32,6 +34,17 @@ export function LotmPlayHeader() {
                 {campaignName && <h1>{campaignName}</h1>}
             </div>
             <div className="lotm-play-header-actions">
+                <button
+                    type="button"
+                    className="lotm-play-header-save"
+                    onClick={handleForceSave}
+                    disabled={isSaving}
+                    title={isSaving ? 'Saving campaign' : 'Save campaign'}
+                    aria-label={isSaving ? 'Saving campaign' : 'Save campaign'}
+                >
+                    <Save size={13} />
+                    <span>{isSaving ? 'Saving' : 'Save'}</span>
+                </button>
                 <button
                     type="button"
                     className="lotm-play-header-grimoire"

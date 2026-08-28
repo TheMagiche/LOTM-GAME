@@ -1,7 +1,7 @@
 import { useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
-    Landmark, LogOut, MapPin, Package, Pin, Save, Scissors, Scroll, ScrollText, Search, Settings,
+    Landmark, LogOut, MapPin, Package, Pin, Scissors, Scroll, ScrollText, Search, Settings,
     Sparkles, UserCircle, Users, Workflow, Gem, Zap,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
@@ -57,6 +57,7 @@ const CONTEXT_LEAVES: Record<ContextScreenId, Omit<NavLeaf, 'onSelect'>> = {
 
 const GROUPS: Array<{ id: GroupId; label: string; icon: NavIcon }> = LOTM_EXCLUSIVE_UI
     ? [
+        { id: 'world', label: 'World', icon: Database },
         { id: 'play', label: 'Play', icon: Sparkles },
         { id: 'engine', label: 'Engine', icon: Workflow },
         { id: 'mods', label: 'Mods', icon: Workflow },
@@ -145,7 +146,7 @@ export function ContextNavigationDrawer() {
     const headerEntries = useHeaderEntries();
     const composerEntries = useComposerActions();
     const { t } = useTranslation();
-    const { isSaving, handleForceSave, handleOpenArchive } = useChatPersistence();
+    const { handleOpenArchive } = useChatPersistence();
     const { triggerCondense } = useCondenser({
         messages,
         condenser,
@@ -153,7 +154,7 @@ export function ContextNavigationDrawer() {
     });
     const isStreaming = pipelinePhase !== 'idle';
     const [expanded, setExpanded] = useState<Record<GroupId, boolean>>(LOTM_EXCLUSIVE_UI
-        ? { play: true, engine: false, mods: false, story: false, world: false }
+        ? { play: true, engine: false, mods: false, story: false, world: true }
         : { story: true, world: true, play: true, mods: false, engine: false }
     );
 
@@ -181,12 +182,6 @@ export function ContextNavigationDrawer() {
 
     const exclusiveLeaves: Record<GroupId, NavLeaf[]> = {
         play: [
-            { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
-            { id: 'grimoire', label: 'Grimoire', icon: BookOpen, onSelect: () => useAppStore.getState().openGrimoire() },
-            { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
-            { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
-            { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },
-            { id: 'items', label: 'Inventory', icon: Gem, badge: itemsCount, onSelect: () => useAppStore.getState().toggleItemLedger() },
             { ...CONTEXT_LEAVES.chpt, badge: chaptersCount, onSelect: () => openContextScreen('chpt') },
             { id: 'askGm', label: 'Ask GM', icon: Sparkles, onSelect: () => useAppStore.getState().openAskGm() },
             {
@@ -222,13 +217,6 @@ export function ContextNavigationDrawer() {
                 icon: Sparkles,
                 onSelect: () => undefined,
                 render: () => activeCampaignId ? <AbsoluteCommandButton layout="nav" /> : null,
-            },
-            {
-                id: 'save',
-                label: isSaving ? 'Saving…' : 'Save campaign',
-                icon: Save,
-                disabled: isSaving,
-                onSelect: handleForceSave,
             },
             {
                 id: 'trim',
@@ -274,7 +262,13 @@ export function ContextNavigationDrawer() {
             },
         ],
         story: [],
-        world: [],
+        world: [
+            { id: 'character', label: 'Character', icon: UserCircle, onSelect: () => useAppStore.getState().togglePCPanel() },
+            { id: 'npcs', label: 'NPCs', icon: Users, badge: npcCount, onSelect: () => useAppStore.getState().toggleNPCLedger() },
+            { id: 'places', label: 'Places', icon: MapPin, badge: placesCount, onSelect: () => useAppStore.getState().toggleLocationLedger() },
+            { id: 'factions', label: 'Factions', icon: Landmark, badge: factionsCount, onSelect: () => useAppStore.getState().toggleFactionLedger() },
+            { id: 'items', label: 'Inventory', icon: Gem, badge: itemsCount, onSelect: () => useAppStore.getState().toggleItemLedger() },
+        ],
         mods: modEntries.map((entry) => ({
             id: entry.qualifiedId,
             label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
@@ -337,7 +331,7 @@ export function ContextNavigationDrawer() {
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
                         {GROUPS.filter((group) => {
                             if (group.id === 'mods' && modCount === 0) return false;
-                            if (LOTM_EXCLUSIVE_UI && (group.id === 'story' || group.id === 'world')) return false;
+                            if (LOTM_EXCLUSIVE_UI && group.id === 'story') return false;
                             return true;
                         }).map((group) => {
                             const GroupIcon = group.icon;

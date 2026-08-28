@@ -28,12 +28,17 @@ describe('ContextNavigationDrawer', () => {
         render(<ContextNavigationDrawer />);
 
         expect(screen.getByRole('navigation', { name: 'Context navigation' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'World' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Character' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Grimoire' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /^NPCs/ })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /^Places/ })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /^Factions/ })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /^Inventory/ })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'Grimoire' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Save campaign' })).toBeNull();
         expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Dice' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Loot' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Save campaign' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Trim' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Inject Event' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Absolute Command' })).toBeInTheDocument();
@@ -60,12 +65,21 @@ describe('ContextNavigationDrawer', () => {
         expect(screen.getByRole('dialog', { name: 'Rules' })).toBeInTheDocument();
     });
 
-    it('can collapse Play without hiding Engine', () => {
+    it('can collapse Play without hiding World or Engine', () => {
         render(<ContextNavigationDrawer />);
         fireEvent.click(screen.getByRole('button', { name: 'Play' }));
 
-        expect(screen.queryByRole('button', { name: 'Character' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Ask GM' })).toBeNull();
+        expect(screen.getByRole('button', { name: 'Character' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Engine' })).toBeInTheDocument();
+    });
+
+    it('can collapse World without hiding Play', () => {
+        render(<ContextNavigationDrawer />);
+        fireEvent.click(screen.getByRole('button', { name: 'World' }));
+
+        expect(screen.queryByRole('button', { name: 'Character' })).toBeNull();
+        expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
     });
 
     it('opens Ask GM, Dice, and Inject Event from Play', () => {

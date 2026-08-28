@@ -117,6 +117,13 @@ describe('LotmPlayHeader play controls', () => {
         fireEvent.click(screen.getByRole('button', { name: /AI Tier: max/i }));
         expect(useAppStore.getState().settings.aiTier).toBe('lite');
     });
+
+    it('shows Save campaign on the top menu', () => {
+        render(<LotmPlayHeader />);
+
+        expect(screen.getByRole('button', { name: 'Save campaign' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Open Grimoire' })).toBeInTheDocument();
+    });
 });
 
 describe('ChatComposer armed chips', () => {
