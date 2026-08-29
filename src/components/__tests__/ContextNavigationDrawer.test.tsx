@@ -103,4 +103,25 @@ describe('ContextNavigationDrawer', () => {
         expect(useAppStore.getState().armedRoll).toBeNull();
         expect(useAppStore.getState().diceRollModalOpen).toBe(false);
     });
+
+    it('hides World, Engine, and Mods in Player view while rendering Settings', () => {
+        useAppStore.setState({
+            settings: {
+                ...useAppStore.getState().settings,
+                uiViewMode: 'player',
+            },
+        });
+        render(<ContextNavigationDrawer />);
+
+        expect(screen.queryByRole('button', { name: 'World' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Engine' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Mods' })).toBeNull();
+
+        expect(screen.getByRole('button', { name: 'Play' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Settings' })).toBeInTheDocument();
+
+        fireEvent.click(screen.getByRole('button', { name: 'Settings' }));
+        expect(useAppStore.getState().settingsOpen).toBe(true);
+    });
 });

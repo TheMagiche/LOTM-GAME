@@ -166,6 +166,7 @@ export function ContextNavigationDrawer() {
     const modT = t as unknown as (key: string, vars?: Record<string, string | number>) => string;
 
     const aiTier = useAppStore(s => s.settings?.aiTier ?? 'pro') as AiTier;
+    const uiViewMode = useAppStore(s => s.settings?.uiViewMode ?? 'gm');
 
     const composerModLeaves: NavLeaf[] = composerEntries
         .filter((entry) => entry.mod !== undefined && !COMPOSER_BUILTIN_ID_SET.has(entry.entryId))
@@ -330,6 +331,11 @@ export function ContextNavigationDrawer() {
                     </div>
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
                         {GROUPS.filter((group) => {
+                            if (uiViewMode === 'player') {
+                                if (group.id === 'world' || group.id === 'engine' || group.id === 'mods' || group.id === 'story') {
+                                    return false;
+                                }
+                            }
                             if (group.id === 'mods' && modCount === 0) return false;
                             if (LOTM_EXCLUSIVE_UI && group.id === 'story') return false;
                             return true;
@@ -363,7 +369,12 @@ export function ContextNavigationDrawer() {
                                 </section>
                             );
                         })}
-                        {!LOTM_EXCLUSIVE_UI && (
+                        {uiViewMode === 'player' && (
+                            <div className="my-1 border-t border-border/60 pt-1">
+                                <NavRow leaf={{ id: 'settings', label: 'Settings', icon: Settings, onSelect: () => useAppStore.getState().toggleSettings() }} />
+                            </div>
+                        )}
+                        {!LOTM_EXCLUSIVE_UI && uiViewMode === 'gm' && (
                             <>
                                 <div className="my-2 border-t border-border" />
                                 <NavRow leaf={{ id: 'backups', label: 'Backups', icon: Archive, onSelect: () => useAppStore.getState().toggleBackupModal() }} />
