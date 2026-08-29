@@ -1,7 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { LotmWorldMapView } from '../LotmWorldMapView';
 import { useAppStore } from '../../../store/useAppStore';
+import * as lotmMapPinsClient from '../../../services/lotm/lotmMapPinsClient';
 import type { LocationEntry } from '../../../types';
 
 // Mock LotmWorldMap to inspect passed props and simulate marker events
@@ -34,6 +35,21 @@ vi.mock('../LotmWorldMap', () => ({
 describe('LotmWorldMapView', () => {
     beforeEach(() => {
         vi.clearAllMocks();
+        vi.spyOn(lotmMapPinsClient, 'fetchLotmMapPins').mockResolvedValue([
+            {
+                id: 'backlund',
+                name: 'Backlund',
+                type: 'city',
+                category: 'Cities',
+                coordinates: [-1100, 3900],
+                description: 'Capital city',
+            },
+        ]);
+        vi.spyOn(lotmMapPinsClient, 'saveLotmMapPins').mockResolvedValue({
+            success: true,
+            count: 1,
+        });
+
         useAppStore.setState({
             locationLedger: [
                 {
@@ -91,6 +107,27 @@ describe('LotmWorldMapView', () => {
         // Verify location updated in store
         const updated = useAppStore.getState().locationLedger.find(l => l.id === 'loc-1');
         expect(updated?.coordinates).toEqual([-1120, 3950]);
+    });
+
+    it('saves pins to backend file on clicking Save to File', async () => {
+        render(<LotmWorldMapView />);
+        const saveBtn = screen.getByRole('button', { name: /Save to File/i });
+        fireEvent.click(saveBtn);
+
+        await waitFor(() => {
+            expect(lotmMapPinsClient.saveLotmMapPins).toHaveBeenCalled();
+            expect(screen.getByText(/Saved 1 pins to file!/i)).toBeInTheDocument();
+        });
+    });
+
+    it('reloads pins on clicking Load Data', async () => {
+        render(<LotmWorldMapView />);
+        const loadBtn = await screen.findByRole('button', { name: /Load Data/i });
+        fireEvent.click(loadBtn);
+
+        await waitFor(() => {
+            expect(lotmMapPinsClient.fetchLotmMapPins).toHaveBeenCalled();
+        });
     });
 
     it('opens export modal with JSON and TypeScript format options', () => {

@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { Layers, Crosshair, Download, Copy, Check, X, FileCode, FileJson } from 'lucide-react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
+import { Layers, Crosshair, Download, Copy, Check, X, FileCode, FileJson, Save, RefreshCw } from 'lucide-react';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
 import { useAppStore } from '../../store/useAppStore';
 import {
@@ -10,6 +10,7 @@ import {
     type LotmMapLayerKey,
     type LotmMapPin,
 } from '../../worldpacks/lotmMapData';
+import { fetchLotmMapPins, saveLotmMapPins } from '../../services/lotm/lotmMapPinsClient';
 import { LotmWorldMap } from './LotmWorldMap';
 import type { LocationEntry } from '../../types';
 
@@ -42,6 +43,11 @@ export function LotmWorldMapView({
     const updateLocation = useAppStore(s => s.updateLocation);
     const locationLedger = customLocations || storeLocationLedger;
 
+    const [serverPins, setServerPins] = useState<LotmMapPin[]>(INITIAL_LOCATIONS);
+    const [isLoadingPins, setIsLoadingPins] = useState(false);
+    const [isSavingPins, setIsSavingPins] = useState(false);
+    const [saveFeedback, setSaveFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
     const [activeLayers, setActiveLayers] = useState<Record<LotmMapLayerKey, boolean>>({
         kingdoms: true,
         cities: true,
@@ -55,10 +61,30 @@ export function LotmWorldMapView({
     const [exportFormat, setExportFormat] = useState<'json' | 'ts'>('json');
     const [copied, setCopied] = useState(false);
 
-    // Merge store location ledger pins with INITIAL_LOCATIONS and real-time calibration drag overrides
+    const loadPins = useCallback(async () => {
+        setIsLoadingPins(true);
+        try {
+            const fetched = await fetchLotmMapPins();
+            if (fetched && fetched.length > 0) {
+                setServerPins(fetched);
+            }
+        } catch (err) {
+            console.warn('Failed to load server map pins:', err);
+        } finally {
+            setIsLoadingPins(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        loadPins();
+    }, [loadPins]);
+
+    // Merge server / static pins with store location ledger and real-time calibration drag overrides
     const combinedPins = useMemo<LotmMapPin[]>(() => {
         const pinMap = new Map<string, LotmMapPin>();
-        for (const pin of INITIAL_LOCATIONS) {
+        const basePins = serverPins.length > 0 ? serverPins : INITIAL_LOCATIONS;
+
+        for (const pin of basePins) {
             const override = calibratedCoords[pin.name.toLowerCase()] || calibratedCoords[pin.id];
             pinMap.set(pin.name.toLowerCase(), {
                 ...pin,
@@ -82,7 +108,7 @@ export function LotmWorldMapView({
             }
         }
         return Array.from(pinMap.values());
-    }, [locationLedger, calibratedCoords]);
+    }, [serverPins, locationLedger, calibratedCoords]);
 
     const handleMapClick = (coords: [number, number]) => {
         if (isPicking && onPickCoordinates) {
@@ -105,6 +131,23 @@ export function LotmWorldMapView({
         const hit = locationLedger.find(l => l.id === pinId || l.name.toLowerCase() === pinName.toLowerCase());
         if (hit) {
             updateLocation(hit.id, { coordinates: newCoords });
+        }
+    };
+
+    const handleSaveToFile = async () => {
+        setIsSavingPins(true);
+        setSaveFeedback(null);
+        try {
+            const res = await saveLotmMapPins(combinedPins);
+            setSaveFeedback({ type: 'success', message: `Saved ${res.count ?? combinedPins.length} pins to file!` });
+            setServerPins(combinedPins);
+            setTimeout(() => setSaveFeedback(null), 3000);
+        } catch (err: unknown) {
+            const msg = err instanceof Error ? err.message : 'Unknown save error';
+            setSaveFeedback({ type: 'error', message: `Failed to save: ${msg}` });
+            setTimeout(() => setSaveFeedback(null), 4000);
+        } finally {
+            setIsSavingPins(false);
         }
     };
 
@@ -173,6 +216,20 @@ export function LotmWorldMapView({
                 </div>
             )}
 
+            {/* Save Feedback Banner */}
+            {saveFeedback && (
+                <div
+                    className={`absolute top-12 left-1/2 -translate-x-1/2 z-[1000] px-3.5 py-1.5 rounded text-xs font-medium shadow-lg flex items-center gap-2 backdrop-blur-sm border ${
+                        saveFeedback.type === 'success'
+                            ? 'bg-emerald-950/90 border-emerald-500/50 text-emerald-300'
+                            : 'bg-rose-950/90 border-rose-500/50 text-rose-300'
+                    }`}
+                >
+                    {saveFeedback.type === 'success' ? <Check size={14} /> : <X size={14} />}
+                    <span>{saveFeedback.message}</span>
+                </div>
+            )}
+
             {/* Main Interactive Map */}
             <LotmWorldMap
                 imageUrl={lotmAssetUrl(LOTM_MAP_IMAGE)}
@@ -198,6 +255,32 @@ export function LotmWorldMapView({
 
             {/* Top-Right Action Toolbar */}
             <div className="absolute top-3 right-12 z-[1000] flex items-center gap-2">
+                <button
+                    onClick={handleSaveToFile}
+                    disabled={isSavingPins}
+                    className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
+                        isSavingPins
+                            ? 'bg-terminal/20 border-terminal text-terminal opacity-60'
+                            : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-terminal'
+                    }`}
+                    title="Save calibrated map pins directly to JSON file on disk"
+                >
+                    <Save size={13} />
+                    <span>{isSavingPins ? 'Saving...' : 'Save to File'}</span>
+                </button>
+                <button
+                    onClick={loadPins}
+                    disabled={isLoadingPins}
+                    className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
+                        isLoadingPins
+                            ? 'bg-surface/50 border-border text-text-dim opacity-60'
+                            : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-text-dim'
+                    }`}
+                    title="Reload map pins from file"
+                >
+                    <RefreshCw size={13} className={isLoadingPins ? 'animate-spin' : ''} />
+                    <span>{isLoadingPins ? 'Loading...' : 'Load Data'}</span>
+                </button>
                 <button
                     onClick={() => setCalibrationMode(prev => !prev)}
                     className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${

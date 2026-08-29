@@ -1,7 +1,7 @@
 # LOTM World Map Pins Calibration, Manual Pin Editor & Export Architecture
 
 - **Audience:** Frontend UI engineers, Game Master tool designers, and AI agents maintaining the Lord of the Mysteries (LOTM) world map, location ledger, and pin placement workflows in Narrative Engine Desktop.
-- **Goal:** Document the interactive map coordinate system, lore pin taxonomy, draggable marker calibration workflow, and pin data export capabilities.
+- **Goal:** Document the interactive map coordinate system, lore pin taxonomy, draggable marker calibration workflow, backend JSON file persistence, and pin data export capabilities.
 - **Sister docs:**
   - [lotm-player-and-lore-grimoires.md](./lotm-player-and-lore-grimoires.md) — Player & World Lore Grimoire architecture.
   - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Gameplay guide and GM tools.
@@ -14,31 +14,36 @@
 The world map subsystem provides an interactive cartographic interface for both the **Game Master Location Ledger Modal** (`LocationLedgerModal.tsx`) and the **Player Grimoire** (`LotmPlayerGrimoire.tsx`).
 
 The architecture consists of:
-1. **Surveyed Canon Map Data (`lotmMapData.ts`)**: Built from structured novel geography (`nations.json`, `continents_realms.json`, `seas_and_oceans.json`, and `world_lore_lord_of_the_mysteries.md`).
+1. **Surveyed Canon Map Data (`lotmMapData.ts` & `lotm_map_pins.json`)**: Sourced directly from `gamedata/assets/data/world/Geography/lotm_map_pins.json` with all canonical regions, cities, harbors, and sea boundaries.
 2. **Campaign Location Ledger Store (`campaignSlice.ts`)**: Stores live `LocationEntry` records, including custom calibrated `coordinates: [lat, lng]`.
-3. **Interactive Leaflet Surface (`LotmWorldMap.tsx`)**: Renders raster map overlays (`7400 x 3800` px) with `L.CRS.Simple`, category-colored pin markers, coordinate HUD readouts, and draggable markers in calibration mode.
-4. **GM Calibration & Export Tools (`LotmWorldMapView.tsx`, `LocationEditForm.tsx`)**: Allows GM users to drag pins directly on the map to adjust coordinates, pick coordinates visually for any place, and export all calibrated pin definitions as JSON or TypeScript data.
+3. **Interactive Leaflet Surface (`LotmWorldMap.tsx`)**: Renders raster map overlays (`7400 x 3800` px) with `L.CRS.Simple`, category-colored pin markers, coordinate HUD readouts, hover tooltips, and draggable markers in calibration mode.
+4. **GM Calibration & File Persistence Tools (`LotmWorldMapView.tsx`, `lotmMapPinsClient.ts`, `server/routes/lotmAssets.js`)**: Allows GM users to drag pins directly on the map, click **Save to File** to write calibrated positions atomically back to `lotm_map_pins.json` on disk, click **Load Data** to reload from disk, and export pin definitions as JSON or TypeScript.
 
 ```mermaid
 flowchart TD
-    subgraph CanonData ["Static Canon Data"]
-        WorldLore["world_lore_lord_of_the_mysteries.md"]
-        GeoJson["Geography JSON Files"]
-        MapData["lotmMapData.ts (LOTM_REGIONS & INITIAL_LOCATIONS)"]
-        GeoJson --> MapData
-        WorldLore --> MapData
+    subgraph DiskStorage ["Disk Storage"]
+        PinsFile["gamedata/assets/data/world/Geography/lotm_map_pins.json"]
     end
 
-    subgraph StoreLayer ["Campaign State (Zustand)"]
-        Ledger["locationLedger in campaignSlice.ts\n(LocationEntry with coordinates?: [lat, lng])"]
+    subgraph BackendAPI ["Express Server (server/routes/lotmAssets.js)"]
+        GetPins["GET /api/lotm/map-pins"]
+        PutPins["PUT /api/lotm/map-pins"]
+        WriteJson["Atomic writeJson(LOTM_ASSETS_DIR, ...)"]
+        GetPins --> PinsFile
+        PutPins --> WriteJson --> PinsFile
     end
 
-    subgraph GMInterface ["GM Places & Map View"]
-        LedgerModal["LocationLedgerModal.tsx"]
-        MapView["LotmWorldMapView.tsx\n- Coordinate HUD\n- Draggable Pin Calibration\n- Pin Export Modal"]
+    subgraph FrontendEngine ["Frontend Client"]
+        ClientService["src/services/lotm/lotmMapPinsClient.ts"]
+        StaticFallback["src/worldpacks/lotmMapData.ts (INITIAL_LOCATIONS)"]
+        MapView["src/components/location-ledger/LotmWorldMapView.tsx\n- Coordinate HUD\n- Draggable Calibration\n- Save to File / Load Data\n- Pin Export Modal"]
         EditForm["LocationEditForm.tsx\n- Coordinates Field\n- 'Pick on Map' Mode"]
-        LeafletMap["LotmWorldMap.tsx\n- Leaflet L.CRS.Simple\n- Draggable Pin Markers in Calibration Mode\n- Category Pin Layers (Kingdoms, Cities, Seas)"]
-        LedgerModal --> MapView
+        LeafletMap["LotmWorldMap.tsx\n- Leaflet L.CRS.Simple\n- Hover Tooltips\n- Draggable Pin Markers\n- Category Layers"]
+        
+        ClientService --> GetPins
+        ClientService --> PutPins
+        MapView --> ClientService
+        StaticFallback --> MapView
         MapView --> LeafletMap
         EditForm --> LeafletMap
     end
@@ -47,9 +52,6 @@ flowchart TD
         ExportModal["Pin Data Exporter\n(JSON / TS export)"]
         MapView --> ExportModal
     end
-
-    MapData --> MapView
-    Ledger --> MapView
 ```
 
 ---
@@ -69,7 +71,7 @@ In Leaflet's `L.CRS.Simple` planar projection:
 | Region / Landmark | Representative `[lat, lng]` | Description |
 |---|---|---|
 | **Backlund (Loen)** | `[-1100, 3900]` | Central capital of the Loen Kingdom |
-| **Trier (Intis)** | `[-1000, 3300]` | Capital of the Intis Republic |
+| **Trier (Intis)** | `[-1120, 3440]` | Capital of the Intis Republic |
 | **Feynapotter City** | `[-1350, 3300]` | Capital of Feynapotter |
 | **St. Millom (Feysac)** | `[-650, 3700]` | Northern imperial capital of Feysac |
 | **Bayam (Rorsted)** | `[-1650, 4550]` | Sonia Sea archipelago port capital |
@@ -99,7 +101,7 @@ On hover, each pin presents an instant tooltip showing the location's name and c
 
 ---
 
-## 4. Draggable Pin Calibration Workflow
+## 4. Draggable Pin Calibration Workflow & Disk Sync
 
 In **Calibration Mode**, pin markers become directly draggable interactive objects:
 
@@ -111,7 +113,12 @@ In **Calibration Mode**, pin markers become directly draggable interactive objec
    - Clicking and dragging any pin moves the pin across the map rather than panning the map canvas.
    - On release (`dragend`), the pin's new position `[lat, lng]` is rounded to the nearest integer coordinates.
    - The new coordinates immediately update the live map state, sync with the campaign store (`updateLocation`), and feed into the pin exporter.
-3. **Pick on Map in Place Details:**
+3. **Save to File (Backend Persistence):**
+   - Click **Save to File** in the top-right toolbar.
+   - Dispatches a `PUT /api/lotm/map-pins` request to atomically overwrite `lotm_map_pins.json` on disk.
+4. **Load Data (Backend Sync):**
+   - Click **Load Data** to re-fetch the latest pins from `GET /api/lotm/map-pins` and refresh the canvas.
+5. **Pick on Map in Place Details:**
    - In `LocationEditForm.tsx`, clicking **Pick on Map** arms a single-target coordinate picker.
    - Clicking anywhere on the map or dragging a pin assigns the exact coordinates to the form.
 
