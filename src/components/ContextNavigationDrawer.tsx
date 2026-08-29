@@ -1,8 +1,8 @@
 import { useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
-    Landmark, LogOut, MapPin, Package, Pin, Scissors, Scroll, ScrollText, Search, Settings,
-    Sparkles, UserCircle, Users, Workflow, Gem, Zap,
+    Landmark, LogOut, MapPin, Package,     Pin, Scissors, Scroll, ScrollText, Search, Settings,
+    Sparkles, Syringe, UserCircle, Users, Workflow, Gem, Zap,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -24,6 +24,7 @@ import { exitLotmCampaign } from './lotm/LotmPlayHeader';
 import { TokenGauge } from './TokenGauge';
 import { OneShotInjectorButton } from './OneShotInjectorButton';
 import { AbsoluteCommandButton } from './AbsoluteCommandButton';
+import { ArcInjectorButton } from './ArcInjectorButton';
 import { useChatPersistence } from '../hooks/useChatPersistence';
 import { useCondenser } from './hooks/useCondenser';
 import type { AiTier } from '../types/llm';
@@ -169,7 +170,13 @@ export function ContextNavigationDrawer() {
     const uiViewMode = useAppStore(s => s.settings?.uiViewMode ?? 'gm');
 
     const composerModLeaves: NavLeaf[] = composerEntries
-        .filter((entry) => entry.mod !== undefined && !COMPOSER_BUILTIN_ID_SET.has(entry.entryId))
+        .filter((entry) => (
+            entry.mod !== undefined
+            && !COMPOSER_BUILTIN_ID_SET.has(entry.entryId)
+            // Host-owned modal in the Play list — keep the mod's strip entry
+            // but do not duplicate it as a fire-and-forget nav row.
+            && entry.entryId !== 'injectArc'
+        ))
         .map((entry) => ({
             id: entry.qualifiedId,
             label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
@@ -204,6 +211,13 @@ export function ContextNavigationDrawer() {
                 badge: armedLoot ? armedLoot.rolls : undefined,
                 active: !!armedLoot,
                 onSelect: () => useAppStore.getState().openLootRollModal(),
+            },
+            {
+                id: 'injectArc',
+                label: 'Inject Arc',
+                icon: Syringe,
+                onSelect: () => undefined,
+                render: () => activeCampaignId ? <ArcInjectorButton layout="nav" /> : null,
             },
             {
                 id: 'oneShot',

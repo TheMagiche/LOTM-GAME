@@ -132,12 +132,12 @@ const GUIDE_SECTIONS: GuideSection[] = [
         categoryLabel: 'World Pressures',
         icon: <Radio size={18} className="text-amber-400" />,
         subtitle: 'Autonomous story threads simmering in the background',
-        uiLocation: 'Chat Action Strip ("Inject Arc" / System 2 Oracle)',
+        uiLocation: 'Play menu ("Inject Arc" / System 2 Oracle)',
         summary: 'The Arc Engine spawns dynamic, multi-stage background pressures anchored to open chapter plotlines, NPC motives, and recent events. Unlike scripted quests, arcs develop independently on the world clock.',
         steps: [
             {
                 title: '1. Spawning an Arc',
-                desc: 'Click "Inject Arc" on the action strip. The engine analyzes recent chapter developments and synthesizes an escalating laddered storyline that simmers in the world.',
+                desc: 'Click "Inject Arc" in the Play menu. The engine analyzes recent chapter developments and synthesizes an escalating laddered storyline that simmers in the world.',
             },
             {
                 title: '2. Escalating Rungs',
