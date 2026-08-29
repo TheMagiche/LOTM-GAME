@@ -19,81 +19,84 @@ export function LotmPlayHeader() {
 
     return (
         <header className="lotm-play-header">
-            <button
-                type="button"
-                className="lotm-play-header-menu"
-                onClick={toggleDrawer}
-                disabled={indexing}
-                title={indexing ? 'Indexing the world' : drawerOpen ? 'Close menu' : 'Open menu'}
-                aria-label={indexing ? 'Open menu unavailable while indexing' : drawerOpen ? 'Close menu' : 'Open menu'}
-            >
-                {drawerOpen ? <PanelLeftClose size={15} /> : <PanelLeftOpen size={15} />}
-            </button>
+            {!indexing && (
+                <button
+                    type="button"
+                    className="lotm-play-header-menu"
+                    onClick={toggleDrawer}
+                    title={drawerOpen ? 'Close menu' : 'Open menu'}
+                    aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
+                >
+                    {drawerOpen ? <PanelLeftClose size={15} /> : <PanelLeftOpen size={15} />}
+                </button>
+            )}
             <div className="lotm-play-header-titles">
                 <p className="lotm-play-header-kicker">Lord of the Mysteries</p>
                 {campaignName && <h1>{campaignName}</h1>}
             </div>
-            <div className="lotm-play-header-actions">
-                <button
-                    type="button"
-                    className="lotm-play-header-save"
-                    onClick={handleForceSave}
-                    disabled={isSaving}
-                    title={isSaving ? 'Saving campaign' : 'Save campaign'}
-                    aria-label={isSaving ? 'Saving campaign' : 'Save campaign'}
-                >
-                    <Save size={13} />
-                    <span>{isSaving ? 'Saving' : 'Save'}</span>
-                </button>
-                <button
-                    type="button"
-                    className="lotm-play-header-grimoire"
-                    onClick={() => useAppStore.getState().openGrimoire()}
-                    title="Open Grimoire"
-                    aria-label="Open Grimoire"
-                >
-                    <BookOpen size={13} />
-                    <span>Grimoire</span>
-                </button>
-                <button
-                    type="button"
-                    className="lotm-play-header-askgm"
-                    onClick={() => useAppStore.getState().openAskGm()}
-                    title="Ask GM"
-                    aria-label="Ask GM"
-                >
-                    <Sparkles size={13} />
-                    <span>Ask GM</span>
-                </button>
-                <div className="lotm-play-header-view" role="group" aria-label="Play view">
+            {!indexing && (
+                <div className="lotm-play-header-actions">
                     <button
                         type="button"
-                        className={!chronicleOpen ? 'is-active' : undefined}
-                        aria-pressed={!chronicleOpen}
-                        onClick={() => setLotmChronicleOpen(false)}
+                        className="lotm-play-header-save"
+                        onClick={handleForceSave}
+                        disabled={isSaving}
+                        title={isSaving ? 'Saving campaign' : 'Save campaign'}
+                        aria-label={isSaving ? 'Saving campaign' : 'Save campaign'}
                     >
-                        Illustrated
+                        <Save size={13} />
+                        <span>{isSaving ? 'Saving' : 'Save'}</span>
                     </button>
                     <button
                         type="button"
-                        className={chronicleOpen ? 'is-active' : undefined}
-                        aria-pressed={chronicleOpen}
-                        onClick={() => setLotmChronicleOpen(true)}
+                        className="lotm-play-header-grimoire"
+                        onClick={() => useAppStore.getState().openGrimoire()}
+                        title="Open Grimoire"
+                        aria-label="Open Grimoire"
                     >
-                        Chronicle
+                        <BookOpen size={13} />
+                        <span>Grimoire</span>
+                    </button>
+                    <button
+                        type="button"
+                        className="lotm-play-header-askgm"
+                        onClick={() => useAppStore.getState().openAskGm()}
+                        title="Ask GM"
+                        aria-label="Ask GM"
+                    >
+                        <Sparkles size={13} />
+                        <span>Ask GM</span>
+                    </button>
+                    <div className="lotm-play-header-view" role="group" aria-label="Play view">
+                        <button
+                            type="button"
+                            className={!chronicleOpen ? 'is-active' : undefined}
+                            aria-pressed={!chronicleOpen}
+                            onClick={() => setLotmChronicleOpen(false)}
+                        >
+                            Illustrated
+                        </button>
+                        <button
+                            type="button"
+                            className={chronicleOpen ? 'is-active' : undefined}
+                            aria-pressed={chronicleOpen}
+                            onClick={() => setLotmChronicleOpen(true)}
+                        >
+                            Chronicle
+                        </button>
+                    </div>
+                    <button
+                        type="button"
+                        className="lotm-play-header-tier"
+                        onClick={() => updateSettings({ aiTier: TIER_CYCLE[aiTier] })}
+                        title={`AI Tier: ${aiTier.toUpperCase()} (click to cycle Lite → Pro → Max)`}
+                        aria-label={`AI Tier: ${aiTier}, click to cycle`}
+                    >
+                        <Cpu size={13} />
+                        <span>{aiTier}</span>
                     </button>
                 </div>
-                <button
-                    type="button"
-                    className="lotm-play-header-tier"
-                    onClick={() => updateSettings({ aiTier: TIER_CYCLE[aiTier] })}
-                    title={`AI Tier: ${aiTier.toUpperCase()} (click to cycle Lite → Pro → Max)`}
-                    aria-label={`AI Tier: ${aiTier}, click to cycle`}
-                >
-                    <Cpu size={13} />
-                    <span>{aiTier}</span>
-                </button>
-            </div>
+            )}
         </header>
     );
 }

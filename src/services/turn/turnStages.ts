@@ -48,6 +48,7 @@ import { runFactPublishers } from '../mods/facts';
 import { blockTokenCap } from './blockEnablement';
 import { BUILTIN_IDS, getBuiltinTokenCap } from '../payload/contributions/builtins';
 import { LOTM_EXCLUSIVE_UI } from '../lotm/lotmFlags';
+import { isLotmCampaign } from '../lotm/lotmSkin';
 import { applySequenceAdvantageToDiceOutcomes, applySpiritualityDelta, bumpLossOfControl, formatLotmBeyonderEngineBlock, readLossOfControl, readSpirituality, resolveSequenceAdvantage } from '../../worldpacks/lotmBeyonderState';
 
 const MAX_TOOL_CALLS_PER_TURN = 5;
@@ -121,7 +122,8 @@ export function resolveEngineRolls(
         ctx.finalInput += rollDiceFairness(context);
     }
 
-    if (LOTM_EXCLUSIVE_UI) {
+    const isLotm = LOTM_EXCLUSIVE_UI || isLotmCampaign(state.activeCampaignMeta);
+    if (isLotm) {
         const onStage = new Set(state.onStageNpcIds ?? []);
         const opponents = onStage.size === 0
             ? []

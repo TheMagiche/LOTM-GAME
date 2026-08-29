@@ -383,6 +383,9 @@ function hydrateStoreForFixture(): void {
     // getState() reads return the fixture values.
     useAppStore.setState({
         activeCampaignId: FIXTURE_CAMPAIGN_ID,
+        activeCampaignMeta: null,
+        playerCharacter: null,
+        characterProfileData: null,
         context: fixtureContext(),
         messages: fixtureHistory(),
         condenser: fixtureCondenser(),

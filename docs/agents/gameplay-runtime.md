@@ -2,7 +2,11 @@
 
 - **Audience:** an agent about to change mechanics, prompts, seeding, or turn stages. Not a player manual.
 - **Goal:** how a Lord of the Mysteries chronicle actually runs on this host.
-- **Sister doc:** [ui-lore-improvements.md](./ui-lore-improvements.md) — player-facing UI gaps. Read that only if you are changing chrome.
+- **Sister docs:**
+  - [ui-lore-improvements.md](./ui-lore-improvements.md) — player-facing UI gaps. Read that only if you are changing chrome.
+  - [lotm-combat-runtime.md](./lotm-combat-runtime.md) — in-world Beyonder combat, Sequence Advantage, spirituality, and Loss of Control.
+  - [lotm-loot-and-artifacts.md](./lotm-loot-and-artifacts.md) — characteristics, potion formulas, Sealed Artifacts, and Loen economy.
+  - [lotm-ui-combat-restructuring.md](./lotm-ui-combat-restructuring.md) — combat HUD, spiritual action modal, and harvest modal restructuring.
 - **Do not touch:** the loot tree walker, dice fairness pool, NPC agency, or the NPC / faction / location / item ledgers. Seed them; do not replace them.
 - **Do not rewrite** `runTurn` as a combat simulator. This is a narrative GM OS with a LOTM world pack.
 
@@ -24,7 +28,7 @@ A LOTM campaign is `worldPackId === 'lord-of-the-mysteries'` or `uiSkin === 'lot
 
 1. **Title hub / tarot PC pick** — [`LotmTitleHub.tsx`](../../src/components/lotm/LotmTitleHub.tsx), [`LotmTarotSelect.tsx`](../../src/components/lotm/LotmTarotSelect.tsx).
 2. **Create** — [`createLotmCampaign.ts`](../../src/services/lotm/createLotmCampaign.ts) writes the campaign (`uiSkin: 'lotm-illustrated'`), then [`campaignInit.ts`](../../src/services/campaignInit.ts) with `attachLotmVisuals: true`. Pack files live in [`src/worldpacks/lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts).
-3. **Index overlay**, then **illustrated play** — [`LotmIllustratedShell.tsx`](../../src/components/lotm/LotmIllustratedShell.tsx): HUD + dialogue plate + composer.
+3. **Index overlay**, then **illustrated play** — [`LotmIllustratedShell.tsx`](../../src/components/lotm/LotmIllustratedShell.tsx): HUD + dialogue plate + composer. While the lock is up, [`LotmPlayHeader.tsx`](../../src/components/lotm/LotmPlayHeader.tsx) hides menu / Save / Grimoire / Ask GM / Illustrated · Chronicle / AI tier so they cannot be used through the overlay.
 4. **Player types**; optional armed dice / loot. [`runTurn`](../../src/services/turn/turnOrchestrator.ts) is the composition root; stages live in [`turnStages.ts`](../../src/services/turn/turnStages.ts).
 5. **Engine injects tags.** The GM narrates them and must not invent conflicting numbers.
 6. **Swipe, then commit.** First variant is `pendingCommit`. Commit on next send or campaign switch ([`pendingCommit.ts`](../../src/services/turn/pendingCommit.ts) → [`postTurnPipeline.ts`](../../src/services/turn/postTurnPipeline.ts)). Ledgers update after commit.
@@ -97,6 +101,7 @@ When `attachLotmVisuals` is true:
 - Geography JSON → location ledger ([`lotmGeography.ts`](../../src/worldpacks/lotmGeography.ts)).
 - Item catalog from `gamedata/assets/data/items/` lists ([`lotmItemCatalog.ts`](../../src/worldpacks/lotmItemCatalog.ts)).
 - Chosen PC `signatureKit` (pathway + sequence + abilities), purse, `pcMeta.digestion = 0`, `lossOfControl = 0`.
+- First turn auto-sends the PC background plus the Sequence 9 potion drink ([`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts)) once the world-index lock clears; interview starter is replaced so the GM opens on the cup.
 - `diceSystem = undefined` (3-band fairness pool).
 - Ability-compendium warmup (lazy 2.4MB JSON).
 
@@ -121,11 +126,13 @@ The GM must not invent a purse total, a dice band, or a Standing number that con
 | Fact | Player UI today | GM prompt |
 |------|-----------------|-----------|
 | Pathway, Sequence ladder, Spirit | HUD always | Profile minify `Seq` / `SPI` |
-| Digestion %, purse, bounty | HUD **expanded inventory only** | `[BEYONDER]`, `CR:`, `BOUNTY:` |
-| Loss of Control | Hidden | `[BEYONDER]` |
+| Digestion % | HUD meter (always) | `[BEYONDER]` |
+| Bounty | HUD expanded (click the HUD); hidden when none/zero | `BOUNTY:` |
+| Purse | HUD **Carried** coin rows | `CR:` |
+| Loss of Control | HUD meter (always), same track layout as Spirit / Digestion | `[BEYONDER]` |
 | Sequence band (Adv/Normal/Disadv) | Hidden | `[SEQUENCE AS TIER]` + collapsed pool |
-| Acting Method, next formula | Stats “To advance”; not HUD collapsed | `[BEYONDER]` |
-| Ability costs / descriptions | Ability **names** on HUD | `[BEYONDER ABILITIES]` |
+| Acting Method, next formula | Stats “To advance”; not HUD | `[BEYONDER]` |
+| Ability names | HUD ability line | `[BEYONDER ABILITIES]` |
 | Lore RAG hits | Indexing overlay only | Retrieved chunks in world block |
 | Standing | Record tab, non-zero `pcRelation` | Band words on `PLAY AS:` |
 
@@ -140,6 +147,7 @@ Surfacing the hidden column is UI work. Do not move Sequence math or Standing in
 | [`lotmFlags.ts`](../../src/services/lotm/lotmFlags.ts) | Exclusive-UI gate |
 | [`lotmSkin.ts`](../../src/services/lotm/lotmSkin.ts) | `isLotmCampaign` |
 | [`createLotmCampaign.ts`](../../src/services/lotm/createLotmCampaign.ts) | New chronicle |
+| [`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts) | First composer prompt + skip-interview starter |
 | [`campaignInit.ts`](../../src/services/campaignInit.ts) | Bootstrap ledgers, loot, Tingen, dice |
 | [`campaignHydrator.ts`](../../src/store/campaignHydrator.ts) | Reload; LOTM merge gated |
 | [`turnOrchestrator.ts`](../../src/services/turn/turnOrchestrator.ts) | `runTurn` |

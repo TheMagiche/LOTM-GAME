@@ -2,7 +2,11 @@
 
 - **Audience:** a UI agent in a **different** context window. Read [`gameplay-runtime.md`](./gameplay-runtime.md) first for what already exists.
 - **Goal:** surface gameplay and lore the engine already knows. Players should see Beyonder status, Standing, and chronicle context without opening operator screens.
-- **Sister doc:** [gameplay-runtime.md](./gameplay-runtime.md).
+- **Sister docs:**
+  - [gameplay-runtime.md](./gameplay-runtime.md) — chronicle host runtime.
+  - [lotm-combat-runtime.md](./lotm-combat-runtime.md) — in-world Beyonder combat runtime.
+  - [lotm-loot-and-artifacts.md](./lotm-loot-and-artifacts.md) — characteristics and Sealed Artifacts.
+  - [lotm-ui-combat-restructuring.md](./lotm-ui-combat-restructuring.md) — combat HUD and modal restructuring spec.
 - **Do not change:** [`turnOrchestrator.ts`](../../src/services/turn/turnOrchestrator.ts), the loot tree walker, Sequence math in [`lotmBeyonderState.ts`](../../src/worldpacks/lotmBeyonderState.ts), NPC agency, loot root keys, or hydrator church/geo merge (stays `isLotmCampaign`-gated).
 - **Do not replace** Grimoire novel JSON with a second lore parser. Link to it; do not fork it.
 
@@ -19,10 +23,10 @@ Inventory of what already ships. Do not rebuild these; extend them.
 | Surface | Path | Player sees |
 |---------|------|-------------|
 | Shell | [`LotmIllustratedShell.tsx`](../../src/components/lotm/LotmIllustratedShell.tsx) | HUD + chat + chapter toast + index lock |
-| HUD | [`LotmPlayerHud.tsx`](../../src/components/lotm/LotmPlayerHud.tsx), [`lotmPlayerHudModel.ts`](../../src/components/lotm/lotmPlayerHudModel.ts) | Name, emblem, pathway · sequence, Spirit meter, Sequence ladder. Expanded: location, currency, bounty, **digestion %**, stats, carried items, abilities, next-sequence preview. HP is `null`. Click identity → Character Ledger. |
-| Dialogue | [`LotmDialoguePlate.tsx`](../../src/components/lotm/LotmDialoguePlate.tsx) | GM beat carousel, location nameplate, scene modal |
+| HUD | [`LotmPlayerHud.tsx`](../../src/components/lotm/LotmPlayerHud.tsx), [`lotmPlayerHudModel.ts`](../../src/components/lotm/lotmPlayerHudModel.ts) | Name, emblem, pathway · sequence, Spirit / Digestion / Loss of Control meters, Sequence ladder, Sequence ability names. Click HUD chrome → expanded location, bounty when posted, stats, carried items including coins. Click identity → Character Ledger. Click emblem → Grimoire. No Acting Method, separate purse line, potion art, or next-Sequence preview. HP is `null`. |
+| Dialogue | [`LotmDialoguePlate.tsx`](../../src/components/lotm/LotmDialoguePlate.tsx) | GM beat carousel, location nameplate, scene modal, generation progress (same phases as Chronicle) |
 | Stage | [`LotmSceneModal.tsx`](../../src/components/lotm/LotmSceneModal.tsx), [`LotmStage.tsx`](../../src/components/lotm/LotmStage.tsx) | Backdrop + on-stage portraits via [`lotmVisualMatcher.ts`](../../src/services/lotm/lotmVisualMatcher.ts) |
-| Header | [`LotmPlayHeader.tsx`](../../src/components/lotm/LotmPlayHeader.tsx) | Menu, Grimoire, Illustrated / Chronicle toggle, AI tier |
+| Header | [`LotmPlayHeader.tsx`](../../src/components/lotm/LotmPlayHeader.tsx) | Menu, Save, Grimoire, Ask GM, Illustrated / Chronicle toggle, AI tier. Those actions hide while the world-index overlay is locked; titles stay. |
 | Chat | [`ChatArea.tsx`](../../src/components/ChatArea.tsx) | Composer; [`DiceRollModal.tsx`](../../src/components/chat/DiceRollModal.tsx); [`LootRollModal.tsx`](../../src/components/chat/LootRollModal.tsx) (labels from [`lotmLootLabels.ts`](../../src/worldpacks/lotmLootLabels.ts)) |
 
 Chronicle toggle shows the classic transcript instead of the dialogue plate. Dice and loot still arm on the composer.
@@ -66,7 +70,7 @@ Each item: engine source of truth already exists. Wire UI. Do not recompute in t
 
 ### 1. HUD as Beyonder status
 
-**Player-visible outcome:** LoC stage and digestion sit beside Spirit without opening Inventory. After a fairness roll, the player can see the engine Sequence band (Advantage vs mundanes, etc.). Current Acting Method and current formula are readable. Ability names can expand to costs/limits.
+**Player-visible outcome:** Loss of Control and digestion sit beside Spirit as matching meters. Click the HUD chrome (not a separate Inventory button) to expand carried items. After a fairness roll, the player can see the engine Sequence band (Advantage vs mundanes, etc.). Current Acting Method and current formula are readable. Ability names can expand to costs/limits.
 
 | | |
 |--|--|

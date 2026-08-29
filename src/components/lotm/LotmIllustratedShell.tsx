@@ -9,7 +9,6 @@ export function LotmIllustratedShell() {
     const campaignId = useAppStore(s => s.activeCampaignId);
     const chronicleOpen = useAppStore(s => s.lotmChronicleOpen);
     const setLotmChronicleOpen = useAppStore(s => s.setLotmChronicleOpen);
-
     useEffect(() => {
         setLotmChronicleOpen(false);
     }, [campaignId, setLotmChronicleOpen]);

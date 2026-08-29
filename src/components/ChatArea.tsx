@@ -29,6 +29,7 @@ import { IndexingBanner } from './IndexingBanner';
 import { AskGmPanel } from './ooc/AskGmPanel';
 import { ArmedAskGmNote } from './ooc/ArmedAskGmNote';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmFlags';
+import { openingPromptToAutoSend } from '../services/lotm/lotmOpeningPrompt';
 
 export function ChatArea({
     presentation = 'classic',
@@ -113,6 +114,8 @@ export function ChatArea({
     const setDeepArmed = useAppStore(s => s.setDeepArmed);
     const composerInjection = useAppStore(s => s.composerInjection);
     const consumeComposerInjection = useAppStore(s => s.consumeComposerInjection);
+    const playerCharacter = useAppStore(s => s.playerCharacter);
+    const worldIndexLock = useAppStore(s => s.lotmWorldIndexLock);
 
     useEffect(() => {
         if (composerInjection != null) {
@@ -124,6 +127,7 @@ export function ChatArea({
     const bottomRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
+    const openingSentFor = useRef<string | null>(null);
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -161,6 +165,20 @@ export function ChatArea({
         sceneContinue,
         checkAndSealChapter,
     });
+
+    const handleSendRef = useRef(handleSend);
+    handleSendRef.current = handleSend;
+
+    useEffect(() => {
+        if (!activeCampaignId) return;
+        if (openingSentFor.current === activeCampaignId) return;
+        const text = openingPromptToAutoSend(messages, playerCharacter, {
+            indexing: Boolean(worldIndexLock?.campaignId),
+        });
+        if (!text) return;
+        openingSentFor.current = activeCampaignId;
+        void handleSendRef.current(text);
+    }, [activeCampaignId, messages, playerCharacter, worldIndexLock]);
 
     const { isSaving, handleForceSave, handleOpenArchive } = useChatPersistence();
     const { handleKeyDown } = useChatKeyboard(() => handleSend());
@@ -255,6 +273,11 @@ export function ChatArea({
                     sceneContinue={sceneContinue}
                     onOpenSwipeSheet={setSwipeSheetMessageId}
                     onRetry={retry.retryStoryAI}
+                    loadingStatus={loadingStatus}
+                    pipelinePhase={pipelinePhase}
+                    streamingStats={streamingStats}
+                    directorBriefRunning={directorBriefRunning}
+                    onSkipDirectorBrief={handleSkipDirectorBrief}
                 />
             )}
 

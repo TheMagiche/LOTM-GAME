@@ -1,31 +1,43 @@
-import { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useState, type KeyboardEvent, type MouseEvent } from 'react';
+import { Sparkles, X, AlertTriangle } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildLotmPlayerHudModel } from './lotmPlayerHudModel';
-import { commitLotmPotionDrink } from './lotmPotionDrink';
 import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
-import {
-    findLotmAbilityByName,
-    loadLotmAbilityCompendium,
-    type LotmCompendiumAbility,
-} from '../../worldpacks/lotmAbilityCompendium';
+import { findLotmAbilityByName, warmupLotmAbilityCompendium } from '../../worldpacks/lotmAbilityCompendium';
 
 const SEQUENCE_LADDER = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] as const;
+
+function isHudChromeTarget(target: EventTarget | null): boolean {
+    return !(target instanceof Element) || !target.closest('button, a, input, textarea, select, [role="button"]');
+}
 
 function Meter({
     label,
     meter,
     tone,
+    value,
+    title,
+    stateClass,
 }: {
     label: string;
     meter: { current: number; max: number; pct: number };
-    tone: 'hp' | 'spi' | 'dig';
+    tone: 'hp' | 'spi' | 'dig' | 'loc';
+    value?: string;
+    title?: string;
+    stateClass?: string;
 }) {
+    const low = tone !== 'loc' && meter.pct <= 30;
+    const classes = [
+        'lotm-player-hud-meter',
+        `is-${tone}`,
+        low ? 'is-low' : '',
+        stateClass ? `is-${stateClass}` : '',
+    ].filter(Boolean).join(' ');
     return (
-        <div className={`lotm-player-hud-meter is-${tone}${meter.pct <= 30 ? ' is-low' : ''}`}>
+        <div className={classes} title={title}>
             <div className="lotm-player-hud-meter-row">
                 <span>{label}</span>
-                <span>{meter.current}/{meter.max}</span>
+                <span>{value ?? `${meter.current}/${meter.max}`}</span>
             </div>
             <div
                 className="lotm-player-hud-meter-track"
@@ -34,6 +46,7 @@ function Meter({
                 aria-valuemin={0}
                 aria-valuemax={meter.max}
                 aria-valuenow={meter.current}
+                aria-valuetext={value}
             >
                 <span style={{ width: `${meter.pct}%` }} />
             </div>
@@ -50,50 +63,12 @@ function Fact({ label, value }: { label: string; value: string }) {
     );
 }
 
-function AbilityRow({
-    name,
-    pathwayId,
-    sequence,
-}: {
-    name: string;
-    pathwayId: string;
-    sequence: number | undefined;
-}) {
-    const [open, setOpen] = useState(false);
-    const [detail, setDetail] = useState<LotmCompendiumAbility | null>(null);
-
-    useEffect(() => {
-        if (!open) return undefined;
-        let cancelled = false;
-        void loadLotmAbilityCompendium().then(() => {
-            if (cancelled) return;
-            setDetail(findLotmAbilityByName(name, pathwayId, sequence) ?? null);
-        });
-        return () => { cancelled = true; };
-    }, [open, name, pathwayId, sequence]);
-
-    const extra = detail
-        ? [detail.costs[0], detail.limitations[0]].filter(Boolean).join(' — ')
-        : '';
-
-    return (
-        <li>
-            <button
-                type="button"
-                className="lotm-player-hud-ability-btn"
-                aria-expanded={open}
-                onClick={() => setOpen(current => !current)}
-            >
-                {name}
-            </button>
-            {open && (
-                <p className="lotm-player-hud-ability-detail">
-                    {detail?.description || 'No catalog entry loaded yet.'}
-                    {extra ? ` [${extra}]` : ''}
-                </p>
-            )}
-        </li>
-    );
+function hasVisibleBounty(value: string): boolean {
+    const trimmed = value.trim();
+    if (!trimmed || trimmed === '—') return false;
+    if (/^0(\s+pounds?)?$/i.test(trimmed)) return false;
+    if (/—\s*0\s+pounds?$/i.test(trimmed)) return false;
+    return true;
 }
 
 export function LotmPlayerHud() {
@@ -110,6 +85,11 @@ export function LotmPlayerHud() {
     const lastLootReceipt = useAppStore(s => s.lastLootReceipt);
     const setLastLootReceipt = useAppStore(s => s.setLastLootReceipt);
     const [inventoryOpen, setInventoryOpen] = useState(false);
+    const [selectedAbilityName, setSelectedAbilityName] = useState<string | null>(null);
+
+    useEffect(() => {
+        warmupLotmAbilityCompendium();
+    }, []);
 
     const currentPlace = currentPlaceId
         ? locationLedger.find(place => place.id === currentPlaceId)
@@ -130,6 +110,7 @@ export function LotmPlayerHud() {
     if (!model.present) return null;
 
     const subtitle = [model.pathwayName, model.sequenceLabel].filter(Boolean).join(' · ');
+    const showBounty = hasVisibleBounty(model.bounty);
 
     const openSheet = () => {
         if (!pcPanelOpen) togglePCPanel();
@@ -143,8 +124,51 @@ export function LotmPlayerHud() {
         useAppStore.getState().openGrimoire({ section: 'pathways', id: model.pathwayId });
     };
 
+    const toggleAbility = (abilityName: string) => {
+        setSelectedAbilityName(current => (current === abilityName ? null : abilityName));
+    };
+
+    const activeAbilityDetail = selectedAbilityName
+        ? findLotmAbilityByName(selectedAbilityName, model.pathwayId, model.sequenceNumber)
+        : null;
+
+    const locTooltip = (() => {
+        switch (model.locStage) {
+            case 3:
+                return 'Loss of Control: Rampage — Complete mental collapse into Mythical Creature Form. Church kill teams deployed.';
+            case 2:
+                return 'Loss of Control: Slippage — Severe mental distress and physical mutations. All rolls forced to Disadvantage.';
+            case 1:
+                return 'Loss of Control: Tells — Auditory whispers, unnatural cravings, and color distortions.';
+            default:
+                return 'Loss of Control: Stable — Mental equilibrium intact.';
+        }
+    })();
+
+    const toggleInventory = () => setInventoryOpen(open => !open);
+
+    const onHudClick = (event: MouseEvent<HTMLElement>) => {
+        if (!isHudChromeTarget(event.target)) return;
+        toggleInventory();
+    };
+
+    const onHudKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+        if (event.target !== event.currentTarget) return;
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        toggleInventory();
+    };
+
     return (
-        <aside className={`lotm-player-hud${inventoryOpen ? ' is-expanded' : ''}`} aria-label="Player status">
+        <aside
+            className={`lotm-player-hud${inventoryOpen ? ' is-expanded' : ''}`}
+            aria-label="Player status"
+            aria-expanded={inventoryOpen}
+            aria-controls="lotm-player-hud-inventory"
+            tabIndex={0}
+            onClick={onHudClick}
+            onKeyDown={onHudKeyDown}
+        >
             <div className="lotm-player-hud-main">
                 <div className="lotm-player-hud-identity-cluster">
                     <button
@@ -185,22 +209,18 @@ export function LotmPlayerHud() {
                         meter={{ current: model.digestion, max: 100, pct: model.digestion }}
                         tone="dig"
                     />
-                    <div className={`lotm-player-hud-loc is-${model.locLabel}`} title={`Loss of Control: ${model.locLabel}`}>
-                        <span>LoC</span>
-                        <strong>{model.locLabel}</strong>
-                    </div>
-                </div>
-                <div className="lotm-player-hud-actions">
-                    <button
-                        type="button"
-                        className="lotm-player-hud-toggle"
-                        aria-expanded={inventoryOpen}
-                        aria-controls="lotm-player-hud-inventory"
-                        onClick={() => setInventoryOpen(open => !open)}
-                    >
-                        <ChevronDown size={16} />
-                        Inventory
-                    </button>
+                    <Meter
+                        label="Loss of Control"
+                        meter={{
+                            current: model.locStage,
+                            max: 3,
+                            pct: Math.round((model.locStage / 3) * 100),
+                        }}
+                        tone="loc"
+                        value={model.locLabel}
+                        title={locTooltip}
+                        stateClass={model.locLabel}
+                    />
                 </div>
             </div>
 
@@ -209,11 +229,62 @@ export function LotmPlayerHud() {
                     {model.sequenceBandLine}
                 </p>
             )}
-            {model.actingMethod && (
-                <p className="lotm-player-hud-acting" title={model.actingMethod}>
-                    {model.actingMethod}
-                </p>
+
+            {/* Quick Ability Deck */}
+            {model.abilities.length > 0 && (
+                <div className="lotm-player-hud-ability-preview" aria-label="Sequence abilities" title={model.abilities.join(' · ')}>
+                    {model.abilities.map((name, i) => (
+                        <span key={name}>
+                            {i > 0 && ' · '}
+                            <button
+                                type="button"
+                                onClick={() => toggleAbility(name)}
+                                className={`lotm-player-hud-ability-btn hover:underline transition-colors ${
+                                    selectedAbilityName === name ? 'text-terminal font-semibold' : ''
+                                }`}
+                                title="Click to view ability costs & description"
+                            >
+                                {name}
+                            </button>
+                        </span>
+                    ))}
+                </div>
             )}
+
+            {/* Expanded Ability Details Card */}
+            {selectedAbilityName && (
+                <div className="mx-3 my-1.5 p-2.5 rounded bg-void/90 border border-terminal/30 text-xs text-text-primary shadow-lg relative animate-fadeIn">
+                    <div className="flex items-center justify-between border-b border-border/40 pb-1.5 mb-1.5">
+                        <div className="flex items-center gap-1.5 font-bold text-terminal">
+                            <Sparkles size={13} className="text-amber-400" />
+                            <span>{activeAbilityDetail?.name || selectedAbilityName}</span>
+                            {activeAbilityDetail?.costs?.[0] && (
+                                <span className="font-mono text-[10px] font-normal px-1.5 py-0.2 rounded bg-terminal/10 text-terminal border border-terminal/20">
+                                    {activeAbilityDetail.costs[0]}
+                                </span>
+                            )}
+                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setSelectedAbilityName(null)}
+                            className="text-text-dim hover:text-text-primary p-0.5 rounded"
+                            aria-label="Close ability detail"
+                        >
+                            <X size={14} />
+                        </button>
+                    </div>
+                    <p className="text-[11px] leading-relaxed text-text-dim/90">
+                        {activeAbilityDetail?.description || 'Channel this sequence ability during spiritual actions.'}
+                    </p>
+                    {activeAbilityDetail?.limitations?.[0] && (
+                        <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-amber-400/90 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">
+                            <AlertTriangle size={11} className="shrink-0" />
+                            <span>Limit: {activeAbilityDetail.limitations[0]}</span>
+                        </div>
+                    )}
+                </div>
+            )}
+
             {lastLootReceipt && lastLootReceipt.names.length > 0 && (
                 <p className="lotm-player-hud-loot" role="status">
                     <span>Loot · {lastLootReceipt.names.join(' · ')}</span>
@@ -238,21 +309,12 @@ export function LotmPlayerHud() {
                 </ol>
             )}
 
-            {!inventoryOpen && model.abilities.length > 0 && (
-                <p className="lotm-player-hud-ability-preview">
-                    {model.abilities.slice(0, 4).join(' · ')}
-                    {model.abilities.length > 4 ? ` · +${model.abilities.length - 4}` : ''}
-                </p>
-            )}
-
             {inventoryOpen && (
                 <div id="lotm-player-hud-inventory" className="lotm-player-hud-details">
                     <dl className="lotm-player-hud-facts">
                         <Fact label="Location" value={model.location} />
-                        <Fact label="Currency" value={model.currency} />
-                        <Fact label="Bounty" value={model.bounty} />
+                        {showBounty && <Fact label="Bounty" value={model.bounty} />}
                     </dl>
-                    {model.formula && <Fact label="Formula" value={model.formula} />}
                     {model.stats.length > 0 && (
                         <dl className="lotm-player-hud-stats">
                             {model.stats.map(stat => (
@@ -280,43 +342,6 @@ export function LotmPlayerHud() {
                             <p className="lotm-player-hud-empty">No items recorded yet.</p>
                         )}
                     </div>
-                    {model.abilities.length > 0 && (
-                        <div>
-                            <p className="lotm-player-hud-section">Sequence abilities</p>
-                            <ul className="lotm-player-hud-abilities">
-                                {model.abilities.map(ability => (
-                                    <AbilityRow
-                                        key={ability}
-                                        name={ability}
-                                        pathwayId={model.pathwayId}
-                                        sequence={model.sequenceNumber}
-                                    />
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    {model.next && (
-                        <div className="lotm-player-hud-next">
-                            <p className="lotm-player-hud-section">Next · {model.next.sequenceLabel}</p>
-                            <div className="lotm-player-hud-potions">
-                                {model.potionSrc && <img src={model.potionSrc} alt="Current potion" />}
-                                {model.next.potionSrc && <img src={model.next.potionSrc} alt={`Potion for ${model.next.sequenceLabel}`} />}
-                            </div>
-                            {model.next.formula && <p>{model.next.formula}</p>}
-                            {model.next.abilities.length > 0 && (
-                                <p>{model.next.abilities.join(' · ')}</p>
-                            )}
-                            <button
-                                type="button"
-                                className="lotm-player-hud-drink"
-                                disabled={!model.canDrink}
-                                title={model.canDrink ? `Drink the ${model.next.sequenceLabel} potion` : 'Digestion must reach 100% before drinking the next potion'}
-                                onClick={() => commitLotmPotionDrink()}
-                            >
-                                Drink next potion
-                            </button>
-                        </div>
-                    )}
                 </div>
             )}
         </aside>

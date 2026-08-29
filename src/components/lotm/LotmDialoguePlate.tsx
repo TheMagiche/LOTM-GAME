@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { AlertCircle, ChevronLeft, ChevronRight, Images, MapPin, RotateCw } from 'lucide-react';
+import { AlertCircle, ChevronLeft, ChevronRight, Images, Loader2, MapPin, RotateCw } from 'lucide-react';
 import { MessageMarkdown } from '../message/MessageMarkdown';
 import { ChatEmptyState } from '../chat/ChatEmptyState';
+import { GenerationProgress } from '../GenerationProgress';
+import { UtilityCallStrip } from '../UtilityCallStrip';
 import { useAppStore } from '../../store/useAppStore';
 import { formatLotmPlaceLabel, matchLotmVisuals } from '../../services/lotm/lotmVisualMatcher';
 import { proseForTTS } from '../../services/tts/proseStripper';
 import { hasSwipeSet } from '../../services/turn/pendingCommit';
-import type { ChatMessage } from '../../types';
+import type { ChatMessage, PipelinePhase, StreamingStats } from '../../types';
 import { useTtsPlayback } from '../hooks/useTtsPlayback';
 import { useMessageEditor } from '../hooks/useMessageEditor';
 import { useSwipeVariants } from '../hooks/useSwipeVariants';
@@ -17,11 +19,21 @@ import { MessageActionRail } from '../message/MessageActionRail';
 import { MessageBelowSlots } from '../message/MessageBelowSlots';
 import { SwipeIndicator, ContinueButton } from '../message/SwipeIndicator';
 import { standingWordForName, standingWordForNpc } from './lotmStanding';
+import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 import { LotmSceneModal } from './LotmSceneModal';
 
 function gmBeats(messages: ChatMessage[]): ChatMessage[] {
     return messages.filter(message => message.role === 'assistant');
 }
+
+const PHASE_COPY: Partial<Record<PipelinePhase, string>> = {
+    'rolling-dice': 'Consulting the dice…',
+    'gathering-context': 'Gathering the chronicle…',
+    'building-prompt': 'Preparing the scene…',
+    generating: 'Writing the story…',
+    'checking-notes': 'Checking notes…',
+    'post-processing': 'Settling the scene…',
+};
 
 export function LotmDialoguePlate({
     messages,
@@ -33,6 +45,11 @@ export function LotmDialoguePlate({
     sceneContinue,
     onOpenSwipeSheet,
     onRetry,
+    loadingStatus = null,
+    pipelinePhase = 'idle',
+    streamingStats = null,
+    directorBriefRunning = false,
+    onSkipDirectorBrief,
 }: {
     messages: ChatMessage[];
     isStreaming: boolean;
@@ -43,6 +60,11 @@ export function LotmDialoguePlate({
     sceneContinue: ReturnType<typeof useSceneContinue>;
     onOpenSwipeSheet: (messageId: string) => void;
     onRetry?: (messageId: string) => void;
+    loadingStatus?: string | null;
+    pipelinePhase?: PipelinePhase;
+    streamingStats?: StreamingStats | null;
+    directorBriefRunning?: boolean;
+    onSkipDirectorBrief?: () => void;
 }) {
     const beats = useMemo(() => gmBeats(messages), [messages]);
     const lastId = beats.at(-1)?.id ?? null;
@@ -102,9 +124,32 @@ export function LotmDialoguePlate({
             if (portrait.isPc) return portrait;
             const npc = npcLedger.find(entry => onStage.has(entry.id) && entry.name === portrait.name);
             const standing = standingWordForNpc(npc);
-            return standing ? { ...portrait, standing } : portrait;
+            const pathwayId = npc?.signatureKit?.pathway;
+            const seq = npc?.signatureKit?.sequence;
+            const seqLabel = pathwayId && typeof seq === 'number'
+                ? formatLotmPathwayLabel(pathwayId, seq)
+                : undefined;
+            return {
+                ...portrait,
+                standing: standing ?? portrait.standing,
+                seqLabel: seqLabel ?? portrait.seqLabel,
+            };
         });
     }, [match.portraits, npcLedger, onStageNpcIds]);
+
+    const speakerNpc = useMemo(() => {
+        const onStage = new Set(onStageNpcIds ?? []);
+        return (npcLedger ?? []).find(entry =>
+            !entry.archived
+            && !entry.isPC
+            && onStage.has(entry.id)
+            && (entry.name.toLowerCase() === match.speakerName.toLowerCase() || entry.aliases?.toLowerCase().includes(match.speakerName.toLowerCase()))
+        );
+    }, [npcLedger, onStageNpcIds, match.speakerName]);
+
+    const speakerSeqLabel = speakerNpc?.signatureKit?.pathway && typeof speakerNpc.signatureKit.sequence === 'number'
+        ? formatLotmPathwayLabel(speakerNpc.signatureKit.pathway, speakerNpc.signatureKit.sequence)
+        : null;
 
     const speakerStanding = standingWordForName(
         match.speakerName,
@@ -117,6 +162,8 @@ export function LotmDialoguePlate({
     const canNext = index < beats.length - 1;
     const beatLabel = beats.length === 0 ? '0 / 0' : `${index + 1} / ${beats.length}`;
     const editing = !!message && editor.editingMessageId === message.id;
+    const generating = isStreaming || pipelinePhase !== 'idle';
+    const phaseCopy = PHASE_COPY[pipelinePhase] ?? (isStreaming ? 'Writing the story…' : '');
 
     const goPrev = useCallback(() => {
         setIndex(current => Math.max(0, current - 1));
@@ -149,10 +196,13 @@ export function LotmDialoguePlate({
                 <div className="lotm-plate-nameplate">
                     <span>
                         {message ? match.speakerName : 'Narration'}
+                        {speakerSeqLabel && <span className="lotm-plate-seq" title={speakerSeqLabel}> · {speakerSeqLabel}</span>}
                         {speakerStanding && <span className="lotm-plate-standing">{speakerStanding}</span>}
                     </span>
                     <div className="lotm-plate-controls">
-                        {isStreaming && viewingLatest && <span className="lotm-plate-streaming">writing</span>}
+                        {generating && (viewingLatest || !message) && (
+                            <span className="lotm-plate-streaming">{phaseCopy || 'writing'}</span>
+                        )}
                         <button
                             type="button"
                             className="lotm-plate-scene"
@@ -194,9 +244,29 @@ export function LotmDialoguePlate({
                         onOpenSwipeSheet={onOpenSwipeSheet}
                         onRetry={onRetry}
                     />
+                ) : generating ? (
+                    <div className="lotm-plate-loading" role="status" aria-live="polite">
+                        <Loader2 size={16} className="animate-spin" aria-hidden />
+                        <p>{phaseCopy || 'Writing the story…'}</p>
+                    </div>
                 ) : (
                     <ChatEmptyState onCreateCharacter={onCreateCharacter} />
                 )}
+                <div className="lotm-plate-progress">
+                    <UtilityCallStrip />
+                    <GenerationProgress
+                        phase={pipelinePhase}
+                        stats={streamingStats}
+                        directorBriefRunning={directorBriefRunning}
+                        onSkipDirectorBrief={onSkipDirectorBrief}
+                    />
+                    {loadingStatus && pipelinePhase === 'idle' && (
+                        <div className="lotm-plate-loading-line">
+                            <Loader2 size={12} className="animate-spin" aria-hidden />
+                            <span>{loadingStatus}</span>
+                        </div>
+                    )}
+                </div>
             </div>
             {sceneOpen && (
                 <LotmSceneModal
