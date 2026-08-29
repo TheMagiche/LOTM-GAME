@@ -102,13 +102,13 @@ export type UISlice = {
 
 - **Placement:** Title Hub / Home Screen (`LotmTitleHub.tsx`).
 - **Data Model:** Sourced entirely from static lore catalogs in `src/worldpacks/lotmGrimoireCatalog.ts`.
-- **Sections:**
-  - `Volumes`: Summaries and chapter spans for Volumes 1 through 8 (e.g., Clown, Faceless, Traveler, Undying, Red Priest, Lightseeker, The Hanged Man, Fool).
-  - `Epochs`: Pre-Epoch (Chaos Epoch), First Epoch (Epoch of Chaos), Second Epoch (Dark Epoch), Third Epoch (Cataclysm Epoch), Fourth Epoch (Epoch of the Gods), and Fifth Epoch (Epoch of Iron).
-  - `Pathways`: All 22 Beyonder pathways, tarot correlations, sequence titles, and deities.
-  - `World`: Geography, languages, currencies, food & drink, and mystical flora/fauna.
-  - `Churches`: Orthodox churches, deities worshiped, Beyonder execution squads (e.g., Nighthawks, Mandated Punishers, Machinery Hivemind), and hierarchical structures.
-  - `How to Play`: Bottom-pinned action opening the full player handbook.
+### 3.1 Sections
+- `Volumes`: Summaries and chapter spans for Volumes 1 through 8 (e.g., Clown, Faceless, Traveler, Undying, Red Priest, Lightseeker, The Hanged Man, Fool).
+- `Epochs`: Pre-Epoch (Chaos Epoch), First Epoch (Epoch of Chaos), Second Epoch (Dark Epoch), Third Epoch (Cataclysm Epoch), Fourth Epoch (Epoch of the Gods), and Fifth Epoch (Epoch of Iron).
+- `Pathways`: All 22 Beyonder pathways, tarot correlations, sequence titles, and deities.
+- `World`: Geography, languages, currencies, food & drink, and mystical flora/fauna. Under **Geography**, embeds a read-only `<LotmWorldMapView readOnly />` cartographic viewer above the geography cards with interactive pin selection and focus highlighting.
+- `Churches`: Orthodox churches, deities worshiped, Beyonder execution squads (e.g., Nighthawks, Mandated Punishers, Machinery Hivemind), and hierarchical structures.
+- `How to Play`: Bottom-pinned action opening the full player handbook.
 - **Purity:** Pure reference encyclopedia; zero rendering of player character, current place, or active campaign state.
 
 ---
@@ -136,7 +136,7 @@ Provides a comprehensive read-only Game Master dossier for the protagonist:
 
 ### 4.3 Location & Travel Section (`section: 'location'`)
 - **Current Position Card:** Displays current place name, parent region, in-game day counter, and current active feature/room locale.
-- **Embedded World Map:** Hosts `<LotmWorldMapView />` with selectable pins for kingdoms, cities, harbors, landmarks, and exploration routes.
+- **Embedded Read-Only World Map:** Hosts `<LotmWorldMapView readOnly />` framed in an occult dark parchment viewport (`h-80 sm:h-96 min-h-85`) with selectable pins, hover tooltips, and category layer toggles (`Kingdoms`, `Cities`, `Seas`). Clicking any pin updates selection and focuses the travel card below.
 - **Available Locations Directory:** Searchable list unifying `locationLedger` entries and canonical world map locales.
 - **Shift Location / Travel Action:** Selecting any location or clicking a map pin enables a one-click travel button that updates `context.currentPlaceId` and clears `context.currentFeature`, triggering feedback toasts.
 

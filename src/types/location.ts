@@ -22,6 +22,7 @@ export type LocationEntry = {
     connections: LocationConnection[];
     description: string;                   // 1–2 sentences of texture; injected
     status?: string;                       // "burned down in ch. 12" — optional, injected when set
+    coordinates?: [number, number];        // [lat, lng] = [-y, x] pixel coordinates for map view
     firstSeenScene: string;
     lastSeenScene: string;
     source: 'llm' | 'manual';

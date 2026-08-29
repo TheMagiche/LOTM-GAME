@@ -1,4 +1,4 @@
-import { Link2, Trash2, X } from 'lucide-react';
+import { Link2, Trash2, X, Crosshair } from 'lucide-react';
 import type { LocationEntry, LocationConnection } from '../../types';
 import { connectionBand } from '../../services/locationParser';
 import { DISTANCE_BANDS, type DistanceBand } from '../../services/location/distance';
@@ -38,6 +38,8 @@ type Props = {
     onAddConnection: () => void;
     onRemoveConnection: (toId: string) => void;
     onDelete: (id: string, e: React.MouseEvent) => void;
+    onPickOnMap?: () => void;
+    isPickingOnMap?: boolean;
 };
 
 export function LocationEditForm({
@@ -49,6 +51,7 @@ export function LocationEditForm({
     locationLedger,
     onStartEditing, onSetAsCurrent, onCancel, onSave,
     onAddConnection, onRemoveConnection, onDelete,
+    onPickOnMap, isPickingOnMap,
 }: Props) {
     return (
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
@@ -127,6 +130,60 @@ export function LocationEditForm({
                         className={inputClass(isEditing)}
                     />
                 </Field>
+            </div>
+
+            {/* Map Coordinates & Pin Picker */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+                <Field label="Latitude / -Y">
+                    <input
+                        type="number"
+                        value={renderedForm.coordinates ? renderedForm.coordinates[0] : ''}
+                        onChange={e => {
+                            const val = e.target.value === '' ? undefined : parseInt(e.target.value, 10);
+                            setForm(prev => ({
+                                ...prev,
+                                coordinates: val === undefined ? undefined : [val, prev.coordinates?.[1] ?? 0],
+                            }));
+                        }}
+                        disabled={!isEditing}
+                        placeholder="e.g. -1150"
+                        className={inputClass(isEditing)}
+                    />
+                </Field>
+                <Field label="Longitude / X">
+                    <input
+                        type="number"
+                        value={renderedForm.coordinates ? renderedForm.coordinates[1] : ''}
+                        onChange={e => {
+                            const val = e.target.value === '' ? undefined : parseInt(e.target.value, 10);
+                            setForm(prev => ({
+                                ...prev,
+                                coordinates: val === undefined ? undefined : [prev.coordinates?.[0] ?? 0, val],
+                            }));
+                        }}
+                        disabled={!isEditing}
+                        placeholder="e.g. 3850"
+                        className={inputClass(isEditing)}
+                    />
+                </Field>
+                {onPickOnMap && (
+                    <div>
+                        <button
+                            type="button"
+                            onClick={onPickOnMap}
+                            disabled={!isEditing}
+                            className={`w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded text-xs border transition-colors ${
+                                isPickingOnMap
+                                    ? 'bg-terminal/20 border-terminal text-terminal animate-pulse'
+                                    : 'border-border hover:border-terminal text-text-dim hover:text-terminal bg-surface disabled:opacity-40'
+                            }`}
+                            title="Click on the world map to set pin coordinates"
+                        >
+                            <Crosshair size={13} />
+                            <span>{isPickingOnMap ? 'Picking...' : 'Pick on Map'}</span>
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* Description */}

@@ -1,6 +1,26 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { useAppStore } from '../../../store/useAppStore';
+
+vi.mock('../../location-ledger/LotmWorldMapView', () => ({
+    LotmWorldMapView: ({ onSelectName, highlightCoords, readOnly }: {
+        onSelectName?: (name: string) => void;
+        highlightCoords?: [number, number] | null;
+        readOnly?: boolean;
+    }) => (
+        <div data-testid="lotm-world-map" role="region" aria-label="World map" data-readonly={readOnly}>
+            <span>World map</span>
+            {highlightCoords && <span>Highlighted: {highlightCoords.join(',')}</span>}
+            <button
+                data-testid="mock-select-map-pin"
+                onClick={() => onSelectName?.('Tingen')}
+            >
+                Select Tingen Pin
+            </button>
+        </div>
+    ),
+}));
+
 import { LotmGrimoire } from '../LotmGrimoire';
 import { LotmPlayHeader } from '../LotmPlayHeader';
 
@@ -45,6 +65,14 @@ describe('LotmGrimoire overlay', () => {
         fireEvent.click(screen.getByRole('button', { name: 'World' }));
         expect(screen.getByRole('tab', { name: 'Geography' })).toHaveAttribute('aria-selected', 'true');
         expect(screen.getByRole('heading', { name: 'Tingen' })).toBeInTheDocument();
+        expect(screen.getByText('Lord of the Mysteries World Map')).toBeInTheDocument();
+        expect(screen.getByRole('region', { name: 'World map' })).toBeInTheDocument();
+
+        // Clicking show on map focuses the location on map and highlights card
+        const showOnMapBtn = screen.getAllByRole('button', { name: /Show on map/i })[0];
+        fireEvent.click(showOnMapBtn);
+        expect(screen.getByRole('button', { name: /Focused on map/i })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Clear Selection/i })).toBeInTheDocument();
 
         fireEvent.click(screen.getByRole('button', { name: 'Churches' }));
         const evernight = screen.getByRole('heading', { name: /Church of the Evernight Goddess/i }).closest('button')!;

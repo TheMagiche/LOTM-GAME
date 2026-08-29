@@ -2,7 +2,19 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 vi.mock('../location-ledger/LotmWorldMapView', () => ({
-    LotmWorldMapView: () => <div data-testid="lotm-world-map">World map</div>,
+    LotmWorldMapView: ({ onPickCoordinates, isPicking }: { onPickCoordinates?: (coords: [number, number]) => void; isPicking?: boolean }) => (
+        <div data-testid="lotm-world-map">
+            World map
+            {isPicking && (
+                <button
+                    data-testid="mock-pick-coord"
+                    onClick={() => onPickCoordinates?.([-1100, 3900])}
+                >
+                    Pick Coords
+                </button>
+            )}
+        </div>
+    ),
 }));
 
 import { LocationLedgerModal } from '../LocationLedgerModal';
@@ -157,5 +169,27 @@ describe('LocationLedgerModal', () => {
 
         fireEvent.click(screen.getAllByText('Point A')[0]);
         expect(screen.getByRole('heading', { name: 'Place Details' })).toBeInTheDocument();
+    });
+
+    it('supports picking coordinates on the map and saving them', () => {
+        render(<LocationLedgerModal />);
+        fireEvent.click(screen.getByRole('button', { name: 'New Place' }));
+        fireEvent.change(screen.getByPlaceholderText('Ninja Academy'), { target: { value: 'Backlund' } });
+
+        // Click "Pick on Map" button
+        fireEvent.click(screen.getByRole('button', { name: 'Pick on Map' }));
+
+        // Map is visible with picking button
+        expect(screen.getByTestId('mock-pick-coord')).toBeInTheDocument();
+        fireEvent.click(screen.getByTestId('mock-pick-coord'));
+
+        // Form is restored with coordinates
+        expect(screen.getByRole('heading', { name: 'New Place' })).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('e.g. -1150')).toHaveValue(-1100);
+        expect(screen.getByPlaceholderText('e.g. 3850')).toHaveValue(3900);
+
+        fireEvent.click(screen.getByRole('button', { name: 'Save' }));
+        const saved = useAppStore.getState().locationLedger.find(l => l.name === 'Backlund');
+        expect(saved?.coordinates).toEqual([-1100, 3900]);
     });
 });

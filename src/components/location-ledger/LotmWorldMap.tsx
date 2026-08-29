@@ -4,11 +4,12 @@ import {
     ImageOverlay,
     Marker,
     Popup,
-    Polyline,
+    Tooltip,
     useMap,
+    useMapEvents,
 } from 'react-leaflet';
 import L from 'leaflet';
-import type { LotmMapPath, LotmMapPin, LotmMapPinType } from '../../worldpacks/lotmMapData';
+import type { LotmMapPin, LotmMapPinType } from '../../worldpacks/lotmMapData';
 import { LOTM_MAP_DIMENSIONS } from '../../worldpacks/lotmMapData';
 
 const ICON_PALETTE: Record<LotmMapPinType | 'default', string> = {
@@ -56,25 +57,66 @@ function FitImage({ bounds }: { bounds: L.LatLngBoundsExpression }) {
     return null;
 }
 
+function MapEventHandler({
+    onMapClick,
+    onMouseMoveCoords,
+}: {
+    onMapClick?: (coords: [number, number]) => void;
+    onMouseMoveCoords?: (coords: [number, number]) => void;
+}) {
+    useMapEvents({
+        click(e) {
+            const lat = Math.round(e.latlng.lat);
+            const lng = Math.round(e.latlng.lng);
+            onMapClick?.([lat, lng]);
+        },
+        mousemove(e) {
+            const lat = Math.round(e.latlng.lat);
+            const lng = Math.round(e.latlng.lng);
+            onMouseMoveCoords?.([lat, lng]);
+        },
+    });
+    return null;
+}
+
 type Props = {
     imageUrl: string;
     locations?: LotmMapPin[];
-    paths?: LotmMapPath[];
     activeLayers?: Record<string, boolean>;
     onSelectName?: (name: string) => void;
+    onMapClick?: (coords: [number, number]) => void;
+    onMouseMoveCoords?: (coords: [number, number]) => void;
+    onPinMove?: (pinId: string, pinName: string, newCoords: [number, number]) => void;
+    highlightCoords?: [number, number] | null;
+    isPicking?: boolean;
+    isDraggable?: boolean;
 };
 
 export function LotmWorldMap({
     imageUrl,
     locations = [],
-    paths = [],
     activeLayers = {},
     onSelectName,
+    onMapClick,
+    onMouseMoveCoords,
+    onPinMove,
+    highlightCoords,
+    isPicking = false,
+    isDraggable = false,
 }: Props) {
     const bounds = useMemo<L.LatLngBoundsExpression>(
         () => [[-LOTM_MAP_DIMENSIONS.height, 0], [0, LOTM_MAP_DIMENSIONS.width]],
         [],
     );
+
+    const highlightIcon = useMemo(() => {
+        return L.divIcon({
+            className: 'custom-lotm-highlight-pin',
+            html: `<div style="width:20px;height:20px;border-radius:50%;background:#38bdf8;border:3px solid #fff;box-shadow:0 0 16px #38bdf8;animation:pulse 1.5s infinite"></div>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10],
+        });
+    }, []);
 
     return (
         <MapContainer
@@ -87,25 +129,23 @@ export function LotmWorldMap({
             zoomSnap={0.25}
             zoomDelta={0.5}
             attributionControl={false}
-            className="lotm-world-map"
+            className={`lotm-world-map ${isPicking ? 'cursor-crosshair' : ''}`}
             style={{ height: '100%', width: '100%', backgroundColor: '#090d16' }}
         >
             <FitImage bounds={bounds} />
             <ImageOverlay url={imageUrl} bounds={bounds} />
+            <MapEventHandler onMapClick={onMapClick} onMouseMoveCoords={onMouseMoveCoords} />
 
-            {activeLayers.paths !== false &&
-                paths.map(path => (
-                    <Polyline
-                        key={path.id}
-                        positions={path.coordinates}
-                        pathOptions={{
-                            color: path.color || '#38bdf8',
-                            dashArray: path.dashArray || '4, 8',
-                            weight: 2,
-                        }}
-                    />
-                ))}
+            {/* Render Active / Highlight Pin */}
+            {highlightCoords && (
+                <Marker
+                    position={highlightCoords}
+                    icon={highlightIcon}
+                    interactive={false}
+                />
+            )}
 
+            {/* Render Location Pins */}
             {locations
                 .filter(loc => {
                     const key = loc.category?.toLowerCase();
@@ -116,21 +156,53 @@ export function LotmWorldMap({
                     <Marker
                         key={loc.id}
                         position={loc.coordinates}
+                        draggable={isDraggable}
                         icon={createPin(ICON_PALETTE[loc.type] ?? ICON_PALETTE.default)}
                         eventHandlers={{
-                            click: () => onSelectName?.(loc.name),
+                            click: () => {
+                                if (!isDraggable) {
+                                    onSelectName?.(loc.name);
+                                }
+                            },
+                            dragend: (e) => {
+                                const marker = e.target as L.Marker;
+                                const latLng = marker.getLatLng();
+                                const rounded: [number, number] = [Math.round(latLng.lat), Math.round(latLng.lng)];
+                                onPinMove?.(loc.id, loc.name, rounded);
+                            },
                         }}
                     >
-                        <Popup className="lotm-map-popup">
-                            <div>
-                                <h4>{loc.name}</h4>
-                                <p className="lotm-map-popup-meta">
-                                    {loc.category}
-                                    {loc.details ? ` · ${loc.details}` : ''}
-                                </p>
-                                {loc.description && <p className="lotm-map-popup-body">{loc.description}</p>}
+                        <Tooltip
+                            direction="top"
+                            offset={[0, -8]}
+                            opacity={1}
+                            className="lotm-map-tooltip"
+                        >
+                            <div className="lotm-map-tooltip-inner">
+                                <div className="lotm-map-tooltip-title">{loc.name}</div>
+                                {(loc.category || loc.details) && (
+                                    <div className="lotm-map-tooltip-meta">
+                                        {loc.category}
+                                        {loc.details ? ` · ${loc.details}` : ''}
+                                    </div>
+                                )}
                             </div>
-                        </Popup>
+                        </Tooltip>
+                        {!isDraggable && (
+                            <Popup className="lotm-map-popup">
+                                <div>
+                                    <h4>{loc.name}</h4>
+                                    <p className="lotm-map-popup-meta">
+                                        {loc.category}
+                                        {loc.details ? ` · ${loc.details}` : ''}
+                                    </p>
+                                    <p className="text-[10px] text-text-dim mt-0.5 font-mono">
+                                        [{loc.coordinates[0]}, {loc.coordinates[1]}]
+                                    </p>
+                                    {loc.description && <p className="lotm-map-popup-body">{loc.description}</p>}
+                                </div>
+                            </Popup>
+                        )}
                     </Marker>
                 ))}
         </MapContainer>

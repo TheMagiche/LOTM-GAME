@@ -932,9 +932,55 @@ html[style*="--lang-font-stack"] {
   font-family: inherit;
 }
 
-.custom-lotm-pin {
+.custom-lotm-pin,
+.leaflet-marker-icon.custom-lotm-pin,
+.leaflet-marker-draggable.custom-lotm-pin {
   background: none !important;
   border: none !important;
+  cursor: pointer !important;
+}
+
+.custom-lotm-pin * {
+  cursor: pointer !important;
+}
+
+.lotm-map-tooltip {
+  background: rgba(22, 19, 26, 0.95) !important;
+  color: #f3ead8 !important;
+  border: 1px solid rgba(201, 162, 39, 0.45) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+  font-family: inherit !important;
+  pointer-events: none !important;
+}
+
+.lotm-map-tooltip::before,
+.lotm-map-tooltip::after {
+  border-top-color: rgba(22, 19, 26, 0.95) !important;
+}
+
+.lotm-map-tooltip-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lotm-map-tooltip-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #f3ead8;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.lotm-map-tooltip-meta {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a227;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .lotm-world-map-layers {

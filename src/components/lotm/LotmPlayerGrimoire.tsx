@@ -758,11 +758,12 @@ function LocationTravelPane({
                     <Compass size={14} />
                     <span>Interactive World Map & Exploration</span>
                 </p>
-                <div className="border border-[#c9a227]/30 rounded-sm overflow-hidden bg-black/60 shadow-xl">
+                <div className="h-80 sm:h-96 min-h-85 border border-[#c9a227]/30 rounded-sm overflow-hidden bg-black/60 shadow-xl">
                     <LotmWorldMapView
+                        readOnly
+                        highlightCoords={activeLocationEntry?.coordinates || activeMapPin?.coordinates}
                         onSelectName={(name) => {
                             setSelectedPlaceIdOrName(name);
-                            // Auto scroll to detail if on mobile
                         }}
                     />
                 </div>
