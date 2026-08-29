@@ -28,6 +28,7 @@ type Props = {
     onCancelPick?: () => void;
     highlightCoords?: [number, number] | null;
     customLocations?: LocationEntry[];
+    readOnly?: boolean;
 };
 
 export function LotmWorldMapView({
@@ -38,6 +39,7 @@ export function LotmWorldMapView({
     onCancelPick,
     highlightCoords,
     customLocations,
+    readOnly = false,
 }: Props) {
     const storeLocationLedger = useAppStore(s => s.locationLedger);
     const updateLocation = useAppStore(s => s.updateLocation);
@@ -111,6 +113,7 @@ export function LotmWorldMapView({
     }, [serverPins, locationLedger, calibratedCoords]);
 
     const handleMapClick = (coords: [number, number]) => {
+        if (readOnly) return;
         if (isPicking && onPickCoordinates) {
             onPickCoordinates(coords);
             return;
@@ -118,6 +121,8 @@ export function LotmWorldMapView({
     };
 
     const handlePinMove = (pinId: string, pinName: string, newCoords: [number, number]) => {
+        if (readOnly) return;
+
         setCalibratedCoords(prev => ({
             ...prev,
             [pinId]: newCoords,
@@ -135,6 +140,7 @@ export function LotmWorldMapView({
     };
 
     const handleSaveToFile = async () => {
+        if (readOnly) return;
         setIsSavingPins(true);
         setSaveFeedback(null);
         try {
@@ -179,10 +185,13 @@ export function LotmWorldMapView({
         URL.revokeObjectURL(url);
     };
 
+    const isCalibrationActive = !readOnly && calibrationMode;
+    const isPickingActive = !readOnly && isPicking;
+
     return (
         <div className="lotm-world-map-view relative w-full h-full" aria-label="World map">
             {/* Picking Banner */}
-            {isPicking && (
+            {isPickingActive && (
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1000] bg-void/90 border border-terminal text-terminal px-4 py-2 rounded shadow-lg flex items-center gap-3 backdrop-blur-sm animate-pulse">
                     <Crosshair size={16} />
                     <span className="text-xs font-bold uppercase tracking-wider">
@@ -200,7 +209,7 @@ export function LotmWorldMapView({
             )}
 
             {/* Calibration Mode Banner */}
-            {calibrationMode && !isPicking && (
+            {isCalibrationActive && !isPickingActive && (
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1000] bg-void/90 border border-terminal text-terminal px-4 py-2 rounded shadow-lg flex items-center gap-3 backdrop-blur-sm">
                     <Crosshair size={16} />
                     <span className="text-xs font-bold uppercase tracking-wider">
@@ -217,7 +226,7 @@ export function LotmWorldMapView({
             )}
 
             {/* Save Feedback Banner */}
-            {saveFeedback && (
+            {!readOnly && saveFeedback && (
                 <div
                     className={`absolute top-12 left-1/2 -translate-x-1/2 z-[1000] px-3.5 py-1.5 rounded text-xs font-medium shadow-lg flex items-center gap-2 backdrop-blur-sm border ${
                         saveFeedback.type === 'success'
@@ -237,71 +246,75 @@ export function LotmWorldMapView({
                 activeLayers={activeLayers}
                 onSelectName={onSelectName}
                 onMapClick={handleMapClick}
-                onMouseMoveCoords={setCursorCoords}
+                onMouseMoveCoords={!readOnly ? setCursorCoords : undefined}
                 onPinMove={handlePinMove}
                 highlightCoords={highlightCoords}
-                isPicking={isPicking}
-                isDraggable={calibrationMode}
+                isPicking={isPickingActive}
+                isDraggable={isCalibrationActive}
             />
 
-            {/* Top-Left HUD: Live Cursor Coordinates */}
-            <div className="absolute top-3 left-3 z-[1000] bg-surface/80 border border-border/80 px-2.5 py-1 rounded text-[11px] font-mono text-text-dim backdrop-blur-sm pointer-events-none select-none">
-                {cursorCoords ? (
-                    <span>Lat: {cursorCoords[0]} &nbsp; Lng: {cursorCoords[1]}</span>
-                ) : (
-                    <span>Move cursor over map</span>
-                )}
-            </div>
+            {/* Top-Left HUD: Live Cursor Coordinates (GM mode only) */}
+            {!readOnly && (
+                <div className="absolute top-3 left-3 z-[1000] bg-surface/80 border border-border/80 px-2.5 py-1 rounded text-[11px] font-mono text-text-dim backdrop-blur-sm pointer-events-none select-none">
+                    {cursorCoords ? (
+                        <span>Lat: {cursorCoords[0]} &nbsp; Lng: {cursorCoords[1]}</span>
+                    ) : (
+                        <span>Move cursor over map</span>
+                    )}
+                </div>
+            )}
 
-            {/* Top-Right Action Toolbar */}
-            <div className="absolute top-3 right-12 z-[1000] flex items-center gap-2">
-                <button
-                    onClick={handleSaveToFile}
-                    disabled={isSavingPins}
-                    className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
-                        isSavingPins
-                            ? 'bg-terminal/20 border-terminal text-terminal opacity-60'
-                            : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-terminal'
-                    }`}
-                    title="Save calibrated map pins directly to JSON file on disk"
-                >
-                    <Save size={13} />
-                    <span>{isSavingPins ? 'Saving...' : 'Save to File'}</span>
-                </button>
-                <button
-                    onClick={loadPins}
-                    disabled={isLoadingPins}
-                    className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
-                        isLoadingPins
-                            ? 'bg-surface/50 border-border text-text-dim opacity-60'
-                            : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-text-dim'
-                    }`}
-                    title="Reload map pins from file"
-                >
-                    <RefreshCw size={13} className={isLoadingPins ? 'animate-spin' : ''} />
-                    <span>{isLoadingPins ? 'Loading...' : 'Load Data'}</span>
-                </button>
-                <button
-                    onClick={() => setCalibrationMode(prev => !prev)}
-                    className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
-                        calibrationMode
-                            ? 'bg-terminal/20 border-terminal text-terminal'
-                            : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-text-dim'
-                    }`}
-                    title="Toggle pin calibration (drag pins to reposition)"
-                >
-                    <Crosshair size={13} />
-                    <span>{calibrationMode ? 'Calibrating...' : 'Calibrate'}</span>
-                </button>
-                <button
-                    onClick={() => setExportModalOpen(true)}
-                    className="px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 bg-surface/80 border border-border text-text-dim hover:text-text-primary hover:border-terminal backdrop-blur-sm transition-colors shadow-sm"
-                    title="Export map pins as JSON or TypeScript"
-                >
-                    <Download size={13} />
-                    <span>Export Pins</span>
-                </button>
-            </div>
+            {/* Top-Right Action Toolbar (GM mode only) */}
+            {!readOnly && (
+                <div className="absolute top-3 right-12 z-[1000] flex items-center gap-2">
+                    <button
+                        onClick={handleSaveToFile}
+                        disabled={isSavingPins}
+                        className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
+                            isSavingPins
+                                ? 'bg-terminal/20 border-terminal text-terminal opacity-60'
+                                : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-terminal'
+                        }`}
+                        title="Save calibrated map pins directly to JSON file on disk"
+                    >
+                        <Save size={13} />
+                        <span>{isSavingPins ? 'Saving...' : 'Save to File'}</span>
+                    </button>
+                    <button
+                        onClick={loadPins}
+                        disabled={isLoadingPins}
+                        className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
+                            isLoadingPins
+                                ? 'bg-surface/50 border-border text-text-dim opacity-60'
+                                : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-text-dim'
+                        }`}
+                        title="Reload map pins from file"
+                    >
+                        <RefreshCw size={13} className={isLoadingPins ? 'animate-spin' : ''} />
+                        <span>{isLoadingPins ? 'Loading...' : 'Load Data'}</span>
+                    </button>
+                    <button
+                        onClick={() => setCalibrationMode(prev => !prev)}
+                        className={`px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 border backdrop-blur-sm transition-colors shadow-sm ${
+                            calibrationMode
+                                ? 'bg-terminal/20 border-terminal text-terminal'
+                                : 'bg-surface/80 border-border text-text-dim hover:text-text-primary hover:border-text-dim'
+                        }`}
+                        title="Toggle pin calibration (drag pins to reposition)"
+                    >
+                        <Crosshair size={13} />
+                        <span>{calibrationMode ? 'Calibrating...' : 'Calibrate'}</span>
+                    </button>
+                    <button
+                        onClick={() => setExportModalOpen(true)}
+                        className="px-2.5 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 bg-surface/80 border border-border text-text-dim hover:text-text-primary hover:border-terminal backdrop-blur-sm transition-colors shadow-sm"
+                        title="Export map pins as JSON or TypeScript"
+                    >
+                        <Download size={13} />
+                        <span>Export Pins</span>
+                    </button>
+                </div>
+            )}
 
             {/* Bottom-Left: Layer Toggles */}
             <div className="lotm-world-map-layers">
@@ -321,7 +334,7 @@ export function LotmWorldMapView({
             </div>
 
             {/* Pin Export Modal */}
-            {exportModalOpen && (
+            {!readOnly && exportModalOpen && (
                 <div className="absolute inset-0 z-[1200] bg-void/80 backdrop-blur-sm flex items-center justify-center p-4">
                     <div className="bg-surface border border-border rounded-lg max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
                         {/* Header */}

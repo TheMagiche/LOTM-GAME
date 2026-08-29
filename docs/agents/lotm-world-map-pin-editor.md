@@ -133,3 +133,18 @@ The map interface provides an **Export Pins** tool:
 - **Copy & Download:**
   - One-click copy to system clipboard.
   - Direct file download for archiving and sharing across campaigns.
+
+---
+
+## 6. Read-Only Map Embedding in Grimoires
+
+`LotmWorldMapView` supports a `readOnly?: boolean` prop that adapts the map for player-facing and reference overlays:
+- **Game Master Full View (`readOnly={false}` in `LocationLedgerModal.tsx`)**:
+  - Full access to calibration toolbar (`Save to File`, `Load Data`, `Calibrate`, `Export Pins`).
+  - Live cursor coordinates HUD in top-left.
+  - Draggable pins in calibration mode and interactive coordinate picking.
+- **Read-Only Informational View (`readOnly={true}` in `LotmPlayerGrimoire.tsx` and `LotmGrimoire.tsx`)**:
+  - Hides all GM action toolbars, calibration overlays, and cursor HUDs.
+  - Maintains full interactive cartography: hover tooltips, pin selection (`onSelectName`), destination highlighting (`highlightCoords`), and category layer toggles (`Kingdoms`, `Cities`, `Seas`).
+  - Embedded under *Location & Travel* in `LotmPlayerGrimoire` and *World -> Geography* in `LotmGrimoire`.
+

@@ -141,4 +141,29 @@ describe('LotmWorldMapView', () => {
         expect(screen.getByRole('button', { name: /Copy Code/i })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /Download/i })).toBeInTheDocument();
     });
+
+    it('hides GM toolbars and disables calibration/picking in readOnly mode', () => {
+        render(<LotmWorldMapView readOnly isPicking pickingLabel="Test Picking" />);
+
+        // GM toolbar buttons should NOT be present
+        expect(screen.queryByRole('button', { name: /Save to File/i })).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /Load Data/i })).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /Calibrate/i })).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /Export Pins/i })).not.toBeInTheDocument();
+
+        // Picking banner and cursor coords HUD should be hidden
+        expect(screen.queryByText('Test Picking')).not.toBeInTheDocument();
+        expect(screen.queryByText(/Move cursor over map/i)).not.toBeInTheDocument();
+
+        // Layer toggles and map itself should still be present
+        expect(screen.getByText('Kingdoms')).toBeInTheDocument();
+        expect(screen.getByText('Cities')).toBeInTheDocument();
+        expect(screen.getByText('Seas')).toBeInTheDocument();
+        expect(screen.getByTestId('mock-lotm-world-map')).toBeInTheDocument();
+
+        // Map isDraggable should be false
+        const lastCall = mockMapProps.mock.calls[mockMapProps.mock.calls.length - 1][0];
+        expect(lastCall.isDraggable).toBe(false);
+        expect(lastCall.isPicking).toBe(false);
+    });
 });

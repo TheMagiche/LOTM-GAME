@@ -1,6 +1,26 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useAppStore } from '../../../store/useAppStore';
+
+vi.mock('../../location-ledger/LotmWorldMapView', () => ({
+    LotmWorldMapView: ({ onSelectName, highlightCoords, readOnly }: {
+        onSelectName?: (name: string) => void;
+        highlightCoords?: [number, number] | null;
+        readOnly?: boolean;
+    }) => (
+        <div data-testid="lotm-world-map" role="region" aria-label="World map" data-readonly={readOnly}>
+            <span>World map</span>
+            {highlightCoords && <span>Highlighted: {highlightCoords.join(',')}</span>}
+            <button
+                data-testid="mock-select-map-pin"
+                onClick={() => onSelectName?.('Backlund')}
+            >
+                Select Backlund Pin
+            </button>
+        </div>
+    ),
+}));
+
 import { LotmPlayerGrimoire } from '../LotmPlayerGrimoire';
 import type { InventoryItem, LocationEntry, NPCEntry, PlayerCharacter } from '../../../types';
 
@@ -251,6 +271,8 @@ describe('LotmPlayerGrimoire component', () => {
 
         expect(screen.getByText(/Current Coordinates/i)).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: 'Tingen City', level: 3 })).toBeInTheDocument();
+        expect(screen.getByText('Interactive World Map & Exploration')).toBeInTheDocument();
+        expect(screen.getByRole('region', { name: 'World map' })).toBeInTheDocument();
 
         // Select Backlund from list (search the Known Locations directory)
         const backlundCards = screen.getAllByRole('button', { name: /Backlund/i });

@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, BookOpen, CircleHelp, HelpCircle, MapPin, Search, X } from 'lucide-react';
+import { ArrowLeft, BookOpen, CircleHelp, Compass, HelpCircle, MapPin, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { LotmHowToPlayGuide } from './LotmHowToPlayGuide';
+import { LotmWorldMapView } from '../location-ledger/LotmWorldMapView';
+import { INITIAL_LOCATIONS, mapPinSearchNames } from '../../worldpacks/lotmMapData';
 import {
     GRIMOIRE_SECTIONS,
     GRIMOIRE_WORLD_TABS,
@@ -213,10 +215,6 @@ export function LotmGrimoire() {
                                 query={query}
                                 worldTab={worldTab}
                                 onWorldTab={setWorldTab}
-                                onShowOnMap={(name) => {
-                                    closeGrimoire();
-                                    useAppStore.getState().openLocationLedgerAt(name);
-                                }}
                             />
                         )}
                         {section === 'churches' && (
@@ -524,17 +522,52 @@ function WorldPane({
     query,
     worldTab,
     onWorldTab,
-    onShowOnMap,
 }: {
     query: string;
     worldTab: GrimoireWorldTabId;
     onWorldTab: (id: GrimoireWorldTabId) => void;
-    onShowOnMap?: (name: string) => void;
 }) {
+    const [selectedPlaceName, setSelectedPlaceName] = useState<string | null>(null);
+    const storeLocationLedger = useAppStore(s => s.locationLedger);
+
     const entries = useMemo(
         () => filterByGrimoireQuery(LOTM_GRIMOIRE_WORLD[worldTab], query, worldEntrySearchText),
         [query, worldTab],
     );
+
+    // Compute active map coordinates when a place is highlighted / selected
+    const activeCoords = useMemo<[number, number] | null>(() => {
+        if (!selectedPlaceName) return null;
+        const searchTerms = mapPinSearchNames(selectedPlaceName).map(s => s.toLowerCase());
+
+        // Check store location ledger first
+        const storeMatch = storeLocationLedger.find(loc =>
+            searchTerms.includes(loc.name.toLowerCase()) ||
+            loc.aliases?.some(alias => searchTerms.includes(alias.toLowerCase()))
+        );
+        if (storeMatch?.coordinates) {
+            return storeMatch.coordinates;
+        }
+
+        // Check initial map locations
+        const staticMatch = INITIAL_LOCATIONS.find(p =>
+            searchTerms.includes(p.name.toLowerCase()) ||
+            p.details?.some(alias => searchTerms.includes(alias.toLowerCase()))
+        );
+        if (staticMatch?.coordinates) {
+            return staticMatch.coordinates;
+        }
+
+        return null;
+    }, [selectedPlaceName, storeLocationLedger]);
+
+    const handleSelectFromMap = (name: string) => {
+        setSelectedPlaceName(name);
+    };
+
+    const handleShowOnMap = (name: string) => {
+        setSelectedPlaceName(name);
+    };
 
     return (
         <div className="lotm-grimoire-stack">
@@ -552,13 +585,50 @@ function WorldPane({
                     </button>
                 ))}
             </div>
+
+            {/* Read-Only Interactive World Map for Geography Tab */}
+            {worldTab === 'geography' && (
+                <div className="space-y-2 mb-4">
+                    <div className="flex items-center justify-between">
+                        <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
+                            <Compass size={14} />
+                            <span>Lord of the Mysteries World Map</span>
+                        </p>
+                        {selectedPlaceName && (
+                            <button
+                                type="button"
+                                onClick={() => setSelectedPlaceName(null)}
+                                className="text-[10px] uppercase font-['Cinzel'] text-[#a09075] hover:text-[#c9a227] transition-colors"
+                            >
+                                Clear Selection
+                            </button>
+                        )}
+                    </div>
+                    <div className="h-80 sm:h-96 min-h-85 border border-[#c9a227]/30 rounded-sm overflow-hidden bg-black/60 shadow-xl relative">
+                        <LotmWorldMapView
+                            readOnly
+                            highlightCoords={activeCoords}
+                            onSelectName={handleSelectFromMap}
+                        />
+                    </div>
+                </div>
+            )}
+
             {entries.length === 0 ? <EmptyHint text="Nothing in this topic matches that search." /> : (
                 <ul className="lotm-grimoire-cards">
                     {entries.map(entry => (
-                        <li key={entry.id} className="lotm-grimoire-static-card">
+                        <li
+                            key={entry.id}
+                            className={`lotm-grimoire-static-card transition-colors ${
+                                selectedPlaceName && entry.name.toLowerCase() === selectedPlaceName.toLowerCase()
+                                    ? 'ring-1 ring-[#c9a227] rounded'
+                                    : ''
+                            }`}
+                        >
                             <WorldCard
                                 entry={entry}
-                                showOnMap={worldTab === 'geography' ? onShowOnMap : undefined}
+                                isSelected={Boolean(selectedPlaceName && entry.name.toLowerCase() === selectedPlaceName.toLowerCase())}
+                                showOnMap={worldTab === 'geography' ? handleShowOnMap : undefined}
                             />
                         </li>
                     ))}
@@ -568,24 +638,32 @@ function WorldPane({
     );
 }
 
-function WorldCard({ entry, showOnMap }: { entry: GrimoireWorldEntry; showOnMap?: (name: string) => void }) {
+function WorldCard({
+    entry,
+    isSelected = false,
+    showOnMap,
+}: {
+    entry: GrimoireWorldEntry;
+    isSelected?: boolean;
+    showOnMap?: (name: string) => void;
+}) {
     return (
-        <article className="lotm-grimoire-card is-static">
+        <article className={`lotm-grimoire-card is-static ${isSelected ? 'border-[#c9a227] bg-[#221a28]' : ''}`}>
             {entry.subtitle && <p className="lotm-grimoire-card-kicker">{entry.subtitle}</p>}
             <h4>{entry.name}</h4>
             {entry.description && <p className="lotm-grimoire-card-body is-full">{entry.description}</p>}
             {entry.extra.map(line => (
                 <p key={line} className="lotm-grimoire-card-meta">{line}</p>
             ))}
-            {showOnMap && (
+            {/* {showOnMap && (
                 <button
                     type="button"
                     className="lotm-grimoire-map-btn"
                     onClick={() => showOnMap(entry.name)}
                 >
-                    <MapPin size={11} /> Show on map
+                    <MapPin size={11} /> {isSelected ? 'Focused on map' : 'Show on map'}
                 </button>
-            )}
+            )} */}
         </article>
     );
 }
