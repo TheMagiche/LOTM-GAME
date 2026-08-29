@@ -28,7 +28,7 @@ A LOTM campaign is `worldPackId === 'lord-of-the-mysteries'` or `uiSkin === 'lot
 
 1. **Title hub / tarot PC pick** — [`LotmTitleHub.tsx`](../../src/components/lotm/LotmTitleHub.tsx), [`LotmTarotSelect.tsx`](../../src/components/lotm/LotmTarotSelect.tsx).
 2. **Create** — [`createLotmCampaign.ts`](../../src/services/lotm/createLotmCampaign.ts) writes the campaign (`uiSkin: 'lotm-illustrated'`), then [`campaignInit.ts`](../../src/services/campaignInit.ts) with `attachLotmVisuals: true`. Pack files live in [`src/worldpacks/lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts).
-3. **Index overlay**, then **illustrated play** — [`LotmIllustratedShell.tsx`](../../src/components/lotm/LotmIllustratedShell.tsx): HUD + dialogue plate + composer.
+3. **Index overlay**, then **illustrated play** — [`LotmIllustratedShell.tsx`](../../src/components/lotm/LotmIllustratedShell.tsx): HUD + dialogue plate + composer. While the lock is up, [`LotmPlayHeader.tsx`](../../src/components/lotm/LotmPlayHeader.tsx) hides menu / Save / Grimoire / Ask GM / Illustrated · Chronicle / AI tier so they cannot be used through the overlay.
 4. **Player types**; optional armed dice / loot. [`runTurn`](../../src/services/turn/turnOrchestrator.ts) is the composition root; stages live in [`turnStages.ts`](../../src/services/turn/turnStages.ts).
 5. **Engine injects tags.** The GM narrates them and must not invent conflicting numbers.
 6. **Swipe, then commit.** First variant is `pendingCommit`. Commit on next send or campaign switch ([`pendingCommit.ts`](../../src/services/turn/pendingCommit.ts) → [`postTurnPipeline.ts`](../../src/services/turn/postTurnPipeline.ts)). Ledgers update after commit.
@@ -126,9 +126,10 @@ The GM must not invent a purse total, a dice band, or a Standing number that con
 | Fact | Player UI today | GM prompt |
 |------|-----------------|-----------|
 | Pathway, Sequence ladder, Spirit | HUD always | Profile minify `Seq` / `SPI` |
-| Digestion %, bounty | HUD **expanded inventory**; bounty hidden when none/zero | `[BEYONDER]`, `BOUNTY:` |
+| Digestion % | HUD meter (always) | `[BEYONDER]` |
+| Bounty | HUD expanded (click the HUD); hidden when none/zero | `BOUNTY:` |
 | Purse | HUD **Carried** coin rows | `CR:` |
-| Loss of Control | Hidden | `[BEYONDER]` |
+| Loss of Control | HUD meter (always), same track layout as Spirit / Digestion | `[BEYONDER]` |
 | Sequence band (Adv/Normal/Disadv) | Hidden | `[SEQUENCE AS TIER]` + collapsed pool |
 | Acting Method, next formula | Stats “To advance”; not HUD | `[BEYONDER]` |
 | Ability names | HUD ability line | `[BEYONDER ABILITIES]` |

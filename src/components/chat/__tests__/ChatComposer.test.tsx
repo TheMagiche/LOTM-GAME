@@ -77,14 +77,32 @@ describe('ChatComposer preset picker', () => {
 });
 
 describe('LotmPlayHeader menu during indexing', () => {
-    it('disables Open menu while the world-index overlay is locked', () => {
+    it('hides header actions while the world-index overlay is locked', () => {
         useAppStore.getState().beginLotmWorldIndex({ campaignId: 'camp-1', emblemSrc: '/emblem.webp' });
         render(<LotmPlayHeader />);
 
-        const menu = screen.getByRole('button', { name: 'Open menu unavailable while indexing' });
-        expect(menu).toBeDisabled();
-        fireEvent.click(menu);
-        expect(useAppStore.getState().drawerOpen).toBe(false);
+        expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Save campaign' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Open Grimoire' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Ask GM' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Illustrated' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Chronicle' })).toBeNull();
+        expect(screen.queryByRole('button', { name: /AI Tier/i })).toBeNull();
+    });
+
+    it('restores header actions after the world-index lock clears', () => {
+        useAppStore.getState().beginLotmWorldIndex({ campaignId: 'camp-1', emblemSrc: '/emblem.webp' });
+        const { rerender } = render(<LotmPlayHeader />);
+        useAppStore.getState().endLotmWorldIndex();
+        rerender(<LotmPlayHeader />);
+
+        expect(screen.getByRole('button', { name: 'Open menu' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Save campaign' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Open Grimoire' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Illustrated' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Chronicle' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /AI Tier/i })).toBeInTheDocument();
     });
 });
 

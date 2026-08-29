@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import claraJson from '../../../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
@@ -50,7 +50,7 @@ describe('LotmPlayerHud', () => {
         expect(container).toBeEmptyDOMElement();
     });
 
-    it('shows name, sequence, emblem, Spirit, LoC, and digestion on the play HUD', () => {
+    it('shows name, sequence, emblem, Spirit, Loss of Control, and digestion on the play HUD', () => {
         seedClara();
         render(<LotmPlayerHud />);
 
@@ -60,6 +60,7 @@ describe('LotmPlayerHud', () => {
         expect(screen.getByRole('button', { name: 'Open character sheet for Clara Whitlock' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /Open Grimoire for Fool Pathway/i })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: /^Sheet$/i })).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /inventory/i })).not.toBeInTheDocument();
         expect(screen.getByText(/Fool Pathway/i)).toBeInTheDocument();
         expect(screen.getByText(/Sequence 9/)).toBeInTheDocument();
         expect(screen.getByText(/Fool Pathway · Sequence 9 · Seer/)).toBeInTheDocument();
@@ -67,6 +68,10 @@ describe('LotmPlayerHud', () => {
         expect(screen.queryByRole('meter', { name: 'HP' })).toBeNull();
         expect(screen.getByRole('meter', { name: 'Spirit' })).toHaveAttribute('aria-valuenow', '14');
         expect(screen.getByRole('meter', { name: 'Digestion' })).toHaveAttribute('aria-valuenow', '0');
+        expect(screen.getByText('Loss of Control')).toBeInTheDocument();
+        expect(screen.getByRole('meter', { name: 'Loss of Control' })).toHaveAttribute('aria-valuenow', '0');
+        expect(screen.getByRole('meter', { name: 'Loss of Control' })).toHaveAttribute('aria-valuemax', '3');
+        expect(screen.getByRole('meter', { name: 'Loss of Control' })).toHaveAttribute('aria-valuetext', 'stable');
         expect(screen.getByText('stable')).toBeInTheDocument();
         expect(screen.getByLabelText('Sequence band')).toHaveTextContent(/Advantage/);
         expect(screen.getByLabelText(/Sequence ladder/i).querySelector('li.is-current')).toHaveTextContent('9');
@@ -74,8 +79,25 @@ describe('LotmPlayerHud', () => {
         expect(screen.queryByText(/Revere fate/i)).not.toBeInTheDocument();
     });
 
-    it('expands location and carried items including currency, hiding an empty bounty', async () => {
-        const user = userEvent.setup();
+    it('renders Loss of Control as a stage meter matching Spirit and Digestion', () => {
+        const { seeded } = seedClara();
+        useAppStore.setState({
+            playerCharacter: {
+                ...seeded,
+                pcMeta: { ...seeded.pcMeta, lossOfControl: 2 },
+            },
+        });
+        render(<LotmPlayerHud />);
+
+        const loc = screen.getByRole('meter', { name: 'Loss of Control' });
+        expect(loc).toHaveAttribute('aria-valuenow', '2');
+        expect(loc).toHaveAttribute('aria-valuemax', '3');
+        expect(loc).toHaveAttribute('aria-valuetext', 'slippage');
+        expect(screen.getByText('slippage')).toBeInTheDocument();
+        expect(screen.queryByText('LoC')).not.toBeInTheDocument();
+    });
+
+    it('expands location and carried items including currency, hiding an empty bounty', () => {
         seedClara();
         useAppStore.setState({
             inventoryItems: [
@@ -105,7 +127,7 @@ describe('LotmPlayerHud', () => {
         });
         render(<LotmPlayerHud />);
 
-        await user.click(screen.getByRole('button', { name: /inventory/i }));
+        fireEvent.click(screen.getByRole('complementary', { name: 'Player status' }));
         expect(screen.getByText('Location')).toBeInTheDocument();
         expect(screen.getByText('Tingen')).toBeInTheDocument();
         expect(screen.getByText('soli')).toBeInTheDocument();
@@ -116,32 +138,30 @@ describe('LotmPlayerHud', () => {
         expect(screen.getByLabelText('Sequence abilities')).toHaveTextContent(/Spirit Vision/);
         expect(screen.queryByText(/Sequence 8 · Clown/)).not.toBeInTheDocument();
         expect(screen.queryByAltText(/potion/i)).not.toBeInTheDocument();
-        expect(screen.getByRole('button', { name: /inventory/i })).toHaveAttribute('aria-expanded', 'true');
+        expect(screen.getByRole('complementary', { name: 'Player status' })).toHaveAttribute('aria-expanded', 'true');
         expect(screen.queryByRole('button', { name: /Drink next potion/i })).not.toBeInTheDocument();
     });
 
-    it('shows bounty only when a wanted price is posted', async () => {
-        const user = userEvent.setup();
+    it('shows bounty only when a wanted price is posted', () => {
         const { profile } = seedClara();
         useAppStore.setState({
             characterProfileData: { ...profile, bounty: 'Church of the Evernight — 30 pounds' },
         });
         render(<LotmPlayerHud />);
 
-        await user.click(screen.getByRole('button', { name: /inventory/i }));
+        fireEvent.click(screen.getByRole('complementary', { name: 'Player status' }));
         expect(screen.getByText('Bounty')).toBeInTheDocument();
         expect(screen.getByText('Church of the Evernight — 30 pounds')).toBeInTheDocument();
     });
 
-    it('hides bounty when the posted amount is zero', async () => {
-        const user = userEvent.setup();
+    it('hides bounty when the posted amount is zero', () => {
         const { profile } = seedClara();
         useAppStore.setState({
             characterProfileData: { ...profile, bounty: 'Church of the Evernight — 0 pounds' },
         });
         render(<LotmPlayerHud />);
 
-        await user.click(screen.getByRole('button', { name: /inventory/i }));
+        fireEvent.click(screen.getByRole('complementary', { name: 'Player status' }));
         expect(screen.queryByText('Bounty')).not.toBeInTheDocument();
     });
 
@@ -152,9 +172,11 @@ describe('LotmPlayerHud', () => {
 
         await user.click(screen.getByRole('button', { name: 'Open character sheet for Clara Whitlock' }));
         expect(useAppStore.getState().pcPanelOpen).toBe(true);
+        expect(screen.queryByText('Location')).not.toBeInTheDocument();
 
         await user.click(screen.getByRole('button', { name: /Open Grimoire for Fool Pathway/i }));
         expect(useAppStore.getState().grimoireOpen).toBe(true);
         expect(useAppStore.getState().grimoireFocus).toEqual({ section: 'pathways', id: 'fool' });
+        expect(screen.getByRole('complementary', { name: 'Player status' })).toHaveAttribute('aria-expanded', 'false');
     });
 });

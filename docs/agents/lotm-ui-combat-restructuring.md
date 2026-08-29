@@ -99,8 +99,9 @@ The HUD sits permanently in the Illustrated Shell and must serve as the primary 
 2. **Spirituality Meter (`Meter tone="spi"`):**
    - Primary resource bar displaying `current / max` spirituality.
    - Low spirituality state ($\le 30\%$) triggers an ethereal blue pulse.
-3. **Loss of Control Stage Meter / Indicator:**
-   - Four discrete stage indicators:
+3. **Loss of Control Stage Meter:**
+   - Same track layout as Spirit / Digestion. Label is the full phrase `Loss of Control`; the value is the current stage word.
+   - Four stages on a 0–3 fill:
      - `Stage 0 (Stable)`: Muted slate indicator.
      - `Stage 1 (Tells)`: Subtle amber glow (`"Whispers & distorted sensations"`).
      - `Stage 2 (Slippage)`: Vivid purple/crimson warning (`"Physical mutations & uncontrolled misfires"`).

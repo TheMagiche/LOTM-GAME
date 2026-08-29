@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ChevronDown, Sparkles, X, AlertTriangle } from 'lucide-react';
+import { useEffect, useState, type KeyboardEvent, type MouseEvent } from 'react';
+import { Sparkles, X, AlertTriangle } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildLotmPlayerHudModel } from './lotmPlayerHudModel';
 import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
@@ -7,20 +7,37 @@ import { findLotmAbilityByName, warmupLotmAbilityCompendium } from '../../worldp
 
 const SEQUENCE_LADDER = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] as const;
 
+function isHudChromeTarget(target: EventTarget | null): boolean {
+    return !(target instanceof Element) || !target.closest('button, a, input, textarea, select, [role="button"]');
+}
+
 function Meter({
     label,
     meter,
     tone,
+    value,
+    title,
+    stateClass,
 }: {
     label: string;
     meter: { current: number; max: number; pct: number };
-    tone: 'hp' | 'spi' | 'dig';
+    tone: 'hp' | 'spi' | 'dig' | 'loc';
+    value?: string;
+    title?: string;
+    stateClass?: string;
 }) {
+    const low = tone !== 'loc' && meter.pct <= 30;
+    const classes = [
+        'lotm-player-hud-meter',
+        `is-${tone}`,
+        low ? 'is-low' : '',
+        stateClass ? `is-${stateClass}` : '',
+    ].filter(Boolean).join(' ');
     return (
-        <div className={`lotm-player-hud-meter is-${tone}${meter.pct <= 30 ? ' is-low' : ''}`}>
+        <div className={classes} title={title}>
             <div className="lotm-player-hud-meter-row">
                 <span>{label}</span>
-                <span>{meter.current}/{meter.max}</span>
+                <span>{value ?? `${meter.current}/${meter.max}`}</span>
             </div>
             <div
                 className="lotm-player-hud-meter-track"
@@ -29,6 +46,7 @@ function Meter({
                 aria-valuemin={0}
                 aria-valuemax={meter.max}
                 aria-valuenow={meter.current}
+                aria-valuetext={value}
             >
                 <span style={{ width: `${meter.pct}%` }} />
             </div>
@@ -127,8 +145,30 @@ export function LotmPlayerHud() {
         }
     })();
 
+    const toggleInventory = () => setInventoryOpen(open => !open);
+
+    const onHudClick = (event: MouseEvent<HTMLElement>) => {
+        if (!isHudChromeTarget(event.target)) return;
+        toggleInventory();
+    };
+
+    const onHudKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+        if (event.target !== event.currentTarget) return;
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        toggleInventory();
+    };
+
     return (
-        <aside className={`lotm-player-hud${inventoryOpen ? ' is-expanded' : ''}`} aria-label="Player status">
+        <aside
+            className={`lotm-player-hud${inventoryOpen ? ' is-expanded' : ''}`}
+            aria-label="Player status"
+            aria-expanded={inventoryOpen}
+            aria-controls="lotm-player-hud-inventory"
+            tabIndex={0}
+            onClick={onHudClick}
+            onKeyDown={onHudKeyDown}
+        >
             <div className="lotm-player-hud-main">
                 <div className="lotm-player-hud-identity-cluster">
                     <button
@@ -169,22 +209,18 @@ export function LotmPlayerHud() {
                         meter={{ current: model.digestion, max: 100, pct: model.digestion }}
                         tone="dig"
                     />
-                    <div className={`lotm-player-hud-loc is-${model.locLabel}`} title={locTooltip}>
-                        <span>LoC</span>
-                        <strong>{model.locLabel}</strong>
-                    </div>
-                </div>
-                <div className="lotm-player-hud-actions">
-                    <button
-                        type="button"
-                        className="lotm-player-hud-toggle"
-                        aria-expanded={inventoryOpen}
-                        aria-controls="lotm-player-hud-inventory"
-                        onClick={() => setInventoryOpen(open => !open)}
-                    >
-                        <ChevronDown size={16} />
-                        Inventory
-                    </button>
+                    <Meter
+                        label="Loss of Control"
+                        meter={{
+                            current: model.locStage,
+                            max: 3,
+                            pct: Math.round((model.locStage / 3) * 100),
+                        }}
+                        tone="loc"
+                        value={model.locLabel}
+                        title={locTooltip}
+                        stateClass={model.locLabel}
+                    />
                 </div>
             </div>
 

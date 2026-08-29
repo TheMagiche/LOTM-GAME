@@ -1595,6 +1595,12 @@ html[style*="--lang-font-stack"] {
   border: 1px solid rgba(201, 162, 39, 0.32);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   color: #f3ead8;
+  cursor: pointer;
+}
+
+.lotm-player-hud:hover,
+.lotm-player-hud:focus-visible {
+  border-color: rgba(201, 162, 39, 0.5);
 }
 
 .lotm-player-hud-main {
@@ -1701,8 +1707,8 @@ html[style*="--lang-font-stack"] {
 .lotm-player-hud-meters {
   display: flex;
   gap: 10px;
-  flex: 1 1 220px;
-  min-width: 140px;
+  flex: 1 1 280px;
+  min-width: 180px;
 }
 
 .lotm-player-hud-meter {
@@ -1750,28 +1756,37 @@ html[style*="--lang-font-stack"] {
   background: linear-gradient(90deg, #3d5a2e, #c9a227);
 }
 
-.lotm-player-hud-loc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-  min-width: 64px;
-  font-family: 'Cinzel', serif;
-  font-size: 8px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(232, 224, 208, 0.7);
-}
-
-.lotm-player-hud-loc strong {
-  font-size: 11px;
+.lotm-player-hud-meter.is-loc .lotm-player-hud-meter-row {
   letter-spacing: 0.08em;
-  color: #e8e0d0;
 }
 
-.lotm-player-hud-loc.is-tells strong { color: #d4a017; }
-.lotm-player-hud-loc.is-slippage strong { color: #e07a3d; }
-.lotm-player-hud-loc.is-rampage strong { color: #d4534a; }
+.lotm-player-hud-meter.is-loc .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #4a4552, #8a8494);
+}
+
+.lotm-player-hud-meter.is-loc.is-tells .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #8a6a10, #d4a017);
+}
+
+.lotm-player-hud-meter.is-loc.is-slippage .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #7a2a40, #e07a3d);
+}
+
+.lotm-player-hud-meter.is-loc.is-rampage .lotm-player-hud-meter-track > span {
+  background: linear-gradient(90deg, #5a1216, #d4534a);
+}
+
+.lotm-player-hud-meter.is-loc.is-tells .lotm-player-hud-meter-row span:last-child {
+  color: #d4a017;
+}
+
+.lotm-player-hud-meter.is-loc.is-slippage .lotm-player-hud-meter-row span:last-child {
+  color: #e07a3d;
+}
+
+.lotm-player-hud-meter.is-loc.is-rampage .lotm-player-hud-meter-row span:last-child {
+  color: #d4534a;
+}
 
 .lotm-player-hud-band,
 .lotm-player-hud-acting,
@@ -1849,36 +1864,6 @@ html[style*="--lang-font-stack"] {
 .lotm-player-hud-drink:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-}
-
-.lotm-player-hud-actions {
-  display: flex;
-  flex-shrink: 0;
-  gap: 6px;
-}
-
-.lotm-player-hud-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  height: 28px;
-  padding: 0 8px;
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  background: transparent;
-  color: #e8e0d0;
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.lotm-player-hud-toggle svg {
-  transition: transform 0.18s ease;
-}
-
-.lotm-player-hud.is-expanded .lotm-player-hud-toggle svg {
-  transform: rotate(180deg);
 }
 
 .lotm-player-hud-track {
@@ -2054,10 +2039,6 @@ html[style*="--lang-font-stack"] {
   .lotm-player-hud-meters {
     flex: 1 1 100%;
     order: 3;
-  }
-
-  .lotm-player-hud-actions {
-    margin-left: auto;
   }
 
   .lotm-player-hud-facts {
