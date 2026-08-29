@@ -1,8 +1,8 @@
 import { useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import {
     Archive, BookOpen, Brain, ChevronDown, ChevronRight, Cpu, Database, Dices, FileText,
-    Landmark, LogOut, MapPin, Package, Pin, Scissors, Scroll, ScrollText, Search, Settings,
-    Sparkles, UserCircle, Users, Workflow, Gem, Zap,
+    Landmark, LogOut, MapPin, Package,     Pin, Scissors, Scroll, ScrollText, Search, Settings,
+    Sparkles, Syringe, UserCircle, Users, Workflow, Gem, Zap,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import type { ContextScreenId } from '../store/slices/uiSlice';
@@ -24,6 +24,7 @@ import { exitLotmCampaign } from './lotm/LotmPlayHeader';
 import { TokenGauge } from './TokenGauge';
 import { OneShotInjectorButton } from './OneShotInjectorButton';
 import { AbsoluteCommandButton } from './AbsoluteCommandButton';
+import { ArcInjectorButton } from './ArcInjectorButton';
 import { useChatPersistence } from '../hooks/useChatPersistence';
 import { useCondenser } from './hooks/useCondenser';
 import type { AiTier } from '../types/llm';
@@ -166,9 +167,16 @@ export function ContextNavigationDrawer() {
     const modT = t as unknown as (key: string, vars?: Record<string, string | number>) => string;
 
     const aiTier = useAppStore(s => s.settings?.aiTier ?? 'pro') as AiTier;
+    const uiViewMode = useAppStore(s => s.settings?.uiViewMode ?? 'gm');
 
     const composerModLeaves: NavLeaf[] = composerEntries
-        .filter((entry) => entry.mod !== undefined && !COMPOSER_BUILTIN_ID_SET.has(entry.entryId))
+        .filter((entry) => (
+            entry.mod !== undefined
+            && !COMPOSER_BUILTIN_ID_SET.has(entry.entryId)
+            // Host-owned modal in the Play list — keep the mod's strip entry
+            // but do not duplicate it as a fire-and-forget nav row.
+            && entry.entryId !== 'injectArc'
+        ))
         .map((entry) => ({
             id: entry.qualifiedId,
             label: resolveModText(entry.mod!.id, entry.entry.label, modT) ?? entry.mod!.name,
@@ -203,6 +211,13 @@ export function ContextNavigationDrawer() {
                 badge: armedLoot ? armedLoot.rolls : undefined,
                 active: !!armedLoot,
                 onSelect: () => useAppStore.getState().openLootRollModal(),
+            },
+            {
+                id: 'injectArc',
+                label: 'Inject Arc',
+                icon: Syringe,
+                onSelect: () => undefined,
+                render: () => activeCampaignId ? <ArcInjectorButton layout="nav" /> : null,
             },
             {
                 id: 'oneShot',
@@ -330,6 +345,11 @@ export function ContextNavigationDrawer() {
                     </div>
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
                         {GROUPS.filter((group) => {
+                            if (uiViewMode === 'player') {
+                                if (group.id === 'world' || group.id === 'engine' || group.id === 'mods' || group.id === 'story') {
+                                    return false;
+                                }
+                            }
                             if (group.id === 'mods' && modCount === 0) return false;
                             if (LOTM_EXCLUSIVE_UI && group.id === 'story') return false;
                             return true;
@@ -363,7 +383,12 @@ export function ContextNavigationDrawer() {
                                 </section>
                             );
                         })}
-                        {!LOTM_EXCLUSIVE_UI && (
+                        {uiViewMode === 'player' && (
+                            <div className="my-1 border-t border-border/60 pt-1">
+                                <NavRow leaf={{ id: 'settings', label: 'Settings', icon: Settings, onSelect: () => useAppStore.getState().toggleSettings() }} />
+                            </div>
+                        )}
+                        {!LOTM_EXCLUSIVE_UI && uiViewMode === 'gm' && (
                             <>
                                 <div className="my-2 border-t border-border" />
                                 <NavRow leaf={{ id: 'backups', label: 'Backups', icon: Archive, onSelect: () => useAppStore.getState().toggleBackupModal() }} />

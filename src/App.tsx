@@ -7,6 +7,7 @@ import { ContextNavigationDrawer as ContextDrawer } from './components/ContextNa
 import { ChatArea } from './components/ChatArea';
 import { LotmIllustratedShell } from './components/lotm/LotmIllustratedShell';
 import { LotmGrimoire } from './components/lotm/LotmGrimoire';
+import { LotmPlayerGrimoire } from './components/lotm/LotmPlayerGrimoire';
 import { SettingsModal } from './components/SettingsModal';
 import { ChatRightRail } from './components/ChatRightRail';
 import { WindowManager } from './components/WindowManager';
@@ -234,6 +235,7 @@ export default function App() {
       {/* <MapPanel /> */}
       <SettingsModal />
       {LOTM_EXCLUSIVE_UI && <LotmGrimoire />}
+      {LOTM_EXCLUSIVE_UI && <LotmPlayerGrimoire />}
       <NPCLedgerModal />
       <CharacterLedgerModal />
       <LocationLedgerModal />

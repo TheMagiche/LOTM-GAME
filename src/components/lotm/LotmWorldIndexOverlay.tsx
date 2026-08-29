@@ -69,6 +69,7 @@ export function LotmWorldIndexOverlay() {
             backupModalOpen: false,
             contextScreen: null,
             grimoireOpen: false,
+            playerGrimoireOpen: false,
         });
         overlayRef.current?.focus();
         const previousOverflow = document.body.style.overflow;

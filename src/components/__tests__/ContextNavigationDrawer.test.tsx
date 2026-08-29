@@ -40,6 +40,7 @@ describe('ContextNavigationDrawer', () => {
         expect(screen.getByRole('button', { name: 'Dice' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Loot' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Trim' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Inject Arc' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Inject Event' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Absolute Command' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Archive' })).toBeInTheDocument();
@@ -82,7 +83,7 @@ describe('ContextNavigationDrawer', () => {
         expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
     });
 
-    it('opens Ask GM, Dice, and Inject Event from Play', () => {
+    it('opens Ask GM, Dice, Inject Arc, and Inject Event from Play', () => {
         render(<ContextNavigationDrawer />);
 
         fireEvent.click(screen.getByRole('button', { name: 'Ask GM' }));
@@ -90,6 +91,9 @@ describe('ContextNavigationDrawer', () => {
 
         fireEvent.click(screen.getByRole('button', { name: 'Dice' }));
         expect(useAppStore.getState().diceRollModalOpen).toBe(true);
+
+        fireEvent.click(screen.getByRole('button', { name: 'Inject Arc' }));
+        expect(screen.getByRole('heading', { name: /Inject Arc/i })).toBeInTheDocument();
 
         fireEvent.click(screen.getByRole('button', { name: 'Inject Event' }));
         expect(screen.getByRole('heading', { name: /Inject Event/i })).toBeInTheDocument();
@@ -102,5 +106,26 @@ describe('ContextNavigationDrawer', () => {
         fireEvent.click(screen.getByRole('button', { name: /^Dice/ }));
         expect(useAppStore.getState().armedRoll).toBeNull();
         expect(useAppStore.getState().diceRollModalOpen).toBe(false);
+    });
+
+    it('hides World, Engine, and Mods in Player view while rendering Settings', () => {
+        useAppStore.setState({
+            settings: {
+                ...useAppStore.getState().settings,
+                uiViewMode: 'player',
+            },
+        });
+        render(<ContextNavigationDrawer />);
+
+        expect(screen.queryByRole('button', { name: 'World' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Engine' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Mods' })).toBeNull();
+
+        expect(screen.getByRole('button', { name: 'Play' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Settings' })).toBeInTheDocument();
+
+        fireEvent.click(screen.getByRole('button', { name: 'Settings' }));
+        expect(useAppStore.getState().settingsOpen).toBe(true);
     });
 });

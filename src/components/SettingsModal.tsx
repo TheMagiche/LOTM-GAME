@@ -12,6 +12,8 @@ import { ScreenLightbox } from './ScreenLightbox';
 
 type TabKey = 'providers' | 'presets' | 'global' | 'extensions' | 'advanced' | 'debug';
 
+const PLAYER_TAB_KEYS: readonly TabKey[] = ['providers', 'presets', 'advanced'];
+
 // Label is a translation KEY, resolved at render — a const array evaluated at
 // module load would freeze the language at import time and never update.
 const TABS: { key: TabKey; labelKey: TranslateKey }[] = [
@@ -26,6 +28,8 @@ const TABS: { key: TabKey; labelKey: TranslateKey }[] = [
 export function SettingsModal() {
   const settingsOpen = useAppStore(s => s.settingsOpen);
   const toggleSettings = useAppStore(s => s.toggleSettings);
+  const uiViewMode = useAppStore(s => s.settings?.uiViewMode ?? 'gm');
+  const updateSettings = useAppStore(s => s.updateSettings);
   const [activeTab, setActiveTab] = useState<TabKey>('providers');
   const { t } = useTranslation();
 
@@ -34,6 +38,14 @@ export function SettingsModal() {
   // button would be the ONLY way out of a screen that occupies the whole app.
   // Matches BlockViewModal's handler.
   if (!settingsOpen) return null;
+
+  const visibleTabs = uiViewMode === 'player'
+    ? TABS.filter(tab => PLAYER_TAB_KEYS.includes(tab.key))
+    : TABS;
+
+  const effectiveTab = (uiViewMode === 'player' && !PLAYER_TAB_KEYS.includes(activeTab))
+    ? 'providers'
+    : activeTab;
 
   // The width cap lives on the tab PANELS, never on the shell.
   //
@@ -51,8 +63,37 @@ export function SettingsModal() {
   // screens (a node editor, a canvas) that want every pixel.
   const paneClass = 'w-full mx-auto max-w-[120rem] pt-5';
 
+  const viewModeHeader = (
+    <div className="flex items-center gap-1 bg-void-lighter border border-border/60 rounded p-0.5" role="group" aria-label={t('settings.viewMode.label')}>
+      <button
+        type="button"
+        onClick={() => updateSettings({ uiViewMode: 'player' })}
+        className={`chrome-label px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded transition-colors ${
+          uiViewMode === 'player'
+            ? 'text-terminal bg-terminal/15 border border-terminal/30'
+            : 'text-text-dim hover:text-text-primary border border-transparent'
+        }`}
+        aria-pressed={uiViewMode === 'player'}
+      >
+        {t('settings.viewMode.player')}
+      </button>
+      <button
+        type="button"
+        onClick={() => updateSettings({ uiViewMode: 'gm' })}
+        className={`chrome-label px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded transition-colors ${
+          uiViewMode === 'gm'
+            ? 'text-terminal bg-terminal/15 border border-terminal/30'
+            : 'text-text-dim hover:text-text-primary border border-transparent'
+        }`}
+        aria-pressed={uiViewMode === 'gm'}
+      >
+        {t('settings.viewMode.gm')}
+      </button>
+    </div>
+  );
+
   return (
-    <ScreenLightbox size="full" width="wide" title={t('settings.title')} onClose={toggleSettings}>
+    <ScreenLightbox size="full" width="wide" title={t('settings.title')} onClose={toggleSettings} headerRight={viewModeHeader}>
       {/* Backdrop */}
       {null}
 
@@ -70,12 +111,12 @@ export function SettingsModal() {
 
         {/* Tabs */}
         <div className="flex border-b border-border sticky top-0 bg-void z-10">
-          {TABS.map(({ key, labelKey }) => (
+          {visibleTabs.map(({ key, labelKey }) => (
             <button
               key={key}
               onClick={() => setActiveTab(key)}
               className={`chrome-label flex-1 px-3 py-2 text-[11px] uppercase tracking-wider transition-all border-b-2 -mb-px ${
-                activeTab === key
+                effectiveTab === key
                   ? 'text-terminal border-terminal bg-terminal/5 font-bold'
                   : 'text-text-dim border-transparent hover:text-text-primary'
               }`}
@@ -86,12 +127,18 @@ export function SettingsModal() {
         </div>
 
         {/* Active tab content */}
-        <div className={activeTab !== 'providers' ? 'hidden' : paneClass}><ProvidersTab /></div>
-        <div className={activeTab !== 'presets' ? 'hidden' : paneClass}><PresetsTab /></div>
-        <div className={activeTab !== 'global' ? 'hidden' : paneClass}><GlobalSettingsTab /></div>
-        <div className={activeTab !== 'extensions' ? 'hidden' : 'flex-1 min-h-0 flex flex-col'}><ExtensionsTab /></div>
-        <div className={activeTab !== 'advanced' ? 'hidden' : paneClass}><AdvancedTab /></div>
-        <div className={activeTab !== 'debug' ? 'hidden' : paneClass}><DebugTab /></div>
+        <div className={effectiveTab !== 'providers' ? 'hidden' : paneClass}><ProvidersTab /></div>
+        <div className={effectiveTab !== 'presets' ? 'hidden' : paneClass}><PresetsTab /></div>
+        {uiViewMode === 'gm' && (
+          <>
+            <div className={effectiveTab !== 'global' ? 'hidden' : paneClass}><GlobalSettingsTab /></div>
+            <div className={effectiveTab !== 'extensions' ? 'hidden' : 'flex-1 min-h-0 flex flex-col'}><ExtensionsTab /></div>
+          </>
+        )}
+        <div className={effectiveTab !== 'advanced' ? 'hidden' : paneClass}><AdvancedTab /></div>
+        {uiViewMode === 'gm' && (
+          <div className={effectiveTab !== 'debug' ? 'hidden' : paneClass}><DebugTab /></div>
+        )}
       </div>
     </ScreenLightbox>
   );

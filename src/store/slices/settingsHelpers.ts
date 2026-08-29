@@ -84,6 +84,7 @@ export const defaultSettings: AppSettings = {
     providers: [defaultProvider],
     contextLimit: 4096,
     debugMode: false,
+    uiViewMode: 'gm',
     theme: 'light',
     // Seeded from the browser so a first-run Korean user gets Korean chrome
     // without hunting for the setting. Overridden by any stored value.
@@ -371,6 +372,7 @@ export function migrateSettings(data: Record<string, unknown>): AppSettings {
         providers,
         contextLimit: (raw.contextLimit as number) ?? 4096,
         debugMode: (raw.debugMode as boolean) ?? false,
+        uiViewMode: (raw.uiViewMode === 'player' ? 'player' : 'gm') as 'gm' | 'player',
         theme: (raw.theme as 'light' | 'dark' | 'system') ?? 'light',
         // First run only: seed from the browser. Once a locale is stored — even
         // 'en' — it is an explicit choice and is never auto-changed again.

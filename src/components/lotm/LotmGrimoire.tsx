@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, BookOpen, CircleHelp, MapPin, Search, X } from 'lucide-react';
+import { ArrowLeft, BookOpen, CircleHelp, HelpCircle, MapPin, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
+import { LotmHowToPlayGuide } from './LotmHowToPlayGuide';
 import {
     GRIMOIRE_SECTIONS,
     GRIMOIRE_WORLD_TABS,
@@ -24,7 +25,6 @@ import {
     type GrimoireWorldEntry,
     type GrimoireWorldTabId,
 } from '../../worldpacks/lotmGrimoireCatalog';
-import { getLotmPathway, getLotmSequence, nextLotmSequence } from '../../worldpacks/lotmPathways';
 
 export function LotmGrimoire() {
     const open = useAppStore(s => s.grimoireOpen);
@@ -151,28 +151,40 @@ export function LotmGrimoire() {
                         </button>
                     </div>
                 </header>
-                <ChronicleStrip
-                    onOpenPathway={(id) => {
-                        setSection('pathways');
-                        setSelectedId(id);
-                    }}
-                />
                 <div className="lotm-grimoire-body">
                     <nav className="lotm-grimoire-rail" aria-label="Grimoire sections">
-                        {GRIMOIRE_SECTIONS.map(entry => (
+                        <div className="lotm-grimoire-rail-top">
+                            {GRIMOIRE_SECTIONS.map(entry => (
+                                <button
+                                    key={entry.id}
+                                    type="button"
+                                    className={section === entry.id ? 'is-active' : undefined}
+                                    aria-pressed={section === entry.id}
+                                    onClick={() => {
+                                        setSection(entry.id);
+                                        setSelectedId(null);
+                                    }}
+                                >
+                                    {entry.label}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="lotm-grimoire-rail-bottom">
                             <button
-                                key={entry.id}
                                 type="button"
-                                className={section === entry.id ? 'is-active' : undefined}
-                                aria-pressed={section === entry.id}
+                                className={`lotm-grimoire-rail-guide-btn${section === 'guide' ? ' is-active' : ''}`}
+                                aria-pressed={section === 'guide'}
                                 onClick={() => {
-                                    setSection(entry.id);
+                                    setSection('guide');
                                     setSelectedId(null);
                                 }}
                             >
-                                {entry.label}
+                                <span className="flex items-center gap-1.5">
+                                    <HelpCircle size={13} aria-hidden />
+                                    <span>How to Play</span>
+                                </span>
                             </button>
-                        ))}
+                        </div>
                     </nav>
                     <div className="lotm-grimoire-main">
                         {section === 'volumes' && (
@@ -214,61 +226,12 @@ export function LotmGrimoire() {
                                 onSelect={setSelectedId}
                             />
                         )}
+                        {section === 'guide' && <LotmHowToPlayGuide />}
                     </div>
                 </div>
             </div>
         </div>,
         document.body,
-    );
-}
-
-function ChronicleStrip({ onOpenPathway }: { onOpenPathway: (id: string) => void }) {
-    const campaignId = useAppStore(s => s.activeCampaignId);
-    const playerCharacter = useAppStore(s => s.playerCharacter);
-    const currentPlaceId = useAppStore(s => s.context.currentPlaceId);
-    const locationLedger = useAppStore(s => s.locationLedger);
-    const factionLedger = useAppStore(s => s.factionLedger);
-
-    if (!campaignId) return null;
-
-    const place = currentPlaceId
-        ? locationLedger.find(entry => entry.id === currentPlaceId)
-        : undefined;
-    const factionRaw = (playerCharacter?.faction ?? '').trim();
-    const church = factionRaw
-        ? factionLedger.find(entry => {
-            const hay = `${entry.name} ${entry.aliases ?? ''}`.toLowerCase();
-            return hay.includes(factionRaw.toLowerCase()) || factionRaw.toLowerCase().includes(entry.name.toLowerCase());
-        })
-        : undefined;
-    const pathway = getLotmPathway(playerCharacter?.signatureKit?.pathway);
-    const sequence = playerCharacter?.signatureKit?.sequence;
-    const current = getLotmSequence(pathway, sequence);
-    const next = getLotmSequence(pathway, nextLotmSequence(sequence));
-    const acting = (current?.actingMethod ?? '').trim();
-    const formula = next?.formula?.main.length ? next.formula.main.join('; ') : '';
-
-    return (
-        <aside className="lotm-grimoire-chronicle" aria-label="Your chronicle">
-            <p>
-                <span className="lotm-grimoire-chronicle-kicker">Place</span>
-                <span className="lotm-grimoire-chronicle-value">{place?.name || '—'}</span>
-            </p>
-            <p>
-                <span className="lotm-grimoire-chronicle-kicker">Church</span>
-                <span className="lotm-grimoire-chronicle-value">{church?.name || factionRaw || '—'}</span>
-            </p>
-            {pathway && (
-                <p>
-                    <span className="lotm-grimoire-chronicle-kicker">Your pathway</span>
-                    <button type="button" className="lotm-grimoire-chronicle-value" onClick={() => onOpenPathway(pathway.id)}>
-                        {pathway.name}
-                        {acting ? ` · ${acting}` : ''}
-                    </button>
-                    {formula && <span className="lotm-grimoire-chronicle-value">Next formula: {formula}</span>}
-                </p>
-            )}
-        </aside>
     );
 }
 

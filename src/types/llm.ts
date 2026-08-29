@@ -100,11 +100,14 @@ export type ProviderConfig = {
     modelName: string;
 };
 
+export type UIViewMode = 'gm' | 'player';
+
 export type AppSettings = {
     presets: AIPreset[];
     activePresetId: string;
     contextLimit: number;
     debugMode?: boolean;
+    uiViewMode?: UIViewMode;
     theme?: 'light' | 'dark' | 'system';
     locale?: LocaleCode;             // UI chrome language. Defaults to the browser language on first run, then never auto-changes. Independent of narration language (Phase 3).
     showReasoning?: boolean;

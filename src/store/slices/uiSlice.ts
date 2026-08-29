@@ -8,9 +8,11 @@ import type { OneShotEventId } from '../../services/oneshot/oneShotEvents';
 export type ContextScreenId = 'sys' | 'world' | 'eng' | 'chpt' | 'mem';
 
 export type GrimoireFocus = {
-    section: 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches';
+    section: 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches' | 'guide';
     id?: string | null;
 };
+
+export type PlayerGrimoireSection = 'character' | 'pathway' | 'location' | 'inventory' | 'chronicle' | 'guide';
 
 export type LastLootReceipt = {
     names: string[];
@@ -138,6 +140,13 @@ export type UISlice = {
     closeGrimoire: () => void;
     toggleGrimoire: () => void;
     clearGrimoireFocus: () => void;
+    /** In-game Player Grimoire overlay (Potion, Location shift & map, Read-only Character sheet, Inventory, Chronicle). */
+    playerGrimoireOpen: boolean;
+    playerGrimoireSection: PlayerGrimoireSection;
+    openPlayerGrimoire: (section?: PlayerGrimoireSection) => void;
+    closePlayerGrimoire: () => void;
+    togglePlayerGrimoire: () => void;
+    setPlayerGrimoireSection: (section: PlayerGrimoireSection) => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -245,4 +254,13 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     closeGrimoire: () => set({ grimoireOpen: false, grimoireFocus: null }),
     toggleGrimoire: () => set((s) => ({ grimoireOpen: !s.grimoireOpen, grimoireFocus: s.grimoireOpen ? null : s.grimoireFocus })),
     clearGrimoireFocus: () => set({ grimoireFocus: null }),
+    playerGrimoireOpen: false,
+    playerGrimoireSection: 'character',
+    openPlayerGrimoire: (section) => set((s) => ({
+        playerGrimoireOpen: true,
+        playerGrimoireSection: section ?? s.playerGrimoireSection ?? 'character',
+    })),
+    closePlayerGrimoire: () => set({ playerGrimoireOpen: false }),
+    togglePlayerGrimoire: () => set((s) => ({ playerGrimoireOpen: !s.playerGrimoireOpen })),
+    setPlayerGrimoireSection: (section) => set({ playerGrimoireSection: section }),
 });
