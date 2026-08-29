@@ -760,6 +760,7 @@ function LocationTravelPane({
                 </p>
                 <div className="border border-[#c9a227]/30 rounded-sm overflow-hidden bg-black/60 shadow-xl">
                     <LotmWorldMapView
+                        highlightCoords={activeLocationEntry?.coordinates || activeMapPin?.coordinates}
                         onSelectName={(name) => {
                             setSelectedPlaceIdOrName(name);
                             // Auto scroll to detail if on mobile

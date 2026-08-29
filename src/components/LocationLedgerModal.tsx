@@ -45,6 +45,7 @@ export function LocationLedgerModal() {
 
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [isEditing, setIsEditing] = useState(false);
+    const [isPickingCoords, setIsPickingCoords] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [form, setForm] = useState<Partial<LocationEntry>>({ ...EMPTY_ENTRY });
     // Draft fields kept as comma-separated strings for the chip/field UX
@@ -98,6 +99,7 @@ export function LocationLedgerModal() {
         setNewConnectionBand('local');
         setNewConnectionNote('');
         setIsEditing(false);
+        setIsPickingCoords(false);
     };
 
     const handleStartEditing = () => {
@@ -107,6 +109,7 @@ export function LocationLedgerModal() {
         setForm({ ...latest });
         setFeaturesDraft(latest.features.join(', '));
         setIsEditing(true);
+        setIsPickingCoords(false);
     };
     const handleCreateNew = () => {
         setSelectedId(null);
@@ -116,11 +119,13 @@ export function LocationLedgerModal() {
         setNewConnectionBand('local');
         setNewConnectionNote('');
         setIsEditing(true);
+        setIsPickingCoords(false);
     };
 
     const handleViewMap = () => {
         setSelectedId(null);
         setIsEditing(false);
+        setIsPickingCoords(false);
         setForm({ ...EMPTY_ENTRY });
         setFeaturesDraft('');
         setNewConnectionTo('');
@@ -144,6 +149,7 @@ export function LocationLedgerModal() {
             connections: form.connections ?? [],
             description: (form.description ?? '').trim(),
             status: (form.status ?? '').trim() || undefined,
+            coordinates: form.coordinates,
             firstSeenScene: form.firstSeenScene || String(Date.now()),
             lastSeenScene: form.lastSeenScene || String(Date.now()),
             source: form.source ?? 'manual',
@@ -159,6 +165,7 @@ export function LocationLedgerModal() {
         setSelectedId(payload.id);
         setForm(payload);
         setIsEditing(false);
+        setIsPickingCoords(false);
     };
 
     const handleDelete = (id: string, e: React.MouseEvent) => {
@@ -410,21 +417,30 @@ export function LocationLedgerModal() {
                         <X size={18} />
                     </button>
 
-                    {!selectedId && !isEditing && (
+                    {(!selectedId && !isEditing) || isPickingCoords ? (
                         <div className="flex-1 min-h-0 relative bg-void">
-                            <LotmWorldMapView onSelectName={(name) => {
-                                for (const candidate of mapPinSearchNames(name)) {
-                                    const hit = resolvePlace(candidate, locationLedger);
-                                    if (hit) {
-                                        handleSelect(hit);
-                                        return;
+                            <LotmWorldMapView
+                                onSelectName={(name) => {
+                                    if (isPickingCoords) return;
+                                    for (const candidate of mapPinSearchNames(name)) {
+                                        const hit = resolvePlace(candidate, locationLedger);
+                                        if (hit) {
+                                            handleSelect(hit);
+                                            return;
+                                        }
                                     }
-                                }
-                            }} />
+                                }}
+                                isPicking={isPickingCoords}
+                                pickingLabel={isPickingCoords ? `Click on map to place pin for "${form.name || 'this location'}"` : undefined}
+                                onPickCoordinates={(coords) => {
+                                    setForm(prev => ({ ...prev, coordinates: coords }));
+                                    setIsPickingCoords(false);
+                                }}
+                                onCancelPick={() => setIsPickingCoords(false)}
+                                highlightCoords={form.coordinates}
+                            />
                         </div>
-                    )}
-
-                    {(selectedId || isEditing) && (
+                    ) : (
                         <LocationEditForm
                             form={form}
                             setForm={setForm}
@@ -447,6 +463,8 @@ export function LocationLedgerModal() {
                             onAddConnection={handleAddConnection}
                             onRemoveConnection={handleRemoveConnection}
                             onDelete={handleDelete}
+                            onPickOnMap={() => setIsPickingCoords(true)}
+                            isPickingOnMap={isPickingCoords}
                         />
                     )}
                 </div>

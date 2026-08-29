@@ -110,10 +110,13 @@ describe('LOTM world pack — location ledger seeding', () => {
         expect(locations.map(l => l.name)).toEqual(expect.arrayContaining([
             'Loen Kingdom', 'Backlund', 'Tingen', 'Intis Republic', 'Trier',
             'Feysac Empire', 'Feynapotter Kingdom', 'Rorsted Archipelago',
-            'Bayam', 'Forsaken Land of the Gods',
+            'Bayam', 'Forsaken Land of the Gods', 'City of Silver', 'Sonia Sea',
+            'Pritz Harbor', 'Balam Empire', 'Western Continent', 'Underworld', 'Abyss',
         ]));
         expect(locations.find(l => l.name === 'Backlund')?.broadLocation).toBe('Loen Kingdom');
         expect(locations.find(l => l.name === 'Tingen')?.broadLocation).toBe('Loen Kingdom');
+        expect(locations.find(l => l.name === 'City of Silver')?.broadLocation).toBe('Forsaken Land of the Gods');
+        expect(locations.find(l => l.name === 'Pritz Harbor')?.broadLocation).toBe('Loen Kingdom');
     });
 
     it('resolves ConnectedTo only against places in this file', () => {

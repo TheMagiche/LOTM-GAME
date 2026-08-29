@@ -301,6 +301,36 @@ Mid-sized "City of Universities" on the Dorge River, famous for colleges, publis
 **Features:** [Khoy University, Nighthawk chantry, St. Selena Cathedral, Dorge River docks, modest middle-class districts]
 **ConnectedTo:** [Backlund, Loen Kingdom]
 
+### LOCATION — Pritz Harbor (Loen Kingdom)
+**Type:** Harbor / Naval base
+**Status:** Industrial, heavily fortified
+Loen Kingdom's largest military and commercial port at the mouth of the Tasuo River, serving as the primary naval gateway to the Sonia Sea.
+**Aliases:** [Port Pritz]
+**Features:** [Tasuo River estuary, Royal Navy docks, steam ironclads, passenger liners, Fishermen Association]
+**ConnectedTo:** [Backlund, Sonia Sea]
+
+### LOCATION — Enmat Harbor (Loen Kingdom)
+**Type:** Harbor town
+**Status:** Active, breezy
+A bustling coastal port town in eastern Loen, connecting domestic passenger liners and merchant vessels across the channel.
+**Aliases:** [Port Enmat]
+**Features:** [Passenger docks, fish markets, customs station]
+**ConnectedTo:** [Backlund, Pritz Harbor]
+
+### LOCATION — Conis City (Loen Kingdom)
+**Type:** Industrial city
+**Status:** Productive, smoky
+An inland manufacturing and railway center in southern Loen, known for coal processing, machinery workshops, and dense worker housing.
+**Features:** [Steam foundries, rail junction, worker quarters]
+**ConnectedTo:** [Backlund, Desi Bay]
+
+### LOCATION — Desi Bay (Loen Kingdom)
+**Type:** Coastal bay / Resort region
+**Status:** Sunlit, prosperous
+A scenic southern coastal bay and resort district in Desi County, favored by nobles and vacationers for warm beaches and mild waters.
+**Features:** [Conant City, sandy beaches, luxury villas, citrus groves]
+**ConnectedTo:** [Conis City, Loen Kingdom]
+
 ### LOCATION — Intis Republic (Northern Continent)
 **Type:** Nation — republic
 **Status:** Culturally brilliant, revolutionary
@@ -314,6 +344,13 @@ France-analogue republic of salons, duels, and guillotined kings. Intis leads in
 City of light: boulevards, opera houses, and a bohemian quarter where poets starve beautifully. Beneath the glamour run revolutionary cells, foreign agents, and collectors of the occult who pay cash for curios and ask no questions.
 **ConnectedTo:** [Intis Republic]
 
+### LOCATION — Cordu Village (Intis Republic)
+**Type:** Mountain village
+**Status:** Isolated, ominous
+A secluded village tucked into the Dariège mountains of southern Intis, sustained by pastoral traditions and surrounded by ancient secrets.
+**Features:** [Mountain church, village square, Dariège hills]
+**ConnectedTo:** [Trier, Intis Republic]
+
 ### LOCATION — Feysac Empire (Northern Continent)
 **Type:** Nation — military empire
 **Status:** Powerful, austere, devout
@@ -325,6 +362,90 @@ Continental colossus of disciplined infantry, wolf-culture mythology, and deep r
 **Status:** Pastoral, traditional
 Rural kingdom of farms, forests, and old faith, closely tied to the Earth Mother church. Visitors find muddy roads, hearty food, and superstitions that turn out to be entirely accurate precautions.
 **ConnectedTo:** [Intis Republic]
+
+### LOCATION — Feynapotter City (Feynapotter Kingdom)
+**Type:** Capital city
+**Status:** Verdant, devout
+The sunlit capital of Feynapotter, ringed by fertile farmlands and crowned by the grand cathedral of the Church of the Earth Mother.
+**Features:** [Earth Mother Cathedral, botanical gardens, royal palace]
+**ConnectedTo:** [Feynapotter Kingdom]
+
+### LOCATION — Lenburg (Northern Continent)
+**Type:** Nation — scholastic republic
+**Status:** Scholarly, neutral
+A peaceful buffer nation dedicated to scholarship, home to the global headquarters of the Church of the God of Knowledge and Wisdom.
+**Features:** [Great Archives, scholastic academies, Knowledge Cathedral]
+**ConnectedTo:** [Loen Kingdom, Intis Republic]
+
+### LOCATION — Midseashore (Northern Continent)
+**Type:** Region — coastal territory
+**Status:** Maritime, contested
+A strategic coastal province and sea corridor connecting Loen and neighboring kingdoms along the central gulf coast.
+**Aliases:** [Midseashire]
+**Features:** [Constant City, coastal fisheries, naval watchtowers]
+**ConnectedTo:** [Loen Kingdom, Pritz Harbor]
+
+### LOCATION — Southern Continent (colonial frontier)
+**Type:** Continent
+**Status:** Colonized, resisting
+Land of jungles, savannas, and ancient ruins now carved into colonial holdings. Export: gold, exotic goods, and Beyonder materials harvested from creatures no textbook names. The old kingdoms survive inland, keeping pathways the churches have never catalogued.
+**ConnectedTo:** [Rorsted Archipelago]
+
+### LOCATION — Balam Empire (Southern Continent)
+**Type:** Empire — fragmented realm
+**Status:** Fractured, ancient
+An ancient empire spanning the Southern Continent, rich in Death pathway heritage and now partitioned under colonial exploitation.
+**Features:** [Ancient step pyramids, underworld shrines, Death cult relics]
+**ConnectedTo:** [West Balam, East Balam, Southern Continent]
+
+### LOCATION — West Balam (Balam Empire)
+**Type:** Region — tropical frontier
+**Status:** Unstable, resource-rich
+The western territory of Balam, filled with dense rainforests, mineral reserves, and bitter colonial skirmishes between Intis and Feysac.
+**Features:** [Cookawa City, jungle rivers, rubber plantations]
+**ConnectedTo:** [Balam Empire, Southern Continent]
+
+### LOCATION — East Balam (Balam Empire)
+**Type:** Region — colonial territory
+**Status:** Colonized, rebellious
+The eastern territory of Balam dominated by Loen colonial governance, marked by plantation docks and rising native resistance movements.
+**Features:** [Kolaid City, colonial governor residence, harbor docks]
+**ConnectedTo:** [Balam Empire, Southern Continent]
+
+### LOCATION — Highlands Kingdom (Southern Continent)
+**Type:** Nation — sovereign kingdom
+**Status:** Mountainous, independent
+A resilient sovereign highland state that resisted colonial subjugation through treacherous mountain passes and fierce martial traditions.
+**Features:** [Mountain fortresses, alpine passes, warrior clans]
+**ConnectedTo:** [Southern Continent, Balam Empire]
+
+### LOCATION — Paz Valley (Southern Continent)
+**Type:** Region — secluded valley
+**Status:** Fertile, sacred
+A protected lush river valley in the Southern Continent preserving ancient indigenous customs, herbs, and forgotten deities.
+**Features:** [Terraced agriculture, indigenous shrines, hidden river routes]
+**ConnectedTo:** [Southern Continent, Highlands Kingdom]
+
+### LOCATION — Sonia Sea (Major Ocean)
+**Type:** Ocean
+**Status:** Stormy, pirate-infested
+The vast ocean dividing the Northern and Southern Continents, teeming with pirate armadas, sea beasts, and mysterious islands.
+**Features:** [Rorsted Archipelago, Sonia Island, Gargas Archipelago, trade routes]
+**ConnectedTo:** [Backlund, Bayam, Berserk Sea, Fog Sea]
+
+### LOCATION — Berserk Sea (Southern Ocean)
+**Type:** Ocean
+**Status:** Perilous, tempestuous
+A chaotic expanse of perpetual lightning storms, violent maelstroms, and warped magnetic fields that sever direct sea passage.
+**Features:** [Thunder squalls, chaotic currents, ancient shipwrecks]
+**ConnectedTo:** [Sonia Sea, Southern Continent]
+
+### LOCATION — Fog Sea (Western Ocean)
+**Type:** Ocean
+**Status:** Misty, uncharted
+An endless western ocean shrouded in thick unnatural fog, hosting colonial outposts, isolated primitive islands, and routes toward sealed lands.
+**Features:** [Primitive Island, perpetual fog banks, Intis naval routes]
+**ConnectedTo:** [Intis Republic, Sonia Sea]
 
 ### LOCATION — Rorsted Archipelago (Sonia Sea)
 **Type:** Island chain
@@ -339,11 +460,62 @@ Scattered islands between continents: pirate havens, colonial ports, and free to
 The archipelago's beating heart: a harbor of mixed bloods and tongues, fish markets, adventurer bars, and back-room brokers selling maps to wrecks that shouldn't exist. Every third sailor swears an oath to the Storm; every fourth breaks it.
 **ConnectedTo:** [Rorsted Archipelago, Southern Continent]
 
-### LOCATION — Southern Continent (colonial frontier)
-**Type:** Continent
-**Status:** Colonized, resisting
-Land of jungles, savannas, and ancient ruins now carved into colonial holdings. Export: gold, exotic goods, and Beyonder materials harvested from creatures no textbook names. The old kingdoms survive inland, keeping pathways the churches have never catalogued.
-**ConnectedTo:** [Rorsted Archipelago]
+### LOCATION — Sonia Island (Sonia Sea)
+**Type:** Island
+**Status:** Strategic, fortified
+A massive island in the northern Sonia Sea claimed by Loen, prized for naval dominance, rich timber forests, and silver mines.
+**Features:** [Sonia City, naval garrison, coastal pine forests]
+**ConnectedTo:** [Sonia Sea, Sonia City]
+
+### LOCATION — Sonia City (Sonia Island)
+**Type:** Port city
+**Status:** Fortified, orderly
+The fortified administrative and naval capital of Sonia Island, securing Northern Continent shipping lanes against pirate fleets.
+**Features:** [Naval command center, deep-water anchorage, governor mansion]
+**ConnectedTo:** [Sonia Island, Sonia Sea]
+
+### LOCATION — Gargas Archipelago (Sonia Sea)
+**Type:** Island chain
+**Status:** Remote, maritime
+A cluster of eastern islands famous for deep-sea whaling, monster hunting, and native folk customs outside central church governance.
+**Features:** [Nas, whaling stations, monster processing yards]
+**ConnectedTo:** [Sonia Sea, Nas]
+
+### LOCATION — Nas (Gargas Archipelago)
+**Type:** Harbor city
+**Status:** Rough, industrious
+The bustling principal harbor of the Gargas Archipelago, filled with whalers, monster butchers, and dealers in maritime occult curios.
+**Features:** [Whaling docks, oil refineries, seafarer taverns]
+**ConnectedTo:** [Gargas Archipelago, Sonia Sea]
+
+### LOCATION — Oravi Island (Sonia Sea)
+**Type:** Island
+**Status:** Lawless, bustling
+A key mid-ocean provisioning stop for merchant and pirate vessels alike, known for lively taverns and black-market deals.
+**Features:** [Sweet Lemon Bar, supply docks, pirate exchange]
+**ConnectedTo:** [Sonia Sea, Bayam]
+
+### LOCATION — Damir Harbor (Sonia Sea)
+**Type:** Harbor town
+**Status:** Welcoming, tranquil
+A scenic island harbor town renowned for cured hams, safe anchorage, and passenger steamers running the standard ocean line.
+**Features:** [Sea Wall Avenue, cured ham smokehouses, lighthouse]
+**ConnectedTo:** [Sonia Sea, Bansy Harbor]
+
+### LOCATION — Bansy Harbor (Sonia Sea)
+**Type:** Harbor town
+**Status:** Ominous, ancient
+An eerie historic port steeped in ancient sacrificial customs and lingering ties to the bloodline of the Red Angel Medici.
+**Features:** [Telegraph office, ancient stone pier, green-roofed church]
+**ConnectedTo:** [Sonia Sea, Damir Harbor]
+
+### LOCATION — Toskar (Sonia Sea)
+**Type:** Harbor town
+**Status:** Coastal, quiet
+A tranquil southern island harbor serving as a vital coal refueling and freshwater restocking station for long-voyage liners.
+**Aliases:** [Toskar Harbor]
+**Features:** [Coal coaling jetty, freshwater cisterns, sailor lodge]
+**ConnectedTo:** [Sonia Sea, Bayam]
 
 ### LOCATION — Forsaken Land of the Gods (Eastern Continent)
 **Type:** Forbidden region
@@ -352,11 +524,79 @@ A continent abandoned by the gods after an ancient catastrophe: perpetual night,
 **Features:** [City of Silver, eternal darkness, fallen angel relics]
 **ConnectedTo:** [City of Silver]
 
+### LOCATION — City of Silver (Forsaken Land of the Gods)
+**Type:** Fortified city
+**Status:** Besieged, enduring
+An ancient sanctuary of giant-descendants enduring perpetual darkness, fighting monstrous abominations with lightning and devotion.
+**Features:** [Twin Towers, Round Table Council hall, training grounds, lightning spires]
+**ConnectedTo:** [Forsaken Land of the Gods, Afternoon Town]
+
+### LOCATION — Moon City (Forsaken Land of the Gods)
+**Type:** Isolated settlement
+**Status:** Mutated, desperate
+A severely mutated settlement clinging to survival in the dark wasteland, revering the Crimson Moon while resisting complete madness.
+**Features:** [Moon altar, mutated shelters, gray fog borders]
+**ConnectedTo:** [Forsaken Land of the Gods]
+
+### LOCATION — Afternoon Town (Forsaken Land of the Gods)
+**Type:** Ruined town
+**Status:** Haunted, distorted
+A desolate ruined town where daylight forever hangs frozen in perpetual dusk, filled with looping shadows and terrifying remnant spirits.
+**Features:** [Sunken temple, temporal anomalies, remnant shadows]
+**ConnectedTo:** [City of Silver, Giant King's Court]
+
+### LOCATION — Giant King's Court (Forsaken Land of the Gods)
+**Type:** Mythical landmark / Divine palace
+**Status:** Ancient, majestic
+The monumental mountain palace of the Second Epoch Giant King Aurmir, towering in petrified majesty at the eastern edge of the darkness.
+**Features:** [Sunken giant pillars, Twilight Palace, divine gates]
+**ConnectedTo:** [Afternoon Town, Forsaken Land of the Gods]
+
+### LOCATION — Western Continent (Sealed Realm)
+**Type:** Continent — sealed realm
+**Status:** Sealed, inaccessible
+A mythical land sealed behind ancient divine barriers where Beyonder progression follows Daoist cultivation traditions.
+**Aliases:** [Eastern Continent beyond the Fog]
+**Features:** [Daoist cultivation sects, sealed borders, ancient arrays]
+**ConnectedTo:** [Fog Sea]
+
 ### LOCATION — Spirit World (overlay dimension)
 **Type:** Parallel realm
 **Status:** Alien, layered
 A gray-blue expanse completely overlapping reality, inhabited by spirits of varying sanity and appetite. Rituals reach through it; divinations listen to it; travelers without protection are lost in it. Time and distance misbehave.
 **ConnectedTo:** [Astral World]
+
+### LOCATION — Underworld (Spirit World)
+**Type:** Parallel realm — death domain
+**Status:** Ancient, somber, quiet
+A subterranean realm established within the Spirit World by ancient death deities, housing river tributaries of the dead and lingering souls.
+**Aliases:** [Netherworld]
+**Features:** [River of the Dead, wandering spirits, Death pathway remnants]
+**ConnectedTo:** [Spirit World]
+
+### LOCATION — Mind World (Spirit World)
+**Type:** Parallel realm — psychic dimension
+**Status:** Shifting, surreal
+A world formed by the sky of spirituality, the sea of collective subconsciousness, and individual islands of consciousness.
+**Aliases:** [Sea of Collective Subconscious]
+**Features:** [Sea of Subconsciousness, Island of Consciousness, Dragon of Imagination ruins]
+**ConnectedTo:** [Spirit World]
+
+### LOCATION — Mirror World (Spirit World)
+**Type:** Alternate dimension — spatial reflection
+**Status:** Fragmented, labyrinthine
+An amalgamation of spatial doorways connected through reflective surfaces and glass, allowing instantaneous transit across distant realms.
+**Aliases:** [Mirror Dimension]
+**Features:** [Mirror conduits, spatial labyrinths, Witch and Door pathway passages]
+**ConnectedTo:** [Spirit World]
+
+### LOCATION — Abyss (Deep Realm)
+**Type:** Corrupted realm — subterranean void
+**Status:** Corrupting, hazardous
+A primordial subterranean chasm severed from the mortal plane, endlessly radiating absolute corruption and the birthplace of Devils.
+**Aliases:** [The Dark Abyss]
+**Features:** [Corrupted magma, Devil pathway abominations, abyssal taint]
+**ConnectedTo:** [Southern Continent]
 
 ### LOCATION — Astral World (highest plane)
 **Type:** Parallel realm

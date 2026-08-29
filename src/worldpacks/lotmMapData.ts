@@ -21,15 +21,7 @@ export type LotmMapPin = {
     details?: string;
 };
 
-export type LotmMapPath = {
-    id: string;
-    name: string;
-    color?: string;
-    dashArray?: string;
-    coordinates: [number, number][];
-};
-
-export type LotmMapLayerKey = 'kingdoms' | 'cities' | 'seas' | 'paths';
+export type LotmMapLayerKey = 'kingdoms' | 'cities' | 'seas';
 
 type LoreItem = { name: string; type?: string; description?: string };
 type RegionNode = {
@@ -56,6 +48,13 @@ export const LOTM_REGIONS: Record<string, RegionNode> = {
             region_coordinates: [-1000, 3300],
             marked_items: [
                 { name: 'Trier', type: 'City', coordinates: [-1000, 3300] },
+                { name: 'Cordu Village', type: 'Village', coordinates: [-850, 3100] },
+            ],
+        },
+        'Feysac Empire': {
+            region_coordinates: [-650, 3700],
+            marked_items: [
+                { name: 'St. Millom', type: 'City', coordinates: [-650, 3700] },
             ],
         },
         'Feynapotter Kingdom': {
@@ -154,6 +153,9 @@ const loreAliases: Record<string, string> = {
     'Forsaken Land of the Gods': 'Eastern Continent (Forsaken Land of the Gods)',
     'Tingen City': 'Tingen',
     'City of Generosity, Bayam': 'Bayam',
+    'Port Pritz': 'Pritz Harbor',
+    'Port Enmat': 'Enmat Harbor',
+    'Midseashire': 'Midseashore',
 };
 
 function loreFor(name: string): LoreItem | undefined {
@@ -168,6 +170,8 @@ export function mapPinSearchNames(name: string): string[] {
     if (withoutCity && withoutCity !== name) names.push(withoutCity);
     const beforeComma = name.split(',')[0]?.trim();
     if (beforeComma && beforeComma !== name) names.push(beforeComma);
+    const afterComma = name.split(',')[1]?.trim();
+    if (afterComma && afterComma !== name) names.push(afterComma);
     return [...new Set(names)];
 }
 
@@ -197,6 +201,7 @@ const MARKED_ITEM_TYPES: Record<string, LotmMapPinType> = {
     'City/Harbor': 'harbor',
     Landmark: 'landmark',
     Region: 'region',
+    Village: 'village',
 };
 
 function slugify(name: string): string {
@@ -276,18 +281,16 @@ const SEA_PINS: LotmMapPin[] = [
 
 export const INITIAL_LOCATIONS: LotmMapPin[] = [...buildLocationPins(LOTM_REGIONS), ...SEA_PINS];
 
-export const EXPLORATION_PATHS: LotmMapPath[] = [
-    {
-        id: 'klein-journey',
-        name: 'Exploration Path (Backlund → Southern Seas → Forsaken Land)',
-        color: '#38bdf8',
-        dashArray: '5, 10',
-        coordinates: [
-            [-1100, 3900],
-            [-1780, 3480],
-            [-2200, 4100],
-            [-1600, 4500],
-            [-1500, 6500],
-        ],
-    },
-];
+/**
+ * Serializes map pins into a formatted JSON string for download or clipboard copy.
+ */
+export function exportPinsToJson(pins: LotmMapPin[]): string {
+    return JSON.stringify(pins, null, 2);
+}
+
+/**
+ * Formats map pins into TypeScript code suitable for worldpack files.
+ */
+export function exportPinsToTypeScript(pins: LotmMapPin[]): string {
+    return `// Exported LOTM Map Pins (${pins.length} locations)\nexport const EXPORTED_MAP_PINS: LotmMapPin[] = ${JSON.stringify(pins, null, 4)};\n`;
+}
