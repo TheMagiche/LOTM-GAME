@@ -1,14 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildLotmPlayerHudModel } from './lotmPlayerHudModel';
-import { commitLotmPotionDrink } from './lotmPotionDrink';
 import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
-import {
-    findLotmAbilityByName,
-    loadLotmAbilityCompendium,
-    type LotmCompendiumAbility,
-} from '../../worldpacks/lotmAbilityCompendium';
 
 const SEQUENCE_LADDER = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] as const;
 
@@ -50,50 +44,12 @@ function Fact({ label, value }: { label: string; value: string }) {
     );
 }
 
-function AbilityRow({
-    name,
-    pathwayId,
-    sequence,
-}: {
-    name: string;
-    pathwayId: string;
-    sequence: number | undefined;
-}) {
-    const [open, setOpen] = useState(false);
-    const [detail, setDetail] = useState<LotmCompendiumAbility | null>(null);
-
-    useEffect(() => {
-        if (!open) return undefined;
-        let cancelled = false;
-        void loadLotmAbilityCompendium().then(() => {
-            if (cancelled) return;
-            setDetail(findLotmAbilityByName(name, pathwayId, sequence) ?? null);
-        });
-        return () => { cancelled = true; };
-    }, [open, name, pathwayId, sequence]);
-
-    const extra = detail
-        ? [detail.costs[0], detail.limitations[0]].filter(Boolean).join(' — ')
-        : '';
-
-    return (
-        <li>
-            <button
-                type="button"
-                className="lotm-player-hud-ability-btn"
-                aria-expanded={open}
-                onClick={() => setOpen(current => !current)}
-            >
-                {name}
-            </button>
-            {open && (
-                <p className="lotm-player-hud-ability-detail">
-                    {detail?.description || 'No catalog entry loaded yet.'}
-                    {extra ? ` [${extra}]` : ''}
-                </p>
-            )}
-        </li>
-    );
+function hasVisibleBounty(value: string): boolean {
+    const trimmed = value.trim();
+    if (!trimmed || trimmed === '—') return false;
+    if (/^0(\s+pounds?)?$/i.test(trimmed)) return false;
+    if (/—\s*0\s+pounds?$/i.test(trimmed)) return false;
+    return true;
 }
 
 export function LotmPlayerHud() {
@@ -130,6 +86,7 @@ export function LotmPlayerHud() {
     if (!model.present) return null;
 
     const subtitle = [model.pathwayName, model.sequenceLabel].filter(Boolean).join(' · ');
+    const showBounty = hasVisibleBounty(model.bounty);
 
     const openSheet = () => {
         if (!pcPanelOpen) togglePCPanel();
@@ -209,9 +166,9 @@ export function LotmPlayerHud() {
                     {model.sequenceBandLine}
                 </p>
             )}
-            {model.actingMethod && (
-                <p className="lotm-player-hud-acting" title={model.actingMethod}>
-                    {model.actingMethod}
+            {model.abilities.length > 0 && (
+                <p className="lotm-player-hud-ability-preview" aria-label="Sequence abilities" title={model.abilities.join(' · ')}>
+                    {model.abilities.join(' · ')}
                 </p>
             )}
             {lastLootReceipt && lastLootReceipt.names.length > 0 && (
@@ -238,21 +195,12 @@ export function LotmPlayerHud() {
                 </ol>
             )}
 
-            {!inventoryOpen && model.abilities.length > 0 && (
-                <p className="lotm-player-hud-ability-preview">
-                    {model.abilities.slice(0, 4).join(' · ')}
-                    {model.abilities.length > 4 ? ` · +${model.abilities.length - 4}` : ''}
-                </p>
-            )}
-
             {inventoryOpen && (
                 <div id="lotm-player-hud-inventory" className="lotm-player-hud-details">
                     <dl className="lotm-player-hud-facts">
                         <Fact label="Location" value={model.location} />
-                        <Fact label="Currency" value={model.currency} />
-                        <Fact label="Bounty" value={model.bounty} />
+                        {showBounty && <Fact label="Bounty" value={model.bounty} />}
                     </dl>
-                    {model.formula && <Fact label="Formula" value={model.formula} />}
                     {model.stats.length > 0 && (
                         <dl className="lotm-player-hud-stats">
                             {model.stats.map(stat => (
@@ -280,43 +228,6 @@ export function LotmPlayerHud() {
                             <p className="lotm-player-hud-empty">No items recorded yet.</p>
                         )}
                     </div>
-                    {model.abilities.length > 0 && (
-                        <div>
-                            <p className="lotm-player-hud-section">Sequence abilities</p>
-                            <ul className="lotm-player-hud-abilities">
-                                {model.abilities.map(ability => (
-                                    <AbilityRow
-                                        key={ability}
-                                        name={ability}
-                                        pathwayId={model.pathwayId}
-                                        sequence={model.sequenceNumber}
-                                    />
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    {model.next && (
-                        <div className="lotm-player-hud-next">
-                            <p className="lotm-player-hud-section">Next · {model.next.sequenceLabel}</p>
-                            <div className="lotm-player-hud-potions">
-                                {model.potionSrc && <img src={model.potionSrc} alt="Current potion" />}
-                                {model.next.potionSrc && <img src={model.next.potionSrc} alt={`Potion for ${model.next.sequenceLabel}`} />}
-                            </div>
-                            {model.next.formula && <p>{model.next.formula}</p>}
-                            {model.next.abilities.length > 0 && (
-                                <p>{model.next.abilities.join(' · ')}</p>
-                            )}
-                            <button
-                                type="button"
-                                className="lotm-player-hud-drink"
-                                disabled={!model.canDrink}
-                                title={model.canDrink ? `Drink the ${model.next.sequenceLabel} potion` : 'Digestion must reach 100% before drinking the next potion'}
-                                onClick={() => commitLotmPotionDrink()}
-                            >
-                                Drink next potion
-                            </button>
-                        </div>
-                    )}
                 </div>
             )}
         </aside>

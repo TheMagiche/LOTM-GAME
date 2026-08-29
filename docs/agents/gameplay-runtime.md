@@ -97,6 +97,7 @@ When `attachLotmVisuals` is true:
 - Geography JSON → location ledger ([`lotmGeography.ts`](../../src/worldpacks/lotmGeography.ts)).
 - Item catalog from `gamedata/assets/data/items/` lists ([`lotmItemCatalog.ts`](../../src/worldpacks/lotmItemCatalog.ts)).
 - Chosen PC `signatureKit` (pathway + sequence + abilities), purse, `pcMeta.digestion = 0`, `lossOfControl = 0`.
+- First composer prompt from the PC background ([`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts)); interview starter is replaced so the GM begins the scene.
 - `diceSystem = undefined` (3-band fairness pool).
 - Ability-compendium warmup (lazy 2.4MB JSON).
 
@@ -121,11 +122,12 @@ The GM must not invent a purse total, a dice band, or a Standing number that con
 | Fact | Player UI today | GM prompt |
 |------|-----------------|-----------|
 | Pathway, Sequence ladder, Spirit | HUD always | Profile minify `Seq` / `SPI` |
-| Digestion %, purse, bounty | HUD **expanded inventory only** | `[BEYONDER]`, `CR:`, `BOUNTY:` |
+| Digestion %, bounty | HUD **expanded inventory**; bounty hidden when none/zero | `[BEYONDER]`, `BOUNTY:` |
+| Purse | HUD **Carried** coin rows | `CR:` |
 | Loss of Control | Hidden | `[BEYONDER]` |
 | Sequence band (Adv/Normal/Disadv) | Hidden | `[SEQUENCE AS TIER]` + collapsed pool |
-| Acting Method, next formula | Stats “To advance”; not HUD collapsed | `[BEYONDER]` |
-| Ability costs / descriptions | Ability **names** on HUD | `[BEYONDER ABILITIES]` |
+| Acting Method, next formula | Stats “To advance”; not HUD | `[BEYONDER]` |
+| Ability names | HUD ability line | `[BEYONDER ABILITIES]` |
 | Lore RAG hits | Indexing overlay only | Retrieved chunks in world block |
 | Standing | Record tab, non-zero `pcRelation` | Band words on `PLAY AS:` |
 
@@ -140,6 +142,7 @@ Surfacing the hidden column is UI work. Do not move Sequence math or Standing in
 | [`lotmFlags.ts`](../../src/services/lotm/lotmFlags.ts) | Exclusive-UI gate |
 | [`lotmSkin.ts`](../../src/services/lotm/lotmSkin.ts) | `isLotmCampaign` |
 | [`createLotmCampaign.ts`](../../src/services/lotm/createLotmCampaign.ts) | New chronicle |
+| [`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts) | First composer prompt + skip-interview starter |
 | [`campaignInit.ts`](../../src/services/campaignInit.ts) | Bootstrap ledgers, loot, Tingen, dice |
 | [`campaignHydrator.ts`](../../src/store/campaignHydrator.ts) | Reload; LOTM merge gated |
 | [`turnOrchestrator.ts`](../../src/services/turn/turnOrchestrator.ts) | `runTurn` |

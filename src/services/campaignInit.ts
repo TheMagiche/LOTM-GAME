@@ -31,6 +31,7 @@ import { attachLotmPortraitsToNpcs, findTingenLocationId } from './lotm/lotmVisu
 import { attachLotmPathwaysToNpcs } from '../worldpacks/lotmPathways';
 import { characterIdentityFromPlayerCharacter, characterProfileFromPlayerCharacter } from './character/profileFromPc';
 import { seedInventoryIfEmpty } from '../worldpacks/lotmPurse';
+import { LOTM_PREBUILT_OPENING_STARTER } from './lotm/lotmOpeningPrompt';
 
 
 export const DEFAULT_CONTEXT = {
@@ -169,6 +170,10 @@ export async function initializeCampaignState(params: {
         if (lootTree) ctx.lootTree = lootTree;
         if (starterText) {
             ctx.starter = starterText;
+            ctx.starterActive = true;
+        }
+        if (attachLotmVisuals && playerCharacter) {
+            ctx.starter = LOTM_PREBUILT_OPENING_STARTER;
             ctx.starterActive = true;
         }
         if (playerCharacter) {

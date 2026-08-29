@@ -26,6 +26,7 @@ afterEach(() => {
     useAppStore.setState({
         playerCharacter: null,
         characterProfileData: DEFAULT_CHARACTER_PROFILE,
+        inventoryItems: [],
         pcPanelOpen: false,
         grimoireOpen: false,
         grimoireFocus: null,
@@ -37,6 +38,7 @@ describe('LotmPlayerHud', () => {
         useAppStore.setState({
         playerCharacter: null,
         characterProfileData: DEFAULT_CHARACTER_PROFILE,
+        inventoryItems: [],
         pcPanelOpen: false,
         grimoireOpen: false,
         grimoireFocus: null,
@@ -48,7 +50,7 @@ describe('LotmPlayerHud', () => {
         expect(container).toBeEmptyDOMElement();
     });
 
-    it('shows name, sequence, emblem, Spirit, LoC, digestion, and abilities on the play HUD', () => {
+    it('shows name, sequence, emblem, Spirit, LoC, and digestion on the play HUD', () => {
         seedClara();
         render(<LotmPlayerHud />);
 
@@ -68,26 +70,79 @@ describe('LotmPlayerHud', () => {
         expect(screen.getByText('stable')).toBeInTheDocument();
         expect(screen.getByLabelText('Sequence band')).toHaveTextContent(/Advantage/);
         expect(screen.getByLabelText(/Sequence ladder/i).querySelector('li.is-current')).toHaveTextContent('9');
-        expect(screen.getByText(/Spirit Vision/)).toBeInTheDocument();
+        expect(screen.getByLabelText('Sequence abilities')).toHaveTextContent(/Spirit Vision/);
+        expect(screen.queryByText(/Revere fate/i)).not.toBeInTheDocument();
     });
 
-    it('expands inventory facts, carried items, and the next Sequence', async () => {
+    it('expands location and carried items including currency, hiding an empty bounty', async () => {
         const user = userEvent.setup();
         seedClara();
+        useAppStore.setState({
+            inventoryItems: [
+                {
+                    id: 'c1',
+                    name: 'soli',
+                    qty: 4,
+                    category: 'currency',
+                    keywords: [],
+                    equipped: false,
+                    lastUsedScene: '',
+                    importance: 1,
+                    notes: '',
+                },
+                {
+                    id: 'k1',
+                    name: "Grandfather's leather casebook",
+                    qty: 1,
+                    category: 'misc',
+                    keywords: [],
+                    equipped: false,
+                    lastUsedScene: '',
+                    importance: 2,
+                    notes: '',
+                },
+            ],
+        });
         render(<LotmPlayerHud />);
 
         await user.click(screen.getByRole('button', { name: /inventory/i }));
         expect(screen.getByText('Location')).toBeInTheDocument();
         expect(screen.getByText('Tingen')).toBeInTheDocument();
+        expect(screen.getByText('soli')).toBeInTheDocument();
         expect(screen.getByText('Currency')).toBeInTheDocument();
-        expect(screen.getAllByText('—').length).toBeGreaterThanOrEqual(1);
-        expect(screen.getByText('Bounty')).toBeInTheDocument();
+        expect(screen.queryByText('Bounty')).not.toBeInTheDocument();
         expect(screen.getByText('Physique')).toBeInTheDocument();
         expect(screen.getByText(/Grandfather's leather casebook/)).toBeInTheDocument();
-        expect(screen.getByText('Sequence abilities')).toBeInTheDocument();
-        expect(screen.getByText(/Sequence 8 · Clown/)).toBeInTheDocument();
+        expect(screen.getByLabelText('Sequence abilities')).toHaveTextContent(/Spirit Vision/);
+        expect(screen.queryByText(/Sequence 8 · Clown/)).not.toBeInTheDocument();
+        expect(screen.queryByAltText(/potion/i)).not.toBeInTheDocument();
         expect(screen.getByRole('button', { name: /inventory/i })).toHaveAttribute('aria-expanded', 'true');
-        expect(screen.getByRole('button', { name: /Drink next potion/i })).toBeDisabled();
+        expect(screen.queryByRole('button', { name: /Drink next potion/i })).not.toBeInTheDocument();
+    });
+
+    it('shows bounty only when a wanted price is posted', async () => {
+        const user = userEvent.setup();
+        const { profile } = seedClara();
+        useAppStore.setState({
+            characterProfileData: { ...profile, bounty: 'Church of the Evernight — 30 pounds' },
+        });
+        render(<LotmPlayerHud />);
+
+        await user.click(screen.getByRole('button', { name: /inventory/i }));
+        expect(screen.getByText('Bounty')).toBeInTheDocument();
+        expect(screen.getByText('Church of the Evernight — 30 pounds')).toBeInTheDocument();
+    });
+
+    it('hides bounty when the posted amount is zero', async () => {
+        const user = userEvent.setup();
+        const { profile } = seedClara();
+        useAppStore.setState({
+            characterProfileData: { ...profile, bounty: 'Church of the Evernight — 0 pounds' },
+        });
+        render(<LotmPlayerHud />);
+
+        await user.click(screen.getByRole('button', { name: /inventory/i }));
+        expect(screen.queryByText('Bounty')).not.toBeInTheDocument();
     });
 
     it('opens the character sheet from the name and the Grimoire from the emblem', async () => {
