@@ -138,6 +138,30 @@ describe('LotmGrimoire overlay', () => {
         render(<LotmGrimoire />);
         expect(screen.getByRole('heading', { name: /Fool Pathway/i, level: 3 })).toBeInTheDocument();
     });
+
+    it('navigates to How to Play guide from the bottom rail button and filters categories', () => {
+        useAppStore.getState().openGrimoire();
+        render(<LotmGrimoire />);
+
+        const guideBtn = screen.getByRole('button', { name: /How to Play/i });
+        expect(guideBtn).toBeInTheDocument();
+        fireEvent.click(guideBtn);
+
+        expect(screen.getByRole('heading', { name: /How to Play Lord of the Mysteries/i })).toBeInTheDocument();
+        expect(screen.getByText(/Spiritual Actions & Dice System \(Dice Me\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Mystical Harvest & Loot Drops \(Roll Loot\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Background World Arcs \(Inject Arc\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/One-Shot Scene Directives \(Inject Event\)/i)).toBeInTheDocument();
+
+        // Switch category filter to Spiritual Dice
+        fireEvent.click(screen.getByRole('tab', { name: /Spiritual Dice/i }));
+        expect(screen.getByText(/Spiritual Actions & Dice System \(Dice Me\)/i)).toBeInTheDocument();
+        expect(screen.queryByText(/Mystical Harvest & Loot Drops \(Roll Loot\)/i)).toBeNull();
+
+        // Expand a guide section to verify detailed instructions
+        fireEvent.click(screen.getByText(/Spiritual Actions & Dice System \(Dice Me\)/i));
+        expect(screen.getByText(/Sequence Advantage & Disadvantage/i)).toBeInTheDocument();
+    });
 });
 
 describe('LotmPlayHeader Grimoire action', () => {

@@ -9,7 +9,7 @@
 import { lotmAssetUrl } from '../services/lotm/lotmAssetUrl';
 import { LOTM_CHURCH_EMBLEMS } from './lotmVisualManifest';
 
-export type GrimoireSectionId = 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches';
+export type GrimoireSectionId = 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches' | 'guide';
 
 export type GrimoireWorldTabId = 'geography' | 'languages' | 'creatures' | 'food' | 'currency';
 

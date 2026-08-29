@@ -8,11 +8,11 @@ import type { OneShotEventId } from '../../services/oneshot/oneShotEvents';
 export type ContextScreenId = 'sys' | 'world' | 'eng' | 'chpt' | 'mem';
 
 export type GrimoireFocus = {
-    section: 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches';
+    section: 'volumes' | 'epochs' | 'pathways' | 'world' | 'churches' | 'guide';
     id?: string | null;
 };
 
-export type PlayerGrimoireSection = 'character' | 'pathway' | 'location' | 'inventory' | 'chronicle';
+export type PlayerGrimoireSection = 'character' | 'pathway' | 'location' | 'inventory' | 'chronicle' | 'guide';
 
 export type LastLootReceipt = {
     names: string[];

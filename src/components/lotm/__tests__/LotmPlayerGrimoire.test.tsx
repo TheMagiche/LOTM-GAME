@@ -316,4 +316,26 @@ describe('LotmPlayerGrimoire component', () => {
         fireEvent.keyDown(document, { key: 'Escape' });
         expect(useAppStore.getState().playerGrimoireOpen).toBe(false);
     });
+
+    it('switches to How to Play guide from bottom rail button and displays guide content', () => {
+        useAppStore.getState().openPlayerGrimoire();
+        render(<LotmPlayerGrimoire />);
+
+        const guideBtn = screen.getByRole('button', { name: /How to Play/i });
+        expect(guideBtn).toBeInTheDocument();
+        fireEvent.click(guideBtn);
+
+        expect(screen.getByRole('heading', { name: /How to Play Lord of the Mysteries/i })).toBeInTheDocument();
+        expect(screen.getByText(/Core Turn Loop & The Acting Method/i)).toBeInTheDocument();
+        expect(screen.getByText(/Spiritual Actions & Dice System \(Dice Me\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Mystical Harvest & Loot Drops \(Roll Loot\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Background World Arcs \(Inject Arc\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/One-Shot Scene Directives \(Inject Event\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Director Tools, World Map & Travel/i)).toBeInTheDocument();
+
+        // Expand Core Loop card
+        fireEvent.click(screen.getByText(/Core Turn Loop & The Acting Method/i));
+        expect(screen.getByText(/Potion Digestion \(0% to 100%\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Loss of Control \(LOC\) Monitoring/i)).toBeInTheDocument();
+    });
 });

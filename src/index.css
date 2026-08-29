@@ -2410,11 +2410,44 @@ html[style*="--lang-font-stack"] {
 .lotm-grimoire-rail {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  width: 148px;
+  width: 154px;
   flex-shrink: 0;
   padding: 12px 10px;
   border-right: 1px solid rgba(201, 162, 39, 0.18);
+}
+
+.lotm-grimoire-rail-top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 auto;
+}
+
+.lotm-grimoire-rail-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(201, 162, 39, 0.18);
+}
+
+.lotm-grimoire-rail-guide-btn {
+  color: #c9a227 !important;
+  border-color: rgba(201, 162, 39, 0.25) !important;
+  background: rgba(201, 162, 39, 0.06) !important;
+}
+
+.lotm-grimoire-rail-guide-btn:hover {
+  color: #f3ead8 !important;
+  background: rgba(201, 162, 39, 0.18) !important;
+  border-color: rgba(201, 162, 39, 0.55) !important;
+}
+
+.lotm-grimoire-rail-guide-btn.is-active {
+  color: #f3ead8 !important;
+  background: rgba(201, 162, 39, 0.25) !important;
+  border-color: #c9a227 !important;
 }
 
 .lotm-grimoire-rail button,
@@ -2747,5 +2780,22 @@ html[style*="--lang-font-stack"] {
     overflow-x: auto;
     border-right: 0;
     border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+    gap: 8px;
+  }
+
+  .lotm-grimoire-rail-top {
+    flex-direction: row;
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .lotm-grimoire-rail-bottom {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    flex-direction: row;
+    flex: 0 0 auto;
+    border-left: 1px solid rgba(201, 162, 39, 0.18);
+    padding-left: 8px;
   }
 }

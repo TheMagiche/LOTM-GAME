@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, BookOpen, CircleHelp, MapPin, Search, X } from 'lucide-react';
+import { ArrowLeft, BookOpen, CircleHelp, HelpCircle, MapPin, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
+import { LotmHowToPlayGuide } from './LotmHowToPlayGuide';
 import {
     GRIMOIRE_SECTIONS,
     GRIMOIRE_WORLD_TABS,
@@ -152,20 +153,38 @@ export function LotmGrimoire() {
                 </header>
                 <div className="lotm-grimoire-body">
                     <nav className="lotm-grimoire-rail" aria-label="Grimoire sections">
-                        {GRIMOIRE_SECTIONS.map(entry => (
+                        <div className="lotm-grimoire-rail-top">
+                            {GRIMOIRE_SECTIONS.map(entry => (
+                                <button
+                                    key={entry.id}
+                                    type="button"
+                                    className={section === entry.id ? 'is-active' : undefined}
+                                    aria-pressed={section === entry.id}
+                                    onClick={() => {
+                                        setSection(entry.id);
+                                        setSelectedId(null);
+                                    }}
+                                >
+                                    {entry.label}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="lotm-grimoire-rail-bottom">
                             <button
-                                key={entry.id}
                                 type="button"
-                                className={section === entry.id ? 'is-active' : undefined}
-                                aria-pressed={section === entry.id}
+                                className={`lotm-grimoire-rail-guide-btn${section === 'guide' ? ' is-active' : ''}`}
+                                aria-pressed={section === 'guide'}
                                 onClick={() => {
-                                    setSection(entry.id);
+                                    setSection('guide');
                                     setSelectedId(null);
                                 }}
                             >
-                                {entry.label}
+                                <span className="flex items-center gap-1.5">
+                                    <HelpCircle size={13} aria-hidden />
+                                    <span>How to Play</span>
+                                </span>
                             </button>
-                        ))}
+                        </div>
                     </nav>
                     <div className="lotm-grimoire-main">
                         {section === 'volumes' && (
@@ -207,6 +226,7 @@ export function LotmGrimoire() {
                                 onSelect={setSelectedId}
                             />
                         )}
+                        {section === 'guide' && <LotmHowToPlayGuide />}
                     </div>
                 </div>
             </div>
