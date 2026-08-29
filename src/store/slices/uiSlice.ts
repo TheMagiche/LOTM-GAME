@@ -12,6 +12,8 @@ export type GrimoireFocus = {
     id?: string | null;
 };
 
+export type PlayerGrimoireSection = 'pathway' | 'location' | 'character' | 'inventory' | 'chronicle';
+
 export type LastLootReceipt = {
     names: string[];
     at: number;
@@ -138,6 +140,13 @@ export type UISlice = {
     closeGrimoire: () => void;
     toggleGrimoire: () => void;
     clearGrimoireFocus: () => void;
+    /** In-game Player Grimoire overlay (Potion, Location shift & map, Read-only Character sheet, Inventory, Chronicle). */
+    playerGrimoireOpen: boolean;
+    playerGrimoireSection: PlayerGrimoireSection;
+    openPlayerGrimoire: (section?: PlayerGrimoireSection) => void;
+    closePlayerGrimoire: () => void;
+    togglePlayerGrimoire: () => void;
+    setPlayerGrimoireSection: (section: PlayerGrimoireSection) => void;
 };
 
 // ── Slice creator ──────────────────────────────────────────────────────
@@ -245,4 +254,13 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     closeGrimoire: () => set({ grimoireOpen: false, grimoireFocus: null }),
     toggleGrimoire: () => set((s) => ({ grimoireOpen: !s.grimoireOpen, grimoireFocus: s.grimoireOpen ? null : s.grimoireFocus })),
     clearGrimoireFocus: () => set({ grimoireFocus: null }),
+    playerGrimoireOpen: false,
+    playerGrimoireSection: 'pathway',
+    openPlayerGrimoire: (section) => set((s) => ({
+        playerGrimoireOpen: true,
+        playerGrimoireSection: section ?? s.playerGrimoireSection ?? 'pathway',
+    })),
+    closePlayerGrimoire: () => set({ playerGrimoireOpen: false }),
+    togglePlayerGrimoire: () => set((s) => ({ playerGrimoireOpen: !s.playerGrimoireOpen })),
+    setPlayerGrimoireSection: (section) => set({ playerGrimoireSection: section }),
 });

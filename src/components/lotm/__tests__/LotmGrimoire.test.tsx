@@ -95,13 +95,7 @@ describe('LotmGrimoire overlay', () => {
         expect(screen.queryByRole('dialog', { name: 'Grimoire' })).toBeNull();
     });
 
-    it('hides the chronicle strip without a campaign', () => {
-        useAppStore.getState().openGrimoire();
-        render(<LotmGrimoire />);
-        expect(screen.queryByLabelText('Your chronicle')).toBeNull();
-    });
-
-    it('shows live place and pathway acting in the chronicle strip', () => {
+    it('remains pure world lore without player chronicle strip', () => {
         useAppStore.setState({
             activeCampaignId: 'camp_test',
             playerCharacter: {
@@ -136,10 +130,7 @@ describe('LotmGrimoire overlay', () => {
         });
         useAppStore.getState().openGrimoire();
         render(<LotmGrimoire />);
-        const strip = screen.getByLabelText('Your chronicle');
-        expect(strip).toHaveTextContent('Tingen');
-        expect(strip).toHaveTextContent(/Fool/i);
-        expect(strip.textContent).toMatch(/fate/i);
+        expect(screen.queryByLabelText('Your chronicle')).toBeNull();
     });
 
     it('opens a pathway page from openGrimoire focus', () => {
@@ -150,10 +141,10 @@ describe('LotmGrimoire overlay', () => {
 });
 
 describe('LotmPlayHeader Grimoire action', () => {
-    it('opens the grimoire from the top menu', () => {
+    it('opens the player grimoire from the top menu', () => {
         render(<LotmPlayHeader />);
-        fireEvent.click(screen.getByRole('button', { name: 'Open Grimoire' }));
-        expect(useAppStore.getState().grimoireOpen).toBe(true);
+        fireEvent.click(screen.getByRole('button', { name: 'Open Player Grimoire' }));
+        expect(useAppStore.getState().playerGrimoireOpen).toBe(true);
     });
 
     it('opens Ask GM from the top menu', () => {

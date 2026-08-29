@@ -50,9 +50,9 @@ export function LotmPlayHeader() {
                     <button
                         type="button"
                         className="lotm-play-header-grimoire"
-                        onClick={() => useAppStore.getState().openGrimoire()}
-                        title="Open Grimoire"
-                        aria-label="Open Grimoire"
+                        onClick={() => useAppStore.getState().openPlayerGrimoire()}
+                        title="Open Player Grimoire"
+                        aria-label="Open Player Grimoire"
                     >
                         <BookOpen size={13} />
                         <span>Grimoire</span>
@@ -125,5 +125,6 @@ export async function exitLotmCampaign(): Promise<void> {
     useAppStore.getState().endLotmWorldIndex();
     useAppStore.getState().setLotmChronicleOpen(false);
     useAppStore.getState().closeGrimoire();
+    useAppStore.getState().closePlayerGrimoire();
     setActiveCampaign(null);
 }

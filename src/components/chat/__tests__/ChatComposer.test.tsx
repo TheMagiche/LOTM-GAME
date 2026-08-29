@@ -83,7 +83,7 @@ describe('LotmPlayHeader menu during indexing', () => {
 
         expect(screen.queryByRole('button', { name: 'Open menu' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Save campaign' })).toBeNull();
-        expect(screen.queryByRole('button', { name: 'Open Grimoire' })).toBeNull();
+        expect(screen.queryByRole('button', { name: 'Open Player Grimoire' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Ask GM' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Illustrated' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Chronicle' })).toBeNull();
@@ -98,7 +98,7 @@ describe('LotmPlayHeader menu during indexing', () => {
 
         expect(screen.getByRole('button', { name: 'Open menu' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Save campaign' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Open Grimoire' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Open Player Grimoire' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Ask GM' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Illustrated' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Chronicle' })).toBeInTheDocument();
@@ -140,7 +140,7 @@ describe('LotmPlayHeader play controls', () => {
         render(<LotmPlayHeader />);
 
         expect(screen.getByRole('button', { name: 'Save campaign' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Open Grimoire' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Open Player Grimoire' })).toBeInTheDocument();
     });
 });
 
