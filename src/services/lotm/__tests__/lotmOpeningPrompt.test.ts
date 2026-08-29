@@ -4,6 +4,7 @@ import type { PlayerCharacter } from '../../../types';
 import {
     formatLotmOpeningPrompt,
     maybeInjectLotmOpeningPrompt,
+    openingPromptToAutoSend,
 } from '../lotmOpeningPrompt';
 
 const clara = (Array.isArray(claraJson) ? claraJson[0] : claraJson) as PlayerCharacter;
@@ -22,7 +23,20 @@ describe('formatLotmOpeningPrompt', () => {
         expect(text).toContain('Tingen');
         expect(text).toContain('Aldous Whitlock');
         expect(text).toContain('What I want:');
+        expect(text).toContain('Sequence 9 · Seer potion');
+        expect(text).toContain('Fool Pathway');
+        expect(text).toMatch(/dark-blue gelatinous/i);
+        expect(text).toContain('cup at my lips');
         expect(text).toContain('Do not interview me.');
+    });
+});
+
+describe('openingPromptToAutoSend', () => {
+    it('returns the brief only for an empty chronicle that is not still indexing', () => {
+        expect(openingPromptToAutoSend([], clara)).toContain('Clara Whitlock');
+        expect(openingPromptToAutoSend([], clara, { indexing: true })).toBe('');
+        expect(openingPromptToAutoSend([{ id: 'm1' }], clara)).toBe('');
+        expect(openingPromptToAutoSend([], null)).toBe('');
     });
 });
 

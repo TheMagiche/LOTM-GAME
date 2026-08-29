@@ -77,6 +77,10 @@ vi.mock('../../store/useAppStore', async () => {
         addNPC: vi.fn(),
         togglePCPanel: vi.fn(),
         playerCharacter: null,
+        lotmWorldIndexLock: null,
+        composerInjection: null,
+        consumeComposerInjection: vi.fn(),
+        injectToComposer: vi.fn(),
         activeCampaignMeta: null,
         setLastPayloadTrace: vi.fn(),
         setActivePreset: vi.fn(),
@@ -198,6 +202,10 @@ import { useAppStore } from '../../store/useAppStore';
 import { runTurn } from '../../services/turn/turnOrchestrator';
 import { commitPendingTurn } from '../../services/turn/pendingCommit';
 import { answerOocQuestion } from '../../services/ooc/oocService';
+import claraJson from '../../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
+import type { PlayerCharacter } from '../../types';
+
+const clara = (Array.isArray(claraJson) ? claraJson[0] : claraJson) as PlayerCharacter;
 
 function makeMessage(overrides: Partial<ChatMessage> = {}): ChatMessage {
     return {
@@ -221,6 +229,8 @@ describe('ChatArea', () => {
         state.pipelinePhase = 'idle';
         state.askGmOpen = false;
         state.locationLedger = [];
+        state.playerCharacter = null;
+        state.lotmWorldIndexLock = null;
         (state.context as GameContext).currentPlaceId = null;
         (state.context as GameContext).currentFeature = null;
         (mockSummarizeAskGmConversation as ReturnType<typeof vi.fn>).mockResolvedValue('Keep the gate scene tense.');
@@ -517,5 +527,33 @@ describe('ChatArea', () => {
         );
         render(<ChatArea />);
         expect(screen.getByText(/Load older messages/i)).toBeInTheDocument();
+    });
+
+    it('auto-sends the opening brief on an empty illustrated chronicle', async () => {
+        const state = useAppStore.getState();
+        state.playerCharacter = clara;
+        render(<ChatArea presentation="illustrated" />);
+        await waitFor(() => expect(runTurn).toHaveBeenCalled());
+        const [turnState] = (runTurn as ReturnType<typeof vi.fn>).mock.calls[0];
+        expect(turnState.input).toContain('Clara Whitlock');
+        expect(turnState.input).toContain('Sequence 9 · Seer potion');
+    });
+
+    it('does not auto-send while the world index is still locking', async () => {
+        const state = useAppStore.getState();
+        state.playerCharacter = clara;
+        state.lotmWorldIndexLock = { campaignId: 'test-campaign', emblemSrc: '' };
+        render(<ChatArea presentation="illustrated" />);
+        await act(async () => {});
+        expect(runTurn).not.toHaveBeenCalled();
+    });
+
+    it('shows story generation progress on the illustrated plate', () => {
+        const state = useAppStore.getState();
+        state.pipelinePhase = 'generating';
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.getByRole('status')).toHaveTextContent(/Writing the story/i);
+        expect(screen.getByText('Generating')).toBeInTheDocument();
+        expect(screen.queryByText('Awaiting transmission...')).not.toBeInTheDocument();
     });
 });

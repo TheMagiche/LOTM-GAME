@@ -24,7 +24,7 @@ Inventory of what already ships. Do not rebuild these; extend them.
 |---------|------|-------------|
 | Shell | [`LotmIllustratedShell.tsx`](../../src/components/lotm/LotmIllustratedShell.tsx) | HUD + chat + chapter toast + index lock |
 | HUD | [`LotmPlayerHud.tsx`](../../src/components/lotm/LotmPlayerHud.tsx), [`lotmPlayerHudModel.ts`](../../src/components/lotm/lotmPlayerHudModel.ts) | Name, emblem, pathway · sequence, Spirit meter, Sequence ladder, Sequence ability names. Expanded: location, bounty when posted, **digestion %**, stats, carried items including coins. No Acting Method, separate purse line, potion art, or next-Sequence preview. HP is `null`. Click identity → Character Ledger. |
-| Dialogue | [`LotmDialoguePlate.tsx`](../../src/components/lotm/LotmDialoguePlate.tsx) | GM beat carousel, location nameplate, scene modal |
+| Dialogue | [`LotmDialoguePlate.tsx`](../../src/components/lotm/LotmDialoguePlate.tsx) | GM beat carousel, location nameplate, scene modal, generation progress (same phases as Chronicle) |
 | Stage | [`LotmSceneModal.tsx`](../../src/components/lotm/LotmSceneModal.tsx), [`LotmStage.tsx`](../../src/components/lotm/LotmStage.tsx) | Backdrop + on-stage portraits via [`lotmVisualMatcher.ts`](../../src/services/lotm/lotmVisualMatcher.ts) |
 | Header | [`LotmPlayHeader.tsx`](../../src/components/lotm/LotmPlayHeader.tsx) | Menu, Grimoire, Illustrated / Chronicle toggle, AI tier |
 | Chat | [`ChatArea.tsx`](../../src/components/ChatArea.tsx) | Composer; [`DiceRollModal.tsx`](../../src/components/chat/DiceRollModal.tsx); [`LootRollModal.tsx`](../../src/components/chat/LootRollModal.tsx) (labels from [`lotmLootLabels.ts`](../../src/worldpacks/lotmLootLabels.ts)) |

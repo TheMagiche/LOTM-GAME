@@ -101,7 +101,7 @@ When `attachLotmVisuals` is true:
 - Geography JSON → location ledger ([`lotmGeography.ts`](../../src/worldpacks/lotmGeography.ts)).
 - Item catalog from `gamedata/assets/data/items/` lists ([`lotmItemCatalog.ts`](../../src/worldpacks/lotmItemCatalog.ts)).
 - Chosen PC `signatureKit` (pathway + sequence + abilities), purse, `pcMeta.digestion = 0`, `lossOfControl = 0`.
-- First composer prompt from the PC background ([`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts)); interview starter is replaced so the GM begins the scene.
+- First turn auto-sends the PC background plus the Sequence 9 potion drink ([`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts)) once the world-index lock clears; interview starter is replaced so the GM opens on the cup.
 - `diceSystem = undefined` (3-band fairness pool).
 - Ability-compendium warmup (lazy 2.4MB JSON).
 
