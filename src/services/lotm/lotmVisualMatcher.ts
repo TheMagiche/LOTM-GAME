@@ -86,6 +86,7 @@ export type LotmPortraitHit = {
     src: string;
     isPc?: boolean;
     standing?: string;
+    seqLabel?: string;
 };
 
 export type LotmVisualMatch = {

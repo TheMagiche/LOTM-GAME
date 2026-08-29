@@ -2,7 +2,11 @@
 
 - **Audience:** an agent about to change mechanics, prompts, seeding, or turn stages. Not a player manual.
 - **Goal:** how a Lord of the Mysteries chronicle actually runs on this host.
-- **Sister doc:** [ui-lore-improvements.md](./ui-lore-improvements.md) — player-facing UI gaps. Read that only if you are changing chrome.
+- **Sister docs:**
+  - [ui-lore-improvements.md](./ui-lore-improvements.md) — player-facing UI gaps. Read that only if you are changing chrome.
+  - [lotm-combat-runtime.md](./lotm-combat-runtime.md) — in-world Beyonder combat, Sequence Advantage, spirituality, and Loss of Control.
+  - [lotm-loot-and-artifacts.md](./lotm-loot-and-artifacts.md) — characteristics, potion formulas, Sealed Artifacts, and Loen economy.
+  - [lotm-ui-combat-restructuring.md](./lotm-ui-combat-restructuring.md) — combat HUD, spiritual action modal, and harvest modal restructuring.
 - **Do not touch:** the loot tree walker, dice fairness pool, NPC agency, or the NPC / faction / location / item ledgers. Seed them; do not replace them.
 - **Do not rewrite** `runTurn` as a combat simulator. This is a narrative GM OS with a LOTM world pack.
 

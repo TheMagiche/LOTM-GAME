@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ChevronDown, Sparkles, X, AlertTriangle } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildLotmPlayerHudModel } from './lotmPlayerHudModel';
 import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
+import { findLotmAbilityByName, warmupLotmAbilityCompendium } from '../../worldpacks/lotmAbilityCompendium';
 
 const SEQUENCE_LADDER = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] as const;
 
@@ -66,6 +67,11 @@ export function LotmPlayerHud() {
     const lastLootReceipt = useAppStore(s => s.lastLootReceipt);
     const setLastLootReceipt = useAppStore(s => s.setLastLootReceipt);
     const [inventoryOpen, setInventoryOpen] = useState(false);
+    const [selectedAbilityName, setSelectedAbilityName] = useState<string | null>(null);
+
+    useEffect(() => {
+        warmupLotmAbilityCompendium();
+    }, []);
 
     const currentPlace = currentPlaceId
         ? locationLedger.find(place => place.id === currentPlaceId)
@@ -99,6 +105,27 @@ export function LotmPlayerHud() {
         }
         useAppStore.getState().openGrimoire({ section: 'pathways', id: model.pathwayId });
     };
+
+    const toggleAbility = (abilityName: string) => {
+        setSelectedAbilityName(current => (current === abilityName ? null : abilityName));
+    };
+
+    const activeAbilityDetail = selectedAbilityName
+        ? findLotmAbilityByName(selectedAbilityName, model.pathwayId, model.sequenceNumber)
+        : null;
+
+    const locTooltip = (() => {
+        switch (model.locStage) {
+            case 3:
+                return 'Loss of Control: Rampage — Complete mental collapse into Mythical Creature Form. Church kill teams deployed.';
+            case 2:
+                return 'Loss of Control: Slippage — Severe mental distress and physical mutations. All rolls forced to Disadvantage.';
+            case 1:
+                return 'Loss of Control: Tells — Auditory whispers, unnatural cravings, and color distortions.';
+            default:
+                return 'Loss of Control: Stable — Mental equilibrium intact.';
+        }
+    })();
 
     return (
         <aside className={`lotm-player-hud${inventoryOpen ? ' is-expanded' : ''}`} aria-label="Player status">
@@ -142,7 +169,7 @@ export function LotmPlayerHud() {
                         meter={{ current: model.digestion, max: 100, pct: model.digestion }}
                         tone="dig"
                     />
-                    <div className={`lotm-player-hud-loc is-${model.locLabel}`} title={`Loss of Control: ${model.locLabel}`}>
+                    <div className={`lotm-player-hud-loc is-${model.locLabel}`} title={locTooltip}>
                         <span>LoC</span>
                         <strong>{model.locLabel}</strong>
                     </div>
@@ -166,11 +193,62 @@ export function LotmPlayerHud() {
                     {model.sequenceBandLine}
                 </p>
             )}
+
+            {/* Quick Ability Deck */}
             {model.abilities.length > 0 && (
-                <p className="lotm-player-hud-ability-preview" aria-label="Sequence abilities" title={model.abilities.join(' · ')}>
-                    {model.abilities.join(' · ')}
-                </p>
+                <div className="lotm-player-hud-ability-preview" aria-label="Sequence abilities" title={model.abilities.join(' · ')}>
+                    {model.abilities.map((name, i) => (
+                        <span key={name}>
+                            {i > 0 && ' · '}
+                            <button
+                                type="button"
+                                onClick={() => toggleAbility(name)}
+                                className={`lotm-player-hud-ability-btn hover:underline transition-colors ${
+                                    selectedAbilityName === name ? 'text-terminal font-semibold' : ''
+                                }`}
+                                title="Click to view ability costs & description"
+                            >
+                                {name}
+                            </button>
+                        </span>
+                    ))}
+                </div>
             )}
+
+            {/* Expanded Ability Details Card */}
+            {selectedAbilityName && (
+                <div className="mx-3 my-1.5 p-2.5 rounded bg-void/90 border border-terminal/30 text-xs text-text-primary shadow-lg relative animate-fadeIn">
+                    <div className="flex items-center justify-between border-b border-border/40 pb-1.5 mb-1.5">
+                        <div className="flex items-center gap-1.5 font-bold text-terminal">
+                            <Sparkles size={13} className="text-amber-400" />
+                            <span>{activeAbilityDetail?.name || selectedAbilityName}</span>
+                            {activeAbilityDetail?.costs?.[0] && (
+                                <span className="font-mono text-[10px] font-normal px-1.5 py-0.2 rounded bg-terminal/10 text-terminal border border-terminal/20">
+                                    {activeAbilityDetail.costs[0]}
+                                </span>
+                            )}
+                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setSelectedAbilityName(null)}
+                            className="text-text-dim hover:text-text-primary p-0.5 rounded"
+                            aria-label="Close ability detail"
+                        >
+                            <X size={14} />
+                        </button>
+                    </div>
+                    <p className="text-[11px] leading-relaxed text-text-dim/90">
+                        {activeAbilityDetail?.description || 'Channel this sequence ability during spiritual actions.'}
+                    </p>
+                    {activeAbilityDetail?.limitations?.[0] && (
+                        <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-amber-400/90 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">
+                            <AlertTriangle size={11} className="shrink-0" />
+                            <span>Limit: {activeAbilityDetail.limitations[0]}</span>
+                        </div>
+                    )}
+                </div>
+            )}
+
             {lastLootReceipt && lastLootReceipt.names.length > 0 && (
                 <p className="lotm-player-hud-loot" role="status">
                     <span>Loot · {lastLootReceipt.names.join(' · ')}</span>

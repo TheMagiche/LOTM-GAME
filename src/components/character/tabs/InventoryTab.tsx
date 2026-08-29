@@ -78,11 +78,11 @@ function InventoryRow({
                     {expanded ? '▼' : '▶'}
                 </button>
                 <input
-                    className="flex-1 bg-transparent outline-none text-text-primary px-1 min-w-[0]"
+                    className="flex-1 bg-transparent outline-none text-text-primary px-1 min-w-0"
                     value={it.name}
                     onChange={(e) => onUpdate(it.id, { name: e.target.value })}
                 />
-                <span className="text-[8px] px-1 rounded bg-void border border-border/40 text-text-dim/70 shrink-0 max-w-[80px] truncate" title={`Location: ${it.locationTag || 'inventory'}`}>
+                <span className="text-[8px] px-1 rounded bg-void border border-border/40 text-text-dim/70 shrink-0 max-w-20 truncate" title={`Location: ${it.locationTag || 'inventory'}`}>
                     {it.locationTag || 'inventory'}
                 </span>
                 <input
@@ -154,6 +154,17 @@ function InventoryRow({
                                     <option key={g} value={g}>{ITEM_GRADE_LABELS[g as Exclude<ItemLedgerGrade, ''>]}</option>
                                 ))}
                             </select>
+                        </div>
+                    )}
+                    {lotm && (it.category === 'sealed-artefact' || it.category === 'mystical-item' || it.downside) && (
+                        <div className="flex items-center gap-2">
+                            <span className="text-[9px] text-amber-400/90 w-14">Flaw / Downside</span>
+                            <input
+                                className="flex-1 bg-void border border-amber-500/30 rounded text-[10px] px-1 outline-none text-amber-200/90 focus:border-amber-400 placeholder:text-text-dim/30"
+                                placeholder="Mandatory negative flaw (e.g. lifespan burn, hunger, madness)"
+                                value={it.downside || ''}
+                                onChange={(e) => onUpdate(it.id, { downside: e.target.value })}
+                            />
                         </div>
                     )}
                 </div>
@@ -347,7 +358,7 @@ export function InventoryTab() {
                         )}
 
                         {/* List */}
-                        <div className="space-y-1 max-h-[300px] overflow-y-auto pr-1 custom-scrollbar">
+                        <div className="space-y-1 max-h-75 overflow-y-auto pr-1 custom-scrollbar">
                             {filteredItems.map((it) => (
                                 <InventoryRow
                                     key={it.id}

@@ -2,7 +2,11 @@
 
 - **Audience:** a UI agent in a **different** context window. Read [`gameplay-runtime.md`](./gameplay-runtime.md) first for what already exists.
 - **Goal:** surface gameplay and lore the engine already knows. Players should see Beyonder status, Standing, and chronicle context without opening operator screens.
-- **Sister doc:** [gameplay-runtime.md](./gameplay-runtime.md).
+- **Sister docs:**
+  - [gameplay-runtime.md](./gameplay-runtime.md) — chronicle host runtime.
+  - [lotm-combat-runtime.md](./lotm-combat-runtime.md) — in-world Beyonder combat runtime.
+  - [lotm-loot-and-artifacts.md](./lotm-loot-and-artifacts.md) — characteristics and Sealed Artifacts.
+  - [lotm-ui-combat-restructuring.md](./lotm-ui-combat-restructuring.md) — combat HUD and modal restructuring spec.
 - **Do not change:** [`turnOrchestrator.ts`](../../src/services/turn/turnOrchestrator.ts), the loot tree walker, Sequence math in [`lotmBeyonderState.ts`](../../src/worldpacks/lotmBeyonderState.ts), NPC agency, loot root keys, or hydrator church/geo merge (stays `isLotmCampaign`-gated).
 - **Do not replace** Grimoire novel JSON with a second lore parser. Link to it; do not fork it.
 

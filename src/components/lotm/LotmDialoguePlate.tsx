@@ -17,6 +17,7 @@ import { MessageActionRail } from '../message/MessageActionRail';
 import { MessageBelowSlots } from '../message/MessageBelowSlots';
 import { SwipeIndicator, ContinueButton } from '../message/SwipeIndicator';
 import { standingWordForName, standingWordForNpc } from './lotmStanding';
+import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 import { LotmSceneModal } from './LotmSceneModal';
 
 function gmBeats(messages: ChatMessage[]): ChatMessage[] {
@@ -102,9 +103,32 @@ export function LotmDialoguePlate({
             if (portrait.isPc) return portrait;
             const npc = npcLedger.find(entry => onStage.has(entry.id) && entry.name === portrait.name);
             const standing = standingWordForNpc(npc);
-            return standing ? { ...portrait, standing } : portrait;
+            const pathwayId = npc?.signatureKit?.pathway;
+            const seq = npc?.signatureKit?.sequence;
+            const seqLabel = pathwayId && typeof seq === 'number'
+                ? formatLotmPathwayLabel(pathwayId, seq)
+                : undefined;
+            return {
+                ...portrait,
+                standing: standing ?? portrait.standing,
+                seqLabel: seqLabel ?? portrait.seqLabel,
+            };
         });
     }, [match.portraits, npcLedger, onStageNpcIds]);
+
+    const speakerNpc = useMemo(() => {
+        const onStage = new Set(onStageNpcIds ?? []);
+        return (npcLedger ?? []).find(entry =>
+            !entry.archived
+            && !entry.isPC
+            && onStage.has(entry.id)
+            && (entry.name.toLowerCase() === match.speakerName.toLowerCase() || entry.aliases?.toLowerCase().includes(match.speakerName.toLowerCase()))
+        );
+    }, [npcLedger, onStageNpcIds, match.speakerName]);
+
+    const speakerSeqLabel = speakerNpc?.signatureKit?.pathway && typeof speakerNpc.signatureKit.sequence === 'number'
+        ? formatLotmPathwayLabel(speakerNpc.signatureKit.pathway, speakerNpc.signatureKit.sequence)
+        : null;
 
     const speakerStanding = standingWordForName(
         match.speakerName,
@@ -149,6 +173,7 @@ export function LotmDialoguePlate({
                 <div className="lotm-plate-nameplate">
                     <span>
                         {message ? match.speakerName : 'Narration'}
+                        {speakerSeqLabel && <span className="lotm-plate-seq" title={speakerSeqLabel}> · {speakerSeqLabel}</span>}
                         {speakerStanding && <span className="lotm-plate-standing">{speakerStanding}</span>}
                     </span>
                     <div className="lotm-plate-controls">

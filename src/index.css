@@ -586,6 +586,22 @@ html[style*="--lang-font-stack"] {
   color: rgba(232, 224, 208, 0.72);
 }
 
+.lotm-plate-seq {
+  margin-left: 6px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #e0c36a;
+  opacity: 0.9;
+}
+
+.lotm-portrait-seq {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: #e0c36a;
+  opacity: 0.85;
+}
+
 .lotm-portrait-pc {
   width: min(32vw, 250px);
 }

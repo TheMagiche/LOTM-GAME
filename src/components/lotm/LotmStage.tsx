@@ -27,7 +27,8 @@ export function LotmStage({ portraits }: { portraits: LotmPortraitHit[] }) {
                 >
                     <img src={portraitSrc(p.src)} alt={p.name} />
                     <figcaption>
-                        {p.name}
+                        <span className="lotm-portrait-name">{p.name}</span>
+                        {p.seqLabel && <span className="lotm-portrait-seq">{p.seqLabel}</span>}
                         {p.standing && <span className="lotm-portrait-standing">{p.standing}</span>}
                     </figcaption>
                 </figure>
