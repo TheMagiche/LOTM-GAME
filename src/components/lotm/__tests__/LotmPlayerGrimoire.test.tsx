@@ -157,7 +157,7 @@ describe('LotmPlayerGrimoire component', () => {
     beforeEach(() => {
         useAppStore.setState({
             playerGrimoireOpen: false,
-            playerGrimoireSection: 'pathway',
+            playerGrimoireSection: 'character',
             playerCharacter: MOCK_PC,
             locationLedger: [MOCK_LOCATION, MOCK_DESTINATION],
             inventoryItems: MOCK_ITEMS,
@@ -197,12 +197,24 @@ describe('LotmPlayerGrimoire component', () => {
         expect(container).toBeEmptyDOMElement();
     });
 
-    it('opens and renders Potion & Pathway section by default', () => {
+    it('opens and renders Character Record section by default', () => {
         useAppStore.getState().openPlayerGrimoire();
         render(<LotmPlayerGrimoire />);
 
         expect(screen.getByRole('dialog')).toBeInTheDocument();
-        expect(screen.getByText(/Klein Moretti/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/Klein Moretti/i).length).toBeGreaterThan(0);
+        expect(screen.getByText(/Protagonist Dossier \(Game Master Record\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Personality & Voice Persona/i)).toBeInTheDocument();
+        expect(screen.getByText(/Personality Hexagon \(Agency Axes\)/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/drive/i).length).toBeGreaterThan(0);
+        expect(screen.getAllByText(/composure/i).length).toBeGreaterThan(0);
+        expect(screen.getByText(/Black trench coat and silk top hat/i)).toBeInTheDocument();
+    });
+
+    it('switches to Potion & Pathway section and displays pathway progression', () => {
+        useAppStore.getState().openPlayerGrimoire('pathway');
+        render(<LotmPlayerGrimoire />);
+
         expect(screen.getByText(/Fool Pathway/i)).toBeInTheDocument();
         expect(screen.getAllByText(/Sequence 9 · Seer/i).length).toBeGreaterThan(0);
         expect(screen.getByText(/100%/)).toBeInTheDocument();

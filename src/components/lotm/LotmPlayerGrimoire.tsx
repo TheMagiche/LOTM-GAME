@@ -57,9 +57,9 @@ import { toast } from '../Toast';
 import { uid } from '../../utils/uid';
 
 const PLAYER_SECTIONS: Array<{ id: PlayerGrimoireSection; label: string; icon: React.ReactNode }> = [
+    { id: 'character', label: 'Character Record', icon: <User size={14} /> },
     { id: 'pathway', label: 'Potion & Pathway', icon: <Flame size={14} /> },
     { id: 'location', label: 'Location & Travel', icon: <Compass size={14} /> },
-    { id: 'character', label: 'Character Record', icon: <User size={14} /> },
     { id: 'inventory', label: 'Inventory', icon: <Package size={14} /> },
     { id: 'chronicle', label: 'Chronicle & Standing', icon: <ScrollText size={14} /> },
 ];
@@ -206,6 +206,13 @@ export function LotmPlayerGrimoire() {
                     </nav>
 
                     <div className="lotm-grimoire-main">
+                        {section === 'character' && (
+                            <CharacterGMPane
+                                pc={playerCharacter}
+                                profile={characterProfileData}
+                                hudModel={hudModel}
+                            />
+                        )}
                         {section === 'pathway' && (
                             <PotionPathwayPane
                                 pc={playerCharacter}
@@ -218,13 +225,6 @@ export function LotmPlayerGrimoire() {
                                 currentPlace={currentPlace}
                                 currentFeature={currentFeature}
                                 worldDay={context.worldDay}
-                            />
-                        )}
-                        {section === 'character' && (
-                            <CharacterGMPane
-                                pc={playerCharacter}
-                                profile={characterProfileData}
-                                hudModel={hudModel}
                             />
                         )}
                         {section === 'inventory' && (

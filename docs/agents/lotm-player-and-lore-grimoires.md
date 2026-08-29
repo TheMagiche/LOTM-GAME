@@ -59,7 +59,7 @@ export type GrimoireFocus = {
     id?: string | null;
 };
 
-export type PlayerGrimoireSection = 'pathway' | 'location' | 'character' | 'inventory' | 'chronicle';
+export type PlayerGrimoireSection = 'character' | 'pathway' | 'location' | 'inventory' | 'chronicle';
 
 export type UISlice = {
     // ── Lord of the Mysteries (World Lore) Grimoire ──
@@ -100,21 +100,7 @@ export type UISlice = {
 
 Mounted in `App.tsx` and opened via the "Grimoire" button on `LotmPlayHeader.tsx`. Styled with the occult dark-gold aesthetic (`.lotm-grimoire*`).
 
-### 4.1 Potion & Pathway Section (`section: 'pathway'`)
-- **Pathway Banner:** Displays the protagonist's active pathway emblem, pathway name, tarot card association, digestion meter (0–100%), and Loss of Control severity badge.
-- **Sequence Ladder:** Interactive ladder representing Sequence 9 down to Sequence 0. Allows inspecting past (digested), current, and upcoming sequences.
-- **Acting Principles & Abilities:** Displays current sequence acting method guidelines and full ability compendium details with costs/limits.
-- **Advancement Formula & Drink Action:**
-  - Previews next Sequence potion art (`potionSrc`), main ingredients, supplementary ingredients, and ritual prerequisites.
-  - Includes a "Drink Next Sequence Potion" button invoking `commitLotmPotionDrink()`. Enabled only when digestion is at 100%.
-
-### 4.2 Location & Travel Section (`section: 'location'`)
-- **Current Position Card:** Displays current place name, parent region, in-game day counter, and current active feature/room locale.
-- **Embedded World Map:** Hosts `<LotmWorldMapView />` with selectable pins for kingdoms, cities, harbors, landmarks, and exploration routes.
-- **Available Locations Directory:** Searchable list unifying `locationLedger` entries and canonical world map locales.
-- **Shift Location / Travel Action:** Selecting any location or clicking a map pin enables a one-click travel button that updates `context.currentPlaceId` and clears `context.currentFeature`, triggering feedback toasts.
-
-### 4.3 Character Record Section (`section: 'character'`)
+### 4.1 Character Record Section (`section: 'character'`)
 Provides a comprehensive read-only Game Master dossier for the protagonist:
 - **Identity & Backstory:** Protagonist name, aliases, tier badge, status (`Alive`), faction/church allegiance, and backstory narrative.
 - **Personality & Persona:** Disposition summary, speech tone/accent, and iconic dialogue examples.
@@ -122,6 +108,20 @@ Provides a comprehensive read-only Game Master dossier for the protagonist:
 - **Core Traits & Wants:** Core trait tags with tier tags (`default` / `mature`); short-term, medium-term, and long-term wants.
 - **Boundaries & Behavioral Triggers:** Hard boundaries, soft boundaries, and conditional action triggers (`When X → Behavior Y`).
 - **Visual Attributes:** Gender, age, build, hair, eye color, skin complexion, clothing description, and distinguishing marks.
+
+### 4.2 Potion & Pathway Section (`section: 'pathway'`)
+- **Pathway Banner:** Displays the protagonist's active pathway emblem, pathway name, tarot card association, digestion meter (0–100%), and Loss of Control severity badge.
+- **Sequence Ladder:** Interactive ladder representing Sequence 9 down to Sequence 0. Allows inspecting past (digested), current, and upcoming sequences.
+- **Acting Principles & Abilities:** Displays current sequence acting method guidelines and full ability compendium details with costs/limits.
+- **Advancement Formula & Drink Action:**
+  - Previews next Sequence potion art (`potionSrc`), main ingredients, supplementary ingredients, and ritual prerequisites.
+  - Includes a "Drink Next Sequence Potion" button invoking `commitLotmPotionDrink()`. Enabled only when digestion is at 100%.
+
+### 4.3 Location & Travel Section (`section: 'location'`)
+- **Current Position Card:** Displays current place name, parent region, in-game day counter, and current active feature/room locale.
+- **Embedded World Map:** Hosts `<LotmWorldMapView />` with selectable pins for kingdoms, cities, harbors, landmarks, and exploration routes.
+- **Available Locations Directory:** Searchable list unifying `locationLedger` entries and canonical world map locales.
+- **Shift Location / Travel Action:** Selecting any location or clicking a map pin enables a one-click travel button that updates `context.currentPlaceId` and clears `context.currentFeature`, triggering feedback toasts.
 
 ### 4.4 Inventory & Belongings Section (`section: 'inventory'`)
 - **Purse Summary:** Header line with formatted Loen monetary units (Pounds, Soli, Pence).
@@ -142,6 +142,8 @@ Provides a comprehensive read-only Game Master dossier for the protagonist:
 | :--- | :--- | :--- |
 | `src/components/lotm/LotmTitleHub.tsx` | Home screen / title screen | Calls `openGrimoire()` to open the World Lore Grimoire. |
 | `src/components/lotm/LotmPlayHeader.tsx` | Top in-game play header | Calls `openPlayerGrimoire()` from the header Grimoire action button. |
+| `src/components/lotm/LotmPlayerHud.tsx` | In-game player HUD (Identity & Beyonder details) | Calls `openPlayerGrimoire('character')` to open the Player Grimoire Character Record. |
+| `src/components/lotm/LotmPlayerHud.tsx` | In-game player HUD (Pathway emblem) | Calls `openPlayerGrimoire('pathway')` to open the Player Grimoire Potion & Pathway view. |
 | `src/components/lotm/LotmPlayHeader.tsx` (`exitLotmCampaign`) | Exiting campaign to Title Hub | Calls both `closeGrimoire()` and `closePlayerGrimoire()`. |
 | `src/components/lotm/LotmWorldIndexOverlay.tsx` | World embedding indexing lock | Sets both `grimoireOpen: false` and `playerGrimoireOpen: false`. |
 | `src/App.tsx` | Root application shell | Mounts `<LotmGrimoire />` and `<LotmPlayerGrimoire />` when `LOTM_EXCLUSIVE_UI` is active. |

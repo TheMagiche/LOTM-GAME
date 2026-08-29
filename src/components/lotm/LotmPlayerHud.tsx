@@ -80,8 +80,6 @@ export function LotmPlayerHud() {
     const onStageNpcIds = useAppStore(s => s.onStageNpcIds);
     const currentPlaceId = useAppStore(s => s.context.currentPlaceId);
     const currentFeature = useAppStore(s => s.context.currentFeature);
-    const pcPanelOpen = useAppStore(s => s.pcPanelOpen);
-    const togglePCPanel = useAppStore(s => s.togglePCPanel);
     const lastLootReceipt = useAppStore(s => s.lastLootReceipt);
     const setLastLootReceipt = useAppStore(s => s.setLastLootReceipt);
     const [inventoryOpen, setInventoryOpen] = useState(false);
@@ -112,16 +110,12 @@ export function LotmPlayerHud() {
     const subtitle = [model.pathwayName, model.sequenceLabel].filter(Boolean).join(' · ');
     const showBounty = hasVisibleBounty(model.bounty);
 
-    const openSheet = () => {
-        if (!pcPanelOpen) togglePCPanel();
+    const openCharacterRecord = () => {
+        useAppStore.getState().openPlayerGrimoire('character');
     };
 
-    const openPathwayPage = () => {
-        if (!model.pathwayId) {
-            openSheet();
-            return;
-        }
-        useAppStore.getState().openGrimoire({ section: 'pathways', id: model.pathwayId });
+    const openPathwayDetails = () => {
+        useAppStore.getState().openPlayerGrimoire('pathway');
     };
 
     const toggleAbility = (abilityName: string) => {
@@ -174,9 +168,9 @@ export function LotmPlayerHud() {
                     <button
                         type="button"
                         className="lotm-player-hud-emblem-btn"
-                        onClick={openPathwayPage}
-                        aria-label={model.pathwayName ? `Open Grimoire for ${model.pathwayName}` : 'Open Grimoire'}
-                        title={model.pathwayName ? `Open ${model.pathwayName} in the Grimoire` : 'Open Grimoire'}
+                        onClick={openPathwayDetails}
+                        aria-label={model.pathwayName ? `Open Pathway details for ${model.pathwayName}` : 'Open Pathway details'}
+                        title={model.pathwayName ? `Open ${model.pathwayName} details in Player Grimoire` : 'Open Pathway details'}
                     >
                         {model.emblemSrc ? (
                             <img
@@ -191,9 +185,9 @@ export function LotmPlayerHud() {
                     <button
                         type="button"
                         className="lotm-player-hud-identity-btn"
-                        onClick={openSheet}
-                        aria-label={`Open character sheet for ${model.name}`}
-                        title="Open character sheet"
+                        onClick={openCharacterRecord}
+                        aria-label={`Open Character Record for ${model.name}`}
+                        title="Open Character Record"
                     >
                         <div className="lotm-player-hud-identity">
                             <span className="lotm-player-hud-kicker">Beyonder</span>

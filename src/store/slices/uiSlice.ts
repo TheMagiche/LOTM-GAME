@@ -12,7 +12,7 @@ export type GrimoireFocus = {
     id?: string | null;
 };
 
-export type PlayerGrimoireSection = 'pathway' | 'location' | 'character' | 'inventory' | 'chronicle';
+export type PlayerGrimoireSection = 'character' | 'pathway' | 'location' | 'inventory' | 'chronicle';
 
 export type LastLootReceipt = {
     names: string[];
@@ -255,10 +255,10 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     toggleGrimoire: () => set((s) => ({ grimoireOpen: !s.grimoireOpen, grimoireFocus: s.grimoireOpen ? null : s.grimoireFocus })),
     clearGrimoireFocus: () => set({ grimoireFocus: null }),
     playerGrimoireOpen: false,
-    playerGrimoireSection: 'pathway',
+    playerGrimoireSection: 'character',
     openPlayerGrimoire: (section) => set((s) => ({
         playerGrimoireOpen: true,
-        playerGrimoireSection: section ?? s.playerGrimoireSection ?? 'pathway',
+        playerGrimoireSection: section ?? s.playerGrimoireSection ?? 'character',
     })),
     closePlayerGrimoire: () => set({ playerGrimoireOpen: false }),
     togglePlayerGrimoire: () => set((s) => ({ playerGrimoireOpen: !s.playerGrimoireOpen })),

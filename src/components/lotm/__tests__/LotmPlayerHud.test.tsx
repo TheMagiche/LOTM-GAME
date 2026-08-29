@@ -57,8 +57,8 @@ describe('LotmPlayerHud', () => {
         const hud = screen.getByRole('complementary', { name: 'Player status' });
         expect(hud).toBeInTheDocument();
         expect(screen.getByText('Clara Whitlock')).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Open character sheet for Clara Whitlock' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: /Open Grimoire for Fool Pathway/i })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Open Character Record for Clara Whitlock' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Open Pathway details for Fool Pathway/i })).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: /^Sheet$/i })).not.toBeInTheDocument();
         expect(screen.queryByRole('button', { name: /inventory/i })).not.toBeInTheDocument();
         expect(screen.getByText(/Fool Pathway/i)).toBeInTheDocument();
@@ -165,18 +165,21 @@ describe('LotmPlayerHud', () => {
         expect(screen.queryByText('Bounty')).not.toBeInTheDocument();
     });
 
-    it('opens the character sheet from the name and the Grimoire from the emblem', async () => {
+    it('opens the Player Grimoire Character Record from the name and Pathway details from the emblem', async () => {
         const user = userEvent.setup();
         seedClara();
         render(<LotmPlayerHud />);
 
-        await user.click(screen.getByRole('button', { name: 'Open character sheet for Clara Whitlock' }));
-        expect(useAppStore.getState().pcPanelOpen).toBe(true);
+        await user.click(screen.getByRole('button', { name: 'Open Character Record for Clara Whitlock' }));
+        expect(useAppStore.getState().playerGrimoireOpen).toBe(true);
+        expect(useAppStore.getState().playerGrimoireSection).toBe('character');
         expect(screen.queryByText('Location')).not.toBeInTheDocument();
 
-        await user.click(screen.getByRole('button', { name: /Open Grimoire for Fool Pathway/i }));
-        expect(useAppStore.getState().grimoireOpen).toBe(true);
-        expect(useAppStore.getState().grimoireFocus).toEqual({ section: 'pathways', id: 'fool' });
+        useAppStore.getState().closePlayerGrimoire();
+
+        await user.click(screen.getByRole('button', { name: /Open Pathway details for Fool Pathway/i }));
+        expect(useAppStore.getState().playerGrimoireOpen).toBe(true);
+        expect(useAppStore.getState().playerGrimoireSection).toBe('pathway');
         expect(screen.getByRole('complementary', { name: 'Player status' })).toHaveAttribute('aria-expanded', 'false');
     });
 });
