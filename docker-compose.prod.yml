@@ -1,15 +1,17 @@
-# Local dev: build on this machine.
-#   docker compose up --build
-#   open http://localhost:3001  (add ports: ["3001:3001"] under app first)
+# Production / Coolify: pull a prebuilt GHCR image only — no `build:` on the VPS.
+# GitHub Actions (.github/workflows/deploy.yml) builds and pushes the image;
+# the Coolify deploy webhook triggers pull + restart.
 #
-# Production / Coolify: pull-only — use docker-compose.prod.yml (no build on VPS).
-#   GitHub Actions builds GHCR; Coolify webhook pulls LOTM_IMAGE and restarts.
-#   See docs/COOLIFY.md
+# Coolify setup:
+#   Compose file: docker-compose.prod.yml
+#   LOTM_IMAGE=ghcr.io/<owner>/<repo>:latest
+#   Disable automatic deploy on git push (use the GHA webhook only).
+#
+# Local builds still use docker-compose.yml (`docker compose up --build`).
 
 services:
   app:
-    build: .
-    image: ${LOTM_IMAGE:-lotm-game:local}
+    image: ${LOTM_IMAGE:?Set LOTM_IMAGE to ghcr.io/owner/repo:latest}
     restart: unless-stopped
     expose:
       - "3001"
@@ -22,9 +24,6 @@ services:
       TRUST_PROXY: "1"
       PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://lotmdnd.work.gd}
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://lotmdnd.work.gd}
-      # Player-only public demo: also compose with docker-compose.demo.yml
-      # DEMO_MODE: "1"
-      # TTS_DISABLED: "1"
     init: true
     volumes:
       - lotm-data:/app/data

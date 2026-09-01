@@ -50,7 +50,7 @@ Use a classic PAT with `read:packages` (and `write:packages` if this account als
 1. **Projects → New** (one project can hold both sites).
 2. **New Resource → Docker Compose**.
 3. Connect this GitHub repository (GitHub App is easiest) and branch `main`.
-4. Compose file: `docker-compose.yml`.
+4. **Compose file: `docker-compose.prod.yml`** — pull-only; no `build:` on the VPS. Do **not** use `docker-compose.yml` in Coolify (it has `build: .` and will compile on the server).
 5. **Domains**: `https://lotmdnd.work.gd` mapped to service `app` port **3001**.
 6. Environment variables (Coolify UI):
 
@@ -62,7 +62,15 @@ Use a classic PAT with `read:packages` (and `write:packages` if this account als
 
 7. Persistent storage: compose already declares volume `lotm-data` → `/app/data` (campaigns, vault, embeddings, user mods). Do not delete that volume on redeploy.
 8. Resource hints: **2 GB RAM minimum**, 4 GB if you enable Chatterbox TTS. First embedder warmup downloads the ONNX model into `/app/data`.
-9. **Disable Auto Deploy on git push** if you use the GitHub Actions webhook (otherwise Coolify may rebuild on the VPS *and* pull GHCR). Prefer: Actions builds the image, webhook tells Coolify to pull.
+9. **Disable automatic deployment on git push** in Coolify (Configuration / Source). Use only the GitHub Actions **Deploy Webhook** after GHCR push. If both are enabled, Coolify rebuilds on the VPS *and* GHA builds — avoid that double build.
+
+### Pull-only deploy flow
+
+```text
+push main → GHA build + push GHCR → POST COOLIFY_WEBHOOK → Coolify pull :latest + restart
+```
+
+Coolify deploy logs should show `Pulling ghcr.io/...`, not `npm ci` or `vite build`. If you still see a build, confirm step 4 uses `docker-compose.prod.yml` and step 9 disabled auto-deploy.
 
 ## 5. GitHub secrets (this repo)
 

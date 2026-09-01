@@ -156,10 +156,10 @@ What file changes bust which Docker layer:
 ### Production (GHCR + Coolify)
 
 - [ ] GitHub Actions builds on push to `main` ([`deploy.yml`](../../.github/workflows/deploy.yml))
-- [ ] `cache-from: type=gha` and `cache-to: type=gha,mode=max` are present (already configured)
-- [ ] Coolify **Auto Deploy on git push** is **off** when using `COOLIFY_WEBHOOK`
-- [ ] VPS has `docker login ghcr.io` for private package pull
+- [ ] Coolify compose file is **`docker-compose.prod.yml`** (pull-only; no VPS build)
 - [ ] `LOTM_IMAGE=ghcr.io/<owner>/<repo>:latest` set in Coolify env
+- [ ] Coolify **automatic deploy on git push** is **off**; only the GHA `COOLIFY_WEBHOOK` triggers deploy
+- [ ] VPS has `docker login ghcr.io` for private package pull
 
 ### Local build
 
@@ -215,7 +215,8 @@ Full error log: [`docs/errors/docker-build.md`](../errors/docker-build.md).
 | [`Dockerfile`](../../Dockerfile) | Three-stage image definition |
 | [`.dockerignore`](../../.dockerignore) | Build context exclusions |
 | [`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml) | CI build + GHCR push + Coolify webhook |
-| [`docker-compose.yml`](../../docker-compose.yml) | Local / Coolify compose |
+| [`docker-compose.yml`](../../docker-compose.yml) | Local compose (`build: .`) |
+| [`docker-compose.prod.yml`](../../docker-compose.prod.yml) | Coolify compose (pull-only) |
 | [`docker-compose.demo.yml`](../../docker-compose.demo.yml) | Demo build arg overlay |
 | [`vite.config.ts`](../../vite.config.ts) | Vite + demo compendium plugin |
 | [`packages/engine/package.json`](../../packages/engine/package.json) | Engine `prepare` → `tsc` hook (skipped in Docker via `--ignore-scripts`) |
