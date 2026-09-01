@@ -1,0 +1,46 @@
+# Coolify on a shared VPS: do not publish host ports 80/443.
+# Coolify's Traefik/Caddy proxy reaches this service on container port 3001.
+# In the Coolify UI set the domain to https://lotmdnd.work.gd and the port to 3001.
+#
+# Local run (add `ports: ["3001:3001"]` under app, then):
+#   docker compose up --build
+#   open http://localhost:3001
+# Do not publish 80/443 — Coolify's proxy already owns those.
+#
+# Production image (GitHub Actions → GHCR, then Coolify pull):
+#   LOTM_IMAGE=ghcr.io/<owner>/<repo>:latest
+
+services:
+  app:
+    build: .
+    image: ${LOTM_IMAGE:-lotm-game:local}
+    restart: unless-stopped
+    expose:
+      - "3001"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "3001"
+      DATA_DIR: /app/data
+      MODS_DIR: /app/data/mods
+      TRUST_PROXY: "1"
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://lotmdnd.work.gd}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://lotmdnd.work.gd}
+    init: true
+    volumes:
+      - lotm-data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:' + (process.env.PORT || 3001) + '/health').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 6
+      start_period: 60s
+
+volumes:
+  lotm-data:

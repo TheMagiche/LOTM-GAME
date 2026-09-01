@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import express from 'express';
 import cors from 'cors';
 import { KeyVault } from './server/vault.js';
@@ -33,7 +36,8 @@ import { warmupTts, killSidecar } from './server/lib/tts.js';
 import { serverError } from './server/lib/serverError.js';
 
 const app = express();
-const PORT = 3001;
+const PORT = Number.parseInt(process.env.PORT || '3001', 10);
+const DIST_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), 'dist');
 
 // Initialize vault
 const vault = new KeyVault(DATA_DIR);
@@ -66,6 +70,12 @@ const ALLOWED_ORIGINS = new Set(['null', 'http://localhost:5173']);
 if (process.env.ALLOWED_ORIGINS) {
     process.env.ALLOWED_ORIGINS.split(',').forEach(o => ALLOWED_ORIGINS.add(o.trim()));
 }
+if (process.env.PUBLIC_ORIGIN) {
+    ALLOWED_ORIGINS.add(process.env.PUBLIC_ORIGIN.replace(/\/$/, ''));
+}
+if (process.env.TRUST_PROXY === '1' || process.env.TRUST_PROXY === 'true') {
+    app.set('trust proxy', 1);
+}
 app.use(cors({
     origin(origin, cb) {
         // Allow same-origin requests (no Origin header) and allowlisted origins.
@@ -75,6 +85,12 @@ app.use(cors({
     credentials: false,
 }));
 app.use(express.json({ limit: '500mb' }));
+app.get('/health', (_req, res) => {
+    res.status(200).json({ ok: true });
+});
+app.get('/nginx-health', (_req, res) => {
+    res.status(200).type('text/plain').send('ok\n');
+});
 app.use('/assets/portraits', express.static(PUBLIC_ASSETS_DIR));
 app.use('/assets/campaigns', express.static(CAMPAIGNS_DIR));
 app.use('/assets/lotm', express.static(LOTM_ASSETS_DIR));
@@ -145,6 +161,27 @@ app.use(mountGenericTableRoutes());
 // never shadow a built-in route. With no mod tables registered, every request
 // is a 404 — no file is touched.
 app.use(mountModTableRoutes());
+
+// Production web: serve the Vite build from the same origin as /api so relative
+// `/api` and `/assets` calls work behind Coolify / Traefik without a second origin.
+if (process.env.NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
+    app.use(express.static(DIST_DIR, { index: false, maxAge: '1h' }));
+    app.use((req, res, next) => {
+        if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+        if (
+            req.path.startsWith('/api')
+            || req.path.startsWith('/assets')
+            || req.path.startsWith('/mod-tables')
+            || req.path === '/health'
+            || req.path === '/nginx-health'
+        ) {
+            return next();
+        }
+        res.sendFile(path.join(DIST_DIR, 'index.html'), (err) => {
+            if (err) next(err);
+        });
+    });
+}
 
 // ─── Central Error Handler ───
 app.use((err, _req, res, _next) => {
