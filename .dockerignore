@@ -20,15 +20,20 @@ graphify-out
 .graphify_python
 
 mobile
-docs
 Upgrade
 TRASH
 electron
 test-fixtures
 
+# Keep agent/planning docs out of the image. `docs/*` (not `docs`) so
+# Vite can still inline docs/MODDING.md into the Extensions tab.
+docs/*
+!docs/MODDING.md
+
 *.md
 !packages/engine/README.md
 !mechanics/**/*.md
+!docs/MODDING.md
 
 # Authoring-only trees. The Vite build inlines the rest of mechanics/
 # (lore, rules, loot, catalogs, playable PCs) — do not exclude that folder.
