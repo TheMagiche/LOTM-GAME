@@ -6,17 +6,25 @@ FROM node:${NODE_VERSION} AS dependencies
 
 WORKDIR /app
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update \
   && apt-get install -y --no-install-recommends python3 make g++ \
-  && rm -rf /var/lib/apt/lists/*
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY package.json package-lock.json ./
 COPY packages/engine/package.json packages/engine/tsconfig.json ./packages/engine/
+
+# --ignore-scripts skips engine `prepare` (tsc) so lockfile-only layers stay
+# valid when engine source changes. Rebuild natives + prebuilds explicitly.
+RUN --mount=type=cache,target=/root/.npm \
+    --mount=type=cache,target=/root/.cache/node-gyp \
+    npm ci --ignore-scripts --no-audit --no-fund \
+    && npm rebuild better-sqlite3 sqlite-vec sharp onnxruntime-node
+
 COPY packages/engine/src ./packages/engine/src
 COPY packages/engine/scripts ./packages/engine/scripts
-
-RUN --mount=type=cache,target=/root/.npm \
-  npm ci --no-audit --no-fund
+RUN npx tsc -p packages/engine/tsconfig.json
 
 FROM node:${NODE_VERSION} AS builder
 
@@ -24,7 +32,15 @@ WORKDIR /app
 
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/packages/engine ./packages/engine
-COPY . .
+COPY --from=dependencies /app/package.json /app/package-lock.json ./
+
+# Vite inputs only — do not COPY packages/engine (would wipe dist from deps).
+COPY vite.config.ts tsconfig.json tsconfig.app.json tsconfig.node.json index.html ./
+COPY src ./src
+COPY public ./public
+COPY mechanics ./mechanics
+COPY gamedata ./gamedata
+COPY docs/MODDING.md ./docs/MODDING.md
 
 ENV NODE_ENV=production
 ENV DOCKER_BUILD=1
@@ -34,15 +50,22 @@ ENV VITE_DEPLOYMENT_MODE=$VITE_DEPLOYMENT_MODE
 
 # Vite compiles TS itself. `npm run build` also runs `tsc -b` (noEmit typecheck),
 # which currently fails on pre-existing errors and would abort the image build.
+# Engine is already built in the dependencies stage.
 # Engine `prepare` is `tsc`; prune would re-run it after removing typescript.
-RUN npx tsc -p packages/engine/tsconfig.json \
-  && if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npx vite build; fi \
-  && npm prune --omit=dev --ignore-scripts
+RUN --mount=type=cache,target=/app/node_modules/.vite \
+    if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npx vite build; fi \
+    && npm prune --omit=dev --ignore-scripts
+
+# Runtime files after Vite so server/mod edits do not bust the compile layer.
+COPY server.js ./
+COPY server ./server
+COPY mods ./mods
 
 FROM node:${NODE_VERSION} AS runner
 
 WORKDIR /app
 
+ENV DEBIAN_FRONTEND=noninteractive
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3001
@@ -55,14 +78,18 @@ RUN apt-get update \
     ca-certificates \
     gosu \
     git \
-    python3 \
     python3-venv \
-    python3-pip \
     ffmpeg \
     libgomp1 \
-  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /app/data \
   && chown node:node /app/data
+
+# python3-pip pulls python3; keep this layer slim for Chatterbox sidecar pip.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    python3-pip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder --chown=node:node /app/package.json /app/package-lock.json ./
 COPY --from=builder --chown=node:node /app/node_modules ./node_modules

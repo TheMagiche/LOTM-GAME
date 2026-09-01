@@ -15,6 +15,11 @@ data
 coverage
 test-results
 playwright-report
+**/__tests__
+**/*.test.ts
+**/*.test.tsx
+**/*.test.js
+server/__tests__
 build-output
 graphify-out
 .graphify_python

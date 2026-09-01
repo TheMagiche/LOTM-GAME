@@ -64,7 +64,7 @@ Before choosing a revenue model, document what running the app actually costs:
 | **VPS** | 2 GB RAM minimum, 4 GB with Chatterbox TTS ([`docs/COOLIFY.md`](../COOLIFY.md) §4) |
 | **First deploy** | ONNX embedder download into `data/.embeddings_cache` on first embedder warmup |
 | **LLM cost** | Borne by end user (BYOK) unless the operator bundles credits |
-| **CI** | GitHub Actions builds native `better-sqlite3` image — the VPS does not compile native modules |
+| **CI** | GitHub Actions builds native `better-sqlite3` image — the VPS does not compile native modules. See [docker-build-performance.md](./docker-build-performance.md) for build timing and cache tuning. |
 
 ---
 
