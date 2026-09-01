@@ -1,26 +1,90 @@
-#19 ERROR: process "/bin/sh -c npm run build --prefix packages/engine   && if [ \"$VITE_DEPLOYMENT_MODE\" = \"demo\" ]; then npm run build:demo; else npx vite build; fi   && npm prune --omit=dev" did not complete successfully: exit code: 127
-------
- > [builder 6/6] RUN npm run build --prefix packages/engine   && if [ "" = "demo" ]; then npm run build:demo; else npx vite build; fi   && npm prune --omit=dev:
-5.758 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-5.764 ✓ built in 2.85s
-14.60 npm error code 127
-14.60 npm error path /app/packages/engine
-14.60 npm error command failed
-14.60 npm error command sh -c npm run build
-14.60 npm error > @narrative/engine@0.1.0 build
-14.60 npm error > tsc -p tsconfig.json
-14.60 npm error sh: 1: tsc: not found
-14.60 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-09-01T18_57_14_131Z-debug-0.log
-------
-Dockerfile:37
---------------------
-  36 |     # which currently fails on pre-existing errors and would abort the image build.
-  37 | >>> RUN npm run build --prefix packages/engine \
-  38 | >>>   && if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npx vite build; fi \
-  39 | >>>   && npm prune --omit=dev
-  40 |     
---------------------
-ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build --prefix packages/engine   && if [ \"$VITE_DEPLOYMENT_MODE\" = \"demo\" ]; then npm run build:demo; else npx vite build; fi   && npm prune --omit=dev" did not complete successfully: exit code: 127
-Reference
-Check build summary support
-Error: buildx failed with: ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build --prefix packages/engine   && if [ \"$VITE_DEPLOYMENT_MODE\" = \"demo\" ]; then npm run build:demo; else npx vite build; fi   && npm prune --omit=dev" did not complete successfully: exit code: 127
+node:internal/modules/esm/resolve:272
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/app/src/data/titles.json' imported from /app/server/lib/nlp.js
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    at #resolve (node:internal/modules/esm/loader:687:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///app/src/data/titles.json'
+}
+Node.js v24.20.0
+node:internal/modules/esm/resolve:272
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/app/src/data/titles.json' imported from /app/server/lib/nlp.js
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    at #resolve (node:internal/modules/esm/loader:687:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///app/src/data/titles.json'
+}
+Node.js v24.20.0
+node:internal/modules/esm/resolve:272
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/app/src/data/titles.json' imported from /app/server/lib/nlp.js
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    at #resolve (node:internal/modules/esm/loader:687:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///app/src/data/titles.json'
+}
+Node.js v24.20.0
+node:internal/modules/esm/resolve:272
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/app/src/data/titles.json' imported from /app/server/lib/nlp.js
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    at #resolve (node:internal/modules/esm/loader:687:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///app/src/data/titles.json'
+}
+Node.js v24.20.0
+node:internal/modules/esm/resolve:272
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/app/src/data/titles.json' imported from /app/server/lib/nlp.js
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    at #resolve (node:internal/modules/esm/loader:687:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///app/src/data/titles.json'
+}
+Node.js v24.20.0

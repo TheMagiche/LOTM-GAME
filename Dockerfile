@@ -100,10 +100,12 @@ COPY --from=builder --chown=node:node /app/dist ./dist
 COPY --from=builder --chown=node:node /app/gamedata ./gamedata
 COPY --from=builder --chown=node:node /app/public/bundled-mods ./public/bundled-mods
 COPY --from=builder --chown=node:node /app/mods ./mods.shipped
+# nlp.js ESM-imports this at runtime; Vite inlines it for the frontend only.
+COPY --from=builder --chown=node:node /app/src/data/titles.json ./src/data/titles.json
 COPY docker/entrypoint.sh /app/docker/entrypoint.sh
 
 RUN chmod +x /app/docker/entrypoint.sh \
-  && chown -R node:node /app/mods.shipped /app/public /app/gamedata /app/dist /app/server /app/packages
+  && chown -R node:node /app/mods.shipped /app/public /app/gamedata /app/dist /app/server /app/packages /app/src
 
 EXPOSE 3001
 
