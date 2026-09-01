@@ -34,9 +34,10 @@ ENV VITE_DEPLOYMENT_MODE=$VITE_DEPLOYMENT_MODE
 
 # Vite compiles TS itself. `npm run build` also runs `tsc -b` (noEmit typecheck),
 # which currently fails on pre-existing errors and would abort the image build.
-RUN npm run build --prefix packages/engine \
+# Engine `prepare` is `tsc`; prune would re-run it after removing typescript.
+RUN npx tsc -p packages/engine/tsconfig.json \
   && if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npx vite build; fi \
-  && npm prune --omit=dev
+  && npm prune --omit=dev --ignore-scripts
 
 FROM node:${NODE_VERSION} AS runner
 
