@@ -7,6 +7,7 @@ import { applyLocale, detectLocale, isLocaleCode } from '../../i18n';
 import { getBuiltinTokenCap } from '../../services/payload/contributions/builtins';
 
 import { API_BASE as API } from '../../lib/apiBase';
+import { applyDemoLocks } from '../../config/demoMode';
 
 // ── DEFAULT constants ──────────────────────────────────────────────────
 
@@ -78,7 +79,7 @@ export const defaultPreset: AIPreset = {
     imageAIProviderId: '',
 };
 
-export const defaultSettings: AppSettings = {
+export const defaultSettings: AppSettings = applyDemoLocks({
     presets: [defaultPreset],
     activePresetId: defaultPreset.id,
     providers: [defaultProvider],
@@ -115,7 +116,7 @@ export const defaultSettings: AppSettings = {
     lodImportanceBonus: 2,
     lodElevateScenes: 2,
     lodSlottedMaxPerScene: 2,
-};
+});
 
 export function applyTheme(theme: 'light' | 'dark' | 'system') {
     const resolved = theme === 'system' ? systemTheme() : theme;
@@ -366,7 +367,7 @@ export function migrateSettings(data: Record<string, unknown>): AppSettings {
         }
     }
 
-    return {
+    return applyDemoLocks({
         presets,
         activePresetId: (raw.activePresetId as string) || presets[0].id,
         providers,
@@ -425,7 +426,7 @@ export function migrateSettings(data: Record<string, unknown>): AppSettings {
         modLoadOrder: Array.isArray(raw.modLoadOrder)
             ? (raw.modLoadOrder as unknown[]).filter((id): id is string => typeof id === 'string')
             : undefined,
-    };
+    });
 }
 
 // Debounced save to avoid hammering the API on rapid changes

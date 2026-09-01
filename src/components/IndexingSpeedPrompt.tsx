@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Cpu, X } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { API_BASE as API } from '../lib/apiBase';
+import { IS_DEMO_MODE } from '../config/demoMode';
 
 type Specs = { cores: number; totalMemGB: number; cpuModel: string; suggestedSpeed: 'eco' | 'balanced' | 'aggressive' };
 
@@ -24,6 +25,7 @@ export function IndexingSpeedPrompt() {
     const [specs, setSpecs] = useState<Specs | null>(null);
 
     useEffect(() => {
+        if (IS_DEMO_MODE) return;
         if (!settingsLoaded || settings.indexingSpeedPrompted) return;
         let cancelled = false;
         (async () => {

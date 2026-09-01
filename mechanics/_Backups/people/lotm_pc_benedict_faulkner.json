@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_benedict_faulkner",
+    "name": "Benedict Faulkner",
+    "aliases": "\"Professor Faulk\"",
+    "appearance": "A gaunt man of fifty-two with white hair swept back from a high forehead, wire-rimmed spectacles, and the stooped elegance of a career academic. His tweed jackets are patched at the elbows and his lecture voice could hold a hall of four hundred or a table of two. Chalk dust follows him like a cologne.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Early fifties",
+      "build": "Tall, gaunt, ascetic",
+      "symmetry": "Aristocratic decay; handsome the way ruins are",
+      "hairStyle": "White, swept back",
+      "eyeColor": "Pale grey, unsettlingly steady",
+      "skinTone": "Paper-pale",
+      "gait": "Measured glide, hands clasped behind",
+      "distinctMarks": "Wire spectacles; chalk-white fingertips",
+      "clothing": "Patched tweed jacket, waistcoat with watch chain, satchel of books",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Khoy University history faculty (unregistered Beyonder)",
+    "storyRelevance": "Benedict took the Scholar potion to finish his life's work — a history of the Fourth Epoch the churches would burn him for writing accurately. The formula came from Azik Eggers's private library, borrowed without permission during a dinner party. Now he reads dead languages on first sight and remembers every page he's ever touched, but the knowledge has begun arriving with opinions attached: the books whisper interpretations, and lately they whisper back when questioned. Professor Eggers has requested a meeting. Benedict has accepted, twice postponed.",
+    "goals": "Finish the Fourth Epoch history and see it survive him. Learn the rules of whispering books before one lies to him successfully. Survive the Eggers meeting with his secret intact — or form the alliance it might offer.",
+    "disposition": "Erudite, ironic, quietly reckless with truths other men die avoiding. Treats danger as an footnote-worthy anecdote in progress.",
+    "status": "Alive",
+    "voice": "Measured lecture-hall baritone, footnotes included. Corrects misquotations reflexively, including his own.",
+    "personality": "The Scholar creed demands truth above comfort, which Benedict has always practiced professionally. His risk is the whispers: knowledge with opinions attached stops being knowledge and starts being influence. He has begun writing down which thoughts feel borrowed.",
+    "exampleOutput": "[**Benedict**]: \"The Trunsoest records say three things, and your source quotes only the convenient one.\" He polishes his spectacles slowly. \"I've read the original. In the original, incidentally, the margins argue with the text — which suggests the scribe knew more than his emperor liked. Shall I tell you what the margins say?\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Tingen",
+    "haunt": "Khoy University's restricted stacks after midnight",
+    "drives": {
+      "coreWant": "To write the true history of the Fourth Epoch and live to defend it",
+      "sessionWant": "Navigate the Eggers meeting and test whether the whispers can lie",
+      "sceneWant": "Know the obscure fact that reframes everything"
+    },
+    "wants": {
+      "short": [
+        "Verify today's whispered interpretation against three sources",
+        "Return (most of) the borrowed library materials",
+        "Grade the third-years' essays before the Dean notices"
+      ],
+      "medium": [
+        "Complete the Fourth Epoch manuscript's dangerous chapters",
+        "Determine what Eggers knows and what he wants",
+        "Advance toward Knowledge Master without church oversight"
+      ],
+      "long": "See truth published, taught, and impossible to burn."
+    },
+    "personalityHex": {
+      "drive": 1,
+      "diligence": 2,
+      "boldness": 0,
+      "warmth": 1,
+      "empathy": 0,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Satchel of rare texts (some borrowed indefinitely)",
+        "Manuscript of the Fourth Epoch history, coded",
+        "Wire-rimmed spectacles (plain glass; affectation)",
+        "Chalk and slate for cipher work",
+        "Borrowed page from Eggers's library, unread out of caution"
+      ],
+      "abilities": [
+        "Enhanced Memory",
+        "Language Comprehension",
+        "Spirituality",
+        "Research Mastery",
+        "Whisper Discernment"
+      ],
+      "pathway": "hermit",
+      "sequence": 9
+    },
+    "traits": [
+      "erudite",
+      "reckless",
+      "ironic",
+      "patient",
+      "secretive"
+    ],
+    "pcMeta": {
+      "archetype": "Scholar — Sequence 9 (Hermit Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 3,
+        "Reasoning": 8
+      },
+      "purse": { "soli": 15, "pence": 4 }
+    },
+    "characterProfile": {
+      "name": "Benedict Faulkner",
+      "race": "Human (Loen)",
+      "class": "Scholar — Sequence 9 (Hermit Pathway)",
+      "level": 9,
+      "hp": { "current": 20, "max": 20 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 3, "Reasoning": 8 },
+      "skills": [
+        "Enhanced Memory — recall every page he has ever touched",
+        "Language Comprehension — read dead tongues on first sight",
+        "Whisper Discernment — separate a book's opinions from its facts"
+      ],
+      "abilities": ["Enhanced Memory", "Language Comprehension", "Spirituality", "Research Mastery", "Whisper Discernment"],
+      "traits": ["erudite", "reckless", "ironic", "patient", "secretive"],
+      "notes": "Scholar of the Hermit Pathway whose Fourth Epoch research has begun whispering interpretations of its own."
+    }
+  }
+]

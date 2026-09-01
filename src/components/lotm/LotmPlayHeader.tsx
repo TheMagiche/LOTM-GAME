@@ -1,8 +1,9 @@
 import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen, Save, Sparkles } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
-import { saveCampaignState } from '../../store/campaignStore';
+import { deleteCampaign, saveCampaignState } from '../../store/campaignStore';
 import { useChatPersistence } from '../../hooks/useChatPersistence';
 import type { AiTier } from '../../types/llm';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
@@ -85,6 +86,7 @@ export function LotmPlayHeader() {
                             Chronicle
                         </button>
                     </div>
+                    {!IS_DEMO_MODE && (
                     <button
                         type="button"
                         className="lotm-play-header-tier"
@@ -95,6 +97,7 @@ export function LotmPlayHeader() {
                         <Cpu size={13} />
                         <span>{aiTier}</span>
                     </button>
+                    )}
                 </div>
             )}
         </header>
@@ -111,7 +114,7 @@ export async function exitLotmCampaign(): Promise<void> {
         divergenceRegister,
         setActiveCampaign,
     } = useAppStore.getState();
-    if (activeCampaignId) {
+    if (activeCampaignId && !IS_DEMO_MODE) {
         await saveCampaignState(activeCampaignId, { context, messages, condenser, pinnedExcerpts });
         if (divergenceRegister && (divergenceRegister.entries.length > 0 || (divergenceRegister.prunedLog ?? []).length > 0)) {
             try {
@@ -122,9 +125,17 @@ export async function exitLotmCampaign(): Promise<void> {
             }
         }
     }
+    const departingId = activeCampaignId;
     useAppStore.getState().endLotmWorldIndex();
     useAppStore.getState().setLotmChronicleOpen(false);
     useAppStore.getState().closeGrimoire();
     useAppStore.getState().closePlayerGrimoire();
     setActiveCampaign(null);
+    if (IS_DEMO_MODE && departingId) {
+        try {
+            await deleteCampaign(departingId);
+        } catch (e) {
+            console.warn('[LotmPlayHeader] demo deleteCampaign failed:', e);
+        }
+    }
 }

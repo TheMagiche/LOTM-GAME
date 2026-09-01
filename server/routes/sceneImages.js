@@ -6,6 +6,7 @@ import { wrapAsync } from '../lib/asyncHandler.js';
 import { serverError } from '../lib/serverError.js';
 import { composeSceneImagePrompt } from '../services/sceneImageComposerService.js';
 import { generateSceneImage, getCampaignSceneImagesDir } from '../services/imageProvider.js';
+import { isDemoMode } from '../lib/demoMode.js';
 
 export function createSceneImagesRouter(vault) {
     const router = Router();
@@ -114,6 +115,9 @@ export function createSceneImagesRouter(vault) {
     };
 
     router.post('/api/scene-images/compose', wrapAsync(async (req, res) => {
+        if (isDemoMode()) {
+            return res.status(403).json({ error: 'Scene image generation is disabled in demo mode' });
+        }
         const { campaignId, contextInput, llmConfig: clientLlmConfig } = req.body;
         if (!campaignId || !contextInput || !contextInput.sourceMessageId || !contextInput.selectedText) {
             return res.status(400).json({ error: 'Missing required parameters: campaignId, contextInput' });
@@ -127,6 +131,9 @@ export function createSceneImagesRouter(vault) {
     }));
 
     router.post('/api/scene-images/generate', wrapAsync(async (req, res) => {
+        if (isDemoMode()) {
+            return res.status(403).json({ error: 'Scene image generation is disabled in demo mode' });
+        }
         const { campaignId, sourceMessageId, selectedText, promptPackage, selectionStart, selectionEnd, imageConfig: clientImageConfig } = req.body;
         if (!campaignId || !sourceMessageId || !selectedText || !promptPackage || !promptPackage.positivePrompt) {
             return res.status(400).json({ error: 'Missing required parameters for image generation' });

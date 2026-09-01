@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_rosalind_hart",
+    "name": "Rosalind Hart",
+    "aliases": "",
+    "appearance": "A composed woman of thirty with chestnut hair pinned severely and grey eyes that catalogue a room's exits, occupants, and lies within seconds. She wears mourning black tailored too well for real grief, gloves at all hours, and a locket she never opens in company. Her stillness is total — the stillness of someone who has learned that watching is safer than being watched.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Female",
+      "ageRange": "Around thirty",
+      "build": "Slim, upright, controlled",
+      "symmetry": "Elegant; handsome rather than pretty, by choice",
+      "hairStyle": "Chestnut, pinned severely back",
+      "eyeColor": "Cool grey",
+      "skinTone": "Fair, powder-pale",
+      "gait": "Measured, unhurried, always facing the room",
+      "distinctMarks": "A thin white scar under her left glove; eyes that never stop moving",
+      "clothing": "Tailored mourning black, long gloves, silver locket on a chain",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated (former Backlund society, now estranged)",
+    "storyRelevance": "Rosalind drank the Spectator potion to understand why her husband's business partners smiled the way they did before his 'accident.' She has since read the truth in every face at every dinner party — and learned that three of Backlund's most respectable families wear masks over something worse than murder. A Psychology Alchemist approached her at a recital and offered therapy. She declined. The offer has been repeated monthly, each time more precisely worded.",
+    "goals": "Prove her husband was murdered without revealing what she can see. Decide whether the Alchemists' offer is salvation or recruitment. Protect her younger sister from marrying into any of the three families.",
+    "disposition": "Poised, surgical, dryly compassionate. She feels everything and shows nothing; kindness arrives as perfectly timed practical help.",
+    "status": "Alive",
+    "voice": "Low, level, aristocratic without warmth. Asks questions that feel like mirrors.",
+    "personality": "The Spectator creed fits her like a glove made to measure: observe, don't interfere, guide gently. The problem is that interference is exactly what justice requires, and the tension between her pathway's discipline and her grief is where her madness will grow if it grows anywhere.",
+    "exampleOutput": "[**Rosalind**]: \"You needn't tell me where you were Tuesday.\" She folds her hands. \"Your left hand already did. I only wonder — was the trembling fear, or conscience? They look so alike on some people.\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The West Borough reading rooms and St. Samuel Cathedral's side chapel",
+    "drives": {
+      "coreWant": "To see every mask in Backlund clearly — starting with whoever killed her husband",
+      "sessionWant": "Trace the business partners' finances and deflect the Psychology Alchemists",
+      "sceneWant": "Understand everyone present better than they understand themselves"
+    },
+    "wants": {
+      "short": [
+        "Attend Lady Pemberton's salon and listen properly",
+        "Check her sister's suitor against the three families",
+        "Write coded observations into her household ledger"
+      ],
+      "medium": [
+        "Find proof of murder that would survive a courtroom",
+        "Learn what the Psychology Alchemists truly want from her",
+        "Master Frenzy without ever once using it"
+      ],
+      "long": "See the whole board of Backlund's hidden war — and choose which pieces to move."
+    },
+    "personalityHex": {
+      "drive": 1,
+      "diligence": 2,
+      "boldness": -1,
+      "warmth": 0,
+      "empathy": 2,
+      "composure": 2
+    },
+    "signatureKit": {
+      "equipment": [
+        "Silver locket (locked; contents private)",
+        "Household ledger with coded observations",
+        "Lorgnette with faintly enchanted lenses",
+        "Hatpin (improvised weapon)",
+        "Invitations to every salon worth attending"
+      ],
+      "abilities": [
+        "Spirit Vision",
+        "Emotion Perception",
+        "Spirituality",
+        "Psychological Insight",
+        "Composure"
+      ],
+      "pathway": "visionary",
+      "sequence": 9
+    },
+    "traits": [
+      "perceptive",
+      "composed",
+      "vindictive",
+      "protective",
+      "secretive"
+    ],
+    "pcMeta": {
+      "archetype": "Spectator — Sequence 9 (Visionary Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 7,
+        "Physique": 4,
+        "Reasoning": 6
+      },
+      "purse": { "soli": 13, "pence": 8 }
+    },
+    "characterProfile": {
+      "name": "Rosalind Hart",
+      "race": "Human (Loen)",
+      "class": "Spectator — Sequence 9 (Visionary Pathway)",
+      "level": 9,
+      "hp": { "current": 22, "max": 22 },
+      "mp": { "current": 14, "max": 14 },
+      "stats": { "Spirituality": 7, "Physique": 4, "Reasoning": 6 },
+      "skills": [
+        "Emotion Perception — read feelings before they are spoken",
+        "Psychological Insight — find the want beneath the words",
+        "Composure — remain unreadable while reading everyone else"
+      ],
+      "abilities": ["Spirit Vision", "Emotion Perception", "Spirituality", "Psychological Insight", "Composure"],
+      "traits": ["perceptive", "composed", "vindictive", "protective", "secretive"],
+      "notes": "Visionary pathway Spectator whose calm observation reveals what people want before they admit it to themselves."
+    }
+  }
+]

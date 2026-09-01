@@ -16,6 +16,7 @@ import {
     debouncedSaveSettings,
     defaultSettings,
 } from './settingsHelpers';
+import { applyDemoLocks } from '../../config/demoMode';
 
 // Re-export the public helper surface so external importers keep working untouched.
 export {
@@ -124,7 +125,7 @@ export const createSettingsSlice: StateCreator<SettingsSlice & { activeCampaignI
         let previousTier: AiTier | undefined;
         set((s) => {
             previousTier = s.settings?.aiTier;
-            const newSettings = { ...s.settings, ...patch };
+            const newSettings = applyDemoLocks({ ...s.settings, ...patch });
             debouncedSaveSettings(newSettings, s.activeCampaignId);
             if (patch.theme) {
                 applyTheme(patch.theme);

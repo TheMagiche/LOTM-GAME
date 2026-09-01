@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_arthur_pendel",
+    "name": "Arthur Pendel",
+    "aliases": "\"Constable Pendel\"",
+    "appearance": "A square-jawed man of twenty-seven in a constable's uniform kept regulation-perfect, with fair hair cropped short and blue eyes that have seen too much paperwork and not enough justice. His truncheon hangs at his hip beside a notebook of cases closed too quickly. A faint bruise-shadow circles his left eye — sleeplessness, he says.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Mid twenties",
+      "build": "Athletic, square-shouldered",
+      "symmetry": "Clean-cut, trustworthy-looking (which he resents)",
+      "hairStyle": "Fair, regulation short",
+      "eyeColor": "Clear blue",
+      "skinTone": "Fair, ruddy from night beats",
+      "gait": "Brisk patrol stride; checks rooftops without seeming to",
+      "distinctMarks": "Sleepless shadows under his eyes; calloused knuckles",
+      "clothing": "Loen constable's uniform, polished boots, whistle and truncheon",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Backlund Metropolitan Police (unregistered Beyonder)",
+    "storyRelevance": "Arthur drank the Sleepless potion after the Harrow Lane case — three dead children, filed as fever, buried as fever, known by him otherwise. The formula came from a Nighthawk who owed him and couldn't explain why. He hasn't slept properly since and no longer needs to, but the nights have grown crowded with things only the awake can see, and the voice that whispers case solutions at 3 a.m. is getting chattier. The Nighthawk who helped him has stopped answering letters.",
+    "goals": "Reopen what can be reopened of Harrow Lane. Learn the rules of the things he sees at night before they learn his. Decide whether the Evernight church is an answer or just another locked filing cabinet.",
+    "disposition": "Dutiful, dogged, quietly furious at institutional lies. Humor dry as old toast. Protects first, asks permission never.",
+    "status": "Alive",
+    "voice": "Flat Backlund constable cadence, precise under pressure. Reads charges like bedtime stories to himself when the nights get long.",
+    "personality": "The Sleepless creed demands vigilance in place of rest, which Arthur was already doing for free. His risk is the whispering: the potion trades sleep for watchfulness, and watchfulness with no witness curdles into paranoia. He writes everything down so morning-him can audit night-him.",
+    "exampleOutput": "[**Arthur**]: \"Third window on the left's been painted shut since Tuesday.\" He doesn't look up from his notebook. \"Paint's still wet. So either our burglar's very good or very new.\" He pockets the pencil. \"I'm hoping new. New ones make mistakes I can arrest.\"",
+    "affinity": 55,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The Cherwood Borough night beat and the 24-hour pie stand on Backlund Bridge",
+    "drives": {
+      "coreWant": "To be awake — truly awake — for every wrong that happens in the dark",
+      "sessionWant": "Crack the Harrow Lane cover-up and identify the night-things' patterns",
+      "sceneWant": "Notice what everyone else sleeps through"
+    },
+    "wants": {
+      "short": [
+        "Walk the full beat and log every anomaly",
+        "Copy the Harrow Lane file before it's re-filed",
+        "Buy two pies — one for the informant at the bridge"
+      ],
+      "medium": [
+        "Find the Nighthawk who stopped writing back",
+        "Get the Harrow Lane case officially reopened",
+        "Advance toward Nightmare with eyes open"
+      ],
+      "long": "Make Backlund's nights honest — one watched street at a time."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 2,
+      "boldness": 1,
+      "warmth": 1,
+      "empathy": 1,
+      "composure": 1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Constable's truncheon and whistle",
+        "Notebook of night-watch observations (coded)",
+        "Stolen copy of the Harrow Lane file",
+        "Strong tea in a dented tin flask",
+        "Nighthawk's parting gift: a silver-tipped matchbox"
+      ],
+      "abilities": [
+        "Sleeplessness",
+        "Enhanced Vigilance",
+        "Spirit Vision",
+        "Combat Proficiency",
+        "Night Perception"
+      ],
+      "pathway": "darkness",
+      "sequence": 9
+    },
+    "traits": [
+      "vigilant",
+      "dutiful",
+      "stubborn",
+      "righteous",
+      "insomniac"
+    ],
+    "pcMeta": {
+      "archetype": "Sleepless — Sequence 9 (Darkness Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 6,
+        "Reasoning": 5
+      },
+      "purse": { "soli": 7, "pence": 3 }
+    },
+    "characterProfile": {
+      "name": "Arthur Pendel",
+      "race": "Human (Loen)",
+      "class": "Sleepless — Sequence 9 (Darkness Pathway)",
+      "level": 9,
+      "hp": { "current": 26, "max": 26 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 6, "Reasoning": 5 },
+      "skills": [
+        "Sleeplessness — remain awake and functional through every night",
+        "Enhanced Vigilance — notice what sleeping men cannot",
+        "Night Perception — read the things that move after dark"
+      ],
+      "abilities": ["Sleeplessness", "Enhanced Vigilance", "Spirit Vision", "Combat Proficiency", "Night Perception"],
+      "traits": ["vigilant", "dutiful", "stubborn", "righteous", "insomniac"],
+      "notes": "Backlund constable and unregistered Sleepless. Reopening the Harrow Lane case while learning what follows him through the night."
+    }
+  }
+]

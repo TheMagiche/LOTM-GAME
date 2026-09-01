@@ -20,6 +20,7 @@ import { resolveModText } from '../services/mods/mounts/chromeRenderers';
 import { COMPOSER_BUILTIN_ID_SET, registerComposerBuiltins } from '../services/mods/mounts/composerBuiltins';
 import { useTranslation } from '../i18n/useTranslation';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
+import { IS_DEMO_MODE } from '../config/demoMode';
 import { exitLotmCampaign } from './lotm/LotmPlayHeader';
 import { TokenGauge } from './TokenGauge';
 import { OneShotInjectorButton } from './OneShotInjectorButton';
@@ -168,6 +169,7 @@ export function ContextNavigationDrawer() {
 
     const aiTier = useAppStore(s => s.settings?.aiTier ?? 'pro') as AiTier;
     const uiViewMode = useAppStore(s => s.settings?.uiViewMode ?? 'gm');
+    const playerLocked = IS_DEMO_MODE || uiViewMode === 'player';
 
     const composerModLeaves: NavLeaf[] = composerEntries
         .filter((entry) => (
@@ -345,7 +347,7 @@ export function ContextNavigationDrawer() {
                     </div>
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
                         {GROUPS.filter((group) => {
-                            if (uiViewMode === 'player') {
+                            if (playerLocked) {
                                 if (group.id === 'world' || group.id === 'engine' || group.id === 'mods' || group.id === 'story') {
                                     return false;
                                 }
@@ -372,7 +374,9 @@ export function ContextNavigationDrawer() {
                                     </button>
                                     {isExpanded && (
                                         <div className="pb-1">
-                                            {legacyLeaves[group.id].map((leaf) => <NavRow key={leaf.id} leaf={leaf} />)}
+                                            {legacyLeaves[group.id]
+                                                .filter((leaf) => !IS_DEMO_MODE || !['injectArc', 'oneShot', 'absoluteCommand'].includes(leaf.id))
+                                                .map((leaf) => <NavRow key={leaf.id} leaf={leaf} />)}
                                             {LOTM_EXCLUSIVE_UI && group.id === 'engine' && (
                                                 <div className="px-3 py-2">
                                                     <TokenGauge />
@@ -383,12 +387,12 @@ export function ContextNavigationDrawer() {
                                 </section>
                             );
                         })}
-                        {uiViewMode === 'player' && (
+                        {playerLocked && !IS_DEMO_MODE && (
                             <div className="my-1 border-t border-border/60 pt-1">
                                 <NavRow leaf={{ id: 'settings', label: 'Settings', icon: Settings, onSelect: () => useAppStore.getState().toggleSettings() }} />
                             </div>
                         )}
-                        {!LOTM_EXCLUSIVE_UI && uiViewMode === 'gm' && (
+                        {!LOTM_EXCLUSIVE_UI && !playerLocked && (
                             <>
                                 <div className="my-2 border-t border-border" />
                                 <NavRow leaf={{ id: 'backups', label: 'Backups', icon: Archive, onSelect: () => useAppStore.getState().toggleBackupModal() }} />

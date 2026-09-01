@@ -26,6 +26,9 @@ services:
       TRUST_PROXY: "1"
       PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://lotmdnd.work.gd}
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://lotmdnd.work.gd}
+      # Player-only public demo: also compose with docker-compose.demo.yml
+      # DEMO_MODE: "1"
+      # TTS_DISABLED: "1"
     init: true
     volumes:
       - lotm-data:/app/data

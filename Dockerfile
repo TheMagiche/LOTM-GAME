@@ -27,8 +27,11 @@ COPY . .
 ENV NODE_ENV=production
 ENV DOCKER_BUILD=1
 
+ARG VITE_DEPLOYMENT_MODE=
+ENV VITE_DEPLOYMENT_MODE=$VITE_DEPLOYMENT_MODE
+
 RUN npm run build --prefix packages/engine \
-  && npm run build \
+  && if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npm run build; fi \
   && npm prune --omit=dev
 
 FROM node:${NODE_VERSION} AS runner

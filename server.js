@@ -34,6 +34,8 @@ import { initDb } from './server/lib/vectorStore.js';
 import { warmup as warmupEmbedder } from './server/lib/embedder.js';
 import { warmupTts, killSidecar } from './server/lib/tts.js';
 import { serverError } from './server/lib/serverError.js';
+import { isDemoMode, isTtsDisabled } from './server/lib/demoMode.js';
+import { createDemoSessionRouter, pruneStaleDemoCampaigns } from './server/routes/demoSession.js';
 
 const app = express();
 const PORT = Number.parseInt(process.env.PORT || '3001', 10);
@@ -86,7 +88,7 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '500mb' }));
 app.get('/health', (_req, res) => {
-    res.status(200).json({ ok: true });
+    res.status(200).json({ ok: true, demo: isDemoMode() });
 });
 app.get('/nginx-health', (_req, res) => {
     res.status(200).type('text/plain').send('ok\n');
@@ -105,7 +107,11 @@ registerLocationTable(serverTableRegistry);
 registerFactionTable(serverTableRegistry);
 registerItemTable(serverTableRegistry);
 warmupEmbedder().catch(err => console.error('[Embedder] Warmup failed:', err.message));
-warmupTts().catch(err => console.error('[TTS] Warmup failed:', err.message));
+if (isTtsDisabled()) {
+    console.log('[TTS] Skipped warmup (demo / TTS_DISABLED)');
+} else {
+    warmupTts().catch(err => console.error('[TTS] Warmup failed:', err.message));
+}
 
 // ─── Routes ───
 app.use(createVaultRouter(vault));
@@ -126,6 +132,7 @@ app.use(createEmbeddingRouter());
 app.use(createTtsRouter());
 app.use(createSceneImagesRouter(vault));
 app.use(createLotmAssetsRouter());
+app.use(createDemoSessionRouter());
 app.use('/api/mods', createModsRouter({ modsDir: MODS_DIR, appVersion: APP_VERSION, bundledModsDir: BUNDLED_MODS_DIR }));
 
 // Phase 6.4 — register mod tables ONCE AT BOOT, not only as a side effect of
@@ -192,6 +199,10 @@ app.use((err, _req, res, _next) => {
 app.listen(PORT, BIND_HOST, () => {
     console.log(`[GM-Cockpit API] ✓ Running on http://${BIND_HOST}:${PORT}`);
     console.log(`[GM-Cockpit API]   Data dir: ${DATA_DIR}`);
+    if (isDemoMode()) {
+        console.log('[GM-Cockpit API]   Demo mode: player-only, TTS off, ephemeral chronicles');
+        pruneStaleDemoCampaigns();
+    }
 });
 
 function shutdown(code) {

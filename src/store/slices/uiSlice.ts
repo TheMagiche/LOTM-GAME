@@ -1,6 +1,7 @@
 ﻿import type { StateCreator } from 'zustand';
 import type { PayloadTrace, PipelinePhase, StreamingStats, LoreCheckResult, LoreCheckSelection, ArmedLoot } from '../../types';
 import type { OneShotEventId } from '../../services/oneshot/oneShotEvents';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 
 // WO-screen-modernization §A-2 — `rules-mgr` is gone. Rules Manager merged
 // into System Context as the [Write | Retrieval] segmented control; the nav
@@ -49,6 +50,9 @@ export type UISlice = {
     loreCheckError: string;
     loreCheckResult: LoreCheckResult | null;
     loreCheckSelection: LoreCheckSelection | null;
+    demoOnboardingOpen: boolean;
+    openDemoOnboarding: () => void;
+    closeDemoOnboarding: () => void;
     toggleSettings: () => void;
     toggleDrawer: () => void;
     toggleNPCLedger: () => void;
@@ -170,7 +174,13 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     loreCheckError: '',
     loreCheckResult: null,
     loreCheckSelection: null,
-    toggleSettings: () => set((s) => ({ settingsOpen: !s.settingsOpen })),
+    demoOnboardingOpen: false,
+    openDemoOnboarding: () => { if (IS_DEMO_MODE) set({ demoOnboardingOpen: true }); },
+    closeDemoOnboarding: () => set({ demoOnboardingOpen: false }),
+    toggleSettings: () => {
+        if (IS_DEMO_MODE) return;
+        set((s) => ({ settingsOpen: !s.settingsOpen }));
+    },
     toggleDrawer: () => set((s) => ({ drawerOpen: !s.drawerOpen })),
     toggleNPCLedger: () => set((s) => ({ npcLedgerOpen: !s.npcLedgerOpen })),
     togglePCPanel: () => set((s) => ({ pcPanelOpen: !s.pcPanelOpen })),

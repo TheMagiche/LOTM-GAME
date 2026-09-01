@@ -11,6 +11,8 @@ import {
 } from '../../worldpacks/lordOfTheMysteries';
 import { lotmChronicleName } from '../../worldpacks/lotmPathways';
 import { lotmAssetUrl } from './lotmAssetUrl';
+import { IS_DEMO_MODE } from '../../config/demoMode';
+import { getDemoSessionId } from '../demo/demoSession';
 
 export function resolvePlayablePc(
     pack: WorldPack,
@@ -41,6 +43,7 @@ export async function createLotmCampaign(options?: {
         lastPlayedAt: Date.now(),
         worldPackId: pack.id,
         uiSkin: 'lotm-illustrated',
+        ...(IS_DEMO_MODE ? { demoSessionId: getDemoSessionId() } : {}),
     };
 
     await saveCampaign(campaign);

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ArrowLeft, BookOpen, Check, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
+import { ArrowLeft, BookOpen, Check, KeyRound, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { deleteCampaign, listCampaigns, saveCampaign } from '../../store/campaignStore';
 import { hydrateCampaign } from '../../store/campaignHydrator';
@@ -13,6 +13,7 @@ import type { Campaign } from '../../types';
 import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
 import { LotmTarotSelect } from './LotmTarotSelect';
+import { IS_DEMO_MODE, hasUsableDemoProvider } from '../../config/demoMode';
 
 function timeAgo(ts: number | undefined): string {
     if (!ts) return 'Unplayed';
@@ -68,7 +69,7 @@ export function LotmTitleHub() {
         return () => window.removeEventListener('keydown', onKey);
     }, [pickingPc, busy]);
 
-    const continueCampaign = pickContinueCampaign(campaigns);
+    const continueCampaign = IS_DEMO_MODE ? null : pickContinueCampaign(campaigns);
     const sortedCampaigns = campaigns
         .slice()
         .sort((a, b) => (b.lastPlayedAt ?? 0) - (a.lastPlayedAt ?? 0));
@@ -81,6 +82,10 @@ export function LotmTitleHub() {
 
     const openNewChronicle = () => {
         if (busy) return;
+        if (IS_DEMO_MODE && !hasUsableDemoProvider(useAppStore.getState().settings.providers)) {
+            useAppStore.getState().openDemoOnboarding();
+            return;
+        }
         closeChroniclePicker();
         setSelectedPcId(DEFAULT_PLAYABLE_PC_ID);
         setPickingPc(true);
@@ -88,6 +93,10 @@ export function LotmTitleHub() {
 
     const begin = async () => {
         if (busy) return;
+        if (IS_DEMO_MODE && !hasUsableDemoProvider(useAppStore.getState().settings.providers)) {
+            useAppStore.getState().openDemoOnboarding();
+            return;
+        }
         const pcId = selectedPcId || DEFAULT_PLAYABLE_PC_ID;
         const pc = playablePcs.find(option => option.id === pcId);
         const name = pc ? lotmChronicleName(pc.name, pc.pathway) : undefined;
@@ -184,12 +193,15 @@ export function LotmTitleHub() {
             <button
                 type="button"
                 className="lotm-title-hub-gear"
-                title="Settings"
-                aria-label="Settings"
+                title={IS_DEMO_MODE ? 'API key' : 'Settings'}
+                aria-label={IS_DEMO_MODE ? 'API key' : 'Settings'}
                 disabled={busy}
-                onClick={() => useAppStore.getState().toggleSettings()}
+                onClick={() => {
+                    if (IS_DEMO_MODE) useAppStore.getState().openDemoOnboarding();
+                    else useAppStore.getState().toggleSettings();
+                }}
             >
-                <Settings size={15} />
+                {IS_DEMO_MODE ? <KeyRound size={15} /> : <Settings size={15} />}
             </button>
 
             {!pickingPc && (
@@ -197,6 +209,9 @@ export function LotmTitleHub() {
                     <p className="lotm-title-hub-kicker">Dungeon Master</p>
                     <h1>Lord of the Mysteries</h1>
                     <p className="lotm-title-hub-sub">A Victorian occult chronicle. Join the world of beyonders.</p>
+                    {IS_DEMO_MODE && (
+                        <p className="lotm-demo-banner">Demo sessions are temporary — your chronicle is removed when you leave.</p>
+                    )}
                 </div>
             )}
 
