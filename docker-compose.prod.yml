@@ -1,13 +1,15 @@
 # Production / Coolify: pull a prebuilt GHCR image only — no `build:` on the VPS.
-# GitHub Actions (.github/workflows/deploy.yml) builds and pushes the image;
-# the Coolify deploy webhook triggers pull + restart.
+# GitHub Actions (.github/workflows/deploy.yml) builds the Player-only demo
+# (VITE_DEPLOYMENT_MODE=demo) and pushes GHCR; Coolify pulls and restarts.
+# See docs/agents/demo-vps-player-deployment.md
 #
 # Coolify setup:
 #   Compose file: docker-compose.prod.yml
 #   LOTM_IMAGE=ghcr.io/<owner>/<repo>:latest
 #   Disable automatic deploy on git push (use the GHA webhook only).
 #
-# Local builds still use docker-compose.yml (`docker compose up --build`).
+# Local full app: docker compose up --build
+# Local demo preview: docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build
 
 services:
   app:
@@ -24,6 +26,10 @@ services:
       TRUST_PROXY: "1"
       PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://lotmdnd.work.gd}
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://lotmdnd.work.gd}
+      # Runtime demo lock (TTS off, session purge). Frontend Player lock is
+      # baked into the GHCR image at build time — this env cannot add it later.
+      DEMO_MODE: "1"
+      TTS_DISABLED: "1"
     init: true
     volumes:
       - lotm-data:/app/data

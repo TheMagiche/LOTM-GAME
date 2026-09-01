@@ -101,11 +101,13 @@ npm run dev -- --demo
 npm run dev:demo
 ```
 
-Production image:
+Local demo image:
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build
 ```
+
+VPS / Coolify uses `[docker-compose.prod.yml](../../docker-compose.prod.yml)` (pull-only). That file sets `DEMO_MODE=1`; GitHub Actions bakes `VITE_DEPLOYMENT_MODE=demo` into the GHCR image. Runtime env **cannot** turn a full-app image into Player-only — rebuild and pull after changing the build arg.
 
 The Vite demo flag is a **build-time** alias: lore/loot/item catalog resolve to `demo_world_lore_lord_of_the_mysteries.md`, `demo_loot.json`, and `demo_item_catalog.json`.
 
@@ -234,7 +236,8 @@ A record for demo domain (or reuse `lotmdnd.work.gd`).
 
 ### 5.3 Coolify resource
 
-- Docker Compose from `[docker-compose.yml](../../docker-compose.yml)`
+- Docker Compose from `[docker-compose.prod.yml](../../docker-compose.prod.yml)` (pull-only; already sets `DEMO_MODE=1` and `TTS_DISABLED=1`)
+- Do **not** point Coolify at `[docker-compose.yml](../../docker-compose.yml)` — that file is the local full app and has `build: .`
 - Container port **3001**
 - Persistent `lotm-data` volume → `/app/data`
 
@@ -251,7 +254,7 @@ Extend the [COOLIFY.md](../COOLIFY.md) env table:
 | `ALLOWED_ORIGINS`      | same                                                                   |
 | `NODE_ENV`             | `production`                                                           |
 | `DEMO_MODE`            | `1` — skip TTS warmup, seed lean defaults, enable session purge routes |
-| `VITE_DEPLOYMENT_MODE` | `demo` (build-time — `[vite.config.ts](../../vite.config.ts)` + Dockerfile `ARG`) |
+| `VITE_DEPLOYMENT_MODE` | `demo` — **CI build-arg only** (`deploy.yml` → Dockerfile `ARG`). Setting this in Coolify does not rebuild `dist/`. |
 | `VITE_DEMO_IDLE_MS`    | `2700000` (45 min) — client session timeout                            |
 | `TTS_DISABLED`         | `1` (optional explicit guard alongside `DEMO_MODE`)                    |
 
@@ -260,7 +263,7 @@ Extend the [COOLIFY.md](../COOLIFY.md) env table:
 
 ### 5.5 CI
 
-`[deploy.yml](../../.github/workflows/deploy.yml)` builds GHCR image on push to `main`. For a dedicated demo branch (`lotm/demo`), add an optional separate workflow or tag `demo-latest` so demo deploys do not overwrite production `:latest`.
+`[deploy.yml](../../.github/workflows/deploy.yml)` builds GHCR `:latest` on push to `main` with `VITE_DEPLOYMENT_MODE=demo` — the VPS at `lotmdnd.work.gd` **is** the public demo. A separate `demo-latest` tag is only needed if you later publish a full-app image alongside it.
 
 ### 5.6 Proxy timeout
 
@@ -396,7 +399,7 @@ Do not promise Electron downloads on the landing page until the CI pipeline ship
 | TTS off         | `[server.js](../../server.js)` (`warmupTts`), `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)` defaults                                                |
 | Demo compendium | `mechanics/World_compendium/Demo/`, `[lordOfTheMysteries.ts](../../src/worldpacks/lordOfTheMysteries.ts)`, trimmed `gamedata-demo/`                                     |
 | Lean defaults   | `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)` (`aiTier`, `ttsEnabled`), `[campaignSlice.ts](../../src/store/slices/campaignSlice.ts)` (auto-backup) |
-| Demo CI image   | `[Dockerfile](../../Dockerfile)` build args + `demo` stage, `[.github/workflows/deploy.yml](../../.github/workflows/deploy.yml)`                                        |
+| Demo CI image   | `[Dockerfile](../../Dockerfile)` `VITE_DEPLOYMENT_MODE` ARG, `[deploy.yml](../../.github/workflows/deploy.yml)` (`demo` build-arg), `[docker-compose.prod.yml](../../docker-compose.prod.yml)` runtime `DEMO_MODE` |
 
 
 ---

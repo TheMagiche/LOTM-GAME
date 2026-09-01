@@ -50,7 +50,7 @@ Use a classic PAT with `read:packages` (and `write:packages` if this account als
 1. **Projects → New** (one project can hold both sites).
 2. **New Resource → Docker Compose**.
 3. Connect this GitHub repository (GitHub App is easiest) and branch `main`.
-4. **Compose file: `docker-compose.prod.yml`** — pull-only; no `build:` on the VPS. Do **not** use `docker-compose.yml` in Coolify (it has `build: .` and will compile on the server).
+4. **Compose file: `docker-compose.prod.yml`** — pull-only Player-only demo; no `build:` on the VPS. Do **not** use `docker-compose.yml` in Coolify (it has `build: .` and will compile the **full** app on the server).
 5. **Domains**: `https://lotmdnd.work.gd` mapped to service `app` port **3001**.
 6. Environment variables (Coolify UI):
 
@@ -59,6 +59,8 @@ Use a classic PAT with `read:packages` (and `write:packages` if this account als
    | `LOTM_IMAGE` | `ghcr.io/<owner>/<repo>:latest` |
    | `PUBLIC_ORIGIN` | `https://lotmdnd.work.gd` |
    | `ALLOWED_ORIGINS` | `https://lotmdnd.work.gd` |
+
+   `docker-compose.prod.yml` already sets `DEMO_MODE=1` and `TTS_DISABLED=1`. The Player UI lock is **not** a Coolify env — GitHub Actions bakes `VITE_DEPLOYMENT_MODE=demo` into `:latest`. See [demo-vps-player-deployment.md](./agents/demo-vps-player-deployment.md).
 
 7. Persistent storage: compose already declares volume `lotm-data` → `/app/data` (campaigns, vault, embeddings, user mods). Do not delete that volume on redeploy.
 8. Resource hints: **2 GB RAM minimum**, 4 GB if you enable Chatterbox TTS. First embedder warmup downloads the ONNX model into `/app/data`.

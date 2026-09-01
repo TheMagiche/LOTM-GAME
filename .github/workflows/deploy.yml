@@ -1,7 +1,8 @@
 name: Deploy to Coolify
 
-# GitHub Actions builds the image (native sqlite + Vite) so the VPS does not
-# compile on deploy. Coolify then pulls GHCR and restarts the stack.
+# GitHub Actions builds the Player-only demo image (native sqlite + Vite
+# with VITE_DEPLOYMENT_MODE=demo) so the VPS does not compile on deploy.
+# Coolify then pulls GHCR and restarts the stack.
 #
 # Required GitHub secrets:
 #   COOLIFY_WEBHOOK  — Coolify app → Configuration → Webhooks → Deploy Webhook
@@ -53,6 +54,7 @@ jobs:
           platforms: linux/amd64
           build-args: |
             NODE_VERSION=24-bookworm-slim
+            VITE_DEPLOYMENT_MODE=demo
           tags: |
             ${{ env.IMAGE_NAME }}:latest
             ${{ env.IMAGE_NAME }}:${{ github.sha }}

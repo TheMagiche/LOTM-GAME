@@ -1,5 +1,8 @@
-# Overlay for a Player-only demo deploy.
+# Overlay for a local Player-only demo preview (builds on this machine).
 #   docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build
+#
+# VPS / Coolify uses docker-compose.prod.yml + the GHCR image already built
+# with VITE_DEPLOYMENT_MODE=demo — do not point Coolify at this overlay.
 #
 # The Vite demo flag is a *build* arg (baked into dist/). DEMO_MODE is runtime.
 
