@@ -7,9 +7,11 @@
     "node": ">=20.19.0"
   },
   "scripts": {
-    "dev": "concurrently \"node server.js\" \"vite\"",
-    "dev:lan": "concurrently \"node server.js\" \"vite --host 0.0.0.0\"",
+    "dev": "node scripts/start-dev.mjs",
+    "dev:lan": "node scripts/start-dev.mjs --lan",
+    "dev:demo": "node scripts/start-dev.mjs --demo",
     "build": "tsc -b && vite build",
+    "build:demo": "tsc -b && vite build --mode demo",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",

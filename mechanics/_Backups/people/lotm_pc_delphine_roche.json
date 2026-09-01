@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_delphine_roche",
+    "name": "Delphine Roche",
+    "aliases": "\"Mademoiselle Invention\"",
+    "appearance": "A bright-eyed woman of twenty-six with grease-stained fingers she refuses to apologize for, copper hair escaping a leather work-goggle strap, and a workshop's worth of tools in a coat designed by herself. Her left ear carries a hearing trumpet of her own manufacture that works better than any sold in shops. She smiles like a patent pending.",
+    "visualProfile": {
+      "race": "Human (Intis)",
+      "gender": "Female",
+      "ageRange": "Mid twenties",
+      "build": "Compact, energetic, workshop-fit",
+      "symmetry": "Lively, freckled, expressive",
+      "hairStyle": "Copper, escaping a goggle strap",
+      "eyeColor": "Hazel-gold",
+      "skinTone": "Fair, freckled, smudged",
+      "gait": "Quick, bouncing steps; talks with her whole body",
+      "distinctMarks": "Grease-stained fingers; self-made brass hearing trumpet",
+      "clothing": "Self-designed tool coat, work goggles, brass fittings on everything",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated (Trier patent office clerk; unregistered Beyonder)",
+    "storyRelevance": "Delphine reverse-engineered the Paragon formula from a confiscated invention's notes at the Trier patent office — the Steam church's Mechanical Heart had filed it as 'dangerous machinery,' and she disagreed. The potion made her inventions work in ways blueprints can't explain: her clockwork birds fly without fuel, and last week one came home carrying a message she never sent. The Mechanical Heart has opened a file on 'Mademoiselle Invention.' She has opened one right back.",
+    "goals": "Invent things that matter and patent them before anyone burns them. Learn who used her clockwork bird as a courier. Out-think the Mechanical Heart's investigators — politely, legally, and completely.",
+    "disposition": "Enthusiastic, brilliant, constitutionally incapable of leaving machines alone. Treats regulations as suggestions from people less clever.",
+    "status": "Alive",
+    "voice": "Rapid-fire Trier accent, technical vocabulary deployed joyfully. Explains things twice: once simply, once accurately.",
+    "personality": "The Craftsman creed demands perfection through patient craft, which Delphine practices enthusiastically rather than patiently. Her risk is hubris of the workshop: every impossible success tempts a more impossible one, and the pathway rewards ambition with consequences.",
+    "exampleOutput": "[**Delphine**]: \"It flies because I balanced the torsion against the resonance — no, listen, this is the good part—\" She sketches frantically on a napkin. \"The message it brought back? That's tomorrow's problem. Tonight we discuss why my design works when physics says it shouldn't, and what that means about physics.\"",
+    "affinity": 55,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "backlund",
+    "haunt": "Her rented workshop above the Tinker's Rest pub",
+    "drives": {
+      "coreWant": "To build the impossible and make it look easy",
+      "sessionWant": "Trace the clockwork bird's mystery courier and dodge the Mechanical Heart",
+      "sceneWant": "Fix, improve, or invent whatever the moment lacks"
+    },
+    "wants": {
+      "short": [
+        "Recalibrate the second-generation clockwork birds",
+        "File three patents before the office closes",
+        "Dismantle (politely) the Mechanical Heart's surveillance device"
+      ],
+      "medium": [
+        "Build something the churches will want to protect instead of burn",
+        "Identify her mysterious correspondent",
+        "Advance toward Metallurgist with reputation intact"
+      ],
+      "long": "Found an academy of invention the Steam church can't control."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 1,
+      "boldness": 2,
+      "warmth": 2,
+      "empathy": 1,
+      "composure": 0
+    },
+    "signatureKit": {
+      "equipment": [
+        "Clockwork birds (three functional, one missing)",
+        "Self-designed tool coat with forty pockets",
+        "Brass hearing trumpet of improved design",
+        "Patent filings, hers and stolen ones worth studying",
+        "The returned message she never sent"
+      ],
+      "abilities": [
+        "Craftsmanship Mastery",
+        "Enhanced Dexterity",
+        "Mechanical Intuition",
+        "Spirituality",
+        "Device Empowerment"
+      ],
+      "pathway": "paragon",
+      "sequence": 9
+    },
+    "traits": [
+      "brilliant",
+      "enthusiastic",
+      "reckless",
+      "inventive",
+      "stubborn"
+    ],
+    "pcMeta": {
+      "archetype": "Craftsman — Sequence 9 (Paragon Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 5,
+        "Physique": 5,
+        "Reasoning": 8
+      },
+      "purse": { "soli": 18, "pence": 2 }
+    },
+    "characterProfile": {
+      "name": "Delphine Roche",
+      "race": "Human (Loen)",
+      "class": "Craftsman — Sequence 9 (Paragon Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 10, "max": 10 },
+      "stats": { "Spirituality": 5, "Physique": 5, "Reasoning": 8 },
+      "skills": [
+        "Craftsmanship Mastery — build mechanisms blueprints can't explain",
+        "Mechanical Intuition — understand any device by handling it",
+        "Device Empowerment — make her inventions work beyond their design"
+      ],
+      "abilities": ["Craftsmanship Mastery", "Enhanced Dexterity", "Mechanical Intuition", "Spirituality", "Device Empowerment"],
+      "traits": ["brilliant", "enthusiastic", "reckless", "inventive", "stubborn"],
+      "notes": "Trier inventor and Craftsman whose clockwork creations now operate beyond their blueprints."
+    }
+  }
+]

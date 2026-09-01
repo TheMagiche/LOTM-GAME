@@ -18,6 +18,7 @@ import { catalogAlreadySeeded } from '../worldpacks/lotmItemKinds';
 import { mergeLotmChurches } from '../worldpacks/lotmChurches';
 import { mergeLotmGeography } from '../worldpacks/lotmGeography';
 import { loadLotmAbilityCompendium } from '../worldpacks/lotmAbilityCompendium';
+import { IS_DEMO_MODE } from '../config/demoMode';
 import { genericSave } from './tables/genericAccessor';
 import { resolvePlace } from './locationParser';
 import {
@@ -67,7 +68,7 @@ export async function initializeCampaignState(params: {
     const { campaignId, loreFile, rulesFile, lootFile, starterText, playerCharacter, attachLotmVisuals } = params;
 
     let seeds: ReturnType<typeof extractEngineSeeds> | null = null;
-    if (loreFile) {
+        if (loreFile) {
         const loreText = await loreFile.text();
         // Character and location chunks are RAG-disabled on import: the parsers below turn
         // the same chunks into ledger entries, and the ledger is the authoritative injection
@@ -82,18 +83,20 @@ export async function initializeCampaignState(params: {
         );
         await saveLoreChunks(campaignId, chunks);
 
-        // Non-blocking LLM keyword enrichment — fire and forget
-        try {
-            const { useAppStore } = await import('../store/useAppStore');
-            const utilityEndpointForEnrichment = useAppStore.getState().getActiveUtilityEndpoint();
-            if (utilityEndpointForEnrichment?.endpoint) {
-                import('./lore/loreKeywordEnricher').then(({ enrichLoreKeywords }) => {
-                    enrichLoreKeywords(campaignId, chunks, utilityEndpointForEnrichment)
-                        .catch(err => console.warn('[LoreEnricher] Background enrichment failed:', err));
-                }).catch(() => {});
+        // Non-blocking LLM keyword enrichment — fire and forget (skipped on demo: extra LLM + index work)
+        if (!IS_DEMO_MODE) {
+            try {
+                const { useAppStore } = await import('../store/useAppStore');
+                const utilityEndpointForEnrichment = useAppStore.getState().getActiveUtilityEndpoint();
+                if (utilityEndpointForEnrichment?.endpoint) {
+                    import('./lore/loreKeywordEnricher').then(({ enrichLoreKeywords }) => {
+                        enrichLoreKeywords(campaignId, chunks, utilityEndpointForEnrichment)
+                            .catch(err => console.warn('[LoreEnricher] Background enrichment failed:', err));
+                    }).catch(() => {});
+                }
+            } catch (err) {
+                console.warn('[LoreEnricher] Failed to queue enrichment:', err);
             }
-        } catch (err) {
-            console.warn('[LoreEnricher] Failed to queue enrichment:', err);
         }
 
         const parsedNPCs = parseNPCsFromLore(chunks);
@@ -121,7 +124,7 @@ export async function initializeCampaignState(params: {
         const parsedLocations = parseLocationsFromLore(chunks);
         const existingLocations = await loadLocationTable(campaignId);
         const fromLoreLoc = parsedLocations.filter(loc => !resolvePlace(loc.name, existingLocations));
-        const mergedLocations = attachLotmVisuals
+        const mergedLocations = attachLotmVisuals && !IS_DEMO_MODE
             ? mergeLotmGeography([...existingLocations, ...fromLoreLoc])
             : (fromLoreLoc.length > 0 ? [...existingLocations, ...fromLoreLoc] : existingLocations);
         if (mergedLocations.length > existingLocations.length) {
@@ -146,7 +149,7 @@ export async function initializeCampaignState(params: {
             await genericSave(factionTableDescriptor as never, campaignId, churchMerged);
         }
         const existingLocations = await loadLocationTable(campaignId);
-        const geoMerged = mergeLotmGeography(existingLocations);
+        const geoMerged = IS_DEMO_MODE ? existingLocations : mergeLotmGeography(existingLocations);
         if (geoMerged.length > existingLocations.length) {
             await genericSave(locationTableDescriptor as never, campaignId, geoMerged);
         }

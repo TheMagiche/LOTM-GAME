@@ -80,6 +80,8 @@ export type Campaign = {
     worldPackId?: string;
     /** When true, late-volume CGs and spoiler portraits may appear. */
     lotmSpoilers?: boolean;
+    /** Demo VPS: opaque session id so idle/exit purge can delete this chronicle. */
+    demoSessionId?: string;
 };
 
 export type PinnedExcerpt = {

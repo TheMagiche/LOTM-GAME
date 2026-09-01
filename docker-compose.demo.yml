@@ -1,0 +1,15 @@
+# Overlay for a Player-only demo deploy.
+#   docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build
+#
+# The Vite demo flag is a *build* arg (baked into dist/). DEMO_MODE is runtime.
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        VITE_DEPLOYMENT_MODE: demo
+    environment:
+      DEMO_MODE: "1"
+      TTS_DISABLED: "1"
+      VITE_DEMO_IDLE_MS: "2700000"

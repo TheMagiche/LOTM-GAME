@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_jacob_thorne",
+    "name": "Jacob Thorne",
+    "aliases": "\"Thorn\"",
+    "appearance": "A broad-shouldered ex-soldier of thirty-five with a boxer's flattened nose, close-cropped brown hair greying at the temples, and hands like tools left out in weather. He favors a huntsman's tweed and carries a service revolver he cleans nightly. His eyes do arithmetic on distances and cover constantly — old habits from a colonial posting he does not discuss.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Mid thirties",
+      "build": "Broad-shouldered, solid, soldier-fit",
+      "symmetry": "Weathered-handsome; the nose has been broken twice",
+      "hairStyle": "Close-cropped brown, greying temples",
+      "eyeColor": "Steady hazel",
+      "skinTone": "Sun-tanned, wind-roughened",
+      "gait": "Even, deliberate, weight balanced for trouble",
+      "distinctMarks": "Flattened nose; shrapnel scarring along the right forearm",
+      "clothing": "Huntsman's tweed, service revolver under the coat, sturdy boots",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated (veteran; occasional bounty work)",
+    "storyRelevance": "Thorne took the Hunter potion after the Southern Continent taught him that ordinary men die first in extraordinary places. The formula came from a dying officer whose debts Thorne inherited along with it. Now his aim never wavers, his body heals wrong-but-fast, and his temper runs hotter than it used to — the potion's hunger for the hunt whispering between jobs. A Nighthawk captain bought him dinner last month and asked careful questions about a monster carcass Thorne sold to no one official.",
+    "goals": "Keep taking contracts that pay enough to matter. Learn what his dead officer knew about the thing in the Fenmarsh. Keep the hunt's hunger pointed outward, at monsters, never at people.",
+    "disposition": "Blunt, dependable, quietly angry at the world in well-managed increments. Loyal to employers who pay honestly and to friends who don't make him choose.",
+    "status": "Alive",
+    "voice": "Short sentences, parade-ground clarity. Humor like a dry match — rare, useful when struck.",
+    "personality": "Discipline over instinct, mostly. The Hunter Acting Method demands he track prey worth hunting, and Thorne draws his lines thick: monsters, criminals, things in the dark. The days the line blurs are the days he drinks less and prays more.",
+    "exampleOutput": "[**Thorne**]: He thumbs a cartridge and doesn't load it. \"Three of them came through the fence gap. Heavy on the left side.\" He sets the round down like punctuation. \"We follow while the dew holds. Afternoon kills the trail and maybe us.\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Tingen",
+    "haunt": "The shooting range behind Dorge Street and the Fenmarsh edge",
+    "drives": {
+      "coreWant": "To be the hunter in every story rather than the quarry",
+      "sessionWant": "Track the Fenmarsh beast and settle the dead officer's debts",
+      "sceneWant": "Control the ground before anything controls him"
+    },
+    "wants": {
+      "short": [
+        "Clean the revolver and count the ammunition",
+        "Interview the fence-gap witnesses before memories blur",
+        "Sell the last carcass parts through quiet channels"
+      ],
+      "medium": [
+        "Earn enough for a proper Beyonder weapon",
+        "Find out what the officer saw at Fenmarsh",
+        "Advance toward Bloodhound without losing the line"
+      ],
+      "long": "Become the man churches hire when monsters outgrow their squads — on his own terms."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 1,
+      "boldness": 2,
+      "warmth": 0,
+      "empathy": 0,
+      "composure": 1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Service revolver, meticulously maintained",
+        "Huntsman's knife and skinning kit",
+        "Tracking journal with pressed spoor sketches",
+        "Dead officer's campaign medal (never worn)",
+        "Tin of herbal salve for wounds that heal wrong"
+      ],
+      "abilities": [
+        "Enhanced Tracking",
+        "Enhanced Strength",
+        "Body Control",
+        "Firearms Mastery",
+        "Survival Instinct"
+      ],
+      "pathway": "red_priest",
+      "sequence": 9
+    },
+    "traits": [
+      "disciplined",
+      "blunt",
+      "loyal",
+      "wrathful",
+      "practical"
+    ],
+    "pcMeta": {
+      "archetype": "Hunter — Sequence 9 (Hunter Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 5,
+        "Physique": 7,
+        "Reasoning": 5
+      },
+      "purse": { "soli": 8, "pence": 9 }
+    },
+    "characterProfile": {
+      "name": "Jacob Thorne",
+      "race": "Human (Loen)",
+      "class": "Hunter — Sequence 9 (Hunter Pathway)",
+      "level": 9,
+      "hp": { "current": 28, "max": 28 },
+      "mp": { "current": 10, "max": 10 },
+      "stats": { "Spirituality": 5, "Physique": 7, "Reasoning": 5 },
+      "skills": [
+        "Enhanced Tracking — follow prey across any hostile ground",
+        "Body Control — push his body past its ordinary limits",
+        "Survival Instinct — endure where pursuit should have ended him"
+      ],
+      "abilities": ["Enhanced Tracking", "Enhanced Strength", "Body Control", "Firearms Mastery", "Survival Instinct"],
+      "traits": ["disciplined", "blunt", "loyal", "wrathful", "practical"],
+      "notes": "Hunter pathway tracker who treats every pursuit as a contest of preparation, terrain, and patience."
+    }
+  }
+]

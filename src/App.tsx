@@ -27,6 +27,8 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { ToastContainer } from './components/Toast';
 import { IndexingSpeedPrompt } from './components/IndexingSpeedPrompt';
 import { VaultUnlockModal } from './components/VaultUnlockModal';
+import { DemoOnboardingModal } from './components/demo/DemoOnboardingModal';
+import { DemoSessionGuard } from './components/demo/DemoSessionGuard';
 // import { MapPanel } from './components/map/MapPanel';
 import { hydrateCampaign } from './store/campaignHydrator';
 import { useRulesIndexer } from './hooks/useRulesIndexer';
@@ -35,6 +37,7 @@ import { refreshMods } from './services/mods/modBootstrap';
 import { isLotmCampaign, shouldUseIllustratedShell } from './services/lotm/lotmSkin';
 import { applyLotmExclusiveDocumentChrome, LOTM_EXCLUSIVE_UI } from './services/lotm/lotmExclusiveUi';
 import { getCampaign } from './store/campaignStore';
+import { IS_DEMO_MODE } from './config/demoMode';
 
 export default function App() {
   const activeCampaignId = useAppStore((s) => s.activeCampaignId);
@@ -211,7 +214,9 @@ export default function App() {
     return (
       <ErrorBoundary>
         <CampaignHub />
-        <SettingsModal />
+        {!IS_DEMO_MODE && <SettingsModal />}
+        {IS_DEMO_MODE && <DemoOnboardingModal />}
+        {IS_DEMO_MODE && <DemoSessionGuard />}
         {LOTM_EXCLUSIVE_UI && <LotmGrimoire />}
         {!LOTM_EXCLUSIVE_UI && <BackupModal />}
         <ToastContainer />
@@ -233,7 +238,9 @@ export default function App() {
           so the chat underneath stays interactive. */}
       <WindowManager />
       {/* <MapPanel /> */}
-      <SettingsModal />
+      {!IS_DEMO_MODE && <SettingsModal />}
+      {IS_DEMO_MODE && <DemoOnboardingModal />}
+      {IS_DEMO_MODE && <DemoSessionGuard />}
       {LOTM_EXCLUSIVE_UI && <LotmGrimoire />}
       {LOTM_EXCLUSIVE_UI && <LotmPlayerGrimoire />}
       <NPCLedgerModal />
@@ -242,7 +249,7 @@ export default function App() {
       <FactionLedgerModal />
       <InventoryLedgerModal />
       <BlockViewModal />
-      <BackupModal />
+      {!IS_DEMO_MODE && <BackupModal />}
       <LoreCheckModal />
       <DivergenceReviewModal />
       <CreateTroubleModal />
@@ -252,7 +259,7 @@ export default function App() {
         onClose={closePinnedMemories}
       />
       <ToastContainer />
-      <IndexingSpeedPrompt />
+      {!IS_DEMO_MODE && <IndexingSpeedPrompt />}
     </ErrorBoundary>
   );
 }

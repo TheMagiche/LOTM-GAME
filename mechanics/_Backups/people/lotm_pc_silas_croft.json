@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_silas_croft",
+    "name": "Silas Croft",
+    "aliases": "\"Magpie\"",
+    "appearance": "A wiry man of twenty-eight built for window ledges and rooftop gaps, with quick dark eyes and a grin that arrives half a second before he does. His fingers are nimble and nicked with old scars. He dresses like a hundred other Backlund dockhands — flat cap, scuffed boots, muffler — except everything he wears fits too well to be cheap, and nothing of it belongs to him.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Male",
+      "ageRange": "Late twenties",
+      "build": "Wiry, lean, made for climbing",
+      "symmetry": "Handsome in a forgettable way — deliberately",
+      "hairStyle": "Dark brown, cropped short under a flat cap",
+      "eyeColor": "Quick dark brown",
+      "skinTone": "Olive, weathered by dock winds",
+      "gait": "Loose-jointed saunter that turns silent when needed",
+      "distinctMarks": "Nick scars on both hands; a gap-toothed grin",
+      "clothing": "Dockhand's flat cap, scuffed boots, good muffler, coat with far too many pockets",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "Unaffiliated (Backlund docklands underworld)",
+    "storyRelevance": "Silas stole the Marauder formula from a collector's safe without knowing what it was — he thought it was a debt ledger worth fifty pounds. The potion cost him three days of fever and gave him hands that can take anything not actively defended: purses, secrets, the charge out of a revolver. Now a gentleman with a crystal monocle keeps appearing at the edges of his jobs, applauding politely, and Silas has learned enough about the Error pathway to know exactly whose attention that monocle means.",
+    "goals": "Pull one last great job and retire to a farm he'll be bored of in a month. Work out how to return a stolen heirloom to a widow without admitting he took it. Stay interesting enough to survive and boring enough to stay off the Nighthawks' list.",
+    "disposition": "Cheerful, mercenary, oddly principled — steals from the rich and the careless, feeds stray cats. Lies constantly and keeps his word anyway.",
+    "status": "Alive",
+    "voice": "Backlund dockside patter, quick and warm. Names a price for everything, then waives it for reasons he refuses to explain.",
+    "personality": "Greedy in theory, generous in practice. The Marauder creed sits easily on him — taking is just honest work — but the Acting Method's demand that he never steal from the desperate is one he'd have kept anyway. Watches his own reflection for monocles.",
+    "exampleOutput": "[**Silas**]: \"Your watch? Never seen it.\" It is, in fact, in his sleeve. \"But between us — whoever had it wound it badly. See the scratch? Careless people deserve what walks away from them.\"",
+    "affinity": 45,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The dockland rooftops above Backlund Bridge",
+    "drives": {
+      "coreWant": "To take everything worth taking and give back only what pricks his conscience",
+      "sessionWant": "Case the West Borough auction house and dodge the monocled gentleman",
+      "sceneWant": "Leave every room richer than he entered it"
+    },
+    "wants": {
+      "short": [
+        "Fence yesterday's haul through Old Man Petrov",
+        "Scout the auction house's skylight access",
+        "Feed the cat outside his garret (again)"
+      ],
+      "medium": [
+        "Save enough for the farm — real money, not pocket money",
+        "Learn whose collection he robbed blind",
+        "Master Plunder before it masters his luck"
+      ],
+      "long": "Retire rich, anonymous, and one step ahead of every church, family, and monocle in Loen."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 0,
+      "boldness": 2,
+      "warmth": 1,
+      "empathy": 1,
+      "composure": 1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Set of lockpicks wrapped in oiled cloth",
+        "Grappling line disguised as washing rope",
+        "Stolen pocket watch (wound carefully, always)",
+        "Ledger page he cannot read but refuses to burn",
+        "Cat (unofficial crew member)"
+      ],
+      "abilities": [
+        "Plunder",
+        "Enhanced Agility",
+        "Spirituality",
+        "Sleight of Hand",
+        "Trap Sense"
+      ],
+      "pathway": "error",
+      "sequence": 9
+    },
+    "traits": [
+      "greedy",
+      "charming",
+      "agile",
+      "loyal",
+      "superstitious"
+    ],
+    "pcMeta": {
+      "archetype": "Marauder — Sequence 9 (Error Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 5,
+        "Physique": 5,
+        "Reasoning": 6
+      },
+      "purse": { "soli": 4, "pence": 7 }
+    },
+    "characterProfile": {
+      "name": "Silas Croft",
+      "race": "Human (Loen)",
+      "class": "Marauder — Sequence 9 (Error Pathway)",
+      "level": 9,
+      "hp": { "current": 24, "max": 24 },
+      "mp": { "current": 10, "max": 10 },
+      "stats": { "Spirituality": 5, "Physique": 5, "Reasoning": 6 },
+      "skills": [
+        "Plunder — take what was guarded as though it were offered",
+        "Sleight of Hand — lift a purse or plant a lie unseen",
+        "Trap Sense — feel the snare before it springs"
+      ],
+      "abilities": ["Plunder", "Enhanced Agility", "Spirituality", "Sleight of Hand", "Trap Sense"],
+      "traits": ["greedy", "charming", "agile", "loyal", "superstitious"],
+      "notes": "Error pathway Marauder who finds the loophole in every lock, contract, and carefully guarded advantage."
+    }
+  }
+]

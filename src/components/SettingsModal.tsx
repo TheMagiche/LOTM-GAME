@@ -9,6 +9,7 @@ import { DebugTab } from './settings-modal/DebugTab';
 import { useTranslation } from '../i18n/useTranslation';
 import type { TranslateKey } from '../i18n';
 import { ScreenLightbox } from './ScreenLightbox';
+import { IS_DEMO_MODE } from '../config/demoMode';
 
 type TabKey = 'providers' | 'presets' | 'global' | 'extensions' | 'advanced' | 'debug';
 
@@ -32,6 +33,8 @@ export function SettingsModal() {
   const updateSettings = useAppStore(s => s.updateSettings);
   const [activeTab, setActiveTab] = useState<TabKey>('providers');
   const { t } = useTranslation();
+
+  if (IS_DEMO_MODE) return null;
 
   // The panel is full-bleed, so the backdrop's click-to-close is unreachable —
   // it is covered edge to edge. Escape is what replaces it. Without this the X

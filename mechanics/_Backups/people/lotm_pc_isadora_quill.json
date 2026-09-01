@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pc_lotm_isadora_quill",
+    "name": "Isadora Quill",
+    "aliases": "",
+    "appearance": "A sharp-featured woman of thirty-one with ink permanently under her nails, chestnut hair escaping a sensible bun, and spectacles mended with wire. She wears a journalist's practical tweed and carries three pencils (one behind her ear, one in her sleeve, one for emergencies). Her press badge is genuine; her sources are impossible.",
+    "visualProfile": {
+      "race": "Human (Loen)",
+      "gender": "Female",
+      "ageRange": "Around thirty",
+      "build": "Slim, wiry, always leaning forward",
+      "symmetry": "Sharp, intelligent features; memorable rather than pretty",
+      "hairStyle": "Chestnut bun, perpetually escaping",
+      "eyeColor": "Bright green",
+      "skinTone": "Fair, ink-stained fingers",
+      "gait": "Fast, weaving through crowds like water",
+      "distinctMarks": "Wire-mended spectacles; callus on her writing finger",
+      "clothing": "Practical tweed suit, press badge, satchel of notebooks",
+      "artStyle": "Stylized Game Realism"
+    },
+    "faction": "The Backlund Gazette (investigative desk); unregistered Beyonder",
+    "storyRelevance": "Isadora took the Reader potion after her editor spiked her best investigation — the formula came from an archivist who admired her refusal to quit. Now she reads documents the way other people read faces: instantly, completely, including the words between the lines. She has verified three impossible stories this month that no editor will print, and each one points toward the same conclusion: something under Backlund is keeping its own newspaper. The archivist has stopped coming to work.",
+    "goals": "Print the truth somewhere it can't be unprinted. Find out what happened to her archivist friend. Read the one document she's been warned off twice by people who shouldn't know she exists.",
+    "disposition": "Relentless, skeptical, constitutionally incapable of leaving questions alone. Warm to sources, cold to liars, merciless to both once the story breaks.",
+    "status": "Alive",
+    "voice": "Quick, precise, interview-trained. Repeats your key phrases back as questions.",
+    "personality": "The Reader creed — knowledge belongs in the open — matches her profession's soul. Her danger is the reading itself: some documents read back, and the pathway doesn't distinguish. She now wears gloves in archives and won't say why.",
+    "exampleOutput": "[**Isadora**]: \"Your letterhead changed printers in March.\" She taps the page without touching it. \"Same month your shipping manifests started rounding down. So before we discuss the weather — who told you I wouldn't notice?\"",
+    "affinity": 50,
+    "isPC": true,
+    "condition": "healthy",
+    "tier": "recurring",
+    "agencyLocked": true,
+    "skillRung": 0,
+    "rungCeiling": 3,
+    "region": "Backlund",
+    "haunt": "The Gazette's archive room and the records office back stairs",
+    "drives": {
+      "coreWant": "To read everything hidden and print what matters",
+      "sessionWant": "Trace the archivist's disappearance and verify the third impossible story",
+      "sceneWant": "Extract the fact everyone else missed"
+    },
+    "wants": {
+      "short": [
+        "Pull the shipping manifests before they're purged",
+        "Interview the dock clerk who's been avoiding her",
+        "File a story her editor can't legally bury"
+      ],
+      "medium": [
+        "Find the archivist or his body or his reasons",
+        "Build a source network inside the ministries",
+        "Advance toward Polymath without losing her edge"
+      ],
+      "long": "Own the paper someday — and make it untouchable."
+    },
+    "personalityHex": {
+      "drive": 2,
+      "diligence": 2,
+      "boldness": 1,
+      "warmth": 1,
+      "empathy": 0,
+      "composure": 1
+    },
+    "signatureKit": {
+      "equipment": [
+        "Three pencils and a satchel of notebooks",
+        "Press badge (genuine) and forged ones (practical)",
+        "Gloves she wears in archives",
+        "The document she was warned off, unread, sealed in oilskin",
+        "Archivist's last note: 'Stop reading. Please.'"
+      ],
+      "abilities": [
+        "Speed Reading",
+        "Enhanced Memory",
+        "Document Analysis",
+        "Spirituality",
+        "Hidden Text Perception"
+      ],
+      "pathway": "white_tower",
+      "sequence": 9
+    },
+    "traits": [
+      "relentless",
+      "curious",
+      "skeptical",
+      "brave",
+      "stubborn"
+    ],
+    "pcMeta": {
+      "archetype": "Reader — Sequence 9 (White Tower Pathway)",
+      "combatTier": "Sequence 9",
+      "stats": {
+        "Spirituality": 6,
+        "Physique": 4,
+        "Reasoning": 8
+      },
+      "purse": { "soli": 10, "pence": 4 }
+    },
+    "characterProfile": {
+      "name": "Isadora Quill",
+      "race": "Human (Loen)",
+      "class": "Reader — Sequence 9 (White Tower Pathway)",
+      "level": 9,
+      "hp": { "current": 22, "max": 22 },
+      "mp": { "current": 12, "max": 12 },
+      "stats": { "Spirituality": 6, "Physique": 4, "Reasoning": 8 },
+      "skills": [
+        "Speed Reading — devour a library in an afternoon",
+        "Document Analysis — extract truth from forgery and cipher alike",
+        "Hidden Text Perception — see what was written between the lines"
+      ],
+      "abilities": ["Speed Reading", "Enhanced Memory", "Document Analysis", "Spirituality", "Hidden Text Perception"],
+      "traits": ["relentless", "curious", "skeptical", "brave", "stubborn"],
+      "notes": "White Tower Reader whose hunger for knowledge turns every book, clue, and mystery into a lesson."
+    }
+  }
+]

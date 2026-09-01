@@ -7,6 +7,7 @@ import rulesMd from '../../mechanics/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
 import lootJson from '../../mechanics/World_compendium/Lord of the Mysteries/loot.json?raw';
 import starterMd from '../../mechanics/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md?raw';
 import type { CampaignUiSkin, PlayerCharacter } from '../types';
+import { IS_DEMO_MODE, isDemoPlayablePcFile } from '../config/demoMode';
 import { formatLotmPathwayLabel } from './lotmPathways';
 
 const peopleRaw = import.meta.glob(
@@ -70,6 +71,7 @@ function fileNameFromPath(path: string): string {
 function buildPlayablePcs(files: Record<string, string>): PlayablePcOption[] {
     const out: PlayablePcOption[] = [];
     for (const [path, contents] of Object.entries(files)) {
+        if (IS_DEMO_MODE && !isDemoPlayablePcFile(path)) continue;
         const row = parsePlayablePc(contents);
         if (!row?.name) continue;
         const pathway = row.signatureKit?.pathway ?? '';

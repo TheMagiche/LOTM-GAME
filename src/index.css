@@ -1216,6 +1216,107 @@ html[style*="--lang-font-stack"] {
   margin: 0 auto;
 }
 
+.lotm-demo-banner {
+  margin: 14px auto 0;
+  max-width: 28rem;
+  color: rgba(201, 162, 39, 0.9);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  font-family: 'EB Garamond', serif;
+}
+
+.lotm-demo-modal {
+  background: #161218;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 6px;
+  padding: 28px 28px 24px;
+  max-width: 420px;
+  width: 100%;
+  color: #f3ead8;
+  font-family: 'EB Garamond', serif;
+}
+
+.lotm-demo-modal-title {
+  font-size: 18px;
+  margin: 0 0 10px;
+  letter-spacing: 0.04em;
+}
+
+.lotm-demo-modal-body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(243, 234, 216, 0.78);
+  margin: 0 0 18px;
+}
+
+.lotm-demo-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.lotm-demo-onboard {
+  max-width: 480px;
+}
+
+.lotm-demo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(243, 234, 216, 0.55);
+}
+
+.lotm-demo-field input {
+  background: #0b0a0d;
+  border: 1px solid rgba(243, 234, 216, 0.18);
+  color: #f3ead8;
+  padding: 8px 10px;
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.lotm-demo-formats {
+  display: flex;
+  border: 1px solid rgba(243, 234, 216, 0.18);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.lotm-demo-formats button {
+  flex: 1;
+  padding: 7px 4px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(243, 234, 216, 0.55);
+  border: 0;
+  cursor: pointer;
+}
+
+.lotm-demo-formats button.is-active {
+  background: rgba(201, 162, 39, 0.2);
+  color: #f3ead8;
+}
+
+.lotm-demo-skip {
+  background: transparent;
+  border: 0;
+  color: rgba(243, 234, 216, 0.5);
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .lotm-title-hub-actions {
   display: flex;
   flex-direction: column;

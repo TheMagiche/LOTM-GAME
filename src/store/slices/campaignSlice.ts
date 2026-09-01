@@ -13,6 +13,7 @@ import {
 } from './settingsSlice';
 
 import { API_BASE as API } from '../../lib/apiBase';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 
 import { createDebouncedSave, createTableSlice } from '../../services/tables/genericAccessor';
 import { locationTableDescriptor } from '../../services/tables/locationTable';
@@ -21,7 +22,7 @@ import { itemTableDescriptor } from '../../services/tables/itemTable';
 let autoBackupTimer: ReturnType<typeof setInterval> | null = null;
 
 function preOpBackup(campaignId: string | null, trigger: string) {
-    if (!campaignId) return;
+    if (!campaignId || IS_DEMO_MODE) return;
     fetch(`${API}/campaigns/${campaignId}/backup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -544,7 +545,7 @@ export const createCampaignSlice: StateCreator<CampaignDeps, [], [], CampaignSli
         const s = get();
         debouncedSaveSettings(s.settings, id);
 
-        if (id) {
+        if (id && !IS_DEMO_MODE) {
             autoBackupTimer = setInterval(async () => {
                 const currentState = get();
                 if (!currentState.activeCampaignId) return;
