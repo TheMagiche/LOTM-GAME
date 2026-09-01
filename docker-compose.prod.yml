@@ -11,7 +11,7 @@
 
 services:
   app:
-    image: ${LOTM_IMAGE:?Set LOTM_IMAGE to ghcr.io/owner/repo:latest}
+    image: ${LOTM_IMAGE:?Set LOTM_IMAGE to ghcr.io/themagiche/lotm-game:latest}
     restart: unless-stopped
     expose:
       - "3001"
