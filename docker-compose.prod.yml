@@ -14,6 +14,7 @@
 services:
   app:
     image: ${LOTM_IMAGE:?Set LOTM_IMAGE to ghcr.io/themagiche/lotm-game:latest}
+    pull_policy: always
     restart: unless-stopped
     expose:
       - "3001"
@@ -26,8 +27,8 @@ services:
       TRUST_PROXY: "1"
       PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://lotmdnd.work.gd}
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://lotmdnd.work.gd}
-      # Runtime demo lock (TTS off, session purge). Frontend Player lock is
-      # baked into the GHCR image at build time — this env cannot add it later.
+      # Runtime demo lock (TTS off, session purge, index.html boot flag).
+      # The Player UI also requires a demo Vite bundle in the pulled image.
       DEMO_MODE: "1"
       TTS_DISABLED: "1"
     init: true

@@ -1,4 +1,8 @@
+import fs from 'fs';
+import path from 'path';
+
 const DAY_MS = 24 * 60 * 60 * 1000;
+const DEMO_BOOT_SCRIPT = '<script>window.__LOTM_DEMO_MODE__=true;</script>';
 
 export function isDemoMode() {
     const env = String(process.env.DEMO_MODE || '').trim().toLowerCase();
@@ -17,3 +21,19 @@ export function demoMaxCampaignAgeMs() {
 }
 
 export const DEMO_SESSION_ID_RE = /^[a-zA-Z0-9_-]{8,80}$/;
+
+export function readFrontendDeploymentMode(distDir) {
+    try {
+        const raw = fs.readFileSync(path.join(distDir, 'deployment-mode.txt'), 'utf8').trim();
+        return raw || 'unknown';
+    } catch {
+        return 'unknown';
+    }
+}
+
+export function injectDemoBootScript(html) {
+    if (!isDemoMode()) return html;
+    if (html.includes('__LOTM_DEMO_MODE__')) return html;
+    if (html.includes('<head>')) return html.replace('<head>', `<head>${DEMO_BOOT_SCRIPT}`);
+    return `${DEMO_BOOT_SCRIPT}${html}`;
+}

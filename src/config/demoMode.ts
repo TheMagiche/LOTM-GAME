@@ -1,7 +1,20 @@
 import type { AppSettings, LLMProvider } from '../types';
 
-/** Build-time demo flag. Set by `vite --mode demo` / `VITE_DEPLOYMENT_MODE=demo`. */
-export const IS_DEMO_MODE = import.meta.env.VITE_DEPLOYMENT_MODE === 'demo';
+/** True when Vite baked `VITE_DEPLOYMENT_MODE=demo` into this bundle. */
+export const IS_DEMO_BUILD = import.meta.env.VITE_DEPLOYMENT_MODE === 'demo';
+
+export function resolveIsDemoMode(
+    buildMode = import.meta.env.VITE_DEPLOYMENT_MODE,
+    runtimeFlag = typeof window !== 'undefined' ? window.__LOTM_DEMO_MODE__ : undefined,
+): boolean {
+    return buildMode === 'demo' || runtimeFlag === true;
+}
+
+/**
+ * Player-only demo. True for a demo Vite build, or when the server injects
+ * `window.__LOTM_DEMO_MODE__` because `DEMO_MODE=1` (Coolify / compose).
+ */
+export const IS_DEMO_MODE = resolveIsDemoMode();
 
 /** Idle logout. Default 45 minutes. */
 export const DEMO_IDLE_MS = Number(import.meta.env.VITE_DEMO_IDLE_MS) || 45 * 60 * 1000;

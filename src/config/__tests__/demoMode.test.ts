@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyDemoLocks, hasUsableDemoProvider, isDemoPlayablePcFile } from '../demoMode';
+import { applyDemoLocks, hasUsableDemoProvider, isDemoPlayablePcFile, resolveIsDemoMode } from '../demoMode';
 
 describe('demoMode helpers', () => {
     it('recognizes the four demo starter PC files', () => {
@@ -22,6 +22,12 @@ describe('demoMode helpers', () => {
             endpoint: 'http://localhost:11434',
             apiKey: 'ignored',
         }])).toBe(false);
+    });
+
+    it('treats a server-injected runtime flag as demo even when the Vite build is full', () => {
+        expect(resolveIsDemoMode(undefined, true)).toBe(true);
+        expect(resolveIsDemoMode('demo', false)).toBe(true);
+        expect(resolveIsDemoMode(undefined, false)).toBe(false);
     });
 
     it('does not rewrite settings when the demo build flag is off', () => {

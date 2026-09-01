@@ -160,7 +160,7 @@ What file changes bust which Docker layer:
 - [ ] `LOTM_IMAGE=ghcr.io/<owner>/<repo>:latest` set in Coolify env
 - [ ] Coolify **automatic deploy on git push** is **off**; only the GHA `COOLIFY_WEBHOOK` triggers deploy
 - [ ] VPS has `docker login ghcr.io` for private package pull
-- [ ] `GET /health` returns `{"ok":true,"demo":true}` after pull
+- [ ] `GET /health` returns `{"ok":true,"demo":true,"frontend":"demo"}` after pull
 
 ### Local build
 

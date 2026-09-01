@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isDemoMode, isTtsDisabled, DEMO_SESSION_ID_RE } from '../lib/demoMode.js';
+import { isDemoMode, isTtsDisabled, DEMO_SESSION_ID_RE, injectDemoBootScript } from '../lib/demoMode.js';
 
 describe('server demoMode', () => {
     it('is off unless DEMO_MODE or --demo is set', () => {
@@ -10,6 +10,22 @@ describe('server demoMode', () => {
             process.env.DEMO_MODE = '1';
             expect(isDemoMode()).toBe(true);
             expect(isTtsDisabled()).toBe(true);
+        } finally {
+            if (previous === undefined) delete process.env.DEMO_MODE;
+            else process.env.DEMO_MODE = previous;
+        }
+    });
+
+    it('injects the client boot flag into index.html only in demo mode', () => {
+        const previous = process.env.DEMO_MODE;
+        const html = '<html><head><title>LOTM</title></head></html>';
+        try {
+            delete process.env.DEMO_MODE;
+            expect(injectDemoBootScript(html)).toBe(html);
+            process.env.DEMO_MODE = '1';
+            const injected = injectDemoBootScript(html);
+            expect(injected).toContain('window.__LOTM_DEMO_MODE__=true');
+            expect(injectDemoBootScript(injected)).toBe(injected);
         } finally {
             if (previous === undefined) delete process.env.DEMO_MODE;
             else process.env.DEMO_MODE = previous;

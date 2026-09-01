@@ -81,7 +81,7 @@ Coolify deploy logs should show `Pulling ghcr.io/...`, not `npm ci` or `vite bui
 | `COOLIFY_WEBHOOK` | Coolify → this app → **Configuration → Webhooks → Deploy Webhook** |
 | `COOLIFY_TOKEN` | Only if that webhook requires `Authorization: Bearer …` |
 
-After the first successful GHCR push, trigger the webhook (or deploy once from the Coolify UI) and confirm `https://lotmdnd.work.gd/health` returns `{"ok":true}`.
+After the first successful GHCR push, trigger the webhook (or deploy once from the Coolify UI) and confirm `https://lotmdnd.work.gd/health` returns `{"ok":true,"demo":true,"frontend":"demo"}`. If `demo` is true but `frontend` is `full` or `unknown`, Coolify is still running a pre-demo image — Redeploy so it pulls `:latest`.
 
 ## 6. LLM streaming timeouts
 

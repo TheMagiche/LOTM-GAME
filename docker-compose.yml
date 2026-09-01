@@ -11,7 +11,12 @@
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      args:
+        VITE_DEPLOYMENT_MODE: ""
+        DEMO_MODE: "0"
+        TTS_DISABLED: "0"
     image: ${LOTM_IMAGE:-lotm-game:local}
     restart: unless-stopped
     expose:

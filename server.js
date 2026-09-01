@@ -34,7 +34,7 @@ import { initDb } from './server/lib/vectorStore.js';
 import { warmup as warmupEmbedder } from './server/lib/embedder.js';
 import { warmupTts, killSidecar } from './server/lib/tts.js';
 import { serverError } from './server/lib/serverError.js';
-import { isDemoMode, isTtsDisabled } from './server/lib/demoMode.js';
+import { isDemoMode, isTtsDisabled, readFrontendDeploymentMode, injectDemoBootScript } from './server/lib/demoMode.js';
 import { createDemoSessionRouter, pruneStaleDemoCampaigns } from './server/routes/demoSession.js';
 
 const app = express();
@@ -88,7 +88,11 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '500mb' }));
 app.get('/health', (_req, res) => {
-    res.status(200).json({ ok: true, demo: isDemoMode() });
+    res.status(200).json({
+        ok: true,
+        demo: isDemoMode(),
+        frontend: readFrontendDeploymentMode(DIST_DIR),
+    });
 });
 app.get('/nginx-health', (_req, res) => {
     res.status(200).type('text/plain').send('ok\n');
@@ -184,8 +188,11 @@ if (process.env.NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
         ) {
             return next();
         }
-        res.sendFile(path.join(DIST_DIR, 'index.html'), (err) => {
-            if (err) next(err);
+        const indexPath = path.join(DIST_DIR, 'index.html');
+        fs.readFile(indexPath, 'utf8', (err, html) => {
+            if (err) return next(err);
+            res.set('Cache-Control', 'no-store');
+            res.type('html').send(injectDemoBootScript(html));
         });
     });
 }

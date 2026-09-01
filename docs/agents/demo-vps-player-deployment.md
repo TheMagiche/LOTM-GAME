@@ -271,7 +271,7 @@ Raise read timeout to **300s+** for LLM streams ([COOLIFY.md](../COOLIFY.md) §6
 
 ### 5.7 Smoke test
 
-1. `GET /health` → `{"ok":true}`
+1. `GET /health` → `{"ok":true,"demo":true,"frontend":"demo"}`
 2. Open landing page
 3. Enter demo app route
 4. Configure OpenRouter or Ollama key in Settings → Providers

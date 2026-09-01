@@ -50,6 +50,7 @@ mechanics/_Templates
 .env
 .env.*
 !.env.example
+!.env.demo
 
 docker-compose*.yml
 nginx

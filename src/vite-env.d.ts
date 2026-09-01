@@ -8,3 +8,7 @@ interface ImportMetaEnv {
 interface ImportMeta {
     readonly env: ImportMetaEnv;
 }
+
+interface Window {
+    __LOTM_DEMO_MODE__?: boolean;
+}

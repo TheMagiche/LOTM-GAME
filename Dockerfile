@@ -45,15 +45,22 @@ COPY docs/MODDING.md ./docs/MODDING.md
 ENV NODE_ENV=production
 ENV DOCKER_BUILD=1
 
-ARG VITE_DEPLOYMENT_MODE=
+# Production / Coolify images are the public Player demo. Local full-app
+# builds must pass VITE_DEPLOYMENT_MODE= (empty) via docker-compose.yml.
+ARG VITE_DEPLOYMENT_MODE=demo
 ENV VITE_DEPLOYMENT_MODE=$VITE_DEPLOYMENT_MODE
+
+COPY .env.demo ./
 
 # Vite compiles TS itself. `npm run build` also runs `tsc -b` (noEmit typecheck),
 # which currently fails on pre-existing errors and would abort the image build.
 # Engine is already built in the dependencies stage.
 # Engine `prepare` is `tsc`; prune would re-run it after removing typescript.
+# Echo the mode so this layer cannot cache-hit a previous full-app dist.
 RUN --mount=type=cache,target=/app/node_modules/.vite \
-    if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npx vite build; fi \
+    echo "VITE_DEPLOYMENT_MODE=${VITE_DEPLOYMENT_MODE}" \
+    && if [ "$VITE_DEPLOYMENT_MODE" = "demo" ]; then npm run build:demo; else npx vite build; fi \
+    && printf '%s\n' "${VITE_DEPLOYMENT_MODE:-full}" > dist/deployment-mode.txt \
     && npm prune --omit=dev --ignore-scripts
 
 # Runtime files after Vite so server/mod edits do not bust the compile layer.
@@ -65,6 +72,10 @@ FROM node:${NODE_VERSION} AS runner
 
 WORKDIR /app
 
+ARG VITE_DEPLOYMENT_MODE=demo
+ARG DEMO_MODE=1
+ARG TTS_DISABLED=1
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
@@ -72,6 +83,9 @@ ENV PORT=3001
 ENV DATA_DIR=/app/data
 ENV MODS_DIR=/app/data/mods
 ENV TRUST_PROXY=1
+ENV VITE_DEPLOYMENT_MODE=$VITE_DEPLOYMENT_MODE
+ENV DEMO_MODE=$DEMO_MODE
+ENV TTS_DISABLED=$TTS_DISABLED
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
