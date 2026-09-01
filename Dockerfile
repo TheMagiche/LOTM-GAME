@@ -1,4 +1,6 @@
-ARG NODE_VERSION=20-bookworm-slim
+# Node 24 LTS. Native addons (better-sqlite3, sqlite-vec) compile in the
+# dependencies stage; keep python3/make/g++ there when bumping this tag.
+ARG NODE_VERSION=24-bookworm-slim
 
 FROM node:${NODE_VERSION} AS dependencies
 

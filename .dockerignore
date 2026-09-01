@@ -24,11 +24,16 @@ docs
 Upgrade
 TRASH
 electron
-mechanics
 test-fixtures
 
 *.md
 !packages/engine/README.md
+!mechanics/**/*.md
+
+# Authoring-only trees. The Vite build inlines the rest of mechanics/
+# (lore, rules, loot, catalogs, playable PCs) — do not exclude that folder.
+mechanics/_Backups
+mechanics/_Templates
 
 *.log
 *.local
