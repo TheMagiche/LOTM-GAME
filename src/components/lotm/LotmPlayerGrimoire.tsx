@@ -302,7 +302,7 @@ function PotionPathwayPane({
     return (
         <div className="space-y-6">
             {/* Header / Pathway Banner */}
-            <div className="bg-[#141018] border border-[#c9a227]/40 p-5 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                     {pathway?.emblemSrc ? (
                         <img
@@ -335,7 +335,7 @@ function PotionPathwayPane({
                             <span className="font-['Cinzel'] text-[#c9a227] tracking-wider uppercase text-[9px]">Digestion</span>
                             <span className="font-mono text-[#f3ead8]">{digestion}%</span>
                         </div>
-                        <div className="w-full h-2 bg-black/60 border border-[#c9a227]/30 rounded-xs overflow-hidden">
+                        <div className="w-full h-2.5 bg-[#09080c] border border-[#c9a227]/15 rounded-full shadow-[inset_2px_2px_5px_#040305,inset_-2px_-2px_5px_#141118] overflow-hidden">
                             <div
                                 className={`h-full transition-all duration-300 ${digestion >= 100 ? 'bg-emerald-400' : 'bg-amber-500'}`}
                                 style={{ width: `${Math.min(100, Math.max(0, digestion))}%` }}
@@ -350,7 +350,7 @@ function PotionPathwayPane({
                                 {LOC_STAGE_LABELS[locStage]}
                             </span>
                         </div>
-                        <div className="w-full h-2 bg-black/60 border border-[#c9a227]/30 rounded-xs overflow-hidden">
+                        <div className="w-full h-2.5 bg-[#09080c] border border-[#c9a227]/15 rounded-full shadow-[inset_2px_2px_5px_#040305,inset_-2px_-2px_5px_#141118] overflow-hidden">
                             <div
                                 className={`h-full transition-all duration-300 ${locStage >= 3 ? 'bg-red-600' : locStage >= 1 ? 'bg-orange-500' : 'bg-emerald-500'}`}
                                 style={{ width: `${Math.min(100, (locStage / 4) * 100)}%` }}
@@ -361,7 +361,7 @@ function PotionPathwayPane({
             </div>
 
             {hudModel.sequenceBandLine && (
-                <div className="p-3 bg-[#18121f] border border-[#c9a227]/30 rounded-sm text-xs text-[#e8e0d0] flex items-center gap-2">
+                <div className="p-3.5 bg-[#0e0c11] border border-[#c9a227]/16 rounded-xl shadow-[inset_3px_3px_8px_#060507,inset_-3px_-3px_8px_#191620] text-xs text-[#e8e0d0] flex items-center gap-2">
                     <Sparkles size={14} className="text-[#c9a227] shrink-0" />
                     <span>{hudModel.sequenceBandLine}</span>
                 </div>
@@ -372,7 +372,7 @@ function PotionPathwayPane({
                 <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227]">
                     Sequence Ladder (Click to Inspect)
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-10 gap-1.5">
+                <div className="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-10 gap-2">
                     {SEQUENCE_NUMBERS.map(num => {
                         const isCurrent = currentSeqNum === num;
                         const isDigested = currentSeqNum !== undefined && num > currentSeqNum;
@@ -383,14 +383,14 @@ function PotionPathwayPane({
                                 key={num}
                                 type="button"
                                 onClick={() => setInspectedSeq(num)}
-                                className={`p-2 rounded-xs border text-left flex flex-col justify-between transition-colors ${
+                                className={`p-2.5 rounded-lg border text-left flex flex-col justify-between transition-all ${
                                     isCurrent
-                                        ? 'border-[#e0c36a] bg-[#2a2016] shadow-md shadow-amber-950/60 ring-1 ring-[#e0c36a]'
+                                        ? 'border-[#e0c36a] bg-[#221a28] shadow-[inset_2px_2px_6px_#050407,inset_-2px_-2px_6px_#1b1722,0_0_12px_rgba(201,162,39,0.3)] ring-1 ring-[#e0c36a]'
                                         : isInspected
-                                            ? 'border-[#c9a227]/80 bg-[#221a28]'
+                                            ? 'border-[#c9a227]/80 bg-[#1c1624] shadow-[3px_3px_8px_#050407,-2px_-2px_6px_#1b1722]'
                                             : isDigested
-                                                ? 'border-[#4a3f2b] bg-[#120f16] opacity-75'
-                                                : 'border-[#2d2537] bg-[#0d0a12] hover:border-[#c9a227]/40'
+                                                ? 'border-[#4a3f2b] bg-[#120f16] opacity-75 shadow-[2px_2px_5px_#050407,-1px_-1px_4px_#18141f]'
+                                                : 'border-[#2d2537] bg-[#0e0b13] shadow-[2px_2px_6px_#050407,-2px_-2px_5px_#18141f] hover:border-[#c9a227]/40'
                                 }`}
                             >
                                 <div className="flex items-center justify-between">
@@ -417,12 +417,12 @@ function PotionPathwayPane({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Left: Acting & Core Abilities */}
                 <div className="space-y-4">
-                    <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                    <div className="bg-[#0e0c11] border border-[#c9a227]/14 p-5 rounded-xl shadow-[inset_3px_3px_8px_#060507,inset_-3px_-3px_8px_#191620] space-y-3">
                         <div className="flex items-center justify-between border-b border-[#c9a227]/20 pb-2">
                             <h4 className="font-['EB_Garamond'] text-lg font-bold text-[#f3ead8]">
                                 {formatLotmSequenceName(pathway?.id, activeSeqNum)}
                             </h4>
-                            <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider px-2 py-0.5 border border-[#c9a227]/30 text-[#e0c36a]">
+                            <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider px-2 py-0.5 border border-[#c9a227]/30 text-[#e0c36a] rounded">
                                 {activeSeqNum === currentSeqNum ? 'Active Sequence' : `Sequence ${activeSeqNum}`}
                             </span>
                         </div>
@@ -432,7 +432,7 @@ function PotionPathwayPane({
                                 <p className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-[#c9a227] mb-1">
                                     Acting Method & Principles
                                 </p>
-                                <p className="text-sm italic text-[#e8e0d0] bg-black/40 p-3 rounded-xs border-l-2 border-[#c9a227]">
+                                <p className="text-sm italic text-[#e8e0d0] bg-[#141118] p-3.5 rounded-lg border border-[#c9a227]/20 shadow-[2px_2px_6px_#050407,-2px_-2px_5px_#1b1722]">
                                     "{seqInfo.actingMethod}"
                                 </p>
                             </div>
@@ -450,7 +450,7 @@ function PotionPathwayPane({
                         )}
                     </div>
 
-                    <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                    <div className="bg-[#0e0c11] border border-[#c9a227]/14 p-5 rounded-xl shadow-[inset_3px_3px_8px_#060507,inset_-3px_-3px_8px_#191620] space-y-3">
                         <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                             <Sparkles size={13} />
                             <span>Sequence Abilities & Powers</span>
@@ -459,11 +459,11 @@ function PotionPathwayPane({
                         {abilities.length === 0 ? (
                             <p className="text-xs italic text-[#a09075]">No explicit abilities recorded for this sequence.</p>
                         ) : (
-                            <div className="space-y-2">
+                            <div className="space-y-2.5">
                                 {abilities.map((abilityName, idx) => {
                                     const comp = findLotmAbilityByName(abilityName);
                                     return (
-                                        <div key={idx} className="p-3 bg-black/30 border border-[#c9a227]/15 rounded-xs space-y-1">
+                                        <div key={idx} className="p-3.5 bg-[#141118] border border-[#c9a227]/14 rounded-lg shadow-[3px_3px_8px_#050407,-2px_-2px_6px_#1b1722] space-y-1">
                                             <div className="flex items-center justify-between">
                                                 <h5 className="font-['EB_Garamond'] text-base font-semibold text-[#f3ead8]">
                                                     {abilityName}
@@ -489,7 +489,7 @@ function PotionPathwayPane({
 
                 {/* Right: Advancement Potion Formula & Drink Action */}
                 <div className="space-y-4">
-                    <div className="bg-[#16111d] border border-[#c9a227]/35 p-5 rounded-sm space-y-4">
+                    <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-4">
                         <div className="flex items-center justify-between border-b border-[#c9a227]/25 pb-3">
                             <div>
                                 <p className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-[#c9a227]">
@@ -506,7 +506,7 @@ function PotionPathwayPane({
                                 <img
                                     src={nextSeqInfo.potionSrc}
                                     alt="Advancement Potion"
-                                    className="w-14 h-14 object-contain rounded border border-[#c9a227]/40 bg-black/50 p-1"
+                                    className="w-14 h-14 object-contain rounded-lg border border-[#c9a227]/40 bg-black/50 p-1 shadow-md"
                                 />
                             )}
                         </div>
@@ -517,7 +517,7 @@ function PotionPathwayPane({
                                     <p className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-amber-400 mb-1">
                                         Main Ingredients
                                     </p>
-                                    <ul className="list-disc list-inside text-xs text-[#e8e0d0] space-y-1 bg-black/40 p-2.5 rounded border border-[#c9a227]/15">
+                                    <ul className="list-disc list-inside text-xs text-[#e8e0d0] space-y-1 bg-[#0e0c11] p-3 rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620]">
                                         {nextSeqInfo.formula.main.map((ing, idx) => (
                                             <li key={idx}>{ing}</li>
                                         ))}
@@ -529,7 +529,7 @@ function PotionPathwayPane({
                                         <p className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-[#c9a227]/80 mb-1">
                                             Supplementary Ingredients
                                         </p>
-                                        <ul className="list-disc list-inside text-xs text-[#d0c6b4] space-y-1 bg-black/40 p-2.5 rounded border border-[#c9a227]/15">
+                                        <ul className="list-disc list-inside text-xs text-[#d0c6b4] space-y-1 bg-[#0e0c11] p-3 rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620]">
                                             {nextSeqInfo.formula.supplementary.map((ing, idx) => (
                                                 <li key={idx}>{ing}</li>
                                             ))}
@@ -542,14 +542,14 @@ function PotionPathwayPane({
                                         <p className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-purple-400 mb-1">
                                             Alternative / Ritual Prerequisite
                                         </p>
-                                        <p className="text-xs text-[#d8cfbe] bg-black/40 p-2.5 rounded border border-[#c9a227]/15">
+                                        <p className="text-xs text-[#d8cfbe] bg-[#0e0c11] p-3 rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620]">
                                             {nextSeqInfo.formula.alternative}
                                         </p>
                                     </div>
                                 )}
 
                                 {nextSeqInfo.consumptionBacklash && (
-                                    <div className="p-2.5 bg-red-950/30 border border-red-500/30 rounded text-xs text-red-200">
+                                    <div className="p-3 bg-red-950/30 border border-red-500/30 rounded-lg text-xs text-red-200">
                                         <p className="font-['Cinzel'] text-[9px] uppercase tracking-wider text-red-400 mb-0.5">
                                             Consumption Risk / Backlash
                                         </p>
@@ -571,10 +571,10 @@ function PotionPathwayPane({
                                 type="button"
                                 disabled={!canDrink}
                                 onClick={() => commitLotmPotionDrink()}
-                                className={`w-full py-2.5 px-4 rounded font-['Cinzel'] text-xs font-bold uppercase tracking-widest transition-all ${
+                                className={`w-full py-3 px-4 rounded-lg font-['Cinzel'] text-xs font-bold uppercase tracking-widest transition-all ${
                                     canDrink
-                                        ? 'bg-linear-to-r from-amber-600 to-[#c9a227] text-black hover:brightness-110 shadow-lg shadow-amber-950/60 cursor-pointer active:scale-[0.99]'
-                                        : 'bg-black/50 text-[#7a6f5e] border border-[#c9a227]/20 cursor-not-allowed'
+                                        ? 'bg-linear-to-r from-[#e0c36a] to-[#c9a227] text-black shadow-[0_4px_16px_rgba(201,162,39,0.35),3px_3px_8px_#050407] hover:brightness-110 cursor-pointer active:scale-[0.99]'
+                                        : 'bg-[#141118] text-[#7a6f5e] border border-neutral-800 shadow-[inset_2px_2px_5px_#050407] cursor-not-allowed'
                                 }`}
                             >
                                 <span>Drink Next Sequence Potion</span>
@@ -715,9 +715,9 @@ function LocationTravelPane({
     return (
         <div className="space-y-6">
             {/* Current Position Summary Card */}
-            <div className="bg-[#141018] border border-[#c9a227]/40 p-4 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-full border border-[#c9a227]/50 bg-black/60 flex items-center justify-center text-[#c9a227] shrink-0">
+                    <div className="w-12 h-12 rounded-full border border-[#c9a227]/40 bg-black/60 flex items-center justify-center text-[#c9a227] shadow-inner shrink-0">
                         <MapPin size={22} />
                     </div>
                     <div>
@@ -726,7 +726,7 @@ function LocationTravelPane({
                                 Current Coordinates
                             </p>
                             {worldDay !== undefined && (
-                                <span className="text-[9px] font-mono px-1.5 py-0.2 border border-[#c9a227]/30 text-[#e0c36a] rounded-xs">
+                                <span className="text-[9px] font-mono px-2 py-0.5 border border-[#c9a227]/30 text-[#e0c36a] rounded-md bg-[#141118] shadow-[2px_2px_5px_#050407]">
                                     Day {worldDay}
                                 </span>
                             )}
@@ -745,7 +745,7 @@ function LocationTravelPane({
                     <button
                         type="button"
                         onClick={handleClearFeature}
-                        className="py-1.5 px-3 border border-[#c9a227]/30 text-[#e8e0d0] hover:text-[#c9a227] hover:border-[#c9a227] rounded text-xs font-['Cinzel'] tracking-wider uppercase"
+                        className="py-1.5 px-3.5 border border-[#c9a227]/30 bg-[#141118] text-[#e0c36a] hover:text-[#f3ead8] hover:border-[#c9a227] rounded-lg text-xs font-['Cinzel'] tracking-wider uppercase shadow-[3px_3px_8px_#050407,-2px_-2px_6px_#1b1722] transition-all"
                     >
                         Step Outside Feature
                     </button>
@@ -758,7 +758,7 @@ function LocationTravelPane({
                     <Compass size={14} />
                     <span>Interactive World Map & Exploration</span>
                 </p>
-                <div className="h-80 sm:h-96 min-h-85 border border-[#c9a227]/30 rounded-sm overflow-hidden bg-black/60 shadow-xl">
+                <div className="h-80 sm:h-96 min-h-85 border border-[#c9a227]/20 rounded-xl overflow-hidden bg-[#09080c] shadow-[inset_3px_3px_10px_#040306,inset_-3px_-3px_10px_#141118]">
                     <LotmWorldMapView
                         readOnly
                         highlightCoords={activeLocationEntry?.coordinates || activeMapPin?.coordinates}
@@ -943,7 +943,7 @@ function LocationTravelPane({
                             )}
                         </div>
                     ) : (
-                        <div className="bg-[#120f16] border border-[#c9a227]/20 p-8 rounded-sm text-center text-sm text-[#a09075]">
+                        <div className="bg-[#0e0c11] border border-[#c9a227]/14 p-8 rounded-xl text-center text-sm text-[#a09075] shadow-[inset_3px_3px_8px_#060507,inset_-3px_-3px_8px_#191620]">
                             Select a location from the map or list to view its details and travel.
                         </div>
                     )}
@@ -975,16 +975,16 @@ function CharacterGMPane({
     return (
         <div className="space-y-6">
             {/* Top Identity Banner */}
-            <div className="bg-[#141018] border border-[#c9a227]/40 p-5 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                     {pc?.avatarUrl ? (
                         <img
                             src={pc.avatarUrl}
                             alt={pc.name}
-                            className="w-16 h-16 object-cover rounded-full border border-[#c9a227]/50 shadow-md shadow-black/50"
+                            className="w-16 h-16 object-cover rounded-full border border-[#c9a227]/40 shadow-[3px_3px_8px_#050407]"
                         />
                     ) : (
-                        <div className="w-16 h-16 rounded-full border border-[#c9a227]/30 bg-black/60 flex items-center justify-center text-[#c9a227]">
+                        <div className="w-16 h-16 rounded-full border border-[#c9a227]/30 bg-[#0e0c11] shadow-[inset_2px_2px_5px_#060507] flex items-center justify-center text-[#c9a227]">
                             <User size={24} />
                         </div>
                     )}
@@ -993,10 +993,10 @@ function CharacterGMPane({
                             <span className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-[#c9a227]">
                                 Protagonist Dossier (Game Master Record)
                             </span>
-                            <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 bg-black/60 border border-[#c9a227]/30 text-[#e0c36a] rounded-xs">
+                            <span className="text-[9px] font-mono uppercase px-2 py-0.5 bg-[#0e0c11] border border-[#c9a227]/30 text-[#e0c36a] rounded-md shadow-[inset_1px_1px_3px_#060507]">
                                 {pc?.tier || 'protagonist'}
                             </span>
-                            <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 rounded-xs">
+                            <span className="text-[9px] font-mono uppercase px-2 py-0.5 bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 rounded-md shadow-[inset_1px_1px_3px_#060507]">
                                 {pc?.status || 'Alive'}
                             </span>
                         </div>
@@ -1024,25 +1024,25 @@ function CharacterGMPane({
             {/* Grid for GM View Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Identity & Lore */}
-                <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                <div className="bg-[#121015] border border-[#c9a227]/16 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                     <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                         <ScrollText size={13} />
                         <span>Identity, Heritage & Story Lore</span>
                     </p>
                     <div className="space-y-2 text-xs text-[#d8cfbe]">
                         {pc?.lore || profile?.backstory ? (
-                            <p className="leading-relaxed bg-black/30 p-3 rounded border border-[#c9a227]/15">
+                            <p className="leading-relaxed bg-[#0e0c11] p-3.5 rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620]">
                                 {pc?.lore || profile?.backstory}
                             </p>
                         ) : (
                             <p className="italic text-[#8a7e6b]">No detailed story backstory logged.</p>
                         )}
                         <div className="grid grid-cols-2 gap-2 pt-1 text-[11px]">
-                            <div>
+                            <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_5px_#060507]">
                                 <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block">Faction / Church</span>
                                 <span className="text-[#f3ead8]">{pc?.faction || 'None'}</span>
                             </div>
-                            <div>
+                            <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_5px_#060507]">
                                 <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block">Origin / Realm</span>
                                 <span className="text-[#f3ead8]">{pc?.origin || profile?.origin || 'Loen Kingdom'}</span>
                             </div>
@@ -1051,28 +1051,28 @@ function CharacterGMPane({
                 </div>
 
                 {/* Personality & Voice */}
-                <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                <div className="bg-[#121015] border border-[#c9a227]/16 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                     <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                         <User size={13} />
                         <span>Personality & Voice Persona</span>
                     </p>
                     <div className="space-y-2 text-xs text-[#d8cfbe]">
                         <div>
-                            <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-0.5">Disposition</span>
-                            <p className="bg-black/30 p-2.5 rounded border border-[#c9a227]/15 leading-relaxed">
+                            <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1">Disposition</span>
+                            <p className="bg-[#0e0c11] p-3 rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] leading-relaxed">
                                 {pc?.personality || profile?.personality || 'Pragmatic, cautious, attentive to mysticism.'}
                             </p>
                         </div>
                         <div>
-                            <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-0.5">Speech Style & Tone</span>
-                            <p className="bg-black/30 p-2.5 rounded border border-[#c9a227]/15 italic">
+                            <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1">Speech Style & Tone</span>
+                            <p className="bg-[#0e0c11] p-3 rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] italic">
                                 {pc?.speechStyle || profile?.speechStyle || 'Polite, composed, guarded.'}
                             </p>
                         </div>
                         {pc?.dialogueExamples && (
                             <div>
-                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-0.5">Dialogue Quote</span>
-                                <p className="bg-black/30 p-2.5 rounded border border-[#c9a227]/15 italic text-amber-200">
+                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1">Dialogue Quote</span>
+                                <p className="bg-[#0e0c11] p-3 rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] italic text-amber-200">
                                     "{pc.dialogueExamples}"
                                 </p>
                             </div>
@@ -1081,7 +1081,7 @@ function CharacterGMPane({
                 </div>
 
                 {/* Personality Hexagon Radar / Meters */}
-                <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                <div className="bg-[#121015] border border-[#c9a227]/16 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                     <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                         <Activity size={13} />
                         <span>Personality Hexagon (Agency Axes)</span>
@@ -1094,12 +1094,12 @@ function CharacterGMPane({
                             // Normalize -3..+3 to 0..100%
                             const pct = Math.round(((clamped + 3) / 6) * 100);
                             return (
-                                <div key={axis} className="p-2 bg-black/30 rounded border border-[#c9a227]/15">
-                                    <div className="flex justify-between items-center text-[10px] mb-1">
+                                <div key={axis} className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620]">
+                                    <div className="flex justify-between items-center text-[10px] mb-1.5">
                                         <span className="font-['Cinzel'] uppercase tracking-wider text-[#c9a227]">{axis}</span>
                                         <span className="font-mono text-[#f3ead8]">{clamped > 0 ? `+${clamped}` : clamped}</span>
                                     </div>
-                                    <div className="w-full h-1.5 bg-black/60 rounded-xs overflow-hidden mb-1">
+                                    <div className="w-full h-2 bg-[#09080c] border border-[#c9a227]/15 rounded-full shadow-[inset_1px_1px_3px_#040305,inset_-1px_-1px_3px_#141118] overflow-hidden mb-1">
                                         <div
                                             className="h-full bg-linear-to-r from-amber-600 to-[#c9a227]"
                                             style={{ width: `${pct}%` }}
@@ -1115,20 +1115,20 @@ function CharacterGMPane({
                 </div>
 
                 {/* Traits & Wants */}
-                <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                <div className="bg-[#121015] border border-[#c9a227]/16 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                     <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                         <Sparkles size={13} />
                         <span>Traits & Core Wants</span>
                     </p>
                     <div className="space-y-3 text-xs">
                         <div>
-                            <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1">Core Traits</span>
-                            <div className="flex flex-wrap gap-1.5">
+                            <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1.5">Core Traits</span>
+                            <div className="flex flex-wrap gap-2">
                                 {traits.length > 0 ? (
                                     traits.map((t, idx) => (
                                         <span
                                             key={idx}
-                                            className="px-2 py-0.5 bg-black/40 border border-[#c9a227]/30 text-[#e8e0d0] rounded text-[11px] font-['Cinzel']"
+                                            className="px-2.5 py-1 bg-[#141118] border border-[#c9a227]/30 text-[#e8e0d0] rounded-lg text-[11px] font-['Cinzel'] shadow-[2px_2px_5px_#050407,-1px_-1px_4px_#1b1722]"
                                         >
                                             {t}
                                             {traitTierMap[t] && (
@@ -1147,19 +1147,19 @@ function CharacterGMPane({
                         <div className="space-y-1.5 pt-1">
                             <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block">Wants & Aspirations</span>
                             {wants?.short?.length ? (
-                                <p className="text-[11px] text-[#d8cfbe]">
+                                <p className="text-[11px] text-[#d8cfbe] bg-[#0e0c11] p-2.5 rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_5px_#060507]">
                                     <span className="text-amber-400 font-semibold font-['Cinzel'] text-[9px] uppercase">Short: </span>
                                     {wants.short.join('; ')}
                                 </p>
                             ) : null}
                             {wants?.medium?.length ? (
-                                <p className="text-[11px] text-[#d8cfbe]">
+                                <p className="text-[11px] text-[#d8cfbe] bg-[#0e0c11] p-2.5 rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_5px_#060507]">
                                     <span className="text-amber-400 font-semibold font-['Cinzel'] text-[9px] uppercase">Medium: </span>
                                     {wants.medium.join('; ')}
                                 </p>
                             ) : null}
                             {wants?.long ? (
-                                <p className="text-[11px] text-[#d8cfbe]">
+                                <p className="text-[11px] text-[#d8cfbe] bg-[#0e0c11] p-2.5 rounded-lg border border-[#c9a227]/12 shadow-[inset_2px_2px_5px_#060507]">
                                     <span className="text-amber-400 font-semibold font-['Cinzel'] text-[9px] uppercase">Long: </span>
                                     {wants.long}
                                 </p>
@@ -1169,7 +1169,7 @@ function CharacterGMPane({
                 </div>
 
                 {/* Boundaries & Behavioral Triggers */}
-                <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                <div className="bg-[#121015] border border-[#c9a227]/16 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                     <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                         <Shield size={13} />
                         <span>Boundaries & Behavioral Triggers</span>
@@ -1177,8 +1177,8 @@ function CharacterGMPane({
                     <div className="space-y-3 text-xs text-[#d8cfbe]">
                         {boundaries?.hard?.length ? (
                             <div>
-                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-red-400 block mb-0.5">Hard Boundaries</span>
-                                <p className="bg-red-950/20 border border-red-500/20 p-2 rounded text-[11px]">
+                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-red-400 block mb-1">Hard Boundaries</span>
+                                <p className="bg-red-950/20 border border-red-500/20 p-2.5 rounded-lg text-[11px] shadow-[inset_2px_2px_5px_#060507]">
                                     {boundaries.hard.join('; ')}
                                 </p>
                             </div>
@@ -1186,8 +1186,8 @@ function CharacterGMPane({
 
                         {boundaries?.soft?.length ? (
                             <div>
-                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-amber-400 block mb-0.5">Soft Boundaries</span>
-                                <p className="bg-amber-950/20 border border-amber-500/20 p-2 rounded text-[11px]">
+                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-amber-400 block mb-1">Soft Boundaries</span>
+                                <p className="bg-amber-950/20 border border-amber-500/20 p-2.5 rounded-lg text-[11px] shadow-[inset_2px_2px_5px_#060507]">
                                     {boundaries.soft.join('; ')}
                                 </p>
                             </div>
@@ -1195,10 +1195,10 @@ function CharacterGMPane({
 
                         {triggers.length > 0 && (
                             <div>
-                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1">Behavioral Triggers</span>
-                                <div className="space-y-1">
+                                <span className="font-['Cinzel'] text-[8px] uppercase tracking-wider text-[#c9a227] block mb-1.5">Behavioral Triggers</span>
+                                <div className="space-y-1.5">
                                     {triggers.map((trig, idx) => (
-                                        <div key={idx} className="p-2 bg-black/30 rounded border border-[#c9a227]/15 text-[11px]">
+                                        <div key={idx} className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507] text-[11px]">
                                             <span className="text-amber-300 font-semibold">When: </span>
                                             <span>{trig.trigger}</span>
                                             <span className="text-[#c9a227] font-semibold ml-2">→ </span>
@@ -1212,34 +1212,34 @@ function CharacterGMPane({
                 </div>
 
                 {/* Visual Profile & Attributes */}
-                <div className="bg-[#120f16] border border-[#c9a227]/25 p-4 rounded-sm space-y-3">
+                <div className="bg-[#121015] border border-[#c9a227]/16 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                     <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                         <Eye size={13} />
                         <span>Visual Profile & Attributes</span>
                     </p>
-                    <div className="grid grid-cols-2 gap-2 text-xs text-[#d8cfbe]">
-                        <div className="p-2 bg-black/30 rounded border border-[#c9a227]/15">
+                    <div className="grid grid-cols-2 gap-2.5 text-xs text-[#d8cfbe]">
+                        <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                             <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Gender & Age</span>
                             <span>{visual?.gender || '—'} · {visual?.age || '—'}</span>
                         </div>
-                        <div className="p-2 bg-black/30 rounded border border-[#c9a227]/15">
+                        <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                             <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Build / Height</span>
                             <span>{visual?.build || '—'}</span>
                         </div>
-                        <div className="p-2 bg-black/30 rounded border border-[#c9a227]/15">
+                        <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                             <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Hair & Eyes</span>
                             <span>{visual?.hair || '—'} · {visual?.eyes || '—'}</span>
                         </div>
-                        <div className="p-2 bg-black/30 rounded border border-[#c9a227]/15">
+                        <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                             <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Skin Complexion</span>
                             <span>{visual?.skin || '—'}</span>
                         </div>
-                        <div className="col-span-2 p-2 bg-black/30 rounded border border-[#c9a227]/15">
+                        <div className="col-span-2 p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                             <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Attire / Clothing</span>
                             <span>{visual?.clothing || 'Victorian formal frock coat, top hat, cane.'}</span>
                         </div>
                         {visual?.distinguishingFeatures && (
-                            <div className="col-span-2 p-2 bg-black/30 rounded border border-[#c9a227]/15">
+                            <div className="col-span-2 p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                                 <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Distinguishing Marks</span>
                                 <span>{visual.distinguishingFeatures}</span>
                             </div>
@@ -1274,37 +1274,37 @@ function InventoryPane({ inventory }: { inventory: InventoryItem[] }) {
     return (
         <div className="space-y-6">
             {/* Purse / Currency Summary Banner */}
-            <div className="bg-[#141018] border border-[#c9a227]/40 p-4 rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full border border-[#c9a227]/50 bg-black/60 flex items-center justify-center text-[#c9a227]">
-                        <Package size={18} />
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-3.5">
+                    <div className="w-11 h-11 rounded-full border border-[#c9a227]/40 bg-[#0e0c11] shadow-[inset_2px_2px_5px_#060507] flex items-center justify-center text-[#c9a227]">
+                        <Package size={20} />
                     </div>
                     <div>
                         <p className="font-['Cinzel'] text-[9px] tracking-wider uppercase text-[#c9a227]">
                             Purse & Holdings
                         </p>
-                        <h4 className="font-['EB_Garamond'] text-lg font-bold text-[#f3ead8]">
+                        <h4 className="font-['EB_Garamond'] text-xl font-bold text-[#f3ead8]">
                             {purseLine || 'No coin recorded in purse'}
                         </h4>
                     </div>
                 </div>
-                <div className="text-xs font-mono text-[#a09075]">
+                <div className="text-xs font-mono text-[#e0c36a] bg-[#0e0c11] px-3 py-1 rounded-lg border border-[#c9a227]/15 shadow-[inset_2px_2px_5px_#060507]">
                     Total Items: {inventory.length}
                 </div>
             </div>
 
             {/* Category Subtabs & Search */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1.5">
                     {INVENTORY_TABS.map(tab => (
                         <button
                             key={tab.id}
                             type="button"
                             onClick={() => setSelectedTab(tab.id)}
-                            className={`px-3 py-1.5 rounded-xs text-[10px] font-['Cinzel'] tracking-wider uppercase border transition-colors ${
+                            className={`px-3 py-1.5 rounded-lg text-[10px] font-['Cinzel'] tracking-wider uppercase transition-all ${
                                 selectedTab === tab.id
-                                    ? 'bg-[#c9a227]/20 border-[#c9a227] text-[#e0c36a]'
-                                    : 'bg-black/30 border-[#2d2537] text-[#a09075] hover:border-[#c9a227]/40 hover:text-[#e8e0d0]'
+                                    ? 'bg-[#221a28] border border-[#c9a227] text-[#e0c36a] shadow-[inset_2px_2px_5px_#050407,inset_-2px_-2px_5px_#1b1722,0_0_10px_rgba(201,162,39,0.2)]'
+                                    : 'bg-[#141118] border border-[#c9a227]/15 text-[#a09075] shadow-[2px_2px_6px_#050407,-1px_-1px_4px_#1b1722] hover:border-[#c9a227]/40 hover:text-[#e8e0d0]'
                             }`}
                         >
                             {tab.label}
@@ -1319,14 +1319,14 @@ function InventoryPane({ inventory }: { inventory: InventoryItem[] }) {
                         placeholder="Search items…"
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
-                        className="w-full bg-black/50 border border-[#c9a227]/25 rounded py-1 pl-8 pr-3 text-xs text-[#f3ead8] placeholder-[#7a6f5e] outline-none focus:border-[#c9a227]"
+                        className="w-full bg-[#0e0c11] border border-[#c9a227]/20 rounded-lg py-1.5 pl-8 pr-3 text-xs text-[#f3ead8] placeholder-[#7a6f5e] outline-none focus:border-[#c9a227] shadow-[inset_2px_2px_5px_#050407,inset_-2px_-2px_5px_#191620]"
                     />
                 </div>
             </div>
 
             {/* Items Grid */}
             {filteredItems.length === 0 ? (
-                <div className="p-8 text-center bg-[#120f16] border border-[#c9a227]/20 rounded-sm text-sm text-[#a09075] italic">
+                <div className="p-8 text-center bg-[#0e0c11] border border-[#c9a227]/14 rounded-xl text-sm text-[#a09075] italic shadow-[inset_3px_3px_8px_#060507,inset_-3px_-3px_8px_#191620]">
                     No items found matching this category.
                 </div>
             ) : (
@@ -1337,25 +1337,25 @@ function InventoryPane({ inventory }: { inventory: InventoryItem[] }) {
                         return (
                             <div
                                 key={item.id}
-                                className={`p-4 rounded-sm border bg-[#120f16] space-y-2.5 transition-colors ${
+                                className={`p-4 rounded-xl border space-y-3 transition-all ${
                                     isSealedArtefact
-                                        ? 'border-amber-600/50 bg-[#171114]'
-                                        : 'border-[#c9a227]/25'
+                                        ? 'border-amber-600/40 bg-[#161014] shadow-[6px_6px_16px_#050408,-4px_-4px_12px_#22161c]'
+                                        : 'border-[#c9a227]/16 bg-[#121015] shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822]'
                                 }`}
                             >
                                 <div className="flex items-start justify-between gap-2">
                                     <div>
                                         <div className="flex items-center gap-2">
                                             {item.equipped && (
-                                                <span className="text-[8px] font-['Cinzel'] uppercase px-1.5 py-0.2 bg-emerald-950/60 text-emerald-300 border border-emerald-500/30 rounded-xs">
+                                                <span className="text-[8px] font-['Cinzel'] uppercase px-2 py-0.5 bg-emerald-950/60 text-emerald-300 border border-emerald-500/30 rounded-md shadow-[1px_1px_3px_#050407]">
                                                     Equipped
                                                 </span>
                                             )}
                                             {badge && (
-                                                <span className={`text-[8px] font-['Cinzel'] uppercase px-1.5 py-0.2 rounded-xs border ${
+                                                <span className={`text-[8px] font-['Cinzel'] uppercase px-2 py-0.5 rounded-md border shadow-[1px_1px_3px_#050407] ${
                                                     isSealedArtefact
                                                         ? 'bg-amber-950/60 text-amber-300 border-amber-500/40'
-                                                        : 'bg-black/50 text-[#c9a227] border-[#c9a227]/30'
+                                                        : 'bg-[#141118] text-[#c9a227] border-[#c9a227]/30'
                                                 }`}>
                                                     {badge}
                                                 </span>
@@ -1365,7 +1365,7 @@ function InventoryPane({ inventory }: { inventory: InventoryItem[] }) {
                                             {item.name}
                                         </h5>
                                     </div>
-                                    <span className="font-mono text-xs text-[#c9a227] bg-black/40 px-2 py-0.5 rounded border border-[#c9a227]/20">
+                                    <span className="font-mono text-xs text-[#c9a227] bg-[#0e0c11] px-2.5 py-0.5 rounded-md border border-[#c9a227]/20 shadow-[inset_1px_1px_3px_#060507]">
                                         x{item.qty || 1}
                                     </span>
                                 </div>
@@ -1378,7 +1378,7 @@ function InventoryPane({ inventory }: { inventory: InventoryItem[] }) {
 
                                 {/* Mandatory Flaw / Downside for Sealed Artefacts */}
                                 {isSealedArtefact && item.notes && (
-                                    <div className="p-2.5 bg-amber-950/30 border border-amber-600/40 rounded text-xs text-amber-200 flex items-start gap-2">
+                                    <div className="p-3 bg-[#141118] border border-amber-600/35 rounded-lg text-xs text-amber-200 flex items-start gap-2 shadow-[2px_2px_5px_#050407,-1px_-1px_4px_#1b1722]">
                                         <AlertTriangle size={14} className="text-amber-400 shrink-0 mt-0.5" />
                                         <div>
                                             <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider text-amber-400 block mb-0.5">
@@ -1428,7 +1428,7 @@ function ChronicleStandingPane({
     return (
         <div className="space-y-6">
             {/* Active Traits Section */}
-            <div className="bg-[#120f16] border border-[#c9a227]/30 p-5 rounded-sm space-y-3">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                 <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                     <Sparkles size={14} />
                     <span>Active Chronicle Traits & Evolutions</span>
@@ -1439,7 +1439,7 @@ function ChronicleStandingPane({
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {activeTraits.map(trait => (
-                            <div key={trait.id} className="p-3 bg-black/40 border border-[#c9a227]/20 rounded-xs space-y-1">
+                            <div key={trait.id} className="p-3.5 bg-[#0e0c11] border border-[#c9a227]/14 rounded-lg shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] space-y-1">
                                 <div className="flex items-center justify-between">
                                     <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider text-[#c9a227]">
                                         {CATEGORY_LABELS[trait.category] || trait.category}
@@ -1471,7 +1471,7 @@ function ChronicleStandingPane({
             </div>
 
             {/* Standing / NPC Relationships */}
-            <div className="bg-[#120f16] border border-[#c9a227]/30 p-5 rounded-sm space-y-3">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                 <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                     <User size={14} />
                     <span>Standing & Social Relations ({bonds.length})</span>
@@ -1488,7 +1488,7 @@ function ChronicleStandingPane({
                             const isPositive = clamped > 0;
                             const isNegative = clamped < 0;
                             return (
-                                <div key={npc.id} className="p-3 bg-black/40 border border-[#c9a227]/20 rounded-xs space-y-2">
+                                <div key={npc.id} className="p-3.5 bg-[#0e0c11] border border-[#c9a227]/14 rounded-lg shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] space-y-2">
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h5 className="font-['EB_Garamond'] text-base font-bold text-[#f3ead8]">
@@ -1506,7 +1506,7 @@ function ChronicleStandingPane({
                                     </div>
 
                                     <div>
-                                        <div className="w-full h-1.5 bg-black/60 rounded-xs overflow-hidden mb-1">
+                                        <div className="w-full h-2 bg-[#09080c] border border-[#c9a227]/15 rounded-full shadow-[inset_1px_1px_3px_#040305,inset_-1px_-1px_3px_#141118] overflow-hidden mb-1">
                                             <div
                                                 className={`h-full ${isPositive ? 'bg-emerald-500' : isNegative ? 'bg-red-500' : 'bg-neutral-500'}`}
                                                 style={{ width: `${Math.round(((clamped + 3) / 6) * 100)}%` }}
@@ -1524,7 +1524,7 @@ function ChronicleStandingPane({
             </div>
 
             {/* Established Events & Divergence Log */}
-            <div className="bg-[#120f16] border border-[#c9a227]/30 p-5 rounded-sm space-y-3">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] space-y-3">
                 <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] uppercase text-[#c9a227] flex items-center gap-2">
                     <ScrollText size={14} />
                     <span>Established Chronicle Events ({divergenceEntries.length})</span>
@@ -1537,7 +1537,7 @@ function ChronicleStandingPane({
                         {divergenceEntries.map(entry => {
                             const color = CATEGORY_COLORS[entry.category] || 'text-[#c9a227]';
                             return (
-                                <div key={entry.id} className="p-3 bg-black/40 border border-[#c9a227]/20 rounded-xs space-y-1">
+                                <div key={entry.id} className="p-3.5 bg-[#0e0c11] border border-[#c9a227]/14 rounded-lg shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] space-y-1">
                                     <div className="flex items-center justify-between">
                                         <span className={`font-['Cinzel'] text-[9px] uppercase tracking-wider ${color}`}>
                                             {CATEGORY_LABELS[entry.category] || entry.category}

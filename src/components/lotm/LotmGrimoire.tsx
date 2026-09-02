@@ -655,7 +655,7 @@ function WorldCard({
             {entry.extra.map(line => (
                 <p key={line} className="lotm-grimoire-card-meta">{line}</p>
             ))}
-            {/* {showOnMap && (
+            {showOnMap && (
                 <button
                     type="button"
                     className="lotm-grimoire-map-btn"
@@ -663,7 +663,7 @@ function WorldCard({
                 >
                     <MapPin size={11} /> {isSelected ? 'Focused on map' : 'Show on map'}
                 </button>
-            )} */}
+            )}
         </article>
     );
 }

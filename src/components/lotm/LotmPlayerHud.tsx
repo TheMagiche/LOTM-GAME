@@ -247,13 +247,13 @@ export function LotmPlayerHud() {
 
             {/* Expanded Ability Details Card */}
             {selectedAbilityName && (
-                <div className="mx-3 my-1.5 p-2.5 rounded bg-void/90 border border-terminal/30 text-xs text-text-primary shadow-lg relative animate-fadeIn">
-                    <div className="flex items-center justify-between border-b border-border/40 pb-1.5 mb-1.5">
-                        <div className="flex items-center gap-1.5 font-bold text-terminal">
+                <div className="mx-1 my-1.5 p-3 rounded-lg bg-[#0e0c11] border border-[#c9a227]/20 text-xs text-[#f3ead8] shadow-[inset_3px_3px_8px_#060507,inset_-2px_-2px_6px_#191620] relative animate-fadeIn">
+                    <div className="flex items-center justify-between border-b border-[#c9a227]/20 pb-1.5 mb-2">
+                        <div className="flex items-center gap-2 font-bold text-[#e0c36a]">
                             <Sparkles size={13} className="text-amber-400" />
                             <span>{activeAbilityDetail?.name || selectedAbilityName}</span>
                             {activeAbilityDetail?.costs?.[0] && (
-                                <span className="font-mono text-[10px] font-normal px-1.5 py-0.2 rounded bg-terminal/10 text-terminal border border-terminal/20">
+                                <span className="font-mono text-[10px] font-normal px-2 py-0.5 rounded-md bg-[#141118] text-[#e0c36a] border border-[#c9a227]/30 shadow-[1px_1px_3px_#050407]">
                                     {activeAbilityDetail.costs[0]}
                                 </span>
                             )}
@@ -261,18 +261,18 @@ export function LotmPlayerHud() {
                         <button
                             type="button"
                             onClick={() => setSelectedAbilityName(null)}
-                            className="text-text-dim hover:text-text-primary p-0.5 rounded"
+                            className="text-[#a09075] hover:text-[#f3ead8] p-1 rounded-md hover:bg-white/5 transition-colors"
                             aria-label="Close ability detail"
                         >
                             <X size={14} />
                         </button>
                     </div>
-                    <p className="text-[11px] leading-relaxed text-text-dim/90">
+                    <p className="text-xs leading-relaxed text-[#d0c6b4]">
                         {activeAbilityDetail?.description || 'Channel this sequence ability during spiritual actions.'}
                     </p>
                     {activeAbilityDetail?.limitations?.[0] && (
-                        <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-amber-400/90 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">
-                            <AlertTriangle size={11} className="shrink-0" />
+                        <div className="flex items-center gap-1.5 mt-2 text-[10px] text-amber-300 bg-amber-950/40 px-2.5 py-1.5 rounded-md border border-amber-600/30">
+                            <AlertTriangle size={12} className="shrink-0 text-amber-400" />
                             <span>Limit: {activeAbilityDetail.limitations[0]}</span>
                         </div>
                     )}

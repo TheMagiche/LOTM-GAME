@@ -252,7 +252,7 @@ export function LotmHowToPlayGuide() {
     return (
         <div className="space-y-6 max-w-4xl pb-10">
             {/* Header / Banner */}
-            <div className="bg-[#141018] border border-[#c9a227]/40 p-5 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-full border border-[#c9a227]/40 bg-black/60 flex items-center justify-center text-[#c9a227] shadow-inner shadow-black/80 shrink-0">
                         <HelpCircle size={28} />
@@ -274,7 +274,7 @@ export function LotmHowToPlayGuide() {
             {/* Filter and Search Bar */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
                 {/* Category Pills */}
-                <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Guide Categories">
+                <div className="flex flex-wrap gap-2" role="tablist" aria-label="Guide Categories">
                     {CATEGORIES.map(cat => (
                         <button
                             key={cat.id}
@@ -282,10 +282,10 @@ export function LotmHowToPlayGuide() {
                             role="tab"
                             aria-selected={selectedCategory === cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
-                            className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-['Cinzel'] uppercase tracking-wider transition-all cursor-pointer ${
+                            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-['Cinzel'] uppercase tracking-wider transition-all cursor-pointer ${
                                 selectedCategory === cat.id
-                                    ? 'bg-[#c9a227]/20 border border-[#c9a227] text-[#e0c36a] shadow-sm shadow-amber-950/40'
-                                    : 'bg-black/40 border border-[#c9a227]/20 text-[#a89b88] hover:text-[#e8e0d0] hover:border-[#c9a227]/40'
+                                    ? 'bg-[#221a28] border border-[#c9a227] text-[#e0c36a] shadow-[inset_2px_2px_5px_#050407,inset_-2px_-2px_5px_#1b1722,0_0_10px_rgba(201,162,39,0.2)]'
+                                    : 'bg-[#141118] border border-[#c9a227]/15 text-[#a89b88] shadow-[2px_2px_6px_#050407,-2px_-2px_5px_#1b1722] hover:text-[#e8e0d0] hover:border-[#c9a227]/40'
                             }`}
                         >
                             {cat.icon}
@@ -302,14 +302,14 @@ export function LotmHowToPlayGuide() {
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
                         placeholder="Search guide topics..."
-                        className="w-full bg-black/60 border border-[#c9a227]/30 focus:border-[#c9a227] text-xs text-[#f3ead8] placeholder-[#7d705f] pl-8 pr-3 py-1.5 rounded outline-none"
+                        className="w-full bg-[#0e0c11] border border-[#c9a227]/20 focus:border-[#c9a227] text-xs text-[#f3ead8] placeholder-[#7d705f] pl-8 pr-3 py-2 rounded-lg outline-none shadow-[inset_2px_2px_5px_#050407,inset_-2px_-2px_5px_#191620]"
                     />
                 </div>
             </div>
 
             {/* Guide List */}
             {filteredSections.length === 0 ? (
-                <div className="p-8 text-center bg-black/30 border border-[#c9a227]/15 rounded">
+                <div className="p-8 text-center bg-[#0e0c11] border border-[#c9a227]/14 rounded-xl shadow-[inset_3px_3px_8px_#060507,inset_-3px_-3px_8px_#191620]">
                     <p className="text-sm font-['EB_Garamond'] text-[#a89b88] italic">
                         No guide topics found matching &quot;{searchQuery}&quot;.
                     </p>
@@ -321,10 +321,10 @@ export function LotmHowToPlayGuide() {
                         return (
                             <div
                                 key={section.id}
-                                className={`border rounded-sm transition-all overflow-hidden bg-[#110d15]/80 ${
+                                className={`border rounded-xl transition-all overflow-hidden bg-[#121015] ${
                                     isExpanded
-                                        ? 'border-[#c9a227]/60 shadow-lg shadow-black/60'
-                                        : 'border-[#c9a227]/25 hover:border-[#c9a227]/45'
+                                        ? 'border-[#c9a227]/45 shadow-[8px_8px_20px_#040306,-6px_-6px_16px_#201a28,0_0_12px_rgba(201,162,39,0.15)]'
+                                        : 'border-[#c9a227]/15 shadow-[6px_6px_14px_#050408,-5px_-5px_12px_#1c1822] hover:border-[#c9a227]/35'
                                 }`}
                             >
                                 {/* Card Header / Toggle */}
@@ -338,10 +338,10 @@ export function LotmHowToPlayGuide() {
                                             setExpandedId(isExpanded ? null : section.id);
                                         }
                                     }}
-                                    className="p-4 flex items-start justify-between gap-3 cursor-pointer hover:bg-[#1a1422]/60 select-none"
+                                    className="p-4 flex items-start justify-between gap-3 cursor-pointer hover:bg-[#16131c] select-none transition-colors"
                                 >
                                     <div className="flex items-start gap-3.5">
-                                        <div className="p-2 rounded border border-[#c9a227]/30 bg-black/50 shrink-0 mt-0.5">
+                                        <div className="p-2.5 rounded-lg border border-[#c9a227]/25 bg-[#141118] shadow-[2px_2px_5px_#050407,-1px_-1px_4px_#1b1722] shrink-0 mt-0.5">
                                             {section.icon}
                                         </div>
                                         <div>
@@ -349,7 +349,7 @@ export function LotmHowToPlayGuide() {
                                                 <h4 className="font-['EB_Garamond'] text-lg font-bold text-[#f3ead8]">
                                                     {section.title}
                                                 </h4>
-                                                <span className="px-2 py-0.5 text-[9px] font-['Cinzel'] uppercase tracking-widest rounded bg-[#c9a227]/15 border border-[#c9a227]/30 text-[#e0c36a]">
+                                                <span className="px-2 py-0.5 text-[9px] font-['Cinzel'] uppercase tracking-widest rounded-md bg-[#141118] border border-[#c9a227]/30 text-[#e0c36a] shadow-[1px_1px_3px_#050407]">
                                                     {section.categoryLabel}
                                                 </span>
                                             </div>
@@ -371,9 +371,9 @@ export function LotmHowToPlayGuide() {
 
                                 {/* Expanded Content Body */}
                                 {isExpanded && (
-                                    <div className="px-5 pb-5 pt-2 border-t border-[#c9a227]/15 space-y-4">
+                                    <div className="px-5 pb-5 pt-3 border-t border-[#c9a227]/15 space-y-4 bg-[#0e0c11]/80 shadow-[inset_0_4px_10px_#060507]">
                                         {/* UI Location Pill */}
-                                        <div className="flex items-center gap-2 text-xs bg-black/40 border border-[#c9a227]/20 px-3 py-1.5 rounded text-[#e0c36a]">
+                                        <div className="flex items-center gap-2 text-xs bg-[#141118] border border-[#c9a227]/20 px-3.5 py-2 rounded-lg text-[#e0c36a] shadow-[2px_2px_6px_#050407,-1px_-1px_4px_#1b1722]">
                                             <MapPin size={13} className="shrink-0 text-amber-400" />
                                             <span className="font-['Cinzel'] uppercase text-[9px] tracking-wider text-[#a89b88]">
                                                 Where to find:
@@ -397,7 +397,7 @@ export function LotmHowToPlayGuide() {
                                                 {section.steps.map((step, idx) => (
                                                     <div
                                                         key={idx}
-                                                        className="p-3 bg-black/45 border border-[#c9a227]/15 rounded flex flex-col justify-start"
+                                                        className="p-3.5 bg-[#0e0c11] border border-[#c9a227]/14 rounded-lg shadow-[inset_2px_2px_6px_#060507,inset_-2px_-2px_6px_#191620] flex flex-col justify-start"
                                                     >
                                                         <p className="font-['Cinzel'] text-xs font-semibold text-[#e0c36a] mb-1">
                                                             {step.title}
@@ -411,9 +411,9 @@ export function LotmHowToPlayGuide() {
                                         </div>
 
                                         {/* Lore & Practical Callouts */}
-                                        <div className="space-y-2 pt-1">
+                                        <div className="space-y-2.5 pt-1">
                                             {section.loreNote && (
-                                                <div className="p-3 bg-amber-950/20 border border-amber-500/30 rounded flex items-start gap-2.5 text-xs text-amber-200">
+                                                <div className="p-3.5 bg-[#141118] border border-amber-600/30 rounded-lg shadow-[3px_3px_8px_#050407,-2px_-2px_6px_#1b1722] flex items-start gap-2.5 text-xs text-amber-200">
                                                     <BookOpen size={15} className="shrink-0 mt-0.5 text-amber-400" />
                                                     <div>
                                                         <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider text-amber-400 font-bold block mb-0.5">
@@ -427,7 +427,7 @@ export function LotmHowToPlayGuide() {
                                             )}
 
                                             {section.proTip && (
-                                                <div className="p-3 bg-blue-950/20 border border-blue-500/30 rounded flex items-start gap-2.5 text-xs text-blue-200">
+                                                <div className="p-3.5 bg-[#141118] border border-blue-500/30 rounded-lg shadow-[3px_3px_8px_#050407,-2px_-2px_6px_#1b1722] flex items-start gap-2.5 text-xs text-blue-200">
                                                     <Info size={15} className="shrink-0 mt-0.5 text-blue-400" />
                                                     <div>
                                                         <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider text-blue-400 font-bold block mb-0.5">
@@ -441,7 +441,7 @@ export function LotmHowToPlayGuide() {
                                             )}
 
                                             {section.warning && (
-                                                <div className="p-3 bg-red-950/25 border border-red-500/35 rounded flex items-start gap-2.5 text-xs text-red-200">
+                                                <div className="p-3.5 bg-red-950/25 border border-red-500/35 rounded-lg shadow-[3px_3px_8px_#050407,-2px_-2px_6px_#1b1722] flex items-start gap-2.5 text-xs text-red-200">
                                                     <ShieldAlert size={15} className="shrink-0 mt-0.5 text-red-400" />
                                                     <div>
                                                         <span className="font-['Cinzel'] text-[9px] uppercase tracking-wider text-red-400 font-bold block mb-0.5">
