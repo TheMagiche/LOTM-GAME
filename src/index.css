@@ -1120,22 +1120,18 @@ html[style*="--lang-font-stack"] {
   padding: 48px 24px;
   overflow: hidden;
   background: #0b0a0d;
-}
-
-.lotm-title-hub-art {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: saturate(0.7) contrast(1.1) brightness(0.55);
+  color: #f3ead8;
+  font-family: 'EB Garamond', Georgia, serif;
 }
 
 .lotm-title-hub-scrim {
   position: absolute;
   inset: 0;
+  z-index: 2;
+  pointer-events: none;
   background:
-    linear-gradient(to top, rgba(8, 7, 10, 0.96) 0%, rgba(8, 7, 10, 0.55) 46%, rgba(8, 7, 10, 0.4) 100%),
-    radial-gradient(ellipse at 50% 80%, rgba(20, 16, 28, 0.35), transparent 60%);
+    radial-gradient(ellipse at 50% 50%, rgba(11, 10, 13, 0.88) 0%, rgba(11, 10, 13, 0.62) 50%, rgba(11, 10, 13, 0.15) 90%),
+    linear-gradient(to top, #0b0a0d 0%, rgba(11, 10, 13, 0.3) 35%, transparent 70%, rgba(11, 10, 13, 0.4) 100%);
 }
 
 .lotm-title-hub-gear,
@@ -1144,16 +1140,19 @@ html[style*="--lang-font-stack"] {
   position: absolute;
   top: 20px;
   z-index: 4;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  background: rgba(12, 10, 14, 0.55);
-  color: rgba(232, 224, 208, 0.55);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: rgba(14, 12, 17, 0.78);
+  backdrop-filter: blur(10px);
+  color: rgba(232, 224, 208, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.12);
+  transition: all 0.2s ease;
 }
 
 .lotm-title-hub-gear {
@@ -1165,28 +1164,35 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-title-hub-back {
-  left: 64px;
+  left: 68px;
 }
 
 .lotm-title-hub-gear:hover:not(:disabled),
 .lotm-title-hub-back:hover:not(:disabled),
 .lotm-title-hub-grimoire:hover:not(:disabled) {
-  color: #e0c36a;
-  border-color: rgba(201, 162, 39, 0.65);
+  color: #f3ead8;
+  border-color: #e0c36a;
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8), 0 0 16px rgba(224, 195, 106, 0.4);
 }
 
 .lotm-title-hub-gear:disabled,
 .lotm-title-hub-back:disabled,
 .lotm-title-hub-grimoire:disabled {
-  opacity: 0.45;
+  opacity: 0.35;
   cursor: default;
 }
 
 .lotm-title-hub-copy,
 .lotm-title-hub-actions {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
+}
+
+.lotm-title-hub-copy {
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .lotm-title-hub-kicker {
@@ -1195,35 +1201,40 @@ html[style*="--lang-font-stack"] {
   text-transform: uppercase;
   font-size: 11px;
   color: #c9a227;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-title-hub-copy h1 {
   font-family: 'Cinzel', serif;
-  font-size: clamp(28px, 5vw, 44px);
+  font-size: clamp(32px, 5.5vw, 50px);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: #f3ead8;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9);
 }
 
 .lotm-title-hub-sub {
   font-family: 'EB Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 16px;
-  color: rgba(243, 234, 216, 0.62);
-  max-width: 420px;
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: rgba(243, 234, 216, 0.85);
+  max-width: 480px;
   margin: 0 auto;
+  line-height: 1.5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 .lotm-demo-banner {
-  margin: 14px auto 0;
+  margin: 16px auto 0;
   max-width: 28rem;
-  color: rgba(201, 162, 39, 0.9);
-  font-size: 12px;
+  color: rgba(201, 162, 39, 0.92);
+  font-size: 13px;
   letter-spacing: 0.04em;
   line-height: 1.45;
   font-family: 'EB Garamond', serif;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-demo-modal {
@@ -1381,19 +1392,19 @@ html[style*="--lang-font-stack"] {
 
 .lotm-title-hub.is-picking {
   justify-content: flex-start;
-  padding-top: 56px;
+  padding-top: 48px;
 }
 
 .lotm-title-hub.is-picking .lotm-title-hub-scrim {
   background:
-    linear-gradient(to top, rgba(8, 7, 10, 0.97) 0%, rgba(8, 7, 10, 0.78) 48%, rgba(8, 7, 10, 0.62) 100%),
-    radial-gradient(ellipse at 50% 70%, rgba(20, 16, 28, 0.4), transparent 60%);
+    radial-gradient(ellipse at 50% 55%, rgba(11, 10, 13, 0.94) 0%, rgba(11, 10, 13, 0.82) 55%, rgba(11, 10, 13, 0.65) 100%),
+    linear-gradient(to top, #0b0a0d 0%, rgba(11, 10, 13, 0.6) 50%, rgba(11, 10, 13, 0.75) 100%);
 }
 
 .lotm-title-hub.is-picking .lotm-title-hub-actions {
   width: min(1100px, 100%);
   margin-top: 8px;
-  gap: 18px;
+  gap: 16px;
 }
 
 .lotm-tarot {
@@ -1409,13 +1420,14 @@ html[style*="--lang-font-stack"] {
   text-transform: uppercase;
   font-size: 11px;
   color: #c9a227;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 .lotm-tarot-stage {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1424,134 +1436,175 @@ html[style*="--lang-font-stack"] {
 
 .lotm-tarot-fan {
   position: relative;
-  width: 240px;
-  height: 380px;
+  width: 270px;
+  height: 395px;
   transform-style: preserve-3d;
 }
 
 .lotm-tarot-nav {
   position: relative;
   z-index: 120;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
-  margin: 0 8px;
+  margin: 0 12px;
   border-radius: 50%;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  background: rgba(12, 10, 14, 0.7);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: rgba(14, 12, 17, 0.82);
+  backdrop-filter: blur(10px);
   color: #e0c36a;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65), 0 0 10px rgba(201, 162, 39, 0.15);
+  transition: all 0.2s ease;
 }
 
 .lotm-tarot-nav:disabled {
-  opacity: 0.45;
+  opacity: 0.35;
   cursor: default;
 }
 
 .lotm-tarot-nav:hover:not(:disabled) {
-  border-color: #c9a227;
+  border-color: #e0c36a;
   color: #f3ead8;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 16px rgba(224, 195, 106, 0.4);
 }
 
 .lotm-tarot-card {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 18px 16px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid rgba(201, 162, 39, 0.45);
-  background:
-    linear-gradient(180deg, rgba(42, 32, 22, 0.55) 0%, rgba(14, 11, 16, 0.92) 38%, #0d0b10 100%),
-    radial-gradient(ellipse at 50% 28%, rgba(201, 162, 39, 0.12), transparent 55%);
+  background: #141118;
   box-shadow:
-    inset 0 0 0 4px rgba(18, 14, 20, 0.9),
-    inset 0 0 0 5px rgba(201, 162, 39, 0.35),
-    0 18px 40px rgba(0, 0, 0, 0.45);
+    0 8px 24px rgba(0, 0, 0, 0.75),
+    0 0 14px rgba(201, 162, 39, 0.18);
   color: #f3ead8;
   cursor: pointer;
   transform-origin: center center;
-  transition: transform 0.38s ease, opacity 0.38s ease, filter 0.38s ease, box-shadow 0.38s ease;
+  transition: transform 0.38s ease, opacity 0.38s ease, filter 0.38s ease, box-shadow 0.38s ease, border-color 0.25s ease;
   overflow: hidden;
+  padding: 0;
 }
 
 .lotm-tarot-card.is-active {
   border-color: #e0c36a;
   box-shadow:
-    inset 0 0 0 4px rgba(18, 14, 20, 0.9),
-    inset 0 0 0 5px rgba(224, 195, 106, 0.55),
-    0 22px 48px rgba(0, 0, 0, 0.55),
-    0 0 32px rgba(201, 162, 39, 0.18);
+    0 0 32px rgba(224, 195, 106, 0.65),
+    0 16px 36px rgba(0, 0, 0, 0.9);
+}
+
+.lotm-tarot-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-tarot-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: saturate(1.1) contrast(1.08) brightness(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.lotm-tarot-card:hover .lotm-tarot-card-img,
+.lotm-tarot-card.is-active .lotm-tarot-card-img {
+  transform: scale(1.05);
+  filter: saturate(1.18) contrast(1.12) brightness(1.18);
+}
+
+.lotm-tarot-card-emblem-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(12, 10, 15, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.lotm-tarot-card-emblem-badge img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.lotm-tarot-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 8, 12, 0.98) 0%, rgba(10, 8, 12, 0.85) 55%, rgba(10, 8, 12, 0.4) 80%, transparent 100%);
+  padding: 16px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
 }
 
 .lotm-tarot-card-arcana {
   font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #c9a227;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.lotm-tarot-card-emblem {
-  flex: 1;
-  width: 78%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 140px;
-}
-
-.lotm-tarot-card-emblem img {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+  margin-bottom: 4px;
 }
 
 .lotm-tarot-card-name {
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
-  text-align: center;
-  margin-top: 8px;
+  color: #f3ead8;
   line-height: 1.2;
-}
-
-.lotm-tarot-card-pathway,
-.lotm-tarot-card-sequence {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.08em;
-  text-align: center;
-  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-tarot-card-pathway {
+  font-family: 'Cinzel', serif;
   font-size: 10px;
-  color: rgba(224, 195, 106, 0.88);
-  margin-top: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(224, 195, 106, 0.92);
+  margin-top: 4px;
 }
 
 .lotm-tarot-card-sequence {
+  font-family: 'Cinzel', serif;
   font-size: 9px;
-  color: rgba(232, 224, 208, 0.62);
-  margin-top: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(232, 224, 208, 0.65);
+  margin-top: 2px;
 }
 
 .lotm-tarot-caption {
   font-family: 'EB Garamond', Georgia, serif;
   color: #f3ead8;
-  font-size: 18px;
-  margin: 4px 0 0;
+  font-size: 19px;
+  margin: 6px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-tarot-caption span {
@@ -1559,7 +1612,7 @@ html[style*="--lang-font-stack"] {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(201, 162, 39, 0.85);
+  color: rgba(201, 162, 39, 0.9);
 }
 
 .lotm-tarot-actions {
@@ -1592,12 +1645,12 @@ html[style*="--lang-font-stack"] {
 
 @media (max-width: 720px) {
   .lotm-tarot-stage {
-    height: 360px;
+    height: 380px;
   }
 
   .lotm-tarot-fan {
-    width: 190px;
-    height: 310px;
+    width: 220px;
+    height: 330px;
   }
 
   .lotm-tarot-nav {
@@ -2990,32 +3043,32 @@ html[style*="--lang-font-stack"] {
 
 .lotm-collage-floating-card {
   position: absolute;
-  width: 135px;
-  height: 182px;
-  border-radius: 10px;
+  width: 170px;
+  height: 236px;
+  border-radius: 12px;
   background: #141118;
   border: 1px solid rgba(201, 162, 39, 0.42);
   box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.75),
-    0 0 12px rgba(201, 162, 39, 0.18);
+    0 8px 24px rgba(0, 0, 0, 0.8),
+    0 0 14px rgba(201, 162, 39, 0.2);
   overflow: hidden;
   pointer-events: auto;
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease, z-index 0.25s;
 }
 
-.card-pos-0 { top: 8%; left: 4%; transform: rotate(-8deg); }
-.card-pos-1 { top: 6%; right: 5%; transform: rotate(7deg); }
-.card-pos-2 { bottom: 12%; left: 5%; transform: rotate(6deg); }
-.card-pos-3 { bottom: 10%; right: 6%; transform: rotate(-6deg); }
-.card-pos-4 { top: 38%; left: 2%; transform: rotate(-11deg); }
-.card-pos-5 { top: 36%; right: 3%; transform: rotate(9deg); }
-.card-pos-6 { top: 2%; left: 24%; transform: rotate(-4deg); opacity: 0.88; }
-.card-pos-7 { top: 2%; right: 24%; transform: rotate(5deg); opacity: 0.88; }
-.card-pos-8 { bottom: 4%; left: 22%; transform: rotate(5deg); opacity: 0.9; }
-.card-pos-9 { bottom: 4%; right: 22%; transform: rotate(-4deg); opacity: 0.9; }
-.card-pos-10 { top: 58%; left: 7%; transform: rotate(-5deg); }
-.card-pos-11 { top: 60%; right: 7%; transform: rotate(4deg); }
+.card-pos-0 { top: 6%; left: 3%; transform: rotate(-7deg); }
+.card-pos-1 { top: 5%; right: 4%; transform: rotate(6deg); }
+.card-pos-2 { bottom: 8%; left: 4%; transform: rotate(5deg); }
+.card-pos-3 { bottom: 7%; right: 5%; transform: rotate(-5deg); }
+.card-pos-4 { top: 38%; left: 1%; transform: rotate(-9deg); }
+.card-pos-5 { top: 36%; right: 2%; transform: rotate(8deg); }
+.card-pos-6 { top: 2%; left: 22%; transform: rotate(-3deg); opacity: 0.9; }
+.card-pos-7 { top: 2%; right: 22%; transform: rotate(4deg); opacity: 0.9; }
+.card-pos-8 { bottom: 3%; left: 20%; transform: rotate(4deg); opacity: 0.92; }
+.card-pos-9 { bottom: 3%; right: 20%; transform: rotate(-3deg); opacity: 0.92; }
+.card-pos-10 { top: 62%; left: 6%; transform: rotate(-4deg); }
+.card-pos-11 { top: 64%; right: 6%; transform: rotate(3deg); }
 
 .lotm-collage-floating-card:hover,
 .lotm-collage-floating-card.is-highlighted {
@@ -3033,12 +3086,14 @@ html[style*="--lang-font-stack"] {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: #0e0c12;
 }
 
 .lotm-collage-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
   filter: saturate(1.1) contrast(1.08) brightness(1.12);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -3054,8 +3109,8 @@ html[style*="--lang-font-stack"] {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(10, 8, 12, 0.96) 0%, rgba(10, 8, 12, 0.7) 65%, transparent 100%);
-  padding: 8px 6px 6px;
+  background: linear-gradient(to top, rgba(10, 8, 12, 0.96) 0%, rgba(10, 8, 12, 0.72) 65%, transparent 100%);
+  padding: 12px 8px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3064,15 +3119,15 @@ html[style*="--lang-font-stack"] {
 
 .lotm-collage-card-arcana {
   font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  letter-spacing: 0.14em;
   color: #c9a227;
   text-transform: uppercase;
 }
 
 .lotm-collage-card-name {
   font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: #f3ead8;
   white-space: nowrap;
@@ -3692,13 +3747,13 @@ html[style*="--lang-font-stack"] {
   }
 
   .lotm-collage-floating-card {
-    width: 96px;
-    height: 130px;
+    width: 120px;
+    height: 168px;
     opacity: 0.85;
   }
 
   .lotm-collage-card-name {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .lotm-hero-showcase-bar {

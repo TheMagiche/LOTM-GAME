@@ -11,7 +11,10 @@ import {
 describe('demoMode helpers', () => {
     it('recognizes the four demo starter PC files', () => {
         expect(isDemoPlayablePcFile('lotm_pc_clara_whitlock.json')).toBe(true);
-        expect(isDemoPlayablePcFile('../../people/lotm_pc_jacob_thorne.json')).toBe(true);
+        expect(isDemoPlayablePcFile('../../people/lotm_pc_benedict_faulkner.json')).toBe(true);
+        expect(isDemoPlayablePcFile('lotm_pc_arthur_pendel.json')).toBe(true);
+        expect(isDemoPlayablePcFile('lotm_pc_cassian_dray.json')).toBe(true);
+        expect(isDemoPlayablePcFile('lotm_pc_jacob_thorne.json')).toBe(false);
         expect(isDemoPlayablePcFile('lotm_pc_silas_croft.json')).toBe(false);
     });
 

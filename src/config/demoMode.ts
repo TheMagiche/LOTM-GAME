@@ -56,14 +56,14 @@ export function isOpenRouterEndpoint(endpoint: string): boolean {
 }
 
 /**
- * Starter roster for the public demo: Fool (Clara), combat (Jacob / Red Priest),
- * divination-adjacent (Edmund / Door), Tingen Nighthawk flavour (Arthur / Darkness).
+ * Starter roster for the public demo: Fool (Clara), Hermit (Benedict),
+ * Darkness (Arthur), Hanged Man (Cassian) — matching characters with player images.
  */
 export const DEMO_PLAYABLE_PC_FILES = [
     'lotm_pc_clara_whitlock.json',
-    'lotm_pc_jacob_thorne.json',
-    'lotm_pc_edmund_vale.json',
+    'lotm_pc_benedict_faulkner.json',
     'lotm_pc_arthur_pendel.json',
+    'lotm_pc_cassian_dray.json',
 ] as const;
 
 export function isDemoPlayablePcFile(pathOrName: string): boolean {
