@@ -73,8 +73,8 @@ export const LANDING_BYOK = {
 
 export const LANDING_SELF_HOST = {
     heading: 'Self-host the chronicle',
-    body: 'Prefer a private table? Clone Narrative Engine and run locally — no subscription, campaigns stay on your machine.',
-    cta: 'Read the Quick Start',
+    body: 'Prefer a private table?  Run locally — no subscription, campaigns stay on your machine.',
+    cta: 'Coming soon',
 } as const;
 
 export const LANDING_DOWNLOADS = {

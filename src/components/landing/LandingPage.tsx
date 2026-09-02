@@ -35,7 +35,7 @@ import {
     LANDING_FOOTER,
     LANDING_CREATOR_URL,
     LANDING_SPONSOR_URL,
-    LANDING_README_URL,
+    // LANDING_README_URL,
     type CollageCardItem,
 } from './landingCopy';
 
@@ -315,7 +315,7 @@ export function LandingPage() {
                             <p className="lotm-landing-card-body">{LANDING_SELF_HOST.body}</p>
                             <div className="lotm-landing-card-action">
                                 <a
-                                    href={LANDING_README_URL}
+                                    href={LANDING_SPONSOR_URL}
                                     target="_blank"
                                     rel="noreferrer"
                                     className="lotm-landing-link"
