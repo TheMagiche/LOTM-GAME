@@ -15,6 +15,7 @@ export function ChatComposer({
     onKeyDown,
     onSend,
     onStop,
+    compact = false,
 }: {
     input: string;
     inputRef: RefObject<HTMLTextAreaElement | null>;
@@ -24,6 +25,7 @@ export function ChatComposer({
     onKeyDown: (e: React.KeyboardEvent) => void;
     onSend: () => void;
     onStop: () => void;
+    compact?: boolean;
 }) {
     const settings = useAppStore(s => s.settings);
     const deepArmed = useAppStore(s => s.deepArmed);
@@ -34,7 +36,7 @@ export function ChatComposer({
     const showPresetPicker = settings.presets.length > 1;
 
     return (
-        <div className="px-2 sm:px-4 pt-3 sm:pt-4 pb-2">
+        <div className={compact ? 'px-2 sm:px-3 pt-1.5 pb-1.5' : 'px-2 sm:px-4 pt-3 sm:pt-4 pb-2'}>
             <div className="flex gap-1 border border-border bg-void focus-within:border-terminal transition-colors items-end p-1 rounded-sm">
                 {showPresetPicker && (
                 <div className="relative shrink-0 mb-[4px] ml-1">
@@ -82,7 +84,7 @@ export function ChatComposer({
                     onChange={onInputChange}
                     onKeyDown={onKeyDown}
                     placeholder="What do you do?"
-                    className="flex-1 bg-transparent px-2 py-2.5 text-sm text-text-primary placeholder:text-text-dim/40 font-mono resize-none border-none outline-none min-h-[40px] leading-5"
+                    className={`flex-1 bg-transparent px-2 text-sm text-text-primary placeholder:text-text-dim/40 font-mono resize-none border-none outline-none leading-5 ${compact ? 'py-1.5 min-h-[32px]' : 'py-2.5 min-h-[40px]'}`}
                 />
                 <button
                     onClick={isStreaming ? onStop : onSend}

@@ -422,6 +422,7 @@ describe('ChatArea', () => {
         expect(screen.queryByText('I walk into the fog')).not.toBeInTheDocument();
         expect(screen.getByText('The gas lamps hiss.')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('What do you do?')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('What do you do?')).toHaveClass('min-h-[32px]');
         expect(screen.queryByText(/SAVE CAMPAIGN/i)).not.toBeInTheDocument();
         expect(screen.queryByTitle('Open Ask GM side chat')).not.toBeInTheDocument();
         expect(screen.queryByText(/Dice Me/i)).not.toBeInTheDocument();

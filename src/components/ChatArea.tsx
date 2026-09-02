@@ -133,7 +133,11 @@ export function ChatArea({
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages.length]);
 
-    const { resetTextareaHeight, resizeToContent } = useAutoresizeInput(inputRef);
+    const compactComposer = presentation === 'illustrated';
+    const { resetTextareaHeight, resizeToContent } = useAutoresizeInput(
+        inputRef,
+        compactComposer ? { minHeight: 32, maxHeight: 120 } : undefined,
+    );
 
     const { triggerCondense } = useCondenser({
         messages,
@@ -263,25 +267,27 @@ export function ChatArea({
             )}
 
             {presentation === 'illustrated' && !chronicleOpen && (
-                <LotmDialoguePlate
-                    messages={messages}
-                    isStreaming={isStreaming}
-                    onCreateCharacter={() => useAppStore.getState().togglePCPanel()}
-                    editor={editor}
-                    pendingMessageId={pendingMessageId}
-                    swipe={swipe}
-                    sceneContinue={sceneContinue}
-                    onOpenSwipeSheet={setSwipeSheetMessageId}
-                    onRetry={retry.retryStoryAI}
-                    loadingStatus={loadingStatus}
-                    pipelinePhase={pipelinePhase}
-                    streamingStats={streamingStats}
-                    directorBriefRunning={directorBriefRunning}
-                    onSkipDirectorBrief={handleSkipDirectorBrief}
-                />
+                <div className="lotm-plate-slot">
+                    <LotmDialoguePlate
+                        messages={messages}
+                        isStreaming={isStreaming}
+                        onCreateCharacter={() => useAppStore.getState().togglePCPanel()}
+                        editor={editor}
+                        pendingMessageId={pendingMessageId}
+                        swipe={swipe}
+                        sceneContinue={sceneContinue}
+                        onOpenSwipeSheet={setSwipeSheetMessageId}
+                        onRetry={retry.retryStoryAI}
+                        loadingStatus={loadingStatus}
+                        pipelinePhase={pipelinePhase}
+                        streamingStats={streamingStats}
+                        directorBriefRunning={directorBriefRunning}
+                        onSkipDirectorBrief={handleSkipDirectorBrief}
+                    />
+                </div>
             )}
 
-            <div className={`chat-composer-bar flex-shrink-0 bg-void border-t border-border ${LOTM_EXCLUSIVE_UI ? 'pb-2 sm:pb-3' : ''}`}>
+            <div className="chat-composer-bar flex-shrink-0 bg-void border-t border-border">
                 <IndexingBanner campaignId={activeCampaignId} />
                 {armedAskGmBrief?.campaignId === activeCampaignId && (
                     <ArmedAskGmNote
@@ -302,6 +308,7 @@ export function ChatArea({
                     inputRef={inputRef}
                     isStreaming={isStreaming}
                     oocBusy={oocBusy}
+                    compact={compactComposer}
                     onInputChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     onSend={() => handleSend()}

@@ -39,7 +39,7 @@ const GUIDE_SECTIONS: GuideSection[] = [
         categoryLabel: 'Core Game Loop',
         icon: <Flame size={18} className="text-amber-400" />,
         subtitle: 'Roleplay principles, potion digestion, and advancing sequences',
-        uiLocation: 'Main Chat Composer + Player Grimoire (Potion & Pathway)',
+        uiLocation: 'Play HUD (vitals) + Player Grimoire (Potion & Pathway, Inventory)',
         summary: 'Lord of the Mysteries is a narrative roleplaying experience driven by an AI Game Master (GM). As a Beyonder, your survival depends on adhering to the Acting Method to safely digest mystical potions and prevent horrific mental collapse.',
         steps: [
             {
