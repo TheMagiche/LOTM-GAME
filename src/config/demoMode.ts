@@ -16,6 +16,23 @@ export function resolveIsDemoMode(
  */
 export const IS_DEMO_MODE = resolveIsDemoMode();
 
+/** Public marketing page stays at `/`. The playable demo boots at this path. */
+export const DEMO_PLAY_PATH = '/play';
+
+export function normalizePathname(pathname: string): string {
+    const trimmed = pathname.replace(/\/+$/, '');
+    return trimmed === '' ? '/' : trimmed;
+}
+
+export function isDemoPlayPath(pathname: string): boolean {
+    return normalizePathname(pathname) === DEMO_PLAY_PATH;
+}
+
+/** Demo visitors see the landing page until they follow the play link. */
+export function shouldShowDemoLanding(isDemo: boolean, pathname: string): boolean {
+    return isDemo && !isDemoPlayPath(pathname);
+}
+
 /** Idle logout. Default 45 minutes. */
 export const DEMO_IDLE_MS = Number(import.meta.env.VITE_DEMO_IDLE_MS) || 45 * 60 * 1000;
 

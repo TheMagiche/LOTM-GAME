@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { applyDemoLocks, hasUsableDemoProvider, isDemoPlayablePcFile, resolveIsDemoMode } from '../demoMode';
+import {
+    applyDemoLocks,
+    hasUsableDemoProvider,
+    isDemoPlayablePcFile,
+    isDemoPlayPath,
+    resolveIsDemoMode,
+    shouldShowDemoLanding,
+} from '../demoMode';
 
 describe('demoMode helpers', () => {
     it('recognizes the four demo starter PC files', () => {
@@ -28,6 +35,15 @@ describe('demoMode helpers', () => {
         expect(resolveIsDemoMode(undefined, true)).toBe(true);
         expect(resolveIsDemoMode('demo', false)).toBe(true);
         expect(resolveIsDemoMode(undefined, false)).toBe(false);
+    });
+
+    it('treats /play as the demo game route and everything else as the landing page', () => {
+        expect(isDemoPlayPath('/play')).toBe(true);
+        expect(isDemoPlayPath('/play/')).toBe(true);
+        expect(isDemoPlayPath('/')).toBe(false);
+        expect(shouldShowDemoLanding(true, '/')).toBe(true);
+        expect(shouldShowDemoLanding(true, '/play')).toBe(false);
+        expect(shouldShowDemoLanding(false, '/')).toBe(false);
     });
 
     it('does not rewrite settings when the demo build flag is off', () => {

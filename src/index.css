@@ -1355,6 +1355,7 @@ html[style*="--lang-font-stack"] {
   background: #c9a227;
   border: 1px solid #e0c36a;
   padding: 12px 36px;
+  text-decoration: none;
 }
 
 .lotm-title-hub-primary:disabled,
@@ -2944,5 +2945,769 @@ html[style*="--lang-font-stack"] {
     flex: 0 0 auto;
     border-left: 1px solid rgba(201, 162, 39, 0.18);
     padding-left: 8px;
+  }
+}
+
+/* ==========================================================================
+   Lord of the Mysteries Demo Landing Page & Dark Neumorphism
+   ========================================================================== */
+
+.lotm-landing-wrapper {
+  min-height: 100vh;
+  background-color: #0b0a0d;
+  color: #f3ead8;
+  overflow-x: hidden;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* Hero Section */
+.lotm-landing-hero {
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px 80px;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* Interactive Collage Backdrop */
+.lotm-landing-collage-backdrop {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+  transition: transform 0.18s ease-out;
+  z-index: 1;
+}
+
+.lotm-landing-collage-mesh {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lotm-collage-floating-card {
+  position: absolute;
+  width: 135px;
+  height: 182px;
+  border-radius: 10px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.42);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.75),
+    0 0 12px rgba(201, 162, 39, 0.18);
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease, z-index 0.25s;
+}
+
+.card-pos-0 { top: 8%; left: 4%; transform: rotate(-8deg); }
+.card-pos-1 { top: 6%; right: 5%; transform: rotate(7deg); }
+.card-pos-2 { bottom: 12%; left: 5%; transform: rotate(6deg); }
+.card-pos-3 { bottom: 10%; right: 6%; transform: rotate(-6deg); }
+.card-pos-4 { top: 38%; left: 2%; transform: rotate(-11deg); }
+.card-pos-5 { top: 36%; right: 3%; transform: rotate(9deg); }
+.card-pos-6 { top: 2%; left: 24%; transform: rotate(-4deg); opacity: 0.88; }
+.card-pos-7 { top: 2%; right: 24%; transform: rotate(5deg); opacity: 0.88; }
+.card-pos-8 { bottom: 4%; left: 22%; transform: rotate(5deg); opacity: 0.9; }
+.card-pos-9 { bottom: 4%; right: 22%; transform: rotate(-4deg); opacity: 0.9; }
+.card-pos-10 { top: 58%; left: 7%; transform: rotate(-5deg); }
+.card-pos-11 { top: 60%; right: 7%; transform: rotate(4deg); }
+
+.lotm-collage-floating-card:hover,
+.lotm-collage-floating-card.is-highlighted {
+  transform: scale(1.18) translateY(-8px) rotate(0deg) !important;
+  z-index: 10;
+  border-color: #e0c36a;
+  box-shadow:
+    0 0 28px rgba(224, 195, 106, 0.65),
+    0 12px 30px rgba(0, 0, 0, 0.9);
+  filter: brightness(1.15) saturate(1.1);
+}
+
+.lotm-collage-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lotm-collage-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.08) brightness(1.12);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.lotm-collage-floating-card:hover .lotm-collage-card-img,
+.lotm-collage-floating-card.is-highlighted .lotm-collage-card-img {
+  transform: scale(1.06);
+  filter: saturate(1.2) contrast(1.12) brightness(1.2);
+}
+
+.lotm-collage-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 8, 12, 0.96) 0%, rgba(10, 8, 12, 0.7) 65%, transparent 100%);
+  padding: 8px 6px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lotm-collage-card-arcana {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: #c9a227;
+  text-transform: uppercase;
+}
+
+.lotm-collage-card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f3ead8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.lotm-landing-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(11, 10, 13, 0.9) 0%, rgba(11, 10, 13, 0.65) 45%, rgba(11, 10, 13, 0.1) 85%),
+    linear-gradient(to top, #0b0a0d 0%, rgba(11, 10, 13, 0.25) 30%, transparent 70%, rgba(11, 10, 13, 0.35) 100%);
+}
+
+.lotm-landing-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lotm-landing-kicker {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c9a227;
+  margin: 0 0 16px;
+}
+
+.lotm-landing-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(32px, 6vw, 54px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f3ead8;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+}
+
+.lotm-landing-sub {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: rgba(243, 234, 216, 0.85);
+  margin: 0 auto 28px;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.lotm-landing-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Hero Interactive Showcase Bar */
+.lotm-hero-showcase-bar {
+  margin-top: 32px;
+  max-width: 660px;
+  width: 100%;
+  background: rgba(14, 12, 17, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 162, 39, 0.24);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow:
+    6px 6px 18px #040306,
+    -4px -4px 14px #1b1722;
+}
+
+.lotm-showcase-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+  padding-bottom: 10px;
+}
+
+.lotm-showcase-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(243, 234, 216, 0.65);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lotm-showcase-tab:hover {
+  color: #f3ead8;
+}
+
+.lotm-showcase-tab.is-active {
+  color: #e0c36a;
+  background: rgba(201, 162, 39, 0.14);
+  border-color: rgba(201, 162, 39, 0.38);
+}
+
+.lotm-showcase-cards-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 162, 39, 0.3) transparent;
+}
+
+.lotm-showcase-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.14);
+  border-radius: 8px;
+  padding: 6px 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: left;
+}
+
+.lotm-showcase-item:hover,
+.lotm-showcase-item.is-active {
+  border-color: #c9a227;
+  background: #1a1622;
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(201, 162, 39, 0.2);
+}
+
+.lotm-showcase-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  filter: saturate(1.1) brightness(1.1);
+}
+
+.lotm-showcase-emblem {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(201, 162, 39, 0.35)) brightness(1.12);
+}
+
+.lotm-showcase-emblem-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1f1b26;
+  color: #c9a227;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.lotm-showcase-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-showcase-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: #f3ead8;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lotm-showcase-title {
+  font-size: 10px;
+  color: rgba(201, 162, 39, 0.85);
+  white-space: nowrap;
+}
+
+.lotm-showcase-preview-plate {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: rgba(9, 8, 11, 0.94);
+  border-radius: 8px;
+  border: 1px solid rgba(201, 162, 39, 0.16);
+  text-align: left;
+}
+
+.lotm-preview-kicker {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin-bottom: 4px;
+}
+
+.lotm-preview-quote {
+  margin: 0;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(243, 234, 216, 0.88);
+  line-height: 1.45;
+}
+
+/* Main Content Container */
+.lotm-landing-main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.lotm-landing-section {
+  margin-bottom: 72px;
+}
+
+.lotm-landing-section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lotm-landing-section-kicker {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c9a227;
+  margin: 0 0 8px;
+}
+
+.lotm-landing-section-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f3ead8;
+  margin: 0 0 8px;
+}
+
+.lotm-landing-section-lead {
+  font-size: 16px;
+  color: rgba(243, 234, 216, 0.68);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Neumorphic Extruded Cards */
+.lotm-landing-card {
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    8px 8px 18px #050408,
+    -6px -6px 14px #1c1822;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.lotm-landing-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 162, 39, 0.32);
+  box-shadow:
+    10px 10px 22px #040306,
+    -7px -7px 18px #221c2a;
+}
+
+/* Neumorphic Inset Well Cards */
+.lotm-landing-well-card {
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.1);
+  border-radius: 12px;
+  box-shadow:
+    inset 4px 4px 10px #060507,
+    inset -3px -3px 8px #191620;
+  padding: 24px;
+}
+
+/* Pillars Grid (Responsive 2 to 3 cols) */
+.lotm-landing-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.lotm-landing-pillar-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-landing-card-icon {
+  margin-bottom: 14px;
+}
+
+.lotm-landing-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #e0c36a;
+  margin: 0 0 10px;
+}
+
+.lotm-landing-card-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(243, 234, 216, 0.76);
+  margin: 0;
+}
+
+/* Steps Grid (How it plays) */
+.lotm-landing-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.lotm-landing-step-card {
+  padding: 28px 22px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lotm-landing-step-number {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(201, 162, 39, 0.22);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Dual Grid (BYOK & Self-Host) */
+.lotm-landing-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.lotm-landing-card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.lotm-landing-card-header-row .lotm-landing-card-title {
+  margin: 0;
+}
+
+.lotm-landing-card-action {
+  margin-top: 18px;
+}
+
+.lotm-landing-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a227;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.lotm-landing-link:hover {
+  color: #f3ead8;
+}
+
+/* Sponsor Card */
+.lotm-landing-sponsor-card {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.lotm-landing-sponsor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.lotm-landing-sponsor-note {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(201, 162, 39, 0.78);
+  margin: 12px 0 20px;
+}
+
+.lotm-landing-sponsor-action {
+  display: flex;
+  align-items: center;
+}
+
+.lotm-sponsor-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Special Thanks Grid & Cards */
+.lotm-landing-thanks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.lotm-landing-thanks-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-thanks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.lotm-thanks-role {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #c9a227;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Downloads Plate */
+.lotm-landing-downloads-plate {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.lotm-landing-downloads-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.lotm-landing-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(201, 162, 39, 0.14);
+  color: #c9a227;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.lotm-landing-platforms-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.lotm-landing-platform-pill {
+  padding: 8px 18px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 8px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(243, 234, 216, 0.7);
+  box-shadow:
+    3px 3px 8px #060508,
+    -2px -2px 6px #1b1720;
+}
+
+/* CTA Card Banner */
+.lotm-landing-cta-banner {
+  margin-top: 32px;
+}
+
+.lotm-landing-cta-card {
+  padding: 48px 24px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  border-color: rgba(201, 162, 39, 0.25);
+}
+
+.lotm-landing-cta-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  color: #f3ead8;
+  margin: 0 0 10px;
+}
+
+.lotm-landing-cta-sub {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(243, 234, 216, 0.72);
+  margin: 0 auto 24px;
+  max-width: 480px;
+}
+
+.lotm-landing-cta-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+.lotm-landing-footer {
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  background: #080709;
+  padding: 48px 24px 64px;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.6);
+}
+
+.lotm-landing-footer-top {
+  max-width: 1080px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.lotm-landing-footer-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: #e0c36a;
+  display: flex;
+  align-items: center;
+}
+
+.lotm-landing-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lotm-landing-footer-link {
+  color: rgba(243, 234, 216, 0.7);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.15s ease;
+}
+
+.lotm-landing-footer-link:hover {
+  color: #c9a227;
+}
+
+.lotm-landing-footer-bottom {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 1.55;
+}
+
+.lotm-landing-license {
+  margin: 0;
+  color: rgba(243, 234, 216, 0.75);
+}
+
+.lotm-landing-disclaimer {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(243, 234, 216, 0.45);
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 640px) {
+  .lotm-landing-hero {
+    min-height: 80vh;
+    padding: 48px 16px 64px;
+  }
+
+  .lotm-landing-main {
+    padding: 0 16px 60px;
+  }
+
+  .lotm-landing-section {
+    margin-bottom: 54px;
+  }
+
+  .lotm-landing-pillars-grid,
+  .lotm-landing-steps-grid,
+  .lotm-landing-dual-grid,
+  .lotm-landing-thanks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lotm-collage-floating-card {
+    width: 96px;
+    height: 130px;
+    opacity: 0.85;
+  }
+
+  .lotm-collage-card-name {
+    font-size: 9px;
+  }
+
+  .lotm-hero-showcase-bar {
+    margin-top: 24px;
+    padding: 10px 12px;
+  }
+
+  .lotm-landing-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

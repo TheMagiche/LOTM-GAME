@@ -3,6 +3,7 @@
 - **Audience:** Developers, operators, and AI agents deploying a public LOTM demo.
 - **Goal:** Ship a Player-view-only production demo on a VPS with a marketing landing page and BYOK onboarding — grounded in the real codebase, not generic hosting advice.
 - **Sister docs:**
+  - [lotm-landing-page.md](./lotm-landing-page.md) — Landing page content map, dark neumorphism, and copy guide
   - [ui-view-modes.md](./ui-view-modes.md) — Player vs GM mode behavior
   - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Gameplay content for landing page copy
   - [COOLIFY.md](../COOLIFY.md) — Existing VPS deploy path
@@ -363,7 +364,7 @@ Sections for implementers (copy can lift from existing docs):
 | Option      | Location                                   | Notes                                                                          |
 | ----------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
 | Static HTML | `public/landing/index.html`                | Served before SPA catch-all in `[server.js](../../server.js)`; smallest bundle |
-| React page  | `src/pages/LandingPage.tsx` + react-router | Shared styling; tied to app release cycle                                      |
+| React page  | `[LandingPage.tsx](../../src/components/landing/LandingPage.tsx)` | Implemented: Lord of the Mysteries themed marketing with dark neumorphism      |
 
 
 ---
@@ -390,8 +391,8 @@ Do not promise Electron downloads on the landing page until the CI pipeline ship
 
 | Feature         | Likely files                                                                                                                                                            |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Landing page    | `public/landing/index.html` or `src/pages/LandingPage.tsx`, `[server.js](../../server.js)` route order                                                                  |
-| Demo route      | react-router in `[main.tsx](../../src/main.tsx)` or path prefix `/app`                                                                                                  |
+| Landing page    | `[LandingPage.tsx](../../src/components/landing/LandingPage.tsx)`, `[landingCopy.ts](../../src/components/landing/landingCopy.ts)`, `[lotm-landing-page.md](./lotm-landing-page.md)` |
+| Demo route      | `[main.tsx](../../src/main.tsx)` (`shouldShowDemoLanding`), `[demoMode.ts](../../src/config/demoMode.ts)` (`DEMO_PLAY_PATH = '/play'`)                               |
 | Player lock     | `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)`, `[SettingsModal.tsx](../../src/components/SettingsModal.tsx)`                                        |
 | BYOK gate       | New modal + `[ProvidersTab.tsx](../../src/components/settings-modal/ProvidersTab.tsx)`                                                                                  |
 | Delete on exit  | `[exitLotmCampaign()](../../src/components/lotm/LotmPlayHeader.tsx)`, `[deleteCampaign](../../src/store/campaignStore.ts)`                                              |
