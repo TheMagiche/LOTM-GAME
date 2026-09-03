@@ -36,8 +36,8 @@ export function ChatComposer({
     const showPresetPicker = settings.presets.length > 1;
 
     return (
-        <div className={compact ? 'px-2 sm:px-3 pt-1.5 pb-1.5' : 'px-2 sm:px-4 pt-3 sm:pt-4 pb-2'}>
-            <div className="flex gap-1 border border-border bg-void focus-within:border-terminal transition-colors items-end p-1 rounded-sm">
+        <div className={`chat-composer-pad${compact ? ' is-compact' : ''}`}>
+            <div className="chat-composer-well flex gap-1 items-end">
                 {showPresetPicker && (
                 <div className="relative shrink-0 mb-[4px] ml-1">
                     <select
@@ -84,12 +84,12 @@ export function ChatComposer({
                     onChange={onInputChange}
                     onKeyDown={onKeyDown}
                     placeholder="What do you do?"
-                    className={`flex-1 bg-transparent px-2 text-sm text-text-primary placeholder:text-text-dim/40 font-mono resize-none border-none outline-none leading-5 ${compact ? 'py-1.5 min-h-[32px]' : 'py-2.5 min-h-[40px]'}`}
+                    className={`chat-composer-input flex-1 bg-transparent px-2 text-sm text-text-primary placeholder:text-text-dim/40 font-mono resize-none border-none outline-none leading-5 ${compact ? 'py-1.5 min-h-[32px]' : 'py-2.5 min-h-[40px]'}`}
                 />
                 <button
                     onClick={isStreaming ? onStop : onSend}
                     disabled={!isStreaming && (!input.trim() || oocBusy)}
-                    className={`h-[32px] w-[44px] mb-[4px] rounded transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center shrink-0 ${isStreaming ? 'text-amber-500 hover:bg-amber-500/10' : 'text-terminal hover:bg-terminal/10'}`}
+                    className={`chat-composer-send h-[32px] w-[44px] mb-[4px] disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center shrink-0 ${isStreaming ? 'is-stop text-amber-500' : 'text-terminal'}`}
                 >
                     {isStreaming ? <Square size={16} fill="currentColor" /> : <Send size={16} />}
                 </button>

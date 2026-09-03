@@ -449,6 +449,78 @@ html[data-has-bg="true"] .chat-composer-bar {
   backdrop-filter: blur(3px);
 }
 
+/* Centered, inset neumorphic composer well — gutters keep it off the edges. */
+.chat-composer-pad {
+  display: flex;
+  justify-content: center;
+  padding: 12px clamp(1.25rem, 6vw, 4.5rem) 16px;
+}
+
+.chat-composer-pad.is-compact {
+  padding: 8px clamp(1rem, 5.5vw, 4rem) 14px;
+}
+
+.chat-composer-well {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.16);
+  border-radius: 18px;
+  box-shadow:
+    inset 4px 4px 10px #060507,
+    inset -3px -3px 8px #191620;
+  padding: 6px 8px 6px 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-composer-well:focus-within {
+  border-color: rgba(201, 162, 39, 0.42);
+  box-shadow:
+    inset 4px 4px 10px #060507,
+    inset -3px -3px 8px #191620,
+    0 0 14px rgba(201, 162, 39, 0.16);
+}
+
+.chat-composer-input:focus {
+  outline: none;
+}
+
+.chat-composer-send {
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  background: #141118;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px #050407, -1px -1px 4px #1b1722;
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.chat-composer-send:hover:not(:disabled) {
+  border-color: rgba(201, 162, 39, 0.4);
+  color: #e0c36a;
+  box-shadow: 3px 3px 8px #040306, -2px -2px 6px #201b28;
+  transform: translateY(-1px);
+}
+
+.chat-composer-send.is-stop:hover:not(:disabled) {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+.chat-composer-send:disabled {
+  box-shadow: none;
+}
+
+.lotm-chat .chat-composer-bar {
+  background: transparent;
+  border-top-color: transparent;
+}
+
+html[data-has-bg="true"] .lotm-chat .chat-composer-bar {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
 /* ─── Floating chat nav buttons (Prev/Latest) ───
    In dark mode the default border/icon colors blend into the background,
    so bump the border + icon contrast and add a subtle surface lift. */
@@ -644,6 +716,7 @@ html[style*="--lang-font-stack"] {
   flex: 1 1 auto;
   width: 100%;
   max-height: 100%;
+  border: none;
 }
 
 .lotm-chronicle-bar {
