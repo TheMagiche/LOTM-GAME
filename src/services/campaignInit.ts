@@ -180,7 +180,10 @@ export async function initializeCampaignState(params: {
             ctx.starterActive = true;
         }
         if (playerCharacter) {
-            const seededPc = attachLotmPathwaysToNpcs([playerCharacter])[0];
+            const withPathways = attachLotmPathwaysToNpcs([playerCharacter])[0];
+            const seededPc = attachLotmVisuals
+                ? attachLotmPortraitsToNpcs([withPathways])[0]
+                : withPathways;
             ctx.playerCharacter = seededPc;
             ctx.characterProfileActive = true;
             ctx.characterProfileData = characterProfileFromPlayerCharacter(seededPc, ctx.characterProfileData);

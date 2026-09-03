@@ -9,6 +9,7 @@ import {
     type LotmPathwayDef,
 } from '../../worldpacks/lotmPathways';
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
+import { LOTM_PLAYER_PORTRAITS } from '../../worldpacks/lotmVisualManifest';
 
 interface SlotStyle {
     x: number;
@@ -43,12 +44,9 @@ export function sortPlayablePcsForTarot(pcs: PlayablePcOption[]): PlayablePcOpti
     });
 }
 
-const PLAYER_CHARACTER_ART: Record<string, string> = {
-    clara_whitlock: 'image/players/clara_whitlock.jpeg',
-    benedict_faulkner: 'image/players/benedict_faulkner.jpeg',
-    arthur_pendel: 'image/players/arthur_pendel.jpeg',
-    cassian_dray: 'image/players/cassian_dray.jpeg',
-};
+const PLAYER_CHARACTER_ART: Record<string, string> = Object.fromEntries(
+    LOTM_PLAYER_PORTRAITS.map(entry => [entry.id.replace(/-/g, '_'), entry.portrait]),
+);
 
 const PATHWAY_CHARACTER_ART: Record<string, string> = {
     fool: 'image/characters/the_fool.webp',

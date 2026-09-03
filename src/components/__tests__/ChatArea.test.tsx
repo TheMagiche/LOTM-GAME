@@ -508,6 +508,19 @@ describe('ChatArea', () => {
         expect(screen.queryByRole('dialog', { name: /narration|scene/i })).not.toBeInTheDocument();
     });
 
+    it('stages the player portrait in the scene modal from gamedata/image/players', async () => {
+        const user = userEvent.setup();
+        const state = useAppStore.getState();
+        state.playerCharacter = clara;
+        state.messages = [
+            makeMessage({ role: 'assistant', content: 'Clara Whitlock waited by the composing frame.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        await user.click(screen.getByRole('button', { name: 'Open scene illustration' }));
+        const img = screen.getByRole('img', { name: 'Clara Whitlock' });
+        expect(img).toHaveAttribute('src', expect.stringContaining('image/players/clara_whitlock.jpeg'));
+    });
+
     it('shows the chronicle transcript when chronicle view is open', () => {
         const state = useAppStore.getState();
         state.messages = [
