@@ -219,6 +219,10 @@
 }
 
 @layer utilities {
+  .border-border {
+    border: none;
+  }
+
    /* WO-ui-polish §B3/§B4 — glow colours now track --color-terminal via
       color-mix instead of a hardcoded blue rgba, so a re-brand (swapping
       the seed) retints the glow too. The class is no longer applied to
@@ -445,6 +449,78 @@ html[data-has-bg="true"] .chat-composer-bar {
   backdrop-filter: blur(3px);
 }
 
+/* Centered, inset neumorphic composer well — gutters keep it off the edges. */
+.chat-composer-pad {
+  display: flex;
+  justify-content: center;
+  padding: 12px clamp(1.25rem, 6vw, 4.5rem) 16px;
+}
+
+.chat-composer-pad.is-compact {
+  padding: 8px clamp(1rem, 5.5vw, 4rem) 14px;
+}
+
+.chat-composer-well {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.16);
+  border-radius: 18px;
+  box-shadow:
+    inset 4px 4px 10px #060507,
+    inset -3px -3px 8px #191620;
+  padding: 6px 8px 6px 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-composer-well:focus-within {
+  border-color: rgba(201, 162, 39, 0.42);
+  box-shadow:
+    inset 4px 4px 10px #060507,
+    inset -3px -3px 8px #191620,
+    0 0 14px rgba(201, 162, 39, 0.16);
+}
+
+.chat-composer-input:focus {
+  outline: none;
+}
+
+.chat-composer-send {
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  background: #141118;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px #050407, -1px -1px 4px #1b1722;
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.chat-composer-send:hover:not(:disabled) {
+  border-color: rgba(201, 162, 39, 0.4);
+  color: #e0c36a;
+  box-shadow: 3px 3px 8px #040306, -2px -2px 6px #201b28;
+  transform: translateY(-1px);
+}
+
+.chat-composer-send.is-stop:hover:not(:disabled) {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+.chat-composer-send:disabled {
+  box-shadow: none;
+}
+
+.lotm-chat .chat-composer-bar {
+  background: transparent;
+  border-top-color: transparent;
+}
+
+html[data-has-bg="true"] .lotm-chat .chat-composer-bar {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
 /* ─── Floating chat nav buttons (Prev/Latest) ───
    In dark mode the default border/icon colors blend into the background,
    so bump the border + icon contrast and add a subtle surface lift. */
@@ -629,8 +705,18 @@ html[style*="--lang-font-stack"] {
   opacity: 1;
 }
 
+.lotm-plate-slot {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .lotm-chat .lotm-plate-slot .lotm-plate {
+  flex: 1 1 auto;
+  width: 100%;
   max-height: 100%;
+  border: none;
 }
 
 .lotm-chronicle-bar {
@@ -643,10 +729,20 @@ html[style*="--lang-font-stack"] {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #c9a227;
-  background: transparent;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  padding: 4px 10px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #050407, -2px -2px 6px #1b1722;
+  padding: 5px 12px;
   cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.lotm-chronicle-toggle:hover {
+  color: #e0c36a;
+  border-color: #c9a227;
+  box-shadow: 4px 4px 10px #040306, -3px -3px 8px #201b28, 0 0 10px rgba(201, 162, 39, 0.25);
+  transform: translateY(-1px);
 }
 
 .lotm-chronicle-hint {
@@ -661,10 +757,15 @@ html[style*="--lang-font-stack"] {
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
-  background: linear-gradient(180deg, rgba(22, 18, 24, 0.88), rgba(14, 12, 16, 0.94));
-  border: 1px solid rgba(201, 162, 39, 0.32);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  padding: 14px 18px 16px;
+  background: rgba(18, 16, 21, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 14px;
+  box-shadow:
+    8px 8px 24px #040306,
+    -6px -6px 20px #1c1824,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  padding: 16px 20px 18px;
   overflow: hidden;
 }
 
@@ -674,7 +775,7 @@ html[style*="--lang-font-stack"] {
   justify-content: space-between;
   gap: 12px;
   font-family: 'Cinzel', serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #c9a227;
@@ -702,7 +803,7 @@ html[style*="--lang-font-stack"] {
   gap: 6px;
   margin: -2px 0 10px;
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(243, 234, 216, 0.72);
   flex-shrink: 0;
 }
@@ -716,7 +817,7 @@ html[style*="--lang-font-stack"] {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   margin: 0 0 10px;
   flex-shrink: 0;
 }
@@ -728,15 +829,20 @@ html[style*="--lang-font-stack"] {
   height: 28px;
   width: 28px;
   padding: 0;
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  background: transparent;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #050407, -2px -2px 6px #1b1722;
   color: #e8e0d0;
   cursor: pointer;
+  transition: all 0.18s ease;
 }
 
 .lotm-plate-actions button:hover {
   color: #e0c36a;
-  border-color: rgba(201, 162, 39, 0.5);
+  border-color: #c9a227;
+  box-shadow: 4px 4px 10px #040306, -3px -3px 8px #201b28, 0 0 10px rgba(201, 162, 39, 0.25);
+  transform: translateY(-1px);
 }
 
 .lotm-plate-streaming {
@@ -754,15 +860,18 @@ html[style*="--lang-font-stack"] {
   justify-content: center;
   gap: 6px;
   height: 28px;
-  padding: 0 8px;
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  background: transparent;
+  padding: 0 10px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #050407, -2px -2px 6px #1b1722;
   color: #e8e0d0;
   font-family: 'Cinzel', serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.18s ease;
 }
 
 .lotm-plate-scene:hover,
@@ -770,7 +879,9 @@ html[style*="--lang-font-stack"] {
 .lotm-scene-modal-close:hover,
 .lotm-scene-modal-nav button:hover:not(:disabled) {
   color: #e0c36a;
-  border-color: rgba(201, 162, 39, 0.5);
+  border-color: #c9a227;
+  box-shadow: 4px 4px 10px #040306, -3px -3px 8px #201b28, 0 0 10px rgba(201, 162, 39, 0.25);
+  transform: translateY(-1px);
 }
 
 .lotm-plate-nav {
@@ -792,6 +903,8 @@ html[style*="--lang-font-stack"] {
 .lotm-scene-modal-nav button:disabled {
   opacity: 0.35;
   cursor: default;
+  box-shadow: none;
+  transform: none;
 }
 
 .lotm-plate-body {
@@ -799,8 +912,8 @@ html[style*="--lang-font-stack"] {
   min-height: 0;
   overflow: auto;
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 19px;
+  line-height: 1.65;
   color: #f3ead8;
 }
 
@@ -853,7 +966,7 @@ html[style*="--lang-font-stack"] {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(8, 6, 10, 0.72);
+  background: rgba(8, 6, 10, 0.78);
 }
 
 .lotm-scene-modal-frame {
@@ -861,10 +974,15 @@ html[style*="--lang-font-stack"] {
   flex-direction: column;
   width: min(960px, 100%);
   height: min(720px, 100%);
-  background: #0b0a0d;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.24);
+  border-radius: 16px;
+  box-shadow:
+    14px 14px 36px #040306,
+    -10px -10px 28px #1c1822,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   color: #f3ead8;
+  overflow: hidden;
 }
 
 .lotm-scene-modal-header {
@@ -872,8 +990,10 @@ html[style*="--lang-font-stack"] {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  padding: 12px 16px;
+  background: #0e0c11;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.16);
+  box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
 }
 
@@ -911,8 +1031,9 @@ html[style*="--lang-font-stack"] {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 10px;
-  border-top: 1px solid rgba(201, 162, 39, 0.22);
+  padding: 12px;
+  background: #0e0c11;
+  border-top: 1px solid rgba(201, 162, 39, 0.16);
   flex-shrink: 0;
 }
 
@@ -1051,12 +1172,26 @@ html[style*="--lang-font-stack"] {
 
 .lotm-chapter-card {
   position: absolute;
-  inset: 0;
+  inset: 16px;
   z-index: 40;
-  border: 0;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  border-radius: 16px;
+  box-shadow:
+    12px 12px 32px #040306,
+    -8px -8px 24px #1c1822;
   padding: 0;
   cursor: pointer;
-  background: #0b0a0d;
+  background: #121015;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.lotm-chapter-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    14px 14px 36px #040306,
+    -10px -10px 28px #221c2a,
+    0 0 16px rgba(201, 162, 39, 0.25);
 }
 
 .lotm-chapter-card img {
@@ -1120,73 +1255,83 @@ html[style*="--lang-font-stack"] {
   padding: 48px 24px;
   overflow: hidden;
   background: #0b0a0d;
-}
-
-.lotm-title-hub-art {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: saturate(0.7) contrast(1.1) brightness(0.55);
+  color: #f3ead8;
+  font-family: 'EB Garamond', Georgia, serif;
 }
 
 .lotm-title-hub-scrim {
   position: absolute;
   inset: 0;
+  z-index: 2;
+  pointer-events: none;
   background:
-    linear-gradient(to top, rgba(8, 7, 10, 0.96) 0%, rgba(8, 7, 10, 0.55) 46%, rgba(8, 7, 10, 0.4) 100%),
-    radial-gradient(ellipse at 50% 80%, rgba(20, 16, 28, 0.35), transparent 60%);
+    radial-gradient(ellipse at 50% 50%, rgba(11, 10, 13, 0.88) 0%, rgba(11, 10, 13, 0.62) 50%, rgba(11, 10, 13, 0.15) 90%),
+    linear-gradient(to top, #0b0a0d 0%, rgba(11, 10, 13, 0.3) 35%, transparent 70%, rgba(11, 10, 13, 0.4) 100%);
 }
 
 .lotm-title-hub-gear,
 .lotm-title-hub-back,
-.lotm-title-hub-grimoire {
+.lotm-title-hub-grimoire,
+.lotm-title-hub-landing {
   position: absolute;
   top: 20px;
   z-index: 4;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  background: rgba(12, 10, 14, 0.55);
-  color: rgba(232, 224, 208, 0.55);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: rgba(14, 12, 17, 0.78);
+  backdrop-filter: blur(10px);
+  color: rgba(232, 224, 208, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.12);
+  transition: all 0.2s ease;
 }
 
 .lotm-title-hub-gear {
   right: 20px;
 }
 
-.lotm-title-hub-grimoire {
+.lotm-title-hub-grimoire,
+.lotm-title-hub-landing {
   left: 20px;
+  text-decoration: none;
 }
 
 .lotm-title-hub-back {
-  left: 64px;
+  left: 68px;
 }
 
 .lotm-title-hub-gear:hover:not(:disabled),
 .lotm-title-hub-back:hover:not(:disabled),
-.lotm-title-hub-grimoire:hover:not(:disabled) {
-  color: #e0c36a;
-  border-color: rgba(201, 162, 39, 0.65);
+.lotm-title-hub-grimoire:hover:not(:disabled),
+.lotm-title-hub-landing:hover {
+  color: #f3ead8;
+  border-color: #e0c36a;
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8), 0 0 16px rgba(224, 195, 106, 0.4);
 }
 
 .lotm-title-hub-gear:disabled,
 .lotm-title-hub-back:disabled,
 .lotm-title-hub-grimoire:disabled {
-  opacity: 0.45;
+  opacity: 0.35;
   cursor: default;
 }
 
 .lotm-title-hub-copy,
 .lotm-title-hub-actions {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
+}
+
+.lotm-title-hub-copy {
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .lotm-title-hub-kicker {
@@ -1195,35 +1340,40 @@ html[style*="--lang-font-stack"] {
   text-transform: uppercase;
   font-size: 11px;
   color: #c9a227;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-title-hub-copy h1 {
   font-family: 'Cinzel', serif;
-  font-size: clamp(28px, 5vw, 44px);
+  font-size: clamp(32px, 5.5vw, 50px);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: #f3ead8;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9);
 }
 
 .lotm-title-hub-sub {
   font-family: 'EB Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 16px;
-  color: rgba(243, 234, 216, 0.62);
-  max-width: 420px;
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: rgba(243, 234, 216, 0.85);
+  max-width: 480px;
   margin: 0 auto;
+  line-height: 1.5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 .lotm-demo-banner {
-  margin: 14px auto 0;
+  margin: 16px auto 0;
   max-width: 28rem;
-  color: rgba(201, 162, 39, 0.9);
-  font-size: 12px;
+  color: rgba(201, 162, 39, 0.92);
+  font-size: 13px;
   letter-spacing: 0.04em;
   line-height: 1.45;
   font-family: 'EB Garamond', serif;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-demo-modal {
@@ -1355,6 +1505,7 @@ html[style*="--lang-font-stack"] {
   background: #c9a227;
   border: 1px solid #e0c36a;
   padding: 12px 36px;
+  text-decoration: none;
 }
 
 .lotm-title-hub-primary:disabled,
@@ -1380,19 +1531,19 @@ html[style*="--lang-font-stack"] {
 
 .lotm-title-hub.is-picking {
   justify-content: flex-start;
-  padding-top: 56px;
+  padding-top: 48px;
 }
 
 .lotm-title-hub.is-picking .lotm-title-hub-scrim {
   background:
-    linear-gradient(to top, rgba(8, 7, 10, 0.97) 0%, rgba(8, 7, 10, 0.78) 48%, rgba(8, 7, 10, 0.62) 100%),
-    radial-gradient(ellipse at 50% 70%, rgba(20, 16, 28, 0.4), transparent 60%);
+    radial-gradient(ellipse at 50% 55%, rgba(11, 10, 13, 0.94) 0%, rgba(11, 10, 13, 0.82) 55%, rgba(11, 10, 13, 0.65) 100%),
+    linear-gradient(to top, #0b0a0d 0%, rgba(11, 10, 13, 0.6) 50%, rgba(11, 10, 13, 0.75) 100%);
 }
 
 .lotm-title-hub.is-picking .lotm-title-hub-actions {
   width: min(1100px, 100%);
   margin-top: 8px;
-  gap: 18px;
+  gap: 16px;
 }
 
 .lotm-tarot {
@@ -1408,13 +1559,14 @@ html[style*="--lang-font-stack"] {
   text-transform: uppercase;
   font-size: 11px;
   color: #c9a227;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 .lotm-tarot-stage {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1423,134 +1575,175 @@ html[style*="--lang-font-stack"] {
 
 .lotm-tarot-fan {
   position: relative;
-  width: 240px;
-  height: 380px;
+  width: 270px;
+  height: 395px;
   transform-style: preserve-3d;
 }
 
 .lotm-tarot-nav {
   position: relative;
   z-index: 120;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
-  margin: 0 8px;
+  margin: 0 12px;
   border-radius: 50%;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  background: rgba(12, 10, 14, 0.7);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: rgba(14, 12, 17, 0.82);
+  backdrop-filter: blur(10px);
   color: #e0c36a;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65), 0 0 10px rgba(201, 162, 39, 0.15);
+  transition: all 0.2s ease;
 }
 
 .lotm-tarot-nav:disabled {
-  opacity: 0.45;
+  opacity: 0.35;
   cursor: default;
 }
 
 .lotm-tarot-nav:hover:not(:disabled) {
-  border-color: #c9a227;
+  border-color: #e0c36a;
   color: #f3ead8;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 16px rgba(224, 195, 106, 0.4);
 }
 
 .lotm-tarot-card {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 18px 16px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid rgba(201, 162, 39, 0.45);
-  background:
-    linear-gradient(180deg, rgba(42, 32, 22, 0.55) 0%, rgba(14, 11, 16, 0.92) 38%, #0d0b10 100%),
-    radial-gradient(ellipse at 50% 28%, rgba(201, 162, 39, 0.12), transparent 55%);
+  background: #141118;
   box-shadow:
-    inset 0 0 0 4px rgba(18, 14, 20, 0.9),
-    inset 0 0 0 5px rgba(201, 162, 39, 0.35),
-    0 18px 40px rgba(0, 0, 0, 0.45);
+    0 8px 24px rgba(0, 0, 0, 0.75),
+    0 0 14px rgba(201, 162, 39, 0.18);
   color: #f3ead8;
   cursor: pointer;
   transform-origin: center center;
-  transition: transform 0.38s ease, opacity 0.38s ease, filter 0.38s ease, box-shadow 0.38s ease;
+  transition: transform 0.38s ease, opacity 0.38s ease, filter 0.38s ease, box-shadow 0.38s ease, border-color 0.25s ease;
   overflow: hidden;
+  padding: 0;
 }
 
 .lotm-tarot-card.is-active {
   border-color: #e0c36a;
   box-shadow:
-    inset 0 0 0 4px rgba(18, 14, 20, 0.9),
-    inset 0 0 0 5px rgba(224, 195, 106, 0.55),
-    0 22px 48px rgba(0, 0, 0, 0.55),
-    0 0 32px rgba(201, 162, 39, 0.18);
+    0 0 32px rgba(224, 195, 106, 0.65),
+    0 16px 36px rgba(0, 0, 0, 0.9);
+}
+
+.lotm-tarot-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-tarot-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: saturate(1.1) contrast(1.08) brightness(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.lotm-tarot-card:hover .lotm-tarot-card-img,
+.lotm-tarot-card.is-active .lotm-tarot-card-img {
+  transform: scale(1.05);
+  filter: saturate(1.18) contrast(1.12) brightness(1.18);
+}
+
+.lotm-tarot-card-emblem-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(12, 10, 15, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.lotm-tarot-card-emblem-badge img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.lotm-tarot-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 8, 12, 0.98) 0%, rgba(10, 8, 12, 0.85) 55%, rgba(10, 8, 12, 0.4) 80%, transparent 100%);
+  padding: 16px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
 }
 
 .lotm-tarot-card-arcana {
   font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #c9a227;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.lotm-tarot-card-emblem {
-  flex: 1;
-  width: 78%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 140px;
-}
-
-.lotm-tarot-card-emblem img {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+  margin-bottom: 4px;
 }
 
 .lotm-tarot-card-name {
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
-  text-align: center;
-  margin-top: 8px;
+  color: #f3ead8;
   line-height: 1.2;
-}
-
-.lotm-tarot-card-pathway,
-.lotm-tarot-card-sequence {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.08em;
-  text-align: center;
-  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-tarot-card-pathway {
+  font-family: 'Cinzel', serif;
   font-size: 10px;
-  color: rgba(224, 195, 106, 0.88);
-  margin-top: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(224, 195, 106, 0.92);
+  margin-top: 4px;
 }
 
 .lotm-tarot-card-sequence {
+  font-family: 'Cinzel', serif;
   font-size: 9px;
-  color: rgba(232, 224, 208, 0.62);
-  margin-top: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(232, 224, 208, 0.65);
+  margin-top: 2px;
 }
 
 .lotm-tarot-caption {
   font-family: 'EB Garamond', Georgia, serif;
   color: #f3ead8;
-  font-size: 18px;
-  margin: 4px 0 0;
+  font-size: 19px;
+  margin: 6px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .lotm-tarot-caption span {
@@ -1558,7 +1751,7 @@ html[style*="--lang-font-stack"] {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(201, 162, 39, 0.85);
+  color: rgba(201, 162, 39, 0.9);
 }
 
 .lotm-tarot-actions {
@@ -1591,12 +1784,12 @@ html[style*="--lang-font-stack"] {
 
 @media (max-width: 720px) {
   .lotm-tarot-stage {
-    height: 360px;
+    height: 380px;
   }
 
   .lotm-tarot-fan {
-    width: 190px;
-    height: 310px;
+    width: 220px;
+    height: 330px;
   }
 
   .lotm-tarot-nav {
@@ -1735,25 +1928,25 @@ html[style*="--lang-font-stack"] {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 8px 10px 0;
-  padding: 8px 12px 10px;
-  background: linear-gradient(180deg, rgba(22, 18, 24, 0.9), rgba(14, 12, 16, 0.94));
-  border: 1px solid rgba(201, 162, 39, 0.32);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  gap: 6px;
+  margin: 6px 12px 0;
+  padding: 6px 12px;
+  background: rgba(18, 16, 21, 0.94);
+  backdrop-filter: blur(14px);
+  border: 0;
+  border-radius: 12px;
+  box-shadow:
+    8px 8px 22px #040306,
+    -6px -6px 18px #1b1724,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   color: #f3ead8;
   cursor: pointer;
-}
-
-.lotm-player-hud:hover,
-.lotm-player-hud:focus-visible {
-  border-color: rgba(201, 162, 39, 0.5);
 }
 
 .lotm-player-hud-main {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
 }
 
@@ -1771,12 +1964,8 @@ html[style*="--lang-font-stack"] {
   padding: 0;
   border: 1px solid transparent;
   background: transparent;
+  border-radius: 10px;
   cursor: pointer;
-}
-
-.lotm-player-hud-emblem-btn:hover,
-.lotm-player-hud-emblem-btn:focus-visible {
-  border-color: rgba(201, 162, 39, 0.45);
 }
 
 .lotm-player-hud-identity-btn {
@@ -1787,21 +1976,31 @@ html[style*="--lang-font-stack"] {
   flex: 1 1 auto;
   margin: 0;
   padding: 2px 6px 2px 2px;
-  border: 1px solid transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
   background: transparent;
+  border-radius: 8px;
   color: inherit;
   text-align: left;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .lotm-player-hud-identity-btn:hover,
-.lotm-player-hud-identity-btn:focus-visible {
-  border-color: rgba(201, 162, 39, 0.45);
+.lotm-player-hud-identity-btn:focus,
+.lotm-player-hud-identity-btn:focus-visible,
+.lotm-player-hud-identity-btn:active {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
 }
 
 .lotm-player-hud-emblem {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.28));
@@ -1832,7 +2031,7 @@ html[style*="--lang-font-stack"] {
   display: block;
   margin: 0;
   font-family: 'Cinzel', serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
@@ -1841,10 +2040,12 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-player-hud-pathway {
-  display: block;
-  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 1px 0 0;
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(243, 234, 216, 0.72);
   white-space: nowrap;
   overflow: hidden;
@@ -1875,9 +2076,11 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-player-hud-meter-track {
-  height: 6px;
+  height: 7px;
   border-radius: 999px;
-  background: rgba(232, 224, 208, 0.12);
+  background: #09080c;
+  border: 1px solid rgba(201, 162, 39, 0.14);
+  box-shadow: inset 2px 2px 5px #040305, inset -2px -2px 5px #141118;
   overflow: hidden;
 }
 
@@ -1935,7 +2138,25 @@ html[style*="--lang-font-stack"] {
   color: #d4534a;
 }
 
-.lotm-player-hud-band,
+.lotm-player-hud-band {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0 7px;
+  height: 16px;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  border-radius: 999px;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(243, 234, 216, 0.78);
+}
+
+.lotm-player-hud-band.is-advantage { color: #e0c36a; border-color: rgba(224, 195, 106, 0.45); }
+.lotm-player-hud-band.is-disadvantage { color: #d4534a; border-color: rgba(212, 83, 74, 0.45); }
+
 .lotm-player-hud-acting,
 .lotm-player-hud-loot {
   margin: 0;
@@ -1946,9 +2167,6 @@ html[style*="--lang-font-stack"] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.lotm-player-hud-band.is-advantage { color: #e0c36a; }
-.lotm-player-hud-band.is-disadvantage { color: #d4534a; }
 
 .lotm-player-hud-loot {
   display: flex;
@@ -1966,19 +2184,33 @@ html[style*="--lang-font-stack"] {
 }
 
 .lotm-player-hud-ability-btn {
-  border: 0;
-  background: transparent;
+  border: 1px solid rgba(201, 162, 39, 0.16);
+  background: #141118;
+  border-radius: 8px;
   color: inherit;
   font: inherit;
-  padding: 0;
+  padding: 3px 10px;
+  box-shadow: 2px 2px 6px #050407, -1px -1px 4px #1b1722;
   cursor: pointer;
   text-align: left;
+  transition: all 0.18s ease;
+}
+
+.lotm-player-hud-ability-btn:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  color: #e0c36a;
+  box-shadow: 3px 3px 8px #040306, -2px -2px 6px #201b28;
 }
 
 .lotm-player-hud-ability-detail {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
+  padding: 8px 12px;
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.1);
+  border-radius: 8px;
+  box-shadow: inset 3px 3px 8px #060507, inset -2px -2px 6px #191620;
   font-size: 12px;
-  color: rgba(243, 234, 216, 0.7);
+  color: rgba(243, 234, 216, 0.8);
   white-space: normal;
 }
 
@@ -1996,21 +2228,33 @@ html[style*="--lang-font-stack"] {
 
 .lotm-player-hud-drink {
   margin-top: 8px;
-  height: 28px;
-  padding: 0 10px;
+  height: 30px;
+  padding: 0 14px;
+  background: #141118;
   border: 1px solid rgba(201, 162, 39, 0.35);
-  background: transparent;
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #050407, -2px -2px 6px #1b1722;
   color: #e8e0d0;
   font-family: 'Cinzel', serif;
   font-size: 9px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.lotm-player-hud-drink:hover:not(:disabled) {
+  color: #e0c36a;
+  border-color: #c9a227;
+  box-shadow: 4px 4px 10px #040306, -3px -3px 8px #201b28, 0 0 10px rgba(201, 162, 39, 0.3);
+  transform: translateY(-1px);
 }
 
 .lotm-player-hud-drink:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 .lotm-player-hud-track {
@@ -2057,9 +2301,12 @@ html[style*="--lang-font-stack"] {
 .lotm-player-hud-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 4px;
-  border-top: 1px solid rgba(201, 162, 39, 0.18);
+  gap: 12px;
+  padding: 12px 14px;
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 10px;
+  box-shadow: inset 4px 4px 10px #060507, inset -3px -3px 8px #191620;
 }
 
 .lotm-player-hud-facts {
@@ -2132,14 +2379,17 @@ html[style*="--lang-font-stack"] {
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 13px;
   color: #f3ead8;
-  border: 1px solid rgba(201, 162, 39, 0.22);
-  padding: 2px 8px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px #050407, -1px -1px 4px #1b1722;
+  padding: 3px 10px;
 }
 
 .lotm-player-hud-items {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2152,6 +2402,11 @@ html[style*="--lang-font-stack"] {
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 13px;
   color: #f3ead8;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.14);
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px #050407, -1px -1px 4px #1b1722;
+  padding: 4px 10px;
 }
 
 .lotm-player-hud-qty,
@@ -2397,7 +2652,8 @@ html[style*="--lang-font-stack"] {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(8, 6, 10, 0.78);
+  background: rgba(8, 6, 10, 0.82);
+  backdrop-filter: blur(8px);
 }
 
 .lotm-grimoire-frame {
@@ -2405,21 +2661,26 @@ html[style*="--lang-font-stack"] {
   flex-direction: column;
   width: min(1100px, 90vw);
   height: min(820px, 85vh);
-  background:
-    linear-gradient(180deg, rgba(22, 18, 24, 0.98), rgba(11, 10, 13, 0.98));
-  border: 1px solid rgba(201, 162, 39, 0.38);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.72), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-radius: 16px;
+  box-shadow:
+    12px 12px 32px #040306,
+    -8px -8px 24px #1c1822,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   color: #f3ead8;
+  overflow: hidden;
 }
 
 .lotm-grimoire-header {
-  height: 48px;
+  height: 52px;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0 12px;
-  background: #0b0a0d;
-  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  padding: 0 16px;
+  background: #0e0c11;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.16);
+  box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.5);
   color: #f3ead8;
   flex-shrink: 0;
 }
@@ -2477,13 +2738,18 @@ html[style*="--lang-font-stack"] {
   height: 32px;
   width: 32px;
   overflow: hidden;
-  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #050407, -2px -2px 6px #1b1722;
   color: #e8e0d0;
-  transition: width 0.18s ease;
+  transition: width 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .lotm-grimoire-search.is-open {
-  width: min(220px, 40vw);
+  width: min(240px, 40vw);
+  box-shadow: inset 2px 2px 6px #050407, inset -2px -2px 6px #1b1722;
+  border-color: rgba(201, 162, 39, 0.4);
 }
 
 .lotm-grimoire-search-toggle {
@@ -2519,10 +2785,13 @@ html[style*="--lang-font-stack"] {
   justify-content: center;
   gap: 6px;
   height: 32px;
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  background: transparent;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #050407, -2px -2px 6px #1b1722;
   color: #e8e0d0;
   cursor: pointer;
+  transition: all 0.18s ease;
 }
 
 .lotm-grimoire-close {
@@ -2532,7 +2801,7 @@ html[style*="--lang-font-stack"] {
 
 .lotm-grimoire-back {
   align-self: flex-start;
-  padding: 0 10px;
+  padding: 0 12px;
   font-family: 'Cinzel', serif;
   font-size: 9px;
   letter-spacing: 0.16em;
@@ -2541,11 +2810,11 @@ html[style*="--lang-font-stack"] {
 
 .lotm-grimoire-search:hover,
 .lotm-grimoire-close:hover,
-.lotm-grimoire-back:hover,
-.lotm-grimoire-rail button:hover,
-.lotm-grimoire-subtabs button:hover {
+.lotm-grimoire-back:hover {
   color: #e0c36a;
-  border-color: rgba(201, 162, 39, 0.55);
+  border-color: #c9a227;
+  box-shadow: 4px 4px 10px #040306, -3px -3px 8px #201b28, 0 0 10px rgba(201, 162, 39, 0.25);
+  transform: translateY(-1px);
 }
 
 .lotm-grimoire-body {
@@ -2557,82 +2826,101 @@ html[style*="--lang-font-stack"] {
 .lotm-grimoire-rail {
   display: flex;
   flex-direction: column;
-  width: 154px;
+  width: 160px;
   flex-shrink: 0;
-  padding: 12px 10px;
-  border-right: 1px solid rgba(201, 162, 39, 0.18);
+  padding: 14px 10px;
+  background: #0e0c11;
+  border-right: 1px solid rgba(201, 162, 39, 0.14);
+  box-shadow: inset -4px 0 10px #060507, inset 3px 3px 8px #060507;
 }
 
 .lotm-grimoire-rail-top {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   flex: 1 1 auto;
 }
 
 .lotm-grimoire-rail-bottom {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   margin-top: auto;
   padding-top: 10px;
-  border-top: 1px solid rgba(201, 162, 39, 0.18);
+  border-top: 1px solid rgba(201, 162, 39, 0.14);
 }
 
 .lotm-grimoire-rail-guide-btn {
   color: #c9a227 !important;
-  border-color: rgba(201, 162, 39, 0.25) !important;
-  background: rgba(201, 162, 39, 0.06) !important;
+  border-color: rgba(201, 162, 39, 0.28) !important;
+  background: rgba(201, 162, 39, 0.08) !important;
 }
 
 .lotm-grimoire-rail-guide-btn:hover {
   color: #f3ead8 !important;
   background: rgba(201, 162, 39, 0.18) !important;
-  border-color: rgba(201, 162, 39, 0.55) !important;
+  border-color: rgba(201, 162, 39, 0.5) !important;
 }
 
 .lotm-grimoire-rail-guide-btn.is-active {
-  color: #f3ead8 !important;
+  color: #e0c36a !important;
   background: rgba(201, 162, 39, 0.25) !important;
   border-color: #c9a227 !important;
+  box-shadow: inset 2px 2px 6px #050407, inset -2px -2px 6px #1b1722, 0 0 12px rgba(201, 162, 39, 0.25) !important;
 }
 
 .lotm-grimoire-rail button,
 .lotm-grimoire-subtabs button {
-  height: 34px;
-  padding: 0 10px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: rgba(232, 224, 208, 0.62);
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(201, 162, 39, 0.1);
+  border-radius: 8px;
+  background: #141118;
+  box-shadow: 2px 2px 6px #050407, -2px -2px 5px #1b1722;
+  color: rgba(243, 234, 216, 0.65);
   font-family: 'Cinzel', serif;
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: left;
   cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.lotm-grimoire-rail button:hover,
+.lotm-grimoire-subtabs button:hover {
+  color: #f3ead8;
+  border-color: rgba(201, 162, 39, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 8px #040306, -2px -2px 6px #201b28;
 }
 
 .lotm-grimoire-rail button.is-active,
 .lotm-grimoire-subtabs button.is-active {
   color: #e0c36a;
-  background: rgba(201, 162, 39, 0.16);
-  border-color: rgba(201, 162, 39, 0.28);
+  background: rgba(201, 162, 39, 0.14);
+  border-color: rgba(201, 162, 39, 0.38);
+  box-shadow: inset 2px 2px 6px #050407, inset -2px -2px 6px #1b1722, 0 0 10px rgba(201, 162, 39, 0.18);
+  transform: none;
 }
 
 .lotm-grimoire-main {
   flex: 1 1 auto;
   min-width: 0;
   overflow: auto;
-  padding: 16px 18px 22px;
+  padding: 18px 22px 24px;
 }
 
 .lotm-grimoire-chronicle {
-  margin: 0 18px 0;
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  margin: 0 0 16px;
+  padding: 14px 18px;
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 12px;
+  box-shadow: inset 4px 4px 10px #060507, inset -3px -3px 8px #191620;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 20px;
+  gap: 12px 24px;
 }
 
 .lotm-grimoire-chronicle p {
@@ -2670,26 +2958,36 @@ html[style*="--lang-font-stack"] {
 
 .lotm-grimoire-map-btn {
   margin-top: 8px;
-  height: 26px;
-  padding: 0 8px;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  background: transparent;
+  height: 28px;
+  padding: 0 12px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px #050407, -2px -2px 5px #1b1722;
   color: #e8e0d0;
   font-family: 'Cinzel', serif;
   font-size: 8px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.lotm-grimoire-map-btn:hover {
+  color: #e0c36a;
+  border-color: #c9a227;
+  box-shadow: 3px 3px 8px #040306, -2px -2px 6px #201b28, 0 0 8px rgba(201, 162, 39, 0.2);
+  transform: translateY(-1px);
 }
 
 .lotm-grimoire-stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .lotm-grimoire-group {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   font-family: 'Cinzel', serif;
   font-size: 10px;
   letter-spacing: 0.22em;
@@ -2700,7 +2998,7 @@ html[style*="--lang-font-stack"] {
 .lotm-grimoire-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 10px;
+  gap: 14px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2716,12 +3014,17 @@ html[style*="--lang-font-stack"] {
   align-items: flex-start;
   width: 100%;
   min-height: 100%;
-  padding: 12px;
-  border: 1px solid rgba(201, 162, 39, 0.22);
-  background: rgba(16, 13, 18, 0.7);
+  padding: 16px;
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    6px 6px 14px #050408,
+    -5px -5px 12px #1c1822;
   color: inherit;
   text-align: left;
   cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .lotm-grimoire-card.is-static {
@@ -2755,7 +3058,7 @@ html[style*="--lang-font-stack"] {
 .lotm-grimoire-card.is-emblem {
   align-items: center;
   gap: 12px;
-  padding: 16px 14px 14px;
+  padding: 18px 14px 14px;
 }
 
 .lotm-grimoire-card.is-emblem img,
@@ -2783,13 +3086,19 @@ html[style*="--lang-font-stack"] {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(201, 162, 39, 0.28);
+  border-radius: 50%;
   color: rgba(232, 224, 208, 0.45);
   filter: none;
 }
 
 .lotm-grimoire-card:hover:not(.is-static) {
-  border-color: rgba(201, 162, 39, 0.55);
-  background: rgba(28, 22, 18, 0.86);
+  transform: translateY(-2px);
+  border-color: rgba(201, 162, 39, 0.35);
+  box-shadow:
+    8px 8px 18px #040306,
+    -6px -6px 16px #221c2a,
+    0 0 14px rgba(201, 162, 39, 0.2);
+  background: #16131c;
 }
 
 .lotm-grimoire-card-kicker {
@@ -2834,8 +3143,82 @@ html[style*="--lang-font-stack"] {
 .lotm-grimoire-detail {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: 72ch;
+  gap: 12px;
+  max-width: 76ch;
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 12px;
+  box-shadow: inset 4px 4px 10px #060507, inset -3px -3px 8px #191620;
+  padding: 24px;
+}
+
+.lotm-grimoire-detail h3 {
+  font-size: 28px;
+}
+
+.lotm-grimoire-detail h4 {
+  margin: 10px 0 0;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.lotm-grimoire-detail p {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.lotm-grimoire-detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lotm-grimoire-timeline,
+.lotm-grimoire-plain,
+.lotm-grimoire-ladder {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lotm-grimoire-timeline li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+}
+
+.lotm-grimoire-ladder li {
+  display: grid;
+  grid-template-columns: 4.5em 1fr auto;
+  gap: 10px;
+  align-items: baseline;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.lotm-grimoire-ladder span,
+.lotm-grimoire-ladder em {
+  font-size: 12px;
+  color: rgba(232, 224, 208, 0.55);
+  font-style: normal;
+}
+
+.lotm-grimoire-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lotm-grimoire-empty {
+  margin: 24px 0;
+  color: rgba(232, 224, 208, 0.55);
+  font-family: 'EB Garamond', Georgia, serif;
 }
 
 .lotm-grimoire-detail h3 {
@@ -2944,5 +3327,771 @@ html[style*="--lang-font-stack"] {
     flex: 0 0 auto;
     border-left: 1px solid rgba(201, 162, 39, 0.18);
     padding-left: 8px;
+  }
+}
+
+/* ==========================================================================
+   Lord of the Mysteries Demo Landing Page & Dark Neumorphism
+   ========================================================================== */
+
+.lotm-landing-wrapper {
+  min-height: 100vh;
+  background-color: #0b0a0d;
+  color: #f3ead8;
+  overflow-x: hidden;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* Hero Section */
+.lotm-landing-hero {
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px 80px;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* Interactive Collage Backdrop */
+.lotm-landing-collage-backdrop {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+  transition: transform 0.18s ease-out;
+  z-index: 1;
+}
+
+.lotm-landing-collage-mesh {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lotm-collage-floating-card {
+  position: absolute;
+  width: 170px;
+  height: 236px;
+  border-radius: 12px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.42);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.8),
+    0 0 14px rgba(201, 162, 39, 0.2);
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease, z-index 0.25s;
+}
+
+.card-pos-0 { top: 6%; left: 3%; transform: rotate(-7deg); }
+.card-pos-1 { top: 5%; right: 4%; transform: rotate(6deg); }
+.card-pos-2 { bottom: 8%; left: 4%; transform: rotate(5deg); }
+.card-pos-3 { bottom: 7%; right: 5%; transform: rotate(-5deg); }
+.card-pos-4 { top: 38%; left: 1%; transform: rotate(-9deg); }
+.card-pos-5 { top: 36%; right: 2%; transform: rotate(8deg); }
+.card-pos-6 { top: 2%; left: 22%; transform: rotate(-3deg); opacity: 0.9; }
+.card-pos-7 { top: 2%; right: 22%; transform: rotate(4deg); opacity: 0.9; }
+.card-pos-8 { bottom: 3%; left: 20%; transform: rotate(4deg); opacity: 0.92; }
+.card-pos-9 { bottom: 3%; right: 20%; transform: rotate(-3deg); opacity: 0.92; }
+.card-pos-10 { top: 62%; left: 6%; transform: rotate(-4deg); }
+.card-pos-11 { top: 64%; right: 6%; transform: rotate(3deg); }
+
+.lotm-collage-floating-card:hover,
+.lotm-collage-floating-card.is-highlighted {
+  transform: scale(1.18) translateY(-8px) rotate(0deg) !important;
+  z-index: 10;
+  border-color: #e0c36a;
+  box-shadow:
+    0 0 28px rgba(224, 195, 106, 0.65),
+    0 12px 30px rgba(0, 0, 0, 0.9);
+  filter: brightness(1.15) saturate(1.1);
+}
+
+.lotm-collage-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0e0c12;
+}
+
+.lotm-collage-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: saturate(1.1) contrast(1.08) brightness(1.12);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.lotm-collage-floating-card:hover .lotm-collage-card-img,
+.lotm-collage-floating-card.is-highlighted .lotm-collage-card-img {
+  transform: scale(1.06);
+  filter: saturate(1.2) contrast(1.12) brightness(1.2);
+}
+
+.lotm-collage-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 8, 12, 0.96) 0%, rgba(10, 8, 12, 0.72) 65%, transparent 100%);
+  padding: 12px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lotm-collage-card-arcana {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #c9a227;
+  text-transform: uppercase;
+}
+
+.lotm-collage-card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f3ead8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.lotm-landing-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(11, 10, 13, 0.9) 0%, rgba(11, 10, 13, 0.65) 45%, rgba(11, 10, 13, 0.1) 85%),
+    linear-gradient(to top, #0b0a0d 0%, rgba(11, 10, 13, 0.25) 30%, transparent 70%, rgba(11, 10, 13, 0.35) 100%);
+}
+
+.lotm-landing-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lotm-landing-kicker {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c9a227;
+  margin: 0 0 16px;
+}
+
+.lotm-landing-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(32px, 6vw, 54px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f3ead8;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+}
+
+.lotm-landing-sub {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: rgba(243, 234, 216, 0.85);
+  margin: 0 auto 28px;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.lotm-landing-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Hero Interactive Showcase Bar */
+.lotm-hero-showcase-bar {
+  margin-top: 32px;
+  max-width: 660px;
+  width: 100%;
+  background: rgba(14, 12, 17, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 162, 39, 0.24);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow:
+    6px 6px 18px #040306,
+    -4px -4px 14px #1b1722;
+}
+
+.lotm-showcase-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+  padding-bottom: 10px;
+}
+
+.lotm-showcase-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(243, 234, 216, 0.65);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lotm-showcase-tab:hover {
+  color: #f3ead8;
+}
+
+.lotm-showcase-tab.is-active {
+  color: #e0c36a;
+  background: rgba(201, 162, 39, 0.14);
+  border-color: rgba(201, 162, 39, 0.38);
+}
+
+.lotm-showcase-cards-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 162, 39, 0.3) transparent;
+}
+
+.lotm-showcase-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.14);
+  border-radius: 8px;
+  padding: 6px 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: left;
+}
+
+.lotm-showcase-item:hover,
+.lotm-showcase-item.is-active {
+  border-color: #c9a227;
+  background: #1a1622;
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(201, 162, 39, 0.2);
+}
+
+.lotm-showcase-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  filter: saturate(1.1) brightness(1.1);
+}
+
+.lotm-showcase-emblem {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(201, 162, 39, 0.35)) brightness(1.12);
+}
+
+.lotm-showcase-emblem-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1f1b26;
+  color: #c9a227;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.lotm-showcase-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-showcase-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: #f3ead8;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lotm-showcase-title {
+  font-size: 10px;
+  color: rgba(201, 162, 39, 0.85);
+  white-space: nowrap;
+}
+
+.lotm-showcase-preview-plate {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: rgba(9, 8, 11, 0.94);
+  border-radius: 8px;
+  border: 1px solid rgba(201, 162, 39, 0.16);
+  text-align: left;
+}
+
+.lotm-preview-kicker {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin-bottom: 4px;
+}
+
+.lotm-preview-quote {
+  margin: 0;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(243, 234, 216, 0.88);
+  line-height: 1.45;
+}
+
+/* Main Content Container */
+.lotm-landing-main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.lotm-landing-section {
+  margin-bottom: 72px;
+}
+
+.lotm-landing-section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lotm-landing-section-kicker {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c9a227;
+  margin: 0 0 8px;
+}
+
+.lotm-landing-section-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f3ead8;
+  margin: 0 0 8px;
+}
+
+.lotm-landing-section-lead {
+  font-size: 16px;
+  color: rgba(243, 234, 216, 0.68);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Neumorphic Extruded Cards */
+.lotm-landing-card {
+  background: #121015;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    8px 8px 18px #050408,
+    -6px -6px 14px #1c1822;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.lotm-landing-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 162, 39, 0.32);
+  box-shadow:
+    10px 10px 22px #040306,
+    -7px -7px 18px #221c2a;
+}
+
+/* Neumorphic Inset Well Cards */
+.lotm-landing-well-card {
+  background: #0e0c11;
+  border: 1px solid rgba(201, 162, 39, 0.1);
+  border-radius: 12px;
+  box-shadow:
+    inset 4px 4px 10px #060507,
+    inset -3px -3px 8px #191620;
+  padding: 24px;
+}
+
+/* Pillars Grid (Responsive 2 to 3 cols) */
+.lotm-landing-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.lotm-landing-pillar-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-landing-card-icon {
+  margin-bottom: 14px;
+}
+
+.lotm-landing-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #e0c36a;
+  margin: 0 0 10px;
+}
+
+.lotm-landing-card-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(243, 234, 216, 0.76);
+  margin: 0;
+}
+
+/* Steps Grid (How it plays) */
+.lotm-landing-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.lotm-landing-step-card {
+  padding: 28px 22px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lotm-landing-step-number {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(201, 162, 39, 0.22);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Dual Grid (BYOK & Self-Host) */
+.lotm-landing-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.lotm-landing-card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.lotm-landing-card-header-row .lotm-landing-card-title {
+  margin: 0;
+}
+
+.lotm-landing-card-action {
+  margin-top: 18px;
+}
+
+.lotm-landing-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a227;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.lotm-landing-link:hover {
+  color: #f3ead8;
+}
+
+/* Sponsor Card */
+.lotm-landing-sponsor-card {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.lotm-landing-sponsor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.lotm-landing-sponsor-note {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(201, 162, 39, 0.78);
+  margin: 12px 0 20px;
+}
+
+.lotm-landing-sponsor-action {
+  display: flex;
+  align-items: center;
+}
+
+.lotm-sponsor-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Special Thanks Grid & Cards */
+.lotm-landing-thanks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.lotm-landing-thanks-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lotm-thanks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.lotm-thanks-role {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #c9a227;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Downloads Plate */
+.lotm-landing-downloads-plate {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.lotm-landing-downloads-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.lotm-landing-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(201, 162, 39, 0.14);
+  color: #c9a227;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.lotm-landing-platforms-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.lotm-landing-platform-pill {
+  padding: 8px 18px;
+  background: #141118;
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 8px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(243, 234, 216, 0.7);
+  box-shadow:
+    3px 3px 8px #060508,
+    -2px -2px 6px #1b1720;
+}
+
+/* CTA Card Banner */
+.lotm-landing-cta-banner {
+  margin-top: 32px;
+}
+
+.lotm-landing-cta-card {
+  padding: 48px 24px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  border-color: rgba(201, 162, 39, 0.25);
+}
+
+.lotm-landing-cta-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  color: #f3ead8;
+  margin: 0 0 10px;
+}
+
+.lotm-landing-cta-sub {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(243, 234, 216, 0.72);
+  margin: 0 auto 24px;
+  max-width: 480px;
+}
+
+.lotm-landing-cta-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+.lotm-landing-footer {
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  background: #080709;
+  padding: 48px 24px 64px;
+  font-size: 13px;
+  color: rgba(243, 234, 216, 0.6);
+}
+
+.lotm-landing-footer-top {
+  max-width: 1080px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.lotm-landing-footer-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: #e0c36a;
+  display: flex;
+  align-items: center;
+}
+
+.lotm-landing-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lotm-landing-footer-link {
+  color: rgba(243, 234, 216, 0.7);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.15s ease;
+}
+
+.lotm-landing-footer-link:hover {
+  color: #c9a227;
+}
+
+.lotm-landing-footer-bottom {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 1.55;
+}
+
+.lotm-landing-license {
+  margin: 0;
+  color: rgba(243, 234, 216, 0.75);
+}
+
+.lotm-landing-disclaimer {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(243, 234, 216, 0.45);
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 640px) {
+  .lotm-landing-hero {
+    min-height: 80vh;
+    padding: 48px 16px 64px;
+  }
+
+  .lotm-landing-main {
+    padding: 0 16px 60px;
+  }
+
+  .lotm-landing-section {
+    margin-bottom: 54px;
+  }
+
+  .lotm-landing-pillars-grid,
+  .lotm-landing-steps-grid,
+  .lotm-landing-dual-grid,
+  .lotm-landing-thanks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lotm-collage-floating-card {
+    width: 120px;
+    height: 168px;
+    opacity: 0.85;
+  }
+
+  .lotm-collage-card-name {
+    font-size: 10px;
+  }
+
+  .lotm-hero-showcase-bar {
+    margin-top: 24px;
+    padding: 10px 12px;
+  }
+
+  .lotm-landing-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

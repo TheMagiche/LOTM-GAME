@@ -364,7 +364,8 @@ export async function hydrateCampaign(campaignId: string) {
             }
         }
         if (finalContext.playerCharacter) {
-            const nextPc = attachLotmPathwaysToNpcs([finalContext.playerCharacter])[0];
+            const withPathways = attachLotmPathwaysToNpcs([finalContext.playerCharacter])[0];
+            const nextPc = attachLotmPortraitsToNpcs([withPathways], spoilers, 'fill')[0];
             if (nextPc !== finalContext.playerCharacter) {
                 const pathwayLabel = formatLotmPathwayLabel(nextPc.signatureKit?.pathway, nextPc.signatureKit?.sequence);
                 finalContext = {

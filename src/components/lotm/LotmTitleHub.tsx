@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, BookOpen, Check, KeyRound, Loader2, Pencil, Settings, Trash2 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { deleteCampaign, listCampaigns, saveCampaign } from '../../store/campaignStore';
@@ -9,6 +9,7 @@ import { filterLoadableCampaigns, pickContinueCampaign } from '../../services/lo
 import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
 import { LORD_OF_THE_MYSTERIES_PACK, DEFAULT_PLAYABLE_PC_ID } from '../../worldpacks/lordOfTheMysteries';
 import { getLotmPathway, lotmChronicleName, resolveLotmPathway } from '../../worldpacks/lotmPathways';
+import { LANDING_COLLAGE_CARDS } from '../landing/landingCopy';
 import type { Campaign } from '../../types';
 import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
@@ -43,8 +44,21 @@ export function LotmTitleHub() {
     const [renameDraft, setRenameDraft] = useState('');
     const [pickingChronicle, setPickingChronicle] = useState(false);
     const [enteringId, setEnteringId] = useState<string | null>(null);
-    const cover = lotmAssetUrl(LORD_OF_THE_MYSTERIES_PACK.coverAssetPath ?? 'image/cover.webp');
+    const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+    const hubRef = useRef<HTMLDivElement | null>(null);
     const playablePcs = LORD_OF_THE_MYSTERIES_PACK.playablePcs ?? [];
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!hubRef.current) return;
+        const rect = hubRef.current.getBoundingClientRect();
+        const normX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const normY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+        setMousePos({ x: normX, y: normY });
+    };
+
+    const handleMouseLeave = () => {
+        setMousePos({ x: 0, y: 0 });
+    };
 
     const refresh = useCallback(async () => {
         const list = await listCampaigns();
@@ -69,6 +83,8 @@ export function LotmTitleHub() {
         return () => window.removeEventListener('keydown', onKey);
     }, [pickingPc, busy]);
 
+    const providers = useAppStore(s => s.settings.providers);
+    const demoKeyReady = IS_DEMO_MODE && hasUsableDemoProvider(providers);
     const continueCampaign = IS_DEMO_MODE ? null : pickContinueCampaign(campaigns);
     const sortedCampaigns = campaigns
         .slice()
@@ -162,22 +178,71 @@ export function LotmTitleHub() {
     };
 
     return (
-        <div className={`lotm-title-hub${pickingPc ? ' is-picking' : ''}`}>
-            <div className="lotm-title-hub-art" style={{ backgroundImage: `url("${cover}")` }} aria-hidden />
+        <div
+            ref={hubRef}
+            className={`lotm-title-hub${pickingPc ? ' is-picking' : ''}`}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+        >
+            {/* OCCULT FLOATING CARD MESH (Matching LandingPage hero) */}
+            <div
+                className="lotm-landing-collage-backdrop"
+                aria-hidden="true"
+                style={{
+                    transform: `translate3d(${mousePos.x * -12}px, ${mousePos.y * -12}px, 0)`,
+                    opacity: pickingPc ? 0.22 : 0.85,
+                    transition: 'opacity 0.4s ease, transform 0.18s ease-out',
+                }}
+            >
+                <div className="lotm-landing-collage-mesh">
+                    {LANDING_COLLAGE_CARDS.map((card, idx) => {
+                        const imgSrc = lotmAssetUrl(card.image);
+                        return (
+                            <div
+                                key={card.id}
+                                className={`lotm-collage-floating-card card-pos-${idx}`}
+                                style={{
+                                    transform: `translate3d(${mousePos.x * (idx % 3 === 0 ? 8 : -8)}px, ${mousePos.y * (idx % 2 === 0 ? 8 : -8)}px, 0)`,
+                                }}
+                            >
+                                <div className="lotm-collage-card-inner">
+                                    <img src={imgSrc} alt="" className="lotm-collage-card-img" />
+                                    <div className="lotm-collage-card-overlay">
+                                        <span className="lotm-collage-card-arcana">{card.tarotNumber}</span>
+                                        <span className="lotm-collage-card-name">{card.name}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
             <div className="lotm-title-hub-scrim" aria-hidden />
 
-            <button
-                type="button"
-                className="lotm-title-hub-grimoire"
-                title="Grimoire"
-                aria-label="Open Grimoire"
-                disabled={busy}
-                onClick={() => useAppStore.getState().openGrimoire()}
-            >
-                <BookOpen size={15} />
-            </button>
+            {IS_DEMO_MODE ? (
+                <a
+                    href="/"
+                    className="lotm-title-hub-grimoire lotm-title-hub-landing"
+                    title="Back to landing page"
+                    aria-label="Back to landing page"
+                >
+                    <ArrowLeft size={16} />
+                </a>
+            ) : (
+                <button
+                    type="button"
+                    className="lotm-title-hub-grimoire"
+                    title="Grimoire"
+                    aria-label="Open Grimoire"
+                    disabled={busy}
+                    onClick={() => useAppStore.getState().openGrimoire()}
+                >
+                    <BookOpen size={15} />
+                </button>
+            )}
 
-            {pickingPc && (
+            {!IS_DEMO_MODE && pickingPc && (
                 <button
                     type="button"
                     className="lotm-title-hub-back"
@@ -190,23 +255,25 @@ export function LotmTitleHub() {
                 </button>
             )}
 
-            <button
-                type="button"
-                className="lotm-title-hub-gear"
-                title={IS_DEMO_MODE ? 'API key' : 'Settings'}
-                aria-label={IS_DEMO_MODE ? 'API key' : 'Settings'}
-                disabled={busy}
-                onClick={() => {
-                    if (IS_DEMO_MODE) useAppStore.getState().openDemoOnboarding();
-                    else useAppStore.getState().toggleSettings();
-                }}
-            >
-                {IS_DEMO_MODE ? <KeyRound size={15} /> : <Settings size={15} />}
-            </button>
+            {(!IS_DEMO_MODE || !demoKeyReady) && (
+                <button
+                    type="button"
+                    className="lotm-title-hub-gear"
+                    title={IS_DEMO_MODE ? 'API key' : 'Settings'}
+                    aria-label={IS_DEMO_MODE ? 'API key' : 'Settings'}
+                    disabled={busy}
+                    onClick={() => {
+                        if (IS_DEMO_MODE) useAppStore.getState().openDemoOnboarding();
+                        else useAppStore.getState().toggleSettings();
+                    }}
+                >
+                    {IS_DEMO_MODE ? <KeyRound size={15} /> : <Settings size={15} />}
+                </button>
+            )}
 
             {!pickingPc && (
                 <div className="lotm-title-hub-copy">
-                    <p className="lotm-title-hub-kicker">Dungeon Master</p>
+                    <p className="lotm-title-hub-kicker">AI Narrative RPG</p>
                     <h1>Lord of the Mysteries</h1>
                     <p className="lotm-title-hub-sub">A Victorian occult chronicle. Join the world of beyonders.</p>
                     {IS_DEMO_MODE && (

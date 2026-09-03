@@ -25,6 +25,7 @@ describe('server demoMode', () => {
             process.env.DEMO_MODE = '1';
             const injected = injectDemoBootScript(html);
             expect(injected).toContain('window.__LOTM_DEMO_MODE__=true');
+            expect(injected).toContain('<base href="/">');
             expect(injectDemoBootScript(injected)).toBe(injected);
         } finally {
             if (previous === undefined) delete process.env.DEMO_MODE;

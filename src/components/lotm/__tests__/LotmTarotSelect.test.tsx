@@ -1,8 +1,8 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DEFAULT_PLAYABLE_PC_ID, LOTM_PLAYABLE_PCS } from '../../../worldpacks/lordOfTheMysteries';
-import { lotmChronicleName } from '../../../worldpacks/lotmPathways';
-import { LotmTarotSelect } from '../LotmTarotSelect';
+import { lotmChronicleName, resolveLotmPathway } from '../../../worldpacks/lotmPathways';
+import { getCharacterImageForPc, LotmTarotSelect } from '../LotmTarotSelect';
 
 afterEach(() => {
     cleanup();
@@ -47,5 +47,17 @@ describe('LotmTarotSelect', () => {
         expect(onSelect).toHaveBeenCalled();
         expect(onSelect.mock.calls[0][0]).not.toBe('');
         expect(screen.queryByRole('textbox')).toBeNull();
+    });
+
+    it('resolves player images from gamedata/image/players for matching characters', () => {
+        const clara = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Clara Whitlock')!;
+        const benedict = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Benedict Faulkner')!;
+        const arthur = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Arthur Pendel')!;
+        const cassian = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Cassian Dray')!;
+
+        expect(getCharacterImageForPc(clara, resolveLotmPathway(clara.pathway))).toContain('image/players/clara_whitlock.jpeg');
+        expect(getCharacterImageForPc(benedict, resolveLotmPathway(benedict.pathway))).toContain('image/players/benedict_faulkner.jpeg');
+        expect(getCharacterImageForPc(arthur, resolveLotmPathway(arthur.pathway))).toContain('image/players/arthur_pendel.jpeg');
+        expect(getCharacterImageForPc(cassian, resolveLotmPathway(cassian.pathway))).toContain('image/players/cassian_dray.jpeg');
     });
 });

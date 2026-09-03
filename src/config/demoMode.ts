@@ -16,6 +16,23 @@ export function resolveIsDemoMode(
  */
 export const IS_DEMO_MODE = resolveIsDemoMode();
 
+/** Public marketing page stays at `/`. The playable demo boots at this path. */
+export const DEMO_PLAY_PATH = '/play';
+
+export function normalizePathname(pathname: string): string {
+    const trimmed = pathname.replace(/\/+$/, '');
+    return trimmed === '' ? '/' : trimmed;
+}
+
+export function isDemoPlayPath(pathname: string): boolean {
+    return normalizePathname(pathname) === DEMO_PLAY_PATH;
+}
+
+/** Demo visitors see the landing page until they follow the play link. */
+export function shouldShowDemoLanding(isDemo: boolean, pathname: string): boolean {
+    return isDemo && !isDemoPlayPath(pathname);
+}
+
 /** Idle logout. Default 45 minutes. */
 export const DEMO_IDLE_MS = Number(import.meta.env.VITE_DEMO_IDLE_MS) || 45 * 60 * 1000;
 
@@ -39,14 +56,14 @@ export function isOpenRouterEndpoint(endpoint: string): boolean {
 }
 
 /**
- * Starter roster for the public demo: Fool (Clara), combat (Jacob / Red Priest),
- * divination-adjacent (Edmund / Door), Tingen Nighthawk flavour (Arthur / Darkness).
+ * Starter roster for the public demo: Fool (Clara), Hermit (Benedict),
+ * Darkness (Arthur), Hanged Man (Cassian) — matching characters with player images.
  */
 export const DEMO_PLAYABLE_PC_FILES = [
     'lotm_pc_clara_whitlock.json',
-    'lotm_pc_jacob_thorne.json',
-    'lotm_pc_edmund_vale.json',
+    'lotm_pc_benedict_faulkner.json',
     'lotm_pc_arthur_pendel.json',
+    'lotm_pc_cassian_dray.json',
 ] as const;
 
 export function isDemoPlayablePcFile(pathOrName: string): boolean {

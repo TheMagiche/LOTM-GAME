@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const DEMO_BOOT_SCRIPT = '<script>window.__LOTM_DEMO_MODE__=true;</script>';
+const DEMO_BOOT_SCRIPT = '<script>window.__LOTM_DEMO_MODE__=true;</script><base href="/">';
 
 export function isDemoMode() {
     const env = String(process.env.DEMO_MODE || '').trim().toLowerCase();

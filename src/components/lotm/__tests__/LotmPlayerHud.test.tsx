@@ -30,19 +30,23 @@ afterEach(() => {
         pcPanelOpen: false,
         grimoireOpen: false,
         grimoireFocus: null,
+        playerGrimoireOpen: false,
+        playerGrimoireSection: 'character',
     });
 });
 
 describe('LotmPlayerHud', () => {
     beforeEach(() => {
         useAppStore.setState({
-        playerCharacter: null,
-        characterProfileData: DEFAULT_CHARACTER_PROFILE,
-        inventoryItems: [],
-        pcPanelOpen: false,
-        grimoireOpen: false,
-        grimoireFocus: null,
-    });
+            playerCharacter: null,
+            characterProfileData: DEFAULT_CHARACTER_PROFILE,
+            inventoryItems: [],
+            pcPanelOpen: false,
+            grimoireOpen: false,
+            grimoireFocus: null,
+            playerGrimoireOpen: false,
+            playerGrimoireSection: 'character',
+        });
     });
 
     it('renders nothing without a seeded character', () => {
@@ -54,7 +58,7 @@ describe('LotmPlayerHud', () => {
         seedClara();
         render(<LotmPlayerHud />);
 
-        const hud = screen.getByRole('complementary', { name: 'Player status' });
+        const hud = screen.getByRole('complementary', { name: /Player status/i });
         expect(hud).toBeInTheDocument();
         expect(screen.getByText('Clara Whitlock')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Open Character Record for Clara Whitlock' })).toBeInTheDocument();
@@ -74,9 +78,11 @@ describe('LotmPlayerHud', () => {
         expect(screen.getByRole('meter', { name: 'Loss of Control' })).toHaveAttribute('aria-valuetext', 'stable');
         expect(screen.getByText('stable')).toBeInTheDocument();
         expect(screen.getByLabelText('Sequence band')).toHaveTextContent(/Advantage/);
-        expect(screen.getByLabelText(/Sequence ladder/i).querySelector('li.is-current')).toHaveTextContent('9');
-        expect(screen.getByLabelText('Sequence abilities')).toHaveTextContent(/Spirit Vision/);
+        expect(screen.queryByLabelText(/Sequence ladder/i)).not.toBeInTheDocument();
+        expect(screen.queryByLabelText('Sequence abilities')).not.toBeInTheDocument();
+        expect(screen.queryByText(/Spirit Vision/)).not.toBeInTheDocument();
         expect(screen.queryByText(/Revere fate/i)).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /Open Player Grimoire/i })).not.toBeInTheDocument();
     });
 
     it('renders Loss of Control as a stage meter matching Spirit and Digestion', () => {
@@ -97,7 +103,7 @@ describe('LotmPlayerHud', () => {
         expect(screen.queryByText('LoC')).not.toBeInTheDocument();
     });
 
-    it('expands location and carried items including currency, hiding an empty bounty', () => {
+    it('opens the Player Grimoire from the HUD chrome without revealing location or carried items', () => {
         seedClara();
         useAppStore.setState({
             inventoryItems: [
@@ -127,42 +133,16 @@ describe('LotmPlayerHud', () => {
         });
         render(<LotmPlayerHud />);
 
-        fireEvent.click(screen.getByRole('complementary', { name: 'Player status' }));
-        expect(screen.getByText('Location')).toBeInTheDocument();
-        expect(screen.getByText('Tingen')).toBeInTheDocument();
-        expect(screen.getByText('soli')).toBeInTheDocument();
-        expect(screen.getByText('Currency')).toBeInTheDocument();
+        fireEvent.click(screen.getByRole('complementary', { name: /Player status/i }));
+        expect(useAppStore.getState().playerGrimoireOpen).toBe(true);
+        expect(useAppStore.getState().playerGrimoireSection).toBe('character');
+        expect(screen.queryByText('Location')).not.toBeInTheDocument();
+        expect(screen.queryByText('Carried')).not.toBeInTheDocument();
+        expect(screen.queryByText('soli')).not.toBeInTheDocument();
+        expect(screen.queryByText(/Grandfather's leather casebook/)).not.toBeInTheDocument();
         expect(screen.queryByText('Bounty')).not.toBeInTheDocument();
-        expect(screen.getByText('Physique')).toBeInTheDocument();
-        expect(screen.getByText(/Grandfather's leather casebook/)).toBeInTheDocument();
-        expect(screen.getByLabelText('Sequence abilities')).toHaveTextContent(/Spirit Vision/);
-        expect(screen.queryByText(/Sequence 8 · Clown/)).not.toBeInTheDocument();
-        expect(screen.queryByAltText(/potion/i)).not.toBeInTheDocument();
-        expect(screen.getByRole('complementary', { name: 'Player status' })).toHaveAttribute('aria-expanded', 'true');
-        expect(screen.queryByRole('button', { name: /Drink next potion/i })).not.toBeInTheDocument();
-    });
-
-    it('shows bounty only when a wanted price is posted', () => {
-        const { profile } = seedClara();
-        useAppStore.setState({
-            characterProfileData: { ...profile, bounty: 'Church of the Evernight — 30 pounds' },
-        });
-        render(<LotmPlayerHud />);
-
-        fireEvent.click(screen.getByRole('complementary', { name: 'Player status' }));
-        expect(screen.getByText('Bounty')).toBeInTheDocument();
-        expect(screen.getByText('Church of the Evernight — 30 pounds')).toBeInTheDocument();
-    });
-
-    it('hides bounty when the posted amount is zero', () => {
-        const { profile } = seedClara();
-        useAppStore.setState({
-            characterProfileData: { ...profile, bounty: 'Church of the Evernight — 0 pounds' },
-        });
-        render(<LotmPlayerHud />);
-
-        fireEvent.click(screen.getByRole('complementary', { name: 'Player status' }));
-        expect(screen.queryByText('Bounty')).not.toBeInTheDocument();
+        expect(screen.getByRole('complementary', { name: /Player status/i })).not.toHaveAttribute('aria-expanded');
+        expect(screen.queryByRole('button', { name: /Open Player Grimoire/i })).not.toBeInTheDocument();
     });
 
     it('opens the Player Grimoire Character Record from the name and Pathway details from the emblem', async () => {
@@ -180,6 +160,5 @@ describe('LotmPlayerHud', () => {
         await user.click(screen.getByRole('button', { name: /Open Pathway details for Fool Pathway/i }));
         expect(useAppStore.getState().playerGrimoireOpen).toBe(true);
         expect(useAppStore.getState().playerGrimoireSection).toBe('pathway');
-        expect(screen.getByRole('complementary', { name: 'Player status' })).toHaveAttribute('aria-expanded', 'false');
     });
 });

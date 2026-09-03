@@ -1,11 +1,6 @@
-import { useEffect, useState, type KeyboardEvent, type MouseEvent } from 'react';
-import { Sparkles, X, AlertTriangle } from 'lucide-react';
+import type { KeyboardEvent, MouseEvent } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import { buildLotmPlayerHudModel } from './lotmPlayerHudModel';
-import { formatLotmBountyLine } from '../../worldpacks/lotmPurse';
-import { findLotmAbilityByName, warmupLotmAbilityCompendium } from '../../worldpacks/lotmAbilityCompendium';
-
-const SEQUENCE_LADDER = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] as const;
 
 function isHudChromeTarget(target: EventTarget | null): boolean {
     return !(target instanceof Element) || !target.closest('button, a, input, textarea, select, [role="button"]');
@@ -54,61 +49,22 @@ function Meter({
     );
 }
 
-function Fact({ label, value }: { label: string; value: string }) {
-    return (
-        <div className="lotm-player-hud-fact">
-            <dt>{label}</dt>
-            <dd>{value}</dd>
-        </div>
-    );
-}
-
-function hasVisibleBounty(value: string): boolean {
-    const trimmed = value.trim();
-    if (!trimmed || trimmed === '—') return false;
-    if (/^0(\s+pounds?)?$/i.test(trimmed)) return false;
-    if (/—\s*0\s+pounds?$/i.test(trimmed)) return false;
-    return true;
-}
-
 export function LotmPlayerHud() {
     const playerCharacter = useAppStore(s => s.playerCharacter);
     const characterProfileData = useAppStore(s => s.characterProfileData ?? s.context.characterProfileData);
-    const inventoryItems = useAppStore(s => s.inventoryItems ?? s.context.inventoryItems ?? []);
-    const locationLedger = useAppStore(s => s.locationLedger);
     const npcLedger = useAppStore(s => s.npcLedger);
     const onStageNpcIds = useAppStore(s => s.onStageNpcIds);
-    const currentPlaceId = useAppStore(s => s.context.currentPlaceId);
-    const currentFeature = useAppStore(s => s.context.currentFeature);
     const lastLootReceipt = useAppStore(s => s.lastLootReceipt);
     const setLastLootReceipt = useAppStore(s => s.setLastLootReceipt);
-    const [inventoryOpen, setInventoryOpen] = useState(false);
-    const [selectedAbilityName, setSelectedAbilityName] = useState<string | null>(null);
 
-    useEffect(() => {
-        warmupLotmAbilityCompendium();
-    }, []);
-
-    const currentPlace = currentPlaceId
-        ? locationLedger.find(place => place.id === currentPlaceId)
-        : undefined;
     const onStage = new Set(onStageNpcIds ?? []);
     const opponents = onStage.size === 0
         ? []
         : npcLedger.filter(npc => onStage.has(npc.id));
-    const model = buildLotmPlayerHudModel(playerCharacter, characterProfileData, {
-        inventory: inventoryItems,
-        locationName: currentPlace?.name || null,
-        locationFeature: currentFeature || null,
-        bounty: characterProfileData?.bounty
-            || formatLotmBountyLine(playerCharacter?.pcMeta?.bounty)
-            || null,
-        opponents,
-    });
+    const model = buildLotmPlayerHudModel(playerCharacter, characterProfileData, { opponents });
     if (!model.present) return null;
 
     const subtitle = [model.pathwayName, model.sequenceLabel].filter(Boolean).join(' · ');
-    const showBounty = hasVisibleBounty(model.bounty);
 
     const openCharacterRecord = () => {
         useAppStore.getState().openPlayerGrimoire('character');
@@ -118,13 +74,21 @@ export function LotmPlayerHud() {
         useAppStore.getState().openPlayerGrimoire('pathway');
     };
 
-    const toggleAbility = (abilityName: string) => {
-        setSelectedAbilityName(current => (current === abilityName ? null : abilityName));
+    const openPlayerGrimoire = () => {
+        useAppStore.getState().openPlayerGrimoire();
     };
 
-    const activeAbilityDetail = selectedAbilityName
-        ? findLotmAbilityByName(selectedAbilityName, model.pathwayId, model.sequenceNumber)
-        : null;
+    const onHudClick = (event: MouseEvent<HTMLElement>) => {
+        if (!isHudChromeTarget(event.target)) return;
+        openPlayerGrimoire();
+    };
+
+    const onHudKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+        if (event.target !== event.currentTarget) return;
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        openPlayerGrimoire();
+    };
 
     const locTooltip = (() => {
         switch (model.locStage) {
@@ -139,26 +103,11 @@ export function LotmPlayerHud() {
         }
     })();
 
-    const toggleInventory = () => setInventoryOpen(open => !open);
-
-    const onHudClick = (event: MouseEvent<HTMLElement>) => {
-        if (!isHudChromeTarget(event.target)) return;
-        toggleInventory();
-    };
-
-    const onHudKeyDown = (event: KeyboardEvent<HTMLElement>) => {
-        if (event.target !== event.currentTarget) return;
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-        event.preventDefault();
-        toggleInventory();
-    };
-
     return (
         <aside
-            className={`lotm-player-hud${inventoryOpen ? ' is-expanded' : ''}`}
-            aria-label="Player status"
-            aria-expanded={inventoryOpen}
-            aria-controls="lotm-player-hud-inventory"
+            className="lotm-player-hud"
+            aria-label="Player status. Open Player Grimoire"
+            title="Sequence progress, abilities, and carried items are in the Player Grimoire"
             tabIndex={0}
             onClick={onHudClick}
             onKeyDown={onHudKeyDown}
@@ -192,7 +141,20 @@ export function LotmPlayerHud() {
                         <div className="lotm-player-hud-identity">
                             <span className="lotm-player-hud-kicker">Beyonder</span>
                             <span className="lotm-player-hud-name">{model.name}</span>
-                            {subtitle && <span className="lotm-player-hud-pathway">{subtitle}</span>}
+                            {(subtitle || model.sequenceBand) && (
+                                <span className="lotm-player-hud-pathway">
+                                    {subtitle}
+                                    {model.sequenceBand && (
+                                        <span
+                                            className={`lotm-player-hud-band is-${model.sequenceBand.band.toLowerCase()}`}
+                                            aria-label="Sequence band"
+                                            title={model.sequenceBandLine}
+                                        >
+                                            {model.sequenceBand.band}
+                                        </span>
+                                    )}
+                                </span>
+                            )}
                         </div>
                     </button>
                 </div>
@@ -218,125 +180,11 @@ export function LotmPlayerHud() {
                 </div>
             </div>
 
-            {model.sequenceBandLine && (
-                <p className={`lotm-player-hud-band is-${model.sequenceBand?.band.toLowerCase()}`} aria-label="Sequence band">
-                    {model.sequenceBandLine}
-                </p>
-            )}
-
-            {/* Quick Ability Deck */}
-            {model.abilities.length > 0 && (
-                <div className="lotm-player-hud-ability-preview" aria-label="Sequence abilities" title={model.abilities.join(' · ')}>
-                    {model.abilities.map((name, i) => (
-                        <span key={name}>
-                            {i > 0 && ' · '}
-                            <button
-                                type="button"
-                                onClick={() => toggleAbility(name)}
-                                className={`lotm-player-hud-ability-btn hover:underline transition-colors ${
-                                    selectedAbilityName === name ? 'text-terminal font-semibold' : ''
-                                }`}
-                                title="Click to view ability costs & description"
-                            >
-                                {name}
-                            </button>
-                        </span>
-                    ))}
-                </div>
-            )}
-
-            {/* Expanded Ability Details Card */}
-            {selectedAbilityName && (
-                <div className="mx-3 my-1.5 p-2.5 rounded bg-void/90 border border-terminal/30 text-xs text-text-primary shadow-lg relative animate-fadeIn">
-                    <div className="flex items-center justify-between border-b border-border/40 pb-1.5 mb-1.5">
-                        <div className="flex items-center gap-1.5 font-bold text-terminal">
-                            <Sparkles size={13} className="text-amber-400" />
-                            <span>{activeAbilityDetail?.name || selectedAbilityName}</span>
-                            {activeAbilityDetail?.costs?.[0] && (
-                                <span className="font-mono text-[10px] font-normal px-1.5 py-0.2 rounded bg-terminal/10 text-terminal border border-terminal/20">
-                                    {activeAbilityDetail.costs[0]}
-                                </span>
-                            )}
-                        </div>
-                        <button
-                            type="button"
-                            onClick={() => setSelectedAbilityName(null)}
-                            className="text-text-dim hover:text-text-primary p-0.5 rounded"
-                            aria-label="Close ability detail"
-                        >
-                            <X size={14} />
-                        </button>
-                    </div>
-                    <p className="text-[11px] leading-relaxed text-text-dim/90">
-                        {activeAbilityDetail?.description || 'Channel this sequence ability during spiritual actions.'}
-                    </p>
-                    {activeAbilityDetail?.limitations?.[0] && (
-                        <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-amber-400/90 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">
-                            <AlertTriangle size={11} className="shrink-0" />
-                            <span>Limit: {activeAbilityDetail.limitations[0]}</span>
-                        </div>
-                    )}
-                </div>
-            )}
-
             {lastLootReceipt && lastLootReceipt.names.length > 0 && (
                 <p className="lotm-player-hud-loot" role="status">
                     <span>Loot · {lastLootReceipt.names.join(' · ')}</span>
                     <button type="button" onClick={() => setLastLootReceipt(null)} aria-label="Dismiss loot receipt">×</button>
                 </p>
-            )}
-
-            {typeof model.sequenceNumber === 'number' && (
-                <ol className="lotm-player-hud-track" aria-label={`Sequence ladder, currently ${model.sequenceLabel || `Sequence ${model.sequenceNumber}`}`}>
-                    {SEQUENCE_LADDER.map(seq => {
-                        const state = seq === model.sequenceNumber
-                            ? 'is-current'
-                            : seq > model.sequenceNumber!
-                                ? 'is-past'
-                                : 'is-ahead';
-                        return (
-                            <li key={seq} className={state} title={`Sequence ${seq}`}>
-                                {seq}
-                            </li>
-                        );
-                    })}
-                </ol>
-            )}
-
-            {inventoryOpen && (
-                <div id="lotm-player-hud-inventory" className="lotm-player-hud-details">
-                    <dl className="lotm-player-hud-facts">
-                        <Fact label="Location" value={model.location} />
-                        {showBounty && <Fact label="Bounty" value={model.bounty} />}
-                    </dl>
-                    {model.stats.length > 0 && (
-                        <dl className="lotm-player-hud-stats">
-                            {model.stats.map(stat => (
-                                <div key={stat.label}>
-                                    <dt>{stat.label}</dt>
-                                    <dd>{stat.value}</dd>
-                                </div>
-                            ))}
-                        </dl>
-                    )}
-                    <div>
-                        <p className="lotm-player-hud-section">Carried</p>
-                        {model.items.length > 0 ? (
-                            <ul className="lotm-player-hud-items">
-                                {model.items.map(item => (
-                                    <li key={item.id}>
-                                        <span>{item.name}</span>
-                                        {item.badge && <span className="lotm-player-hud-qty">{item.badge}</span>}
-                                        {item.qty > 1 && <span className="lotm-player-hud-qty">×{item.qty}</span>}
-                                        {item.equipped && <span className="lotm-player-hud-equipped">equipped</span>}
-                                    </li>
-                                ))}
-                            </ul>
-                        ) : (
-                            <p className="lotm-player-hud-empty">No items recorded yet.</p>
-                        )}
-                    </div>
-                </div>
             )}
         </aside>
     );

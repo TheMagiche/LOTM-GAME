@@ -6,7 +6,10 @@ import {
     formatLotmTarotKicker,
     lotmTarotOrder,
     resolveLotmPathway,
+    type LotmPathwayDef,
 } from '../../worldpacks/lotmPathways';
+import { lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
+import { LOTM_PLAYER_PORTRAITS } from '../../worldpacks/lotmVisualManifest';
 
 interface SlotStyle {
     x: number;
@@ -20,10 +23,10 @@ interface SlotStyle {
 function getSlotStyle(offset: number): SlotStyle {
     const abs = Math.abs(offset);
     if (abs === 0) return { x: 0, rotateY: 0, scale: 1, zIndex: 100, opacity: 1, blur: 0 };
-    if (abs === 1) return { x: offset * 168, rotateY: -offset * 28, scale: 0.86, zIndex: 50, opacity: 0.78, blur: 0 };
-    if (abs === 2) return { x: offset * 250, rotateY: -offset * 38, scale: 0.72, zIndex: 20, opacity: 0.42, blur: 0.6 };
-    if (abs === 3) return { x: offset * 310, rotateY: -offset * 46, scale: 0.6, zIndex: 5, opacity: 0.18, blur: 1.2 };
-    return { x: offset * 340, rotateY: -offset * 52, scale: 0.5, zIndex: 0, opacity: 0, blur: 2 };
+    if (abs === 1) return { x: offset * 185, rotateY: -offset * 26, scale: 0.88, zIndex: 50, opacity: 0.82, blur: 0 };
+    if (abs === 2) return { x: offset * 280, rotateY: -offset * 36, scale: 0.74, zIndex: 20, opacity: 0.45, blur: 0.6 };
+    if (abs === 3) return { x: offset * 345, rotateY: -offset * 44, scale: 0.62, zIndex: 5, opacity: 0.18, blur: 1.2 };
+    return { x: offset * 380, rotateY: -offset * 50, scale: 0.5, zIndex: 0, opacity: 0, blur: 2 };
 }
 
 function wrappedOffset(index: number, active: number, length: number): number {
@@ -39,6 +42,69 @@ export function sortPlayablePcsForTarot(pcs: PlayablePcOption[]): PlayablePcOpti
         const order = lotmTarotOrder(resolveLotmPathway(a.pathway)) - lotmTarotOrder(resolveLotmPathway(b.pathway));
         return order || a.name.localeCompare(b.name);
     });
+}
+
+const PLAYER_CHARACTER_ART: Record<string, string> = Object.fromEntries(
+    LOTM_PLAYER_PORTRAITS.map(entry => [entry.id.replace(/-/g, '_'), entry.portrait]),
+);
+
+const PATHWAY_CHARACTER_ART: Record<string, string> = {
+    fool: 'image/characters/the_fool.webp',
+    visionary: 'image/characters/audrey_hall.webp',
+    tyrant: 'image/characters/alger_wilson.webp',
+    sun: 'image/characters/derrick_berg.webp',
+    door: 'image/characters/fors_wall.webp',
+    darkness: 'image/characters/leonard_mitchell.webp',
+    death: 'image/characters/daly_simone.webp',
+    twilight_giant: 'image/characters/colin_iliad.webp',
+    red_priest: 'image/characters/danitz_dubois.webp',
+    demoness: 'image/characters/trissy.webp',
+    hermit: 'image/characters/cattleya.webp',
+    paragon: 'image/characters/roselle_gustav.webp',
+    black_emperor: 'image/characters/roselle_gustav.webp',
+    justiciar: 'image/characters/xio_derecha.webp',
+    wheel_of_fortune: 'image/characters/will_auceptin.webp',
+    moon: 'image/characters/emlyn_white.webp',
+    mother: 'image/characters/frank_lee.webp',
+    planter: 'image/characters/frank_lee.webp',
+    chained: 'image/characters/sharron.webp',
+    abyss: 'image/characters/true_creator.webp',
+    criminal: 'image/characters/true_creator.webp',
+    hanged_man: 'image/characters/sasrir.webp',
+    secrets_supplicant: 'image/characters/sasrir.webp',
+    reader: 'image/characters/edwina_edwards.webp',
+    white_tower: 'image/characters/edwina_edwards.webp',
+    error: 'image/characters/amon.webp',
+    marauder: 'image/characters/amon.webp',
+};
+
+function normalizePcKey(key: string): string {
+    return key.toLowerCase().replace(/^pc_lotm_/, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+}
+
+export function getCharacterImageForPc(pc: PlayablePcOption, pathway: LotmPathwayDef | undefined): string {
+    const pcIdKey = normalizePcKey(pc.id);
+    if (PLAYER_CHARACTER_ART[pcIdKey]) {
+        return lotmAssetUrl(PLAYER_CHARACTER_ART[pcIdKey]);
+    }
+    const pcNameKey = normalizePcKey(pc.name);
+    if (PLAYER_CHARACTER_ART[pcNameKey]) {
+        return lotmAssetUrl(PLAYER_CHARACTER_ART[pcNameKey]);
+    }
+    for (const [key, path] of Object.entries(PLAYER_CHARACTER_ART)) {
+        if (pcIdKey.includes(key) || key.includes(pcIdKey) || pcNameKey.includes(key) || key.includes(pcNameKey)) {
+            return lotmAssetUrl(path);
+        }
+    }
+
+    const pathwayId = pathway?.id?.toLowerCase() || pc.pathway?.toLowerCase() || '';
+    const charPath = PATHWAY_CHARACTER_ART[pathwayId];
+    if (charPath) return lotmAssetUrl(charPath);
+    for (const [key, path] of Object.entries(PATHWAY_CHARACTER_ART)) {
+        if (pathwayId.includes(key) || key.includes(pathwayId)) return lotmAssetUrl(path);
+    }
+    if (pathway?.emblemSrc) return pathway.emblemSrc;
+    return lotmAssetUrl('image/players/clara_whitlock.jpeg');
 }
 
 export interface LotmTarotSelectProps {
@@ -115,7 +181,9 @@ export function LotmTarotSelect({
                         const selected = offset === 0;
                         const pathway = resolveLotmPathway(pc.pathway);
                         const emblem = pathway?.emblemSrc || '';
+                        const charImg = getCharacterImageForPc(pc, pathway);
                         const hidden = slot.opacity === 0;
+                        const arcanaKicker = formatLotmTarotKicker(pathway) || pathway?.name;
                         return (
                             <button
                                 key={pc.id}
@@ -140,15 +208,20 @@ export function LotmTarotSelect({
                                     if (selected) onConfirm();
                                 }}
                             >
-                                <span className="lotm-tarot-card-arcana">{formatLotmTarotKicker(pathway) || pathway?.name}</span>
-                                <span className="lotm-tarot-card-emblem">
+                                <div className="lotm-tarot-card-inner">
+                                    <img src={charImg} alt={pc.name} className="lotm-tarot-card-img" />
                                     {emblem ? (
-                                        <img src={emblem} alt="" aria-hidden="true" />
+                                        <div className="lotm-tarot-card-emblem-badge" aria-hidden="true">
+                                            <img src={emblem} alt="" />
+                                        </div>
                                     ) : null}
-                                </span>
-                                <span className="lotm-tarot-card-name">{pc.name}</span>
-                                <span className="lotm-tarot-card-pathway">{pathway?.name || pc.pathway}</span>
-                                <span className="lotm-tarot-card-sequence">{formatLotmSequenceName(pc.pathway, pc.sequence)}</span>
+                                    <div className="lotm-tarot-card-overlay">
+                                        <span className="lotm-tarot-card-arcana">{arcanaKicker}</span>
+                                        <span className="lotm-tarot-card-name">{pc.name}</span>
+                                        <span className="lotm-tarot-card-pathway">{pathway?.name || pc.pathway}</span>
+                                        <span className="lotm-tarot-card-sequence">{formatLotmSequenceName(pc.pathway, pc.sequence)}</span>
+                                    </div>
+                                </div>
                             </button>
                         );
                     })}

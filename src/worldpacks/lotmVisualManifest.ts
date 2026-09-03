@@ -93,7 +93,32 @@ export const LOTM_PLACES: LotmPlaceVisual[] = [
   },
 ];
 
+/** Playable PCs under `gamedata/image/players/` — staged like character portraits. */
+export const LOTM_PLAYER_PORTRAITS: LotmPortraitVisual[] = [
+  {
+    id: "clara-whitlock",
+    aliases: ["clara whitlock", "clara"],
+    portrait: "image/players/clara_whitlock.jpeg",
+  },
+  {
+    id: "benedict-faulkner",
+    aliases: ["benedict faulkner", "benedict", "professor faulk"],
+    portrait: "image/players/benedict_faulkner.jpeg",
+  },
+  {
+    id: "arthur-pendel",
+    aliases: ["arthur pendel", "arthur", "constable pendel"],
+    portrait: "image/players/arthur_pendel.jpeg",
+  },
+  {
+    id: "cassian-dray",
+    aliases: ["cassian dray", "cassian", "brother cass"],
+    portrait: "image/players/cassian_dray.jpeg",
+  },
+];
+
 export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
+  ...LOTM_PLAYER_PORTRAITS,
   {
     id: "dunn-smith",
     aliases: ["dunn smith", "dunn", "captain dunn"],

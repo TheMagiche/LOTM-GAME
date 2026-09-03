@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { IS_DEMO_MODE } from '../config/demoMode';
 import { useAppStore } from '../store/useAppStore';
 import { useUtilityCalls, extendCall } from '../services/llm/utilityCallTracker';
 import type { PipelinePhase, StreamingStats } from '../types';
@@ -97,13 +98,13 @@ export function UtilityCallStrip() {
     const [, setTick] = useState(0);
 
     useEffect(() => {
-        if (active.length === 0 && pipelinePhase === 'idle') return;
+        if (IS_DEMO_MODE || (active.length === 0 && pipelinePhase === 'idle')) return;
         const id = setInterval(() => setTick(t => t + 1), 1000);
         return () => clearInterval(id);
     }, [active.length, pipelinePhase]);
 
     const hasGeneration = pipelinePhase !== 'idle';
-    if (active.length === 0 && !hasGeneration) return null;
+    if (IS_DEMO_MODE || (active.length === 0 && !hasGeneration)) return null;
 
     return (
         <div className="border-b border-terminal/20 bg-terminal/5">
