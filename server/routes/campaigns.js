@@ -8,6 +8,8 @@ import { embedText, buildLoreText, resolveIndexingSpeed } from '../lib/embedder.
 import { storeLoreEmbedding, deleteCampaignEmbeddings } from '../lib/vectorStore.js';
 import { startJob, tickJob, endJob } from '../lib/embedJobs.js';
 import { wrapAsync } from '../lib/asyncHandler.js';
+import { isDemoMode } from '../lib/demoMode.js';
+import { getDemoOccupancy, ownsDemoOccupancy } from '../lib/demoOccupancy.js';
 
 export function createCampaignsRouter() {
     const router = Router();
@@ -54,6 +56,18 @@ export function createCampaignsRouter() {
         validateCampaignId(req.params.id);
         ensureDirs();
         const filePath = path.join(CAMPAIGNS_DIR, `${req.params.id}.json`);
+        const isCreate = !fs.existsSync(filePath);
+        if (isDemoMode() && isCreate) {
+            const sessionId = String(req.body?.demoSessionId || '');
+            if (!ownsDemoOccupancy(sessionId)) {
+                const occupancy = getDemoOccupancy(sessionId);
+                return res.status(409).json({
+                    error: 'demo_occupied',
+                    remainingMs: occupancy.remainingMs,
+                    expiresAt: occupancy.expiresAt,
+                });
+            }
+        }
         writeJson(filePath, req.body);
         res.json({ ok: true });
     }));

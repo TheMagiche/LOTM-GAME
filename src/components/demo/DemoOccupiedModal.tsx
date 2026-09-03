@@ -1,40 +1,41 @@
-import { GhostBtn, DangerBtn } from '../primitives/Buttons';
+import { GhostBtn } from '../primitives/Buttons';
 import { Backdrop } from '../primitives/Backdrop';
 import { formatDemoCountdown } from '../../config/demoMode';
 import { useDemoRemainingMs } from '../../services/demo/demoSessionClock';
 
-export function DemoIdleWarningModal({
+export function DemoOccupiedModal({
     open,
     expiresAt = null,
     remainingMs = 0,
-    onStay,
-    onLeave,
+    onDismiss,
 }: {
     open: boolean;
     expiresAt?: number | null;
     remainingMs?: number;
-    onStay: () => void;
-    onLeave: () => void;
+    onDismiss: () => void;
 }) {
     const liveRemaining = useDemoRemainingMs(open ? expiresAt : null);
     if (!open) return null;
-    const remaining = formatDemoCountdown(liveRemaining ?? remainingMs);
+    const remaining = liveRemaining ?? remainingMs;
+    const hasTime = remaining > 0;
     return (
-        <Backdrop onClick={onStay}>
+        <Backdrop onClick={onDismiss}>
             <div
                 className="lotm-demo-modal"
                 role="dialog"
                 aria-modal="true"
-                aria-labelledby="lotm-demo-idle-title"
+                aria-labelledby="lotm-demo-occupied-title"
                 onClick={e => e.stopPropagation()}
             >
-                <p id="lotm-demo-idle-title" className="lotm-demo-modal-title">Session expiring</p>
+                <p id="lotm-demo-occupied-title" className="lotm-demo-modal-title">A chronicle is in play</p>
                 <p className="lotm-demo-modal-body">
-                    This demo chronicle will be removed in {remaining}. Export is not available on the public demo.
+                    Another visitor is already in a demo session.
+                    {hasTime
+                        ? ` This slot should free in about ${formatDemoCountdown(remaining)}.`
+                        : ' Please try again shortly.'}
                 </p>
                 <div className="lotm-demo-modal-actions">
-                    <GhostBtn onClick={onStay}>Keep playing</GhostBtn>
-                    <DangerBtn onClick={onLeave}>Leave now</DangerBtn>
+                    <GhostBtn onClick={onDismiss}>OK</GhostBtn>
                 </div>
             </div>
         </Backdrop>

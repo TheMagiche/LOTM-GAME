@@ -15,6 +15,14 @@ import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
 import { LotmTarotSelect } from './LotmTarotSelect';
 import { IS_DEMO_MODE, hasUsableDemoProvider } from '../../config/demoMode';
+import {
+    DemoOccupiedError,
+    acquireDemoOccupancy,
+    getDemoOccupancy,
+    getDemoSessionId,
+    purgeDemoSessionCampaigns,
+} from '../../services/demo/demoSession';
+import { DemoOccupiedModal } from '../demo/DemoOccupiedModal';
 
 function timeAgo(ts: number | undefined): string {
     if (!ts) return 'Unplayed';
@@ -45,6 +53,9 @@ export function LotmTitleHub() {
     const [pickingChronicle, setPickingChronicle] = useState(false);
     const [enteringId, setEnteringId] = useState<string | null>(null);
     const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+    const [occupiedOpen, setOccupiedOpen] = useState(false);
+    const [occupiedExpiresAt, setOccupiedExpiresAt] = useState<number | null>(null);
+    const [occupiedRemainingMs, setOccupiedRemainingMs] = useState(0);
     const hubRef = useRef<HTMLDivElement | null>(null);
     const playablePcs = LORD_OF_THE_MYSTERIES_PACK.playablePcs ?? [];
 
@@ -96,11 +107,44 @@ export function LotmTitleHub() {
         setRenameDraft('');
     };
 
-    const openNewChronicle = () => {
+    const showOccupied = (remainingMs: number, expiresAt: number | null) => {
+        setOccupiedRemainingMs(remainingMs);
+        setOccupiedExpiresAt(expiresAt);
+        setOccupiedOpen(true);
+    };
+
+    const refreshOccupancy = useCallback(async () => {
+        if (!IS_DEMO_MODE) return;
+        const status = await getDemoOccupancy(getDemoSessionId());
+        if (status.occupied && !status.yours) {
+            setOccupiedRemainingMs(status.remainingMs);
+            setOccupiedExpiresAt(status.expiresAt);
+            return;
+        }
+        setOccupiedOpen(false);
+        setOccupiedRemainingMs(0);
+        setOccupiedExpiresAt(null);
+    }, []);
+
+    useEffect(() => {
+        if (!IS_DEMO_MODE) return;
+        void refreshOccupancy();
+        const timer = window.setInterval(() => { void refreshOccupancy(); }, 10_000);
+        return () => window.clearInterval(timer);
+    }, [refreshOccupancy]);
+
+    const openNewChronicle = async () => {
         if (busy) return;
         if (IS_DEMO_MODE && !hasUsableDemoProvider(useAppStore.getState().settings.providers)) {
             useAppStore.getState().openDemoOnboarding();
             return;
+        }
+        if (IS_DEMO_MODE) {
+            const status = await getDemoOccupancy(getDemoSessionId());
+            if (status.occupied && !status.yours) {
+                showOccupied(status.remainingMs, status.expiresAt);
+                return;
+            }
         }
         closeChroniclePicker();
         setSelectedPcId(DEFAULT_PLAYABLE_PC_ID);
@@ -121,12 +165,23 @@ export function LotmTitleHub() {
             || '';
         setBusy(true);
         try {
+            if (IS_DEMO_MODE) {
+                const occupancy = await acquireDemoOccupancy(getDemoSessionId());
+                useAppStore.getState().setDemoSessionExpiresAt(occupancy.expiresAt);
+            }
             const created = await createLotmCampaign({ pcId, name });
             useAppStore.getState().beginLotmWorldIndex({ campaignId: created.id, emblemSrc });
             await enterCampaign(created);
         } catch (e) {
             console.error('[LotmTitleHub] begin failed', e);
             useAppStore.getState().endLotmWorldIndex();
+            useAppStore.getState().setDemoSessionExpiresAt(null);
+            if (IS_DEMO_MODE) {
+                await purgeDemoSessionCampaigns(getDemoSessionId());
+            }
+            if (e instanceof DemoOccupiedError) {
+                showOccupied(e.remainingMs, e.expiresAt);
+            }
             setBusy(false);
         }
     };
@@ -277,7 +332,7 @@ export function LotmTitleHub() {
                     <h1>Lord of the Mysteries</h1>
                     <p className="lotm-title-hub-sub">A Victorian occult chronicle. Join the world of beyonders.</p>
                     {IS_DEMO_MODE && (
-                        <p className="lotm-demo-banner">Demo sessions are temporary — your chronicle is removed when you leave.</p>
+                        <p className="lotm-demo-banner">Demo sessions last 5 minutes — your chronicle is removed when you leave or time runs out.</p>
                     )}
                 </div>
             )}
@@ -464,6 +519,15 @@ export function LotmTitleHub() {
                         </div>
                     </div>
                 </Backdrop>
+            )}
+
+            {IS_DEMO_MODE && (
+                <DemoOccupiedModal
+                    open={occupiedOpen}
+                    expiresAt={occupiedExpiresAt}
+                    remainingMs={occupiedRemainingMs}
+                    onDismiss={() => setOccupiedOpen(false)}
+                />
             )}
         </div>
     );

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isDemoMode, isTtsDisabled, DEMO_SESSION_ID_RE, injectDemoBootScript } from '../lib/demoMode.js';
+import { isDemoMode, isTtsDisabled, DEMO_SESSION_ID_RE, demoSessionMs, injectDemoBootScript } from '../lib/demoMode.js';
 
 describe('server demoMode', () => {
     it('is off unless DEMO_MODE or --demo is set', () => {
@@ -36,5 +36,18 @@ describe('server demoMode', () => {
     it('accepts opaque demo session ids', () => {
         expect(DEMO_SESSION_ID_RE.test('demo_abc12345')).toBe(true);
         expect(DEMO_SESSION_ID_RE.test('not')).toBe(false);
+    });
+
+    it('defaults the hard session cap to 5 minutes', () => {
+        const previous = process.env.DEMO_SESSION_MS;
+        try {
+            delete process.env.DEMO_SESSION_MS;
+            expect(demoSessionMs()).toBe(5 * 60 * 1000);
+            process.env.DEMO_SESSION_MS = '300000';
+            expect(demoSessionMs()).toBe(300000);
+        } finally {
+            if (previous === undefined) delete process.env.DEMO_SESSION_MS;
+            else process.env.DEMO_SESSION_MS = previous;
+        }
     });
 });

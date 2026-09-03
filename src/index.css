@@ -2557,6 +2557,28 @@ html[style*="--lang-font-stack"] {
   cursor: not-allowed;
 }
 
+.lotm-play-header-demo-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  background: transparent;
+  color: #e0c36a;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.lotm-play-header-demo-clock.is-warning {
+  color: #e05555;
+  border-color: rgba(192, 57, 43, 0.45);
+}
+
 .lotm-play-drawer {
   background: #120f16 !important;
   border-right-color: rgba(201, 162, 39, 0.22) !important;

@@ -125,7 +125,7 @@ The Vite demo flag is a **build-time** alias: lore/loot/item catalog resolve to 
 | BYOK onboarding modal             | `[DemoOnboardingModal.tsx](../../src/components/demo/DemoOnboardingModal.tsx)`                                                                                                                                                                        |
 | Disable TTS on demo               | Skip `warmupTts()` in `[server.js](../../server.js)` when `DEMO_MODE=1` / `TTS_DISABLED`; `ttsEnabled` locked false                                                                                                                                  |
 | Delete chronicle on exit          | `[exitLotmCampaign()](../../src/components/lotm/LotmPlayHeader.tsx)` → `deleteCampaign(id)`                                                                                                                                                           |
-| Session idle timeout              | `[DemoSessionGuard.tsx](../../src/components/demo/DemoSessionGuard.tsx)` + `[DELETE /api/demo/session/:id](../../server/routes/demoSession.js)` — 45 min idle, 5 min warning                                                                          |
+| Session timeout + occupancy       | `[DemoSessionGuard.tsx](../../src/components/demo/DemoSessionGuard.tsx)` + `[demoOccupancy.js](../../server/lib/demoOccupancy.js)` — hard **5 min** session, 60s warning, one global play slot                                                        |
 | Demo world pack                   | Aliases in `[vite.config.ts](../../vite.config.ts)` + 4 starter PCs in `[demoMode.ts](../../src/config/demoMode.ts)`                                                                                                                                  |
 
 
@@ -142,14 +142,14 @@ flowchart TD
     Enter["Enter chronicle\n(LotmTitleHub)"]
     Play["Play session\nstate + embeddings grow"]
     Exit["Leave chronicle\nexitLotmCampaign()"]
-    Idle["Idle timeout\nsession logout"]
+    Timeout["5-minute session cap\nlogout"]
     Delete["DELETE /api/campaigns/:id\ncampaign files + embeddings"]
     Hub["Return to Title Hub\nor landing"]
     Enter --> Play
     Play --> Exit
-    Play --> Idle
+    Play --> Timeout
     Exit --> Delete
-    Idle --> Delete
+    Timeout --> Delete
     Delete --> Hub
 ```
 
@@ -167,21 +167,23 @@ Today `[exitLotmCampaign()](../../src/components/lotm/LotmPlayHeader.tsx)` saves
 
 Also wire the same delete into `[Header.tsx](../../src/components/Header.tsx)` “back to hub” path if it bypasses `exitLotmCampaign`.
 
-Show a one-line banner on Title Hub: *“Demo sessions are temporary — your chronicle is removed when you leave.”*
+Show a one-line banner on Title Hub: *“Demo sessions last 5 minutes — your chronicle is removed when you leave or time runs out.”*
 
 ### 4.2 Timer-based session logout
 
-No server-side sessions exist today. Recommended demo pattern:
+No auth exists. Demo play is a **hard 5-minute session** plus a **global occupancy lock** (one chronicle in play at a time):
 
 
 | Piece            | Approach                                                                                                                                                        |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Session identity | On first demo app load, generate `demoSessionId` (UUID in `sessionStorage` + optional HttpOnly cookie for server-side purge API)                                |
+| Session identity | On first demo app load, generate `demoSessionId` (UUID in `sessionStorage`)                                                                                     |
 | Tag campaigns    | Pass `demoSessionId` in campaign metadata on create (`[createLotmCampaign](../../src/services/lotm/createLotmCampaign.ts)`)                                     |
-| Idle detection   | Client `setInterval` / `visibilitychange` — reset timer on input; default **45 min idle** (configurable via `VITE_DEMO_IDLE_MS`)                                |
-| Warning          | Modal at T−5 min: “Session expiring — export not available on demo”                                                                                             |
-| Logout           | Clear Zustand store, IndexedDB settings optional (keep BYOK keys), call `DELETE /api/demo/session/:id` or iterate tagged campaign IDs                           |
-| Server purge     | New route lists campaigns with matching `demoSessionId` metadata field and deletes each; also prune `data/backups/` and `data/portraits/` entries for those IDs |
+| Occupancy lock   | `POST /api/demo/occupancy` before create; `GET` for waiters; heartbeat every 15s. 409 if another visitor holds the slot. Abandoned after 45s without heartbeat. |
+| Hard cap         | Server `expiresAt` = acquire + `DEMO_SESSION_MS` (default 5 min). Activity does **not** extend the timer. Countdown in `[LotmPlayHeader](../../src/components/lotm/LotmPlayHeader.tsx)`. |
+| Warning          | Modal at T−60s: remaining time shown; Keep playing only dismisses the dialog                                                                                    |
+| Occupied waiters | `[DemoOccupiedModal](../../src/components/demo/DemoOccupiedModal.tsx)` when Begin is pressed while a session is in play                                         |
+| Logout           | Clear play state, `DELETE /api/demo/session/:id` (purge campaigns **and** release occupancy)                                                                    |
+| Server purge     | Route lists campaigns with matching `demoSessionId` and deletes each; also prune backups for those IDs                                                          |
 
 
 On logout, accumulated data removed includes: `.json` / `.state.json` / ledger sidecars, `[embeddings.db](../../server/lib/vectorStore.js)` rows, auto-backups in `[BACKUPS_DIR](../../server/lib/fileStore.js)`, and any scene images written under campaign-scoped paths.
@@ -256,7 +258,8 @@ Extend the [COOLIFY.md](../COOLIFY.md) env table:
 | `NODE_ENV`             | `production`                                                           |
 | `DEMO_MODE`            | `1` — skip TTS warmup, seed lean defaults, enable session purge routes |
 | `VITE_DEPLOYMENT_MODE` | `demo` — **CI build-arg only** (`deploy.yml` → Dockerfile `ARG`). Setting this in Coolify does not rebuild `dist/`. |
-| `VITE_DEMO_IDLE_MS`    | `2700000` (45 min) — client session timeout                            |
+| `VITE_DEMO_SESSION_MS` | `300000` (5 min) — client hard session cap (baked at build; falls back to `VITE_DEMO_IDLE_MS`) |
+| `DEMO_SESSION_MS`      | `300000` (5 min) — server occupancy / expiry cap                                   |
 | `TTS_DISABLED`         | `1` (optional explicit guard alongside `DEMO_MODE`)                    |
 
 
@@ -396,7 +399,7 @@ Do not promise Electron downloads on the landing page until the CI pipeline ship
 | Player lock     | `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)`, `[SettingsModal.tsx](../../src/components/SettingsModal.tsx)`                                        |
 | BYOK gate       | New modal + `[ProvidersTab.tsx](../../src/components/settings-modal/ProvidersTab.tsx)`                                                                                  |
 | Delete on exit  | `[exitLotmCampaign()](../../src/components/lotm/LotmPlayHeader.tsx)`, `[deleteCampaign](../../src/store/campaignStore.ts)`                                              |
-| Session timeout | New `useDemoSession.ts` hook + `server/routes/demoSession.js`                                                                                                           |
+| Session timeout | `[DemoSessionGuard.tsx](../../src/components/demo/DemoSessionGuard.tsx)` + `[server/lib/demoOccupancy.js](../../server/lib/demoOccupancy.js)` + `[server/routes/demoSession.js](../../server/routes/demoSession.js)` |
 | TTS off         | `[server.js](../../server.js)` (`warmupTts`), `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)` defaults                                                |
 | Demo compendium | `mechanics/World_compendium/Demo/`, `[lordOfTheMysteries.ts](../../src/worldpacks/lordOfTheMysteries.ts)`, trimmed `gamedata-demo/`                                     |
 | Lean defaults   | `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)` (`aiTier`, `ttsEnabled`), `[campaignSlice.ts](../../src/store/slices/campaignSlice.ts)` (auto-backup) |

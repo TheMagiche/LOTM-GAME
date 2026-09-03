@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
     applyDemoLocks,
+    formatDemoCountdown,
     hasUsableDemoProvider,
     isDemoPlayablePcFile,
     isDemoPlayPath,
+    resolveDemoSessionMs,
     resolveIsDemoMode,
     shouldShowDemoLanding,
 } from '../demoMode';
@@ -54,5 +56,19 @@ describe('demoMode helpers', () => {
         expect(out.uiViewMode).toBe('gm');
         expect(out.aiTier).toBe('max');
         expect(out.ttsEnabled).toBe(true);
+    });
+
+    it('defaults the hard session cap to 5 minutes and prefers VITE_DEMO_SESSION_MS', () => {
+        expect(resolveDemoSessionMs(undefined, undefined)).toBe(5 * 60 * 1000);
+        expect(resolveDemoSessionMs('300000', '2700000')).toBe(300000);
+        expect(resolveDemoSessionMs(undefined, '2700000')).toBe(2700000);
+        expect(resolveDemoSessionMs('nope', 'nope')).toBe(5 * 60 * 1000);
+    });
+
+    it('formats remaining session time as m:ss', () => {
+        expect(formatDemoCountdown(0)).toBe('0:00');
+        expect(formatDemoCountdown(1000)).toBe('0:01');
+        expect(formatDemoCountdown(4 * 60 * 1000 + 32 * 1000)).toBe('4:32');
+        expect(formatDemoCountdown(5 * 60 * 1000)).toBe('5:00');
     });
 });

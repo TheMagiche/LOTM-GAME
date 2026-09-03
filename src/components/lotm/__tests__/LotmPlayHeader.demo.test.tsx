@@ -11,7 +11,7 @@ vi.mock('../../../config/demoMode', async () => {
 afterEach(() => {
     cleanup();
     useAppStore.getState().endLotmWorldIndex();
-    useAppStore.setState({ lotmChronicleOpen: false, drawerOpen: false });
+    useAppStore.setState({ lotmChronicleOpen: false, drawerOpen: false, demoSessionExpiresAt: null });
 });
 
 describe('LotmPlayHeader demo chrome', () => {
@@ -31,5 +31,11 @@ describe('LotmPlayHeader demo chrome', () => {
 
         useAppStore.getState().toggleLotmChronicle();
         expect(useAppStore.getState().lotmChronicleOpen).toBe(false);
+    });
+
+    it('shows a live demo countdown when a session expiry is set', () => {
+        useAppStore.getState().setDemoSessionExpiresAt(Date.now() + 4 * 60 * 1000 + 32 * 1000);
+        render(<LotmPlayHeader />);
+        expect(screen.getByText(/Demo 4:3[12]/i)).toBeInTheDocument();
     });
 });

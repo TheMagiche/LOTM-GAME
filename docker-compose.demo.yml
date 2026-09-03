@@ -15,4 +15,4 @@ services:
     environment:
       DEMO_MODE: "1"
       TTS_DISABLED: "1"
-      VITE_DEMO_IDLE_MS: "2700000"
+      DEMO_SESSION_MS: "300000"
