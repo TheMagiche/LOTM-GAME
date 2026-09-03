@@ -4117,3 +4117,146 @@ html[style*="--lang-font-stack"] {
     align-items: flex-start;
   }
 }
+
+/* Landing boot loader — ritual seal while hero portraits decode */
+.lotm-landing-wrapper.is-booting {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.lotm-landing-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 42%, #1a1510 0%, #0b0a0d 68%);
+  cursor: wait;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.lotm-landing-loader.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lotm-landing-loader-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 24px;
+  max-width: 360px;
+}
+
+.lotm-occult-seal {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 16px rgba(201, 162, 39, 0.35));
+}
+
+.lotm-occult-seal-cross {
+  position: absolute;
+  inset: -6px;
+  background:
+    linear-gradient(#c9a227, #c9a227) center / 1px 100% no-repeat,
+    linear-gradient(#c9a227, #c9a227) center / 100% 1px no-repeat;
+  opacity: 0.55;
+}
+
+.lotm-occult-seal-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 162, 39, 0.45);
+  border-top-color: #e0c36a;
+  border-left-color: transparent;
+  animation: lotm-occult-spin 1.8s linear infinite;
+}
+
+.lotm-occult-seal-ring-inner {
+  inset: 16px;
+  border-width: 1px;
+  border-style: dashed;
+  animation-duration: 3.2s;
+  animation-direction: reverse;
+}
+
+.lotm-occult-seal-core {
+  position: absolute;
+  inset: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e0c36a 0%, rgba(201, 162, 39, 0.25) 55%, transparent 72%);
+  animation: lotm-occult-pulse 2.2s ease-in-out infinite;
+}
+
+.lotm-landing-loader-kicker {
+  margin: 12px 0 0;
+  font-family: 'Cinzel', Palatino, serif;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #c9a227;
+}
+
+.lotm-landing-loader-title {
+  margin: 0;
+  font-family: 'Cinzel', Palatino, serif;
+  letter-spacing: 0.08em;
+  font-size: 18px;
+  color: #f3ead8;
+}
+
+.lotm-landing-loader-detail {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(243, 234, 216, 0.78);
+}
+
+.lotm-landing-loader-bar {
+  width: 220px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.18);
+  overflow: hidden;
+}
+
+.lotm-landing-loader-bar-fill {
+  height: 100%;
+  background: #c9a227;
+  transition: width 0.35s ease;
+}
+
+.lotm-landing-loader-count {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgba(201, 162, 39, 0.78);
+}
+
+@keyframes lotm-occult-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lotm-occult-pulse {
+  0%, 100% { opacity: 0.55; filter: drop-shadow(0 0 6px rgba(201, 162, 39, 0.2)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(201, 162, 39, 0.85)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lotm-occult-seal-ring,
+  .lotm-occult-seal-core {
+    animation: none;
+  }
+}

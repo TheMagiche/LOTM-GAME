@@ -13,6 +13,13 @@ export const LANDING_HERO = {
     cta: 'Enter the demo',
 } as const;
 
+export const LANDING_LOADER = {
+    kicker: LANDING_HERO.kicker,
+    title: LANDING_HERO.brand,
+    detail: 'Gathering the gray fog…',
+    portraitsLabel: (loaded: number, total: number) => `${loaded} / ${total} portraits`,
+} as const;
+
 export interface LandingPillar {
     id: string;
     title: string;

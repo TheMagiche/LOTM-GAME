@@ -1,9 +1,10 @@
-import { cleanup, render, screen, fireEvent } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DEMO_PLAY_PATH } from '../../../config/demoMode';
 import { LandingPage } from '../LandingPage';
 import {
     LANDING_HERO,
+    LANDING_LOADER,
     LANDING_PILLARS,
     LANDING_FOOTER,
     LANDING_CREATOR_URL,
@@ -11,13 +12,41 @@ import {
     LANDING_ENGINE_REPO_URL,
     LANDING_WIKI_URL,
     LANDING_SPECIAL_THANKS,
+    LANDING_COLLAGE_CARDS,
 } from '../landingCopy';
 
 afterEach(() => {
     cleanup();
+    vi.unstubAllGlobals();
 });
 
+function stubImagesToLoad() {
+    class ImmediateImage {
+        onload: (() => void) | null = null;
+        onerror: (() => void) | null = null;
+        set src(_value: string) {
+            queueMicrotask(() => this.onload?.());
+        }
+    }
+    vi.stubGlobal('Image', ImmediateImage);
+}
+
 describe('LandingPage', () => {
+    it('shows a LOTM-themed loader until hero portraits are ready', async () => {
+        stubImagesToLoad();
+        render(<LandingPage />);
+
+        expect(screen.getByRole('status', { name: LANDING_LOADER.detail })).toBeInTheDocument();
+        expect(screen.getByText(LANDING_LOADER.detail)).toBeInTheDocument();
+        expect(
+            screen.getByText(LANDING_LOADER.portraitsLabel(0, LANDING_COLLAGE_CARDS.length)),
+        ).toBeInTheDocument();
+
+        await waitFor(() => {
+            expect(screen.queryByRole('status', { name: LANDING_LOADER.detail })).not.toBeInTheDocument();
+        });
+    });
+
     it('renders the hero section with brand title, subcopy, and playable demo link', () => {
         render(<LandingPage />);
         expect(

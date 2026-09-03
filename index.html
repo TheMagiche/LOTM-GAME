@@ -8,8 +8,124 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
     <title>Lord of the Mysteries</title>
+    <style>
+      html, body {
+        margin: 0;
+        background: #0b0a0d;
+        color: #f3ead8;
+      }
+      #lotm-boot-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse at 50% 42%, #1a1510 0%, #0b0a0d 68%);
+        transition: opacity 0.4s ease;
+      }
+      #lotm-boot-splash.is-done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #lotm-boot-splash .lotm-landing-loader-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 24px;
+      }
+      #lotm-boot-splash .lotm-occult-seal {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin-bottom: 8px;
+        filter: drop-shadow(0 0 16px rgba(201, 162, 39, 0.35));
+      }
+      #lotm-boot-splash .lotm-occult-seal-cross {
+        position: absolute;
+        inset: -6px;
+        background:
+          linear-gradient(#c9a227, #c9a227) center / 1px 100% no-repeat,
+          linear-gradient(#c9a227, #c9a227) center / 100% 1px no-repeat;
+        opacity: 0.55;
+      }
+      #lotm-boot-splash .lotm-occult-seal-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1.5px solid rgba(201, 162, 39, 0.45);
+        border-top-color: #e0c36a;
+        border-left-color: transparent;
+        animation: lotm-occult-spin 1.8s linear infinite;
+      }
+      #lotm-boot-splash .lotm-occult-seal-ring-inner {
+        inset: 16px;
+        border-width: 1px;
+        border-style: dashed;
+        animation-duration: 3.2s;
+        animation-direction: reverse;
+      }
+      #lotm-boot-splash .lotm-occult-seal-core {
+        position: absolute;
+        inset: 38px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #e0c36a 0%, rgba(201, 162, 39, 0.25) 55%, transparent 72%);
+        animation: lotm-occult-pulse 2.2s ease-in-out infinite;
+      }
+      #lotm-boot-splash .lotm-landing-loader-kicker {
+        margin: 12px 0 0;
+        font-family: Cinzel, Palatino, serif;
+        letter-spacing: 0.38em;
+        text-transform: uppercase;
+        font-size: 10px;
+        color: #c9a227;
+      }
+      #lotm-boot-splash .lotm-landing-loader-title {
+        margin: 0;
+        font-family: Cinzel, Palatino, serif;
+        letter-spacing: 0.08em;
+        font-size: 18px;
+        color: #f3ead8;
+      }
+      #lotm-boot-splash .lotm-landing-loader-detail {
+        margin: 0;
+        font-family: 'EB Garamond', Georgia, serif;
+        font-style: italic;
+        font-size: 16px;
+        color: rgba(243, 234, 216, 0.78);
+      }
+      @keyframes lotm-occult-spin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes lotm-occult-pulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #lotm-boot-splash .lotm-occult-seal-ring,
+        #lotm-boot-splash .lotm-occult-seal-core {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="lotm-boot-splash" class="lotm-landing-loader" role="status" aria-live="polite" aria-label="Gathering the gray fog">
+      <div class="lotm-landing-loader-panel">
+        <div class="lotm-occult-seal" aria-hidden="true">
+          <span class="lotm-occult-seal-cross"></span>
+          <span class="lotm-occult-seal-ring"></span>
+          <span class="lotm-occult-seal-ring lotm-occult-seal-ring-inner"></span>
+          <span class="lotm-occult-seal-core"></span>
+        </div>
+        <p class="lotm-landing-loader-kicker">AI Narrative RPG</p>
+        <p class="lotm-landing-loader-title">Lord of the Mysteries</p>
+        <p class="lotm-landing-loader-detail">Gathering assets</p>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

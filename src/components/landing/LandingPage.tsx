@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import {
     Flame,
     Dices,
@@ -38,6 +38,8 @@ import {
     // LANDING_README_URL,
     type CollageCardItem,
 } from './landingCopy';
+import { LotmLandingLoader } from './LotmLandingLoader';
+import { dismissLotmBootSplash, preloadLandingAssets } from './preloadLandingAssets';
 
 const PILLAR_ICONS: Record<string, React.ReactNode> = {
     'acting-method': <Flame className="w-5 h-5 text-amber-400" />,
@@ -50,7 +52,37 @@ const PILLAR_ICONS: Record<string, React.ReactNode> = {
 export function LandingPage() {
     useEffect(() => {
         applyLotmExclusiveDocumentChrome();
+        dismissLotmBootSplash();
     }, []);
+
+    const heroImageUrls = useMemo(
+        () => LANDING_COLLAGE_CARDS.map((card) => lotmAssetUrl(card.image)),
+        [],
+    );
+    const [assetsReady, setAssetsReady] = useState(heroImageUrls.length === 0);
+    const [loaderLeaving, setLoaderLeaving] = useState(false);
+    const [assetsLoaded, setAssetsLoaded] = useState(0);
+
+    useEffect(() => {
+        if (assetsReady) return;
+        let cancelled = false;
+        let leaveTimer: ReturnType<typeof window.setTimeout> | undefined;
+
+        preloadLandingAssets(heroImageUrls, (loaded) => {
+            if (!cancelled) setAssetsLoaded(loaded);
+        }).then(() => {
+            if (cancelled) return;
+            setLoaderLeaving(true);
+            leaveTimer = window.setTimeout(() => {
+                if (!cancelled) setAssetsReady(true);
+            }, 420);
+        });
+
+        return () => {
+            cancelled = true;
+            if (leaveTimer) window.clearTimeout(leaveTimer);
+        };
+    }, [assetsReady, heroImageUrls]);
 
     // Interactive state for hero collage
     const [activeCard, setActiveCard] = useState<CollageCardItem | null>(LANDING_COLLAGE_CARDS[0]);
@@ -71,8 +103,17 @@ export function LandingPage() {
         setMousePos({ x: 0, y: 0 });
     };
 
+    const showLoader = !assetsReady;
+
     return (
-        <div className="lotm-landing-wrapper">
+        <div className={`lotm-landing-wrapper${showLoader ? ' is-booting' : ''}`}>
+            {showLoader && (
+                <LotmLandingLoader
+                    loaded={assetsLoaded}
+                    total={heroImageUrls.length}
+                    fadingOut={loaderLeaving}
+                />
+            )}
             {/* HERO SECTION WITH DYNAMIC COLLAGE */}
             <header
                 ref={heroRef}
