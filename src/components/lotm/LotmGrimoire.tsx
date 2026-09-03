@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, BookOpen, CircleHelp, Compass, HelpCircle, MapPin, Search, X } from 'lucide-react';
+import { ArrowLeft, BookOpen, CircleHelp, Compass, HelpCircle, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { LotmHowToPlayGuide } from './LotmHowToPlayGuide';
 import { LotmWorldMapView } from '../location-ledger/LotmWorldMapView';
@@ -543,7 +543,7 @@ function WorldPane({
         // Check store location ledger first
         const storeMatch = storeLocationLedger.find(loc =>
             searchTerms.includes(loc.name.toLowerCase()) ||
-            loc.aliases?.some(alias => searchTerms.includes(alias.toLowerCase()))
+            loc.aliases?.some((alias: string | undefined) => alias ? searchTerms.includes(alias.toLowerCase()) : false)
         );
         if (storeMatch?.coordinates) {
             return storeMatch.coordinates;
@@ -552,7 +552,7 @@ function WorldPane({
         // Check initial map locations
         const staticMatch = INITIAL_LOCATIONS.find(p =>
             searchTerms.includes(p.name.toLowerCase()) ||
-            p.details?.some(alias => searchTerms.includes(alias.toLowerCase()))
+            p.details?.some((alias: string | undefined) => alias ? searchTerms.includes(alias.toLowerCase()) : false)
         );
         if (staticMatch?.coordinates) {
             return staticMatch.coordinates;
@@ -562,10 +562,6 @@ function WorldPane({
     }, [selectedPlaceName, storeLocationLedger]);
 
     const handleSelectFromMap = (name: string) => {
-        setSelectedPlaceName(name);
-    };
-
-    const handleShowOnMap = (name: string) => {
         setSelectedPlaceName(name);
     };
 
@@ -628,7 +624,6 @@ function WorldPane({
                             <WorldCard
                                 entry={entry}
                                 isSelected={Boolean(selectedPlaceName && entry.name.toLowerCase() === selectedPlaceName.toLowerCase())}
-                                showOnMap={worldTab === 'geography' ? handleShowOnMap : undefined}
                             />
                         </li>
                     ))}
@@ -641,11 +636,9 @@ function WorldPane({
 function WorldCard({
     entry,
     isSelected = false,
-    showOnMap,
 }: {
     entry: GrimoireWorldEntry;
     isSelected?: boolean;
-    showOnMap?: (name: string) => void;
 }) {
     return (
         <article className={`lotm-grimoire-card is-static ${isSelected ? 'border-[#c9a227] bg-[#221a28]' : ''}`}>
@@ -655,15 +648,6 @@ function WorldCard({
             {entry.extra.map(line => (
                 <p key={line} className="lotm-grimoire-card-meta">{line}</p>
             ))}
-            {showOnMap && (
-                <button
-                    type="button"
-                    className="lotm-grimoire-map-btn"
-                    onClick={() => showOnMap(entry.name)}
-                >
-                    <MapPin size={11} /> {isSelected ? 'Focused on map' : 'Show on map'}
-                </button>
-            )}
         </article>
     );
 }
