@@ -83,6 +83,8 @@ export function LotmTitleHub() {
         return () => window.removeEventListener('keydown', onKey);
     }, [pickingPc, busy]);
 
+    const providers = useAppStore(s => s.settings.providers);
+    const demoKeyReady = IS_DEMO_MODE && hasUsableDemoProvider(providers);
     const continueCampaign = IS_DEMO_MODE ? null : pickContinueCampaign(campaigns);
     const sortedCampaigns = campaigns
         .slice()
@@ -218,16 +220,27 @@ export function LotmTitleHub() {
 
             <div className="lotm-title-hub-scrim" aria-hidden />
 
-            <button
-                type="button"
-                className="lotm-title-hub-grimoire"
-                title="Grimoire"
-                aria-label="Open Grimoire"
-                disabled={busy}
-                onClick={() => useAppStore.getState().openGrimoire()}
-            >
-                <BookOpen size={15} />
-            </button>
+            {IS_DEMO_MODE ? (
+                <a
+                    href="/"
+                    className="lotm-title-hub-grimoire lotm-title-hub-landing"
+                    title="Back to landing page"
+                    aria-label="Back to landing page"
+                >
+                    <ArrowLeft size={16} />
+                </a>
+            ) : (
+                <button
+                    type="button"
+                    className="lotm-title-hub-grimoire"
+                    title="Grimoire"
+                    aria-label="Open Grimoire"
+                    disabled={busy}
+                    onClick={() => useAppStore.getState().openGrimoire()}
+                >
+                    <BookOpen size={15} />
+                </button>
+            )}
 
             {pickingPc && (
                 <button
@@ -242,19 +255,21 @@ export function LotmTitleHub() {
                 </button>
             )}
 
-            <button
-                type="button"
-                className="lotm-title-hub-gear"
-                title={IS_DEMO_MODE ? 'API key' : 'Settings'}
-                aria-label={IS_DEMO_MODE ? 'API key' : 'Settings'}
-                disabled={busy}
-                onClick={() => {
-                    if (IS_DEMO_MODE) useAppStore.getState().openDemoOnboarding();
-                    else useAppStore.getState().toggleSettings();
-                }}
-            >
-                {IS_DEMO_MODE ? <KeyRound size={15} /> : <Settings size={15} />}
-            </button>
+            {(!IS_DEMO_MODE || !demoKeyReady) && (
+                <button
+                    type="button"
+                    className="lotm-title-hub-gear"
+                    title={IS_DEMO_MODE ? 'API key' : 'Settings'}
+                    aria-label={IS_DEMO_MODE ? 'API key' : 'Settings'}
+                    disabled={busy}
+                    onClick={() => {
+                        if (IS_DEMO_MODE) useAppStore.getState().openDemoOnboarding();
+                        else useAppStore.getState().toggleSettings();
+                    }}
+                >
+                    {IS_DEMO_MODE ? <KeyRound size={15} /> : <Settings size={15} />}
+                </button>
+            )}
 
             {!pickingPc && (
                 <div className="lotm-title-hub-copy">

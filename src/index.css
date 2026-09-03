@@ -1271,7 +1271,8 @@ html[style*="--lang-font-stack"] {
 
 .lotm-title-hub-gear,
 .lotm-title-hub-back,
-.lotm-title-hub-grimoire {
+.lotm-title-hub-grimoire,
+.lotm-title-hub-landing {
   position: absolute;
   top: 20px;
   z-index: 4;
@@ -1294,8 +1295,10 @@ html[style*="--lang-font-stack"] {
   right: 20px;
 }
 
-.lotm-title-hub-grimoire {
+.lotm-title-hub-grimoire,
+.lotm-title-hub-landing {
   left: 20px;
+  text-decoration: none;
 }
 
 .lotm-title-hub-back {
@@ -1304,7 +1307,8 @@ html[style*="--lang-font-stack"] {
 
 .lotm-title-hub-gear:hover:not(:disabled),
 .lotm-title-hub-back:hover:not(:disabled),
-.lotm-title-hub-grimoire:hover:not(:disabled) {
+.lotm-title-hub-grimoire:hover:not(:disabled),
+.lotm-title-hub-landing:hover {
   color: #f3ead8;
   border-color: #e0c36a;
   transform: scale(1.06);

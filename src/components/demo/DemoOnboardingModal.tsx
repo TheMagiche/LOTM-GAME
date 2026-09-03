@@ -12,7 +12,6 @@ export function DemoOnboardingModal() {
     const settings = useAppStore(s => s.settings);
     const updateProvider = useAppStore(s => s.updateProvider);
     const settingsLoaded = useAppStore(s => s.settingsLoaded);
-    const forceOpen = useAppStore(s => s.demoOnboardingOpen);
     const closeDemoOnboarding = useAppStore(s => s.closeDemoOnboarding);
 
     const provider = settings.providers[0];
@@ -32,7 +31,7 @@ export function DemoOnboardingModal() {
     }, [provider, updateProvider]);
 
     if (!IS_DEMO_MODE || !settingsLoaded || !provider) return null;
-    if (ready && !forceOpen) return null;
+    if (ready) return null;
 
     return (
         <Backdrop onClick={() => undefined}>
@@ -77,15 +76,6 @@ export function DemoOnboardingModal() {
                     />
                 </label>
                 <div className="lotm-demo-modal-actions">
-                    {ready && (
-                        <button
-                            type="button"
-                            className="lotm-demo-skip"
-                            onClick={() => closeDemoOnboarding()}
-                        >
-                            Close
-                        </button>
-                    )}
                     <button
                         type="button"
                         className="lotm-title-hub-primary"
