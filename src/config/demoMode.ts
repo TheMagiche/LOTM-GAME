@@ -33,11 +33,41 @@ export function shouldShowDemoLanding(isDemo: boolean, pathname: string): boolea
     return isDemo && !isDemoPlayPath(pathname);
 }
 
-/** Idle logout. Default 45 minutes. */
-export const DEMO_IDLE_MS = Number(import.meta.env.VITE_DEMO_IDLE_MS) || 45 * 60 * 1000;
+const FIVE_MIN_MS = 5 * 60 * 1000;
 
-/** Warn this long before idle logout. */
-export const DEMO_IDLE_WARN_MS = 5 * 60 * 1000;
+export function resolveDemoSessionMs(
+    sessionEnv?: string,
+    idleEnv?: string,
+    fallback = FIVE_MIN_MS,
+): number {
+    const session = Number(sessionEnv);
+    if (Number.isFinite(session) && session > 0) return session;
+    const idle = Number(idleEnv);
+    if (Number.isFinite(idle) && idle > 0) return idle;
+    return fallback;
+}
+
+/** Hard play-session cap. Default 5 minutes. */
+export const DEMO_SESSION_MS = resolveDemoSessionMs(
+    import.meta.env.VITE_DEMO_SESSION_MS,
+    import.meta.env.VITE_DEMO_IDLE_MS,
+);
+
+/** @deprecated Use DEMO_SESSION_MS. Kept for older demo env names. */
+export const DEMO_IDLE_MS = DEMO_SESSION_MS;
+
+/** Warn this long before session logout. */
+export const DEMO_SESSION_WARN_MS = 60 * 1000;
+
+/** @deprecated Use DEMO_SESSION_WARN_MS. */
+export const DEMO_IDLE_WARN_MS = DEMO_SESSION_WARN_MS;
+
+export function formatDemoCountdown(remainingMs: number): string {
+    const total = Math.max(0, Math.ceil(remainingMs / 1000));
+    const minutes = Math.floor(total / 60);
+    const seconds = total % 60;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
 
 export const DEMO_SESSION_STORAGE_KEY = 'lotm_demo_session_id';
 

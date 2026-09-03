@@ -1,9 +1,11 @@
-import { BookOpen, Cpu, PanelLeftClose, PanelLeftOpen, Save, Sparkles } from 'lucide-react';
+import { BookOpen, Clock, Cpu, PanelLeftClose, PanelLeftOpen, Save, Sparkles } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { deleteCampaign, saveCampaignState } from '../../store/campaignStore';
 import { useChatPersistence } from '../../hooks/useChatPersistence';
 import type { AiTier } from '../../types/llm';
-import { IS_DEMO_MODE } from '../../config/demoMode';
+import { DEMO_SESSION_WARN_MS, IS_DEMO_MODE, formatDemoCountdown } from '../../config/demoMode';
+import { useDemoRemainingMs } from '../../services/demo/demoSessionClock';
+import { getDemoSessionId, purgeDemoSessionCampaigns } from '../../services/demo/demoSession';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
@@ -17,6 +19,10 @@ export function LotmPlayHeader() {
     const aiTier = (useAppStore(s => s.settings?.aiTier) ?? 'pro') as AiTier;
     const updateSettings = useAppStore(s => s.updateSettings);
     const { isSaving, handleForceSave } = useChatPersistence();
+    const demoExpiresAt = useAppStore(s => s.demoSessionExpiresAt);
+    const demoRemainingMs = useDemoRemainingMs(IS_DEMO_MODE ? demoExpiresAt : null);
+    const demoClock = demoRemainingMs !== null ? formatDemoCountdown(demoRemainingMs) : null;
+    const demoWarning = demoRemainingMs !== null && demoRemainingMs <= DEMO_SESSION_WARN_MS;
 
     return (
         <header className="lotm-play-header">
@@ -37,6 +43,16 @@ export function LotmPlayHeader() {
             </div>
             {!indexing && (
                 <div className="lotm-play-header-actions">
+                    {IS_DEMO_MODE && demoClock && (
+                        <p
+                            className={`lotm-play-header-demo-clock${demoWarning ? ' is-warning' : ''}`}
+                            aria-live="polite"
+                            title={`Demo session remaining ${demoClock}`}
+                        >
+                            <Clock size={13} />
+                            <span>Demo {demoClock}</span>
+                        </p>
+                    )}
                     {!IS_DEMO_MODE && (
                     <button
                         type="button"
@@ -135,11 +151,19 @@ export async function exitLotmCampaign(): Promise<void> {
     useAppStore.getState().closeGrimoire();
     useAppStore.getState().closePlayerGrimoire();
     setActiveCampaign(null);
-    if (IS_DEMO_MODE && departingId) {
+    if (IS_DEMO_MODE) {
+        useAppStore.getState().setDemoSessionExpiresAt(null);
+        if (departingId) {
+            try {
+                await deleteCampaign(departingId);
+            } catch (e) {
+                console.warn('[LotmPlayHeader] demo deleteCampaign failed:', e);
+            }
+        }
         try {
-            await deleteCampaign(departingId);
+            await purgeDemoSessionCampaigns(getDemoSessionId());
         } catch (e) {
-            console.warn('[LotmPlayHeader] demo deleteCampaign failed:', e);
+            console.warn('[LotmPlayHeader] demo session purge failed:', e);
         }
     }
 }

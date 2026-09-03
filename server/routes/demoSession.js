@@ -6,6 +6,12 @@ import { isCampaignMetaFile } from '../lib/tableRegistry.js';
 import { deleteCampaignEmbeddings } from '../lib/vectorStore.js';
 import { wrapAsync } from '../lib/asyncHandler.js';
 import { DEMO_SESSION_ID_RE, demoMaxCampaignAgeMs, isDemoMode } from '../lib/demoMode.js';
+import {
+    acquireDemoOccupancy,
+    getDemoOccupancy,
+    heartbeatDemoOccupancy,
+    releaseDemoOccupancy,
+} from '../lib/demoOccupancy.js';
 
 function listCampaignMetas() {
     ensureDirs();
@@ -55,6 +61,44 @@ export function pruneStaleDemoCampaigns() {
 export function createDemoSessionRouter() {
     const router = Router();
 
+    router.get('/api/demo/occupancy', wrapAsync((req, res) => {
+        if (!isDemoMode()) {
+            return res.status(404).json({ error: 'Not found' });
+        }
+        const sessionId = String(req.query.sessionId || '');
+        res.json(getDemoOccupancy(DEMO_SESSION_ID_RE.test(sessionId) ? sessionId : ''));
+    }));
+
+    router.post('/api/demo/occupancy', wrapAsync((req, res) => {
+        if (!isDemoMode()) {
+            return res.status(404).json({ error: 'Not found' });
+        }
+        const sessionId = String(req.body?.sessionId || '');
+        const result = acquireDemoOccupancy(sessionId);
+        if (!result.ok) {
+            return res.status(result.status).json({
+                error: result.error,
+                ...(result.occupancy ?? {}),
+            });
+        }
+        res.json({ ok: true, ...result.occupancy });
+    }));
+
+    router.post('/api/demo/occupancy/heartbeat', wrapAsync((req, res) => {
+        if (!isDemoMode()) {
+            return res.status(404).json({ error: 'Not found' });
+        }
+        const sessionId = String(req.body?.sessionId || '');
+        const result = heartbeatDemoOccupancy(sessionId);
+        if (!result.ok) {
+            return res.status(result.status).json({
+                error: result.error,
+                ...(result.occupancy ?? {}),
+            });
+        }
+        res.json({ ok: true, ...result.occupancy });
+    }));
+
     router.delete('/api/demo/session/:id', wrapAsync((req, res) => {
         if (!isDemoMode()) {
             return res.status(404).json({ error: 'Not found' });
@@ -63,6 +107,7 @@ export function createDemoSessionRouter() {
         if (!DEMO_SESSION_ID_RE.test(sessionId)) {
             return res.status(400).json({ error: 'Invalid session id' });
         }
+        releaseDemoOccupancy(sessionId);
         const deleted = purgeDemoCampaigns({ sessionId });
         res.json({ ok: true, deleted });
     }));

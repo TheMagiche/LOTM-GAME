@@ -1,52 +1,72 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { API_BASE as API } from '../../lib/apiBase';
 import { exitLotmCampaign } from '../lotm/LotmPlayHeader';
-import { DEMO_IDLE_MS, DEMO_IDLE_WARN_MS, IS_DEMO_MODE } from '../../config/demoMode';
-import { getDemoSessionId, purgeDemoSessionCampaigns } from '../../services/demo/demoSession';
+import { DEMO_SESSION_WARN_MS, IS_DEMO_MODE } from '../../config/demoMode';
+import { getDemoSessionId, heartbeatDemoOccupancy, purgeDemoSessionCampaigns } from '../../services/demo/demoSession';
+import { useAppStore } from '../../store/useAppStore';
 import { DemoIdleWarningModal } from './DemoIdleWarningModal';
 
 export function DemoSessionGuard() {
     const [warningOpen, setWarningOpen] = useState(false);
+    const [warningDismissed, setWarningDismissed] = useState(false);
+    const loggingOut = useRef(false);
+    const activeCampaignId = useAppStore(s => s.activeCampaignId);
+    const demoExpiresAt = useAppStore(s => s.demoSessionExpiresAt);
 
     const logout = useCallback(async () => {
+        if (loggingOut.current) return;
+        loggingOut.current = true;
         setWarningOpen(false);
+        useAppStore.getState().setDemoSessionExpiresAt(null);
         await exitLotmCampaign();
         await purgeDemoSessionCampaigns(getDemoSessionId());
+        loggingOut.current = false;
     }, []);
 
     useEffect(() => {
-        if (!IS_DEMO_MODE) return;
-        getDemoSessionId();
+        if (!IS_DEMO_MODE || !activeCampaignId) return;
+        let cancelled = false;
 
-        let lastActivity = Date.now();
-        const onActivity = () => {
-            lastActivity = Date.now();
+        const beat = async () => {
+            const result = await heartbeatDemoOccupancy(getDemoSessionId());
+            if (cancelled) return;
+            if (result.ok) {
+                useAppStore.getState().setDemoSessionExpiresAt(result.occupancy.expiresAt);
+                return;
+            }
+            if (result.lost) void logout();
+        };
+
+        void beat();
+        const timer = window.setInterval(() => { void beat(); }, 15_000);
+        return () => {
+            cancelled = true;
+            window.clearInterval(timer);
+        };
+    }, [activeCampaignId, logout]);
+
+    useEffect(() => {
+        if (!IS_DEMO_MODE || !demoExpiresAt || !activeCampaignId) {
             setWarningOpen(false);
-        };
-        const events: Array<keyof WindowEventMap> = ['pointerdown', 'keydown', 'mousemove', 'touchstart'];
-        for (const event of events) window.addEventListener(event, onActivity, { passive: true });
-        const onVisibility = () => {
-            if (document.visibilityState === 'visible') onActivity();
-        };
-        document.addEventListener('visibilitychange', onVisibility);
+            setWarningDismissed(false);
+            return;
+        }
 
-        const timer = window.setInterval(() => {
-            const idle = Date.now() - lastActivity;
-            if (idle >= DEMO_IDLE_MS) {
+        const tick = () => {
+            const remaining = demoExpiresAt - Date.now();
+            if (remaining <= 0) {
                 void logout();
                 return;
             }
-            if (idle >= DEMO_IDLE_MS - DEMO_IDLE_WARN_MS) {
+            if (remaining <= DEMO_SESSION_WARN_MS && !warningDismissed) {
                 setWarningOpen(true);
             }
-        }, 15_000);
-
-        return () => {
-            window.clearInterval(timer);
-            for (const event of events) window.removeEventListener(event, onActivity);
-            document.removeEventListener('visibilitychange', onVisibility);
         };
-    }, [logout]);
+
+        tick();
+        const timer = window.setInterval(tick, 1000);
+        return () => window.clearInterval(timer);
+    }, [activeCampaignId, demoExpiresAt, logout, warningDismissed]);
 
     useEffect(() => {
         if (!IS_DEMO_MODE) return;
@@ -58,6 +78,7 @@ export function DemoSessionGuard() {
                     keepalive: true,
                 });
             } catch { /* unload */ }
+            useAppStore.getState().setDemoSessionExpiresAt(null);
         };
         window.addEventListener('pagehide', onPageHide);
         return () => window.removeEventListener('pagehide', onPageHide);
@@ -67,7 +88,12 @@ export function DemoSessionGuard() {
     return (
         <DemoIdleWarningModal
             open={warningOpen}
-            onStay={() => setWarningOpen(false)}
+            expiresAt={demoExpiresAt}
+            remainingMs={demoExpiresAt ? Math.max(0, demoExpiresAt - Date.now()) : 0}
+            onStay={() => {
+                setWarningOpen(false);
+                setWarningDismissed(true);
+            }}
             onLeave={() => { void logout(); }}
         />
     );

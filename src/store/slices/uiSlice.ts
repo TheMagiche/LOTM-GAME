@@ -53,6 +53,8 @@ export type UISlice = {
     demoOnboardingOpen: boolean;
     openDemoOnboarding: () => void;
     closeDemoOnboarding: () => void;
+    demoSessionExpiresAt: number | null;
+    setDemoSessionExpiresAt: (expiresAt: number | null) => void;
     toggleSettings: () => void;
     toggleDrawer: () => void;
     toggleNPCLedger: () => void;
@@ -177,6 +179,8 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     demoOnboardingOpen: false,
     openDemoOnboarding: () => { if (IS_DEMO_MODE) set({ demoOnboardingOpen: true }); },
     closeDemoOnboarding: () => set({ demoOnboardingOpen: false }),
+    demoSessionExpiresAt: null,
+    setDemoSessionExpiresAt: (expiresAt) => set({ demoSessionExpiresAt: expiresAt }),
     toggleSettings: () => {
         if (IS_DEMO_MODE) return;
         set((s) => ({ settingsOpen: !s.settingsOpen }));

@@ -20,6 +20,13 @@ export function demoMaxCampaignAgeMs() {
     return Number.isFinite(raw) && raw > 0 ? raw : DAY_MS;
 }
 
+const FIVE_MIN_MS = 5 * 60 * 1000;
+
+export function demoSessionMs() {
+    const raw = Number(process.env.DEMO_SESSION_MS);
+    return Number.isFinite(raw) && raw > 0 ? raw : FIVE_MIN_MS;
+}
+
 export const DEMO_SESSION_ID_RE = /^[a-zA-Z0-9_-]{8,80}$/;
 
 export function readFrontendDeploymentMode(distDir) {
