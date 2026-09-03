@@ -256,8 +256,14 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     beginLotmWorldIndex: (lock) => set({ lotmWorldIndexLock: lock }),
     endLotmWorldIndex: () => set({ lotmWorldIndexLock: null }),
     lotmChronicleOpen: false,
-    setLotmChronicleOpen: (open) => set({ lotmChronicleOpen: open }),
-    toggleLotmChronicle: () => set((s) => ({ lotmChronicleOpen: !s.lotmChronicleOpen })),
+    setLotmChronicleOpen: (open) => {
+        if (IS_DEMO_MODE) return;
+        set({ lotmChronicleOpen: open });
+    },
+    toggleLotmChronicle: () => {
+        if (IS_DEMO_MODE) return;
+        set((s) => ({ lotmChronicleOpen: !s.lotmChronicleOpen }));
+    },
     grimoireOpen: false,
     grimoireFocus: null,
     openGrimoire: (focus) => set({ grimoireOpen: true, grimoireFocus: focus ?? null }),

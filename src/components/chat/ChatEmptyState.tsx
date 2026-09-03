@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
-import { PcBackgroundModal } from './PcBackgroundModal';
 
 /**
  * Empty-chat placeholder shown before the first message: the "Awaiting
@@ -11,14 +9,12 @@ import { PcBackgroundModal } from './PcBackgroundModal';
  * always returns false post-migration (the hydrator strips any `isPC` row
  * into `context.playerCharacter`), so we read `playerCharacter` directly.
  *
- * When a PC exists, their sheet "Who You Are" (`storyRelevance`) opens in
- * `PcBackgroundModal` on first empty-chat load — no trigger button.
+ * The PC "Who You Are" dossier lives on `PcBackgroundHost` in ChatArea so
+ * it survives this empty state unmounting when indexing finishes.
  */
 export function ChatEmptyState({ onCreateCharacter }: { onCreateCharacter: () => void }) {
     const playerCharacter = useAppStore(s => s.playerCharacter);
     const hasPC = playerCharacter != null;
-    const whoTheyAre = playerCharacter?.storyRelevance?.trim() ?? '';
-    const [backgroundDismissed, setBackgroundDismissed] = useState(false);
 
     return (
         <div className="flex items-center justify-center h-full">
@@ -43,13 +39,6 @@ export function ChatEmptyState({ onCreateCharacter }: { onCreateCharacter: () =>
                     </p>
                 </div>
             </div>
-            {whoTheyAre && !backgroundDismissed && (
-                <PcBackgroundModal
-                    name={playerCharacter?.name ?? ''}
-                    storyRelevance={whoTheyAre}
-                    onClose={() => setBackgroundDismissed(true)}
-                />
-            )}
         </div>
     );
 }

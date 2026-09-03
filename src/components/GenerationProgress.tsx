@@ -1,3 +1,4 @@
+import { IS_DEMO_MODE } from '../config/demoMode';
 import type { PipelinePhase, StreamingStats } from '../types';
 import { useGatherStages } from '../services/turn/gatherProgress';
 
@@ -41,7 +42,7 @@ type Props = {
 export function GenerationProgress({ phase, stats, directorBriefRunning, onSkipDirectorBrief }: Props) {
     const gatherStages = useGatherStages();
 
-    if (phase === 'idle') return null;
+    if (IS_DEMO_MODE || phase === 'idle') return null;
 
     const currentIdx = PHASE_INDEX[phase];
     const isCheckingNotes = phase === 'checking-notes';

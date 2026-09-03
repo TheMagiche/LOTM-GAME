@@ -570,4 +570,32 @@ describe('ChatArea', () => {
         expect(screen.getByText('Generating')).toBeInTheDocument();
         expect(screen.queryByText('Awaiting transmission...')).not.toBeInTheDocument();
     });
+
+    it('keeps the Background modal open after indexing starts the opening scene', () => {
+        const state = useAppStore.getState();
+        state.playerCharacter = clara;
+        state.pipelinePhase = 'generating';
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.queryByText('Awaiting transmission...')).not.toBeInTheDocument();
+        expect(screen.getByRole('dialog', { name: /background/i })).toBeInTheDocument();
+        expect(screen.getByText(/grandfather, Aldous Whitlock/i)).toBeInTheDocument();
+    });
+
+    it('lets the user close the Background modal after the opening scene starts', async () => {
+        const user = userEvent.setup();
+        const state = useAppStore.getState();
+        state.playerCharacter = clara;
+        state.pipelinePhase = 'generating';
+        render(<ChatArea presentation="illustrated" />);
+        await user.click(screen.getByRole('button', { name: /close background/i }));
+        expect(screen.queryByRole('dialog', { name: /background/i })).not.toBeInTheDocument();
+    });
+
+    it('does not open Background on a chronicle that already has messages', () => {
+        const state = useAppStore.getState();
+        state.playerCharacter = clara;
+        state.messages = [makeMessage({ role: 'assistant', content: 'The gas lamps hiss.' })];
+        render(<ChatArea presentation="illustrated" />);
+        expect(screen.queryByRole('dialog', { name: /background/i })).not.toBeInTheDocument();
+    });
 });

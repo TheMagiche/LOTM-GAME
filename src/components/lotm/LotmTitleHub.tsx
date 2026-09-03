@@ -242,7 +242,7 @@ export function LotmTitleHub() {
                 </button>
             )}
 
-            {pickingPc && (
+            {!IS_DEMO_MODE && pickingPc && (
                 <button
                     type="button"
                     className="lotm-title-hub-back"

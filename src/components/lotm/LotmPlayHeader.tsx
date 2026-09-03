@@ -70,6 +70,7 @@ export function LotmPlayHeader() {
                         <Sparkles size={13} />
                         <span>Ask GM</span>
                     </button>
+                    {!IS_DEMO_MODE && (
                     <div className="lotm-play-header-view" role="group" aria-label="Play view">
                         <button
                             type="button"
@@ -88,6 +89,7 @@ export function LotmPlayHeader() {
                             Chronicle
                         </button>
                     </div>
+                    )}
                     {!IS_DEMO_MODE && (
                     <button
                         type="button"

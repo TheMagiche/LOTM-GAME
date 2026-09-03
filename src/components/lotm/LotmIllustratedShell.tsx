@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 import { useAppStore } from '../../store/useAppStore';
 import { ChatArea } from '../ChatArea';
 import { LotmChapterCard } from './LotmChapterCard';
@@ -16,7 +17,7 @@ export function LotmIllustratedShell() {
     return (
         <div className="lotm-shell relative flex-1 flex flex-col min-w-0 overflow-hidden">
             <LotmPlayerHud />
-            <ChatArea presentation="illustrated" chronicleOpen={chronicleOpen} />
+            <ChatArea presentation="illustrated" chronicleOpen={!IS_DEMO_MODE && chronicleOpen} />
             <LotmChapterCard />
             <LotmWorldIndexOverlay />
         </div>
