@@ -45,6 +45,7 @@ import {
     searchArchiveCandidates, searchLoreCandidates,
 } from './vectorService.js';
 import { archiveEvents, ARCHIVE_WRITTEN } from './archiveEvents.js';
+import { AppError } from '../lib/serverError.js';
 import {
     CHAPTER_SCENE_TARGET, sceneNumbersFromIndex, computeRefit,
     repairChaptersAfterSceneDelete, repointChapterIds, nextChapterNumber, formatChapterId,
@@ -879,6 +880,15 @@ export async function reindexEmbeddings(campaignId, type) {
 
     const status = getEmbeddingStatus(campaignId);
     const db = getDb();
+    if (!db) {
+        throw new AppError(
+            'Vector store is not initialized (getDb() returned null)',
+            {
+                statusCode: 503,
+                publicMessage: 'Embeddings database is not available. Rebuild native modules (`npm rebuild better-sqlite3 sqlite-vec`) and restart the server.',
+            },
+        );
+    }
     const currentVersion = EMBEDDING_VERSION;
 
     let reindexedScenes = 0;

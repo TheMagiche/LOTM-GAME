@@ -219,6 +219,10 @@
 }
 
 @layer utilities {
+  .border-border {
+    border: none;
+  }
+
    /* WO-ui-polish §B3/§B4 — glow colours now track --color-terminal via
       color-mix instead of a hardcoded blue rgba, so a re-brand (swapping
       the seed) retints the glow too. The class is no longer applied to
@@ -1852,7 +1856,7 @@ html[style*="--lang-font-stack"] {
   padding: 6px 12px;
   background: rgba(18, 16, 21, 0.94);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(201, 162, 39, 0.22);
+  border: 0;
   border-radius: 12px;
   box-shadow:
     8px 8px 22px #040306,
@@ -1885,13 +1889,6 @@ html[style*="--lang-font-stack"] {
   background: transparent;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.18s ease;
-}
-
-.lotm-player-hud-emblem-btn:hover,
-.lotm-player-hud-emblem-btn:focus-visible {
-  border-color: rgba(201, 162, 39, 0.45);
-  background: rgba(201, 162, 39, 0.08);
 }
 
 .lotm-player-hud-identity-btn {
@@ -1902,19 +1899,26 @@ html[style*="--lang-font-stack"] {
   flex: 1 1 auto;
   margin: 0;
   padding: 2px 6px 2px 2px;
-  border: 1px solid transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
   background: transparent;
   border-radius: 8px;
   color: inherit;
   text-align: left;
   cursor: pointer;
-  transition: all 0.18s ease;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .lotm-player-hud-identity-btn:hover,
-.lotm-player-hud-identity-btn:focus-visible {
-  border-color: rgba(201, 162, 39, 0.35);
-  background: rgba(201, 162, 39, 0.06);
+.lotm-player-hud-identity-btn:focus,
+.lotm-player-hud-identity-btn:focus-visible,
+.lotm-player-hud-identity-btn:active {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
 }
 
 .lotm-player-hud-emblem {

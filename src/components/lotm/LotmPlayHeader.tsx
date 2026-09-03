@@ -37,6 +37,7 @@ export function LotmPlayHeader() {
             </div>
             {!indexing && (
                 <div className="lotm-play-header-actions">
+                    {!IS_DEMO_MODE && (
                     <button
                         type="button"
                         className="lotm-play-header-save"
@@ -48,6 +49,7 @@ export function LotmPlayHeader() {
                         <Save size={13} />
                         <span>{isSaving ? 'Saving' : 'Save'}</span>
                     </button>
+                    )}
                     <button
                         type="button"
                         className="lotm-play-header-grimoire"
