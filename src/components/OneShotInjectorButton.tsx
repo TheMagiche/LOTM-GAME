@@ -28,7 +28,7 @@ import { toast } from './Toast';
  * each time it opens, so its `useState` initializer reads the live armed id —
  * no reset effect needed (avoids the react-hooks/set-state-in-effect rule).
  */
-export function OneShotInjectorButton({ layout = 'strip' }: { layout?: 'strip' | 'nav' } = {}) {
+export function OneShotInjectorButton({ layout = 'strip' }: { layout?: 'strip' | 'nav' | 'icon' } = {}) {
     const pipelinePhase = useAppStore(s => s.pipelinePhase);
     const armedOneShot = useAppStore(s => s.armedOneShot);
     const setArmedOneShot = useAppStore(s => s.setArmedOneShot);
@@ -62,6 +62,17 @@ export function OneShotInjectorButton({ layout = 'strip' }: { layout?: 'strip' |
                             Armed
                         </span>
                     )}
+                </button>
+            ) : layout === 'icon' ? (
+                <button
+                    type="button"
+                    onClick={() => setModalOpen(true)}
+                    disabled={isStreaming}
+                    title={title}
+                    aria-label="Inject Event"
+                    className={`chat-composer-shortcut${armedOneShot ? ' is-armed' : ''}`}
+                >
+                    <Zap size={16} />
                 </button>
             ) : (
             <button

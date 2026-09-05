@@ -1,10 +1,12 @@
 import type { RefObject } from 'react';
 import { Send, Square } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
+import { LOTM_EXCLUSIVE_UI } from '../../services/lotm/lotmFlags';
+import { ChatComposerControls } from './ChatComposerControls';
 
 /**
- * Bottom composer row: active-preset selector, deep-search armed chip,
- * auto-growing input textarea, and the send/stop toggle button.
+ * Bottom composer row: auto-growing input on the left, player-control
+ * icon shortcuts on the right, and the send/stop toggle inside the well.
  */
 export function ChatComposer({
     input,
@@ -27,32 +29,15 @@ export function ChatComposer({
     onStop: () => void;
     compact?: boolean;
 }) {
-    const settings = useAppStore(s => s.settings);
     const deepArmed = useAppStore(s => s.deepArmed);
     const armedRoll = useAppStore(s => s.armedRoll);
     const armedLoot = useAppStore(s => s.armedLoot);
     const armedOneShot = useAppStore(s => s.armedOneShot);
     const armedAbsoluteCommand = useAppStore(s => s.armedAbsoluteCommand);
-    const showPresetPicker = settings.presets.length > 1;
 
     return (
         <div className={`chat-composer-pad${compact ? ' is-compact' : ''}`}>
             <div className="chat-composer-well flex gap-1 items-end">
-                {showPresetPicker && (
-                <div className="relative shrink-0 mb-[4px] ml-1">
-                    <select
-                        value={settings.activePresetId}
-                        onChange={(e) => useAppStore.getState().setActivePreset(e.target.value)}
-                        className="h-[32px] bg-surface border border-border text-text-dim hover:text-terminal hover:border-terminal/50 pl-3 pr-7 text-[10px] uppercase tracking-widest focus:outline-none focus:border-terminal max-w-[120px] sm:max-w-[150px] truncate cursor-pointer appearance-none rounded transition-colors font-bold"
-                        title="Active AI Preset"
-                    >
-                        {settings.presets.map(p => (
-                            <option key={p.id} value={p.id}>{p.name}</option>
-                        ))}
-                    </select>
-                    <svg className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-text-dim pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                </div>
-                )}
                 {deepArmed && (
                     <div className="shrink-0 mb-[4px] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-amber-500/15 text-amber-400 border border-amber-500/40 rounded animate-pulse">
                         Deep
@@ -94,6 +79,7 @@ export function ChatComposer({
                     {isStreaming ? <Square size={16} fill="currentColor" /> : <Send size={16} />}
                 </button>
             </div>
+            {LOTM_EXCLUSIVE_UI && <ChatComposerControls />}
         </div>
     );
 }

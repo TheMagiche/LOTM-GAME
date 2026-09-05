@@ -113,6 +113,9 @@ vi.mock('../../store/useAppStore', async () => {
         setArmedRoll: vi.fn(),
         openDiceRollModal: vi.fn(),
         closeDiceRollModal: vi.fn(),
+        openLootRollModal: vi.fn(),
+        closeLootRollModal: vi.fn(),
+        lootRollModalOpen: false,
         diceRollModalOpen: false,
         armedLoot: null,
         clearArmedLoot: vi.fn(),
@@ -121,6 +124,7 @@ vi.mock('../../store/useAppStore', async () => {
         setArmedOneShot: vi.fn(),
         armedAbsoluteCommand: null,
         setArmedAbsoluteCommand: vi.fn(),
+        modTables: {},
     };
     state.openAskGm = vi.fn(() => { state.askGmOpen = true; emit(); });
     state.closeAskGm = vi.fn(() => { state.askGmOpen = false; emit(); });

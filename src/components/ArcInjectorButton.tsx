@@ -32,7 +32,7 @@ export function ArcInjectorButton({
     layout = 'strip',
 }: {
     onDone?: () => void;
-    layout?: 'strip' | 'nav';
+    layout?: 'strip' | 'nav' | 'icon';
 } = {}) {
     const pipelinePhase = useAppStore(s => s.pipelinePhase);
     const storedArcs = useAppStore(s => s.modTables['mod.arc.arcs']);
@@ -169,6 +169,17 @@ export function ArcInjectorButton({
                             Active
                         </span>
                     )}
+                </button>
+            ) : layout === 'icon' ? (
+                <button
+                    type="button"
+                    onClick={() => setModalOpen(true)}
+                    disabled={disabled}
+                    title={title}
+                    aria-label="Inject Arc"
+                    className={`chat-composer-shortcut${arcActive ? ' is-armed' : ''}`}
+                >
+                    <Syringe size={16} />
                 </button>
             ) : (
                 <button

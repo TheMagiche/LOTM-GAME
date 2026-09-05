@@ -29,7 +29,7 @@ import { toast } from './Toast';
  * segment only, not the whole control — pulsing the label makes it hard to
  * read. See WO §3.2.
  */
-export function AbsoluteCommandButton({ layout = 'strip' }: { layout?: 'strip' | 'nav' } = {}) {
+export function AbsoluteCommandButton({ layout = 'strip' }: { layout?: 'strip' | 'nav' | 'icon' } = {}) {
     const pipelinePhase = useAppStore(s => s.pipelinePhase);
     const armedAbsoluteCommand = useAppStore(s => s.armedAbsoluteCommand);
     const setArmedAbsoluteCommand = useAppStore(s => s.setArmedAbsoluteCommand);
@@ -59,6 +59,17 @@ export function AbsoluteCommandButton({ layout = 'strip' }: { layout?: 'strip' |
                             Armed
                         </span>
                     )}
+                </button>
+            ) : layout === 'icon' ? (
+                <button
+                    type="button"
+                    onClick={() => setModalOpen(true)}
+                    disabled={isStreaming}
+                    title={title}
+                    aria-label="Absolute Command"
+                    className={`chat-composer-shortcut${armed ? ' is-armed' : ''}`}
+                >
+                    <CommandSealIcon size={14} />
                 </button>
             ) : (
             <div className="inline-flex shrink-0 h-[32px] whitespace-nowrap">
