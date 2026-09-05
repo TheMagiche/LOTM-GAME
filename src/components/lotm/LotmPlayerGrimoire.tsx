@@ -56,6 +56,8 @@ import { LotmWorldMapView } from '../location-ledger/LotmWorldMapView';
 import { INITIAL_LOCATIONS } from '../../worldpacks/lotmMapData';
 import { toast } from '../Toast';
 import { uid } from '../../utils/uid';
+import { campaignCoverSrc, lotmAssetUrl } from '../../services/lotm/lotmAssetUrl';
+import { matchLotmPortraitEntry } from '../../services/lotm/lotmVisualMatcher';
 
 const PLAYER_SECTIONS: Array<{ id: PlayerGrimoireSection; label: string; icon: React.ReactNode }> = [
     { id: 'character', label: 'Character Record', icon: <User size={14} /> },
@@ -955,6 +957,19 @@ function LocationTravelPane({
 
 // ── 3. Character Record (Read-Only GM View) Section ──────────────────────
 
+function resolveCharacterRecordPortrait(pc: PlayerCharacter | null | undefined): string {
+    const stored = (pc?.portrait ?? '').trim();
+    if (stored) {
+        if (stored.startsWith('data:') || stored.startsWith('blob:') || stored.startsWith('http')) return stored;
+        if (stored.startsWith('image/')) return lotmAssetUrl(stored);
+        return campaignCoverSrc(stored);
+    }
+    const name = pc?.name?.trim();
+    if (!name) return '';
+    const hit = matchLotmPortraitEntry(name, false);
+    return hit ? lotmAssetUrl(hit.portrait) : '';
+}
+
 function CharacterGMPane({
     pc,
     profile,
@@ -969,6 +984,7 @@ function CharacterGMPane({
     const wants = pc?.wants;
     const boundaries = pc?.boundaries;
     const triggers = pc?.behavioralTriggers ?? [];
+    const portraitSrc = useMemo(() => resolveCharacterRecordPortrait(pc), [pc]);
 
     const traitTierMap = useMemo(() => Object.fromEntries(TRAIT_VOCAB.map(t => [t.text, t.tier])), []);
 
@@ -977,14 +993,14 @@ function CharacterGMPane({
             {/* Top Identity Banner */}
             <div className="bg-[#121015] border border-[#c9a227]/20 p-5 rounded-xl shadow-[6px_6px_16px_#050408,-5px_-5px_14px_#1c1822] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                    {pc?.avatarUrl ? (
+                    {portraitSrc ? (
                         <img
-                            src={pc.avatarUrl}
-                            alt={pc.name}
-                            className="w-16 h-16 object-cover rounded-full border border-[#c9a227]/40 shadow-[3px_3px_8px_#050407]"
+                            src={portraitSrc}
+                            alt={pc?.name || 'Player portrait'}
+                            className="w-20 h-28 object-cover rounded-lg border border-[#c9a227]/40 shadow-[3px_3px_8px_#050407] shrink-0"
                         />
                     ) : (
-                        <div className="w-16 h-16 rounded-full border border-[#c9a227]/30 bg-[#0e0c11] shadow-[inset_2px_2px_5px_#060507] flex items-center justify-center text-[#c9a227]">
+                        <div className="w-20 h-28 rounded-lg border border-[#c9a227]/30 bg-[#0e0c11] shadow-[inset_2px_2px_5px_#060507] flex items-center justify-center text-[#c9a227] shrink-0">
                             <User size={24} />
                         </div>
                     )}
@@ -1217,6 +1233,13 @@ function CharacterGMPane({
                         <Eye size={13} />
                         <span>Visual Profile & Attributes</span>
                     </p>
+                    {portraitSrc ? (
+                        <img
+                            src={portraitSrc}
+                            alt=""
+                            className="w-full max-h-80 object-cover object-top rounded-lg border border-[#c9a227]/30 shadow-[3px_3px_8px_#050407]"
+                        />
+                    ) : null}
                     <div className="grid grid-cols-2 gap-2.5 text-xs text-[#d8cfbe]">
                         <div className="p-2.5 bg-[#0e0c11] rounded-lg border border-[#c9a227]/14 shadow-[inset_2px_2px_5px_#060507]">
                             <span className="font-['Cinzel'] text-[8px] uppercase text-[#c9a227] block">Gender & Age</span>

@@ -85,20 +85,10 @@ export function isOpenRouterEndpoint(endpoint: string): boolean {
     }
 }
 
-/**
- * Starter roster for the public demo: Fool (Clara), Hermit (Benedict),
- * Darkness (Arthur), Hanged Man (Cassian) — matching characters with player images.
- */
-export const DEMO_PLAYABLE_PC_FILES = [
-    'lotm_pc_clara_whitlock.json',
-    'lotm_pc_benedict_faulkner.json',
-    'lotm_pc_arthur_pendel.json',
-    'lotm_pc_cassian_dray.json',
-] as const;
-
+/** Demo uses the full Sequence 9 starter roster (`lotm_pc_*.json`). */
 export function isDemoPlayablePcFile(pathOrName: string): boolean {
     const base = pathOrName.split('/').pop() || pathOrName;
-    return (DEMO_PLAYABLE_PC_FILES as readonly string[]).includes(base);
+    return /^lotm_pc_[a-z0-9_]+\.json$/i.test(base);
 }
 
 function lockDemoProvider<T extends Pick<LLMProvider, 'endpoint' | 'apiKey' | 'apiFormat' | 'modelName' | 'label'>>(provider: T): T {
