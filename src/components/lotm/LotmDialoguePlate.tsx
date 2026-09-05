@@ -19,6 +19,7 @@ import { MessageActionRail } from '../message/MessageActionRail';
 import { MessageBelowSlots } from '../message/MessageBelowSlots';
 import { SwipeIndicator, ContinueButton } from '../message/SwipeIndicator';
 import { standingWordForName, standingWordForNpc } from './lotmStanding';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 import { LotmSceneModal } from './LotmSceneModal';
 
@@ -334,7 +335,10 @@ function LotmPlateGmBody({
                     onDelete={(id) => editor.handleDeleteOutput(id)}
                 />
             )}
-            <div className="lotm-plate-body gm-prose">
+            <div
+                className="lotm-plate-body gm-prose"
+                {...(!IS_DEMO_MODE ? { 'data-lore-checkable': 'true', 'data-message-id': message.id } : {})}
+            >
                 {editing ? (
                     <InlineMessageEditor
                         draft={editor.inlineDraft}

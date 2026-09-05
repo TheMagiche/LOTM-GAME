@@ -432,6 +432,16 @@ describe('ChatArea', () => {
         expect(screen.queryByText(/Dice Me/i)).not.toBeInTheDocument();
     });
 
+    it('marks illustrated GM text as highlight-actionable', () => {
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ id: 'gm-illustrated-sel', role: 'assistant', content: 'The gas lamps hiss.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        const checkable = screen.getByText('The gas lamps hiss.').closest('[data-lore-checkable="true"]');
+        expect(checkable).toHaveAttribute('data-message-id', 'gm-illustrated-sel');
+    });
+
     it('shows the current location on illustrated play', () => {
         const state = useAppStore.getState();
         (state.context as GameContext).currentPlaceId = 'loc-tingen';
