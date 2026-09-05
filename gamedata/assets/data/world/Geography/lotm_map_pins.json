@@ -1,51 +1,51 @@
 [
   {
-    "id": "northern-continent",
+    "id": "loc_1788646931173_pnhds",
     "name": "Northern Continent",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Fifth Epoch civilization",
     "coordinates": [
-      -1092,
-      3583
+      -724,
+      2984
     ],
-    "description": "The main landmass where most of the story takes place, home to major nations like the Loen Kingdom and Intis Republic. It is the center of civilization in the Fifth Epoch.",
+    "description": "Continent. The heart of the known world: fog-bound nations of gas lamps, railways, newspapers, and strict class lines, all built atop older epochs' buried secrets. Most campaigns begin here.",
     "details": "Continent"
   },
   {
-    "id": "loen-kingdom",
+    "id": "loc_1788646931173_ydxn3",
     "name": "Loen Kingdom",
     "type": "nation",
-    "category": "Kingdoms",
+    "category": "Northern Continent",
     "coordinates": [
-      -1100,
-      3900
+      -1131,
+      3780
     ],
-    "description": "A constitutional monarchy and the primary setting of the first book. It is a major power known for its industrial might and significant Beyonder organizations.",
-    "details": "Nation"
+    "description": "Nation — constitutional monarchy. Victorian superpower of industry, banking, and colonial trade.",
+    "details": "[the Kingdom]"
   },
   {
-    "id": "backlund",
+    "id": "loc_1788646931173_qfpj5",
     "name": "Backlund",
     "type": "city",
-    "category": "Cities",
+    "category": "Loen Kingdom",
     "coordinates": [
-      -1100,
-      3900
+      -1107,
+      4032
     ],
-    "description": "The sprawling capital of the Loen Kingdom, a Victorian-era metropolis divided into districts, from the wealthy to the impoverished. It is the center of political intrigue and Beyonder activity.",
-    "details": "City"
+    "description": "Capital city. The sprawl capital: a million souls divided into West Borough aristocracy, factory districts choking on coal smoke, docklands of sailors and smugglers, and ministries where the real empire gets administered.",
+    "details": "[the capital]"
   },
   {
-    "id": "pritz-harbor",
+    "id": "loc_1788646931173_soyhl",
     "name": "Pritz Harbor",
     "type": "harbor",
-    "category": "Cities",
+    "category": "Loen Kingdom",
     "coordinates": [
-      -1200,
-      4000
+      -1137,
+      4055
     ],
-    "description": "",
-    "details": "Harbor"
+    "description": "Harbor / Naval base. Loen Kingdom's largest military and commercial port at the mouth of the Tasuo River, serving as the primary naval gateway to the Sonia Sea.",
+    "details": "[Port Pritz]"
   },
   {
     "id": "tingen-city",
@@ -53,46 +53,46 @@
     "type": "city",
     "category": "Cities",
     "coordinates": [
-      -1150,
-      3850
+      -1010,
+      3989
     ],
     "description": "A mid-sized city in the Loen Kingdom, known as the 'City of Universities.' It is where the protagonist's journey begins and is home to a branch of the Nighthawks.",
     "details": "City"
   },
   {
-    "id": "enmat-harbor",
+    "id": "loc_1788646931173_el4p6",
     "name": "Enmat Harbor",
     "type": "harbor",
-    "category": "Cities",
+    "category": "Loen Kingdom",
     "coordinates": [
-      -1250,
-      4050
+      -1023,
+      4113
     ],
-    "description": "",
-    "details": "Harbor"
+    "description": "Harbor town. A bustling coastal port town in eastern Loen, connecting domestic passenger liners and merchant vessels across the channel.",
+    "details": "[Port Enmat]"
   },
   {
-    "id": "conis-city",
+    "id": "loc_1788646931173_3y5w2",
     "name": "Conis City",
     "type": "city",
-    "category": "Cities",
+    "category": "Loen Kingdom",
     "coordinates": [
-      -1300,
-      3950
+      -1010,
+      3792
     ],
-    "description": "",
+    "description": "Industrial city. An inland manufacturing and railway center in southern Loen, known for coal processing, machinery workshops, and dense worker housing.",
     "details": "City"
   },
   {
-    "id": "desi-bay",
+    "id": "loc_1788646931173_mx0sb",
     "name": "Desi Bay",
     "type": "landmark",
-    "category": "Cities",
+    "category": "Loen Kingdom",
     "coordinates": [
       -1350,
-      3900
+      3731
     ],
-    "description": "",
+    "description": "Coastal bay / Resort region. A scenic southern coastal bay and resort district in Desi County, favored by nobles and vacationers for warm beaches and mild waters.",
     "details": "Landmark"
   },
   {
@@ -149,190 +149,190 @@
     "type": "city",
     "category": "Cities",
     "coordinates": [
-      -650,
-      3700
+      -758,
+      3688
     ],
     "description": "",
     "details": "City"
   },
   {
-    "id": "feynapotter-kingdom",
+    "id": "loc_1788646931173_bloae",
     "name": "Feynapotter Kingdom",
     "type": "nation",
-    "category": "Kingdoms",
+    "category": "Northern Continent",
     "coordinates": [
-      -1350,
-      3300
+      -1354,
+      3396
     ],
-    "description": "A kingdom neighboring Intis, associated with the Mother Pathway and the Earth Mother church. It is known for its agricultural prosperity.",
+    "description": "Nation — kingdom. Rural kingdom of farms, forests, and old faith, closely tied to the Earth Mother church. Visitors find muddy roads, hearty food, and superstitions that turn out to be entirely accurate precautions.",
     "details": "Nation"
   },
   {
-    "id": "feynapotter-city",
+    "id": "loc_1788646931173_an1j1",
     "name": "Feynapotter City",
     "type": "city",
-    "category": "Cities",
+    "category": "Feynapotter Kingdom",
     "coordinates": [
-      -1350,
-      3300
+      -1242,
+      3498
     ],
-    "description": "",
+    "description": "Capital city. The sunlit capital of Feynapotter, ringed by fertile farmlands and crowned by the grand cathedral of the Church of the Earth Mother.",
     "details": "City"
   },
   {
-    "id": "lenburg",
+    "id": "loc_1788646931173_hzaml",
     "name": "Lenburg",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Northern Continent",
     "coordinates": [
-      -1200,
-      3600
+      -1209,
+      3355
     ],
-    "description": "",
+    "description": "Nation — scholastic republic. A peaceful buffer nation dedicated to scholarship, home to the global headquarters of the Church of the God of Knowledge and Wisdom.",
     "details": "region"
   },
   {
-    "id": "midseashore",
+    "id": "loc_1788646931174_kiuq6",
     "name": "Midseashore",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Northern Continent",
     "coordinates": [
-      -1250,
-      3700
+      -1011,
+      3862
     ],
-    "description": "",
-    "details": "region"
+    "description": "Region — coastal territory. A strategic coastal province and sea corridor connecting Loen and neighboring kingdoms along the central gulf coast.",
+    "details": "[Midseashire]"
   },
   {
-    "id": "southern-continent",
+    "id": "loc_1788646931174_23pks",
     "name": "Southern Continent",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "colonial frontier",
     "coordinates": [
-      -2333,
-      4133
+      -2556,
+      4250
     ],
-    "description": "A less developed continent with various colonies and native peoples, known for its exotic Beyonder materials and ancient ruins.",
+    "description": "Continent. Land of jungles, savannas, and ancient ruins now carved into colonial holdings. Export: gold, exotic goods, and Beyonder materials harvested from creatures no textbook names.",
     "details": "Continent"
   },
   {
-    "id": "balam-empire",
+    "id": "loc_1788646931174_bhuji",
     "name": "Balam Empire",
     "type": "nation",
-    "category": "Kingdoms",
+    "category": "Southern Continent",
     "coordinates": [
-      -2200,
-      4100
+      -2263,
+      4220
     ],
-    "description": "",
+    "description": "Empire — fragmented realm. An ancient empire spanning the Southern Continent, rich in Death pathway heritage and now partitioned under colonial exploitation.",
     "details": "nation"
   },
   {
-    "id": "west-balam",
+    "id": "loc_1788646931174_aayqi",
     "name": "West Balam",
     "type": "region",
-    "category": "Cities",
+    "category": "Balam Empire",
     "coordinates": [
-      -2200,
-      3900
+      -2216,
+      3981
     ],
-    "description": "",
+    "description": "Region — tropical frontier. The western territory of Balam, filled with dense rainforests, mineral reserves, and bitter colonial skirmishes between Intis and Feysac.",
     "details": "Region"
   },
   {
-    "id": "east-balam",
+    "id": "loc_1788646931174_wqssc",
     "name": "East Balam",
     "type": "region",
-    "category": "Cities",
+    "category": "Balam Empire",
     "coordinates": [
-      -2300,
-      4300
+      -2249,
+      4467
     ],
-    "description": "",
+    "description": "Region — colonial territory. The eastern territory of Balam dominated by Loen colonial governance, marked by plantation docks and rising native resistance movements.",
     "details": "Region"
   },
   {
-    "id": "highlands-kingdom",
+    "id": "loc_1788646931174_5b5rj",
     "name": "Highlands Kingdom",
     "type": "nation",
-    "category": "Kingdoms",
+    "category": "Southern Continent",
     "coordinates": [
-      -2300,
-      4200
+      -2116,
+      4150
     ],
-    "description": "",
+    "description": "Nation — sovereign kingdom. A resilient sovereign highland state that resisted colonial subjugation through treacherous mountain passes and fierce martial traditions.",
     "details": "nation"
   },
   {
-    "id": "paz-valley",
+    "id": "loc_1788646931174_hit9c",
     "name": "Paz Valley",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Southern Continent",
     "coordinates": [
-      -2500,
-      4100
+      -1969,
+      4291
     ],
-    "description": "",
+    "description": "Region — secluded valley. A protected lush river valley in the Southern Continent preserving ancient indigenous customs, herbs, and forgotten deities.",
     "details": "region"
   },
   {
-    "id": "forsaken-land-of-the-gods",
+    "id": "loc_1788646931174_zekik",
     "name": "Forsaken Land of the Gods",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Eastern Continent",
     "coordinates": [
-      -1500,
-      6500
+      -1304,
+      6308
     ],
-    "description": "A desolate region in perpetual darkness, abandoned by the gods after a great catastrophe. Home to the ancient City of Silver and dangerous supernatural creatures.",
+    "description": "Forbidden region. A continent abandoned by the gods after an ancient catastrophe: perpetual night, mutated beasts, and scattered pockets of humanity fighting for light and food.",
     "details": "Continent"
   },
   {
-    "id": "city-of-silver",
+    "id": "loc_1788646931174_e620t",
     "name": "City of Silver",
     "type": "city",
-    "category": "Cities",
+    "category": "Forsaken Land of the Gods",
     "coordinates": [
-      -1200,
-      6200
+      -1120,
+      5792
     ],
-    "description": "An ancient city located in the Forsaken Land of the Gods, perpetually shrouded in darkness. Its people fight for survival against corrupted creatures and worship the Eternal Blazing Sun.",
+    "description": "Fortified city. An ancient sanctuary of giant-descendants enduring perpetual darkness, fighting monstrous abominations with lightning and devotion.",
     "details": "City"
   },
   {
-    "id": "moon-city",
+    "id": "loc_1788646931174_7kp19",
     "name": "Moon City",
     "type": "city",
-    "category": "Cities",
+    "category": "Forsaken Land of the Gods",
     "coordinates": [
-      -1400,
-      6400
+      -1025,
+      7116
     ],
-    "description": "",
+    "description": "Isolated settlement. A severely mutated settlement clinging to survival in the dark wasteland, revering the Crimson Moon while resisting complete madness.",
     "details": "City"
   },
   {
-    "id": "afternoon-town",
+    "id": "loc_1788646931174_46ra6",
     "name": "Afternoon Town",
     "type": "city",
-    "category": "Cities",
+    "category": "Forsaken Land of the Gods",
     "coordinates": [
-      -1300,
-      6300
+      -1160,
+      5728
     ],
-    "description": "",
+    "description": "Ruined town. A desolate ruined town where daylight forever hangs frozen in perpetual dusk, filled with looping shadows and terrifying remnant spirits.",
     "details": "City"
   },
   {
-    "id": "giant-king-s-court",
+    "id": "loc_1788646931174_bleup",
     "name": "Giant King's Court",
     "type": "landmark",
-    "category": "Cities",
+    "category": "Forsaken Land of the Gods",
     "coordinates": [
-      -1100,
-      6000
+      -1118,
+      5670
     ],
-    "description": "",
+    "description": "Mythical landmark / Divine palace. The monumental mountain palace of the Second Epoch Giant King Aurmir, towering in petrified majesty at the eastern edge of the darkness.",
     "details": "Landmark"
   },
   {
@@ -341,22 +341,22 @@
     "type": "region",
     "category": "Kingdoms",
     "coordinates": [
-      -1340,
-      4640
+      -1352,
+      4296
     ],
     "description": "",
     "details": "region"
   },
   {
-    "id": "rorsted-archipelago",
+    "id": "loc_1788646931174_zyn6l",
     "name": "Rorsted Archipelago",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Sonia Sea",
     "coordinates": [
-      -1600,
-      4500
+      -1416,
+      4408
     ],
-    "description": "A chain of islands in the sea between continents, a hub for pirates, trade, and colonial powers.",
+    "description": "Island chain. Scattered islands between continents: pirate havens, colonial ports, and free towns where any cargo moves for the right price. The Lord of Storms' Mandated Punishers raid often and rule never quite.",
     "details": "Region"
   },
   {
@@ -365,8 +365,8 @@
     "type": "harbor",
     "category": "Cities",
     "coordinates": [
-      -1650,
-      4550
+      -1481,
+      4354
     ],
     "description": "A port city in the Rorsted Archipelago known for its diverse population, supernatural activity, and the influence of the Sea God.",
     "details": "City"
@@ -396,39 +396,39 @@
     "details": "City"
   },
   {
-    "id": "gargas-archipelago",
+    "id": "loc_1788646931174_qj1u1",
     "name": "Gargas Archipelago",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Sonia Sea",
     "coordinates": [
-      -1100,
-      5100
+      -1164,
+      4669
     ],
-    "description": "",
+    "description": "Island chain. A cluster of eastern islands famous for deep-sea whaling, monster hunting, and native folk customs outside central church governance.",
     "details": "region"
   },
   {
-    "id": "nas",
+    "id": "loc_1788646931174_cpgdk",
     "name": "Nas",
     "type": "harbor",
-    "category": "Cities",
+    "category": "Gargas Archipelago",
     "coordinates": [
-      -1150,
-      5150
+      -1177,
+      4620
     ],
-    "description": "",
+    "description": "Harbor city. The bustling principal harbor of the Gargas Archipelago, filled with whalers, monster butchers, and dealers in maritime occult curios.",
     "details": "City/Harbor"
   },
   {
-    "id": "oravi-island",
+    "id": "loc_1788646931174_xzw4y",
     "name": "Oravi Island",
     "type": "region",
-    "category": "Kingdoms",
+    "category": "Sonia Sea",
     "coordinates": [
-      -1700,
-      4900
+      -1346,
+      4528
     ],
-    "description": "",
+    "description": "Island. A key mid-ocean provisioning stop for merchant and pirate vessels alike, known for lively taverns and black-market deals.",
     "details": "region"
   },
   {
@@ -437,58 +437,58 @@
     "type": "region",
     "category": "Kingdoms",
     "coordinates": [
-      -1494,
-      4381
+      -1438,
+      4470
     ],
     "description": "",
     "details": "region"
   },
   {
-    "id": "damir-harbor",
+    "id": "loc_1788646931174_153jg",
     "name": "Damir Harbor",
     "type": "harbor",
-    "category": "Cities",
+    "category": "Sonia Sea",
     "coordinates": [
-      -1450,
-      4200
+      -1310,
+      4056
     ],
-    "description": "",
+    "description": "Harbor town. A scenic island harbor town renowned for cured hams, safe anchorage, and passenger steamers running the standard ocean line.",
     "details": "Harbor"
   },
   {
-    "id": "bansy-harbor",
+    "id": "loc_1788646931174_ecsn6",
     "name": "Bansy Harbor",
     "type": "harbor",
-    "category": "Cities",
+    "category": "Sonia Sea",
     "coordinates": [
-      -1500,
-      4300
+      -1345,
+      4100
     ],
-    "description": "",
+    "description": "Harbor town. An eerie historic port steeped in ancient sacrificial customs and lingering ties to the bloodline of the Red Angel Medici.",
     "details": "Harbor"
   },
   {
-    "id": "toskar",
+    "id": "loc_1788646931174_p4xjq",
     "name": "Toskar",
     "type": "harbor",
-    "category": "Cities",
+    "category": "Sonia Sea",
     "coordinates": [
-      -1800,
-      4600
+      -1380,
+      4744
     ],
-    "description": "",
-    "details": "Harbor"
+    "description": "Harbor town. A tranquil southern island harbor serving as a vital coal refueling and freshwater restocking station for long-voyage liners.",
+    "details": "[Toskar Harbor]"
   },
   {
-    "id": "sonia-sea",
+    "id": "loc_1788646931174_rsayl",
     "name": "Sonia Sea",
     "type": "sea",
-    "category": "Seas",
+    "category": "Major Ocean",
     "coordinates": [
-      -1150,
-      4800
+      -1009,
+      4830
     ],
-    "description": "The major sea separating the Northern and Southern Continents. It is plagued by sea monsters, pirate fleets, and supernatural phenomena. It contains the Rorsted Archipelago.",
+    "description": "Ocean. The vast ocean dividing the Northern and Southern Continents, teeming with pirate armadas, sea beasts, and mysterious islands.",
     "details": "Sea"
   },
   {
@@ -504,15 +504,15 @@
     "details": "Sea"
   },
   {
-    "id": "berserk-sea",
+    "id": "loc_1788646931174_ggoqw",
     "name": "Berserk Sea",
     "type": "sea",
-    "category": "Seas",
+    "category": "Southern Ocean",
     "coordinates": [
-      -1780,
-      3480
+      -1752,
+      3629
     ],
-    "description": "A sea known for its constant storms, thunder, and chaotic magnetic fields, making it extremely dangerous and cutting off the Northern and Southern Continents.",
+    "description": "Ocean. A chaotic expanse of perpetual lightning storms, violent maelstroms, and warped magnetic fields that sever direct sea passage.",
     "details": "Sea"
   }
 ]
