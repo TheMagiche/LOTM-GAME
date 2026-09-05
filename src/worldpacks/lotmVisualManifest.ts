@@ -98,22 +98,112 @@ export const LOTM_PLAYER_PORTRAITS: LotmPortraitVisual[] = [
   {
     id: "clara-whitlock",
     aliases: ["clara whitlock", "clara"],
-    portrait: "image/players/clara_whitlock.jpeg",
+    portrait: "image/players/clara_whitlock.webp",
   },
   {
     id: "benedict-faulkner",
     aliases: ["benedict faulkner", "benedict", "professor faulk"],
-    portrait: "image/players/benedict_faulkner.jpeg",
+    portrait: "image/players/benedict_faulkner.webp",
   },
   {
     id: "arthur-pendel",
     aliases: ["arthur pendel", "arthur", "constable pendel"],
-    portrait: "image/players/arthur_pendel.jpeg",
+    portrait: "image/players/arthur_pendel.webp",
   },
   {
     id: "cassian-dray",
     aliases: ["cassian dray", "cassian", "brother cass"],
-    portrait: "image/players/cassian_dray.jpeg",
+    portrait: "image/players/cassian_dray.webp",
+  },
+  {
+    id: "delphine-roche",
+    aliases: ["delphine roche", "delphine", "mademoiselle invention"],
+    portrait: "image/players/delphine_roche.webp",
+  },
+  {
+    id: "edmund-vale",
+    aliases: ["edmund vale", "edmund"],
+    portrait: "image/players/edmund_vale.webp",
+  },
+  {
+    id: "emil-vasari",
+    aliases: ["emil vasari", "emil", "doc"],
+    portrait: "image/players/emil_vasari.webp",
+  },
+  {
+    id: "evangeline-moss",
+    aliases: ["evangeline moss", "evangeline", "sister evie"],
+    portrait: "image/players/evangeline_moss.webp",
+  },
+  {
+    id: "greta-ashdown",
+    aliases: ["greta ashdown", "greta", "the iron widow"],
+    portrait: "image/players/greta_ashdown.webp",
+  },
+  {
+    id: "henrietta-stanley",
+    aliases: ["henrietta stanley", "henrietta", "judge hen"],
+    portrait: "image/players/henrietta_stanley.webp",
+  },
+  {
+    id: "isadora-quill",
+    aliases: ["isadora quill", "isadora"],
+    portrait: "image/players/isadora_quill.webp",
+  },
+  {
+    id: "jacob-thorne",
+    aliases: ["jacob thorne", "jacob", "thorn"],
+    portrait: "image/players/jacob_thorne.webp",
+  },
+  {
+    id: "marcus-webb",
+    aliases: ["marcus webb", "marcus", "webb the warden"],
+    portrait: "image/players/marcus_webb.webp",
+  },
+  {
+    id: "margaret-odell",
+    aliases: ["margaret o'dell", "margaret odell", "margaret", "maggie"],
+    portrait: "image/players/margaret_odell.webp",
+  },
+  {
+    id: "mordecai-ash",
+    aliases: ["mordecai ash", "mordecai", "the quiet partner"],
+    portrait: "image/players/mordecai_ash.webp",
+  },
+  {
+    id: "rosalind-hart",
+    aliases: ["rosalind hart", "rosalind"],
+    portrait: "image/players/rosalind_hart.webp",
+  },
+  {
+    id: "sabine-vex",
+    aliases: ["sabine vex", "sabine", "madame indulgence"],
+    portrait: "image/players/sabine_vex.webp",
+  },
+  {
+    id: "samuel-bright",
+    aliases: ["samuel bright", "samuel", "brother samuel"],
+    portrait: "image/players/samuel_bright.webp",
+  },
+  {
+    id: "silas-croft",
+    aliases: ["silas croft", "silas", "magpie"],
+    portrait: "image/players/silas_croft.webp",
+  },
+  {
+    id: "theo-vance",
+    aliases: ["theo vance", "theo", "lucky vance"],
+    portrait: "image/players/theo_vance.webp",
+  },
+  {
+    id: "thomas-reiner",
+    aliases: ["thomas reiner", "thomas"],
+    portrait: "image/players/thomas_reiner.webp",
+  },
+  {
+    id: "vivienne-noir",
+    aliases: ["vivienne noir", "vivienne", "madame v"],
+    portrait: "image/players/vivienne_noir.webp",
   },
 ];
 

@@ -127,19 +127,22 @@ describe('lotmVisualMatcher', () => {
     });
 
     it('stages playable PC portraits from gamedata/image/players', () => {
-        expect(matchLotmPortraitEntry('Clara Whitlock', false)?.portrait).toBe('image/players/clara_whitlock.jpeg');
-        expect(matchLotmPortraitEntry('Benedict Faulkner', false)?.portrait).toBe('image/players/benedict_faulkner.jpeg');
-        expect(matchLotmPortraitEntry('Arthur Pendel', false)?.portrait).toBe('image/players/arthur_pendel.jpeg');
-        expect(matchLotmPortraitEntry('Cassian Dray', false)?.portrait).toBe('image/players/cassian_dray.jpeg');
+        expect(matchLotmPortraitEntry('Clara Whitlock', false)?.portrait).toBe('image/players/clara_whitlock.webp');
+        expect(matchLotmPortraitEntry('Benedict Faulkner', false)?.portrait).toBe('image/players/benedict_faulkner.webp');
+        expect(matchLotmPortraitEntry('Arthur Pendel', false)?.portrait).toBe('image/players/arthur_pendel.webp');
+        expect(matchLotmPortraitEntry('Cassian Dray', false)?.portrait).toBe('image/players/cassian_dray.webp');
+        expect(matchLotmPortraitEntry('Henrietta Stanley', false)?.portrait).toBe('image/players/henrietta_stanley.webp');
+        expect(matchLotmPortraitEntry('Isadora Quill', false)?.portrait).toBe('image/players/isadora_quill.webp');
+        expect(matchLotmPortraitEntry("Margaret O'Dell", false)?.portrait).toBe('image/players/margaret_odell.webp');
 
         const hits = matchLotmPortraits({
             playerCharacter: { id: 'pc_lotm_clara_whitlock', name: 'Clara Whitlock', portrait: '' } as never,
             latestGmText: 'Clara Whitlock set the composing stick down.',
         });
-        expect(hits.some(h => h.isPc && h.src.includes('image/players/clara_whitlock.jpeg'))).toBe(true);
+        expect(hits.some(h => h.isPc && h.src.includes('image/players/clara_whitlock.webp'))).toBe(true);
 
         const [clara] = attachLotmPortraitsToNpcs([{ name: 'Clara Whitlock', portrait: '' }]);
-        expect(clara.portrait).toBe('/assets/lotm/image/players/clara_whitlock.jpeg');
+        expect(clara.portrait).toBe('/assets/lotm/image/players/clara_whitlock.webp');
     });
 
     it('does not refill a cleared portrait in correct mode', () => {

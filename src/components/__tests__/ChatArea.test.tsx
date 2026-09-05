@@ -518,7 +518,7 @@ describe('ChatArea', () => {
         render(<ChatArea presentation="illustrated" />);
         await user.click(screen.getByRole('button', { name: 'Open scene illustration' }));
         const img = screen.getByRole('img', { name: 'Clara Whitlock' });
-        expect(img).toHaveAttribute('src', expect.stringContaining('image/players/clara_whitlock.jpeg'));
+        expect(img).toHaveAttribute('src', expect.stringContaining('image/players/clara_whitlock.webp'));
     });
 
     it('shows the chronicle transcript when chronicle view is open', () => {

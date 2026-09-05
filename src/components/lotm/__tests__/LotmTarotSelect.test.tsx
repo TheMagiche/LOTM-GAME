@@ -55,9 +55,16 @@ describe('LotmTarotSelect', () => {
         const arthur = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Arthur Pendel')!;
         const cassian = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Cassian Dray')!;
 
-        expect(getCharacterImageForPc(clara, resolveLotmPathway(clara.pathway))).toContain('image/players/clara_whitlock.jpeg');
-        expect(getCharacterImageForPc(benedict, resolveLotmPathway(benedict.pathway))).toContain('image/players/benedict_faulkner.jpeg');
-        expect(getCharacterImageForPc(arthur, resolveLotmPathway(arthur.pathway))).toContain('image/players/arthur_pendel.jpeg');
-        expect(getCharacterImageForPc(cassian, resolveLotmPathway(cassian.pathway))).toContain('image/players/cassian_dray.jpeg');
+        expect(getCharacterImageForPc(clara, resolveLotmPathway(clara.pathway))).toContain('image/players/clara_whitlock.webp');
+        expect(getCharacterImageForPc(benedict, resolveLotmPathway(benedict.pathway))).toContain('image/players/benedict_faulkner.webp');
+        expect(getCharacterImageForPc(arthur, resolveLotmPathway(arthur.pathway))).toContain('image/players/arthur_pendel.webp');
+        expect(getCharacterImageForPc(cassian, resolveLotmPathway(cassian.pathway))).toContain('image/players/cassian_dray.webp');
+
+        const henrietta = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Henrietta Stanley')!;
+        const isadora = LOTM_PLAYABLE_PCS.find(pc => pc.name === 'Isadora Quill')!;
+        const margaret = LOTM_PLAYABLE_PCS.find(pc => pc.name === "Margaret O'Dell")!;
+        expect(getCharacterImageForPc(henrietta, resolveLotmPathway(henrietta.pathway))).toContain('image/players/henrietta_stanley.webp');
+        expect(getCharacterImageForPc(isadora, resolveLotmPathway(isadora.pathway))).toContain('image/players/isadora_quill.webp');
+        expect(getCharacterImageForPc(margaret, resolveLotmPathway(margaret.pathway))).toContain('image/players/margaret_odell.webp');
     });
 });

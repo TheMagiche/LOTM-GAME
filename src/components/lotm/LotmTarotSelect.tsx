@@ -65,7 +65,6 @@ const PATHWAY_CHARACTER_ART: Record<string, string> = {
     justiciar: 'image/characters/xio_derecha.webp',
     wheel_of_fortune: 'image/characters/will_auceptin.webp',
     moon: 'image/characters/emlyn_white.webp',
-    mother: 'image/characters/frank_lee.webp',
     planter: 'image/characters/frank_lee.webp',
     chained: 'image/characters/sharron.webp',
     abyss: 'image/characters/true_creator.webp',
@@ -74,7 +73,6 @@ const PATHWAY_CHARACTER_ART: Record<string, string> = {
     secrets_supplicant: 'image/characters/sasrir.webp',
     reader: 'image/characters/edwina_edwards.webp',
     white_tower: 'image/characters/edwina_edwards.webp',
-    error: 'image/characters/amon.webp',
     marauder: 'image/characters/amon.webp',
 };
 
@@ -104,7 +102,7 @@ export function getCharacterImageForPc(pc: PlayablePcOption, pathway: LotmPathwa
         if (pathwayId.includes(key) || key.includes(pathwayId)) return lotmAssetUrl(path);
     }
     if (pathway?.emblemSrc) return pathway.emblemSrc;
-    return lotmAssetUrl('image/players/clara_whitlock.jpeg');
+    return lotmAssetUrl('image/players/clara_whitlock.webp');
 }
 
 export interface LotmTarotSelectProps {
