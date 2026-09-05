@@ -5,6 +5,21 @@ import { useAppStore } from '../../../store/useAppStore';
 import { ChatComposer } from '../ChatComposer';
 import { LotmPlayHeader } from '../../lotm/LotmPlayHeader';
 
+function renderComposer() {
+    return render(
+        <ChatComposer
+            input=""
+            inputRef={createRef()}
+            isStreaming={false}
+            oocBusy={false}
+            onInputChange={() => {}}
+            onKeyDown={() => {}}
+            onSend={() => {}}
+            onStop={() => {}}
+        />,
+    );
+}
+
 afterEach(() => {
     cleanup();
     useAppStore.getState().endLotmWorldIndex();
@@ -16,6 +31,8 @@ afterEach(() => {
         armedLoot: null,
         armedOneShot: null,
         armedAbsoluteCommand: null,
+        activeCampaignId: null,
+        diceRollModalOpen: false,
         settings: {
             ...useAppStore.getState().settings,
             aiTier: 'pro',
@@ -25,31 +42,7 @@ afterEach(() => {
 });
 
 describe('ChatComposer preset picker', () => {
-    it('hides the preset dropdown when only one setting exists', () => {
-        useAppStore.setState({
-            settings: {
-                ...useAppStore.getState().settings,
-                presets: [{ ...useAppStore.getState().settings.presets[0], name: 'Default Setting' }],
-            },
-        });
-        render(
-            <ChatComposer
-                input=""
-                inputRef={createRef()}
-                isStreaming={false}
-                oocBusy={false}
-                onInputChange={() => {}}
-                onKeyDown={() => {}}
-                onSend={() => {}}
-                onStop={() => {}}
-            />,
-        );
-
-        expect(screen.queryByTitle('Active AI Preset')).toBeNull();
-        expect(screen.queryByText('Default Setting')).toBeNull();
-    });
-
-    it('shows the preset dropdown when more than one setting exists', () => {
+    it('keeps the AI preset out of the input well', () => {
         const first = useAppStore.getState().settings.presets[0];
         useAppStore.setState({
             settings: {
@@ -58,21 +51,60 @@ describe('ChatComposer preset picker', () => {
                 activePresetId: first.id,
             },
         });
-        render(
-            <ChatComposer
-                input=""
-                inputRef={createRef()}
-                isStreaming={false}
-                oocBusy={false}
-                onInputChange={() => {}}
-                onKeyDown={() => {}}
-                onSend={() => {}}
-                onStop={() => {}}
-            />,
-        );
+        renderComposer();
 
+        expect(screen.queryByTitle('Active AI Preset')).toBeNull();
+        expect(screen.queryByRole('option', { name: 'Cloud' })).toBeNull();
+    });
+
+    it('moves the AI preset into the More menu', () => {
+        const first = useAppStore.getState().settings.presets[0];
+        useAppStore.setState({
+            settings: {
+                ...useAppStore.getState().settings,
+                presets: [first, { ...first, id: 'p2', name: 'Cloud' }],
+                activePresetId: first.id,
+            },
+        });
+        renderComposer();
+
+        fireEvent.click(screen.getByRole('button', { name: 'More' }));
         expect(screen.getByTitle('Active AI Preset')).toBeInTheDocument();
         expect(screen.getByRole('option', { name: 'Cloud' })).toBeInTheDocument();
+    });
+});
+
+describe('ChatComposer player shortcuts', () => {
+    it('shows icon shortcuts for dice, loot, inject arc, inject event, and more', () => {
+        useAppStore.setState({ activeCampaignId: 'camp-1' });
+        renderComposer();
+
+        expect(screen.getByRole('toolbar', { name: 'Player controls' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Dice' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Loot' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Inject Arc' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Inject Event' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'More' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'Absolute Command' })).toBeNull();
+        expect(screen.queryByRole('menuitem', { name: 'Archive' })).toBeNull();
+    });
+
+    it('opens extra functions from More', () => {
+        useAppStore.setState({ activeCampaignId: 'camp-1' });
+        renderComposer();
+
+        fireEvent.click(screen.getByRole('button', { name: 'More' }));
+        expect(screen.getByRole('button', { name: 'Absolute Command' })).toBeInTheDocument();
+        expect(screen.getByRole('menuitem', { name: 'Archive' })).toBeInTheDocument();
+        expect(screen.getByTitle('Active AI Preset')).toBeInTheDocument();
+    });
+
+    it('opens the dice modal from the icon shortcut', () => {
+        useAppStore.setState({ activeCampaignId: 'camp-1' });
+        renderComposer();
+
+        fireEvent.click(screen.getByRole('button', { name: 'Dice' }));
+        expect(useAppStore.getState().diceRollModalOpen).toBe(true);
     });
 });
 

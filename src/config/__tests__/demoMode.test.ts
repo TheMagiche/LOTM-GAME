@@ -11,13 +11,17 @@ import {
 } from '../demoMode';
 
 describe('demoMode helpers', () => {
-    it('recognizes the four demo starter PC files', () => {
+    it('treats every bundled lotm_pc_*.json file as a demo starter', () => {
         expect(isDemoPlayablePcFile('lotm_pc_clara_whitlock.json')).toBe(true);
         expect(isDemoPlayablePcFile('../../people/lotm_pc_benedict_faulkner.json')).toBe(true);
         expect(isDemoPlayablePcFile('lotm_pc_arthur_pendel.json')).toBe(true);
         expect(isDemoPlayablePcFile('lotm_pc_cassian_dray.json')).toBe(true);
-        expect(isDemoPlayablePcFile('lotm_pc_jacob_thorne.json')).toBe(false);
-        expect(isDemoPlayablePcFile('lotm_pc_silas_croft.json')).toBe(false);
+        expect(isDemoPlayablePcFile('lotm_pc_jacob_thorne.json')).toBe(true);
+        expect(isDemoPlayablePcFile('lotm_pc_silas_croft.json')).toBe(true);
+        expect(isDemoPlayablePcFile('lotm_pc_isadora_quill.json')).toBe(true);
+        expect(isDemoPlayablePcFile('lotm_pc_margaret_odell.json')).toBe(true);
+        expect(isDemoPlayablePcFile('npc_dunn_smith.json')).toBe(false);
+        expect(isDemoPlayablePcFile('clara_whitlock.json')).toBe(false);
     });
 
     it('requires an OpenRouter endpoint and API key', () => {

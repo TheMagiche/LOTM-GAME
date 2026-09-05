@@ -229,6 +229,7 @@ describe('LotmPlayerGrimoire component', () => {
         expect(screen.getAllByText(/drive/i).length).toBeGreaterThan(0);
         expect(screen.getAllByText(/composure/i).length).toBeGreaterThan(0);
         expect(screen.getByText(/Black trench coat and silk top hat/i)).toBeInTheDocument();
+        expect(screen.getByRole('img', { name: 'Klein Moretti' })).toBeInTheDocument();
     });
 
     it('switches to Potion & Pathway section and displays pathway progression', () => {
@@ -296,6 +297,28 @@ describe('LotmPlayerGrimoire component', () => {
         expect(screen.getAllByText(/composure/i).length).toBeGreaterThan(0);
         expect(screen.getByText(/Black trench coat and silk top hat/i)).toBeInTheDocument();
         expect(screen.getByText(/Uncover the mysteries of the Fog of History/i)).toBeInTheDocument();
+        expect(screen.getByRole('img', { name: 'Klein Moretti' })).toHaveAttribute(
+            'src',
+            expect.stringContaining('image/characters/klein_moretti'),
+        );
+    });
+
+    it('stages the playable PC portrait from gamedata/image/players on the Character Record', () => {
+        useAppStore.setState({
+            playerCharacter: {
+                ...MOCK_PC,
+                id: 'pc_lotm_clara_whitlock',
+                name: 'Clara Whitlock',
+                portrait: '',
+            },
+        });
+        useAppStore.getState().openPlayerGrimoire('character');
+        render(<LotmPlayerGrimoire />);
+
+        expect(screen.getByRole('img', { name: 'Clara Whitlock' })).toHaveAttribute(
+            'src',
+            expect.stringContaining('image/players/clara_whitlock.webp'),
+        );
     });
 
     it('switches to Inventory section with category filtering and sealed artefact flaw warning', () => {

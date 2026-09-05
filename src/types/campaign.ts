@@ -78,7 +78,7 @@ export type Campaign = {
     uiSkin?: CampaignUiSkin;
     /** Bundled world pack id, e.g. `lord-of-the-mysteries`. */
     worldPackId?: string;
-    /** When true, late-volume CGs and spoiler portraits may appear. */
+    /** When true, late-volume CGs may appear. */
     lotmSpoilers?: boolean;
     /** Demo VPS: opaque session id so idle/exit purge can delete this chronicle. */
     demoSessionId?: string;

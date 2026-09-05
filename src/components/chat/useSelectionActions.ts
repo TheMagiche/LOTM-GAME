@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 import { useAppStore } from '../../store/useAppStore';
 import { toast } from '../Toast';
 import { addNpcFromSelection } from '../../services/npc/manualAdd';
@@ -67,6 +68,7 @@ export function useSelectionActions() {
     const [selectionMenuPosition, setSelectionMenuPosition] = useState<{ left: number; top: number } | null>(null);
 
     useEffect(() => {
+        if (IS_DEMO_MODE) return;
         const handle = () => {
             const state = useAppStore.getState();
             // In-flight turn guard: do not show toolbar while a turn is generating

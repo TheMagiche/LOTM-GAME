@@ -19,6 +19,7 @@ import { MessageActionRail } from '../message/MessageActionRail';
 import { MessageBelowSlots } from '../message/MessageBelowSlots';
 import { SwipeIndicator, ContinueButton } from '../message/SwipeIndicator';
 import { standingWordForName, standingWordForNpc } from './lotmStanding';
+import { IS_DEMO_MODE } from '../../config/demoMode';
 import { formatLotmPathwayLabel } from '../../worldpacks/lotmPathways';
 import { LotmSceneModal } from './LotmSceneModal';
 
@@ -91,7 +92,6 @@ export function LotmDialoguePlate({
     const npcLedger = useAppStore(s => s.npcLedger);
     const onStageNpcIds = useAppStore(s => s.onStageNpcIds);
     const playerCharacter = useAppStore(s => s.playerCharacter);
-    const spoilers = useAppStore(s => s.activeCampaignMeta?.lotmSpoilers === true);
 
     const message = beats[index] ?? null;
     const viewingLatest = !!message && message.id === lastId;
@@ -112,10 +112,9 @@ export function LotmDialoguePlate({
         npcLedger,
         onStageNpcIds,
         playerCharacter,
-        spoilers,
     }), [
         currentPlace?.name, currentPlace?.aliases, currentPlace?.broadLocation, currentFeature, gmText,
-        npcLedger, onStageNpcIds, playerCharacter, spoilers,
+        npcLedger, onStageNpcIds, playerCharacter,
     ]);
 
     const portraits = useMemo(() => {
@@ -334,7 +333,10 @@ function LotmPlateGmBody({
                     onDelete={(id) => editor.handleDeleteOutput(id)}
                 />
             )}
-            <div className="lotm-plate-body gm-prose">
+            <div
+                className="lotm-plate-body gm-prose"
+                {...(!IS_DEMO_MODE ? { 'data-lore-checkable': 'true', 'data-message-id': message.id } : {})}
+            >
                 {editing ? (
                     <InlineMessageEditor
                         draft={editor.inlineDraft}

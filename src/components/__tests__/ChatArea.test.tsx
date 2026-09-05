@@ -113,6 +113,9 @@ vi.mock('../../store/useAppStore', async () => {
         setArmedRoll: vi.fn(),
         openDiceRollModal: vi.fn(),
         closeDiceRollModal: vi.fn(),
+        openLootRollModal: vi.fn(),
+        closeLootRollModal: vi.fn(),
+        lootRollModalOpen: false,
         diceRollModalOpen: false,
         armedLoot: null,
         clearArmedLoot: vi.fn(),
@@ -121,6 +124,7 @@ vi.mock('../../store/useAppStore', async () => {
         setArmedOneShot: vi.fn(),
         armedAbsoluteCommand: null,
         setArmedAbsoluteCommand: vi.fn(),
+        modTables: {},
     };
     state.openAskGm = vi.fn(() => { state.askGmOpen = true; emit(); });
     state.closeAskGm = vi.fn(() => { state.askGmOpen = false; emit(); });
@@ -428,6 +432,16 @@ describe('ChatArea', () => {
         expect(screen.queryByText(/Dice Me/i)).not.toBeInTheDocument();
     });
 
+    it('marks illustrated GM text as highlight-actionable', () => {
+        const state = useAppStore.getState();
+        state.messages = [
+            makeMessage({ id: 'gm-illustrated-sel', role: 'assistant', content: 'The gas lamps hiss.' }),
+        ];
+        render(<ChatArea presentation="illustrated" />);
+        const checkable = screen.getByText('The gas lamps hiss.').closest('[data-lore-checkable="true"]');
+        expect(checkable).toHaveAttribute('data-message-id', 'gm-illustrated-sel');
+    });
+
     it('shows the current location on illustrated play', () => {
         const state = useAppStore.getState();
         (state.context as GameContext).currentPlaceId = 'loc-tingen';
@@ -518,7 +532,7 @@ describe('ChatArea', () => {
         render(<ChatArea presentation="illustrated" />);
         await user.click(screen.getByRole('button', { name: 'Open scene illustration' }));
         const img = screen.getByRole('img', { name: 'Clara Whitlock' });
-        expect(img).toHaveAttribute('src', expect.stringContaining('image/players/clara_whitlock.jpeg'));
+        expect(img).toHaveAttribute('src', expect.stringContaining('image/players/clara_whitlock.webp'));
     });
 
     it('shows the chronicle transcript when chronicle view is open', () => {

@@ -242,7 +242,7 @@ export function ChatArea({
                 </div>
             )}
 
-            <SelectionActionsMenu />
+            {!IS_DEMO_MODE && <SelectionActionsMenu />}
 
             {showTranscript && (
             <ChatMessageList
