@@ -80,7 +80,6 @@ export type LotmMatchInput = {
     npcLedger?: NPCEntry[];
     onStageNpcIds?: string[];
     playerCharacter?: NPCEntry | null;
-    spoilers?: boolean;
 };
 
 export type LotmPortraitHit = {
@@ -132,7 +131,7 @@ export function formatLotmPlaceLabel(
     return [name, feature].map(part => (part ?? '').trim()).filter(Boolean).join(' · ');
 }
 
-export function matchLotmPortraitEntry(name: string, spoilers: boolean): LotmPortraitVisual | null {
+export function matchLotmPortraitEntry(name: string): LotmPortraitVisual | null {
     const key = normalizeAlias(name);
     if (!key) return null;
     // A bare article ("The") must not pick "the hanged man" / "the sun".
@@ -140,7 +139,6 @@ export function matchLotmPortraitEntry(name: string, spoilers: boolean): LotmPor
     let best: LotmPortraitVisual | null = null;
     let bestLen = 0;
     for (const entry of LOTM_PORTRAITS) {
-        if (entry.spoiler && !spoilers) continue;
         for (const alias of entry.aliases) {
             const a = normalizeAlias(alias);
             if (!a || isWeakAlias(a)) continue;
@@ -167,7 +165,6 @@ function suppressNestedAliasHits(hits: RankedPortraitHit[]): RankedPortraitHit[]
 }
 
 export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
-    const spoilers = !!input.spoilers;
     const ranked: RankedPortraitHit[] = [];
     const seen = new Set<string>();
 
@@ -183,7 +180,7 @@ export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
 
     const pc = input.playerCharacter;
     if (pc) {
-        const fromManifest = matchLotmPortraitEntry(pc.name, spoilers);
+        const fromManifest = matchLotmPortraitEntry(pc.name);
         const src = resolvePortraitSrc(pc.portrait, fromManifest);
         if (src) push(pc.name, src, pc.name, { isPc: true, locked: true });
     }
@@ -199,15 +196,14 @@ export function matchLotmPortraits(input: LotmMatchInput): LotmPortraitHit[] {
             ? longestMatchingAlias([npc.name, ...(npc.aliases ? npc.aliases.split(',') : [])], gm)
             : null;
         if (!staged && !namedAlias) continue;
-        const fromManifest = matchLotmPortraitEntry(npc.name, spoilers)
-            ?? (npc.aliases ? matchLotmPortraitEntry(npc.aliases.split(',')[0] ?? '', spoilers) : null);
+        const fromManifest = matchLotmPortraitEntry(npc.name)
+            ?? (npc.aliases ? matchLotmPortraitEntry(npc.aliases.split(',')[0] ?? '') : null);
         const src = resolvePortraitSrc(npc.portrait, fromManifest);
         if (src) push(npc.name, src, namedAlias || npc.name, { locked: staged });
     }
 
     if (gm) {
         for (const entry of LOTM_PORTRAITS) {
-            if (entry.spoiler && !spoilers) continue;
             const matched = longestMatchingAlias(entry.aliases, gm);
             if (!matched) continue;
             const display = entry.aliases[0];
@@ -247,12 +243,11 @@ export function matchLotmVisuals(input: LotmMatchInput): LotmVisualMatch {
 
 export function attachLotmPortraitsToNpcs<T extends { name: string; aliases?: string; portrait?: string }>(
     npcs: T[],
-    spoilers = false,
     mode: 'fill' | 'correct' = 'fill',
 ): T[] {
     return npcs.map(npc => {
-        const hit = matchLotmPortraitEntry(npc.name, spoilers)
-            ?? (npc.aliases ? matchLotmPortraitEntry(npc.aliases.split(',')[0] ?? '', spoilers) : null);
+        const hit = matchLotmPortraitEntry(npc.name)
+            ?? (npc.aliases ? matchLotmPortraitEntry(npc.aliases.split(',')[0] ?? '') : null);
         if (!hit) return npc;
         const next = manifestPortraitSrc(hit.portrait);
         if (npc.portrait === next) return npc;

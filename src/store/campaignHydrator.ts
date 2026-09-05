@@ -354,8 +354,7 @@ export async function hydrateCampaign(campaignId: string) {
                 console.warn('[Hydrator] Failed to persist LOTM pathway backfill:', e);
             }
         }
-        const spoilers = (await loadCampaignMeta(campaignId)).lotmSpoilers === true;
-        const nextPortraits = attachLotmPortraitsToNpcs(finalNpcLedger, spoilers, 'correct');
+        const nextPortraits = attachLotmPortraitsToNpcs(finalNpcLedger, 'fill');
         if (nextPortraits.some((n, i) => n !== finalNpcLedger[i])) {
             finalNpcLedger = nextPortraits;
             console.log('[Hydrator] Backfilled LOTM portraits on NPC ledger');
@@ -365,7 +364,7 @@ export async function hydrateCampaign(campaignId: string) {
         }
         if (finalContext.playerCharacter) {
             const withPathways = attachLotmPathwaysToNpcs([finalContext.playerCharacter])[0];
-            const nextPc = attachLotmPortraitsToNpcs([withPathways], spoilers, 'fill')[0];
+            const nextPc = attachLotmPortraitsToNpcs([withPathways], 'fill')[0];
             if (nextPc !== finalContext.playerCharacter) {
                 const pathwayLabel = formatLotmPathwayLabel(nextPc.signatureKit?.pathway, nextPc.signatureKit?.sequence);
                 finalContext = {

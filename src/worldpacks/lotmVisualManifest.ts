@@ -12,7 +12,6 @@ export type LotmPortraitVisual = {
   id: string;
   aliases: string[];
   portrait: string;
-  spoiler?: boolean;
 };
 
 export const LOTM_DEFAULT_BACKDROP = "image/backgrounds/tingen_city.webp";
@@ -370,61 +369,51 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     id: "true-creator",
     aliases: ["true creator"],
     portrait: "image/characters/true_creator.webp",
-    spoiler: true,
   },
   {
     id: "amon",
     aliases: ["amon"],
     portrait: "image/characters/amon.webp",
-    spoiler: true,
   },
   {
     id: "adam",
     aliases: ["adam"],
     portrait: "image/characters/adam.webp",
-    spoiler: true,
   },
   {
     id: "evernight",
     aliases: ["evernight goddess", "evernight", "goddess of the night"],
     portrait: "image/characters/evernight_goddess.webp",
-    spoiler: true,
   },
   {
     id: "ouroboros",
     aliases: ["ouroboros"],
     portrait: "image/characters/ouroboros.webp",
-    spoiler: true,
   },
   {
     id: "sasrir",
     aliases: ["sasrir"],
     portrait: "image/characters/sasrir.webp",
-    spoiler: true,
   },
   {
     id: "aucuses",
     aliases: ["aucuses"],
     portrait: "image/characters/aucuses.webp",
-    spoiler: true,
   },
   {
     id: "leodero",
     aliases: ["leodero"],
     portrait: "image/characters/leodero.webp",
-    spoiler: true,
   },
   {
     id: "herabergen",
     aliases: ["herabergen"],
     portrait: "image/characters/herabergen.webp",
-    spoiler: true,
   },
   {
     id: "medici",
     aliases: ["sauron einhorn medici", "medici"],
     portrait: "image/characters/sauron_einhorn_medici.webp",
-    spoiler: true,
   },
 ];
 

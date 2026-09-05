@@ -35,10 +35,10 @@ describe('lotmVisualMatcher', () => {
         expect(matchLotmBackdrop('a nameless alley')).toBe(LOTM_DEFAULT_BACKDROP);
     });
 
-    it('finds Dunn and hides Amon without spoilers', () => {
-        expect(matchLotmPortraitEntry('Dunn Smith', false)?.portrait).toContain('dunn_smith');
-        expect(matchLotmPortraitEntry('Amon', false)).toBeNull();
-        expect(matchLotmPortraitEntry('Amon', true)?.portrait).toContain('amon');
+    it('finds Dunn and late-volume portraits such as Amon and Adam', () => {
+        expect(matchLotmPortraitEntry('Dunn Smith')?.portrait).toContain('dunn_smith');
+        expect(matchLotmPortraitEntry('Amon')?.portrait).toContain('amon');
+        expect(matchLotmPortraitEntry('Adam')?.portrait).toContain('adam');
     });
 
     it('stages portraits from on-stage ids and GM text', () => {
@@ -49,18 +49,21 @@ describe('lotmVisualMatcher', () => {
                 { id: 'n2', name: 'Audrey Hall', aliases: '', portrait: '/assets/lotm/image/characters/audrey_hall.webp' } as never,
             ],
             onStageNpcIds: ['n1'],
-            spoilers: false,
         });
         expect(hits.map(h => h.name)).toEqual(expect.arrayContaining(['Dunn Smith', 'Leonard Mitchell']));
         expect(hits.length).toBeLessThanOrEqual(3);
     });
 
     it('attaches portrait URLs onto lore NPCs that match the manifest', () => {
-        const [dunn, stranger] = attachLotmPortraitsToNpcs([
+        const [dunn, amon, adam, stranger] = attachLotmPortraitsToNpcs([
             { name: 'Dunn Smith', portrait: '' },
+            { name: 'Amon', portrait: '' },
+            { name: 'Adam', portrait: '' },
             { name: 'Mrs. Pegg', portrait: '' },
         ]);
         expect(dunn.portrait).toBe('/assets/lotm/image/characters/dunn_smith.webp');
+        expect(amon.portrait).toBe('/assets/lotm/image/characters/amon.webp');
+        expect(adam.portrait).toBe('/assets/lotm/image/characters/adam.webp');
         expect(stranger.portrait).toBe('');
     });
 
@@ -89,10 +92,10 @@ describe('lotmVisualMatcher', () => {
     });
 
     it('maps Eternal Blazing Sun / The Sun God to Aucuses, not Derrick', () => {
-        expect(matchLotmPortraitEntry('The Eternal Blazing Sun', false)?.id).toBe('eternal-blazing-sun');
-        expect(matchLotmPortraitEntry('The Sun God', false)?.id).toBe('eternal-blazing-sun');
-        expect(matchLotmPortraitEntry('The Sun God', false)?.portrait).toContain('aucuses');
-        expect(matchLotmPortraitEntry('The', false)).toBeNull();
+        expect(matchLotmPortraitEntry('The Eternal Blazing Sun')?.id).toBe('eternal-blazing-sun');
+        expect(matchLotmPortraitEntry('The Sun God')?.id).toBe('eternal-blazing-sun');
+        expect(matchLotmPortraitEntry('The Sun God')?.portrait).toContain('aucuses');
+        expect(matchLotmPortraitEntry('The')).toBeNull();
     });
 
     it('does not stage a portrait from the English word "the"', () => {
@@ -121,19 +124,19 @@ describe('lotmVisualMatcher', () => {
             name: 'The Eternal Blazing Sun',
             aliases: 'The Sun God',
             portrait: '/assets/lotm/image/characters/derrick_berg.webp',
-        }], false, 'correct');
+        }], 'correct');
         expect(sun.portrait).toContain('aucuses');
         expect(sun.portrait).not.toContain('derrick');
     });
 
     it('stages playable PC portraits from gamedata/image/players', () => {
-        expect(matchLotmPortraitEntry('Clara Whitlock', false)?.portrait).toBe('image/players/clara_whitlock.webp');
-        expect(matchLotmPortraitEntry('Benedict Faulkner', false)?.portrait).toBe('image/players/benedict_faulkner.webp');
-        expect(matchLotmPortraitEntry('Arthur Pendel', false)?.portrait).toBe('image/players/arthur_pendel.webp');
-        expect(matchLotmPortraitEntry('Cassian Dray', false)?.portrait).toBe('image/players/cassian_dray.webp');
-        expect(matchLotmPortraitEntry('Henrietta Stanley', false)?.portrait).toBe('image/players/henrietta_stanley.webp');
-        expect(matchLotmPortraitEntry('Isadora Quill', false)?.portrait).toBe('image/players/isadora_quill.webp');
-        expect(matchLotmPortraitEntry("Margaret O'Dell", false)?.portrait).toBe('image/players/margaret_odell.webp');
+        expect(matchLotmPortraitEntry('Clara Whitlock')?.portrait).toBe('image/players/clara_whitlock.webp');
+        expect(matchLotmPortraitEntry('Benedict Faulkner')?.portrait).toBe('image/players/benedict_faulkner.webp');
+        expect(matchLotmPortraitEntry('Arthur Pendel')?.portrait).toBe('image/players/arthur_pendel.webp');
+        expect(matchLotmPortraitEntry('Cassian Dray')?.portrait).toBe('image/players/cassian_dray.webp');
+        expect(matchLotmPortraitEntry('Henrietta Stanley')?.portrait).toBe('image/players/henrietta_stanley.webp');
+        expect(matchLotmPortraitEntry('Isadora Quill')?.portrait).toBe('image/players/isadora_quill.webp');
+        expect(matchLotmPortraitEntry("Margaret O'Dell")?.portrait).toBe('image/players/margaret_odell.webp');
 
         const hits = matchLotmPortraits({
             playerCharacter: { id: 'pc_lotm_clara_whitlock', name: 'Clara Whitlock', portrait: '' } as never,
@@ -150,7 +153,7 @@ describe('lotmVisualMatcher', () => {
             name: 'The Eternal Blazing Sun',
             aliases: 'The Sun God',
             portrait: '',
-        }], false, 'correct');
+        }], 'correct');
         expect(sun.portrait).toBe('');
     });
 });

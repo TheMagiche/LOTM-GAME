@@ -966,7 +966,7 @@ function resolveCharacterRecordPortrait(pc: PlayerCharacter | null | undefined):
     }
     const name = pc?.name?.trim();
     if (!name) return '';
-    const hit = matchLotmPortraitEntry(name, false);
+    const hit = matchLotmPortraitEntry(name);
     return hit ? lotmAssetUrl(hit.portrait) : '';
 }
 

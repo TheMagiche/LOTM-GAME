@@ -92,7 +92,6 @@ export function LotmDialoguePlate({
     const npcLedger = useAppStore(s => s.npcLedger);
     const onStageNpcIds = useAppStore(s => s.onStageNpcIds);
     const playerCharacter = useAppStore(s => s.playerCharacter);
-    const spoilers = useAppStore(s => s.activeCampaignMeta?.lotmSpoilers === true);
 
     const message = beats[index] ?? null;
     const viewingLatest = !!message && message.id === lastId;
@@ -113,10 +112,9 @@ export function LotmDialoguePlate({
         npcLedger,
         onStageNpcIds,
         playerCharacter,
-        spoilers,
     }), [
         currentPlace?.name, currentPlace?.aliases, currentPlace?.broadLocation, currentFeature, gmText,
-        npcLedger, onStageNpcIds, playerCharacter, spoilers,
+        npcLedger, onStageNpcIds, playerCharacter,
     ]);
 
     const portraits = useMemo(() => {
