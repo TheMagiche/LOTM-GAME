@@ -6,6 +6,7 @@
   - [demo-vps-player-deployment.md](./demo-vps-player-deployment.md) — Public VPS demo deployment, session lifecycle, and BYOK gate.
   - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Authoritative rules for the 6 core LOTM gameplay systems.
   - [monetization-and-deployment.md](./monetization-and-deployment.md) — Packaging strategy, Electron roadmap, and LOTM IP boundaries.
+  - [electron-desktop-packaging.md](./electron-desktop-packaging.md) — Desktop packaging recipe; keep Downloads “coming soon” until CI artifacts exist.
 - **Do not touch / Do not change:**
   - **Do not promise Electron downloads** until the `electron-builder` CI pipeline is active; keep desktop platform items flagged as coming soon.
   - **Do not remove the fan-content disclaimer** from the footer.
