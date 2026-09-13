@@ -4,6 +4,7 @@
 - **Goal:** Compare revenue models against the app's real architecture — not generic SaaS advice.
 - **Sister docs:**
   - [COOLIFY.md](../COOLIFY.md) — VPS deployment, Coolify setup, and production env vars.
+  - [electron-desktop-packaging.md](./electron-desktop-packaging.md) — Electron architecture hooks, electron-builder recipe, ASAR/native checklist for Mac/Windows/Linux.
   - [README.md](../../README.md) — Getting started, platform overview, and positioning.
   - [AI_CODEBASE_MAP.md](../../AI_CODEBASE_MAP.md) — Module boundaries, data flows, and blast-radius matrix.
 
@@ -50,7 +51,7 @@ flowchart LR
 | **MIT license** ([`LICENSE`](../../LICENSE)) | Engine can be sold, forked, sublicensed |
 | **LOTM fan content** (`mechanics/`, `gamedata/`) | Separate IP risk from the MIT engine — commercial LOTM branding needs rights clearance |
 | **Existing deploy path** — Docker + Coolify + GHCR ([`Dockerfile`](../../Dockerfile), [`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml), [`docs/COOLIFY.md`](../COOLIFY.md)) | Hosted SaaS is the lowest-friction path to a public URL |
-| **Desktop path** — `start.sh` / `.bat`, Electron hooks in [`src/lib/apiBase.ts`](../../src/lib/apiBase.ts) but `electron/` is gitignored | Download sale needs a packaging pipeline (not in repo today) |
+| **Desktop path** — `start.sh` / `.bat`, Electron hooks in [`src/lib/apiBase.ts`](../../src/lib/apiBase.ts) but `electron/` is gitignored | Download sale needs packaging — see [electron-desktop-packaging.md](./electron-desktop-packaging.md) |
 | **Mobile companion** — separate [NarrativeEngine-M](https://github.com/Sagesheep/NarrativeEngine-M) repo | Mobile IAP is a separate product surface |
 
 ---
@@ -172,7 +173,7 @@ For each model: **fit**, **how it maps to the app**, **what to build**, **exampl
 | Stage | Focus |
 |---|---|
 | **Stage 0 (now)** | Donations + consulting using existing Coolify deploy |
-| **Stage 1** | One-time download (engine-only, no LOTM branding) via Gumroad/itch.io + Electron build |
+| **Stage 1** | One-time download (engine-only, no LOTM branding) via Gumroad/itch.io + Electron build — see [electron-desktop-packaging.md](./electron-desktop-packaging.md) |
 | **Stage 2** | Hosted SaaS — one Docker container per paying group, Stripe billing, optional managed AI bundle |
 | **Stage 3** | Usage metering + marketplace once auth and tenancy exist |
 
@@ -201,7 +202,7 @@ Short "where to wire" references for the most common greenfield work:
 | Usage metering | Wrap [`llmService.ts`](../../src/services/llm/llmService.ts) / [`llmProxy.js`](../../server/routes/llmProxy.js), log to SQLite |
 | License gate | [`settingsSlice.ts`](../../src/store/slices/settingsSlice.ts) or startup check in [`App.tsx`](../../src/App.tsx) |
 | Per-tenant hosting | Duplicate Coolify resource per customer; env `DATA_DIR` on separate volume |
-| Electron packaging | New `electron/` directory, `electron-builder` in `package.json` |
+| Electron packaging | New `electron/` directory, `electron-builder` in `package.json` — full recipe in [electron-desktop-packaging.md](./electron-desktop-packaging.md) |
 
 ---
 

@@ -8,6 +8,7 @@
   - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Gameplay content for landing page copy
   - [COOLIFY.md](../COOLIFY.md) — Existing VPS deploy path
   - [monetization-and-deployment.md](./monetization-and-deployment.md) — Electron packaging backlog
+  - [electron-desktop-packaging.md](./electron-desktop-packaging.md) — Electron hooks, electron-builder recipe, Mac/Windows/Linux packaging constraints
 
 ---
 
@@ -376,7 +377,7 @@ Sections for implementers (copy can lift from existing docs):
 
 ## 8. Future Electron Downloads
 
-Outline from [monetization-and-deployment.md](./monetization-and-deployment.md) Model A:
+Authoritative packaging guide: [electron-desktop-packaging.md](./electron-desktop-packaging.md). Outline from [monetization-and-deployment.md](./monetization-and-deployment.md) Model A:
 
 - `electron/` directory + `electron-builder` in `[package.json](../../package.json)`
 - CI job: build artifacts → GitHub Releases or `public/downloads/`
