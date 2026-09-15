@@ -92,7 +92,7 @@ Character and location **lore chunks are RAG-disabled on import**. Ledgers are a
 
 When `attachLotmVisuals` is true:
 
-- Lore markdown chunked into SQLite RAG (character/place chunks not retrieved as lore — they become ledgers).
+- Lore markdown is concatenated from [`mechanics/World_compendium/Lord of the Mysteries/lore/`](../../mechanics/World_compendium/Lord%20of%20the%20Mysteries/lore/) in [`lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts) (`concatenateLotmLore`), then chunked into SQLite RAG. Character/place chunks are RAG-disabled on import — they become ledgers. Factions stay RAG-active; `## 2a` / `## 2b` / `## 2c` give each subgroup its own retrieval group. Demo builds swap in [`demo_world_lore_lord_of_the_mysteries.md`](../../mechanics/World_compendium/Lord%20of%20the%20Mysteries/demo_world_lore_lord_of_the_mysteries.md). [`characters.md`](../../mechanics/World_compendium/Lord%20of%20the%20Mysteries/characters.md) is a wiki dump and is **not** loaded. After editing `lore/`, run `npm run lore:compile` so the compiled paste file stays in sync.
 - LOTM rules markdown as `rulesRaw`.
 - [`mechanics/World_compendium/Lord of the Mysteries/loot.json`](../../mechanics/World_compendium/Lord%20of%20the%20Mysteries/loot.json) — root keys `ordinary` / `mystical` / `characteristics` / `currency` / `medicine` / `artifact` / `bounty` / `formula`. Player labels: [`lotmLootLabels.ts`](../../src/worldpacks/lotmLootLabels.ts).
 - Tingen as `currentPlaceId`.
@@ -147,6 +147,8 @@ Surfacing the hidden column is UI work. Do not move Sequence math or Standing in
 | [`lotmFlags.ts`](../../src/services/lotm/lotmFlags.ts) | Exclusive-UI gate |
 | [`lotmSkin.ts`](../../src/services/lotm/lotmSkin.ts) | `isLotmCampaign` |
 | [`createLotmCampaign.ts`](../../src/services/lotm/createLotmCampaign.ts) | New chronicle |
+| [`lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts) | Pack files; concatenates `lore/*.md` |
+| [`lotmLoreConcat.ts`](../../src/worldpacks/lotmLoreConcat.ts) | Join helper + author-source filename list |
 | [`lotmOpeningPrompt.ts`](../../src/services/lotm/lotmOpeningPrompt.ts) | First composer prompt + skip-interview starter |
 | [`campaignInit.ts`](../../src/services/campaignInit.ts) | Bootstrap ledgers, loot, Tingen, dice |
 | [`campaignHydrator.ts`](../../src/store/campaignHydrator.ts) | Reload; LOTM merge gated |

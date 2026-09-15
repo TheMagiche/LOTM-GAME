@@ -111,7 +111,7 @@ docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build
 
 VPS / Coolify uses `[docker-compose.prod.yml](../../docker-compose.prod.yml)` (pull-only). That file sets `DEMO_MODE=1`; GitHub Actions bakes `VITE_DEPLOYMENT_MODE=demo` into the GHCR image. Runtime env **cannot** turn a full-app image into Player-only — rebuild and pull after changing the build arg.
 
-The Vite demo flag is a **build-time** alias: lore/loot/item catalog resolve to `demo_world_lore_lord_of_the_mysteries.md`, `demo_loot.json`, and `demo_item_catalog.json`.
+The Vite demo flag is a **build-time** split: loot and item catalog still alias via [`vite.config.ts`](../../vite.config.ts) to `demo_loot.json` and `demo_item_catalog.json`. Lore does **not** glob `world_lore_lord_of_the_mysteries.md` in the pack anymore — [`lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts) concatenates `lore/*.md` in a full build and swaps in [`demo_world_lore_lord_of_the_mysteries.md`](../../mechanics/World_compendium/Lord%20of%20the%20Mysteries/demo_world_lore_lord_of_the_mysteries.md) when `IS_DEMO_MODE` or `import.meta.env.MODE === 'demo'`.
 
 
 ### Wired work
@@ -127,7 +127,7 @@ The Vite demo flag is a **build-time** alias: lore/loot/item catalog resolve to 
 | Disable TTS on demo               | Skip `warmupTts()` in `[server.js](../../server.js)` when `DEMO_MODE=1` / `TTS_DISABLED`; `ttsEnabled` locked false                                                                                                                                  |
 | Delete chronicle on exit          | `[exitLotmCampaign()](../../src/components/lotm/LotmPlayHeader.tsx)` → `deleteCampaign(id)`                                                                                                                                                           |
 | Session timeout + occupancy       | `[DemoSessionGuard.tsx](../../src/components/demo/DemoSessionGuard.tsx)` + `[demoOccupancy.js](../../server/lib/demoOccupancy.js)` — hard **5 min** session, 60s warning, one global play slot                                                        |
-| Demo world pack                   | Aliases in `[vite.config.ts](../../vite.config.ts)` + 4 starter PCs in `[demoMode.ts](../../src/config/demoMode.ts)`                                                                                                                                  |
+| Demo world pack                   | Concatenated `lore/*.md` (full) vs `demo_world_lore_lord_of_the_mysteries.md` in [`lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts); loot/catalog aliases in [`vite.config.ts`](../../vite.config.ts) |
 
 
 ---
@@ -201,7 +201,7 @@ For demo, ship a **smaller build artifact**:
 | Trim target      | Full app                                                                                   | Demo recommendation                                               |
 | ---------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
 | Playable PCs     | 22 (`lotm_pc_*.json`)                                                                      | **3–4** starters (e.g. Clara, one combat, one divination pathway) |
-| World lore MD    | Full `world_lore_lord_of_the_mysteries.md`                                                 | Abbreviated demo lore (~30–50% length) or single-city focus       |
+| World lore MD    | Concatenated `lore/*.md` → compiled `world_lore_lord_of_the_mysteries.md` | Abbreviated `demo_world_lore_lord_of_the_mysteries.md` (same `## 2a`/`2b`/`2c` groups) |
 | Map pins         | Full `[lotm_map_pins.json](../../gamedata/assets/data/world/Geography/lotm_map_pins.json)` | Subset: Tingen + immediate region only                            |
 | Grimoire volumes | All `lotm_vol_*.json`                                                                      | Vol 1 excerpts only                                               |
 | Item lists       | Full sealed-artefact grades                                                                | Sequence 9–7 loot tables only                                     |
@@ -209,7 +209,7 @@ For demo, ship a **smaller build artifact**:
 
 Implementation options:
 
-- **Build-time:** `VITE_DEPLOYMENT_MODE=demo` aliases imports in `[vite.config.ts](../../vite.config.ts)` to `demo_world_lore_lord_of_the_mysteries.md`, `demo_loot.json`, and `demo_item_catalog.json` in `mechanics/World_compendium/Lord of the Mysteries/`. Starter PCs are filtered to Clara, Jacob, Edmund, and Arthur.
+- **Build-time:** `VITE_DEPLOYMENT_MODE=demo` (or Vite `--mode demo`) makes [`lordOfTheMysteries.ts`](../../src/worldpacks/lordOfTheMysteries.ts) use `demo_world_lore_lord_of_the_mysteries.md`. [`vite.config.ts`](../../vite.config.ts) still aliases `loot.json` / `item_catalog.json` to the demo substitutes. Author sources for the full pack live in `mechanics/World_compendium/Lord of the Mysteries/lore/`; `npm run lore:compile` regenerates the compiled markdown. The wiki dump `characters.md` is never loaded.
 - **Runtime flag:** Server serves demo pack files from `gamedata-demo/` — higher ops complexity; prefer build-time split for smaller Docker image.
 
 Smaller compendium reduces **image bundle size**, **prompt token load** (less lore injected per turn), and **embedding index size** when lore chunks are indexed.

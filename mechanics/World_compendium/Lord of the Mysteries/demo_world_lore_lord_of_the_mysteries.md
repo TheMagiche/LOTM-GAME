@@ -16,17 +16,34 @@ Above the mundane world lie the Spirit World and the Astral World; beneath it, t
 
 Power in the Fifth Epoch is divided among orthodox churches, secret organizations, and noble bloodlines. This demo compendium highlights five representative factions spanning establishment faith, heretical conspiracy, neutral exchange, royal politics, and fallen angel legacy.
 
+## 2a. ORTHODOX CHURCHES
+
+Orthodox churches hold complete or near-complete pathways and police Beyonder crime through sanctioned squads.
+
 ### FACTION — Church of the Evernight Goddess
 **Type:** Orthodox Church (Darkness pathway complete; Death & Twilight Giant near-complete; Fool incomplete to Sequence 3)
 **Key Members:** Dunn Smith (Tingen Nighthawks captain), Leonard Mitchell (Sleepless); led by a Pope advised by Thirteen Archbishops and Nine High-ranking Deacons
 **Stance:** Lawful establishment in the Loen Kingdom.
+**Region:** Loen Kingdom (Winter County cathedral; chantries in every major city)
+**Status:** Active
+**Aliases:** Nighthawks, Church of Evernight, Red Gloves
+**OpposedTo:** Church of the God of Combat, Church of the Eternal Blazing Sun
 The Evernight Goddess rules the night, concealment, and quiet mercy. Her church fields the Nighthawks — plainclothes Beyonder teams that investigate supernatural crime, contain out-of-control Beyonders, and seal dangerous artifacts — backed by the Red Gloves, her elite strike force. Nighthawk squads operate in every major Loen city out of an unmarked chantry, holding nightly prayers to resist corruption. Her cathedral seat rests in Winter County. Internal tension: older hardliners want out-of-control Beyonders destroyed on sight, while field captains like Dunn Smith risk everything to bring rookies home alive. The church is also quietly at odds with the God of Combat's flock across the Feysac border.
 <!-- rag: keyword, priority:7, triggers: nighthawks, evernight, goddess, red gloves, church -->
+
+## 2b. SECRET ORGANIZATIONS
+
+Secret organizations operate beyond church control.
 
 ### FACTION — Aurora Order
 **Type:** Secret society of Intis nobility
 **Key Members:** Aristocratic Beyonders under an unknown master
 **Stance:** Heretical power-seeking dressed in enlightenment rhetoric.
+**Region:** Intis Republic; cells across Loen
+**Status:** Active
+**Aliases:** Aurora Society
+**AlliedWith:** House Sauron (Intis Republic)
+**OpposedTo:** Church of the Eternal Blazing Sun, Church of the Evernight Goddess
 Intis nobles who traded faith for personal power, gathering Beyonder formulas and artifacts beneath a patron they dare not name. They recruit the ambitious and dispose of the compromised; crossing one means discovering how far aristocratic reach extends.
 <!-- rag: keyword, priority:6, triggers: aurora order, intis nobles, secret society, heresy -->
 
@@ -34,13 +51,23 @@ Intis nobles who traded faith for personal power, gathering Beyonder formulas an
 **Type:** Unknown — gathering above the gray fog
 **Key Members:** Justice, Hanged Man, Magician, The World (true names unknown)
 **Stance:** Neutral information exchange under a god who does not yet exist.
+**Region:** Gray fog above the Spirit World
+**Status:** Active
+**Aliases:** the Fool's gathering
 Whispered of only in divination circles: a weekly convocation above the spirit world whose members take tarot titles and trade formulas, artifacts, and intelligence in perfect anonymity. Access requires a ritual addressed to The Fool — a deity with no church, no history, and no recorded name. Every faction above wants an invitation; none admit to seeking one.
 <!-- rag: keyword, priority:7, triggers: tarot club, justice, hanged man, the fool, gray fog, ritual to the fool -->
+
+## 2c. NOBLE & ANGEL FAMILIES
 
 ### FACTION — House Augustus (Loen Royal Family)
 **Type:** Royal family; Justiciar & Black Emperor lineage (Trunsoest descent)
 **Key Members:** The King of Loen and his court
 **Stance:** Constitutional monarchy balancing all orthodox churches against each other.
+**Region:** Backlund (Loen palace)
+**Status:** Active
+**Aliases:** Loen Royal Family, Augustus
+**AlliedWith:** Church of the Evernight Goddess
+**OpposedTo:** House Einhorn (Feysac Imperial Family)
 Descended from the Trunsoest Empire's angel line, the Augustus kings rule Loen by keeping the churches competing for crown favor — and by never letting any single pathway grow indispensable. The palace knows more about Beyonder affairs than any single church suspects.
 <!-- rag: keyword, priority:6, triggers: augustus, loen king, royal family, justiciar, black emperor -->
 
@@ -48,6 +75,11 @@ Descended from the Trunsoest Empire's angel line, the Augustus kings rule Loen b
 **Type:** Extinct angel family; Fool pathway
 **Key Members:** Scattered descendants; wardens of the Secret Order
 **Stance:** Destroyed by the Church of the Evernight Goddess; legacy still surfacing.
+**Region:** Relics scattered; Hornacis / Tingen traces
+**Status:** Mostly extinct; legacy active
+**Aliases:** the Half-Fool's line
+**AlliedWith:** Secret Order
+**OpposedTo:** Church of the Evernight Goddess
 Holders of the Fool-lineage heritage, purged and scattered generations ago. Their relics — a notebook among them — surface periodically, each surfacing leaving madmen and corpses in its wake.
 <!-- rag: keyword, priority:6, triggers: antigonus, fool, notebook, purge, inheritance -->
 
@@ -58,71 +90,73 @@ Ten key places anchor this demo: the Northern Continent's core nations, a starti
 ### LOCATION — Northern Continent (Fifth Epoch civilization)
 **Type:** Continent
 **Status:** Industrializing, heavily populated
-The heart of the known world: fog-bound nations of gas lamps, railways, newspapers, and strict class lines, all built atop older epochs' buried secrets. Most campaigns begin here.
 **Features:** [Loen Kingdom, Intis Republic, Feysac Empire, Feynapotter Kingdom, Lenburg, Segar, constant sea links to the archipelagos]
+**ConnectedTo:** [Loen Kingdom, Intis Republic, Feysac Empire, Sonia Sea]
+The heart of the known world: fog-bound nations of gas lamps, railways, newspapers, and strict class lines, all built atop older epochs' buried secrets. Most campaigns begin here.
 
 ### LOCATION — Loen Kingdom (Northern Continent)
 **Type:** Nation — constitutional monarchy
 **Status:** Prosperous, orderly, surveilled
-Victorian superpower of industry, banking, and colonial trade. Three orthodox churches (Evernight, Storms, Steam) share uneasy custody of public order; the crown rules through parliament, and the secret services watch everyone. Beyonder crime is hushed up as "gas explosions" and "rare diseases."
 **Aliases:** [the Kingdom]
 **Features:** [Backlund, Tingen, universities, royal secret service, Nighthawk chantries, East Chester County fog]
 **ConnectedTo:** [Backlund, Tingen]
+Victorian superpower of industry, banking, and colonial trade. Three orthodox churches (Evernight, Storms, Steam) share uneasy custody of public order; the crown rules through parliament, and the secret services watch everyone. Beyonder crime is hushed up as "gas explosions" and "rare diseases."
 
 ### LOCATION — Backlund (Loen Kingdom)
 **Type:** Capital city
 **Status:** Flourishing, politically tense
-The sprawl capital: a million souls divided into West Borough aristocracy, factory districts choking on coal smoke, docklands of sailors and smugglers, and ministries where the real empire gets administered. Above the rooftops, church spires compete with mill chimneys; below the streets, sewers hide things the sanitation office denies.
 **Aliases:** [the capital]
 **Features:** [West Borough, Cherwood Borough, docklands, St. Samuel Cathedral of Evernight, Backlund Bridge, slums]
 **ConnectedTo:** [Tingen, Loen Kingdom, Sonia Sea]
+The sprawl capital: a million souls divided into West Borough aristocracy, factory districts choking on coal smoke, docklands of sailors and smugglers, and ministries where the real empire gets administered. Above the rooftops, church spires compete with mill chimneys; below the streets, sewers hide things the sanitation office denies.
 
 ### LOCATION — Tingen (Loen Kingdom)
 **Type:** City
 **Status:** Quiet on the surface
-Mid-sized "City of Universities" on the Dorge River, famous for colleges, publishing houses, and mild weather. Home chantry of Captain Dunn Smith's Nighthawk squad — the city's supernatural deaths are few because the squad works hard and writes careful reports.
 **Aliases:** [City of Universities]
 **Features:** [Khoy University, Nighthawk chantry, St. Selena Cathedral, Dorge River docks, modest middle-class districts]
 **ConnectedTo:** [Backlund, Loen Kingdom]
+Mid-sized "City of Universities" on the Dorge River, famous for colleges, publishing houses, and mild weather. Home chantry of Captain Dunn Smith's Nighthawk squad — the city's supernatural deaths are few because the squad works hard and writes careful reports.
 
 ### LOCATION — Intis Republic (Northern Continent)
 **Type:** Nation — republic
 **Status:** Culturally brilliant, revolutionary
-France-analogue republic of salons, duels, and guillotined kings. Intis leads in art, cuisine, and espionage; its eternal rivalry with Loen plays out in trade wars and embassy intrigues rather than open battle. Home of the Sun church's political wing and of mountain villages that remember older gods.
 **Features:** [Trier, Cordu Village, salon culture, revolutionary politics]
 **ConnectedTo:** [Trier, Feynapotter Kingdom]
+France-analogue republic of salons, duels, and guillotined kings. Intis leads in art, cuisine, and espionage; its eternal rivalry with Loen plays out in trade wars and embassy intrigues rather than open battle. Home of the Sun church's political wing and of mountain villages that remember older gods.
 
 ### LOCATION — Feysac Empire (Northern Continent)
 **Type:** Nation — military empire
 **Status:** Powerful, austere, devout
-Continental colossus of disciplined infantry, wolf-culture mythology, and deep religious observance. Feysac honors strength and oath-keeping; its giant-blooded nobility claim descent from the Twilight Giant. War with Loen or Intis is always one incident away.
 **ConnectedTo:** [Loen Kingdom, Intis Republic]
+Continental colossus of disciplined infantry, wolf-culture mythology, and deep religious observance. Feysac honors strength and oath-keeping; its giant-blooded nobility claim descent from the Twilight Giant. War with Loen or Intis is always one incident away.
 
 ### LOCATION — Sonia Sea (Major Ocean)
 **Type:** Ocean
 **Status:** Stormy, pirate-infested
-The vast ocean dividing the Northern and Southern Continents, teeming with pirate armadas, sea beasts, and mysterious islands.
 **Features:** [Rorsted Archipelago, Sonia Island, Gargas Archipelago, trade routes]
 **ConnectedTo:** [Backlund, Bayam, Berserk Sea, Fog Sea]
+The vast ocean dividing the Northern and Southern Continents, teeming with pirate armadas, sea beasts, and mysterious islands.
 
 ### LOCATION — Rorsted Archipelago (Sonia Sea)
 **Type:** Island chain
 **Status:** Lawless trade hub
-Scattered islands between continents: pirate havens, colonial ports, and free towns where any cargo moves for the right price. The Lord of Storms' Mandated Punishers raid often and rule never quite.
 **Features:** [Bayam, pirate councils, colonial garrisons, smuggling routes]
 **ConnectedTo:** [Bayam, Sonia Sea]
+Scattered islands between continents: pirate havens, colonial ports, and free towns where any cargo moves for the right price. The Lord of Storms' Mandated Punishers raid often and rule never quite.
 
 ### LOCATION — Bayam (Rorsted Archipelago)
 **Type:** Port city
 **Status:** Rowdy, prosperous
-The archipelago's beating heart: a harbor of mixed bloods and tongues, fish markets, adventurer bars, and back-room brokers selling maps to wrecks that shouldn't exist. Every third sailor swears an oath to the Storm; every fourth breaks it.
 **ConnectedTo:** [Rorsted Archipelago, Southern Continent]
+The archipelago's beating heart: a harbor of mixed bloods and tongues, fish markets, adventurer bars, and back-room brokers selling maps to wrecks that shouldn't exist. Every third sailor swears an oath to the Storm; every fourth breaks it.
 
 ### LOCATION — Spirit World (overlay dimension)
 **Type:** Parallel realm
 **Status:** Alien, layered
-A gray-blue expanse completely overlapping reality, inhabited by spirits of varying sanity and appetite. Rituals reach through it; divinations listen to it; travelers without protection are lost in it. Time and distance misbehave.
 **ConnectedTo:** [Astral World]
+A gray-blue expanse completely overlapping reality, inhabited by spirits of varying sanity and appetite. Rituals reach through it; divinations listen to it; travelers without protection are lost in it. Time and distance misbehave.
+
 ## 4. CHARACTERS
 
 Ten gameplay-relevant figures for demo campaigns — Tarot Club founders, Tingen Nighthawks, major antagonists, and historical hooks.

@@ -190,9 +190,11 @@ mainApp/
 │   │   │   ├── rulesIndexer.ts    # indexRules, deriveDefaultMeta, LLM keyword extraction
 │   │   │   └── rulesRetriever.ts  # retrieveRelevantRules (classic + idf-rrf algorithms)
 │   │   ├── lore/
-│   │   │   ├── loreChunker.ts     # chunkLoreFile, classifyCategory (B7 [CHUNK: TYPE] fix)
-│   │   │   ├── loreRetriever.ts   # retrieveRelevantLore (IDF+RRF, linked-entity cross-pull)
+│   │   │   ├── loreChunker.ts     # chunkLoreFile, classifyCategory (B7 [CHUNK: TYPE] fix; FACTION — without parent)
+│   │   │   ├── loreRetriever.ts   # retrieveRelevantLore (IDF+RRF, linked-entity cross-pull, one winner per ## group)
 │   │   │   ├── loreNPCParser.ts   # parseNPCsFromLore (deterministic canon NPC seeder)
+│   │   │   ├── loreFactionParser.ts # parseFactionsFromLore
+│   │   │   ├── loreLocationParser.ts # parseLocationsFromLore
 │   │   │   ├── loreEngineSeeder.ts # extractEngineSeeds (surprise/encounter/world engine seeds)
 │   │   │   ├── loreCheck.ts       # runLoreCheck (consistency verifier with rewrite)
 │   │   │   ├── loreKeywordEnricher.ts # enrichLoreKeywords (LLM batch, version-gated)
@@ -365,6 +367,24 @@ mainApp/
 │           ├── useAutoresizeInput.ts # Textarea auto-resize
 │           ├── useChatKeyboard.ts  # Chat keyboard shortcuts
 │           └── sceneContinueFallback.ts # rebuildStateFromLiveStoreLike (no store mutation)
+│   ├── worldpacks/                 # Bundled campaign packs (Vite ?raw imports)
+│   │   ├── lordOfTheMysteries.ts   # LOTM pack: concatenates lore/*.md, rules, loot, starter PCs
+│   │   └── lotmLoreConcat.ts       # concatenateLotmLore + LOTM_LORE_PART_FILES
+├── mechanics/
+│   ├── Ruleset/AI_GM_OS_LOTM_v1.md
+│   └── World_compendium/Lord of the Mysteries/
+│       ├── lore/                   # Author sources (edit these; each file starts with ## N. SECTION)
+│       │   ├── overview.md
+│       │   ├── factions.md         # ## 2a / 2b / 2c RAG groups
+│       │   ├── locations.md
+│       │   ├── characters_gameplay.md
+│       │   ├── power_economy_events.md
+│       │   └── engine_seeds.md
+│       ├── world_lore_lord_of_the_mysteries.md  # Compiled paste target (`npm run lore:compile`)
+│       ├── demo_world_lore_lord_of_the_mysteries.md
+│       ├── characters.md           # Wiki dump — NOT loaded into RAG
+│       ├── loot.json / item_catalog.json
+│       └── people/lotm_pc_*.json
 ├── packages/
 │   └── engine/                     # @narrative/engine — platform-pure shared core
 │       ├── package.json            # name: @narrative/engine, main: dist/index.js

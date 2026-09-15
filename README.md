@@ -96,19 +96,41 @@ Your dependency install was incomplete (a known [npm bug](https://github.com/npm
 
 ## Setting Up Your First Campaign
 
-The `mechanics/` folder ships the Lord of the Mysteries campaign — world lore, GM ruleset, item catalog, and starter prompt. Generic engine templates live in `mechanics/_Templates/`.
+The `mechanics/` folder ships the Lord of the Mysteries campaign — world lore, GM ruleset, item catalog, starter PCs, and starter prompt.
 
 ### Quick start with an example
 
-1. Create a new campaign — or use **Quick Start** for Lord of the Mysteries
-2. Open **World Info (Lore)** and paste `mechanics/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md` if starting manually
+1. Create a new campaign — or use **Quick Start** / the LOTM title hub (this concatenates the lore author sources automatically)
+2. If starting **manually**, open **World Info (Lore)** and paste the compiled file `mechanics/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md` — not the individual files under `lore/`
 3. Open **Campaign Settings** and paste `mechanics/Ruleset/AI_GM_OS_LOTM_v1.md` into the **System Prompt** field
 4. Start a new chat and paste `mechanics/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md` as your first message
 5. The GM will walk you through character creation and then drop you into the world
 
+Existing campaigns do not pick up lore-file edits until you re-upload World Info or create a new campaign.
+
+### Lord of the Mysteries lore layout
+
+The engine indexes **one** markdown string per campaign. LOTM is authored as several files and concatenated before import:
+
+| Path | Role |
+|---|---|
+| `mechanics/World_compendium/Lord of the Mysteries/lore/overview.md` | World premise |
+| `…/lore/factions.md` | Churches, secret orgs, noble houses (`## 2a` / `## 2b` / `## 2c` so RAG can retrieve one of each per turn) |
+| `…/lore/locations.md` | Geography (seeds the location ledger; RAG-disabled on import) |
+| `…/lore/characters_gameplay.md` | Curated gameplay cast (seeds the NPC ledger; RAG-disabled on import) |
+| `…/lore/power_economy_events.md` | Pathways, economy, history |
+| `…/lore/engine_seeds.md` | Surprise / encounter / quest-hook tables |
+| `…/world_lore_lord_of_the_mysteries.md` | Compiled paste target (tests, README, manual upload) |
+| `…/characters.md` | Wiki-crawled reference roster — **not loaded** into the engine |
+| `…/people/lotm_pc_*.json` | Playable Sequence 9 starter PCs |
+
+Edit the files under `lore/`, then run `npm run lore:compile` so the compiled markdown stays in sync. Format rules (required character fields, engine seeds, RAG hints) live in [`mechanics/World_compendium/CLAUDE.md`](mechanics/World_compendium/CLAUDE.md).
+
+On import, **character** and **location** chunks seed ledgers (the prompt path for people and places). **Factions**, power system, economy, and events stay in RAG (~1200 tokens/turn). Extra wiki fields (`Summary`, `Wiki`, `Fate`) are ignored; use parser fields such as `PersonalityHex`, `Traits`, `Pathway`, `Sequence`, `AlliedWith`, `ConnectedTo`.
+
 ### Writing your own setup
 
-- **Lore** — write your world in Markdown with `##` / `###` headers. Each section becomes a lore chunk the GM can recall. Use `[CHUNK: TYPE -- NAME]` prefixes to classify entries (`world_overview`, `faction`, `location`, `character`, `power_system`, `economy`, `event`, `rules`, `culture`, `misc`). See `mechanics/_Templates/lore_template.md` for the machine-parsed skeleton.
+- **Lore** — write your world in Markdown with `##` / `###` headers. Each section becomes a lore chunk the GM can recall. Use `[CHUNK: TYPE -- NAME]` prefixes to classify entries (`world_overview`, `faction`, `location`, `character`, `power_system`, `economy`, `event`, `rules`, `culture`, `misc`). See `mechanics/World_compendium/CLAUDE.md` for the machine-parsed skeleton.
 - **System Prompt** — define how the GM behaves: tone, output format, NPC behaviour rules, dice resolution, event protocols. The engine handles memory and recall — you define the style
 - **First Message** — set the scene, ask for character creation, or simply say "begin"
 
@@ -359,6 +381,7 @@ Works with Ollama for fully local play — no internet required after setup.
 | Update to latest (manual) | `git pull` then `npm install` |
 | Install manually | `npm install` |
 | Start the app | `npm run dev` |
+| Recompile LOTM lore after editing `lore/` | `npm run lore:compile` |
 | Run tests | `npm run test` |
 | Lint | `npm run lint` |
 
