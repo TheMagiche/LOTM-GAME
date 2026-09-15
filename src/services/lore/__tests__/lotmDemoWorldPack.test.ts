@@ -27,6 +27,16 @@ describe('LOTM demo world pack', () => {
         ]));
     });
 
+    it('assigns distinct RAG groups to demo church, secret-org, and family factions', () => {
+        const evernight = chunks.find(c => c.header.includes('Church of the Evernight Goddess'));
+        const aurora = chunks.find(c => c.header.includes('Aurora Order'));
+        const augustus = chunks.find(c => c.header.includes('House Augustus'));
+        expect(evernight?.group).toMatch(/2a-orthodox-churches/);
+        expect(aurora?.group).toMatch(/2b-secret-organizations/);
+        expect(augustus?.group).toMatch(/2c-noble-angel-families/);
+        expect(new Set([evernight?.group, aurora?.group, augustus?.group]).size).toBe(3);
+    });
+
     it('loads demo_loot.json as a valid loot tree', () => {
         const loot = JSON.parse(readFileSync(resolve(LOTM_DIR, 'demo_loot.json'), 'utf-8'));
         expect(loadLootTree(loot)).not.toBeNull();

@@ -23,6 +23,7 @@
 - **Lint Codebase**: `npm run lint` or `npx eslint .`
 - **Run Tests**: `npm run test` or `npx vitest`
 - **Run Tests with Coverage**: `npm run test:coverage`
+- **Recompile LOTM lore** (after editing `mechanics/World_compendium/Lord of the Mysteries/lore/`): `npm run lore:compile`
 
 ---
 

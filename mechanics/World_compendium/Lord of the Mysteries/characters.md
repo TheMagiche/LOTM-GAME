@@ -15,7 +15,8 @@
 
      It is intentionally NOT part of the RAG-indexed world lore.
      Only gameplay-relevant characters are curated into
-     `world_lore_lord_of_the_mysteries.md` (Section 4. CHARACTERS),
+     `lore/characters_gameplay.md` (compiled into
+     `world_lore_lord_of_the_mysteries.md` Section 4. CHARACTERS),
      which is what the engine retrieves during play.
 
      Sequence mapping used in the lore file:
@@ -29,72 +30,6 @@
      To regenerate: `python lotmfandom.py`
      ============================================================ -->
 
-
-### CHARACTER — Antigonus
-**Aliases:** An Xiaotian
-**Summary:** Antigonus is the youngest son of the Demonic Wolf Flegrea and is the brother of Mother of the Sky, "He" was a Subsidiary God of the Annihilation Demonic Wolf Flegrea in the Second Epoch. "He" was a King of Angels of the Fool Pathway known as The Half-Fool in the Fourth Epoch.
-**Appearance:** Original Form An eight-legged Demonic Wolf with the transparent worms twisted among its thick black short hairs. Human Form "His" appearance incorporates characteristics of both one of old-age and youthfulness with hair that is half white and half black. "He" had a pair of dark black eyes, decent facial features, and a thick, black tuft of fur on "His" cheeks. "He" has maintained this appearance throughout the Fourth Epoch.
-**Status:** Alive
-**Sex:** Male
-**Species:** Demonic Wolf
-**Bloodline:** Annihilation Demonic Wolf Flegrea
-**Origin:** Eastern Continent
-**Age:** 4510+
-**Birth:** Second Epoch
-**Hair:** Half Black - Half White
-**Eyes:** Dark Black
-**Occupation:** Founder of the Nation of the Evernight; Subsidiary God of the Annihilation Demonic Wolf Flegrea (Former)
-**Faction:** Antigonus Family; Church of the Evernight Goddess; Tudor Empire (Former); Solomon Empire (Former)
-**Enemies:** Celestial Worthy of Heaven and Earth for Blessings; Evernight Goddess (Former); Zaratul Senior
-**Pathway:** Fool
-**Level:** Angels
-**Gender:** Male
-**Region:** Nation of the Evernight; Foggy Town
-**Debut:** Lord of Mysteries, Chapter 1381; Circle of Inevitability, Chapter 927 (Mentioned)
-**Wiki:** https://lordofthemysteries.fandom.com/wiki/Antigonus
-
-### CHARACTER — Kotar
-**Summary:** Kotar is a Dark Demonic Wolf. "He" was a Subsidiary God of the Annihilation Demonic Wolf Flegrea known as the God of Wishes in the Second Epoch. "He" is a Sequence 2 Miracle Invoker of the Fool Pathway.
-**Appearance:** Kotar is a demonic wolf covered in dark fur and has eight legs. "He" is about four to five meters tall. "He" has a tuft of short, grayish-white fur on "His" forehead. "His" pure black pupils covers at least three-quarters of the space of "His" eyes.
-**Personality:** "He" is a cowardly, but daring demonic wolf. "He" systematically puts "His" safety before anything else. This was how "He" was able to survive from the Second Epoch until now, the Fifth Epoch. “He” always follows "His" true feelings—cowardice. “He” refuses to be greedy when the situation doesn’t allow it.
-**Status:** Alive
-**Sex:** Male
-**Species:** Demonic Wolf
-**Origin:** Eastern Continent
-**Age:** 4510+
-**Height:** 4-5 meters
-**Hair:** Black, with a pinch of white hair on the forehead
-**Eyes:** Black
-**Occupation:** Subsidiary God of the Annihilation Demonic Wolf Flegrea (Former)
-**Enemies:** Amon; Klein Moretti
-**Pathway:** Fool
-**Level:** Angels
-**Gender:** Male
-**Region:** Nois City (Temporary)
-**Debut:** Lord of Mysteries, Chapter 1178 (Mentioned); Lord of Mysteries, Chapter 1242
-**Wiki:** https://lordofthemysteries.fandom.com/wiki/Kotar
-
-### CHARACTER — Zaratul
-**Aliases:** Lil’ Zaratul (By Amon); Zaratulstra (查拉图斯特拉)
-**Summary:** Zaratul was first introduced in Roselle's Diary. "He" is the leader of the Secret Order. "He" suddenly disappeared after his possible attempt at advancing to Sequence 1.
-**Appearance:** He usually appears as an old man wearing a black robe with a hood. "His" eyes are as dark as the water without light. The white beard on "His" mouth is long and dense.
-**Status:** Deceased (Resurrected Once)
-**Fate:** Killed By: 1. Klein Moretti 2. Amon
-**Sex:** Male
-**Species:** Mythical Creature; Human (Former)
-**Bloodline:** Zaratul Family
-**Origin:** Intis Republic
-**Occupation:** Attendant of the Celestial Worthy of Heaven and Earth for Blessings; Leader of April Fool's (Former); Leader of Secret Order (Former)
-**Faction:** April Fool's (Former); Secret Order (Former)
-**Religion:** Celestial Worthy of Heaven and Earth for Blessings (Book 2); Black Emperor Solomon (former)
-**Enemies:** The Fool
-**Pathway:** Fool
-**Level:** Angels
-**Gender:** Male
-**Region:** Castle Dylan
-**Debut:** Lord of Mysteries, Chapter 59 (Mentioned); Lord of Mysteries, Chapter 838; Circle of Inevitability, Chapter 594 (Mentioned); Circle of Inevitability, Chapter 728
-**Wiki:** https://lordofthemysteries.fandom.com/wiki/Zaratul
-
 ### CHARACTER — Zaratul Senior
 **Summary:** According to Pallez Zoroast, "He" had obtained clues regarding the second Sequence 1 Beyonder characteristic from the True Creator and was waiting for the War of the Four Emperors to end before searching for it to become a King of Angels. Unfortunately, in the War of the Four Emperors, "He" was killed by'The Half-Fool' Antigonus and Bethel Abraham, who could appear anywhere, anytime.
 **Status:** Deceased
@@ -106,8 +41,10 @@
 **Religion:** Black Emperor Solomon
 **Enemies:** Antigonus; Bethel Abraham
 **Pathway:** Fool
+**Sequence:** 2
 **Level:** Angels
 **Gender:** Male
+**Intro Boost: zaratul senior, secret order, vendetta, assassination**
 **Debut:** Lord of Mysteries, Chapter 1104 (Mentioned)
 **Wiki:** https://lordofthemysteries.fandom.com/wiki/Zaratul_Senior
 
@@ -142,53 +79,6 @@
 **Debut:** Lord of Mysteries, Chapter 73
 **Wiki:** https://lordofthemysteries.fandom.com/wiki/Suited_Clown
 
-### CHARACTER — Amon
-**Aliases:** The Blasphemer (渎神者); Lil' Raven (By Medici); Mr. Error (“错误”先生) (Former); Termiboros (忒尔弥波洛斯)
-**Summary:** Amon, also known as the Angel of Time, was one of the Kings of Angels from the Third Epoch and a child of the Ancient Sun God. "He" was born as a Sequence 1 Worm of Time with the Error Uniqueness.
-**Appearance:** "He" is described as looking like a young man with black eyes and curly black hair. "He" has a broad forehead and a thin face. Usually, "He" wears a crystal monocle, which hangs over "His" right eye, and a black pointed hat.
-**Personality:** As a pleasure seeker, "He" had no common ethics and just pursued stimulation and cheerfulness. "He" saw anything as "His" toys or playmates. "He" teased others just for fun. After all, in the eyes of a natural Mythical Creature like "Him", human beings weren't different from ants. They were all just toys. "He" is good at deceit and prefers using fraud rather than straight-up violence to achieve "His" goal. "His" words can be very persuasive, and "He" often misleads others with rhetoric.
-**Status:** Alive
-**Sex:** Male
-**Species:** Mythical Creature
-**Bloodline:** Amon Family
-**Age:** 3679
-**Birth:** January 3rd, Third Epoch
-**Height:** 1.85 m (6 ft 1 in)
-**Hair:** Black
-**Eyes:** Black
-**Occupation:** Cosmos Wanderer (Former); God (Former); Founder of the Amon Family; Ancient Sun God's King of Angels (Former)
-**Faction:** Amon Family; Salle de Bal Unique; Tudor Empire (former); Church of the Ancient Sun God (former)
-**Religion:** Ancient Sun God
-**Enemies:** Outer Deities; The Fool (Former); Evernight Goddess (Former); Eternal Blazing Sun; Lord of Storms; God of Knowledge and Wisdom; Pallez Zoroast (Former); Jacob
-**Pathway:** Error
-**Progression:** Error (Sequence 9 - 2)
-**Sequence:** 2
-**Level:** Angels
-**Gender:** Male
-**Debut:** Lord of Mysteries, Chapter 60 (Family Name Mentioned); Lord of Mysteries, Chapter 355 (Mentioned); Lord of Mysteries, Chapter 363; Circle of Inevitability, Chapter 150 (As Termiboros); Circle of Inevitability, Chapter 269 (As Monette)
-**Wiki:** https://lordofthemysteries.fandom.com/wiki/Amon
-
-### CHARACTER — Pallez Zoroast
-**Aliases:** Old Man (By His descendants and Leonard)
-**Summary:** Pallez Zoroast is an Angel from the Fourth Epoch, and a member of the Zoroast Family. "He" is currently parasitizing Leonard Mitchell's body.
-**Appearance:** An old man with dark brown eyes. The man’s hair was already completely white. It wasn’t very sparse, and it was neatly combed to the back of "His" head. "His" forehead, the corners of "His" eyes, and the corners of "His" mouth didn’t seem to have any wrinkles, not appearing too old. It was obvious that "He" looked quite good when he was young. "He" looked quite similar to Mobet Zoroast, but "He" exuded a rather solemn air.
-**Personality:** Mobet Zoroast remembered "Him" as an ordinary old man at home, a bit talkative, likes to mentally knock down "His" descendants, and enjoys life. "He" is obsessed with categorizing, liking things to be clean and neat. When facing opponents, "He" is good at tricking them, and wins by making the opponent mentally break down. As "He" resides inside Leonard, "He" basically became Leonard's teacher. "He" told Leonard about the Acting Method, reminded him of people with unique features (like Klein), and gave him advice on many things.
-**Status:** Alive
-**Sex:** Male
-**Species:** Mythical Creature; Human (Former)
-**Bloodline:** Zoroast Family
-**Hair:** White
-**Eyes:** Dark Brown
-**Occupation:** Angel of Time under The Fool
-**Faction:** Church of the Fool; Zoroast Family; Hermits of Fate; Solomon Empire (Former)
-**Religion:** Church of the Fool (current); Black Emperor Solomon (former)
-**Enemies:** Amon (Former)
-**Pathway:** Error
-**Level:** Angels
-**Gender:** Male
-**Debut:** Lord of Mysteries, Chapter 609 (Mentioned); Lord of Mysteries, Chapter 770 (Name Revealed); Circle of Inevitability, Chapter 291 (Mentioned); Circle of Inevitability, Chapter 765
-**Wiki:** https://lordofthemysteries.fandom.com/wiki/Pallez_Zoroast
-
 ### CHARACTER — Zoroast
 **Summary:** Zoroast was the ancestor of the Zoroast Family in the Fourth Epoch. "He" was an angel of the Error Pathway.
 **Status:** Deceased
@@ -215,23 +105,6 @@
 **Debut:** Lord of Mysteries, Chapter 826
 **Wiki:** https://lordofthemysteries.fandom.com/wiki/Flora_Jacob
 
-### CHARACTER — Hazel Macht
-**Summary:** Hazel Macht is the daughter of Maury Macht and Ma’am Riana. She is a Beyonder of the Marauder Pathway and a student of Flora Jacob, a demigod of the Jacob Family who was parasitizing a rat.
-**Appearance:** She is a dignified and pretty lady with wavy black-green hair and bright brown eyes.
-**Status:** Alive
-**Sex:** Female
-**Species:** Human
-**Origin:** Loen Kingdom
-**Hair:** Black Green
-**Eyes:** Bright Brown
-**Occupation:** Student
-**Religion:** Church of the Evernight Goddess
-**Pathway:** Error
-**Level:** Mid Sequence
-**Gender:** Male
-**Region:** 39 Böklund Street, Backlund
-**Debut:** Lord of Mysteries, Chapter 608 (Mentioned); Lord of Mysteries, Chapter 759
-**Wiki:** https://lordofthemysteries.fandom.com/wiki/Hazel_Macht
 
 ### CHARACTER — Jodeson
 **Aliases:** Flowery Bow Tie Jodeson
@@ -1185,7 +1058,7 @@
 **Friends:** Frank Lee
 **Pathway:** Tyrant
 **Level:** Mid Sequence
-**Gender:** Male
+**Gender:** Female
 **Debut:** Lord of Mysteries, Chapter 640
 **Wiki:** https://lordofthemysteries.fandom.com/wiki/Nina
 
@@ -1281,8 +1154,6 @@
 **Gender:** Male
 **Region:** Tingen City
 **Wiki:** https://lordofthemysteries.fandom.com/wiki/Havre
-
-### CHARACTER — Swain
 **Summary:** Swain is the boss of the black market, Evil Dragon Bar, and also a former captain of Tingen's Mandated Punishers squad. Rumor has it that he was once part of the Royal Navy.
 **Appearance:** A muscular old man. Reeking with the smell of alcohol, he was blue-eyed, messy, and brown-haired. His arms were thick and brawny. He had firm muscles and had the bearing of a military officer.
 **Personality:** He’s someone who wishes to drink himself to death.

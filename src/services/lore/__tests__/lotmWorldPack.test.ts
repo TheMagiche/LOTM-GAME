@@ -8,6 +8,7 @@ import { parseFactionsFromLore } from '../loreFactionParser';
 import { extractEngineSeeds } from '../loreEngineSeeder';
 import { loadLootTree } from '../lootTreeLoader';
 import { resolveLootDrop } from '../../engine/lootEngine';
+import { concatenateLotmLore, LOTM_LORE_PART_FILES } from '../../../worldpacks/lotmLoreConcat';
 
 // The shipped Lord of the Mysteries world pack is a fixture like any other
 // mechanics compendium — these tests keep its machine-parsed format honest.
@@ -16,6 +17,13 @@ const lore = readFileSync(resolve(LOTM_DIR, 'world_lore_lord_of_the_mysteries.md
 const chunks = chunkLoreFile(lore);
 
 describe('LOTM world pack — chunking', () => {
+    it('keeps the compiled lore file identical to concatenated author sources', () => {
+        const parts = LOTM_LORE_PART_FILES.map(file =>
+            readFileSync(resolve(LOTM_DIR, 'lore', file), 'utf-8'),
+        );
+        expect(concatenateLotmLore(parts)).toBe(lore);
+    });
+
     it('produces an always-include overview preamble', () => {
         const overview = chunks.find(c => c.id === 'preamble' && c.alwaysInclude);
         expect(overview).toBeDefined();
@@ -27,6 +35,16 @@ describe('LOTM world pack — chunking', () => {
         expect(chunks.filter(c => c.category === 'power_system').length).toBeGreaterThanOrEqual(6);
         expect(chunks.find(c => c.category === 'economy')).toBeDefined();
         expect(chunks.filter(c => c.category === 'event').length).toBeGreaterThanOrEqual(4);
+    });
+
+    it('assigns distinct RAG groups to church, secret-org, and family factions', () => {
+        const evernight = chunks.find(c => c.header.includes('Church of the Evernight Goddess'));
+        const aurora = chunks.find(c => c.header.includes('Aurora Order'));
+        const augustus = chunks.find(c => c.header.includes('House Augustus'));
+        expect(evernight?.group).toMatch(/2a-orthodox-churches/);
+        expect(aurora?.group).toMatch(/2b-secret-organizations/);
+        expect(augustus?.group).toMatch(/2c-noble-angel-families/);
+        expect(new Set([evernight?.group, aurora?.group, augustus?.group]).size).toBe(3);
     });
 
     it('seeds the surprise / encounter / world-event engines', () => {
@@ -77,6 +95,8 @@ describe('LOTM world pack — NPC ledger seeding', () => {
         expect(dunn?.tier).toBe('recurring');
         expect(dunn?.region).toBe('tingen');
         expect(dunn?.haunt?.length ?? 0).toBeGreaterThan(0);
+        expect(dunn?.personalityHex?.diligence).toBe(3);
+        expect(dunn?.traits).toEqual(expect.arrayContaining(['loyal', 'protective', 'honorable']));
         expect(amon?.signatureKit?.abilities.length ?? 0).toBeGreaterThan(0);
     });
 
@@ -153,6 +173,9 @@ describe('LOTM world pack — faction ledger seeding', () => {
         expect(evernight?.stance).toMatch(/Loen/i);
         expect(evernight?.pathways.toLowerCase()).toContain('darkness');
         expect(evernight?.keyMembers).toMatch(/Dunn Smith/i);
+        expect(evernight?.region).toMatch(/Loen/i);
+        expect(evernight?.aliases).toMatch(/Nighthawks/i);
+        expect(evernight?.relations.some(r => r.kind === 'opposed')).toBe(true);
     });
 });
 

@@ -2,13 +2,31 @@
 // location) and are inlined at build time with Vite's ?raw imports, so the pack
 // works offline and needs no server route — the same bytes a manual file-pick
 // would supply, handed to the campaign form as File objects.
-import loreMd from '../../mechanics/World_compendium/Lord of the Mysteries/world_lore_lord_of_the_mysteries.md?raw';
+import loreOverviewMd from '../../mechanics/World_compendium/Lord of the Mysteries/lore/overview.md?raw';
+import loreFactionsMd from '../../mechanics/World_compendium/Lord of the Mysteries/lore/factions.md?raw';
+import loreLocationsMd from '../../mechanics/World_compendium/Lord of the Mysteries/lore/locations.md?raw';
+import loreCharactersMd from '../../mechanics/World_compendium/Lord of the Mysteries/lore/characters_gameplay.md?raw';
+import lorePowerMd from '../../mechanics/World_compendium/Lord of the Mysteries/lore/power_economy_events.md?raw';
+import loreSeedsMd from '../../mechanics/World_compendium/Lord of the Mysteries/lore/engine_seeds.md?raw';
+import demoLoreMd from '../../mechanics/World_compendium/Lord of the Mysteries/demo_world_lore_lord_of_the_mysteries.md?raw';
 import rulesMd from '../../mechanics/Ruleset/AI_GM_OS_LOTM_v1.md?raw';
+import { concatenateLotmLore } from './lotmLoreConcat';
 import lootJson from '../../mechanics/World_compendium/Lord of the Mysteries/loot.json?raw';
 import starterMd from '../../mechanics/World_compendium/Lord of the Mysteries/lotm_starterPrompt.md?raw';
 import type { CampaignUiSkin, PlayerCharacter } from '../types';
 import { IS_DEMO_MODE, isDemoPlayablePcFile } from '../config/demoMode';
 import { formatLotmPathwayLabel } from './lotmPathways';
+
+const loreMd = IS_DEMO_MODE || import.meta.env.MODE === 'demo'
+    ? demoLoreMd
+    : concatenateLotmLore([
+        loreOverviewMd,
+        loreFactionsMd,
+        loreLocationsMd,
+        loreCharactersMd,
+        lorePowerMd,
+        loreSeedsMd,
+    ]);
 
 const peopleRaw = import.meta.glob(
     '../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_*.json',

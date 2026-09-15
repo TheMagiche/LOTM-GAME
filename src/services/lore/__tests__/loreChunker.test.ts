@@ -138,6 +138,15 @@ describe('chunkLoreFile — category classification branches', () => {
             expect(chunkLoreFile(md)[0].category).toBe(expectedCat);
         });
     }
+
+    it('FACTION — header classifies as faction even when the parent ## is not FACTIONS', () => {
+        const chunks = chunkLoreFile(
+            '## 2a. ORTHODOX CHURCHES\nintro\n\n### FACTION — Church of Night\n**Type:** Church\n**Stance:** Lawful.\n',
+        );
+        const church = chunks.find(c => c.header.includes('Church of Night'));
+        expect(church?.category).toBe('faction');
+        expect(church?.group).toBe('2a-orthodox-churches');
+    });
 });
 
 describe('chunkLoreFile — priority assignment per category', () => {

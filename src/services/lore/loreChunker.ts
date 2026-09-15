@@ -132,8 +132,8 @@ export function classifyCategory(header: string, content: string, parentHeader?:
         if (TYPE_MAP[t]) return TYPE_MAP[t];
     }
 
-    if (h.includes('[CHUNK: HERO') || p.includes('CHARACTER') || h.includes('CHARACTER —')) return 'character';
-    if (h.includes('[CHUNK: FACTION') || h.includes('[CHUNK: ORGANIZATION') || p.includes('FACTION')) return 'faction';
+    if (h.includes('[CHUNK: HERO') || p.includes('CHARACTER') || h.includes('CHARACTER —') || h.includes('CHARACTER --')) return 'character';
+    if (h.includes('[CHUNK: FACTION') || h.includes('[CHUNK: ORGANIZATION') || h.includes('FACTION —') || h.includes('FACTION --') || p.includes('FACTION')) return 'faction';
     if (h.includes('WORLD OVERVIEW') || h.includes('CORE IDENTITY') || h.includes('WORLD STATE')) return 'world_overview';
     if (h.includes('POWER SYSTEM') || h.includes('MAGIC') || h.includes('MANA') || h.includes('RANK')) return 'power_system';
     if (h.includes('ECONOMY') || h.includes('CURRENCY') || h.includes('COST')) return 'economy';

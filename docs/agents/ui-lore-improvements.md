@@ -139,7 +139,7 @@ Sweep: [`DiceRollModal.tsx`](../../src/components/chat/DiceRollModal.tsx), [`Con
 - Rewriting `runTurn` or `resolveEngineRolls` Sequence math.
 - Changing loot.json root keys or the walker in `@narrative/engine`.
 - NPC agency, tone meter, or allowing the LLM to set `pcRelation`.
-- Replacing Grimoire gamedata JSON with parsed `world_lore_*.md`.
+- Replacing Grimoire gamedata JSON with parsed campaign lore (`lore/*.md` concatenated into `world_lore_lord_of_the_mysteries.md`). Those files seed RAG + ledgers; the Grimoire is a separate novel encyclopedia.
 - Ungating hydrator church/geography merge onto non-LOTM campaigns.
 - Tactical combat UI, brewing simulation, or auto-incrementing digestion.
 
