@@ -18,9 +18,11 @@ The player has already chosen their Beyonder. Their first message is the charact
 
 Do NOT run a character-creation interview. Do NOT re-ask name, pathway, Sequence, origin, or home port.
 
-The chronicle begins at the first potion. The opening beat MUST be the player consuming their Sequence 9 potion of the chosen pathway — the cup, the taste, the catalog consumption backlash, the first flicker of Sequence abilities. Digestion starts at 0; do not promote Sequence. Do not skip to a later life, even if the background names later hooks; those wait after the drink.
+The chronicle opens on their ordinary life and the path that puts the Sequence 9 potion in their hands: the formula, the inheritance, the broker, the church, whoever supplied it. Play that stretch as scene, not summary, in their haunt or home port with Fifth-Epoch texture: coal haze, telegraph clatter, newspaperboys, the wrongness that arrives only after you notice it. Do not start at the cup.
 
-Treat the brief as established fact. Set the scene in their haunt or home port with Fifth-Epoch texture: coal haze, telegraph clatter, newspaperboys, the wrongness that arrives only after you notice it.
+The same first reply MUST then reach the drink: they acquire the potion, then consume it — the cup, the taste, the catalog consumption backlash, the first flicker of Sequence abilities. Digestion starts at 0; do not promote Sequence.
+
+Treat the brief as established fact. Do not skip to a later life, even if the background names later hooks (inspectors, strangers who already know a title, deaths that no longer add up); those wait after the drink.
 `;
 
 function firstPotionLines(pc: PlayerCharacter): string[] {
@@ -31,11 +33,11 @@ function firstPotionLines(pc: PlayerCharacter): string[] {
     const seqLabel = formatLotmSequenceName(pathway?.id, sequence) || `Sequence ${sequence}`;
     const pathwayName = pathway?.name || 'their pathway';
     const lines = [
-        `Tonight I drink the ${seqLabel} potion of the ${pathwayName} — this is the first beat of the chronicle.`,
+        `This is the opening of the chronicle: my life up to the moment I acquire the ${seqLabel} potion of the ${pathwayName}, then I drink it.`,
     ];
     const overview = (seq?.potionOverview ?? '').trim();
     if (overview) lines.push(overview);
-    lines.push('Begin the scene with the cup at my lips. Narrate the drinking, the consumption backlash, the transformation, and the first flicker of these Sequence powers. Do not skip past the potion.');
+    lines.push('Narrate the background through acquiring the potion — how it came to me — then the drinking, the consumption backlash, the transformation, and the first flicker of these Sequence powers. Do not start at the cup. Do not skip past the potion. Do not skip to the life after the drink.');
     return lines;
 }
 

@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import claraJson from '../../../../mechanics/World_compendium/Lord of the Mysteries/people/lotm_pc_clara_whitlock.json';
 import type { PlayerCharacter } from '../../../types';
 import {
+    LOTM_PREBUILT_OPENING_STARTER,
     formatLotmOpeningPrompt,
     maybeInjectLotmOpeningPrompt,
     openingPromptToAutoSend,
@@ -26,8 +27,19 @@ describe('formatLotmOpeningPrompt', () => {
         expect(text).toContain('Sequence 9 · Seer potion');
         expect(text).toContain('Fool Pathway');
         expect(text).toMatch(/dark-blue gelatinous/i);
-        expect(text).toContain('cup at my lips');
+        expect(text).toMatch(/life up to the moment I acquire/i);
+        expect(text).toContain('Do not start at the cup');
         expect(text).toContain('Do not interview me.');
+    });
+});
+
+describe('LOTM_PREBUILT_OPENING_STARTER', () => {
+    it('opens on origin through acquiring the potion, then the drink', () => {
+        expect(LOTM_PREBUILT_OPENING_STARTER).toMatch(/ordinary life/i);
+        expect(LOTM_PREBUILT_OPENING_STARTER).toMatch(/puts the Sequence 9 potion in their hands/i);
+        expect(LOTM_PREBUILT_OPENING_STARTER).toContain('Do not start at the cup');
+        expect(LOTM_PREBUILT_OPENING_STARTER).toMatch(/acquire the potion, then consume it/i);
+        expect(LOTM_PREBUILT_OPENING_STARTER).toMatch(/those wait after the drink/i);
     });
 });
 
