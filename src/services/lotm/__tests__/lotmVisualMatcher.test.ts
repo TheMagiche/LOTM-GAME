@@ -156,4 +156,25 @@ describe('lotmVisualMatcher', () => {
         }], 'correct');
         expect(sun.portrait).toBe('');
     });
+
+    it('maps newly added character portraits from gamedata/image/characters', () => {
+        expect(matchLotmPortraitEntry('Melissa Moretti')?.portrait).toContain('Melissa_Moretti');
+        expect(matchLotmPortraitEntry('Old Neil')?.portrait).toContain('Old_Neil');
+        expect(matchLotmPortraitEntry('Zaratul')?.portrait).toContain('Zaratul');
+        expect(matchLotmPortraitEntry('Susie')?.portrait).toContain('Sussie');
+        expect(matchLotmPortraitEntry('Dwayne Dantès')?.portrait).toContain('dwayne_dant_s');
+        expect(matchLotmPortraitEntry('Pallez Zoroast')?.portrait).toContain('Pallez_Zoroast');
+        expect(matchLotmPortraitEntry('Lovia Tiffany')?.portrait).toContain('Lovia_TIffany');
+        expect(matchLotmPortraitEntry('Klein Moretti')?.id).toBe('klein-nighthawk');
+    });
+
+    it('maps public church titles to public-art portraits, not true names', () => {
+        expect(matchLotmPortraitEntry('The Lord of Storms')?.id).toBe('lord-of-storms');
+        expect(matchLotmPortraitEntry('The Lord of Storms')?.portrait).toContain('Lord_of_Storms');
+        expect(matchLotmPortraitEntry('Leodero')?.portrait).toContain('leodero');
+        expect(matchLotmPortraitEntry('The God of Knowledge and Wisdom')?.id).toBe('god-of-knowledge');
+        expect(matchLotmPortraitEntry('Herabergen')?.portrait).toContain('herabergen');
+        expect(matchLotmPortraitEntry('The Earth Mother')?.portrait).toContain('Earth_Mother');
+        expect(matchLotmPortraitEntry('The God of Combat')?.portrait).toContain('God_of_Combat');
+    });
 });

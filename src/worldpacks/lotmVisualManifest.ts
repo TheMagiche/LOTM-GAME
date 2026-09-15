@@ -253,6 +253,8 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     aliases: ["klein moretti", "klein"],
     portrait: "image/characters/klein_moretti_nighthawk.webp",
   },
+  // klein_moretti_beginning_of_the.webp is on disk but not indexed: any alias
+  // that contains "klein" / "klein moretti" would steal this Nighthawk match.
   {
     id: "zhou-mingrui",
     aliases: ["zhou mingrui"],
@@ -277,6 +279,11 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     id: "merlin-hermes",
     aliases: ["merlin hermes", "merlin"],
     portrait: "image/characters/merlin_hermes.webp",
+  },
+  {
+    id: "dwayne-dantes",
+    aliases: ["dwayne dantes", "dwayne dantès", "dwayne"],
+    portrait: "image/characters/dwayne_dant_s.webp",
   },
   {
     id: "cattleya",
@@ -401,9 +408,27 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     portrait: "image/characters/aucuses.webp",
   },
   {
+    id: "lord-of-storms",
+    aliases: [
+      "the lord of storms",
+      "lord of storms",
+      "ruler of the skies and seas",
+    ],
+    portrait: "image/characters/Lord_of_Storms.webp",
+  },
+  {
     id: "leodero",
     aliases: ["leodero"],
     portrait: "image/characters/leodero.webp",
+  },
+  {
+    id: "god-of-knowledge",
+    aliases: [
+      "the god of knowledge and wisdom",
+      "god of knowledge and wisdom",
+      "the all-knowing",
+    ],
+    portrait: "image/characters/God_of_Knowledge_and_Wisdom.webp",
   },
   {
     id: "herabergen",
@@ -414,6 +439,195 @@ export const LOTM_PORTRAITS: LotmPortraitVisual[] = [
     id: "medici",
     aliases: ["sauron einhorn medici", "medici"],
     portrait: "image/characters/sauron_einhorn_medici.webp",
+  },
+  {
+    id: "melissa-moretti",
+    aliases: ["melissa moretti", "melissa"],
+    portrait: "image/characters/Melissa_Moretti.webp",
+  },
+  {
+    id: "old-neil",
+    aliases: ["old neil", "neil wood"],
+    portrait: "image/characters/Old_Neil.webp",
+  },
+  {
+    id: "crestet-cesimir",
+    aliases: ["crestet cesimir", "crestet", "goddess's sword"],
+    portrait: "image/characters/Crestet_Cesimir.webp",
+  },
+  {
+    id: "swain",
+    aliases: ["swain"],
+    portrait: "image/characters/Swain.webp",
+  },
+  {
+    id: "hanass-vincent",
+    aliases: ["hanass vincent", "hanass"],
+    portrait: "image/characters/Hanass_Vincent.webp",
+  },
+  {
+    id: "sirius-arapis",
+    aliases: ["sirius arapis", "sirius"],
+    portrait: "image/characters/Sirius_Arapis.webp",
+  },
+  {
+    id: "susie",
+    aliases: ["susie", "sussie"],
+    portrait: "image/characters/Sussie.webp",
+  },
+  {
+    id: "zaratul",
+    aliases: ["zaratul", "elder of the secret order"],
+    portrait: "image/characters/Zaratul.webp",
+  },
+  {
+    id: "pallez-zoroast",
+    aliases: ["pallez zoroast", "pallez"],
+    portrait: "image/characters/Pallez_Zoroast.webp",
+  },
+  {
+    id: "bethel-abraham",
+    aliases: ["bethel abraham", "bethel", "mr door", "angel of the door"],
+    portrait: "image/characters/Bethel_Abraham.webp",
+  },
+  {
+    id: "dorian-gray-abraham",
+    aliases: ["dorian gray abraham", "dorian gray", "dorian"],
+    portrait: "image/characters/Dorian_Gray_Abraham.webp",
+  },
+  {
+    id: "god-of-combat",
+    aliases: ["the god of combat", "god of combat", "lord of war"],
+    portrait: "image/characters/God_of_Combat.webp",
+  },
+  {
+    id: "god-of-steam",
+    aliases: [
+      "the god of steam and machinery",
+      "god of steam and machinery",
+      "the steam god",
+      "steam god",
+    ],
+    portrait: "image/characters/God_of_Steam_and_Machinery.webp",
+  },
+  {
+    id: "earth-mother",
+    aliases: ["the earth mother", "earth mother", "lilith", "mother earth"],
+    portrait: "image/characters/Earth_Mother.webp",
+  },
+  {
+    id: "chained-god",
+    aliases: ["the chained god", "chained god"],
+    portrait: "image/characters/Chained_God.webp",
+  },
+  {
+    id: "primordial-demoness",
+    aliases: [
+      "the primordial demoness",
+      "primordial demoness",
+      "chaos demoness",
+    ],
+    portrait: "image/characters/Primodial_Demoness.webp",
+  },
+  {
+    id: "salinger",
+    aliases: ["salinger", "underworld emperor", "god of the dead"],
+    portrait: "image/characters/Salinger.webp",
+  },
+  {
+    id: "solomon",
+    aliases: ["solomon", "the black emperor", "black emperor"],
+    portrait: "image/characters/Solomon.webp",
+  },
+  {
+    id: "alista-tudor",
+    aliases: ["alista tudor", "alista", "the blood emperor", "blood emperor"],
+    portrait: "image/characters/Alista_Tudor.webp",
+  },
+  {
+    id: "antigonus",
+    aliases: ["antigonus", "the half fool", "half fool", "an xiaotian"],
+    portrait: "image/characters/Antigonus.webp",
+  },
+  {
+    id: "kotar",
+    aliases: ["kotar", "god of wishes"],
+    portrait: "image/characters/Kotar.webp",
+  },
+  {
+    id: "cohinem",
+    aliases: ["cohinem"],
+    portrait: "image/characters/Cohinem.webp",
+  },
+  {
+    id: "anderson-hood",
+    aliases: ["anderson hood", "anderson"],
+    portrait: "image/characters/Anderson_Hood.webp",
+  },
+  {
+    id: "qilangos",
+    aliases: ["qilangos", "hurricane qilangos"],
+    portrait: "image/characters/Qilangos.webp",
+  },
+  {
+    id: "tracy",
+    aliases: ["tracy", "vice admiral of ailment", "queen of ailment"],
+    portrait: "image/characters/Tracy.webp",
+  },
+  {
+    id: "katarina-pelle",
+    aliases: [
+      "katarina pelle",
+      "katarina",
+      "saintess of white",
+      "demoness of white",
+    ],
+    portrait: "image/characters/Katarina_Pelle.webp",
+  },
+  {
+    id: "maric",
+    aliases: ["maric", "knight of swords"],
+    portrait: "image/characters/Maric.webp",
+  },
+  {
+    id: "senor",
+    aliases: ["senor", "señor", "admiral of blood"],
+    portrait: "image/characters/Senor.webp",
+  },
+  {
+    id: "father-utravsky",
+    aliases: ["father utravsky", "bishop utravsky", "utravsky"],
+    portrait: "image/characters/Father_Utravsky.webp",
+  },
+  {
+    id: "isengard-stanton",
+    aliases: ["isengard stanton", "isengard", "eye of wisdom"],
+    portrait: "image/characters/Isengard_Stanton.webp",
+  },
+  {
+    id: "lovia-tiffany",
+    aliases: ["lovia tiffany", "lovia", "elder lovia"],
+    portrait: "image/characters/Lovia_TIffany.webp",
+  },
+  {
+    id: "ace-snake",
+    aliases: ["ace snake", "spellsinger of god"],
+    portrait: "image/characters/Ace_Snake.webp",
+  },
+  {
+    id: "amyrius-rieveldt",
+    aliases: ["amyrius rieveldt", "amyrius", "admiral amyrius", "law weaver"],
+    portrait: "image/characters/Amyrius_Rieveldt.webp",
+  },
+  {
+    id: "hazel-macht",
+    aliases: ["hazel macht", "hazel"],
+    portrait: "image/characters/Hazel_Macht.webp",
+  },
+  {
+    id: "darkwill",
+    aliases: ["darkwill", "lawson darkwill"],
+    portrait: "image/characters/Darkwill.webp",
   },
 ];
 
