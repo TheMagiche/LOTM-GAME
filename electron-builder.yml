@@ -25,10 +25,16 @@ mac:
     - dmg
     - zip
 win:
+  signAndEditExecutable: false
   target:
     - nsis
+nsis:
+  oneClick: true
+  shortcutName: Lord of the Mysteries
 linux:
   category: Game
+  executableName: lotm
+  synopsis: Local-first Lord of the Mysteries narrative RPG
   target:
     - AppImage
     - deb

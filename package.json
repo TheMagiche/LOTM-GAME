@@ -2,6 +2,8 @@
   "name": "narrative-engine",
   "private": true,
   "version": "2.0.0",
+  "description": "Lord of the Mysteries — local-first AI narrative RPG",
+  "author": "TheMagiche",
   "type": "module",
   "main": "electron/main.cjs",
   "engines": {
@@ -23,7 +25,9 @@
     "lore:compile": "node scripts/compile-lotm-lore.mjs",
     "build:server": "node build-server.mjs",
     "electron:rebuild": "electron-rebuild -f -w better-sqlite3,sqlite-vec,onnxruntime-node,sharp",
-    "electron:pack:mac": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac --publish never"
+    "electron:pack:mac": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac --publish never",
+    "electron:pack:win": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win --x64 --publish never",
+    "electron:pack:linux": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --linux --x64 --publish never"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.0.1",
