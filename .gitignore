@@ -39,6 +39,7 @@ compare.py
 
 # Build artifacts
 server.bundle.cjs
+/release/
 
 # Debug dumps
 scene310_*.txt
@@ -73,10 +74,6 @@ src/assets/react.svg
 # Planning / design docs (not app code)
 auto-condenser.md
 
-# Electron (not maintained in repo)
-electron/
-build-server.mjs
-
 # One-time migration scripts
 server/scripts/migrateEmbeddings.js
 
@@ -85,6 +82,9 @@ stabs.json
 
 # Local trash folder
 TRASH/
+
+# Standalone download site (separate git repo)
+/lotm-site/
 
 # AI context / codebase map docs (regenerated locally by AI agents)
 AI_CODEBASE_MAP.md
