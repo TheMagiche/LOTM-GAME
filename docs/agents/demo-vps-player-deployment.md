@@ -1,11 +1,11 @@
 # Demo VPS Player Deployment Guide
 
 - **Audience:** Developers, operators, and AI agents deploying a public LOTM demo.
-- **Goal:** Ship a Player-view-only production demo on a VPS with a marketing landing page and BYOK onboarding — grounded in the real codebase, not generic hosting advice.
+- **Goal:** Ship a Player-view-only production demo on a VPS. Public marketing lives on [lotm-site](https://lotm-site.vercel.app); this app boots play immediately with BYOK onboarding — grounded in the real codebase, not generic hosting advice.
 - **Sister docs:**
-  - [lotm-landing-page.md](./lotm-landing-page.md) — Landing page content map, dark neumorphism, and copy guide
+  - [lotm-landing-page.md](./lotm-landing-page.md) — lotm-site vs demo split, Title Hub collage, and back-link contract
   - [ui-view-modes.md](./ui-view-modes.md) — Player vs GM mode behavior
-  - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Gameplay content for landing page copy
+  - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Gameplay content for lotm-site copy
   - [COOLIFY.md](../COOLIFY.md) — Existing VPS deploy path
   - [monetization-and-deployment.md](./monetization-and-deployment.md) — Electron packaging backlog
   - [electron-desktop-packaging.md](./electron-desktop-packaging.md) — Electron hooks, electron-builder recipe, Mac/Windows/Linux packaging constraints
@@ -18,22 +18,27 @@
 
 ```mermaid
 flowchart TD
-    subgraph publicSite [Public site]
-        Landing["Landing page\nhero + gameplay + downloads"]
+    subgraph publicSite [lotm-site.vercel.app]
+        Landing["Marketing landing\nhero + gameplay + downloads"]
         DemoCTA["Try demo CTA"]
     end
-    subgraph demoApp [Demo app Player mode only]
+    subgraph demoApp [Demo VPS Player mode only]
+        AppBoot["Any path boots App\nmain.tsx"]
         BYOKGate["BYOK setup prompt\nSettings Providers tab"]
         TitleHub["LotmTitleHub\nchronicle picker"]
         PlayShell["Player UI\nPlay nav + grimoire"]
         ExitPurge["Exit or idle timeout\nDELETE campaign + embeddings"]
+        BackLink["Back arrow\nLOTM_SITE_ORIGIN"]
     end
     Landing --> DemoCTA
-    DemoCTA --> BYOKGate
+    DemoCTA --> AppBoot
+    AppBoot --> BYOKGate
     BYOKGate --> TitleHub
     TitleHub --> PlayShell
     PlayShell --> ExitPurge
     ExitPurge --> TitleHub
+    TitleHub --> BackLink
+    BackLink --> Landing
 ```
 
 
@@ -42,13 +47,14 @@ flowchart TD
 
 ### User journey
 
-1. **Visitor lands on marketing page** — hero, 3–4 gameplay bullets sourced from `[LotmHowToPlayGuide.tsx](../../src/components/lotm/LotmHowToPlayGuide.tsx)` sections: Acting Method, Spiritual Actions/Dice, Mystical Harvest.
-2. **CTA links to demo app route** — e.g. `/app` or a dedicated subdomain (see §2).
+1. **Visitor lands on lotm-site** — [https://lotm-site.vercel.app](https://lotm-site.vercel.app) hosts hero, gameplay bullets, downloads, and the demo CTA. Copy should stay aligned with `[LotmHowToPlayGuide.tsx](../../src/components/lotm/LotmHowToPlayGuide.tsx)` (Acting Method, Spiritual Actions/Dice, Mystical Harvest).
+2. **CTA opens the demo VPS** — any path (`/` or `/play`) boots `[main.tsx](../../src/main.tsx)` → `App`. There is no in-app marketing page.
 3. **First visit: BYOK setup** — modal or banner prompting API key setup (Providers tab). Keys stay in browser IndexedDB + optional vault (`[VaultUnlockModal.tsx](../../src/components/VaultUnlockModal.tsx)`); the server never stores visitor API keys unless the operator bundles AI later (see [monetization-and-deployment.md](./monetization-and-deployment.md) Model G).
 4. **Player enters chronicle** via `[LotmTitleHub.tsx](../../src/components/lotm/LotmTitleHub.tsx)` — one ephemeral session per visit; no TTS playback (Chatterbox and Kokoro disabled server-side).
 5. **UI locked to Player view** — no GM toggle, no World/Engine/Mods nav (`[ContextNavigationDrawer.tsx](../../src/components/ContextNavigationDrawer.tsx)`, `[SettingsModal.tsx](../../src/components/SettingsModal.tsx)`).
-6. **Leaving chronicle or idle timeout** — campaign JSON, vector embeddings, backups, and scene images for that session are deleted; visitor returns to Title Hub or landing.
-7. **Future:** Landing page “Download” section with Windows/macOS/Linux Electron builds (not in repo today — see [monetization-and-deployment.md](./monetization-and-deployment.md) Model A).
+6. **Leaving chronicle or idle timeout** — campaign JSON, vector embeddings, backups, and scene images for that session are deleted; visitor returns to Title Hub.
+7. **Back from Title Hub** — the demo back control navigates to `[LOTM_SITE_ORIGIN](../../src/config/demoMode.ts)` (`https://lotm-site.vercel.app`).
+8. **Future:** lotm-site “Download” section with Windows/macOS/Linux Electron builds (see [monetization-and-deployment.md](./monetization-and-deployment.md) Model A).
 
 ---
 
@@ -56,21 +62,20 @@ flowchart TD
 
 ## 2. Routing Options
 
-Document all three approaches; use **Approach A** as the phased default.
+**Current default:** two hosts. lotm-site (Vercel) is marketing; this VPS is play-only.
 
 
-| Approach                         | Landing                     | Demo app               | Pros                             | Cons                                                                          |
-| -------------------------------- | --------------------------- | ---------------------- | -------------------------------- | ----------------------------------------------------------------------------- |
-| **A — Path split (recommended)** | `/` static or React landing | `/app` SPA             | One Coolify resource, one domain | Requires `[server.js](../../server.js)` routing + Vite `base` or react-router |
-| **B — Subdomain split**          | `lotmdnd.work.gd`           | `demo.lotmdnd.work.gd` | Clean separation                 | Two Coolify resources; copy [COOLIFY.md](../COOLIFY.md) twice                 |
-| **C — SPA-only**                 | React route `/`             | React route `/demo`    | No server routing change         | Larger bundle; marketing page tied to app release                             |
-
+| Approach                         | Landing                                              | Demo app                         | Status |
+| -------------------------------- | ---------------------------------------------------- | -------------------------------- | ------ |
+| **A — Host split (shipped)**     | [lotm-site.vercel.app](https://lotm-site.vercel.app) | VPS SPA at `/` (also `/play`)    | **Use this.** Demo `main.tsx` always mounts `App`. Title Hub back link uses `LOTM_SITE_ORIGIN`. |
+| **B — Subdomain split**          | `lotmdnd.work.gd` marketing                          | `demo.lotmdnd.work.gd`           | Unused. Two Coolify resources. |
+| **C — In-app landing (retired)** | React `LandingPage` at `/`, play at `/play`          | Same origin                      | **Do not reintroduce.** Marketing moved to lotm-site. |
 
 
 
 ### Current behavior
 
-In production, `[server.js](../../server.js)` (lines 167–183) serves `dist/index.html` for all non-API GET paths — there is **no landing page or route split today**:
+In production, `[server.js](../../server.js)` (lines 167–183) serves `dist/index.html` for all non-API GET paths. `/` and `/play` both boot the demo app:
 
 ```js
 // Production web: serve the Vite build from the same origin as /api
@@ -83,7 +88,7 @@ if (process.env.NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
 }
 ```
 
-`[vite.config.ts](../../vite.config.ts)` uses `base: './'` (Electron-friendly). Changing to `/app/` affects asset paths and must be coordinated with static serving and any react-router basename.
+`[vite.config.ts](../../vite.config.ts)` uses `base: './'` (Electron-friendly). Do not add a Vite `base` of `/play/` or a marketing catch-all in this app.
 
 ---
 
@@ -145,7 +150,7 @@ flowchart TD
     Exit["Leave chronicle\nexitLotmCampaign()"]
     Timeout["5-minute session cap\nlogout"]
     Delete["DELETE /api/campaigns/:id\ncampaign files + embeddings"]
-    Hub["Return to Title Hub\nor landing"]
+    Hub["Return to Title Hub"]
     Enter --> Play
     Play --> Exit
     Play --> Timeout
@@ -277,9 +282,9 @@ Raise read timeout to **300s+** for LLM streams ([COOLIFY.md](../COOLIFY.md) §6
 ### 5.7 Smoke test
 
 1. `GET /health` → `{"ok":true,"demo":true,"frontend":"demo"}`
-2. Open landing page
-3. Enter demo app route
-4. Configure OpenRouter or Ollama key in Settings → Providers
+2. Open the demo origin (`/` or `/play`) — Title Hub must appear with no in-app landing page
+3. Title Hub back control must target `https://lotm-site.vercel.app`
+4. Configure OpenRouter key via the demo BYOK gate
 5. Run one turn in a new chronicle
 6. Exit to Title Hub — confirm chronicle no longer listed (`GET /api/campaigns` returns `[]` or only other sessions' data)
 7. Confirm TTS speak button absent or disabled; no Chatterbox sidecar in container logs
@@ -345,30 +350,24 @@ flowchart LR
 
 
 
-## 7. Landing Page Content Outline
+## 7. Landing Page (lotm-site, not this app)
 
-Sections for implementers (copy can lift from existing docs):
+Public marketing is **lotm-site** at [https://lotm-site.vercel.app](https://lotm-site.vercel.app). Do not add `LandingPage.tsx`, a `/` vs `/play` gate, or a static `public/landing/` tree in this repo.
+
+Copy outline for lotm-site implementers (align with this codebase, do not duplicate the UI here):
 
 
 | Section                | Content                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Hero**               | “Lord of the Mysteries — AI narrative RPG”; CTA “Try the demo”                                                                |
+| **Hero**               | “Lord of the Mysteries — AI narrative RPG”; CTA “Try the demo” → demo VPS origin                                              |
 | **How it plays**       | 3 cards: Acting Method / Dice & SPI / Loot & sequences (from [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) §1–3)   |
-| **BYOK callout**       | “Bring your own API key (OpenRouter, OpenAI, Ollama)” — keys stay in your browser; demo chronicles are deleted when you leave |
+| **BYOK callout**       | “Bring your own API key (OpenRouter)” — keys stay in your browser; demo chronicles are deleted when you leave                 |
 | **Self-host**          | Link to [README.md](../../README.md) clone instructions                                                                       |
 | **Downloads (future)** | Placeholder cards for Windows / macOS / Linux Electron; link to GitHub Releases when `electron-builder` pipeline exists       |
 | **Footer**             | Discord, MIT license, fan-content disclaimer for LOTM IP                                                                      |
 
 
-
-
-### Implementation options
-
-
-| Option      | Location                                   | Notes                                                                          |
-| ----------- | ------------------------------------------ | ------------------------------------------------------------------------------ |
-| Static HTML | `public/landing/index.html`                | Served before SPA catch-all in `[server.js](../../server.js)`; smallest bundle |
-| React page  | `[LandingPage.tsx](../../src/components/landing/LandingPage.tsx)` | Implemented: Lord of the Mysteries themed marketing with dark neumorphism      |
+Demo-app chrome that remains here: Title Hub collage (`[landingCopy.ts](../../src/components/landing/landingCopy.ts)`) and the back link to `LOTM_SITE_ORIGIN`. See [lotm-landing-page.md](./lotm-landing-page.md).
 
 
 ---
@@ -381,10 +380,10 @@ Authoritative packaging guide: [electron-desktop-packaging.md](./electron-deskto
 
 - `electron/` directory + `electron-builder` in `[package.json](../../package.json)`
 - CI job: build artifacts → GitHub Releases or `public/downloads/`
-- Landing page polls release API or static manifest `downloads.json`
+- Landing page (lotm-site) polls release API or static manifest `downloads.json`
 - Hooks already exist in `[apiBase.ts](../../src/lib/apiBase.ts)` for `file://` protocol
 
-Do not promise Electron downloads on the landing page until the CI pipeline ships.
+Do not promise Electron downloads on lotm-site until the CI pipeline ships.
 
 ---
 
@@ -395,8 +394,10 @@ Do not promise Electron downloads on the landing page until the CI pipeline ship
 
 | Feature         | Likely files                                                                                                                                                            |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Landing page    | `[LandingPage.tsx](../../src/components/landing/LandingPage.tsx)`, `[landingCopy.ts](../../src/components/landing/landingCopy.ts)`, `[lotm-landing-page.md](./lotm-landing-page.md)` |
-| Demo route      | `[main.tsx](../../src/main.tsx)` (`shouldShowDemoLanding`), `[demoMode.ts](../../src/config/demoMode.ts)` (`DEMO_PLAY_PATH = '/play'`)                               |
+| Marketing site  | lotm-site at [https://lotm-site.vercel.app](https://lotm-site.vercel.app) — see [lotm-landing-page.md](./lotm-landing-page.md) |
+| Demo boot       | `[main.tsx](../../src/main.tsx)` always mounts `App` |
+| Back to site    | `[LotmTitleHub.tsx](../../src/components/lotm/LotmTitleHub.tsx)` + `[demoMode.ts](../../src/config/demoMode.ts)` `LOTM_SITE_ORIGIN` |
+| Title Hub collage | `[landingCopy.ts](../../src/components/landing/landingCopy.ts)` `LANDING_COLLAGE_CARDS` |
 | Player lock     | `[settingsHelpers.ts](../../src/store/slices/settingsHelpers.ts)`, `[SettingsModal.tsx](../../src/components/SettingsModal.tsx)`                                        |
 | BYOK gate       | New modal + `[ProvidersTab.tsx](../../src/components/settings-modal/ProvidersTab.tsx)`                                                                                  |
 | Delete on exit  | `[exitLotmCampaign()](../../src/components/lotm/LotmPlayHeader.tsx)`, `[deleteCampaign](../../src/store/campaignStore.ts)`                                              |
@@ -418,6 +419,7 @@ Do not promise Electron downloads on the landing page until the CI pipeline ship
 - Do not retain chronicles after the visitor leaves or times out — disk will grow without bound on a shared volume.
 - Do not store visitor API keys server-side for BYOK demo.
 - Do not ship the full gamedata compendium if a trimmed demo build is available.
+- Do not reintroduce an in-app `LandingPage` or `/` vs `/play` marketing gate — visitors come from lotm-site and must boot play immediately.
 - Do not promise Electron downloads until CI pipeline ships.
 
 ---
@@ -426,7 +428,7 @@ Do not promise Electron downloads on the landing page until the CI pipeline ship
 
 ## 11. Out of Scope for This Guide
 
-- Marketing landing page / `/` vs `/app` path split (Approach A in §2) — demo currently is the SPA itself
+- lotm-site source and Vercel config (marketing is a separate repo/deploy)
 - Electron CI and auth
 - Legal advice on LOTM fan content — see [monetization-and-deployment.md](./monetization-and-deployment.md) §6
 

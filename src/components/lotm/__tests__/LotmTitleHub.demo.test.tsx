@@ -1,7 +1,7 @@
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { DEMO_OPENROUTER_ENDPOINT } from '../../../config/demoMode';
+import { DEMO_OPENROUTER_ENDPOINT, LOTM_SITE_ORIGIN } from '../../../config/demoMode';
 import { getDemoOccupancy } from '../../../services/demo/demoSession';
 import { useAppStore } from '../../../store/useAppStore';
 import { LotmTitleHub } from '../LotmTitleHub';
@@ -74,7 +74,7 @@ describe('LotmTitleHub demo chrome', () => {
         await waitFor(() => {
             expect(screen.getByRole('link', { name: /Back to landing page/i })).toBeInTheDocument();
         });
-        expect(screen.getByRole('link', { name: /Back to landing page/i })).toHaveAttribute('href', '/');
+        expect(screen.getByRole('link', { name: /Back to landing page/i })).toHaveAttribute('href', LOTM_SITE_ORIGIN);
         expect(screen.queryByRole('button', { name: /Open Grimoire/i })).not.toBeInTheDocument();
     });
 

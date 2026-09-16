@@ -1,90 +1,84 @@
 # Lord of the Mysteries Landing Page & Marketing Guide
 
-- **Audience:** Developers, UI engineers, operators, and AI agents maintaining the demo landing page, marketing copy, or public onboarding flows.
-- **Goal:** Document the content hierarchy, styling conventions, dark neumorphic design tokens, interactive hero collage, and source data mapping for the public Lord of the Mysteries landing page ([`LandingPage.tsx`](../../src/components/landing/LandingPage.tsx)).
+- **Audience:** Developers, UI engineers, operators, and AI agents maintaining public onboarding, demo entry, or marketing copy.
+- **Goal:** Document the split between the hosted marketing site ([lotm-site](https://lotm-site.vercel.app)) and this repo’s Player-only demo. Public visitors land on lotm-site; the VPS demo boots play immediately.
 - **Sister docs:**
   - [demo-vps-player-deployment.md](./demo-vps-player-deployment.md) — Public VPS demo deployment, session lifecycle, and BYOK gate.
   - [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md) — Authoritative rules for the 6 core LOTM gameplay systems.
   - [monetization-and-deployment.md](./monetization-and-deployment.md) — Packaging strategy, Electron roadmap, and LOTM IP boundaries.
   - [electron-desktop-packaging.md](./electron-desktop-packaging.md) — Desktop packaging recipe; keep Downloads “coming soon” until CI artifacts exist.
 - **Do not touch / Do not change:**
-  - **Do not promise Electron downloads** until the `electron-builder` CI pipeline is active; keep desktop platform items flagged as coming soon.
-  - **Do not remove the fan-content disclaimer** from the footer.
+  - **Do not reintroduce `LandingPage.tsx`** (or any `/` vs `/play` marketing gate) in this demo app. Marketing lives in lotm-site.
+  - **Do not promise Electron downloads** until the `electron-builder` CI pipeline is active; keep desktop platform items flagged as coming soon on lotm-site.
+  - **Do not remove the fan-content disclaimer** from the lotm-site footer.
   - **Do not store visitor API keys** on the server during demo sessions.
 
 ---
 
 ## 1. System Map & Entry Routing
 
+Public marketing and the playable demo are separate deploys. This app always mounts `App` — there is no in-bundle landing route.
+
 ```mermaid
 flowchart TD
-    Visitor["Public Visitor at /"]
-    Gate{"Demo Mode Active?<br/>(IS_DEMO_MODE)"}
-    Landing["LandingPage.tsx<br/>Interactive Hero Collage & Marketing"]
-    PlayCTA["CTA: Enter the demo<br/>(/play)"]
-    App["Full App (main.tsx)<br/>LotmTitleHub / Campaign Select"]
+    Visitor["Public visitor"]
+    Site["lotm-site.vercel.app<br/>Marketing, downloads, demo CTA"]
+    Demo["Demo VPS (any path)<br/>main.tsx → App"]
     BYOKModal["BYOK Provider Setup<br/>(DemoOnboardingModal.tsx)"]
     Chronicle["Active Chronicle Session<br/>(Player-locked UI)"]
+    Back["Title Hub back control"]
 
-    Visitor --> Gate
-    Gate -->|"Demo mode + path ≠ /play"| Landing
-    Gate -->|"Non-demo OR path = /play"| App
-    Landing -->|"Click CTA"| PlayCTA
-    PlayCTA --> App
-    App --> BYOKModal
+    Visitor --> Site
+    Site -->|"CTA: Try the demo"| Demo
+    Demo --> BYOKModal
     BYOKModal --> Chronicle
+    Chronicle --> Back
+    Back -->|"LOTM_SITE_ORIGIN"| Site
 ```
 
----
-
-## 2. Marketing Sections & Source Data Mapping
-
-All landing page text is centralized in [`src/components/landing/landingCopy.ts`](../../src/components/landing/landingCopy.ts) to ensure consistency across UI and documentation.
-
-| Section | Headline / Concept | Source in Codebase | Purpose & Key Takeaways |
-|---------|--------------------|--------------------|-------------------------|
-| **Hero & Interactive Collage** | *Lord of the Mysteries* — A Victorian occult chronicle. Interactive character & pathway constellation. | [`LotmTitleHub.tsx`](../../src/components/lotm/LotmTitleHub.tsx), [`lotmPathways.ts`](../../src/worldpacks/lotmPathways.ts), [`landingCopy.ts`](../../src/components/landing/landingCopy.ts) | Replaced static cover with a parallax collage of Tarot characters and pathway emblems with interactive inspection tabs. |
-| **Core Pillars** | Occult Mechanics & Rules of Beyonder Reality | [`lotm-how-to-play-guide.md`](./lotm-how-to-play-guide.md), [`README.md`](../../README.md) | 5 feature cards: Acting Method, Spiritual Actions, Mystical Harvest, Memory That Never Forgets, Living World & NPCs. |
-| **How It Plays** | Turn Lifecycle (01 → 02 → 03) | [`gameplay-runtime.md`](./gameplay-runtime.md), [`LotmHowToPlayGuide.tsx`](../../src/components/lotm/LotmHowToPlayGuide.tsx) | Demystifies the core loop: 1. Write actions, 2. Witness reply & swipe variants, 3. Advance Pathway & digest potions. |
-| **BYOK Callout** | Bring Your Own Key | [`demo-vps-player-deployment.md`](./demo-vps-player-deployment.md) §1 | Explains browser-local key security (OpenRouter/OpenAI/Ollama) and ephemeral session cleanup. |
-| **Self-Host** | Self-host the chronicle | [`README.md`](../../README.md) §Getting Started | Directs power users to the open-source GitHub repository and desktop setup instructions. |
-| **Sponsor the Project** | Sponsor on Ko-fi | [`landingCopy.ts`](../../src/components/landing/landingCopy.ts) | Direct link to Ko-fi (`https://ko-fi.com/themagiche`) to support server hosting and development. |
-| **Special Thanks & Sources** | Attribution & Lore Sources | [`landingCopy.ts`](../../src/components/landing/landingCopy.ts) | Attributions to Narrative-P Engine (`github.com/Sagesheep/NarrativeEngine-P`), LOTM Wiki (`lordofthemysteries.fandom.com/wiki/`), and author Cuttlefish That Loves Diving. |
-| **Desktop Builds** | Desktop builds (Windows, macOS, Linux) | [`monetization-and-deployment.md`](./monetization-and-deployment.md) §8 | Muted placeholder cards with a "Coming soon" badge (no premature download links). |
-| **Footer** | Creator Website, Ko-fi, MIT License, IP Disclaimer | [`landingCopy.ts`](../../src/components/landing/landingCopy.ts) | Links to Creator (`themagiche.vercel.app`), Sponsor, MIT license, and fan-content disclaimer. |
+| Surface | Host | What the visitor sees |
+|---------|------|------------------------|
+| **Marketing** | [lotm-site.vercel.app](https://lotm-site.vercel.app) | Hero, gameplay pillars, BYOK/self-host copy, downloads, sponsor, footer. |
+| **Demo play** | VPS (`lotmdnd.work.gd` and any path including `/` or `/play`) | Title Hub + BYOK + Player UI. `main.tsx` always renders `App`. |
+| **Back** | Title Hub arrow in demo mode | `href` = [`LOTM_SITE_ORIGIN`](../../src/config/demoMode.ts) (`https://lotm-site.vercel.app`). |
 
 ---
 
-## 3. Visual Styling & Dark Neumorphism Tokens
+## 2. Marketing Ownership (lotm-site)
 
-The landing page extends the `lotm-illustrated` skin with dark neumorphic surfaces and interactive occult layers:
+Hero, pillars, how-it-plays, BYOK callout, self-host, sponsor, special thanks, desktop downloads, and the fan-content footer live in **lotm-site**, not this repository.
 
-- **Base Ground:** `#0b0a0d` (near-black occult background).
-- **Interactive Hero Collage (`.lotm-collage-floating-card`):**
-  - Mesh of floating cards with individual coordinates, subtle tilt angles, and mouse parallax tracking (`translate3d`).
-  - Hover / active elevation: scales to `1.18x`, illuminates with gold runic aura (`box-shadow: 0 0 22px rgba(201, 162, 39, 0.42)`), and reveals Tarot Arcanum and Beyonder identity.
-- **Hero Showcase Bar (`.lotm-hero-showcase-bar`):**
-  - Frosted glass + neumorphic panel (`rgba(14, 12, 17, 0.88)` with `backdrop-filter: blur(14px)`).
-  - Tab switcher between *Tarot Club & Beyonders* and *22 Divine Pathways*.
-  - Inspection plate showcasing pathway sequence ranges and character quotes.
-- **Extruded Cards (`.lotm-landing-card`):**
-  - Surface: `#121015`
-  - Shadow: `8px 8px 18px #050408, -6px -6px 14px #1c1822`
-  - Border: `1px solid rgba(201, 162, 39, 0.12)` (subtle gold hairline)
-  - Hover: Lift `-2px` with expanded gold border `rgba(201, 162, 39, 0.32)`
-- **Inset Wells (`.lotm-landing-well-card`):**
-  - Surface: `#0e0c11`
-  - Inset Shadow: `inset 4px 4px 10px #060507, inset -3px -3px 8px #191620`
-  - Used for BYOK callout, Self-Host info, Sponsor card, and Desktop Builds plate.
-- **Typography:**
-  - Headers & Kickers: `'Cinzel', serif` in `#f3ead8` / `#c9a227`.
-  - Body & Descriptions: `'EB Garamond', Georgia, serif` in `rgba(243, 234, 216, 0.76)`.
+When editing that site, keep copy aligned with:
+
+| Section | Source of truth in this repo (for wording, not UI) |
+|---------|-----------------------------------------------------|
+| **How it plays / pillars** | [lotm-how-to-play-guide.md](./lotm-how-to-play-guide.md), [`LotmHowToPlayGuide.tsx`](../../src/components/lotm/LotmHowToPlayGuide.tsx) |
+| **BYOK + ephemeral sessions** | [demo-vps-player-deployment.md](./demo-vps-player-deployment.md) §1 and §4 |
+| **Self-host** | [`README.md`](../../README.md) Getting Started |
+| **Desktop builds** | [monetization-and-deployment.md](./monetization-and-deployment.md) §8 — muted “Coming soon” until CI artifacts exist |
+| **Demo CTA target** | Public demo origin (VPS). Do not send visitors through a second marketing page inside this app. |
+
+---
+
+## 3. Demo Title Hub Chrome (this repo)
+
+The Title Hub keeps a parallax Tarot collage as play chrome. That is **not** the public landing page.
+
+- **Collage data:** [`landingCopy.ts`](../../src/components/landing/landingCopy.ts) (`LANDING_COLLAGE_CARDS`)
+- **Render:** [`LotmTitleHub.tsx`](../../src/components/lotm/LotmTitleHub.tsx)
+- **Boot splash:** [`index.html`](../../index.html) `#lotm-boot-splash`, dismissed from [`main.tsx`](../../src/main.tsx) via [`preloadLandingAssets.ts`](../../src/components/landing/preloadLandingAssets.ts)
+
+Dark neumorphic tokens used by the hub collage:
+
+- **Base Ground:** `#0b0a0d`
+- **Floating cards (`.lotm-collage-floating-card`):** mesh with mouse parallax; hover scale `1.18x` and gold aura `box-shadow: 0 0 22px rgba(201, 162, 39, 0.42)`
+- **Typography:** `'Cinzel', serif` for kickers; `'EB Garamond', Georgia, serif` for body
 
 ---
 
 ## 4. Brand Vocabulary Reference
 
-When updating marketing or onboarding text, use authentic Lord of the Mysteries terminology:
+When updating marketing (lotm-site) or onboarding text, use authentic Lord of the Mysteries terminology:
 
 | Prefer This Term | Avoid / Replace | Context |
 |------------------|-----------------|---------|
@@ -105,9 +99,10 @@ When updating marketing or onboarding text, use authentic Lord of the Mysteries 
 
 | Component / File | Path | Description |
 |------------------|------|-------------|
-| **Landing View** | [`src/components/landing/LandingPage.tsx`](../../src/components/landing/LandingPage.tsx) | Main marketing and demo entry component with interactive hero collage. |
-| **Marketing Copy** | [`src/components/landing/landingCopy.ts`](../../src/components/landing/landingCopy.ts) | Content constants, pillar definitions, links, collage data, special thanks, and disclaimers. |
-| **Unit Tests** | [`src/components/landing/__tests__/LandingPage.test.tsx`](../../src/components/landing/__tests__/LandingPage.test.tsx) | Tests validating headings, pillars, CTA links, tabs, sponsor, credits, and footer links. |
-| **Styling** | [`src/index.css`](../../src/index.css) | `.lotm-landing*` and `.lotm-collage*` CSS classes and dark neumorphic definitions. |
-| **Routing Gate** | [`src/main.tsx`](../../src/main.tsx) | Determines whether to render `LandingPage` or `App`. |
-| **Demo Config** | [`src/config/demoMode.ts`](../../src/config/demoMode.ts) | Path helpers (`DEMO_PLAY_PATH = '/play'`) and deployment flags. |
+| **Marketing site** | [lotm-site.vercel.app](https://lotm-site.vercel.app) | Public landing, downloads, and demo CTA. |
+| **App boot** | [`src/main.tsx`](../../src/main.tsx) | Always mounts `App`; dismisses the boot splash. |
+| **Demo origin** | [`src/config/demoMode.ts`](../../src/config/demoMode.ts) | `LOTM_SITE_ORIGIN` for the Title Hub back link. |
+| **Title Hub** | [`src/components/lotm/LotmTitleHub.tsx`](../../src/components/lotm/LotmTitleHub.tsx) | Demo back control + collage chrome. |
+| **Collage data** | [`src/components/landing/landingCopy.ts`](../../src/components/landing/landingCopy.ts) | Tarot portrait mesh for Title Hub only. |
+| **Boot splash** | [`src/components/landing/preloadLandingAssets.ts`](../../src/components/landing/preloadLandingAssets.ts) | Dismisses `#lotm-boot-splash`. |
+| **Styling** | [`src/index.css`](../../src/index.css) | `.lotm-landing*` / `.lotm-collage*` classes still used by Title Hub. |
