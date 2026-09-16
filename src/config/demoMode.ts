@@ -16,22 +16,8 @@ export function resolveIsDemoMode(
  */
 export const IS_DEMO_MODE = resolveIsDemoMode();
 
-/** Public marketing page stays at `/`. The playable demo boots at this path. */
-export const DEMO_PLAY_PATH = '/play';
-
-export function normalizePathname(pathname: string): string {
-    const trimmed = pathname.replace(/\/+$/, '');
-    return trimmed === '' ? '/' : trimmed;
-}
-
-export function isDemoPlayPath(pathname: string): boolean {
-    return normalizePathname(pathname) === DEMO_PLAY_PATH;
-}
-
-/** Demo visitors see the landing page until they follow the play link. */
-export function shouldShowDemoLanding(isDemo: boolean, pathname: string): boolean {
-    return isDemo && !isDemoPlayPath(pathname);
-}
+/** Hosted marketing site (lotm-site). Demo back control leaves the VPS for this origin. */
+export const LOTM_SITE_ORIGIN = 'https://lotm-site.vercel.app';
 
 const FIVE_MIN_MS = 5 * 60 * 1000;
 

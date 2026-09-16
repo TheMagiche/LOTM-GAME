@@ -4,10 +4,9 @@ import {
     formatDemoCountdown,
     hasUsableDemoProvider,
     isDemoPlayablePcFile,
-    isDemoPlayPath,
+    LOTM_SITE_ORIGIN,
     resolveDemoSessionMs,
     resolveIsDemoMode,
-    shouldShowDemoLanding,
 } from '../demoMode';
 
 describe('demoMode helpers', () => {
@@ -46,13 +45,8 @@ describe('demoMode helpers', () => {
         expect(resolveIsDemoMode(undefined, false)).toBe(false);
     });
 
-    it('treats /play as the demo game route and everything else as the landing page', () => {
-        expect(isDemoPlayPath('/play')).toBe(true);
-        expect(isDemoPlayPath('/play/')).toBe(true);
-        expect(isDemoPlayPath('/')).toBe(false);
-        expect(shouldShowDemoLanding(true, '/')).toBe(true);
-        expect(shouldShowDemoLanding(true, '/play')).toBe(false);
-        expect(shouldShowDemoLanding(false, '/')).toBe(false);
+    it('points demo visitors back to the hosted lotm-site origin', () => {
+        expect(LOTM_SITE_ORIGIN).toBe('https://lotm-site.vercel.app');
     });
 
     it('does not rewrite settings when the demo build flag is off', () => {

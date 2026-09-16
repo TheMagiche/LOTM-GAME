@@ -14,7 +14,7 @@ import type { Campaign } from '../../types';
 import { Backdrop } from '../primitives/Backdrop';
 import { GhostBtn, DangerBtn } from '../primitives/Buttons';
 import { LotmTarotSelect } from './LotmTarotSelect';
-import { IS_DEMO_MODE, hasUsableDemoProvider } from '../../config/demoMode';
+import { IS_DEMO_MODE, LOTM_SITE_ORIGIN, hasUsableDemoProvider } from '../../config/demoMode';
 import {
     DemoOccupiedError,
     acquireDemoOccupancy,
@@ -239,7 +239,7 @@ export function LotmTitleHub() {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
-            {/* OCCULT FLOATING CARD MESH (Matching LandingPage hero) */}
+            {/* OCCULT FLOATING CARD MESH (shared Title Hub chrome) */}
             <div
                 className="lotm-landing-collage-backdrop"
                 aria-hidden="true"
@@ -277,7 +277,7 @@ export function LotmTitleHub() {
 
             {IS_DEMO_MODE ? (
                 <a
-                    href="/"
+                    href={LOTM_SITE_ORIGIN}
                     className="lotm-title-hub-grimoire lotm-title-hub-landing"
                     title="Back to landing page"
                     aria-label="Back to landing page"
