@@ -27,7 +27,7 @@ await esbuild.build({
   platform: 'node',
   format: 'cjs',
   outfile: 'server.bundle.cjs',
-  target: 'node20',
+  target: 'node24',
   sourcemap: false,
   logLevel: 'info',
   banner: {
