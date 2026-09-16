@@ -118,8 +118,8 @@ Committed defaults — do not fork these without updating this doc:
 | UI load | `loadFile` on Vite `dist/index.html` |
 | ASAR | Pack JS; **`asarUnpack`** native module trees |
 | Targets | Windows `nsis`; macOS `dmg` (+ optional zip); Linux `AppImage` + `deb` |
-| CI | GitHub Actions matrix: `windows-latest`, `macos-latest`, `ubuntu-latest` + `@electron/rebuild` |
-| Marketing | Link GitHub Releases only after CI publishes artifacts |
+| CI | lotm-site GitHub Actions: clone LOTM-GAME, pack on `windows-latest` / `macos-latest` / `ubuntu-22.04`, attach to LOTM-SITE Releases |
+| Marketing | lotm-site download buttons open LOTM-SITE GitHub Releases |
 
 ### 4.1 Files to create
 
@@ -129,7 +129,7 @@ Committed defaults — do not fork these without updating this doc:
 | `electron/preload.cjs` | Minimal `contextBridge` API if needed (prefer none initially) |
 | `build-server.mjs` | esbuild entry: bundle `server.js` + `server/**` → `server.bundle.cjs`; **external** native addons |
 | `electron-builder.yml` or `package.json` `build` key | `appId`, files, `asarUnpack`, per-OS targets |
-| `.github/workflows/electron.yml` | Matrix build → upload Release assets |
+| `.github/workflows/electron.yml` | **Moved to lotm-site** — clones LOTM-GAME, packs, uploads Release assets on LOTM-SITE |
 
 ### 4.2 `package.json` scripts (sketch)
 
@@ -223,8 +223,8 @@ Adjust `files` / `extraResources` after a dry `--dir` build so missing modules f
 4. `npm run build:server` → `server.bundle.cjs`
 5. `electron-builder` per OS
 6. Code-sign (macOS notarize + Windows Authenticode) using CI secrets — never commit certs
-7. Upload artifacts to GitHub Releases
-8. Only then update landing Downloads links
+7. Upload artifacts to **lotm-site** GitHub Releases (`TheMagiche/LOTM-SITE`)
+8. lotm-site download CTAs open that release page
 
 ### 4.7 CI matrix (sketch)
 
@@ -332,8 +332,8 @@ Bundled mods and LOTM `gamedata` stay in `extraResources` (read-only), reference
 | Vault OS encryption | Already [`server/vault.js`](../../server/vault.js) |
 | Open archive in OS | Already [`server/services/archiveService.js`](../../server/services/archiveService.js) |
 | TTS / HF ASAR workaround | Already [`server/lib/tts/cache.js`](../../server/lib/tts/cache.js) |
-| CI artifacts | New `.github/workflows/electron.yml` → GitHub Releases |
-| Landing Downloads | [`LandingPage.tsx`](../../src/components/landing/LandingPage.tsx) — only after Releases exist |
+| CI artifacts | lotm-site `.github/workflows/electron.yml` → Releases on `TheMagiche/LOTM-SITE` |
+| Landing Downloads | lotm-site polls **this site repo’s** GitHub Releases; CTAs open that release page |
 | Monetization Stage 1 | [monetization-and-deployment.md](./monetization-and-deployment.md) Model A |
 
 ---
