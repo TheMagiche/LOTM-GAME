@@ -2,7 +2,13 @@
   "name": "narrative-engine",
   "private": true,
   "version": "2.0.0",
+  "description": "Lord of the Mysteries — local-first AI narrative RPG",
+  "author": {
+    "name": "TheMagiche",
+    "email": "themagiche@users.noreply.github.com"
+  },
   "type": "module",
+  "main": "electron/main.cjs",
   "engines": {
     "node": ">=20.19.0"
   },
@@ -19,7 +25,12 @@
     "test:base-app-gate": "vitest run src/services/turn/__tests__/baseAppGate/baseAppGate.test.ts",
     "test:coverage": "vitest run --coverage",
     "i18n:check": "node scripts/i18n-check.mjs",
-    "lore:compile": "node scripts/compile-lotm-lore.mjs"
+    "lore:compile": "node scripts/compile-lotm-lore.mjs",
+    "build:server": "node build-server.mjs",
+    "electron:rebuild": "electron-rebuild -f -w better-sqlite3,sqlite-vec,onnxruntime-node,sharp",
+    "electron:pack:mac": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac --publish never",
+    "electron:pack:win": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win --x64 --publish never",
+    "electron:pack:linux": "npx vite build && npm run build:server && npm run electron:rebuild && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --linux --x64 --publish never"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.0.1",
@@ -44,6 +55,7 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
+    "@electron/rebuild": "^4.0.1",
     "@eslint/js": "^9.39.1",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.1.18",
@@ -59,6 +71,9 @@
     "@vitejs/plugin-react": "^5.1.1",
     "@vitest/ui": "^4.1.8",
     "concurrently": "^10.0.3",
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "electron-builder-squirrel-windows": "^26.15.3",
     "esbuild": "^0.28.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",

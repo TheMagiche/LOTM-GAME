@@ -1,0 +1,104 @@
+name: Electron installers
+
+# Packs unsigned Windows NSIS and Linux AppImage/deb on native runners so
+# better-sqlite3 / sqlite-vec / onnxruntime-node / sharp match the Electron ABI.
+# Artifacts attach to GitHub Release v2.0.0 (same tag as the macOS DMG).
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - lotm/electron
+    paths:
+      - .github/workflows/electron.yml
+      - electron/**
+      - electron-builder.yml
+      - build-server.mjs
+      - package.json
+      - package-lock.json
+      - server.js
+      - server/**
+      - src/**
+      - public/bundled-mods/**
+      - gamedata/**
+
+concurrency:
+  group: electron-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pack:
+    name: Pack ${{ matrix.pack }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            pack: win
+          - os: ubuntu-22.04
+            pack: linux
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Linux native build deps
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends python3 make g++
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Vite frontend
+        run: npx vite build
+
+      - name: Server bundle
+        run: npm run build:server
+
+      - name: Rebuild natives for Electron
+        run: npm run electron:rebuild
+
+      - name: Pack Windows
+        if: matrix.pack == 'win'
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder --win --x64 --publish never
+
+      - name: Pack Linux
+        if: matrix.pack == 'linux'
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder --linux --x64 --publish never
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lotm-${{ matrix.pack }}-x64
+          if-no-files-found: error
+          path: |
+            release/LOTM-*.exe
+            release/LOTM-*.AppImage
+            release/LOTM-*.deb
+            release/LOTM-*.appimage
+
+      - name: Attach to GitHub Release v2.0.0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(release/LOTM-*.exe release/LOTM-*.AppImage release/LOTM-*.deb)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No installer files to upload" >&2
+            exit 1
+          fi
+          gh release upload v2.0.0 "${files[@]}" --clobber --repo "${{ github.repository }}"

@@ -1,0 +1,43 @@
+appId: com.themagiche.lotm
+productName: Lord of the Mysteries
+copyright: Unofficial fan content. Narrative Engine is MIT licensed.
+directories:
+  output: release
+artifactName: LOTM-${version}-${os}-${arch}.${ext}
+files:
+  - dist/**
+  - electron/**
+  - server.bundle.cjs
+  - package.json
+asar: true
+asarUnpack:
+  - server.bundle.cjs
+  - node_modules/**
+extraResources:
+  - from: public/bundled-mods
+    to: bundled-mods
+  - from: gamedata
+    to: gamedata
+mac:
+  category: public.app-category.games
+  identity: null
+  target:
+    - dmg
+    - zip
+win:
+  signAndEditExecutable: false
+  target:
+    - nsis
+nsis:
+  oneClick: true
+  shortcutName: Lord of the Mysteries
+linux:
+  category: Game
+  executableName: lotm
+  synopsis: Local-first Lord of the Mysteries narrative RPG
+  target:
+    - AppImage
+    - deb
+deb:
+  packageName: lotm
+npmRebuild: false
