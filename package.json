@@ -3,7 +3,10 @@
   "private": true,
   "version": "2.0.0",
   "description": "Lord of the Mysteries — local-first AI narrative RPG",
-  "author": "TheMagiche",
+  "author": {
+    "name": "TheMagiche",
+    "email": "themagiche@users.noreply.github.com"
+  },
   "type": "module",
   "main": "electron/main.cjs",
   "engines": {
