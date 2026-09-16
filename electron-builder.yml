@@ -34,10 +34,10 @@ nsis:
 linux:
   category: Game
   executableName: lotm
-  desktopName: lotm
-  maintainer: TheMagiche <themagiche@users.noreply.github.com>
   synopsis: Local-first Lord of the Mysteries narrative RPG
   target:
     - AppImage
     - deb
+deb:
+  packageName: lotm
 npmRebuild: false
