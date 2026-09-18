@@ -38,6 +38,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "better-sqlite3": "^12.8.0",
     "cors": "^2.8.6",
+    "cuelume": "^0.2.2",
     "express": "^5.2.1",
     "idb-keyval": "^6.2.2",
     "js-tiktoken": "^1.0.21",

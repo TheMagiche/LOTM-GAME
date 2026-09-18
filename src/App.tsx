@@ -38,8 +38,10 @@ import { isLotmCampaign, shouldUseIllustratedShell } from './services/lotm/lotmS
 import { applyLotmExclusiveDocumentChrome, LOTM_EXCLUSIVE_UI } from './services/lotm/lotmExclusiveUi';
 import { getCampaign } from './store/campaignStore';
 import { IS_DEMO_MODE } from './config/demoMode';
+import { useUiSounds } from './hooks/useUiSounds';
 
 export default function App() {
+  useUiSounds();
   const activeCampaignId = useAppStore((s) => s.activeCampaignId);
   const activeCampaignMeta = useAppStore((s) => s.activeCampaignMeta);
   useRulesIndexer();

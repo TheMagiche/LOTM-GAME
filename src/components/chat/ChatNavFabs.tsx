@@ -1,5 +1,6 @@
 import type { RefObject } from 'react';
 import { ChevronUp, ArrowDown } from 'lucide-react';
+import { cuePage } from '../../services/uiSounds';
 
 /**
  * WO-NAV — floating message-navigation buttons: jump up one message,
@@ -35,6 +36,8 @@ export function ChatNavFabs({
     return (
         <div className="absolute right-3 bottom-[170px] flex flex-col gap-1.5 z-30 pointer-events-auto">
             <button
+                type="button"
+                {...cuePage}
                 onClick={handlePrevMessage}
                 className="chat-nav-fab flex items-center justify-center w-9 h-9 rounded-full bg-void-darker border border-text-dim/30 hover:border-text-dim text-text-dim hover:text-text-primary shadow-lg transition-all hover:bg-text-dim/10"
                 title="Jump up one message"
@@ -42,6 +45,8 @@ export function ChatNavFabs({
                 <ChevronUp size={16} />
             </button>
             <button
+                type="button"
+                {...cuePage}
                 onClick={handleJumpToBottom}
                 className="chat-nav-fab flex items-center justify-center w-9 h-9 rounded-full bg-void-darker border border-text-dim/30 hover:border-text-dim text-text-dim hover:text-text-primary shadow-lg transition-all hover:bg-text-dim/10"
                 title="Jump to latest message"

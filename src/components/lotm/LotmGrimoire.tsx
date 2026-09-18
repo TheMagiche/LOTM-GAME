@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowLeft, BookOpen, CircleHelp, Compass, HelpCircle, Search, X } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
+import { cueClose, cueNav, cueToggle } from '../../services/uiSounds';
 import { LotmHowToPlayGuide } from './LotmHowToPlayGuide';
 import { LotmWorldMapView } from '../location-ledger/LotmWorldMapView';
 import { INITIAL_LOCATIONS, mapPinSearchNames } from '../../worldpacks/lotmMapData';
@@ -112,6 +113,7 @@ export function LotmGrimoire() {
                         <div className={`lotm-grimoire-search${searchExpanded ? ' is-open' : ''}`}>
                             <button
                                 type="button"
+                                {...cueToggle}
                                 className="lotm-grimoire-search-toggle"
                                 title={searchExpanded ? 'Close search' : 'Search the Grimoire'}
                                 aria-label={searchExpanded ? 'Close search' : 'Search the Grimoire'}
@@ -145,6 +147,7 @@ export function LotmGrimoire() {
                         </div>
                         <button
                             type="button"
+                            {...cueClose}
                             className="lotm-grimoire-close"
                             onClick={closeGrimoire}
                             aria-label="Close Grimoire"
@@ -160,6 +163,7 @@ export function LotmGrimoire() {
                                 <button
                                     key={entry.id}
                                     type="button"
+                                    {...cueToggle}
                                     className={section === entry.id ? 'is-active' : undefined}
                                     aria-pressed={section === entry.id}
                                     onClick={() => {
@@ -174,6 +178,7 @@ export function LotmGrimoire() {
                         <div className="lotm-grimoire-rail-bottom">
                             <button
                                 type="button"
+                                {...cueToggle}
                                 className={`lotm-grimoire-rail-guide-btn${section === 'guide' ? ' is-active' : ''}`}
                                 aria-pressed={section === 'guide'}
                                 onClick={() => {
@@ -235,7 +240,7 @@ export function LotmGrimoire() {
 
 function BackButton({ onClick, label }: { onClick: () => void; label: string }) {
     return (
-        <button type="button" className="lotm-grimoire-back" onClick={onClick}>
+        <button type="button" {...cueNav} className="lotm-grimoire-back" onClick={onClick}>
             <ArrowLeft size={13} />
             {label}
         </button>
@@ -573,6 +578,7 @@ function WorldPane({
                         key={tab.id}
                         type="button"
                         role="tab"
+                        {...cueToggle}
                         aria-selected={worldTab === tab.id}
                         className={worldTab === tab.id ? 'is-active' : undefined}
                         onClick={() => onWorldTab(tab.id)}

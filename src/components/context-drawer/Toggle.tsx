@@ -1,6 +1,8 @@
 export function Toggle({ active, onChange }: { active: boolean; onChange: () => void }) {
     return (
         <button
+            type="button"
+            data-cuelume-toggle=""
             onClick={(e) => { e.stopPropagation(); onChange(); }}
             className={`relative w-7 h-3.5 rounded-full transition-colors shrink-0 ${active ? 'bg-terminal' : 'bg-border'}`}
             title={active ? 'Active — will be appended' : 'Inactive — will not be appended'}

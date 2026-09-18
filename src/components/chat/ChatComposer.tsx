@@ -3,6 +3,7 @@ import { Send, Square } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { LOTM_EXCLUSIVE_UI } from '../../services/lotm/lotmFlags';
 import { ChatComposerControls } from './ChatComposerControls';
+import { cuePrimary } from '../../services/uiSounds';
 
 /**
  * Bottom composer row: auto-growing input on the left, player-control
@@ -72,6 +73,8 @@ export function ChatComposer({
                     className={`chat-composer-input flex-1 bg-transparent px-2 text-sm text-text-primary placeholder:text-text-dim/40 font-mono resize-none border-none outline-none leading-5 ${compact ? 'py-1.5 min-h-[32px]' : 'py-2.5 min-h-[40px]'}`}
                 />
                 <button
+                    type="button"
+                    {...cuePrimary}
                     onClick={isStreaming ? onStop : onSend}
                     disabled={!isStreaming && (!input.trim() || oocBusy)}
                     className={`chat-composer-send h-[32px] w-[44px] mb-[4px] disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center shrink-0 ${isStreaming ? 'is-stop text-amber-500' : 'text-terminal'}`}

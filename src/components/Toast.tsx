@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { useEffect } from 'react';
 import { X, AlertTriangle, CheckCircle, Info, AlertCircle } from 'lucide-react';
+import { play } from '../services/uiSounds';
 
 /* ── Toast types & store ── */
 
@@ -33,6 +34,9 @@ export const useToastStore = create<ToastStore>((set, get) => ({
     set((s) => ({
       toasts: [...s.toasts.slice(-4), item], // keep max 5
     }));
+
+    if (type === 'success') play('success');
+    else if (type === 'error') play('error');
 
     setTimeout(() => get()._prune(), ttl + 50);
   },
@@ -94,6 +98,8 @@ export function ToastContainer() {
             <Icon size={14} className={`${c.text} shrink-0 mt-0.5`} />
             <span className="text-text-primary leading-snug break-words">{t.message}</span>
             <button
+              type="button"
+              data-cuelume-press="droplet"
               onClick={() => dismiss(t.id)}
               className="shrink-0 text-text-dim hover:text-text-primary transition-colors ml-auto"
             >

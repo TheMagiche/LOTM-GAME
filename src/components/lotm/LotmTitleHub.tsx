@@ -23,6 +23,7 @@ import {
     purgeDemoSessionCampaigns,
 } from '../../services/demo/demoSession';
 import { DemoOccupiedModal } from '../demo/DemoOccupiedModal';
+import { cueClose, cueNav, cuePrimary, play } from '../../services/uiSounds';
 
 function timeAgo(ts: number | undefined): string {
     if (!ts) return 'Unplayed';
@@ -38,6 +39,7 @@ async function enterCampaign(campaign: Campaign): Promise<void> {
     const updated = { ...campaign, lastPlayedAt: Date.now(), uiSkin: 'lotm-illustrated' as const };
     await saveCampaign(updated);
     await hydrateCampaign(campaign.id);
+    play('arrival');
     const { reconcilePendingCommitOnLaunch } = await import('../../services/turn/pendingCommit');
     reconcilePendingCommitOnLaunch().catch(e => console.warn('[Reconcile] failed:', e));
 }
@@ -278,6 +280,7 @@ export function LotmTitleHub() {
             {IS_DEMO_MODE ? (
                 <a
                     href={LOTM_SITE_ORIGIN}
+                    {...cueNav}
                     className="lotm-title-hub-grimoire lotm-title-hub-landing"
                     title="Back to landing page"
                     aria-label="Back to landing page"
@@ -287,6 +290,7 @@ export function LotmTitleHub() {
             ) : (
                 <button
                     type="button"
+                    {...cueNav}
                     className="lotm-title-hub-grimoire"
                     title="Grimoire"
                     aria-label="Open Grimoire"
@@ -300,6 +304,7 @@ export function LotmTitleHub() {
             {!IS_DEMO_MODE && pickingPc && (
                 <button
                     type="button"
+                    {...cueNav}
                     className="lotm-title-hub-back"
                     title="Go back"
                     aria-label="Go back"
@@ -313,6 +318,7 @@ export function LotmTitleHub() {
             {(!IS_DEMO_MODE || !demoKeyReady) && (
                 <button
                     type="button"
+                    {...cueNav}
                     className="lotm-title-hub-gear"
                     title={IS_DEMO_MODE ? 'API key' : 'Settings'}
                     aria-label={IS_DEMO_MODE ? 'API key' : 'Settings'}
@@ -348,7 +354,7 @@ export function LotmTitleHub() {
                             disabled={busy}
                         />
                         <div className="lotm-tarot-actions">
-                            <button type="button" className="lotm-title-hub-primary" disabled={busy} onClick={() => { void begin(); }}>
+                            <button type="button" {...cuePrimary} className="lotm-title-hub-primary" disabled={busy} onClick={() => { void begin(); }}>
                                 {busy ? <Loader2 size={16} className="animate-spin" /> : null}
                                 Begin
                             </button>
@@ -361,6 +367,7 @@ export function LotmTitleHub() {
                                 <>
                                     <button
                                         type="button"
+                                        {...cuePrimary}
                                         className="lotm-title-hub-primary"
                                         disabled={busy}
                                         onClick={() => setPickingChronicle(true)}
@@ -369,6 +376,7 @@ export function LotmTitleHub() {
                                     </button>
                                     <button
                                         type="button"
+                                        {...cueNav}
                                         className="lotm-title-hub-ghost"
                                         disabled={busy}
                                         onClick={openNewChronicle}
@@ -380,6 +388,7 @@ export function LotmTitleHub() {
                                 <>
                                     <button
                                         type="button"
+                                        {...cuePrimary}
                                         className="lotm-title-hub-primary"
                                         disabled={busy}
                                         onClick={openNewChronicle}
@@ -388,6 +397,7 @@ export function LotmTitleHub() {
                                     </button>
                                     <button
                                         type="button"
+                                        {...cueNav}
                                         className="lotm-title-hub-ghost"
                                         disabled={busy}
                                         onClick={() => useAppStore.getState().openGrimoire()}
@@ -457,6 +467,7 @@ export function LotmTitleHub() {
                                     ) : (
                                         <button
                                             type="button"
+                                            {...cueNav}
                                             className="lotm-title-hub-save"
                                             disabled={busy}
                                             onClick={() => continuePlay(c)}
@@ -483,6 +494,7 @@ export function LotmTitleHub() {
                                     )}
                                     <button
                                         type="button"
+                                        {...cueClose}
                                         className="lotm-title-hub-save-delete"
                                         title="Delete chronicle"
                                         aria-label={`Delete ${c.name}`}

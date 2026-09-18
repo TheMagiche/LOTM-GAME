@@ -1,6 +1,8 @@
+import { cuePress, cuePrimary } from '../../services/uiSounds';
+
 export function GhostBtn({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
     return (
-        <button onClick={onClick} style={{
+        <button type="button" {...cuePress} onClick={onClick} style={{
             padding: '8px 18px', fontSize: 11,
             fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em',
             color: 'rgba(107,107,107,0.7)', background: 'transparent',
@@ -14,7 +16,7 @@ export function GhostBtn({ onClick, children }: { onClick: () => void; children:
 
 export function PrimaryBtn({ onClick, disabled, children }: { onClick: () => void; disabled?: boolean; children: React.ReactNode }) {
     return (
-        <button onClick={onClick} disabled={disabled} style={{
+        <button type="button" {...cuePrimary} onClick={onClick} disabled={disabled} style={{
             padding: '8px 20px', fontSize: 11,
             fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.15em',
             textTransform: 'uppercase',
@@ -31,7 +33,7 @@ export function PrimaryBtn({ onClick, disabled, children }: { onClick: () => voi
 
 export function DangerBtn({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
     return (
-        <button onClick={onClick} style={{
+        <button type="button" {...cuePress} onClick={onClick} style={{
             padding: '8px 20px', fontSize: 11,
             fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.15em',
             textTransform: 'uppercase',

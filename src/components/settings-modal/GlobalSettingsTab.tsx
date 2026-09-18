@@ -2,6 +2,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { VaultSection } from './VaultSection';
 import { LanguageSection } from './LanguageSection';
 import { BackgroundControl } from '../BackgroundControl';
+import { cueToggle } from '../../services/uiSounds';
 
 export function GlobalSettingsTab() {
   const { settings, updateSettings } = useAppStore();
@@ -522,6 +523,44 @@ export function GlobalSettingsTab() {
             </button>
           ))}
         </div>
+      </div>
+
+      {/* Interaction sounds */}
+      <div className="flex flex-col bg-void p-3 border border-border rounded space-y-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <label className="block text-[11px] text-text-primary uppercase tracking-wider font-bold mb-1">
+              Interface Sounds
+            </label>
+            <p className="text-[9px] text-text-dim max-w-[280px] leading-tight">
+              Clicks, hovers, and toggles on buttons and navigation. Synthesized locally — nothing is downloaded.
+            </p>
+          </div>
+          <button
+            type="button"
+            {...cueToggle}
+            onClick={() => updateSettings({ uiSoundsEnabled: !(settings.uiSoundsEnabled ?? true) })}
+            className={`px-3 py-1 text-[10px] uppercase tracking-wider font-bold rounded transition-colors ${(settings.uiSoundsEnabled ?? true) ? 'bg-terminal text-void' : 'bg-surface text-text-dim border border-border'}`}
+          >
+            {(settings.uiSoundsEnabled ?? true) ? 'On' : 'Off'}
+          </button>
+        </div>
+        <div className={`flex items-center justify-between ${(settings.uiSoundsEnabled ?? true) ? '' : 'opacity-40 pointer-events-none'}`}>
+          <label className="text-[10px] text-text-dim uppercase tracking-wider">Volume</label>
+          <span className="text-terminal font-bold font-mono bg-terminal/10 px-2 py-0.5 rounded text-[10px]">
+            {Math.round((settings.uiSoundsVolume ?? 0.6) * 100)}%
+          </span>
+        </div>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="5"
+          disabled={!(settings.uiSoundsEnabled ?? true)}
+          value={Math.round((settings.uiSoundsVolume ?? 0.6) * 100)}
+          onChange={(e) => updateSettings({ uiSoundsVolume: Math.max(0, Math.min(1, parseInt(e.target.value, 10) / 100)) })}
+          className="w-full h-1.5 bg-border rounded-lg appearance-none cursor-pointer accent-terminal disabled:cursor-not-allowed"
+        />
       </div>
 
       {/* Image Style Prompt */}

@@ -10,6 +10,7 @@ import { useTranslation } from '../i18n/useTranslation';
 import type { TranslateKey } from '../i18n';
 import { ScreenLightbox } from './ScreenLightbox';
 import { IS_DEMO_MODE } from '../config/demoMode';
+import { cueToggle } from '../services/uiSounds';
 
 type TabKey = 'providers' | 'presets' | 'global' | 'extensions' | 'advanced' | 'debug';
 
@@ -70,6 +71,7 @@ export function SettingsModal() {
     <div className="flex items-center gap-1 bg-void-lighter border border-border/60 rounded p-0.5" role="group" aria-label={t('settings.viewMode.label')}>
       <button
         type="button"
+        {...cueToggle}
         onClick={() => updateSettings({ uiViewMode: 'player' })}
         className={`chrome-label px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded transition-colors ${
           uiViewMode === 'player'
@@ -82,6 +84,7 @@ export function SettingsModal() {
       </button>
       <button
         type="button"
+        {...cueToggle}
         onClick={() => updateSettings({ uiViewMode: 'gm' })}
         className={`chrome-label px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider rounded transition-colors ${
           uiViewMode === 'gm'
@@ -117,6 +120,8 @@ export function SettingsModal() {
           {visibleTabs.map(({ key, labelKey }) => (
             <button
               key={key}
+              type="button"
+              {...cueToggle}
               onClick={() => setActiveTab(key)}
               className={`chrome-label flex-1 px-3 py-2 text-[11px] uppercase tracking-wider transition-all border-b-2 -mb-px ${
                 effectiveTab === key

@@ -20,6 +20,7 @@ import type { ReactNode } from 'react';
 import type { ChromeState, MessageRef } from './mountTypes';
 import { resolveMountIcon } from './mountIcons';
 import type { RegisteredChromeEntry } from './mountRegistry';
+import { cueNav } from '../../uiSounds';
 
 /**
  * The `t`-shaped function the renderers accept. Loose on purpose: a mod's
@@ -211,6 +212,8 @@ export function renderHeaderModEntry(
     return (
         <button
             key={entry.qualifiedId}
+            type="button"
+            {...cueNav}
             onClick={handleClick}
             disabled={state?.disabled}
             title={tooltip}
@@ -279,6 +282,7 @@ export function renderHeaderModMenuItem(
             key={entry.qualifiedId}
             type="button"
             role="menuitem"
+            {...cueNav}
             onClick={handleClick}
             disabled={state?.disabled}
             title={tooltip}
@@ -385,6 +389,8 @@ export function renderComposerModEntry(
     return (
         <button
             key={entry.qualifiedId}
+            type="button"
+            {...cueNav}
             onClick={handleClick}
             disabled={state?.disabled}
             title={tooltip ?? label}
@@ -488,6 +494,8 @@ export function renderMessageActionModEntry(
     return (
         <button
             key={entry.qualifiedId}
+            type="button"
+            {...cueNav}
             onClick={handleClick}
             disabled={state?.disabled}
             title={title}

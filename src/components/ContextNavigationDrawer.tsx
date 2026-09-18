@@ -22,6 +22,7 @@ import { useTranslation } from '../i18n/useTranslation';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
 import { IS_DEMO_MODE } from '../config/demoMode';
 import { exitLotmCampaign } from './lotm/LotmPlayHeader';
+import { cueClose, cueNav, cueToggle } from '../services/uiSounds';
 import { TokenGauge } from './TokenGauge';
 import { OneShotInjectorButton } from './OneShotInjectorButton';
 import { AbsoluteCommandButton } from './AbsoluteCommandButton';
@@ -104,6 +105,7 @@ function NavRow({ leaf }: { leaf: NavLeaf }) {
     return (
         <button
             type="button"
+            {...cueNav}
             onClick={leaf.onSelect}
             disabled={leaf.disabled}
             className={`w-full flex items-center gap-2 px-4 py-2 text-left text-[11px] transition-colors disabled:opacity-30 disabled:cursor-not-allowed ${
@@ -343,7 +345,7 @@ export function ContextNavigationDrawer() {
                         <h2 className="text-[11px] text-terminal uppercase tracking-[0.25em] font-bold">
                             {LOTM_EXCLUSIVE_UI ? 'Menu' : '◆ CONTEXT'}
                         </h2>
-                        <button type="button" onClick={toggleDrawer} className="text-text-dim hover:text-terminal text-xs uppercase tracking-wider" title={t('header.drawer.close')} aria-label={t('header.drawer.close')}>×</button>
+                        <button type="button" {...cueClose} onClick={toggleDrawer} className="text-text-dim hover:text-terminal text-xs uppercase tracking-wider" title={t('header.drawer.close')} aria-label={t('header.drawer.close')}>×</button>
                     </div>
                     <nav aria-label="Context navigation" className="flex-1 overflow-y-auto py-2">
                         {GROUPS.filter((group) => {
@@ -363,6 +365,7 @@ export function ContextNavigationDrawer() {
                                 <section key={group.id}>
                                     <button
                                         type="button"
+                                        {...cueToggle}
                                         onClick={() => setExpanded((current) => ({ ...current, [group.id]: !current[group.id] }))}
                                         className="w-full flex items-center gap-2 px-3 py-2 text-[10px] text-text-primary uppercase tracking-[0.18em] font-bold hover:text-terminal transition-colors"
                                         aria-expanded={isExpanded}
