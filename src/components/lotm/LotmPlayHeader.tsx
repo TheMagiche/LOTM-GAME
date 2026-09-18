@@ -6,6 +6,7 @@ import type { AiTier } from '../../types/llm';
 import { DEMO_SESSION_WARN_MS, IS_DEMO_MODE, formatDemoCountdown } from '../../config/demoMode';
 import { useDemoRemainingMs } from '../../services/demo/demoSessionClock';
 import { getDemoSessionId, purgeDemoSessionCampaigns } from '../../services/demo/demoSession';
+import { cueNav, cuePrimary, cueToggle } from '../../services/uiSounds';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
@@ -29,6 +30,7 @@ export function LotmPlayHeader() {
             {!indexing && (
                 <button
                     type="button"
+                    {...cueNav}
                     className="lotm-play-header-menu"
                     onClick={toggleDrawer}
                     title={drawerOpen ? 'Close menu' : 'Open menu'}
@@ -56,6 +58,7 @@ export function LotmPlayHeader() {
                     {!IS_DEMO_MODE && (
                     <button
                         type="button"
+                        {...cuePrimary}
                         className="lotm-play-header-save"
                         onClick={handleForceSave}
                         disabled={isSaving}
@@ -68,6 +71,7 @@ export function LotmPlayHeader() {
                     )}
                     <button
                         type="button"
+                        {...cueNav}
                         className="lotm-play-header-grimoire"
                         onClick={() => useAppStore.getState().openPlayerGrimoire()}
                         title="Open Player Grimoire"
@@ -78,6 +82,7 @@ export function LotmPlayHeader() {
                     </button>
                     <button
                         type="button"
+                        {...cueNav}
                         className="lotm-play-header-askgm"
                         onClick={() => useAppStore.getState().openAskGm()}
                         title="Ask GM"
@@ -90,6 +95,7 @@ export function LotmPlayHeader() {
                     <div className="lotm-play-header-view" role="group" aria-label="Play view">
                         <button
                             type="button"
+                            {...cueToggle}
                             className={!chronicleOpen ? 'is-active' : undefined}
                             aria-pressed={!chronicleOpen}
                             onClick={() => setLotmChronicleOpen(false)}
@@ -98,6 +104,7 @@ export function LotmPlayHeader() {
                         </button>
                         <button
                             type="button"
+                            {...cueToggle}
                             className={chronicleOpen ? 'is-active' : undefined}
                             aria-pressed={chronicleOpen}
                             onClick={() => setLotmChronicleOpen(true)}
@@ -109,6 +116,7 @@ export function LotmPlayHeader() {
                     {!IS_DEMO_MODE && (
                     <button
                         type="button"
+                        {...cueToggle}
                         className="lotm-play-header-tier"
                         onClick={() => updateSettings({ aiTier: TIER_CYCLE[aiTier] })}
                         title={`AI Tier: ${aiTier.toUpperCase()} (click to cycle Lite → Pro → Max)`}

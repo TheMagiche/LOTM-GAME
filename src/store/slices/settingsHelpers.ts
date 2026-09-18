@@ -105,6 +105,8 @@ export const defaultSettings: AppSettings = applyDemoLocks({
     retrievalAlgorithm: 'idf-rrf',
     archiveRecallDepth: 'standard',
     uiScale: 1.0,
+    uiSoundsEnabled: true,
+    uiSoundsVolume: 0.6,
     imageStylePrompt: '',
     imageNegativePrompt: '',
     showPcTab: true,
@@ -396,6 +398,10 @@ export function migrateSettings(data: Record<string, unknown>): AppSettings {
         matureMode: (raw.matureMode as boolean) ?? false,
         aiTier: raw.aiTier as AiTier | undefined,
         uiScale: (raw.uiScale as number) ?? 1.0,
+        uiSoundsEnabled: (raw.uiSoundsEnabled as boolean) ?? true,
+        uiSoundsVolume: typeof raw.uiSoundsVolume === 'number' && Number.isFinite(raw.uiSoundsVolume)
+            ? Math.min(1, Math.max(0, raw.uiSoundsVolume))
+            : 0.6,
         embeddingModel: raw.embeddingModel as ('standard' | 'high') | undefined,
         imageStylePrompt: (raw.imageStylePrompt as string) ?? '',
         imageNegativePrompt: (raw.imageNegativePrompt as string) ?? '',

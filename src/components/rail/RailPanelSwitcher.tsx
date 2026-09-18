@@ -29,6 +29,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Check, ChevronDown } from 'lucide-react';
 import { resolveMountIcon } from '../../services/mods/mounts/mountIcons';
 import type { RegisteredRailPanel } from '../../services/mods/mounts/mountRegistry';
+import { cueNav, cueToggle } from '../../services/uiSounds';
 
 /**
  * How many panels still render as a tab strip.
@@ -99,6 +100,7 @@ export function RailPanelSwitcher({ panels, activePanelId, onSelect }: RailPanel
                             key={panel.qualifiedId}
                             type="button"
                             role="tab"
+                            {...cueToggle}
                             aria-selected={selected}
                             onClick={() => onSelect(panel.qualifiedId)}
                             title={panel.panel.title}
@@ -127,6 +129,7 @@ export function RailPanelSwitcher({ panels, activePanelId, onSelect }: RailPanel
         <div ref={containerRef} className="relative shrink-0 border-b border-border">
             <button
                 type="button"
+                {...cueToggle}
                 onClick={() => setOpen((value) => !value)}
                 aria-expanded={open}
                 aria-haspopup="listbox"
@@ -161,6 +164,7 @@ export function RailPanelSwitcher({ panels, activePanelId, onSelect }: RailPanel
                                 key={panel.qualifiedId}
                                 type="button"
                                 role="option"
+                                {...cueNav}
                                 aria-selected={selected}
                                 onClick={() => {
                                     onSelect(panel.qualifiedId);

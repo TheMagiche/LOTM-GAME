@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { LotmHowToPlayGuide } from "./LotmHowToPlayGuide";
 import { useAppStore } from "../../store/useAppStore";
+import { cueClose, cueToggle } from "../../services/uiSounds";
 import type { PlayerGrimoireSection } from "../../store/slices/uiSlice";
 import type {
   CharacterProfile,
@@ -237,6 +238,7 @@ export function LotmPlayerGrimoire() {
           <div className="lotm-grimoire-header-actions">
             <button
               type="button"
+              {...cueClose}
               className="lotm-grimoire-close"
               title="Close Player Grimoire (Esc)"
               aria-label="Close Player Grimoire"
@@ -257,6 +259,7 @@ export function LotmPlayerGrimoire() {
                 <button
                   key={entry.id}
                   type="button"
+                  {...cueToggle}
                   className={section === entry.id ? "is-active" : undefined}
                   aria-pressed={section === entry.id}
                   onClick={() => setSection(entry.id)}
@@ -271,6 +274,7 @@ export function LotmPlayerGrimoire() {
             <div className="lotm-grimoire-rail-bottom">
               <button
                 type="button"
+                {...cueToggle}
                 className={`lotm-grimoire-rail-guide-btn${section === "guide" ? " is-active" : ""}`}
                 aria-pressed={section === "guide"}
                 onClick={() => setSection("guide")}

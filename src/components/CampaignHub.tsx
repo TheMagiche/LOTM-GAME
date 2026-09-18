@@ -18,6 +18,7 @@ import { WorldLoreModal } from './WorldLoreModal';
 import { useTranslation } from '../i18n/useTranslation';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
 import { LotmTitleHub } from './lotm/LotmTitleHub';
+import { cueNav, play } from '../services/uiSounds';
 
 export function CampaignHub() {
     if (LOTM_EXCLUSIVE_UI) {
@@ -76,6 +77,7 @@ function ClassicCampaignHub() {
         const updatedCampaign = { ...campaign, lastPlayedAt: Date.now() };
         await saveCampaign(updatedCampaign);
         await hydrateCampaign(campaign.id);
+        play('arrival');
         // Durable-commit v1: same reconcile App.tsx runs for an auto-loaded campaign.
         // Opening a campaign from the hub used to skip it, so a turn left pending by a
         // crash was only picked up if the user happened to send another message —
@@ -146,6 +148,8 @@ function ClassicCampaignHub() {
 
             {/* Import button */}
             <button
+                type="button"
+                {...cueNav}
                 onClick={() => importInputRef.current?.click()}
                 disabled={isImporting}
                 title={t('hub.import.tooltip')}
@@ -176,6 +180,8 @@ function ClassicCampaignHub() {
 
             {/* Settings button */}
             <button
+                type="button"
+                {...cueNav}
                 onClick={() => useAppStore.getState().toggleSettings()}
                 title={t('hub.settings.tooltip')}
                 style={{
@@ -201,6 +207,8 @@ function ClassicCampaignHub() {
 
             {/* World Lore button */}
             <button
+                type="button"
+                {...cueNav}
                 onClick={() => useAppStore.getState().toggleWorldLoreModal()}
                 title={t('hub.worldLore.tooltip')}
                 style={{

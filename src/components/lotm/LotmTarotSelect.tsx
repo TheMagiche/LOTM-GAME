@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { PlayablePcOption } from '../../worldpacks/lordOfTheMysteries';
+import { cuePage } from '../../services/uiSounds';
 import {
     formatLotmSequenceName,
     formatLotmTarotKicker,
@@ -165,6 +166,7 @@ export function LotmTarotSelect({
             >
                 <button
                     type="button"
+                    {...cuePage}
                     className="lotm-tarot-nav"
                     aria-label="Previous card"
                     disabled={disabled}
@@ -226,6 +228,7 @@ export function LotmTarotSelect({
                 </div>
                 <button
                     type="button"
+                    {...cuePage}
                     className="lotm-tarot-nav"
                     aria-label="Next card"
                     disabled={disabled}

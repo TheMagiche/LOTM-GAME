@@ -14,6 +14,7 @@ import { HeaderScrollRow } from './header/HeaderScrollRow';
 import { isLotmCampaign } from '../services/lotm/lotmSkin';
 import { LOTM_EXCLUSIVE_UI } from '../services/lotm/lotmExclusiveUi';
 import { LotmPlayHeader } from './lotm/LotmPlayHeader';
+import { cueClose, cueNav, cueToggle } from '../services/uiSounds';
 
 const TIER_CYCLE: Record<AiTier, AiTier> = { lite: 'pro', pro: 'max', max: 'lite' };
 
@@ -117,6 +118,8 @@ function ClassicHeader() {
     return (
         <header className="h-12 bg-surface border-b border-border flex items-center px-2 sm:px-4 gap-1 sm:gap-2 shrink-0">
             <button
+                type="button"
+                {...cueNav}
                 onClick={toggleDrawer}
                 className="flex items-center justify-center w-8 h-8 rounded-sm border border-border/40 hover:border-terminal bg-void-lighter hover:bg-terminal/5 text-text-dim hover:text-terminal transition-colors shrink-0 cursor-pointer"
                 title={drawerOpen ? t('header.drawer.close') : t('header.drawer.open')}
@@ -161,6 +164,7 @@ function ClassicHeader() {
                 {lotmCampaign && (
                     <button
                         type="button"
+                        {...cueToggle}
                         onClick={async () => {
                             if (!activeCampaignMeta) return;
                             const nextSkin = illustratedOn ? 'classic' as const : 'lotm-illustrated' as const;
@@ -245,6 +249,8 @@ function renderHeaderBuiltin(id: string, deps: {
             return (
                 <button
                     key="aiTier"
+                    type="button"
+                    {...cueNav}
                     onClick={deps.onCycleTier}
                     className="chrome-label flex items-center gap-1.5 h-8 px-2.5 rounded-sm border border-border/40 hover:border-terminal bg-void-lighter hover:bg-terminal/5 text-text-dim hover:text-terminal transition-colors shrink-0 cursor-pointer text-[10px] font-bold uppercase tracking-wider font-mono"
                     title={t('header.aiTier.tooltip', { tier: aiTier.toUpperCase() })}
@@ -258,6 +264,8 @@ function renderHeaderBuiltin(id: string, deps: {
             return (
                 <button
                     key="settings"
+                    type="button"
+                    {...cueNav}
                     onClick={deps.onToggleSettings}
                     className="chrome-label flex items-center gap-1.5 h-8 px-2.5 rounded-sm border border-border/40 hover:border-terminal bg-void-lighter hover:bg-terminal/5 text-text-dim hover:text-terminal transition-colors shrink-0 cursor-pointer text-[10px] font-bold uppercase tracking-wider font-mono"
                     title={t('header.settings.tooltip')}
@@ -271,6 +279,8 @@ function renderHeaderBuiltin(id: string, deps: {
             return (
                 <button
                     key="exit"
+                    type="button"
+                    {...cueClose}
                     onClick={deps.onExit}
                     className="chrome-label flex items-center gap-1.5 h-8 px-2.5 rounded-sm border border-border/40 hover:border-ember bg-void-lighter hover:bg-ember/5 text-text-dim hover:text-ember transition-colors shrink-0 cursor-pointer text-[10px] font-bold uppercase tracking-wider font-mono"
                     title={t('header.exit.tooltip')}

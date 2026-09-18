@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { BookOpen, Pencil, Trash2, ChevronLeft, ChevronRight, Download, Loader2 } from 'lucide-react';
 import type { Campaign } from '../types';
 import { campaignCoverSrc } from '../services/lotm/lotmAssetUrl';
+import { cuePage, cuePrimary } from '../services/uiSounds';
 
 interface SlotStyle {
     x: number;
@@ -126,6 +127,8 @@ export function CoverflowCarousel({
             {/* Enter button */}
             {activeCampaign && (
                 <button
+                    type="button"
+                    {...cuePrimary}
                     onClick={() => onSelect(activeCampaign)}
                     style={{
                         marginTop: 28, zIndex: 2, position: 'relative',
@@ -300,6 +303,8 @@ function EmptyState({ onNew }: { onNew: () => void }) {
                 No campaigns yet. Begin your first chronicle.
             </p>
             <button
+                type="button"
+                {...cuePrimary}
                 onClick={onNew}
                 style={{
                     fontFamily: "'JetBrains Mono', monospace",
@@ -320,6 +325,8 @@ function EmptyState({ onNew }: { onNew: () => void }) {
 function NavBtn({ onClick, disabled, children }: { onClick: () => void; disabled?: boolean; children: React.ReactNode }) {
     return (
         <button
+            type="button"
+            {...cuePage}
             onClick={onClick} disabled={disabled}
             style={{
                 width: 38, height: 38, borderRadius: '50%',
