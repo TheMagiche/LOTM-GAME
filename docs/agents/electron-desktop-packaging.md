@@ -118,7 +118,7 @@ Committed defaults — do not fork these without updating this doc:
 | UI load | `loadFile` on Vite `dist/index.html` |
 | ASAR | Pack JS; **`asarUnpack`** native module trees |
 | Targets | Windows `nsis`; macOS `dmg` (+ optional zip); Linux `AppImage` + `deb` |
-| CI | lotm-site GitHub Actions: clone LOTM-GAME, pack on `windows-latest` / `macos-latest` / `ubuntu-22.04`, attach to LOTM-SITE Releases |
+| CI | lotm-site GitHub Actions: clone LOTM-GAME, pack on `windows-latest` / `macos-latest` (arm64) / `macos-15-intel` (x64) / `ubuntu-22.04`, attach to LOTM-SITE Releases |
 | Marketing | lotm-site download buttons open LOTM-SITE GitHub Releases |
 
 ### 4.1 Files to create
@@ -230,9 +230,10 @@ Adjust `files` / `extraResources` after a dry `--dir` build so missing modules f
 
 | Runner | Artifact |
 |---|---|
-| `windows-latest` | `.exe` / NSIS installer |
-| `macos-latest` | `.dmg` (and zip); notarize when Apple creds present |
-| `ubuntu-latest` | `.AppImage` + `.deb` |
+| `windows-latest` | `.exe` / NSIS installer (x64) |
+| `macos-latest` | Apple Silicon `.dmg` (`--mac --arm64`) |
+| `macos-15-intel` | Intel `.dmg` (`--mac --x64`); required for 2013–2020 64-bit Macs |
+| `ubuntu-22.04` | `.AppImage` + `.deb` (x64) |
 
 Reuse lessons from Docker: [`Dockerfile`](../../Dockerfile) already runs `npm rebuild better-sqlite3 sqlite-vec sharp onnxruntime-node` — Electron CI must do the same against Electron's Node ABI. See [docker-build-performance.md](./docker-build-performance.md).
 

@@ -2,6 +2,7 @@ import { Loader2, Image as ImageIcon, Trash2, Upload } from 'lucide-react';
 import type { NPCVisualProfile } from '../../types';
 import { useRef } from 'react';
 import { DEFAULT_PORTRAIT_ART_STYLE, PORTRAIT_ART_STYLE_OPTIONS } from '../../data/portraitStyles';
+import { resolveMediaUrl } from '../../services/lotm/lotmAssetUrl';
 
 type Props = {
     portrait?: string;
@@ -34,7 +35,7 @@ export function NPCPortraitSection({
             {portrait ? (
                 <div className="relative group mb-4 rounded overflow-hidden border border-border">
                     <img
-                        src={portrait}
+                        src={resolveMediaUrl(portrait)}
                         alt={name || 'NPC Portrait'}
                         className="w-full aspect-[3/4] object-cover object-top"
                     />

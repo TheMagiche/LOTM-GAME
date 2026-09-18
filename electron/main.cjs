@@ -47,6 +47,7 @@ function applyEnv() {
   process.env.MODS_DIR = modsDir;
   process.env.BUNDLED_MODS_DIR = resourcePath('bundled-mods');
   process.env.LOTM_ASSETS_DIR = resourcePath('gamedata');
+  process.env.LOTM_PROJECT_ROOT = app.isPackaged ? unpackRoot() : path.join(__dirname, '..');
   process.env.HF_HOME = ttsCache;
   process.env.TRANSFORMERS_CACHE = ttsCache;
   process.env.HF_HUB_CACHE = ttsCache;
@@ -129,12 +130,14 @@ function killServer() {
 }
 
 function createWindow() {
+  const icon = resourcePath('gamedata', 'image', 'lotmFav', 'android-chrome-512x512.png');
   mainWindow = new BrowserWindow({
     width: 1440,
     height: 920,
     minWidth: 960,
     minHeight: 640,
     show: false,
+    ...(fs.existsSync(icon) ? { icon } : {}),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       nodeIntegration: false,

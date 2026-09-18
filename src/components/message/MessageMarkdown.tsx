@@ -6,6 +6,7 @@ import type { NPCEntry } from '../../types';
 import { useAppStore } from '../../store/useAppStore';
 import TITLES from '../../data/titles.json';
 import { PROPER_NOUN_STOP_WORDS } from '../../utils/stopWords';
+import { resolveMediaUrl } from '../../services/lotm/lotmAssetUrl';
 
 // WO-J: NPC names arrive wrapped in [Name] / [**Name**] brackets so the ledger detector
 // can read them out of the raw content. Render them as inline **bold** markdown instead of
@@ -160,7 +161,7 @@ function NpcNameChip({ name, portrait, children }: { name: string; portrait: str
             <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-1 z-50 opacity-0 group-hover/npc:opacity-100 transition-opacity duration-150">
                 <span className="block bg-void-darker border border-terminal/40 rounded shadow-lg p-1 w-[96px]">
                     <img
-                        src={portrait}
+                        src={resolveMediaUrl(portrait)}
                         alt={name}
                         className="w-full aspect-[3/4] object-cover object-top rounded"
                         loading="lazy"

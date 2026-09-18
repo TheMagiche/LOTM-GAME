@@ -12,14 +12,38 @@ export function isLotmAssetPath(src: string | undefined | null): boolean {
     return src.startsWith('/assets/lotm/') || src.includes('/assets/lotm/');
 }
 
+/**
+ * Turn a stored portrait / cover / asset path into a URL the renderer can load.
+ *
+ * Campaign JSON keeps root-absolute `/assets/...` paths (same-origin in the
+ * browser). Electron loads the UI via `file://`, so those must be prefixed
+ * with the local Express origin.
+ */
+export function resolveMediaUrl(src: string | undefined | null): string {
+    if (!src) return '';
+    const trimmed = src.trim();
+    if (!trimmed) return '';
+    if (
+        trimmed.startsWith('data:')
+        || trimmed.startsWith('blob:')
+        || /^https?:\/\//i.test(trimmed)
+    ) {
+        return trimmed;
+    }
+    if (trimmed.startsWith('/assets/')) {
+        return `${ASSET_BASE || ''}${trimmed}`;
+    }
+    if (isLotmAssetPath(trimmed)) {
+        const rel = trimmed.replace(/^.*\/assets\/lotm\//, '');
+        return lotmAssetUrl(rel);
+    }
+    if (trimmed.startsWith('image/') || trimmed.startsWith('assets/')) {
+        return lotmAssetUrl(trimmed);
+    }
+    return trimmed;
+}
+
 /** Campaign covers may be data URLs or `/assets/lotm/...` paths. */
 export function campaignCoverSrc(coverImage: string | undefined | null): string {
-    if (!coverImage) return '';
-    if (coverImage.startsWith('data:') || coverImage.startsWith('blob:') || coverImage.startsWith('http')) {
-        return coverImage;
-    }
-    if (coverImage.startsWith('/assets/')) {
-        return `${ASSET_BASE || ''}${coverImage}`;
-    }
-    return coverImage;
+    return resolveMediaUrl(coverImage);
 }
