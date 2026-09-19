@@ -334,6 +334,7 @@ Bundled mods and LOTM `gamedata` stay in `extraResources` (read-only), reference
 | Open archive in OS | Already [`server/services/archiveService.js`](../../server/services/archiveService.js) |
 | TTS / HF ASAR workaround | Already [`server/lib/tts/cache.js`](../../server/lib/tts/cache.js) |
 | CI artifacts | lotm-site `.github/workflows/electron.yml` → Releases on `TheMagiche/LOTM-SITE` |
+| Local upload + cleanup | `npm run electron:release` ([`scripts/electron-release-lotm-site.mjs`](../../scripts/electron-release-lotm-site.mjs)) uploads `release/` installers and deletes local copies already on that tag |
 | Landing Downloads | lotm-site polls **this site repo’s** GitHub Releases; CTAs open that release page |
 | Monetization Stage 1 | [monetization-and-deployment.md](./monetization-and-deployment.md) Model A |
 
