@@ -71,10 +71,7 @@ import { LotmWorldMapView } from "../location-ledger/LotmWorldMapView";
 import { INITIAL_LOCATIONS } from "../../worldpacks/lotmMapData";
 import { toast } from "../Toast";
 import { uid } from "../../utils/uid";
-import {
-  campaignCoverSrc,
-  lotmAssetUrl,
-} from "../../services/lotm/lotmAssetUrl";
+import { resolveMediaUrl } from "../../services/lotm/lotmAssetUrl";
 import { matchLotmPortraitEntry } from "../../services/lotm/lotmVisualMatcher";
 
 const PLAYER_SECTIONS: Array<{
@@ -1089,20 +1086,11 @@ function resolveCharacterRecordPortrait(
   pc: PlayerCharacter | null | undefined,
 ): string {
   const stored = (pc?.portrait ?? "").trim();
-  if (stored) {
-    if (
-      stored.startsWith("data:") ||
-      stored.startsWith("blob:") ||
-      stored.startsWith("http")
-    )
-      return stored;
-    if (stored.startsWith("image/")) return lotmAssetUrl(stored);
-    return campaignCoverSrc(stored);
-  }
+  if (stored) return resolveMediaUrl(stored);
   const name = pc?.name?.trim();
   if (!name) return "";
   const hit = matchLotmPortraitEntry(name);
-  return hit ? lotmAssetUrl(hit.portrait) : "";
+  return hit ? resolveMediaUrl(hit.portrait) : "";
 }
 
 function CharacterGMPane({
@@ -1175,7 +1163,7 @@ function CharacterGMPane({
           {portraitSrc ? (
             <img
               src={portraitSrc}
-              alt=""
+              alt={pc?.name || 'Character portrait'}
               className="w-full max-h-80 object-cover object-top rounded-lg border border-[#c9a227]/30 shadow-[3px_3px_8px_#050407]"
             />
           ) : null}

@@ -1,17 +1,5 @@
-import { lotmAssetUrl, isLotmAssetPath } from '../../services/lotm/lotmAssetUrl';
-import { ASSET_BASE } from '../../lib/apiBase';
+import { resolveMediaUrl } from '../../services/lotm/lotmAssetUrl';
 import type { LotmPortraitHit } from '../../services/lotm/lotmVisualMatcher';
-
-function portraitSrc(src: string): string {
-    if (!src) return '';
-    if (isLotmAssetPath(src) || src.startsWith('/assets/lotm/')) {
-        const rel = src.replace(/^.*\/assets\/lotm\//, '');
-        return lotmAssetUrl(rel);
-    }
-    if (src.startsWith('/assets/')) return `${ASSET_BASE || ''}${src}`;
-    if (src.startsWith('image/') || src.startsWith('assets/')) return lotmAssetUrl(src);
-    return src;
-}
 
 export function LotmStage({ portraits }: { portraits: LotmPortraitHit[] }) {
     return (
@@ -25,7 +13,7 @@ export function LotmStage({ portraits }: { portraits: LotmPortraitHit[] }) {
                     key={`${p.name}-${i}`}
                     className={`lotm-portrait ${p.isPc ? 'lotm-portrait-pc' : ''}`}
                 >
-                    <img src={portraitSrc(p.src)} alt={p.name} />
+                    <img src={resolveMediaUrl(p.src)} alt={p.name} />
                     <figcaption>
                         <span className="lotm-portrait-name">{p.name}</span>
                         {p.seqLabel && <span className="lotm-portrait-seq">{p.seqLabel}</span>}

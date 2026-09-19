@@ -7,6 +7,7 @@ import { TraitRow, IdentityFields } from '../profileFields';
 import { selectPcBonds } from '../pcBonds';
 import { getEntriesForNpc, CATEGORY_LABELS, EMPTY_REGISTER } from '../../../services/campaign-state/divergenceRegister';
 import { RelationshipMemoryEditor } from '../RelationshipMemoryEditor';
+import { resolveMediaUrl } from '../../../services/lotm/lotmAssetUrl';
 
 const CATEGORY_COLORS: Record<DivergenceCategory, string> = {
     locations: 'text-blue-400',
@@ -224,7 +225,7 @@ export function RecordTab() {
                                     className="w-full flex items-center gap-3 p-2 bg-void-lighter border border-border/40 rounded hover:border-terminal/40 transition-colors text-left"
                                 >
                                     <div className="w-7 h-7 rounded bg-void-dark border border-border/40 flex items-center justify-center text-[9px] text-text-dim uppercase shrink-0 overflow-hidden">
-                                        {n.portrait ? <img src={n.portrait} alt={n.name} className="w-full h-full object-cover" /> : n.name.slice(0, 2)}
+                                        {n.portrait ? <img src={resolveMediaUrl(n.portrait)} alt={n.name} className="w-full h-full object-cover" /> : n.name.slice(0, 2)}
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <p className="text-[12px] text-text-bright truncate">{n.name}</p>

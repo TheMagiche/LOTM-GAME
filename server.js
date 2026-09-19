@@ -206,6 +206,7 @@ app.use((err, _req, res, _next) => {
 app.listen(PORT, BIND_HOST, () => {
     console.log(`[GM-Cockpit API] ✓ Running on http://${BIND_HOST}:${PORT}`);
     console.log(`[GM-Cockpit API]   Data dir: ${DATA_DIR}`);
+    console.log(`[GM-Cockpit API]   LOTM assets: ${LOTM_ASSETS_DIR}${fs.existsSync(LOTM_ASSETS_DIR) ? '' : ' (MISSING)'}`);
     if (isDemoMode()) {
         console.log('[GM-Cockpit API]   Demo mode: player-only, TTS off, ephemeral chronicles');
         pruneStaleDemoCampaigns();

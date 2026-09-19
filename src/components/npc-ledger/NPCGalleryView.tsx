@@ -1,5 +1,6 @@
 import { User, Trash2, CheckSquare, Square, RotateCcw } from 'lucide-react';
 import type { NPCEntry } from '../../types';
+import { resolveMediaUrl } from '../../services/lotm/lotmAssetUrl';
 
 type Props = {
     npcLedger: NPCEntry[];
@@ -52,13 +53,13 @@ export function NPCGalleryView({ npcLedger, selectedId, selectMode, checkedIds, 
                                keeps the whole picture and the blurred copy fills the letterbox. */
                             <>
                                 <img
-                                    src={npc.portrait}
+                                    src={resolveMediaUrl(npc.portrait)}
                                     alt=""
                                     aria-hidden="true"
                                     className="absolute inset-0 w-full h-full object-cover scale-110 blur-md opacity-50"
                                 />
                                 <img
-                                    src={npc.portrait}
+                                    src={resolveMediaUrl(npc.portrait)}
                                     alt={npc.name}
                                     className="relative block w-full aspect-[2/3] object-contain transition-transform group-hover:scale-105"
                                 />
@@ -109,8 +110,8 @@ export function NPCGalleryView({ npcLedger, selectedId, selectMode, checkedIds, 
                             >
                                 {npc.portrait ? (
                                     <>
-                                        <img src={npc.portrait} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-md opacity-50" />
-                                        <img src={npc.portrait} alt={npc.name} className="relative block w-full aspect-[2/3] object-contain" />
+                                        <img src={resolveMediaUrl(npc.portrait)} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-md opacity-50" />
+                                        <img src={resolveMediaUrl(npc.portrait)} alt={npc.name} className="relative block w-full aspect-[2/3] object-contain" />
                                     </>
                                 ) : (
                                     <div className="w-full aspect-[2/3] bg-void-lighter flex flex-col items-center justify-center gap-2">

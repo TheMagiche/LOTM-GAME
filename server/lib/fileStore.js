@@ -6,7 +6,15 @@ import { getCampaignFileSuffixes } from './tableRegistry.js';
 import { RETIRED_CAMPAIGN_FILE_SUFFIXES } from './legacyTables.js';
 
 const __fileDir = path.dirname(fileURLToPath(import.meta.url));
-const __projectRoot = path.join(__fileDir, '../..');
+const __projectRoot = resolveProjectRoot(__fileDir);
+
+function resolveProjectRoot(fileDir) {
+    if (process.env.LOTM_PROJECT_ROOT) return process.env.LOTM_PROJECT_ROOT;
+    // Source: server/lib → repo root. Bundled: server.bundle.cjs sits at the
+    // project root (or asar.unpacked), so a sibling package.json wins.
+    if (fs.existsSync(path.join(fileDir, 'package.json'))) return fileDir;
+    return path.join(fileDir, '../..');
+}
 
 export const DATA_DIR = process.env.DATA_DIR || path.join(__projectRoot, 'data');
 export const CAMPAIGNS_DIR = path.join(DATA_DIR, 'campaigns');
