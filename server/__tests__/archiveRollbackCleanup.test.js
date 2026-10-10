@@ -30,13 +30,14 @@ beforeEach(async () => {
 
     vi.doMock('../lib/embedder.js', () => ({
         embedText: vi.fn(async () => new Float32Array(32)),
-        buildArchiveText: vi.fn((e) => `MOCK ${e.sceneId}`),
+    embedQuery: vi.fn(async () => new Float32Array(32)),
+        buildScenePassages: vi.fn(() => ['MOCK passage']),
         buildLoreText: vi.fn(() => 'MOCK_LORE'),
         warmup: vi.fn(async () => {}),
         embedBatch: vi.fn(async () => []),
         getActiveDims: vi.fn(() => 32),
         getActiveModelId: vi.fn(() => 'mock'),
-        EMBEDDING_VERSION: 1,
+        EMBEDDING_VERSIONS: { scene: 2, lore: 1, rule: 1 },
     }));
     vi.doMock('../lib/vectorStore.js', () => ({
         storeArchiveEmbedding: vi.fn(),
@@ -44,7 +45,7 @@ beforeEach(async () => {
         searchArchive: vi.fn(async () => []),
         searchLore: vi.fn(async () => []),
         getEmbeddingStatus: vi.fn(() => ({ status: 'mock', loaded: true })),
-        EMBEDDING_VERSION: 1,
+        EMBEDDING_VERSIONS: { scene: 2, lore: 1, rule: 1 },
         getDb: vi.fn(() => null),
         deleteArchiveEmbedding: deleteMock,
         deleteAllArchiveEmbeddings: deleteAllMock,
@@ -84,27 +85,27 @@ function seed(nums) {
 }
 
 describe('rollback / clear drop the vectors they orphan', () => {
-    it('deletes an embedding for every scene the rollback removes', () => {
+    it('deletes an embedding for every scene the rollback removes', async () => {
         seed([1, 2, 3, 4, 5]);
-        svc.rollbackScenesFrom(ID, '003');
+        await svc.rollbackScenesFrom(ID, '003');
         const dropped = deleteMock.mock.calls.map(c => c[1]).sort();
         expect(dropped).toEqual(['003', '004', '005']);
     });
 
-    it('leaves the surviving scenes\' vectors alone', () => {
+    it('leaves the surviving scenes\' vectors alone', async () => {
         seed([1, 2, 3]);
-        svc.rollbackScenesFrom(ID, '003');
+        await svc.rollbackScenesFrom(ID, '003');
         const dropped = deleteMock.mock.calls.map(c => c[1]);
         expect(dropped).not.toContain('001');
         expect(dropped).not.toContain('002');
     });
 
-    it('drops a prose-only ghost that the index never knew about', () => {
+    it('drops a prose-only ghost that the index never knew about', async () => {
         // An interrupted append can leave prose with no index entry. Collecting
         // removed ids from the index alone would miss it and strand its vector.
         seed([1, 2]);
         fs.appendFileSync(path.join(CAMPAIGNS_DIR, `${ID}.archive.md`), block(3), 'utf-8');
-        svc.rollbackScenesFrom(ID, '003');
+        await svc.rollbackScenesFrom(ID, '003');
         expect(deleteMock.mock.calls.map(c => c[1])).toContain('003');
     });
 

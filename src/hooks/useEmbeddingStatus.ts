@@ -11,11 +11,19 @@ export type EmbedJob = {
     startedAt: number;
 };
 
+/** Server-reported state of semantic recall. See `getVectorHealth` in vectorStore.js. */
+export type VectorHealth =
+    | { status: 'ok' }
+    | { status: 'unavailable'; detail: string }
+    | { status: 'reindex-needed'; count: number };
+
 export type EmbeddingRuntime = {
     modelReady: boolean;
     jobs: EmbedJob[];
     /** False until the first runtime request settles, so callers can avoid treating the optimistic idle default as truth. */
     polled: boolean;
+    /** Absent from servers older than this field; treated as healthy. */
+    vectorHealth?: VectorHealth;
 };
 
 const ACTIVE_MS = 1500;   // poll fast while the model is cold or a bulk embed runs

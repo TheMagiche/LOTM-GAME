@@ -31,19 +31,9 @@ export function useChatOperations({
     sceneContinue: ReturnType<typeof useSceneContinue>;
     checkAndSealChapter: (campaignId: string) => void;
 }) {
-    const context = useAppStore(s => s.context);
     const activeCampaignId = useAppStore(s => s.activeCampaignId);
     const deepArmed = useAppStore(s => s.deepArmed);
     const setDeepArmed = useAppStore(s => s.setDeepArmed);
-
-    const { settings, loreChunks, npcLedger, archiveIndex } = useAppStore(
-        useShallow(s => ({
-            settings: s.settings,
-            loreChunks: s.loreChunks,
-            npcLedger: s.npcLedger,
-            archiveIndex: s.archiveIndex,
-        }))
-    );
 
     const {
         setArchiveIndex, updateLastAssistant, updateLastAssistantMessage, updateContext, setCondensed,
@@ -189,8 +179,6 @@ export function useChatOperations({
         // turn's abort signal via `AbortSignal.any`.
         directorAbortRef.current = new AbortController();
 
-        const storeSnapshot = useAppStore.getState();
-
         // Swipe Generation v1 — commit any pending turn BEFORE the next turn's
         // gatherContext. The previous turn's post-turn work (archive append,
         // agency tick, arc tick, witness capture) must fire on the variant the
@@ -198,6 +186,12 @@ export function useChatOperations({
         // swipe result still streaming in the background finishes and fills its
         // slot (the onDone guard drops it silently once commit fired).
         await commitPendingTurn().catch(e => console.warn('[ChatArea] commit failed:', e));
+
+        // Read the store AFTER the commit. A snapshot taken before it built every turn
+        // from the state one commit behind: the new scene, NPC updates, on-stage cast,
+        // agency digest and scene stakes all reached the writer a turn late.
+        const storeSnapshot = useAppStore.getState();
+        const { settings, context, loreChunks, npcLedger, archiveIndex } = storeSnapshot;
         const storyProvider = storeSnapshot.getActiveStoryEndpoint();
         if (!storyProvider) return;
         const useAskGmBrief = armedAskGmBrief?.campaignId === activeCampaignId ? armedAskGmBrief.text : undefined;

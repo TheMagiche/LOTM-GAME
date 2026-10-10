@@ -2,7 +2,14 @@ import type { Plugin } from 'vite'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { fileURLToPath } from 'node:url'
 import packageJson from './package.json'
+
+// Absolute, forward-slashed glob for a folder directly under the project root.
+// The watcher matches absolute paths, so root-anchored globs are the only way
+// to ignore `<root>/data` without also ignoring `src/data`.
+const projectRoot = fileURLToPath(new URL('.', import.meta.url)).replace(/\\/g, '/').replace(/\/$/, '')
+const rootGlob = (dir: string) => `${projectRoot}/${dir}/**`
 
 function isDemoBuild(mode: string): boolean {
   return mode === 'demo'
@@ -49,6 +56,26 @@ export default defineConfig(({ mode }) => {
     base: './',
     server: {
       host: process.env.HOST || '127.0.0.1',
+      // The dev server serves any file under the project root. `data/` holds
+      // settings, the vault, and campaigns — deny it so `npm run dev:lan`
+      // cannot fetch them. A user-supplied `deny` replaces Vite's defaults.
+      fs: {
+        deny: [
+          '.env', '.env.*', '*.{crt,pem,key,p12,pfx,cer,der}', '.npmrc', '.yarnrc.yml', '**/.git/**',
+          rootGlob('data'),
+        ],
+      },
+      // Lore, gamedata, and campaign JSON live in the project root. Editing
+      // them must not reload the page mid-chronicle.
+      watch: {
+        ignored: [
+          rootGlob('data'),
+          rootGlob('gamedata'),
+          rootGlob('mechanics'),
+          rootGlob('playwright-report'),
+          rootGlob('graphify-out'),
+        ],
+      },
       proxy: {
         '/api': {
           target: 'http://localhost:3001',

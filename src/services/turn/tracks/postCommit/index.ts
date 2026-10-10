@@ -2,6 +2,7 @@ import type { AppSettings } from '../../../../types';
 import { createPostTurnTrackRegistry, enablementFromSettings } from '../runner';
 import type { PostCommitTrackContext } from '../types';
 import { eventExtractionTrack } from './eventExtractionTrack';
+import { witnessCaptureTrack } from './witnessCaptureTrack';
 import { chapterSealTrack } from './chapterSealTrack';
 import { profileScanTrack } from './profileScanTrack';
 import { traitScanTrack } from './traitScanTrack';
@@ -14,6 +15,7 @@ import { relationshipMemoryTrack } from './relationshipMemoryTrack';
 export const postCommitTracks = createPostTurnTrackRegistry<PostCommitTrackContext>();
 
 postCommitTracks.register(eventExtractionTrack);
+postCommitTracks.register(witnessCaptureTrack);
 postCommitTracks.register(chapterSealTrack);
 postCommitTracks.register(profileScanTrack);
 postCommitTracks.register(traitScanTrack);

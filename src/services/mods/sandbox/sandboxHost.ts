@@ -15,7 +15,7 @@ import {
     SandboxFaultError,
     type SandboxWorkerMessage,
 } from './sandboxTypes';
-import { buildModContext, type ModContextMod } from '../modContext';
+import { buildModContext, modMayAddMessage, type ModContextMod } from '../modContext';
 import type { LocationEntry } from '../../../types';
 
 /**
@@ -170,6 +170,9 @@ export function validateJournal(
             }
             if (!hasCapability(capabilities, writeCapability(storeEntry.name))) {
                 throw new SandboxFaultError('journal-rejected', `[sandbox] journal rejected: undeclared write "${storeEntry.name}"`);
+            }
+            if (storeEntry.name === 'addMessage' && !modMayAddMessage(storeEntry.args[0])) {
+                throw new SandboxFaultError('journal-rejected', '[sandbox] journal rejected: addMessage cannot add a tool message');
             }
         } else if (entry.kind === 'table') {
             const tableEntry = entry as { kind: 'table'; name: string; rows: unknown };

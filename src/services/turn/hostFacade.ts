@@ -278,7 +278,10 @@ function hasConfiguredRole(state: TurnState, role: ModelRole): boolean {
         case 'story':
             return Boolean(state.provider || typeof state.getFreshProvider === 'function');
         case 'utility':
-            return typeof state.getUtilityEndpoint === 'function';
+            // The getter always exists; it returns undefined when the preset has no utility model.
+            // Checking the getter alone made every utility step call (and throw) instead of skipping,
+            // and made agency's utility-then-story fallback unreachable.
+            return Boolean(state.getUtilityEndpoint?.());
         case 'auxiliary':
             return Boolean(typeof state.getFreshAuxiliaryProvider === 'function' || typeof state.getFreshProvider === 'function' || state.provider);
         case 'summariser':
