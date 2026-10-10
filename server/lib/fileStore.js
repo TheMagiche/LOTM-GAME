@@ -115,6 +115,21 @@ export function writeJson(filePath, data) {
     }
 }
 
+/**
+ * Atomic whole-file text write — the `writeJson` guarantee for non-JSON files.
+ * `.archive.md` is the campaign's lossless record and has no second copy.
+ */
+export function writeTextAtomic(filePath, text) {
+    try {
+        const tmp = filePath + '.tmp';
+        fs.writeFileSync(tmp, text, 'utf-8');
+        fs.renameSync(tmp, filePath);
+    } catch (err) {
+        console.error(`[writeTextAtomic] Failed to write ${filePath}: ${err.message}`);
+        throw err;
+    }
+}
+
 export function archivePath(id) {
     validateCampaignId(id);
     return path.join(CAMPAIGNS_DIR, `${id}.archive.md`);

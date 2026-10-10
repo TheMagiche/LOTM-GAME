@@ -105,10 +105,9 @@ export const NPC_UPDATE_COOLDOWN: Record<AiTier, number> = { lite: Infinity, pro
  * `trigger` exists because a tier gates automation, not capability (§3): 23 of the 26
  * features fire from the turn pipeline (`automatic`); `arcSpawn` fires only from a button
  * (`manual`), so its matrix value is never read and a toggle for it would do nothing.
- * `witnessAux` and `npcProfileGen` have no service-side call site at all — no pipeline
- * step and no button. They are `unwired`: present in the matrix as reserved slots, inert
- * in the graph, shown to the user as "no call site exists yet" so a reader does not hunt
- * for a control that is not there.
+ * `witnessAux` runs after commit when a reply has no 👥 line. `npcProfileGen` has no
+ * service-side call site — no pipeline step and no button. It is `unwired`: present in
+ * the matrix as a reserved slot, shown to the user as "no call site exists yet".
  *
  * Phase 8.3 — the 27th built-in (`enemyDiscovery`) is gone. The enemies mod
  * (8.5) declares its own tier entry (`mod.enemies.enemyDiscovery`) through
@@ -161,7 +160,7 @@ const TIER_BLOCKS: readonly TierBlock[] = [
     { id: 'npcStance', name: 'NPC Stance Reasoning', description: 'Computes a scene-specific per-NPC stance for the Cognitive Process panel.', toggleable: true, trigger: 'automatic', defaultEnabled: true, callsModel: true },
     { id: 'recommender', name: 'Context Recommender', description: 'Asks a utility model which world-state fields the GM should focus on this turn.', toggleable: true, trigger: 'automatic', defaultEnabled: true, callsModel: true },
     { id: 'importanceRating', name: 'Scene Importance Rating', description: 'Rates each committed scene 1–5 so the archive can prioritise high-stakes events.', toggleable: true, trigger: 'automatic', defaultEnabled: false, callsModel: true },
-    { id: 'witnessAux', name: 'Witness Capture (Auxiliary)', description: 'Reserved tier slot for an auxiliary witness-capture pass. No call site exists yet — neither a pipeline step nor a button.', toggleable: true, trigger: 'unwired', defaultEnabled: false, callsModel: false },
+    { id: 'witnessAux', name: 'Witness Capture (Auxiliary)', description: "When the GM's reply has no 👥 line, a model reads it and names who was physically present, so NPC knowledge limits follow who saw the scene rather than who spoke. Replies with a 👥 line use it directly on every tier.", toggleable: true, trigger: 'automatic', defaultEnabled: false, callsModel: true },
     { id: 'npcValidate', name: 'NPC Name Validation', description: 'Validates extracted NPC names with a fail-closed LLM check before adding them as suggestions.', toggleable: true, trigger: 'automatic', defaultEnabled: true, callsModel: true },
     { id: 'npcProfileGen', name: 'NPC Profile Generation', description: 'Reserved tier slot for LLM-generated NPC profiles. No call site exists yet — neither a pipeline step nor a button.', toggleable: true, trigger: 'unwired', defaultEnabled: true, callsModel: false },
     { id: 'npcUpdate', name: 'NPC Profile Update', description: 'Background LLM call that refreshes known NPC profiles from the latest scene text.', toggleable: true, trigger: 'automatic', defaultEnabled: true, callsModel: true },

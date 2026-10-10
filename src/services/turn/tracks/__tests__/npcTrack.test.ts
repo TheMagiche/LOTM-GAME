@@ -100,7 +100,7 @@ describe('track.npc — detection', () => {
         mockActiveCampaignId = 'campaign-1';
     });
 
-    it('excludes every ledger name + alias AND the PC name + aliases from detection', async () => {
+    it('excludes only the PC name and aliases from detection', async () => {
         const ledger = [npc({ id: 'n1', name: 'Mira', aliases: 'The Owl, Owly' })];
         const ctx = makeCtx({
             npcLedger: ledger,
@@ -114,7 +114,7 @@ describe('track.npc — detection', () => {
 
         expect(mockExtract).toHaveBeenCalledWith(
             ASSISTANT,
-            ['Mira', 'The Owl', 'Owly', 'Aria', 'Red', 'Redhand'],
+            ['Aria', 'Red', 'Redhand'],
         );
     });
 
@@ -122,8 +122,7 @@ describe('track.npc — detection', () => {
         const ledger = [npc({ id: 'n1', name: 'Aria', aliases: '', isPC: true })];
         await npcTrack.run(makeCtx({ npcLedger: ledger, state: { npcLedger: ledger } }));
 
-        // 'Aria' appears once from the ledger sweep and once from the PC branch.
-        expect(mockExtract).toHaveBeenCalledWith(ASSISTANT, ['Aria', 'Aria']);
+        expect(mockExtract).toHaveBeenCalledWith(ASSISTANT, ['Aria']);
     });
 
     it('does nothing when the extractor finds no names', async () => {
@@ -162,12 +161,13 @@ describe('track.npc — detection', () => {
 
     it('stops when validation rejects every candidate', async () => {
         mockExtract.mockReturnValueOnce(['Kaelen']);
+        mockClassify.mockReturnValueOnce({ newNames: ['Kaelen'], existingNpcs: [] } as any);
         mockValidate.mockResolvedValueOnce([]);
 
         const ctx = makeCtx();
         await npcTrack.run(ctx);
 
-        expect(mockClassify).not.toHaveBeenCalled();
+        expect(mockClassify).toHaveBeenCalled();
         expect(ctx.callbacks.addNpcSuggestions).not.toHaveBeenCalled();
     });
 });
@@ -184,6 +184,7 @@ describe('track.npc — existing NPC updates', () => {
         mockExtract.mockReturnValueOnce(['Mira']);
         mockValidate.mockResolvedValueOnce(['Mira']);
         mockClassify.mockReturnValueOnce({ newNames: [], existingNpcs: [existing] } as any);
+        mockUpdateExisting.mockResolvedValueOnce(true as any);
         mockBQ.push.mockImplementationOnce(async (_label, execute) => execute());
 
         const ctx = makeCtx({

@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import { VaultSection } from './VaultSection';
 import { LanguageSection } from './LanguageSection';
 import { BackgroundControl } from '../BackgroundControl';
 import { cueToggle } from '../../services/uiSounds';
+import { MAX_STORY_TIMEOUT_SECONDS, MIN_STORY_TIMEOUT_SECONDS, normalizeStoryTimeoutSeconds } from '../../services/llm/timeouts';
 
 export function GlobalSettingsTab() {
   const { settings, updateSettings } = useAppStore();
+  const [storyTimeoutDraft, setStoryTimeoutDraft] = useState<string | null>(null);
 
   return (
     <div className="mt-8 pt-6 border-t border-border space-y-4">
@@ -28,6 +31,40 @@ export function GlobalSettingsTab() {
           Choose a campaign background image and adjust how strongly it shows through the chat.
         </p>
         <BackgroundControl />
+      </div>
+
+      <div className="md:col-span-2 bg-void p-3 border border-border rounded space-y-2">
+        <label htmlFor="story-timeout-seconds" className="block text-[11px] text-text-primary uppercase tracking-wider font-bold">
+          Story AI Timeout (Seconds)
+        </label>
+        <p id="story-timeout-help" className="text-[9px] text-text-dim leading-tight">
+          How long to wait for the first response or for more streamed data. Resets whenever data arrives.
+          Applies across all campaigns to story generation and other streamed AI replies. Changes apply to new requests.
+          Default: 600 seconds (10 minutes). Range: 30-3600 seconds.
+        </p>
+        <input
+          id="story-timeout-seconds"
+          aria-describedby="story-timeout-help"
+          type="number"
+          min={MIN_STORY_TIMEOUT_SECONDS}
+          max={MAX_STORY_TIMEOUT_SECONDS}
+          step={1}
+          value={storyTimeoutDraft ?? normalizeStoryTimeoutSeconds(settings.storyTimeoutSeconds)}
+          onChange={(e) => {
+            setStoryTimeoutDraft(e.target.value);
+            const value = e.target.valueAsNumber;
+            if (Number.isInteger(value) && value >= MIN_STORY_TIMEOUT_SECONDS && value <= MAX_STORY_TIMEOUT_SECONDS) {
+              updateSettings({ storyTimeoutSeconds: value });
+            }
+          }}
+          onBlur={() => {
+            if (storyTimeoutDraft !== null) {
+              updateSettings({ storyTimeoutSeconds: normalizeStoryTimeoutSeconds(Number(storyTimeoutDraft)) });
+              setStoryTimeoutDraft(null);
+            }
+          }}
+          className="w-full h-7 bg-surface border border-border rounded px-2 text-xs text-text font-mono focus:outline-none focus:border-terminal"
+        />
       </div>
 
       {/* Context Limit */}

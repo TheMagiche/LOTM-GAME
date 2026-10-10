@@ -2,6 +2,7 @@ import { useAppStore } from '../../../store/useAppStore';
 import { backgroundQueue } from '../../infrastructure/backgroundQueue';
 import { extractNPCNames, classifyNPCNames, validateNPCCandidates } from '../../npc/npcDetector';
 import { updateExistingNPCs, backfillNPCDrives } from '../../chatEngine';
+import { agencyFillPatch, needsAgencyFill } from '../../npc/agency/agencyLazyFill';
 import { tierAllows, NPC_UPDATE_COOLDOWN } from '../aiTier';
 import { buildHostFacade, type HostFacade } from '../hostFacade';
 import type { JsonModelCall } from '../../npc-generation/shared';
@@ -24,6 +25,9 @@ function brokerJsonCall(facade: HostFacade): JsonModelCall {
             prompt: messagesToPrompt(messages),
             trackingLabel,
             timeoutMs: AI_CALL_TIMEOUT_MS,
+            // Thinking off: profile updates are JSON extractions. A thinking model
+            // spends the token budget before the JSON and the update comes back empty.
+            thinkingEffort: 'off',
         });
         return response.content;
     };
@@ -43,30 +47,22 @@ async function runNPCTrack(ctx: PostTurnTrackContext): Promise<void> {
     const provider = useBroker ? undefined : state?.getFreshProvider();
 
     const pc = data.context.playerCharacter ?? npcLedger.find(n => n.isPC) ?? null;
-    const excludeNames = npcLedger.flatMap(npc => {
-        const aliases = (npc.aliases || '').split(',').map(a => a.trim()).filter(Boolean);
-        return [npc.name, ...aliases];
-    });
-    if (pc) {
-        excludeNames.push(pc.name);
-        if (pc.aliases) {
-            excludeNames.push(...pc.aliases.split(',').map(a => a.trim()).filter(Boolean));
-        }
-    }
-    const extractedNames = extractNPCNames(lastAssistantContent, excludeNames);
+    // Only the player character is excluded. Excluding every ledger name also kept
+    // known NPCs out of the update step whenever the GM named them exactly.
+    // classifyNPCNames already keeps known NPCs out of the suggestions.
+    const pcNames = pc ? [pc.name, ...(pc.aliases || '').split(',').map(a => a.trim()).filter(Boolean)] : [];
+    const extractedNames = extractNPCNames(lastAssistantContent, pcNames);
     if (extractedNames.length === 0) return;
 
-    const validatedNames = tierAllows(config.aiTier, 'npcValidate')
-        ? useBroker
-            ? await validateNPCCandidates(undefined, extractedNames, lastAssistantContent, async (request) => facade.model.call('story', request))
+    // Known NPCs go straight to the update step; only unknown names need the validator.
+    const { newNames: unknownNames, existingNpcs: existingNpcsToUpdate } = classifyNPCNames(extractedNames, npcLedger, pcNames);
+    const newNames = unknownNames.length === 0 || !tierAllows(config.aiTier, 'npcValidate')
+        ? unknownNames
+        : useBroker
+            ? await validateNPCCandidates(undefined, unknownNames, lastAssistantContent, async (request) => facade.model.call('story', request))
             : provider
-                ? await validateNPCCandidates(provider, extractedNames, lastAssistantContent)
-                : extractedNames
-        : extractedNames;
-
-    if (validatedNames.length === 0) return;
-
-    const { newNames, existingNpcs: existingNpcsToUpdate } = classifyNPCNames(validatedNames, npcLedger, excludeNames);
+                ? await validateNPCCandidates(provider, unknownNames, lastAssistantContent)
+                : unknownNames;
 
     const guardedUpdateNPC = (id: string, patch: Parameters<typeof write.updateNPC>[1]) => {
         const currentId = useAppStore.getState().activeCampaignId;
@@ -98,14 +94,16 @@ async function runNPCTrack(ctx: PostTurnTrackContext): Promise<void> {
                 backgroundQueue.push(
                     `NPC-Update:${npcsDueForUpdate.map(n => n.name).join(',')}`,
                     async () => {
-                        const relationshipMemoryEnabled = ctx.state?.context.relationshipMemory === true;
-                        await (useBroker
+                        const relationshipMemoryEnabled = (ctx.facade?.data.context ?? ctx.state?.context)?.relationshipMemory === true;
+                        const updated = await (useBroker
                             ? relationshipMemoryEnabled
                                 ? updateExistingNPCs(updateProvider, allMsgs, npcsDueForUpdate, guardedUpdateNPC, modelCall, { relationshipMemoryEnabled: true })
                                 : updateExistingNPCs(updateProvider, allMsgs, npcsDueForUpdate, guardedUpdateNPC, modelCall)
                             : relationshipMemoryEnabled
                                 ? updateExistingNPCs(updateProvider, allMsgs, npcsDueForUpdate, guardedUpdateNPC, undefined, { relationshipMemoryEnabled: true })
                                 : updateExistingNPCs(updateProvider, allMsgs, npcsDueForUpdate, guardedUpdateNPC));
+                        // A failed call or unparseable answer leaves the cooldown unspent.
+                        if (!updated) return;
                         for (const npc of npcsDueForUpdate) {
                             guardedUpdateNPC(npc.id, { lastUpdateScene: sceneNow });
                         }
@@ -127,6 +125,22 @@ async function runNPCTrack(ctx: PostTurnTrackContext): Promise<void> {
                     ).catch(err => console.warn('[NPC Drives Backfill] Background backfill failed:', err));
                 }
             }
+        }
+    }
+
+    // Agency fill: an NPC from before the agency system gets its fields the first time
+    // the GM names it, so off-screen agency can include it. Mechanical, no model call.
+    // Existing drives stay on the card and are copied into wants when wants are missing.
+    // Drives backfill above is unchanged, so campaigns that still fill drives keep doing so.
+    const heartbeatOn = tierAllows(config.aiTier, 'heartbeatTick');
+    const npcsNeedingAgency = heartbeatOn ? existingNpcsToUpdate.filter(needsAgencyFill) : [];
+    if (npcsNeedingAgency.length > 0) {
+        const matureMode = (ctx.state?.settings ?? useAppStore.getState().settings)?.matureMode ?? false;
+        for (const npc of npcsNeedingAgency) {
+            const live = useAppStore.getState().npcLedger?.find(n => n.id === npc.id);
+            if (live && !needsAgencyFill(live)) continue;
+            guardedUpdateNPC(npc.id, agencyFillPatch(npc, { matureMode }));
+            console.log(`[NPC Agency Fill] Populated ${npc.name}`);
         }
     }
 }

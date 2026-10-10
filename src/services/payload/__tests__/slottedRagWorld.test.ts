@@ -34,7 +34,7 @@ function baseContext(): GameContext {
         sceneNote: '', sceneNoteActive: false, sceneNoteDepth: 3,
         worldVibe: '', notebook: [], notebookActive: false,
         worldEventConfig: { initialDC: 498, dcReduction: 2, who: [], where: [], why: [], what: [] },
-    } as GameContext;
+    } as unknown as GameContext;
 }
 
 function baseSettings(over: Partial<AppSettings> = {}): AppSettings {
@@ -90,7 +90,6 @@ function buildWorldWith(opts: {
         budgetWorld: opts.budgetWorld ?? 8192,
         npcBudgetFloor: opts.npcBudgetFloor ?? 2048,
         matureMode: false,
-        isDebug: opts.isDebug ?? false,
         collector: createTraceCollector(opts.isDebug ?? false),
         elevatedScenes: opts.elevatedScenes,
         slottedRagSnippets: opts.slottedRagSnippets,
@@ -207,7 +206,6 @@ describe('WO-12 — Slotted RAG world rendering', () => {
             onStageNpcIds: ['npc_a'],
             budgetWorld: 8192,
             npcBudgetFloor: 2048,
-            isDebug: true,
             collector,
             elevatedScenes: undefined,
             slottedRagSnippets: snippets,
@@ -231,7 +229,6 @@ describe('WO-12 — Slotted RAG world rendering', () => {
             onStageNpcIds: ['npc_a'],
             budgetWorld: 8192,
             npcBudgetFloor: 2048,
-            isDebug: true,
             collector,
             elevatedScenes: undefined,
             slottedRagSnippets: [],

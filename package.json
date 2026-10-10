@@ -90,10 +90,17 @@
     "vitest": "^4.1.8"
   },
   "overrides": {
-    "onnxruntime-node": "1.23.2",
-    "shell-quote": "^1.9.0",
-    "sharp": "^0.35.3",
+    "onnxruntime-node": {
+      ".": "1.23.2",
+      "adm-zip": "^0.6.1"
+    },
+    "shell-quote": "^1.12.0",
+    "sharp": "^0.35.5",
     "tar": "^7.5.21",
-    "minimatch": "^10.0.3"
+    "minimatch": "^10.0.3",
+    "brace-expansion": "^5.0.12",
+    "proxy-addr": "^2.0.8",
+    "source-map-js": "^1.2.2",
+    "postcss-selector-parser": "^7.1.6"
   }
 }

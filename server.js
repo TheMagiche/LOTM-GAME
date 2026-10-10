@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import express from 'express';
 import cors from 'cors';
 import { KeyVault } from './server/vault.js';
-import { DATA_DIR, CAMPAIGNS_DIR, PUBLIC_ASSETS_DIR, LOTM_ASSETS_DIR, MODS_DIR, BUNDLED_MODS_DIR, APP_VERSION, ensureDirs } from './server/lib/fileStore.js';
+import { DATA_DIR, PUBLIC_ASSETS_DIR, LOTM_ASSETS_DIR, MODS_DIR, BUNDLED_MODS_DIR, APP_VERSION, ensureDirs } from './server/lib/fileStore.js';
 import { createVaultRouter } from './server/routes/vault.js';
 import { createSettingsRouter } from './server/routes/settings.js';
 import { createCampaignsRouter } from './server/routes/campaigns.js';
@@ -35,6 +35,8 @@ import { warmup as warmupEmbedder } from './server/lib/embedder.js';
 import { warmupTts, killSidecar } from './server/lib/tts.js';
 import { serverError } from './server/lib/serverError.js';
 import { isDemoMode, isTtsDisabled, readFrontendDeploymentMode, injectDemoBootScript } from './server/lib/demoMode.js';
+import { createHostGuard, createFetchSiteGuard } from './server/lib/requestGuards.js';
+import { createCampaignAssetsRouter } from './server/routes/campaignAssets.js';
 import { createDemoSessionRouter, pruneStaleDemoCampaigns } from './server/routes/demoSession.js';
 
 const app = express();
@@ -62,31 +64,44 @@ if (!vault.isUnlocked()) {
 }
 
 // ─── Middleware ───
-// Restrict CORS to the only two legitimate origins:
-//   - 'null'       → Electron production loads the frontend via file:// (origin "null")
-//   - Vite dev URL → local development via http://localhost:5173
-// Any other origin (e.g. a malicious website in the user's browser) is rejected,
-// preventing cross-origin reads of /api/vault/keys and other sensitive endpoints.
+// The API has no authentication, so "who can reach it" is the whole access
+// control. Three layers, each closing a door the others do not:
+//
+//   1. Host guard — DNS rebinding. Answer only requests addressed to loopback,
+//      the bound address, an IP when bound to every interface, $ALLOWED_HOSTS,
+//      or the hostname of $PUBLIC_ORIGIN (the demo VPS).
+//   2. CORS allowlist — which origins may READ responses cross-origin.
+//   3. Fetch-site guard on /api — cross-site form posts and sandboxed iframes.
+//
+// Allowed origins:
+//   - Vite dev URL → http://localhost:5173
+//   - 'null' when this process is the Electron desktop server. The packaged
+//     app loads the UI via file:// (origin "null") and spawns this server with
+//     ELECTRON_RUN_AS_NODE, which strips process.versions.electron.
+//   - $ALLOWED_ORIGINS and $PUBLIC_ORIGIN for the same-origin demo.
 const BIND_HOST = process.env.HOST || '127.0.0.1';
-const ALLOWED_ORIGINS = new Set(['null', 'http://localhost:5173']);
+const ALLOWED_ORIGINS = new Set(['http://localhost:5173']);
+if (process.versions.electron || process.env.ELECTRON_RUN_AS_NODE === '1') {
+    ALLOWED_ORIGINS.add('null');
+}
 if (process.env.ALLOWED_ORIGINS) {
     process.env.ALLOWED_ORIGINS.split(',').forEach(o => ALLOWED_ORIGINS.add(o.trim()));
 }
 if (process.env.PUBLIC_ORIGIN) {
     ALLOWED_ORIGINS.add(process.env.PUBLIC_ORIGIN.replace(/\/$/, ''));
 }
+const ALLOWED_HOSTS = process.env.ALLOWED_HOSTS
+    ? process.env.ALLOWED_HOSTS.split(',').map(h => h.trim()).filter(Boolean)
+    : [];
+if (process.env.PUBLIC_ORIGIN) {
+    try {
+        const publicHost = new URL(process.env.PUBLIC_ORIGIN).hostname;
+        if (publicHost) ALLOWED_HOSTS.push(publicHost);
+    } catch { /* PUBLIC_ORIGIN is optional and may be unset in local dev */ }
+}
 if (process.env.TRUST_PROXY === '1' || process.env.TRUST_PROXY === 'true') {
     app.set('trust proxy', 1);
 }
-app.use(cors({
-    origin(origin, cb) {
-        // Allow same-origin requests (no Origin header) and allowlisted origins.
-        if (!origin || ALLOWED_ORIGINS.has(origin)) return cb(null, true);
-        return cb(null, false);
-    },
-    credentials: false,
-}));
-app.use(express.json({ limit: '500mb' }));
 app.get('/health', (_req, res) => {
     res.status(200).json({
         ok: true,
@@ -97,8 +112,19 @@ app.get('/health', (_req, res) => {
 app.get('/nginx-health', (_req, res) => {
     res.status(200).type('text/plain').send('ok\n');
 });
+app.use(createHostGuard({ bindHost: BIND_HOST, allowedHosts: ALLOWED_HOSTS }));
+app.use(cors({
+    origin(origin, cb) {
+        // Allow same-origin requests (no Origin header) and allowlisted origins.
+        if (!origin || ALLOWED_ORIGINS.has(origin)) return cb(null, true);
+        return cb(null, false);
+    },
+    credentials: false,
+}));
+app.use('/api', createFetchSiteGuard(ALLOWED_ORIGINS));
+app.use(express.json({ limit: '500mb' }));
 app.use('/assets/portraits', express.static(PUBLIC_ASSETS_DIR));
-app.use('/assets/campaigns', express.static(CAMPAIGNS_DIR));
+app.use(createCampaignAssetsRouter());
 app.use('/assets/lotm', express.static(LOTM_ASSETS_DIR));
 
 // ─── Vector Search Init ───
