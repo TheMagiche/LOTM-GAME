@@ -159,9 +159,12 @@ export function LotmTitleHub() {
             useAppStore.getState().openDemoOnboarding();
             return;
         }
-        const pcId = selectedPcId || DEFAULT_PLAYABLE_PC_ID;
+        const interview = selectedPcId === '';
+        const pcId = interview ? '' : (selectedPcId || DEFAULT_PLAYABLE_PC_ID);
         const pc = playablePcs.find(option => option.id === pcId);
-        const name = pc ? lotmChronicleName(pc.name, pc.pathway) : undefined;
+        const name = interview
+            ? LORD_OF_THE_MYSTERIES_PACK.suggestedName
+            : (pc ? lotmChronicleName(pc.name, pc.pathway) : undefined);
         const emblemSrc = getLotmPathway(pc?.pathway)?.emblemSrc
             || resolveLotmPathway(pc?.pathway)?.emblemSrc
             || '';

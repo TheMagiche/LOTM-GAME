@@ -45,6 +45,32 @@ export function sortPlayablePcsForTarot(pcs: PlayablePcOption[]): PlayablePcOpti
     });
 }
 
+/** Empty id matches resolvePlayablePc('', ...) — no seeded Beyonder, interview starter stays. */
+export const LOTM_INTERVIEW_CARD_ID = '';
+const INTERVIEW_CARD_DOM_ID = 'lotm-tarot-interview';
+
+export interface InterviewTarotCard {
+    id: typeof LOTM_INTERVIEW_CARD_ID;
+    interview: true;
+}
+
+export type TarotDeckCard = PlayablePcOption | InterviewTarotCard;
+
+function isInterviewTarotCard(card: TarotDeckCard): card is InterviewTarotCard {
+    return 'interview' in card && card.interview === true;
+}
+
+export function buildTarotDeck(pcs: PlayablePcOption[]): TarotDeckCard[] {
+    return [
+        ...sortPlayablePcsForTarot(pcs),
+        { id: LOTM_INTERVIEW_CARD_ID, interview: true },
+    ];
+}
+
+function tarotDomId(card: TarotDeckCard): string {
+    return card.id || INTERVIEW_CARD_DOM_ID;
+}
+
 const PLAYER_CHARACTER_ART: Record<string, string> = Object.fromEntries(
     LOTM_PLAYER_PORTRAITS.map(entry => [entry.id.replace(/-/g, '_'), entry.portrait]),
 );
@@ -121,8 +147,8 @@ export function LotmTarotSelect({
     onConfirm,
     disabled,
 }: LotmTarotSelectProps) {
-    const deck = useMemo(() => sortPlayablePcsForTarot(pcs), [pcs]);
-    const activeIdx = Math.max(0, deck.findIndex(pc => pc.id === selectedId));
+    const deck = useMemo(() => buildTarotDeck(pcs), [pcs]);
+    const activeIdx = Math.max(0, deck.findIndex(card => card.id === selectedId));
     const active = deck[activeIdx];
     const touchStartX = useRef(0);
 
@@ -151,7 +177,12 @@ export function LotmTarotSelect({
 
     if (!active) return null;
 
-    const activePathway = resolveLotmPathway(active.pathway);
+    const caption = isInterviewTarotCard(active)
+        ? { name: 'Create my own', detail: 'Three-segment interview' }
+        : {
+            name: active.name,
+            detail: `${resolveLotmPathway(active.pathway)?.name || active.pathway} · ${formatLotmSequenceName(active.pathway, active.sequence)}`,
+        };
 
     return (
         <div className="lotm-tarot">
@@ -174,26 +205,31 @@ export function LotmTarotSelect({
                 >
                     <ChevronLeft size={22} />
                 </button>
-                <div className="lotm-tarot-fan" role="listbox" aria-label="Starting characters" aria-activedescendant={active.id}>
-                    {deck.map((pc, i) => {
+                <div className="lotm-tarot-fan" role="listbox" aria-label="Starting characters" aria-activedescendant={tarotDomId(active)}>
+                    {deck.map((card, i) => {
                         const offset = wrappedOffset(i, activeIdx, deck.length);
                         const slot = getSlotStyle(offset);
                         const selected = offset === 0;
-                        const pathway = resolveLotmPathway(pc.pathway);
-                        const emblem = pathway?.emblemSrc || '';
-                        const charImg = getCharacterImageForPc(pc, pathway);
                         const hidden = slot.opacity === 0;
-                        const arcanaKicker = formatLotmTarotKicker(pathway) || pathway?.name;
+                        const interview = isInterviewTarotCard(card);
+                        const pathway = interview ? undefined : resolveLotmPathway(card.pathway);
+                        const emblem = pathway?.emblemSrc || '';
+                        const charImg = interview ? '' : getCharacterImageForPc(card, pathway);
+                        const arcanaKicker = interview ? 'Interview' : (formatLotmTarotKicker(pathway) || pathway?.name);
+                        const cardName = interview ? 'Create my own' : card.name;
+                        const pathwayLabel = interview ? 'Three-segment interview' : (pathway?.name || card.pathway);
+                        const sequenceLabel = interview ? '' : formatLotmSequenceName(card.pathway, card.sequence);
                         return (
                             <button
-                                key={pc.id}
-                                id={pc.id}
+                                key={tarotDomId(card)}
+                                id={tarotDomId(card)}
                                 type="button"
                                 role="option"
                                 aria-selected={selected}
+                                aria-label={interview ? 'Create my own, three-segment interview' : undefined}
                                 tabIndex={selected ? 0 : -1}
                                 disabled={disabled || hidden}
-                                className={`lotm-tarot-card${selected ? ' is-active' : ''}`}
+                                className={`lotm-tarot-card${selected ? ' is-active' : ''}${interview ? ' is-interview' : ''}`}
                                 style={{
                                     transform: `translateX(${slot.x}px) rotateY(${slot.rotateY}deg) scale(${slot.scale})`,
                                     zIndex: slot.zIndex,
@@ -202,14 +238,14 @@ export function LotmTarotSelect({
                                     pointerEvents: hidden ? 'none' : 'auto',
                                 }}
                                 onClick={() => {
-                                    if (!selected) onSelect(pc.id);
+                                    if (!selected) onSelect(card.id);
                                 }}
                                 onDoubleClick={() => {
                                     if (selected) onConfirm();
                                 }}
                             >
                                 <div className="lotm-tarot-card-inner">
-                                    <img src={charImg} alt={pc.name} className="lotm-tarot-card-img" />
+                                    {charImg ? <img src={charImg} alt={cardName} className="lotm-tarot-card-img" /> : null}
                                     {emblem ? (
                                         <div className="lotm-tarot-card-emblem-badge" aria-hidden="true">
                                             <img src={emblem} alt="" />
@@ -217,9 +253,11 @@ export function LotmTarotSelect({
                                     ) : null}
                                     <div className="lotm-tarot-card-overlay">
                                         <span className="lotm-tarot-card-arcana">{arcanaKicker}</span>
-                                        <span className="lotm-tarot-card-name">{pc.name}</span>
-                                        <span className="lotm-tarot-card-pathway">{pathway?.name || pc.pathway}</span>
-                                        <span className="lotm-tarot-card-sequence">{formatLotmSequenceName(pc.pathway, pc.sequence)}</span>
+                                        <span className="lotm-tarot-card-name">{cardName}</span>
+                                        <span className="lotm-tarot-card-pathway">{pathwayLabel}</span>
+                                        {sequenceLabel ? (
+                                            <span className="lotm-tarot-card-sequence">{sequenceLabel}</span>
+                                        ) : null}
                                     </div>
                                 </div>
                             </button>
@@ -238,12 +276,8 @@ export function LotmTarotSelect({
                 </button>
             </div>
             <p className="lotm-tarot-caption">
-                {active.name}
-                <span>
-                    {activePathway?.name || active.pathway}
-                    {' · '}
-                    {formatLotmSequenceName(active.pathway, active.sequence)}
-                </span>
+                {caption.name}
+                <span>{caption.detail}</span>
             </p>
         </div>
     );

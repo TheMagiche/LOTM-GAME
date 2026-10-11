@@ -1766,6 +1766,12 @@ html[style*="--lang-font-stack"] {
     0 16px 36px rgba(0, 0, 0, 0.9);
 }
 
+.lotm-tarot-card.is-interview .lotm-tarot-card-inner {
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(201, 162, 39, 0.28), transparent 62%),
+    #141118;
+}
+
 .lotm-tarot-card-inner {
   position: relative;
   width: 100%;

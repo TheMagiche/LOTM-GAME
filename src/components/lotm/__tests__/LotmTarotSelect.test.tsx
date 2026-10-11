@@ -2,14 +2,14 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DEFAULT_PLAYABLE_PC_ID, LOTM_PLAYABLE_PCS } from '../../../worldpacks/lordOfTheMysteries';
 import { lotmChronicleName, resolveLotmPathway } from '../../../worldpacks/lotmPathways';
-import { getCharacterImageForPc, LotmTarotSelect } from '../LotmTarotSelect';
+import { buildTarotDeck, getCharacterImageForPc, LotmTarotSelect } from '../LotmTarotSelect';
 
 afterEach(() => {
     cleanup();
 });
 
 describe('LotmTarotSelect', () => {
-    it('renders tarot cards with pathway, sequence, and emblem — no custom-character option', () => {
+    it('renders tarot cards with pathway, sequence, and emblem, plus create-my-own', () => {
         const clara = LOTM_PLAYABLE_PCS.find(pc => pc.id === DEFAULT_PLAYABLE_PC_ID);
         expect(clara).toBeDefined();
 
@@ -27,7 +27,7 @@ describe('LotmTarotSelect', () => {
         expect(screen.getByText('Fool Pathway')).toBeInTheDocument();
         expect(screen.getAllByText('Sequence 9 · Seer').length).toBeGreaterThan(0);
         expect(screen.getByRole('option', { selected: true }).querySelector('img')).toBeTruthy();
-        expect(screen.queryByText(/create my own/i)).toBeNull();
+        expect(screen.getByRole('option', { name: /create my own/i })).toBeInTheDocument();
         expect(screen.queryByLabelText(/chronicle name/i)).toBeNull();
         expect(lotmChronicleName(clara!.name, clara!.pathway)).toBe('Clara Whitlock — Fool Pathway');
     });
@@ -47,6 +47,39 @@ describe('LotmTarotSelect', () => {
         expect(onSelect).toHaveBeenCalled();
         expect(onSelect.mock.calls[0][0]).not.toBe('');
         expect(screen.queryByRole('textbox')).toBeNull();
+    });
+
+    it('places create-my-own after the pathway roster and selects it with an empty id', () => {
+        const deck = buildTarotDeck(LOTM_PLAYABLE_PCS);
+        expect(deck[deck.length - 1].id).toBe('');
+        const beforeInterview = deck[deck.length - 2];
+        expect(beforeInterview.id).not.toBe('');
+
+        const onSelect = vi.fn();
+        render(
+            <LotmTarotSelect
+                pcs={LOTM_PLAYABLE_PCS}
+                selectedId={beforeInterview.id}
+                onSelect={onSelect}
+                onConfirm={() => {}}
+            />,
+        );
+
+        fireEvent.click(screen.getByRole('button', { name: 'Next card' }));
+        expect(onSelect).toHaveBeenCalledWith('');
+
+        cleanup();
+        render(
+            <LotmTarotSelect
+                pcs={LOTM_PLAYABLE_PCS}
+                selectedId=""
+                onSelect={() => {}}
+                onConfirm={() => {}}
+            />,
+        );
+        expect(screen.getByRole('option', { name: /create my own/i, selected: true })).toBeInTheDocument();
+        expect(screen.getAllByText(/three-segment interview/i).length).toBeGreaterThan(0);
+        expect(screen.getByRole('option', { selected: true }).querySelector('img')).toBeNull();
     });
 
     it('resolves player images from gamedata/image/players for matching characters', () => {
