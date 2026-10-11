@@ -244,6 +244,79 @@ const FACTION_EXTRAS = {
         Status: 'Active (reorganized as sect)',
         AlliedWith: 'Demoness Sect',
     },
+    'Church of the Fool': {
+        Region: 'Rorsted Archipelago (HQ Fool\'s Cathedral, New City of Silver, Bayam)',
+        Status: 'Active',
+        Aliases: 'Church of Klein, The Fool\'s Faith',
+        AlliedWith: 'Tarot Club, Abraham Family, Sanguines',
+    },
+    'Twilight Hermit Order': {
+        Region: 'Astral / subconscious realm',
+        Status: 'Active',
+        Aliases: 'THO, The Hermits of Twilight',
+        OpposedTo: 'Aurora Order',
+    },
+    'Rose Redemption': {
+        Region: 'Forsaken Land of the Gods / Historical ruins',
+        Status: 'Diminished / Legacy active',
+        Aliases: 'The Redemption',
+    },
+    'Iron and Blood Cross Order': {
+        Region: 'Trier, Intis Republic; military garrisons',
+        Status: 'Active',
+        Aliases: 'Iron and Blood Order',
+        AlliedWith: 'House Sauron (Intis Republic)',
+        OpposedTo: 'Church of the Eternal Blazing Sun',
+    },
+    'Hermits of Fate': {
+        Region: 'Underground Backlund, Loen margins',
+        Status: 'Active',
+        Aliases: 'Fate Hermits',
+        AlliedWith: 'Zoroast Family, Jacob Family',
+        OpposedTo: 'Amon Family',
+    },
+    'Numinous Episcopate': {
+        Region: 'Southern Continent (East & West Balam); Backlund cells',
+        Status: 'Active',
+        Aliases: 'Episcopate of Death, Cult of Death',
+        AlliedWith: 'Eggers Family',
+        OpposedTo: 'Church of the Evernight Goddess, Church of the God of Combat',
+    },
+    'Blood Sanctify Sect': {
+        Region: 'Abyss-facing underworld; Backlund and Trier',
+        Status: 'Active',
+        Aliases: 'Blood Sanctify, Devil Sect',
+        AlliedWith: 'Nois Family (and Devil Vassals Andariel & Beria)',
+        OpposedTo: 'Church of the Eternal Blazing Sun, Church of the Evernight Goddess',
+    },
+    'School of Truth': {
+        Region: 'Trier, Intis underground',
+        Status: 'Active (fractured post-Vortex)',
+        AlliedWith: 'Tamara Family, Mirror People',
+    },
+    'Mirror People': {
+        Region: 'Trier, Mirror World passages',
+        Status: 'Active',
+        AlliedWith: 'School of Truth',
+        OpposedTo: 'Demoness Sect',
+    },
+    'Shadow of Order': {
+        Region: 'Sonia Sea, Fog Sea, hidden ruins',
+        Status: 'Active (diminished)',
+        AlliedWith: 'Solomon Family',
+    },
+    'Outer-Deity Cults': {
+        Region: 'Cordu Village, Trier underground, global borders',
+        Status: 'Active (surging post-1352)',
+        Aliases: 'Cults of the Cosmos',
+    },
+    'Zoroast Family': {
+        Region: 'Backlund; Loen Kingdom',
+        Status: 'Active (diminished)',
+        Aliases: 'House Zoroast',
+        AlliedWith: 'Jacob Family, Hermits of Fate, Church of the Fool',
+        OpposedTo: 'Amon Family',
+    },
 };
 
 const CHAR_EXTRAS = {
