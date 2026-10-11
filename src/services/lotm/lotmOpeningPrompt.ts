@@ -25,6 +25,16 @@ The same first reply MUST then reach the drink: they acquire the potion, then co
 Treat the brief as established fact. Do not skip to a later life, even if the background names later hooks (inspectors, strangers who already know a title, deaths that no longer add up); those wait after the drink.
 `;
 
+/** First player line when the chronicle has no seeded Beyonder and the interview starter is active. */
+export const LOTM_INTERVIEW_OPENING =
+    'Begin the character-creation interview. Ask segment 1 only, then wait for my answer.';
+
+const INTERVIEW_STARTER_MARK = '3-segment character creation interview';
+
+export function isLotmInterviewStarter(starter: string | null | undefined): boolean {
+    return (starter ?? '').includes(INTERVIEW_STARTER_MARK);
+}
+
 function firstPotionLines(pc: PlayerCharacter): string[] {
     const pathway = getLotmPathway(pc.signatureKit?.pathway)
         ?? resolveLotmPathway(pc.signatureKit?.pathway);
@@ -95,11 +105,14 @@ export function formatLotmOpeningPrompt(pc: PlayerCharacter | null | undefined):
 export function openingPromptToAutoSend(
     messages: { length: number },
     pc: PlayerCharacter | null | undefined,
-    opts?: { indexing?: boolean },
+    opts?: { indexing?: boolean; starter?: string | null; starterActive?: boolean },
 ): string {
     if (opts?.indexing) return '';
     if (messages.length > 0) return '';
-    return formatLotmOpeningPrompt(pc);
+    const seeded = formatLotmOpeningPrompt(pc);
+    if (seeded) return seeded;
+    if (opts?.starterActive && isLotmInterviewStarter(opts.starter)) return LOTM_INTERVIEW_OPENING;
+    return '';
 }
 
 export function maybeInjectLotmOpeningPrompt(

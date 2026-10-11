@@ -180,11 +180,13 @@ export function ChatArea({
         if (openingSentFor.current === activeCampaignId) return;
         const text = openingPromptToAutoSend(messages, playerCharacter, {
             indexing: Boolean(worldIndexLock?.campaignId),
+            starter: context.starter,
+            starterActive: context.starterActive,
         });
         if (!text) return;
         openingSentFor.current = activeCampaignId;
         void handleSendRef.current(text);
-    }, [activeCampaignId, messages, playerCharacter, worldIndexLock]);
+    }, [activeCampaignId, messages, playerCharacter, worldIndexLock, context.starter, context.starterActive]);
 
     const { isSaving, handleForceSave, handleOpenArchive } = useChatPersistence();
     const { handleKeyDown } = useChatKeyboard(() => handleSend());
